@@ -10279,7 +10279,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('contLineas-II')
+  var contiBoton = document.getElementById('butt-Institucional')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left

@@ -3539,31 +3539,6 @@ h4{
 }
 
  @media screen and (max-width: 420px) {
-  /* @media screen and (max-width: 768px) { */  
-/*   #agrupaOblicuos-XI{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    top: 73%;
-    transform: translateY(-50%);    
-    overflow: auto;
-  } */
-  #agrupaOblicuos-XI{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    top: 68%;
-    left: 4%;
-    gap: 20px;
-    transform: translateY(-50%); 
-    z-index: 2;   
-    overflow: auto;
-  }
-  
   #cont-titulo-comercial,  
   #cont-titulo-admin,
   #cont-titulo-calidad,
@@ -4618,17 +4593,17 @@ h4{
     position: absolute;
     font-size: 30px;
     text-align: center;
-    top: 27%;
+    top: 17%;
   }
   #descripcion-I{
     position: absolute;
     font-size: 17px;
-    top: 15%;
+    top: 10%;
   }
   #butt-Institucional{
     position: absolute;
     display: block;
-    top: 77px; 
+    top: 73px; 
     height: 19px;
     width: 147px;
     background: linear-gradient(45deg,#ff1837 15%, #333333 85%);
@@ -5940,6 +5915,44 @@ h4{
     font-family: "GothamRounded", sans-serif; 
     font-size: 12px;
   }
+  #agrupaOblicuos-XI{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    top: 74%;
+    left: -15%;
+    gap: 20px;
+    transform: translateY(-50%); 
+    z-index: 2;   
+    overflow: auto;
+  }
+  #padre-interfaz{
+    position: absolute;
+    left: 22%;
+    top: 37%;
+    display: flex;
+    flex-direction: row;
+    background-color: #000;  
+    width:50%;
+    height: 62%;
+    border: 0.1px solid rgb(0,255,0);
+    border-radius: 13px;
+  }
+  .columna {
+    position: relative;
+    width: calc(55% - 20px);
+    margin: 7px; 
+    border: 0.1px solid rgb(0,255,0);
+    border-radius: 13px;
+    height: 97%;
+    box-sizing: border-box;
+    float: left;
+  }
+  
+  
+
       
   
 
