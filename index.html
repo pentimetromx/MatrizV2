@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+    <title>Interfaz de entrenamiento</title>
+    <link rel="stylesheet" href="./Matriz-II.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>   <!-- LIBRERIA DE GRAFICOS -->
+  </head>
+  <body  onload="aumentoBotonesBody()">
+
+    <header class="buscador" id="buscador" style="position: absolute;left: 3px;top: 2px;">
+      <form id="search-form">
+          <input type="text" id="search-input" placeholder="Buscar..."> 
+          <datalist id="suggestions"></datalist>      
+          <button type="submit" id="search-button">
+              <img src="./assets/lupa.jpg" alt="Buscar">
+          </button>
+      </form>
+    </header>
+    <div class="franja-gris-ini" id="franja-gris">
+      <section id="seccion-gris"></section>
+      <img id="img-Titulos" src="./assets/cadena titulos.png" alt="logo">
+    </div>
+    <div class="franja-blamca-ini" id="franja-Blanca">
+      <section id="seccion-blamca" style="display: flex;width: 100%;height: 79px;background-color: white;"></section>
+      <img id="img-logo" src="./assets/cadena logo.png" alt="logo">
+    </div>
+    <div id="cont-titulo">
+      <h4 id="subtitulo-I">Aplicamos la transformación tecnológica</h4>
+      <p id="descripcion-I">
+        En cadena experimentamos internamente el crecimiento que ofrecemos a nuestros clientes<br>usando las mismas herramientas
+        <button id="butt-Institucional"></button>
+      </p>
+
+      <div class="oblicuos-XI" id="agrupaOblicuos-XI">
+        <div id="contFrente-V" class="oblicuosInicio">
+          <button  class="Bot-inicio3" id="butt-111" onclick="abrirSeccionCalidad('cont-titulo-calidad')">Area Calidad</button>        
+          <button class="Bot-inicio3-fondo" id="butt-112"></button>  
+        </div> <br> 
+        <div id="contLateral-V" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-3" onclick="abrirSeccionComercial('cont-titulo-comercial')">Area Comercial</button> 
+          <button class="Bot-inicio3-fondo" id="butt-4"></button>  
+        </div> <br>
+        <div id="contArriba-V" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-5" onclick="abrirSeccionAdministrativa('cont-titulo-admin')">Area Administrativa</button>
+          <button class="Bot-inicio3-fondo" id="butt-6"></button>  
+        </div> <br>
+        <div id="contAtras-V" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-7" onclick="abrirSeccionOperativa('cont-titulo-operacion')">Area Operativa</button>
+          <button class="Bot-inicio3-fondo" id="butt-8"></button>  
+        </div><br> 
+        <!-- 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
+        <div id="contenedor-interfaz" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-00" onclick="abrirInterfaz()">Interfaz grafica</button>
+          <button class="Bot-inicio3-fondo" id="butt-0"></button>  
+        </div>       
+
+        <!-- 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
+      </div>
+    </div>
+    <div id="cont-videojuegos" style="display: none;">
+      <div id="contMetrics" class="sinusoidales">
+        <canvas id="sinusoidalCanvas" width="300" height="177"></canvas>
+        <canvas id="diagonalCanvas" width="300" height="177"></canvas>
+        <canvas id="dualSinusoidalCanvas" width="300" height="177"></canvas>
+        <canvas id="tripleSinusoidalCanvas" width="300" height="177"></canvas> 
+      </div>     
+
+      <div id="botonesContainer" class="contCicodelicos">
+        <button class="botoneras" id="bttn1"></button>
+        <button class="botoneras" id="bttn2"></button>
+        <button class="botoneras" id="bttn3"></button>
+        <button class="botoneras" id="bttn4"></button>
+        <button class="botoneras" id="bttn5"></button>
+        <button class="botoneras" id="bttn6"></button>
+        <button class="botoneras" id="bttn7"></button>
+        <button class="botoneras" id="bttn8"></button>
+        <button class="botoneras" id="bttn9"></button>
+        <button class="botoneras" id="bttn10"></button>
+        <button class="botoneras" id="bttn11"></button>
+        <button class="botoneras" id="bttn12"></button>
+        <button class="botoneras" id="bttn13"></button>
+        <button class="botoneras" id="bttn14"></button>
+        <button class="botoneras" id="bttn15"></button>
+        <button class="botoneras" id="bttn16"></button>
+        <button class="botoneras" id="bttn17"></button>
+        <button class="botoneras" id="bttn18"></button>
+        <button class="botoneras" id="bttn19"></button>
+        <button class="botoneras" id="bttn20"></button>
+        <button class="botoneras" id="bttn21"></button>
+        <button class="botoneras" id="bttn22"></button>
+        <button class="botoneras" id="bttn23"></button>
+        <button class="botoneras" id="bttn24"></button>
+        <button class="botoneras" id="bttn25"></button>
+        <button class="botoneras" id="bttn26"></button>
+        <button class="botoneras" id="bttn27"></button>
+        <button class="botoneras" id="bttn28"></button>
+        <button class="botoneras" id="bttn29"></button>
+        <button class="botoneras" id="bttn30"></button>
+        <button class="botoneras" id="bttn31"></button>
+        <button class="botoneras" id="bttn32"></button>
+        <button class="botoneras" id="bttn33"></button>
+        <button class="botoneras" id="bttn34"></button>
+        <button class="botoneras" id="bttn35"></button>
+        <button class="botoneras" id="bttn36"></button>
+        <button class="botoneras" id="bttn37"></button>
+        <button class="botoneras" id="bttn38"></button>
+        <button class="botoneras" id="bttn39"></button>
+        <button class="botoneras" id="bttn40"></button>
+        <button class="botoneras" id="bttn41"></button>
+        <button class="botoneras" id="bttn42"></button>
+        <button class="botoneras" id="bttn43"></button>
+        <button class="botoneras" id="bttn44"></button>
+        <button class="botoneras" id="bttn45"></button>
+        <button class="botoneras" id="bttn46"></button>
+        <button class="botoneras" id="bttn47"></button>
+        <button class="botoneras" id="bttn48"></button>
+        <button class="botoneras" id="bttn49"></button>
+        <button class="botoneras" id="bttn50"></button>
+        <button class="botoneras" id="bttn51"></button>
+        <button class="botoneras" id="bttn52"></button>
+
+
+      </div>
+      
+      <div id="contButtsMovement">
+        <button id="buttSolitario" class="botonTransito" style="position: absolute;left: 0px;top:7px;border-radius:7px;height: 200px;width: 200px;border-radius: 177px;"></button>
+      </div>
+
+      <div id="button-container" style="display: none;">
+        <button class="buttons" id="button2"></button>
+        <button class="buttons" id="button3"></button>
+        <button class="buttons" id="button4"></button>
+        <button class="buttons" id="button5"></button>
+        <button class="buttons" id="button6"></button>
+        <button class="buttons" id="button7"></button>
+        <button class="buttons" id="button8"></button>
+        <button class="buttons" id="button9"></button>
+        <button class="buttons" id="button10"></button>
+        <button class="buttons" id="button11"></button>
+        <button class="buttons" id="button12"></button>
+        <button class="buttons" id="button13"></button>
+        <button class="buttons" id="button14"></button>
+        <button class="buttons" id="button15"></button>
+        <button class="buttons" id="button16"></button>
+        <button class="buttons" id="button17"></button>
+        <button class="buttons" id="button18"></button>
+        <button class="buttons" id="button19"></button>
+        <button class="buttons" id="button20"></button>
+        <button class="buttons" id="button21"></button>
+        <button class="buttons" id="button22"></button>
+        <button class="buttons" id="button23"></button>
+        <button class="buttons" id="button24"></button>
+        <button class="buttons" id="button25"></button>
+        <button class="buttons" id="button26"></button>
+        <button class="buttons" id="button27"></button>  
+        <button class="buttons" id="button28"></button>
+        <button class="buttons" id="button29"></button>
+        <button class="buttons" id="button30"></button>
+        <button class="buttons" id="button31"></button>
+        <button class="buttons" id="button32"></button>
+        <button class="buttons" id="button33"></button>
+        <button class="buttons" id="button34"></button>
+        <button class="buttons" id="button35"></button>
+        <button class="buttons" id="button36"></button>
+        <button class="buttons" id="button37"></button> 
+        <button class="buttons" id="button38"></button>
+        <button class="buttons" id="button39"></button>
+        <button class="buttons" id="button40"></button>
+        <button class="buttons" id="button41"></button>
+        <button class="buttons" id="button42"></button>
+        <button class="buttons" id="button43"></button>
+        <button class="buttons" id="button44"></button>
+        <button class="buttons" id="button45"></button>
+        <button class="buttons" id="button46"></button>
+        <button class="buttons" id="button47"></button>
+        <button class="buttons" id="button48"></button>
+        <button class="buttons" id="button49"></button>
+        <button class="buttons" id="button50"></button>
+        <button class="buttons" id="button51"></button>
+        <button class="buttons" id="button52"></button>
+        <button class="buttons" id="button53"></button>
+        <button class="buttons" id="button54"></button>
+        <button class="buttons" id="button55"></button>
+        <button class="buttons" id="button56"></button>
+        <button class="buttons" id="button57"></button>
+        <button class="buttons" id="button58"></button>
+        <button class="buttons" id="button59"></button>
+        <button class="buttons" id="button60"></button>
+        <button class="buttons" id="button61"></button>
+        <button class="buttons" id="button62"></button>
+        <button class="buttons" id="button63"></button>
+        <button class="buttons" id="button64"></button>
+        <button class="buttons" id="button65"></button>
+        <button class="buttons" id="button66"></button>
+        <button class="buttons" id="button67"></button>
+        <button class="buttons" id="button68"></button>
+        <button class="buttons" id="button69"></button>
+        <button class="buttons" id="button70"></button>
+        <button class="buttons" id="button71"></button>
+        <button class="buttons" id="button72"></button>
+        <button class="buttons" id="button73"></button>
+        <button class="buttons" id="button74"></button>
+        <button class="buttons" id="button75"></button>
+        <button class="buttons" id="button76"></button>
+        <button class="buttons" id="button77"></button>
+        <button class="buttons" id="button78"></button>
+        <button class="buttons" id="button79"></button>
+        <button class="buttons" id="button80"></button>
+        <button class="buttons" id="button81"></button>                
+      </div>
+
+    </div>   
+    <div id="cont-titulo-operacion" style="display: none;">
+      <h4 id="subtitulo-operacion">Aplicamos la transformación tecnológica</h4>
+      <p id="descripcion-II">
+        En cadena experimentamos internamente el crecimiento que ofrecemos a nuestros clientes<br>usando las mismas herramientas
+        <button id="butt-operacion"></button>
+      </p>
+      <div class="oblicuos-XI" id="agrupaOblicuos-XVIII">
+        <div id="contFrente-V" class="oblicuosInicio">
+          <button  class="Bot-inicio3" id="butt-1110" onclick="abrirSeccionCalidad('cont-titulo-calidad')">Area Calidad</button>        
+          <button class="Bot-inicio3-fondo" id="butt-711200"></button>  
+        </div>
+        <div id="contLateral-V" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-0030" onclick="abrirSeccionComercial('cont-titulo-comercial')">Area Comercial</button> 
+          <button class="Bot-inicio3-fondo" id="butt-4000"></button>  
+        </div>
+        <div id="contArriba-V" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-0500" onclick="abrirSeccionAdministrativa('cont-titulo-admin')">Area Administrativa</button>
+          <button class="Bot-inicio3-fondo" id="butt-6000"></button>  
+        </div>
+        <div id="contAtras-V" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-700" onclick="abrirSeccionOperativa('cont-titulo-operacion')">Area Operativa</button>
+          <button class="Bot-inicio3-fondo" id="butt-8000"></button>  
+        </div> 
+        <div id="juego-V" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-700" onclick="iniciaMove('')">Video Juego</button>
+          <button class="Bot-inicio3-fondo" id="butt-9000"></button>  
+        </div> 
+      </div>  
+      <div class="oblicuos-XI" id="agrupaOblicuos-XII">
+        <div id="contFrente-V-operacion" class="contOblicuosTorre elemento-hijo">
+          <button  class="Bot-inicio3" id="butt-113" onclick="abrirSeccionContinua('pantalla-inicial')">Terminacion</button>        
+          <button class="Bot-inicio3333-fondo" id="butt-7112000"></button>  
+        </div>
+        <div id="contLateral-V-operacion" class="contOblicuosTorre elemento-hijo">
+          <button class="Bot-inicio3" id="butt-12">Planas</button> 
+          <button class="Bot-inicio3333-fondo" id="butt-013000"></button>  
+        </div>
+        <div id="contArriba-V-operacion" class="contOblicuosTorre elemento-hijo">
+          <button class="Bot-inicio3" id="butt-16" onclick="moverArriba()">Colectoras</button>          
+          <button class="Bot-inicio3333-fondo" id="butt-015000"></button>  
+        </div>
+        <div id="contAtras-V-operacion" class="contOblicuosTorre elemento-hijo">
+          <button class="Bot-inicio3" id="butt-21">Variable</button>
+          <button class="Bot-inicio3333-fondo" id="butt-024000"></button>  
+        </div> 
+        <div id="contAtras-V-armadora" class="contOblicuosTorre elemento-hijo">
+          <button class="Bot-inicio3" id="butt-21">Armadora</button>
+          <button class="Bot-inicio3333-fondo" id="butt-024000"></button>  
+        </div> 
+
+        <div id="contMedio-V-operacion" class="contOblicuosTorre elemento-hijo">
+          <button class="Bot-inicio3" id="butt-22" onclick="abrirSeccionContinua('pantalla-inicial')">Rotativas</button>
+          <button class="Bot-inicio3333-fondo" id="butt-023000"></button>  
+        </div> 
+      </div>
+      <div class="oblicuos-XI" id="agrupaOblicuos-XIII">
+        <div id="contMedio-V-operacion" class="contOblicuosTorre elemento-hijo">
+          <button class="Bot-inicio3" id="butt-25">Pinzas</button>
+          <button class="Bot-inicio3333-fondo" id="butt-023000"></button>  
+        </div> 
+      </div>  
+
+    </div>
+    <div id="cont-titulo-admin" style="display: none;">
+      <h4 id="subtitulo-admin">Aplicamos la transformación tecnológica</h4>
+      <p id="descripcion-V">
+        En cadena experimentamos internamente el crecimiento que ofrecemos a nuestros clientes<br>usando las mismas herramientas
+        <button id="butt-admin"></button>
+      </p>
+      <div class="oblicuos-XI" id="agrupaOblicuos-XXI">
+        <div id="contFrente-V" class="oblicuosInicio">
+          <button  class="Bot-inicio3" id="butt-111" onclick="abrirSeccionCalidad('cont-titulo-calidad')">Area Calidad</button>        
+          <button class="Bot-inicio3-fondo" id="butt-7112"></button>  
+        </div>
+        <div id="contLateral-V" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-3" onclick="abrirSeccionComercial('cont-titulo-comercial')">Area Comercial</button> 
+          <button class="Bot-inicio3-fondo" id="butt-40"></button>  
+        </div>
+        <div id="contArriba-V" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-5" onclick="abrirSeccionAdministrativa('cont-titulo-admin')">Area Administrativa</button>
+          <button class="Bot-inicio3-fondo" id="butt-60"></button>  
+        </div>
+        <div id="contAtras-V" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-7" onclick="abrirSeccionOperativa('cont-titulo-operacion')">Area Operativa</button>
+          <button class="Bot-inicio3-fondo" id="butt-80"></button>  
+        </div> 
+      </div>  
+      <div class="oblicuos-XI" id="agrupaOblicuos-XXIV">
+        <div id="contFrente-V-admin" class="contOblicuosTorre">
+          <button  class="Bot-inicio3" id="butt-113">Operaciones y Logística</button>        
+          <button class="Bot-inicio3333-fondo" id="butt-7112"></button>  
+        </div>
+        <div id="contLateral-V-admin" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-12">Area Legal</button> 
+          <button class="Bot-inicio3333-fondo" id="butt-013"></button>  
+        </div>
+        <div id="contArriba-V-admin" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-16">Tecnologías de la Información</button>
+          <button class="Bot-inicio3333-fondo" id="butt-015"></button>  
+        </div>
+        <div id="contAtras-V-admin" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-21">Finanzas y Contabilidad</button>
+          <button class="Bot-inicio3333-fondo" id="butt-024"></button>  
+        </div>
+        <div id="contMedio-V-admin" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-22" onclick="devolverColoresConRetraso()">Recursos Humanos</button>
+          <button class="Bot-inicio3333-fondo" id="butt-023"></button>  
+        </div> 
+      </div>
+      <div class="oblicuos-XI" id="agrupaOblicuos-XIII">
+        <div id="contFrente-V-admin" class="contOblicuosTorre">
+          <button  class="Bot-inicio3" id="butt-1130">Compras y Abastecimiento</button>        
+          <button class="Bot-inicio3333-fondo" id="butt-7112"></button>  
+        </div>
+        <div id="contLateral-V-admin" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-120">Marketing y Ventas</button> 
+          <button class="Bot-inicio3333-fondo" id="butt-0130"></button>  
+        </div>
+        <div id="contArriba-V-admin" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-160">Desarrollo Organizacional</button>
+          <button class="Bot-inicio3333-fondo" id="butt-0150"></button>  
+        </div>
+        <div id="contAtras-V-admin" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-210">Comunicación Corporativa</button>
+          <button class="Bot-inicio3333-fondo" id="butt-240"></button>  
+        </div> 
+        <div id="contMedio-V-admin-I" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-220">Gestión de Proyectos</button>
+          <button class="Bot-inicio3333-fondo" id="butt-23"></button>  
+        </div> 
+      </div>
+    </div>
+    <div id="cont-titulo-comercial" style="display: none;">
+      <h4 id="subtitulo-comercial">Aplicamos la transformación tecnológica</h4>
+      <p id="descripcion-IV">
+        En cadena experimentamos internamente el crecimiento que ofrecemos a nuestros clientes<br>usando las mismas herramientas
+        <button id="butt-comercial"></button>
+      </p>
+      <div class="oblicuos-XI" id="agrupaOblicuos-XIX">
+        <div id="contFrente-V" class="oblicuosInicio">
+          <button  class="Bot-inicio3" id="butt-111" onclick="abrirSeccionCalidad('cont-titulo-calidad')">Area Calidad</button>        
+          <button class="Bot-inicio3-fondo" id="butt-112"></button>  
+        </div>
+        <div id="contLateral-V" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-3" onclick="abrirSeccionComercial('cont-titulo-comercial')">Area Comercial</button> 
+          <button class="Bot-inicio3-fondo" id="butt-4"></button>  
+        </div>
+        <div id="contArriba-V" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-5" onclick="abrirSeccionAdministrativa('cont-titulo-admin')">Area Administrativa</button>
+          <button class="Bot-inicio3-fondo" id="butt-6"></button>  
+        </div>
+        <div id="contAtras-V" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-7" onclick="abrirSeccionOperativa('cont-titulo-operacion')">Area Operativa</button>
+          <button class="Bot-inicio3-fondo" id="butt-8"></button>  
+        </div> 
+      </div> 
+      <div class="oblicuos-XI" id="agrupaOblicuos-XIV">
+        <div id="contFrente-V-comercial" class="contOblicuosTorre">
+          <button  class="Bot-inicio3" id="butt-01130">Marketing y Publicidad</button>        
+          <button class="Bot-inicio3333-fondo" id="butt-112"></button>  
+        </div> 
+        <div id="contLateral-V-comercial" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-012">Productos o Servicios</button> 
+          <button class="Bot-inicio3333-fondo" id="butt-13"></button>  
+        </div>
+        <div id="contArriba-V-comercial" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-016">Análisis de Datos</button>
+          <button class="Bot-inicio3333-fondo" id="butt-15"></button>  
+        </div>
+        <div id="contAtras-V-comercial" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-021">Finanzas</button>
+          <button class="Bot-inicio3333-fondo" id="butt-24"></button>  
+        </div> 
+      </div>
+      <div class="oblicuos-XI" id="agrupaOblicuos-XV">
+        <div id="contMedio-V-comercial" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-0202">Servicio al Cliente</button>
+          <button class="Bot-inicio3333-fondo" id="butt-203"></button>  
+        </div>
+        <div id="contFrente-V-comercial" class="contOblicuosTorre">
+          <button  class="Bot-inicio3" id="butt-011300">Business Intelligence</button>        
+          <button class="Bot-inicio3333-fondo" id="butt-112"></button>  
+        </div>
+        <div id="contLateral-V-comercial" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-0120">Alianzas Estratégicas</button> 
+          <button class="Bot-inicio3333-fondo" id="butt-13"></button>  
+        </div>
+      </div>
+    </div>
+    <div id="cont-titulo-calidad" style="display: none;">
+      <h4 id="subtitulo-calidad">Aplicamos la transformación tecnológica</h4>
+      <p id="descripcion-III">
+        En cadena experimentamos internamente el crecimiento que ofrecemos a nuestros clientes<br>usando las mismas herramientas
+        <button id="butt-calidad"></button>
+      </p>
+      <div class="oblicuos-XI" id="agrupaOblicuos-XX">
+        <div id="contFrente-V" class="oblicuosInicio">
+          <button  class="Bot-inicio3" id="butt-111" onclick="abrirSeccionCalidad('cont-titulo-calidad')">Area Calidad</button>        
+          <button class="Bot-inicio3-fondo" id="butt-1120"></button>  
+        </div>
+        <div id="contLateral-V" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-3" onclick="abrirSeccionComercial('cont-titulo-comercial')">Area Comercial</button> 
+          <button class="Bot-inicio3-fondo" id="butt-400"></button>  
+        </div>
+        <div id="contArriba-V" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-5" onclick="abrirSeccionAdministrativa('cont-titulo-admin')">Area Administrativa</button>
+          <button class="Bot-inicio3-fondo" id="butt-600"></button>  
+        </div>
+        <div id="contAtras-V" class="oblicuosInicio">
+          <button class="Bot-inicio3" id="butt-7" onclick="abrirSeccionOperativa('cont-titulo-operacion')">Area Operativa</button>
+          <button class="Bot-inicio3-fondo" id="butt-800"></button>  
+        </div> 
+      </div>       
+      <div class="oblicuos-XI" id="agrupaOblicuos-XVI">
+        <div id="contFrente-V-calidad" class="contOblicuosTorre">
+          <button  class="Bot-inicio3" id="butt-001130">Control de Calidad</button>        
+          <button class="Bot-inicio3333-fondo" id="butt-11200"></button>  
+        </div>
+        <div id="contLateral-V-calidad" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-0012">Aseguramiento de la Calidad</button> 
+          <button class="Bot-inicio3333-fondo" id="butt-130"></button>  
+        </div>
+        <div id="contArriba-V-calidad" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-0016">Mejora Continua</button>
+          <button class="Bot-inicio3333-fondo" id="butt-150"></button>  
+        </div>
+      </div>
+      <div class="oblicuos-XI" id="agrupaOblicuos-XVII">
+        <div id="contMedio-V-calidad" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-00202">Formación y Desarrollo</button>
+          <button class="Bot-inicio3333-fondo" id="butt-2030"></button>  
+        </div>
+        <div id="contAtras-V-calidad" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-0021">Gestión de Calidad</button>
+          <button class="Bot-inicio3333-fondo" id="butt-2400"></button>  
+        </div> 
+      </div>
+    </div>
+    <div class="overlay"></div>
+    <video id="videoBackground" style="display: none;" loop muted autoplay>
+      <source src="./assets/Rotatek.mp4" type="video/mp4">  
+    </video>
+    <video id="videoBackgroundII" autoplay loop muted>
+      <source src="./assets/matrix.mp4" type="video/mp4">
+    </video>
+    <div class="links-inicialesI" id="links-inicialesI">
+      
+      <button class="boton-a" id="bot-ini-link" style="text-align: center;margin-left: 507px;display: none;" onclick="VolveraInicio()">PANEL INICIO</button>
+
+      <div class="iridescent-element" id="lineI"></div>
+      <div id="titleContainerI">
+        <p id="textToColorI" style="position: relative;">Pilares<span style="color:greenyellow; position: relative; top: -1px;left: 10px;">&#9660;</span></p>
+      </div>
+      
+      <ul class="iridescent-element" id="linkListI">
+        <!-- <li><a href="#" onclick="ElementosMa('conteneMantaut')">Pilar de Mantenimiento Autonomo</a></li><br> -->
+        <li><a href="#" onclick="ElementosMaII('conteneMantaut')">Pilar de Mantenimiento Autonomo</a></li><br>        
+        <li><a href="#">Pilar Educación y Entrenamiento</a></li><br>
+        <li><a href="#" onclick="abrirPilarSSA()">Pilar Salud Seguridad y Ambiente</a></li><br>  
+        <li><a href="#" onclick="abrirPilarMP()">Pilar Mantenimiento Progresivo</a></li><br>
+        <li><a href="#" onclick="abrirPilarME()">Pilar Mejora Enfocada</a></li><br>
+        <li><a href="#" onclick="abrirPilarME()">Pilar Administrativo y soporte</a></li><br>
+        <li><a href="#" onclick="cerrarSecciones()">Salir</a></li><br>
+      </ul>    
+    </div>     
+    <div class="links-iniciales" id="links-iniciales">
+      <div class="iridescent-element" id="line"></div>
+      <div id="titleContainer">
+        <p id="textToColor" class="main-text">Entrenamientos <span class="arrow">&#9660;</span></p>                                                                     
+      </div>
+      
+      <ul class="iridescent-element" id="linkList">
+        <li><a href="#" onclick="abrirSeccionContinua()">Impresion rotativa / flexográfica</a></li><br>
+        <li><a href="#" onclick="abrirSeccionVariable('cont-variable')">Impresion variable</a></li><br>
+        <li><a href="#" onclick="abrirSeccionPlanas('cont-plana')">Impresion plana</a></li><br>
+        <li><a href="#" onclick="abrirSeccionCurado('cont-secador')">Curado UV</a></li><br>
+        <li><a href="#" onclick="abrirPrepress('pre-prensa')">Teoria del color</a></li><br>
+        <li><a href="#" onclick="abrirDensitometria('densitometria')">Densitometría</a></li><br>
+        <li><a href="#" onclick="cerrarSecciones()">Salir</a></li><br>
+      </ul>    
+    </div>    
+    <div class="contene-1" id="container1" style="display: none;">
+      <button class="boton-a" id="bot-atras31" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;display: none;" onclick="irContenedorAnterior('')"></button>
+      <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
+      <button class="boton-a" id="toggleVideoButt" style="margin-left: 477px;">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      <button class="boton-a" id="bot-atras32" style="text-align: center;width: 47px;position: relative;left: 685px;top: 5px;;display: none" onclick="irContenedorSiguiente('rotatek-1')"></button>
+    </div><br>
+
+    <div id="pantalla-inicial"> 
+
+      <div class="desbobinador" id="desbobinadorId">
+        <button class="boton-b btn-bloque" id="boton1" onclick="cierraContenedores('desbobinadorId')">DESBOBINADOR</button><br>
+        <div class="contene-7" id="cont-Verticales1">
+          <div class="linea-vertical-33"></div>
+          <button id="boton2" class="boton-c aumentarc" onclick="lubricacion('boton2','boton1')">Lubricacion<div class="linea-horizontal"></div></button>
+          <button id="boton3" class="boton-c aumentarc" onclick="lubricacion('boton3','boton1')">Freno<div class="linea-horizontal"></div></button>
+          <button id="boton4" class="boton-c aumentarc" onclick="lubricacion('boton4')">Bailarina<div class="linea-horizontal"></div></button>
+          <button id="boton5" class="boton-c aumentarc" onclick="lubricacion('boton5')">Ensarte<div class="linea-horizontal"></div></button>
+          <button id="boton6" class="boton-c aumentarc" onclick="lubricacion('boton6')">Regulación neumática<div class="linea-horizontal"></div></button>
+        </div>         
+      </div>
+
+      <div class="uTeñido" id="uTeñidos">  
+        <button class="boton-b btn-bloque" id="boton7" onclick="cierraContenedores('uTeñido')">UNIDAD TEÑIDO</button><br>       
+        <div class="contene-7" id="cont-Verticales2">
+          <div class="linea-vertical-33"></div>
+          <button class="boton-c" id="boton8" onclick="UnidadTeñido('boton8','boton7')">Sistema neumático<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton9" onclick="UnidadTeñido('boton9','boton7')">Rodillería<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton10" onclick="UnidadTeñido('boton10','boton7')">Circuito de alimentación<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton11" onclick="UnidadTeñido('boton11','boton7')">Bomba de succión<div class="linea- "></div></button>
+          <button class="boton-c" id="boton12" onclick="UnidadTeñido('boton12','boton7')">Depositos de anilina<div class="linea-horizontal"></div></button>
+        </div>
+      </div>
+
+      <div class="alimentadorId" id="alimentadorId">
+        <button class="boton-b btn-bloque" id="boton13" onclick="cierraContenedores('alimentadorId')">ALIMENTADOR</button><br> 
+        <div class="contene-7" id="cont-Verticales33">
+          <div class="linea-vertical-33"></div>
+          <button class="boton-c" id="boton14" onclick="UnidadAlimenta('boton14','boton13')">Estructura<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton15"  onclick="UnidadAlimenta('boton15','boton13')">Sistema planetario<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton16"  onclick="UnidadAlimenta('boton16','boton13')">Ajuste mecanico<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton17"  onclick="UnidadAlimenta('boton17','boton13')">Transmision<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton18"  onclick="UnidadAlimenta('boton18','boton13')">Ajuste neumatico<div class="linea-horizontal"></div></button>
+        </div>          
+      </div>
+
+      <div class="unidProceso" id="unidProceso">  
+        <button class="boton-b btn-bloque" id="boton19" onclick="cierraContenedores('unidProceso')">UNIDAD DE PROCESO</button><br>  
+        <div class="contene-7" id="cont-Verticales7">
+          <div class="linea-vertical-33"></div>
+          <button class="boton-c" id="boton20" onclick="UnidadProceso('boton20','boton19')">Rodillos de transporte<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton21" onclick="UnidadProceso('boton21','boton19')">Función y ensamble<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton22" onclick="UnidadProceso('boton22','boton19')">Anillos perforadores<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton23" onclick="UnidadProceso('boton23','boton19')">Zona de perforación<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton24" onclick="UnidadProceso('boton24','boton19')">Remaliner<div class="linea-horizontal"></div></button>
+        </div>          
+      </div>
+
+      <div class="rebobinador" id="rebobinador">
+        <button class="boton-b btn-bloque" id="boton25" onclick="cierraContenedores('rebobinador')">REBOBINADOR</button><br>                     
+        <div class="contene-7"  id="cont-Verticales8">
+          <div class="linea-vertical-33"></div>
+          <button class="boton-c" id="boton26" onclick="UnidadRebonina('boton26','boton25')">Estructura<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton27" onclick="UnidadRebonina('boton27','boton25')">Sistema planetario<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton28" onclick="UnidadRebonina('boton28','boton25')">Ajuste mecanico<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton29" onclick="UnidadRebonina('boton29','boton25')">Transmision<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton30" onclick="UnidadRebonina('boton30','boton25')">Ajuste neumatico<div class="linea-horizontal"></div></button>
+        </div>          
+      </div>         
+
+      <button id="toggleVideoButton">TORRE DE IMPRESIÓN</button>  
+             
+      <div class="torre-imp" id="torre-imp">
+
+        <div id="tinter-o">
+          <button class="boton-d" id="tinteroButton" onclick="changeButtonStyles('pantalla-tintero')">TINTERO</button>
+          <div id="cont-Verticales22">
+            <div class="linea-vertical"></div>
+            <button class="boton-e" id="boton31" onclick="UnidadTintero('boton31','tinteroButton')">Estructura<div class="linea-horizontal"></div></button>
+            <button class="boton-e" id="boton32" onclick="UnidadTintero('boton32','tinteroButton')">Ajuste en el cierre<div class="linea-horizontal"></div></button>
+            <button class="boton-e" id="boton33" onclick="UnidadTintero('boton33','tinteroButton')">Geometría de la unidad<div class="linea-horizontal"></div></button>
+            <button class="boton-e" id="boton34" onclick="UnidadTintero('boton34','tinteroButton')">Ajustes de la cuchilla<div class="linea-horizontal"></div></button>
+            <button class="boton-e" id="boton35" onclick="UnidadTintero('boton35','tinteroButton')">Ajuste en topes<div class="linea-horizontal"></div></button>
+            <button class="boton-e" id="boton36" onclick="UnidadTintero('boton36','tinteroButton')">Ajuste mecánico<div class="linea-horizontal"></div></button>
+          </div>
+        </div>
+
+        <div id="bateria-entintado">  
+          <button class="boton-d" id="bateriaButton" onclick="changeButtonStyles('bateria-entintado-II', 'contene-7')">BATERIA DE ENTINTADO</button>               
+          <div id="cont-Verticales3">
+            <div class="linea-vertical"></div>
+            <button class="boton-e" id="boton37" onclick="UnidadBateria('boton37','bateriaButton')">Diámetros y durezas<div class="linea-horizontal"></div></button>
+            <button class="boton-e" id="boton38" onclick="UnidadBateria('boton38','bateriaButton')">Contacto entre rodillos<div class="linea-horizontal"></div></button>
+            <button class="boton-e" id="boton39" onclick="UnidadBateria('boton39','bateriaButton')">Ajuste rodillo tomador<div class="linea-horizontal"></div></button>
+            <button class="boton-e" id="boton40" onclick="UnidadBateria('boton40','bateriaButton')">Ajuste  rodillos distribuidores<div class="linea-horizontal"></div></button>
+            <button class="boton-e" id="boton41" onclick="UnidadBateria('boton41','bateriaButton')">Ajuste rodillos de forma<div class="linea-horizontal"></div></button>                  
+          </div>              
+        </div>
+
+        <div id="bancada-torre">
+          <button class="boton-d" id="bancadaButton" onclick="changeButtonStyles('bancada-torre-II')">BANCADA DE TORRE</button>
+          <div id="cont-Verticales4">
+            <div class="linea-vertical"></div>
+            <button class="boton-e" id="boton42" onclick="UnidadTorre('boton42','bancadaButton')">Guía<div class="linea-horizontal"></div></button>                  
+            <button class="boton-e" id="boton43" onclick="UnidadTorre('boton43','bancadaButton')">Ajuste<div class="linea-horizontal"></div></button>                  
+          </div>         
+        </div> 
+
+        <div id="sis-humedad">  
+          <button class="boton-d" id="humedadButton" onclick="changeButtonStyles('sitema-humedad')">SISTEMA HUMEDAD</button>
+          <div id="cont-Verticales6">
+            <div class="linea-vertical"></div>
+            <button class="boton-e" id="boton44" onclick="UnidadSisHumedad('boton44','humedadButton')">Composición<div class="linea-horizontal"></div></button>                  
+            <button class="boton-e" id="boton45" onclick="UnidadSisHumedad('boton45','humedadButton')">Graduación<div class="linea-horizontal"></div></button>                  
+            <button class="boton-e" id="boton46" onclick="UnidadSisHumedad('boton46','humedadButton')">Ajustes<div class="linea-horizontal"></div></button>                   
+          </div>
+        </div>
+
+      </div> 
+    </div>
+
+    <div class="contene-2" id="container01" style="display: none;">
+      <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
+      <button class="boton-a" id="bot-inicial" style="text-align: center;;position: relative" onclick="VolveraInicio()">PANEL INICIO</button>
+      <button class="boton-a" id="iniciar" style="position: relative;" onclick="soloEnsayo()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="Geometria()"></button>
+      <!-- <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="soloEnsayo()"></button> -->
+
+     </div><br>
+
+    <div id="pantalla-tintero">       
+      
+      <div id="cont-links">
+        <a href="#" class="custom-link" id="linkDistribuidor" onclick="showRepuesto ('contImgDistribuidor')">Rodillo distribuidor</a>
+        <a href="#" class="custom-link" id="linkForma" onclick="showRepuesto('contImgEntintador')">Rodillo forma</a>
+        <a href="#" class="custom-link" id="linkPlate" onclick="showRepuesto('contPortPlaca')">Porta plancha</a>
+        <a href="#" class="custom-link" id="linkManta" onclick="showRepuesto('contPortManta', 'videoTrain03')">Porta mantilla</a>
+        <a href="#" class="custom-link" id="linkImpresor" onclick="showRepuesto('contImpresor', 'videoTrain01')">Cilindro impresor</a>
+      </div>
+
+      <img src="./assets/Arriba abajo.jpg" id="imgTorre" alt="imagen-torre">
+      
+      <video class="video-training" id="vidTintero" src="./assets/Arriba abajo.mp4"></video>
+      
+      <div id="imgsRepuestos">
+        <img class="image-trainings" id="eje" onclick="ampliaIndicaciones('eje')" src="./assets/galgas.jfif" alt="eje">
+        <img class="image-trainings" id="conico" onclick="ampliaIndicaciones('conico')" src="./assets/conico.jpg" alt="cónico">
+        <img class="image-trainings" id="reductor" onclick="ampliaIndicaciones(2)" src="./assets/reductor.jpg" alt="reductor">
+        <img class="image-trainings" id="reductor-II" onclick="ampliaIndicaciones(3)" src="./assets/reductorII.png" alt="reductorII">
+      </div>
+      <div id="agrupaOblicuos-II">
+        <button class="Bot-inicio2 bot-responsive" id="butt-01" onclick="muestraTorresI('pantalla-frente')">Frente</button>
+        <button class="Bot-inicio2-fondo" id="butt-02"></button> 
+        <button class="Bot-inicio2 bot-responsive" id="butt-03" onclick="muestraTorresI('pantalla-mandos')">Mandos</button>
+        <button class="Bot-inicio2-fondo" id="butt-04"></button>  
+        <button class="Bot-inicio2 bot-responsive" id="butt-05" onclick="muestraTorresI('pantalla-servicio')">Servicio</button>
+        <button class="Bot-inicio2-fondo" id="butt-06"></button>  
+        <button class="Bot-inicio2 bot-responsive" id="butt-07" onclick="muestraTorresI('pantalla-atras')">Atras</button>
+        <button class="Bot-inicio2-fondo" id="butt-08"></button> 
+      </div> 
+      <div id="indicaciones-eje">
+        <button class="boton-a" id="bot-indicaciones" style="text-align: center;margin-left: 97px;margin-top: 77px; z-index: 1;" onclick="ocultarIndicaciones('eje')">Volver</button>
+        <header style="position: relative;margin-top: 57px;">
+          <h1 style="font-family: 'GothamRounded', sans-serif;color: yellowgreen;text-align: left; ">EJE DESPLAZAMIENTO</h1>
+          <h2 style="font-family: 'GothamRounded', sans-serif;color: yellowgreen;text-align: left; ">Acople</h2>
+        </header>
+        <section id="secion-1" style="position: relative;margin-top: -17px;left: 11px;">
+          <p>1. Cromita de Hierro (FeCr2O4):</pstyle=><br>
+          <p>2. Diametro pomo 51 mm </p>
+          <p>3. Diametro eje 17 mm </p> 
+          <p>4. Largo total 70 mm </p> 
+          <p>5. Rosca ACME </p> 
+          <p>6. Paso de rosca 1.3 mm </p> 
+          <p>6. Largo rosca 30 mm </p> 
+          <p>7. Largo eje 50 mm </p> 
+          <p>8. Alto pomo 20 mm </p>                                       
+        </section>
+      </div>
+      <div id="indicaciones-conico">
+        <button class="boton-a" id="bot-indicacionesII" style="display: none; text-align: center;margin-left: 97px;margin-top: 77px; z-index: 1;" onclick="ocultarIndicaciones('conico')">Volver</button>
+        <header style="position: relative;margin-top: 57px;">
+          <h1 style="font-family: 'GothamRounded', sans-serif;color: yellowgreen;text-align: left; ">EJE DESPLAZAMIENTO</h1>
+          <h2 style="font-family: 'GothamRounded', sans-serif;color: yellowgreen;text-align: left; ">Acople</h2>
+        </header>
+  
+        <section id="secion-1" style="position: relative;margin-top: -17px;left: 11px;">
+          <p>1. Ángulo de inclinación</pstyle=><br>
+          <p>2. Relación de transmisión</p>
+          <p>3. Ángulo de presión</p> 
+          <p>4. Material</p> 
+          <p>5. Dureza</p> 
+          <p>6. Tolerancias dimensionales</p> 
+          <p>6. Geometría de los dientes</p> 
+          <p>7. Capacidad de carga</p> 
+          <p>8. Lubricación</p>                                       
+        </section>
+
+      </div>
+    </div>
+    <div id="pantalla-frente">  
+
+      <div id="imgsRepuestos-II">
+        <img src="./assets/eje.jpg" alt="eje">
+        <img src="./assets/conico.jpg" alt="eje">
+        <img src="./assets/reductor.jpg" alt="eje">
+        <img src="./assets/reductorII.png" alt="eje">
+      </div>
+
+      <img src="./assets/Arriba abajo.jpg" id="imgTorre-f" alt="imagen-torre">
+
+      <div id="agrupaOblicuos">
+        <button class="Bot-inicio2" id="butt-001" onclick="muestraTorresI('pantalla-frente')">Frente</button>
+        <button class="Bot-inicio2-fondo" id="butt-002"></button> 
+        <button class="Bot-inicio2" id="butt-003" onclick="muestraTorresI('pantalla-mandos')">Mandos</button>
+        <button class="Bot-inicio2-fondo" id="butt-004"></button>  
+        <button class="Bot-inicio2" id="butt-005" onclick="muestraTorresI('pantalla-servicio')">Servicio</button>
+        <button class="Bot-inicio2-fondo" id="butt-006"></button>  
+        <button class="Bot-inicio2" id="butt-007" onclick="muestraTorresI('pantalla-atras')">Atras</button>
+        <button class="Bot-inicio2-fondo" id="butt-008"></button>  
+      </div>
+    </div>
+    <div id="pantalla-mandos" style="display: none;">
+
+      <div id="imgsRepuestos-III">
+        <img class="image-trainings image-training rep-izquierda" src="./assets/sprocket.jpg" alt="ejes">
+        <img class="image-trainings rep-izquierda" src="./assets/cadena.jpg" alt="ejes">
+        <img class="image-trainings rep-izquierda" src="./assets/acople cardan.jpg" alt="ejes">
+        <img class="image-trainings rep-izquierda" src="./assets/acople.jpg" alt="ejes">
+      </div>
+
+      <img src="./assets/Mandos.jpg" id="imgTorre-f" alt="imagen-torre">
+
+      <div id="agrupaOblicuos-III">
+        <button class="Bot-inicio2" id="butt-01" onclick="muestraTorresI('pantalla-frente')">Frente</button>
+        <button class="Bot-inicio2-fondo" id="butt-02"></button>  
+        <button class="Bot-inicio2" id="butt-03" onclick="muestraTorresI('pantalla-mandos')">Mandos</button>
+        <button class="Bot-inicio2-fondo" id="butt-04"></button>  
+        <button class="Bot-inicio2" id="butt-05" onclick="muestraTorresI('pantalla-servicio')">Servicio</button>
+        <button class="Bot-inicio2-fondo" id="butt-06"></button>  
+        <button class="Bot-inicio2" id="butt-07" onclick="muestraTorresI('pantalla-atras')">Atras</button>
+        <button class="Bot-inicio2-fondo" id="butt-08"></button>  
+      </div>
+      
+    </div>
+    <div id="pantalla-servicio" style="display: none;">
+
+      <div id="imgsRepuestos-IV">
+        <img class="image-trainings rep-derecha" src="./assets/piñon masa.jpg" alt="ejes">
+        <img class="image-trainings rep-derecha" src="./assets/Piñon.jpg" alt="ejes">
+        <img class="image-trainings rep-derecha" src="./assets/PiñonII.jpg" alt="ejes">
+        <img class="image-trainings rep-derecha" src="./assets/piñonIII.jpg" alt="ejes">
+      </div>
+      <img src="./assets/Transmision.jpg" id="imgTorre-f" alt="imagen-torre">
+
+      <div id="agrupaOblicuos-IV">
+        <button class="Bot-inicio2" id="butt-01" onclick="muestraTorresI('pantalla-frente')">Frente</button>
+        <button class="Bot-inicio2-fondo" id="butt-02"></button> 
+        <button class="Bot-inicio2" id="butt-03" onclick="muestraTorresI('pantalla-mandos')">Mandos</button>
+        <button class="Bot-inicio2-fondo" id="butt-04"></button>  
+        <button class="Bot-inicio2" id="butt-05" onclick="muestraTorresI('pantalla-servicio')">Servicio</button>
+        <button class="Bot-inicio2-fondo" id="butt-06"></button>  
+        <button class="Bot-inicio2" id="butt-07" onclick="muestraTorresI('pantalla-atras')">Atras</button>
+        <button class="Bot-inicio2-fondo" id="butt-08"></button> 
+      </div> 
+    </div>
+    <div id="pantalla-atras" style="display: none;">
+
+      <div id="imgsRepuestos-V">
+        <img class="image-trainings rep-derecha" src="./assets/transmision correas.jpg" alt="ejes">
+        <img class="image-trainings rep-derecha" src="./assets/piñon loco.jpg" alt="ejes">
+        <img class="image-trainings rep-derecha" src="./assets/planeta.jpg" alt="ejes">
+        <img class="image-trainings rep-derecha" src="./assets/piñon trasero.jpg" alt="ejes">
+      </div>
+
+      <img src="./assets/Atras.jpg" id="imgTorre-a" alt="imagen-torre">
+
+      <div id="agrupaOblicuos-V">
+        <button class="Bot-inicio2" id="butt-01" onclick="muestraTorresI('pantalla-frente')">Frente</button>
+        <button class="Bot-inicio2-fondo" id="butt-02"></button> 
+        <button class="Bot-inicio2" id="butt-03" onclick="muestraTorresI('pantalla-mandos')">Mandos</button>
+        <button class="Bot-inicio2-fondo" id="butt-04"></button>  
+        <button class="Bot-inicio2" id="butt-05" onclick="muestraTorresI('pantalla-servicio')">Servicio</button>
+        <button class="Bot-inicio2-fondo" id="butt-06"></button>  
+        <button class="Bot-inicio2" id="butt-07" onclick="muestraTorresI('pantalla-atras')">Atras</button>
+        <button class="Bot-inicio2-fondo" id="butt-08"></button> 
+      </div>
+    </div>
+    <div id="videosTraining" style="display: none;">  
+
+      <div class="videos-training" id="videos-training">
+        <video class="video-training" id="videoElement1" src="./assets/Bateria de entintado.mp4" height="400px" loop></video>
+        <video class="video-training" id="videoElement4" src="./assets/2.full velocidad2.mp4" height="400px" width="520px" loop></video>
+        <video class="video-training" id="videoElement5" src="./assets/1.Rodillo a rodillo.mp4" height="400px" loop></video>
+      </div>
+    </div> 
+    
+    <div id="sector-distribuidor">
+      <div id="contenedor-7-V" class="contene-botones"> 
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','images-distribuidor')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3','images-entintador')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('plate-smed','images-entintador')">Montaje entintador medio <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement5')">Montaje entintador trasero<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
+      </div>
+      <div id="conti-video-distribuidor">
+        <video class="video-training" id="videoElement2" src="./assets/Montaje distribuidor.mp4" height="400px" loop></video>
+      </div>
+      <div id="images-distribuidor" class="images-training">
+        <img class="image-training image-trainings image-trainings1" id="imageElement" src="./assets/Distri-2.jpg" alt="Entintador"><br>
+        <img class="image-training image-trainings image-trainings1" id="imageElement2" src="./assets/Distri-6.jpg" alt="Rodamiento entintador"><br>                
+        <img class="image-training image-trainings image-trainings1" id="imageElement3" src="./assets/Distri-7.jpg" alt="Lupa"><br>
+        <img class="image-training image-trainings image-trainings1" id="imageElement4" src="./assets/DIstri-12.jpg" alt="Tornillo lupa"><br>
+        <img class="image-training image-trainings image-trainings1" id="imageElement5" src="./assets/Distri-11.jpg" alt="Tuerca lupa"><br>
+      </div>
+      <div id="conti-boton-repuestos">
+        <button class="butt-partes" id="butt-repuestos">PARTES  /  REPUESTOS</button>
+      </div>
+    </div>
+    <div id="sector-entintador">
+      <div id="contenedor-7-VI" class="contene-botones"> 
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','images-distribuidor')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3','images-entintador')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('plate-smed','images-entintador')">Montaje entintador medio <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement5')">Montaje entintador trasero<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
+      </div>
+      <div id="conti-video-entintador">
+        <video class="video-training" id="videoElement3" src="./assets/Montaje entintador.mp4" height="400px" loop></video>
+      </div>
+      
+      <div id="images-entintador" class="images-training" >   
+        <img class="image-training image-trainings image-trainings1" id="imageElement6" src="./assets/Entintador.png" alt="Entintador"><br>
+        <img class="image-training image-trainings image-trainings1" id="imageElement7" src="./assets/Rodamiento entintador.png" alt="Rodamiento entintador"><br>
+      </div>
+      <div id="conti-boton-repuestos-I">
+        <button class="butt-partes" id="butt-repuestos-I">PARTES  /  REPUESTOS</button>
+      </div>      
+    </div>
+    <div id="sector-smed">
+      <div id="contenedor-7-VII" class="contene-botones"> 
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','images-distribuidor')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3','images-entintador')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('plate-smed','images-entintador')">Montaje entintador medio <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement5')">Montaje entintador trasero<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
+      </div>
+      <div id="conti-video-smed">
+        <video class="video-training" id="plate-smed" src="./assets/plate smed.mp4" autoplay loop></video>
+      </div>
+
+      <div id="images-smed" class="smed-style">
+        <div class="image-container">
+          <img class="image-trainings image-trainings1" id="imageElement11" src="./assets/dobladora.png" alt="Entintador">
+          <img class="image-trainings image-trainings1" id="imageElement22" src="./assets/instrumento.png" alt="Rodamiento entintador">
+          <img class="image-trainings image-trainings1" id="imageElement33" src="./assets/vinil.png" alt="Rodamiento entintador">
+          <img class="image-trainings image-trainings1" id="imageElement44" src="./assets/rodillos prensa.png" alt="Rodamiento entintador">
+          <img class="image-trainings image-trainings1" id="imageElement55" src="./assets/medidor.jfif" alt="Rodamiento entintador">
+        </div>
+      </div>
+      <div id="conti-boton-repuestos-II">
+        <button class="butt-partes" id="butt-repuestos-II">PARTES  /  REPUESTOS</button>
+      </div>      
+    </div>
+    <div id="conteneMantaut" class="mantAuto">
+
+      <div class="conti-boton" id="conti-boton">
+        <button class="butt-mautonomo image-trainings mobile-button" id="troubleshoot" onclick="deslizaContenedor('troubleshooting','troubleshoot')">TROUBLESHOOTING</button>
+        <button class="butt-mautonomo image-trainings" id="def1" onclick="deslizaContenedor('canvasContainer2','def1')">DEFECTOS TIPO 1</button>
+        <button class="butt-mautonomo image-trainings" id="def2" onclick="deslizaContenedor('contChecks','def2')">DEFECTOS TIPO 2</button>
+        <button class="butt-mautonomo image-trainings" id="adtBut" onclick="deslizaContenedor('canvasContainer3','adtBut')">ADT</button>
+        <button class="butt-mautonomo image-trainings" id="fua1" onclick="deslizaContenedor('contImagNeg','fua1')">FUA</button>          
+        <button class="butt-mautonomo image-trainings" id="lup" onclick="deslizaContenedor('contImagGraf','lup')">LUP</button>
+        <button class="butt-mautonomo image-trainings" id="kaizen" onclick="deslizaContenedor('conti-boton-kaizen','kaizen')">KAIZEN</button>
+        <button class="butt-mautonomo image-trainings" id="reset" onclick="resetBotns('troubleshoot')" style="background-color: red;color: white;">Reset</button>
+        <button class="butt-mautonomo image-trainings" id="auto" onclick="deslizAutomatic('troubleshooting','troubleshoot')" style="background-color: red;color: white;">Show everything</button>
+        <button class="butt-mautonomo image-trainings" id="resultados" onclick="resultadosMA()">TRACKING DASHBOARD</button>
+      </div> 
+
+      <div id="troubleshooting" style="display: none;">
+        <label class="labl-class" id="lbl1" for="archivo">Largo de impresion:</label>
+        <button class="inpt-class botnClass" id="archivo" onclick="listaEntrenamientosII('archivo')">Seleccionar archivo</button>
+        <label class="labl-class" id="lbl2" for="archivo">Aditivos solución de fuente:</label>
+        <button class="inpt-class botnClass" id="btt2" onclick="listaEntrenamientosII('btt2')">Seleccionar archivo</button>
+        <label class="labl-class" id="lbl3" for="archivo">Reproceso adelantado:</label>
+        <button class="inpt-class botnClass" id="btt3" onclick="listaEntrenamientosII('btt3')">Seleccionar archivo</button>
+        <label class="labl-class" id="lbl4" for="archivo" >Reproceso atrazado:</label>
+        <button class="inpt-class botnClass" id="btt4" onclick="listaEntrenamientosII('btt4')">Seleccionar archivo</button>
+        <label class="labl-class" id="lbl5" for="archivo">Largos fuera de rango:</label>
+        <button class="inpt-class botnClass" id="btt5" onclick="listaEntrenamientosII('btt5')">Seleccionar archivo</button>
+        <label class="labl-class" id="lbl6" for="archivo">Desprendimiento de mantilla:</label>
+        <button class="inpt-class botnClass" id="btt6" onclick="listaEntrenamientosII('btt6')">Seleccionar archivo</button>
+        <label class="labl-class" id="lbl7" for="archivo">Problemas de teñido:</label>
+        <button class="inpt-class botnClass" id="btt7" onclick="listaEntrenamientosII('btt7')">Seleccionar archivo</button>       
+      </div>
+
+      <div id="canvasContainer2" style="display: none;">
+        <canvas id="MiGrafica"></canvas>
+      </div> 
+
+      <canvas id="ctx"></canvas>
+      <!-- <canvas id="graficoCombinado"></canvas> -->
+             
+      <div id="canvasContainer3" style="display: none;">
+        <canvas id="MiSegundaGrafica"></canvas><br>
+        <canvas id="MiTerceraGrafica"></canvas><br>
+        <canvas id="MiCuartaGrafica"></canvas>  
+        <canvas id="MiQuintaGrafica"></canvas>              
+      </div>
+
+      <div id="contChecks">
+        <input id="nombre" type="checkbox"class="input-class"> 
+        <input id="nombre-I" type="checkbox" class="input-class">
+        <input id="nombre-II" type="checkbox" class="input-class">
+        <input id="nombre-III" type="checkbox" class="input-class">
+        <input id="nombre-IV" type="checkbox" class="input-class">
+        <input id="nombre-V" type="checkbox" class="input-class">
+        <input id="nombre-VI" type="checkbox" class="input-class">
+        <input id="nombre-VII" type="checkbox" class="input-class">
+      </div> 
+
+      <div id="contImagNeg">
+        <img id="imagPixelate" src="./assets/pixelate.jpg" alt="Gráfico de Excel 6">
+      </div>
+      <div id="contImagGraf">
+        <img src="./assets/Excel.png" alt="Gráfico de Excel 6">
+      </div>      
+    </div>
+    <div id="conti-boton-kaizen">
+      <button class="butt-mautonomo-kaizen image-trainings" id="btn17" onclick="rodillosKaizen('btn17','')">PROPUESTOS</button>
+      <button class="butt-mautonomo-kaizen image-trainings" id="btn12" onclick="rodillosKaizen('btn12','vidElem')">IMPLEMENTADOS</button>
+      <button class="butt-mautonomo-kaizen image-trainings" id="btn10" onclick="rodillosKaizen('btn10','')">BENCH MARK</button>
+      <button class="butt-mautonomo-kaizen image-trainings" id="btn11" onclick="rodillosKaizen('btn11','')">PROYECTOS</button>
+    </div>
+
+    <div id="conti-boton-planos">
+      <button class="butt-mautonomo-planos image-trainings" id="btn13" onclick="rodillosKaizen('btn13','')">PLANOS</button>
+      <button class="butt-mautonomo-planos image-trainings" id="btn14" onclick="rodillosKaizen('btn14','')">MATERIALES</button>
+      <button class="butt-mautonomo-planos image-trainings" id="btn15" onclick="rodillosKaizen('btn15','')">LAYOUT</button>
+    </div> 
+
+    <div id="planos-kaizen">
+      <img class="imgs-Planos" src="./assets/planos kaizen.jpg" alt="planos">
+      <img class="imgs-Planos" src="./assets/planos kaizen 1.jpg" alt="planos">
+      <img class="imgs-Planos" src="./assets/planos kaizen 2.jpg" alt="planos">
+      <img class="imgs-Planos" src="./assets/planos kaizen 3.jpg" alt="planos">
+    </div>
+    <div id="materiales-kaizen">
+      <img class="imgs-kaizen aumentar" src="./assets/materiales kaizen.jpg" alt="materiales">
+      <img class="imgs-kaizen aumentar" src="./assets/materiales kaizen 1.jpg" alt="materiales">
+      <img class="imgs-kaizen aumentar" src="./assets/materiales kaizen 2.jpg" alt="materiales">
+      <img class="imgs-kaizen aumentar" src="./assets/materiales kaizen 3.jpg" alt="materiales">
+    </div>
+    <div id="toyota-kaizen" style="display: none;">
+      <img id="toyota1" class="imgs-toyota aumentar" src="./assets/toyota 1.jpg" alt="toyota">
+      <img id="toyota2" class="imgs-toyota aumentar" src="./assets/toyota 2.jpg" alt="toyota">
+      <img id="toyota3" class="imgs-toyota aumentar" src="./assets/toyota 3.jpg" alt="toyota">
+      <img id="toyota4" class="imgs-toyota aumentar" src="./assets/toyota 4.jpg" alt="toyota">
+      <img id="toyota5" class="imgs-toyota aumentar" src="./assets/toyota 5.jpg" alt="toyota">
+      <img id="toyota6" class="imgs-toyota aumentar" src="./assets/toyota 6.jpg" alt="toyota">
+      <img id="toyota7" class="imgs-toyota aumentar" src="./assets/toyota 7.jpg" alt="toyota">
+      <img id="toyota8" class="imgs-toyota aumentar" src="./assets/toyota 8.jpg" alt="toyota">
+    </div>
+    <h1 id="casos-kaizen" style="display: none;position: absolute;left: 894px;top: 70px;font-family: GothamRounded , sans-serif;color:rgba(255, 24, 55);">Casos de estudio</h1>
+   <div id="mejoras-kai">
+      <img id="caso1" class="caso-estudio" src="./assets/caso 1.png" alt="casos">
+      <img id="caso2" class="caso-estudio" src="./assets/caso.jpg" alt="casos">
+      <img id="caso3" class="caso-estudio" src="./assets/caso 2.png" alt="casos">
+   </div>
+
+    <div id="toyota-kaizen-antes">
+      <img id="antes1" class="imgs-Antes" src="./assets/antes 1.jpg" alt="toyota">
+      <img id="antes2" class="imgs-Antes" src="./assets/antes 2.jpg" alt="antes">
+      <img id="antes3" class="imgs-Antes" src="./assets/antes 3.jpg" alt="antes">
+      <img id="antes6" class="imgs-Antes" src="./assets/antes.jpg" alt="antes">     
+      <img id="antes4" class="imgs-Antes" src="./assets/antes 4.jpg" alt="antes">
+      <img id="antes5" class="imgs-Antes" src="./assets/antes 5.jpg" alt="antes">
+    </div>
+
+    <div id="kaizenCont">
+      <video id="vidElem" src="./assets/kaizen vid.mp4" autoplay loop muted></video>
+    </div>
+
+    <div id="kaizen-propuestos">
+
+      <div id="primer-hijo" class="kaizen-propuestos-child-I">
+        <div class="kaizen-propuestos-nieto-I">
+          <h1 style="font-family: GothamRounded, sans-serif;color: whitesmoke;">Salva manos en maquina colectora</h1>
+          <img class="imagen-colectora" src="./assets/kaizen colectora.jpg" alt="colectora">
+        </div>  
+        <div class="kaizen-propuestos-nieto-I">
+          <h1 style="font-family: GothamRounded, sans-serif;color: whitesmoke;text-align: center;">Mejora en linea de ensamble</h1>
+          <img class="imagen-colectora" src="./assets/kaizen fresa.jpg" alt="colectora">
+        </div>         
+        <div class="kaizen-propuestos-nieto-I">
+          <h1 style="font-family: GothamRounded, sans-serif;color: whitesmoke;text-align: center;">Bodega estanteria lijera</h1>
+          <img class="imagen-colectora" src="./assets/kaizen estante.jpg" alt="colectora">
+        </div> 
+      </div>  
+
+      <div id="segundo-hijo" class="kaizen-propuestos-child-II">
+        <div class="kaizen-propuestos-nieto-II">
+          <h1 style="font-family: GothamRounded, sans-serif;color: whitesmoke;text-align: center;">Metodologia 5S</h1>
+          <img class="imagen-kaizen" src="./assets/kaizen 5S.jpg" alt="colectora">
+        </div>  
+        <div class="kaizen-propuestos-nieto-II">
+          <h1 style="font-family: GothamRounded, sans-serif;color: whitesmoke;text-align: center;">Lean manufacturing</h1>
+          <img class="imagen-kaizen" src="./assets/kaizen lean.jpg" alt="colectora">
+        </div>         
+        <div class="kaizen-propuestos-nieto-II">
+          <h1 style="font-family: GothamRounded, sans-serif;color: whitesmoke;text-align: center;">Filosofia kaizen japones</h1>
+          <img class="imagen-kaizen" src="./assets/kaizen japones.jpg" alt="colectora">
+        </div> 
+      </div>
+    </div>
+
+    <div id="lubricacion" style="display: none;">
+
+      <div class="conti-boton" id="conti-boton-desb">
+        <button class="butt-mautonomo butt-mautonomo-desb image-trainings" id="btn1" onclick="LubricaDesbobinador('btn1')">REMALINER</button>
+        <button class="butt-mautonomo butt-mautonomo-desb image-trainings" id="btn2" onclick="LubricaDesbobinador('btn2')">RODAMIENTOS</button>
+        <button class="butt-mautonomo butt-mautonomo-desb image-trainings" id="btn3" onclick="LubricaDesbobinador('btn3')">EJES</button>
+        <button class="butt-mautonomo butt-mautonomo-desb image-trainings" id="btn4" onclick="LubricaDesbobinador('btn4')">ZONA TROQUELADO</button>
+        <button class="butt-mautonomo butt-mautonomo-desb image-trainings" id="btn5" onclick="LubricaDesbobinador('btn5')">ENTREGA</button>          
+      </div> 
+
+      <div id="frec-lubrica">
+
+        <div>
+          <button id="lub-diario" class="butt-lub labl-lub" onclick="lubricaDiario('lub-diario','labl1')"></button>
+          <label id="labl1" class="labl-class labl-lub" style="display: none;" for="lub-diario">Frecuencia diaria</label>
+        </div><br>
+        <div>
+          <button id="lub-semanal" class="butt-lub labl-lub" onclick="lubricaDiario('lub-semanal','labl2')"></button>
+          <label id="labl2" class="labl-class labl-lub" style="display: none;" for="lub-semanal">Frecuencia semanal</label>
+        </div><br> 
+        <div>
+          <button id="lub-mensual" class="butt-lub labl-lub" onclick="lubricaDiario('lub-mensual','labl3')"></button>
+          <label id="labl3" class="labl-class labl-lub" style="display: none;" for="lub-mensual">Frecuencia mensual</label>
+        </div>
+      </div>     
+    </div>
+    <div id="lubri-I">
+
+      <div id="vertical-lineI"></div>
+      <div id="aceite">
+        <label class="labl-class" for="lubrica">ACEITE</label>
+      </div>
+      <div id="vidLub">
+        <video class="video-training" id="lubri-vid" src="./assets/Lubricacion.mp4" autoplay loop muted></video>
+      </div>
+      <div id="aceitera">
+        <img src="./assets/aceitera.jpg" alt="aceitera-1">
+        <img src="./assets/aceite.jpg" alt="aceitera-1">
+      </div>
+      <div id="indicaciones">
+        <label class="labl-class labl-lub" style="display: none;" for="lubrica">Boquilla principal</label>
+        <label class="labl-class labl-lub" style="display: none;" for="lubrica">Aceitera manual</label>
+        <label class="labl-class labl-lub" style="display: none;" for="lubrica">Aceite SAE 70W</label>
+      </div>
+      <div class="linea-vertical-II" id="vertcal-line"></div>
+    </div>
+    <div id="lubri-II">
+      <div id="grasa">
+        <label class="labl-class" for="lubrica">GRASA</label>
+      </div>
+      <div id="aceitera-II">
+        <img src="./assets/engrasadora.jpg" alt="aceitera-1">
+        <img src="./assets/grasera.jpg" alt="aceitera-1">
+        <img src="./assets/rodagrasa.jpg" alt="aceitera-1">
+      </div>
+      <div id="indicaciones-II">
+        <label class="labl-class" for="lubrica">Precarga</label>
+        <label class="labl-class" for="lubrica">Grasera transmision</label>
+        <label class="labl-class" for="lubrica">Viscosidad 80 - 120</label>
+      </div>
+    </div>
+    <div id="lubri-III">
+
+      <div id="vertcal-line-II"></div>
+      <div id="balineras">
+        <img src="./assets/rodamiento mandos.jpg" alt="rodamiento">
+        <img src="./assets/rodamiento mandos 2.jpg" alt="rodamiento">
+        <img src="./assets/rodamiento mandos 3.jpg" alt="rodamiento">
+        <img src="./assets/rodamiento mandos 4.jpg" alt="rodamiento">
+      </div>
+      <div id="indicaciones-III">
+        <label class="labl-class labl-lub" for="lubrica">Rodamiento de Esferas de Una Hilera</label>
+        <label class="labl-class labl-lub" for="lubrica">Rodamiento de Esferas Sellado</label>
+        <label class="labl-class labl-lub" for="lubrica">Rodamiento Hibrido de Esferas</label> 
+        <label class="labl-class labl-lub" for="lubrica">Rodamiento de Esferas Radial</label>
+      </div>      
+      <div id="balineras-II">
+        <img src="./assets/rodamiento conico mandos 2.jpg" alt="rodamiento">
+        <img src="./assets/rodamiento conico mandos.jpg" alt="rodamiento">
+        <img src="./assets/rodamiento conico mandos 1.jpg" alt="rodamiento">
+        <img src="./assets/rodamiento conico mandos 3.jpg" alt="rodamiento">
+      </div>
+      <div id="indicaciones-VI">
+        <label class="labl-class labl-lub" for="lubrica">Rodamiento Cónico de Alta Velocidad</label> 
+        <label class="labl-class labl-lub" for="lubrica">Rodamiento Cónico de Una Hilera</label>
+        <label class="labl-class labl-lub" for="lubrica">Rodamiento Cónico de Una Hilera</label>
+        <label class="labl-class labl-lub" for="lubrica">Rodamiento Cónico de Precisión</label>
+      </div>
+      <div id="vertcal-line-I"></div>
+    </div>
+    <div id="freno">
+      <div class="conti-boton" id="conti-boton-freno">
+        <button class="butt-mautonomo-freno image-trainings" id="btn60" onclick="LubricaDesbobinador('btn60')">DESEMPEÑO</button>
+        <button class="butt-mautonomo-freno image-trainings" id="btn70" onclick="LubricaDesbobinador('btn70')">ESTRUCTURA</button>
+        <button class="butt-mautonomo-freno image-trainings" id="btn80" onclick="LubricaDesbobinador('btn80')">PARAMETROS</button>
+      </div> 
+
+      <div id="cont-arriba-freno">
+        <div id="freno-I">
+          <label class="labl-class" for="freno">FRENO</label>
+        </div>        
+        
+        <div id="vidFreno">
+          <video class="" id="freno-vid" src="./assets/freno disco.mp4" autoplay loop muted></video>
+        </div>      
+      </div>
+
+      <div id="freno-II">
+        <div style="position: absolute;display: flex;flex-direction: row;top: -1px;">
+          <img class="img-freno" src="./assets/freno2.jpg" alt="freno">
+          <img class="img-freno" src="./assets/freno zapata.jpg" alt="freno">
+          <img class="img-freno" src="./assets/freno3.jpg" alt="freno">
+        </div>
+        <div class="linea-horizontal-IV"></div> 
+        <div id="second-floor">
+          <img class="img-freno" src="./assets/freno caliper.jpg" alt="freno">
+          <img class="img-freno" src="./assets/freno caliper 2.jpg" alt="freno">
+          <img class="img-freno" src="./assets/freno caliper 3.jpg" alt="freno">
+        </div>
+        <div class="linea-horizontal-V"></div> 
+        <div id="third-floor">
+          <img class="img-freno" src="./assets/freno.jpg" alt="freno">
+          <img class="img-freno" src="./assets/neumatica4.jpg" alt="freno">
+          <img class="img-freno" src="./assets/freno rotor1.jpg" alt="freno">
+        </div>
+      </div>
+    </div>
+    <div id="uniTeñido">
+      <div class="conti-boton" id="conti-boton-teñido">
+        <button class="butt-mautonomo-teñido image-trainings" id="btn600" onclick="UnidadTeñido('btn600')">ACTUADORES</button>
+        <button class="butt-mautonomo-teñido image-trainings" id="btn700" onclick="UnidadTeñido('btn700')">NEUMATICA</button>
+        <button class="butt-mautonomo-teñido image-trainings" id="btn800" onclick="UnidadTeñido('btn800')">PARAMETROS</button>
+      </div> 
+
+      <div id="cont-arriba">
+        <div id="teñido-I">
+          <label class="labl-class" for="teñido">GP TINTER</label>
+        </div>  
+        <div id="vidTeñido">
+          <video class="" id="teñido-vid" src="./assets/vid-teñido.mp4" autoplay loop muted></video>
+        </div>       
+      </div>
+
+      <div id="teñido-II">
+
+        <div id="primeras-imgs">
+          <img class="img-teñido" src="./assets/sist neumatico.jpg" alt="freno">
+          <img class="img-teñido" src="./assets/sist neumatico 1.jpg" alt="freno">
+          <img class="img-teñido" src="./assets/sist neumatico 2.jpg" alt="freno">
+        </div>
+
+        <div class="linea-horizontal-VI"></div>
+
+        <div id="segunda-imgs">
+          <img class="img-teñido" src="./assets/sist neumatico 6.jpg" alt="freno">
+          <img class="img-teñido" src="./assets/sist neumatico 4.jpg" alt="freno">
+          <img class="img-teñido" src="./assets/sist neumatico 5.jpg" alt="freno">
+        </div>
+
+        <div class="linea-horizontal-VII"></div> 
+
+        <div id="tercera-imgs">
+          <img class="img-teñido" src="./assets/sist neumatico 3.jpg" alt="freno">
+          <img class="img-teñido" src="./assets/sist neumatico 7.jpg" alt="freno">
+          <img class="img-teñido" src="./assets/sist neumatico 8.jpg" alt="freno">
+        </div>
+
+      </div>
+
+    </div>
+    <div id="rodilleria">
+      <div class="conti-boton" id="conti-boton-rodilleria">
+        <button class="butt-mautonomo-rodilleria image-trainings" id="btn06" onclick="rodillosTeñido('btn06')">TIPOLOGIA</button>
+        <button class="butt-mautonomo-rodilleria image-trainings" id="btn07" onclick="rodillosTeñido('btn07')">DUREZAS</button>
+        <button class="butt-mautonomo-rodilleria image-trainings" id="btn08" onclick="rodillosTeñido('btn08')">MONTAJE</button>
+      </div> 
+      <div id="cont-arriba-rodillos">
+        <div id="rodillos-I">
+          <label class="labl-class" for="teñido">GP TINTER</label>
+        </div>  
+        <div id="vidRodillos">
+          <video class="video-training" id="rodilleria-vid" src="./assets/tinter vid.mp4" autoplay loop muted></video>
+        </div>       
+      </div>
+      <div id="rodillos-II">
+        <div id="imgs-superiores">
+          <img class="img-rodillo" src="./assets/tinter.jpg" alt="freno">
+          <img class="img-rodillo" src="./assets/tinter 1.jpg" alt="freno">
+        </div>
+        <div id="imgs-inferiores">
+          <img class="img-rodillo" src="./assets/tinter 2.jpg" alt="freno">
+          <img class="img-rodillo" src="./assets/tinter 3.jpg" alt="freno">
+        </div>
+      </div>
+      <div id="durezas" style="display: none;" >
+        <div id="img-sup">
+          <img class="img-rodillo durezas" src="./assets/durometro 1.jpg" alt="freno">
+          <img class="img-rodillo durezas" src="./assets/durometro 2.jpg" alt="freno">
+        </div>
+        <div class="linea-horizontal-VIII"></div>
+        <div id="img-inf">
+          <img class="img-rodillo durezas" src="./assets/durometro 3.jpg" alt="freno">
+          <img class="img-rodillo durezas" src="./assets/durometro 4.jpg" alt="freno">
+        </div>
+      </div>
+    </div>
+    <div id="contPortPlaca">
+      <video class="video-training" id="video-placa" src="./assets/video-plancha-v2.mp4" loop autoplay></video>
+      <div id="agrupaOblicuos-placa">
+        <button class="Bot-inicio2" id="butt-010" onclick="ladosPlancha('imagen1')">Frente</button>
+        <button class="Bot-inicio2-fondo" id="butt-020" ></button> 
+        <button class="Bot-inicio2" id="butt-030" onclick="ladosPlancha('imagen2')">Mandos</button>
+        <button class="Bot-inicio2-fondo" id="butt-040"></button>  
+        <button class="Bot-inicio2" id="butt-050" onclick="ladosPlancha('imagen3')">Servicio</button>
+        <button class="Bot-inicio2-fondo" id="butt-060"></button>  
+        <button class="Bot-inicio2" id="butt-07" onclick="ladosPlancha('imagen4')">Atras</button>
+        <button class="Bot-inicio2-fondo" id="butt-080"></button>  
+      </div>
+
+      <div id="placa">
+        <img class="image-trainings aumentar" src="./assets/comparador caratula.png"><br> 
+        <img class="image-trainings aumentar" src="./assets/anodizado.jpg" alt="placa"><br>
+        <img class="image-trainings aumentar" src="./assets/plancha.jfif" alt="placa">
+      </div>
+    </div>
+    <div id="contPerfilesPlancha" style="display: none;">
+      <div id="imagenes-plancha">
+        <div class="imagen-container" id="imagen1">
+          <img src="./assets/Porta plancha2.png" class="imagesTorre aumentar" id="portPlaca" alt="porte plancha">
+          <img src="./assets/Porta plancha.png" class="imagesTorre aumentar" id="portPlaca" style="margin-left: 17px;" alt="porte plancha">
+        </div>
+        <div class="imagen-container" id="imagen2">
+          <img src="./assets/Porta plancha3.png" class="imagesTorre aumentar" id="portPlaca2" alt="porte plancha">
+          <img src="./assets/Porta plancha4.png" class="imagesTorre aumentar" id="portPlaca2" style="margin-left: 17px;" alt="porte plancha">
+        </div>
+        <div class="imagen-container" id="imagen3">
+          <img src="./assets/Porta plancha5.png" class="imagesTorre aumentar" id="portPlaca3" alt="porte plancha">
+          <img src="./assets/Porta plancha6.png" class="imagesTorre aumentarv" id="portPlaca3" style="margin-left: 17px;" alt="porte plancha">
+        </div>
+        <div class="imagen-container" id="imagen4">
+          <img src="./assets/Porta plancha7.png" class="imagesTorre aumentar" id="portPlaca4" alt="porte plancha">
+          <img src="./assets/Porta plancha8.png" class="imagesTorre aumenta  r" id="portPlaca4" style="margin-left: 17px;" alt="porte plancha">
+        </div>
+      </div>
+    </div>
+    <div id="contPortManta">
+      <video class="video-training" id="videoManta" src="./assets/video-portaManta-v2.mp4" loop autoplay></video>
+      <div id="agrupaOblicuos-IX">
+        <button class="Bot-inicio2" id="butt-01" onclick="ladosMantilla('mantilla1')">Frente</button>
+        <button class="Bot-inicio2-fondo" id="butt-02"></button> 
+        <button class="Bot-inicio2" id="butt-03" onclick="ladosMantilla('mantilla2')">Mandos</button>
+        <button class="Bot-inicio2-fondo" id="butt-04"></button>  
+        <button class="Bot-inicio2" id="butt-05" onclick="ladosMantilla('mantilla3')">Servicio</button>
+        <button class="Bot-inicio2-fondo" id="butt-06"></button>  
+        <button class="Bot-inicio2" id="butt-07" onclick="ladosMantilla('mantilla4')">Atras</button>
+        <button class="Bot-inicio2-fondo" id="butt-08"></button>  
+      </div>
+      <div id="manta">
+        <img class="image-trainings aumentar" src="./assets/calibrador.png" alt="calibra"> <br>
+        <img class="image-trainings aumentar" src="./assets/mantilla3.jfif" alt="manta"> <br>
+        <img class="image-trainings aumentar" src="./assets/mantilla2.png" alt="manta1">
+      </div>     
+    </div>
+    <div id="contPerfilesManta">
+      <div id="imagenes-manta">
+
+        <div class="imagen-container" id="mantilla1">
+          <img src="./assets/mantillaII.jpg" class="imagesTorre imgMant aumentar" id="manta0" alt="porte plancha">
+          <img src="./assets/mantilla.jpg" class="imagesTorre imgMant aumentar" id="manta1" style="margin-left: 17px;" alt="porte plancha">
+        </div>
+        <div class="imagen-container" id="mantilla2">
+          <img src="./assets/mantilla estructura.jpg" class="imagesTorre imgMant aumentar" id="manta2" alt="porte plancha">
+          <img src="./assets/mantilla aplicador.png" class="imagesTorre imgMant aumentar" id="manta3" style="margin-left: 17px;" alt="porte plancha">
+        </div>
+        <div class="imagen-container" id="mantilla3">
+          <img src="./assets/mantilla calibrador.jpg" class="imagesTorre imgMant aumentar" id="manta4" alt="porte plancha">
+          <img src="./assets/mantilla capas.jpg" class="imagesTorre imgMant aumentar" id="manta5" style="margin-left: 17px;" alt="porte plancha">
+        </div>
+        <div class="imagen-container" id="mantilla4">
+          <img src="./assets/tensor rotulaz.jpg" class="imagesTorre imgMant aumentar" id="manta6" alt="porte plancha">
+          <img src="./assets/tensor avanzado.jpg" class="imagesTorre imgMant aumentar" id="manta7" style="margin-left: 17px;" alt="porte plancha">
+        </div>
+      </div>       
+    </div>
+    <div id="contImpresor">
+      <video class="video-training" id="video-impresor" src="./assets/video-impresor.mp4" loop muted autoplay></video>
+      <div id="agrupaOblicuos-XXIII">
+        <button class="Bot-inicio2" id="butt-011" onclick="ladosImpresor('forward')">Frente</button>
+        <button class="Bot-inicio2-fondo" id="butt-022"></button> 
+        <button class="Bot-inicio2" id="butt-033" onclick="ladosImpresor('comands')">Mandos</button>
+        <button class="Bot-inicio2-fondo" id="butt-044"></button>  
+        <button class="Bot-inicio2" id="butt-055" onclick="ladosImpresor('service')">Servicio</button>
+        <button class="Bot-inicio2-fondo" id="butt-066"></button>  
+        <button class="Bot-inicio2" id="butt-077" onclick="ladosImpresor('back')">Atras</button>
+        <button class="Bot-inicio2-fondo" id="butt-088"></button>  
+      </div>
+      <div id="impresorImg">
+        <img class="image-trainings aumentar" src="./assets/medidor.jfif" alt="manta"> <br>
+        <img class="image-trainings aumentar" src="./assets/impresor.jfif" alt="manta"> <br> 
+        <img class="image-trainings aumentar" src="./assets/impresor1.jfif" alt="manta1">
+      </div> 
+    </div>
+    <div id="contPerfilesImpresor">
+      <div id="imagenes-impresor">
+
+        <div class="contImPresor" id="forward"> 
+          <img src="./assets/tensor cilindro.jpg" class="imagesTorre imgImpresor aumentar" id="impresor" alt="porte plancha">
+          <img src="./assets/tensor doblerosca.jpg" class="imagesTorre imgImpresor aumentar" id="impresor1" alt="porte plancha">
+        </div>
+        <div class="contImPresor" id="comands"> 
+          <img src="./assets/tensor piñon.jpg" class="imagesTorre imgImpresor aumentar" id="impresor2" alt="porte plancha">
+          <img src="./assets/tensor rosca.jpg" class="imagesTorre imgImpresor aumentar" id="impresor3" alt="porte plancha">
+        </div>
+        <div class="contImPresor" id="service"> 
+          <img src="./assets/tensor rotula.jpg" class="imagesTorre imgImpresor aumentar" id="impresor4" alt="porte plancha">
+          <img src="./assets/tensor rotulas.jpg" class="imagesTorre imgImpresor aumentar" id="impresor5" alt="porte plancha">
+        </div>
+        <div class="contImPresor" id="back"> 
+          <img src="./assets/tensor rotulaz.jpg" class="imagesTorre imgImpresor aumentar" id="impresor6" alt="porte plancha">
+          <img src="./assets/tensor avanzado.jpg" class="imagesTorre imgImpresor aumentar" id="impresor7" alt="porte plancha">
+        </div>
+      </div>       
+    </div>
+    <div id="contImgDistribuidor">
+      <div class="imgRow" id="imgs-I">
+        <img src="./assets/Distri-0.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-4">
+        <img src="./assets/Distri-14.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-17">
+        <img src="./assets/DIstri-3.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-3">
+        <img src="./assets/Distri-2.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-2">
+      </div>
+      <div class="imgRow" id="imgs-II">
+        <img src="./assets/Distri-5.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-5"> 
+        <img src="./assets/Distri-6.jpg" class="imag-distri image-trainings aumentar"  alt="imgDistrib-6">
+        <img src="./assets/Distri-6.0.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-7">
+        <img src="./assets/Distri-6.1.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-8">
+      </div>
+      <div class="imgRow" id="imgs-III">
+        <img src="./assets/Distri-7.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-9">
+        <img src="./assets/DIstri-8.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-10">
+        <img src="./assets/DIstri-9.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-11">
+        <img src="./assets/Distri-9.1.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-12">
+      </div>
+      <div class="imgRow" id="imgs-IV">
+        <img src="./assets/DIstri-10.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-13">
+        <img src="./assets/Distri-11.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-14">
+        <img src="./assets/DIstri-12.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-15">
+        <img src="./assets/Distri-13.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-16">
+      </div>
+
+    </div>
+
+    <div id="contImgEntintador" style="display: none;">
+      <div class="imgRow">
+        <img src="./assets/forma-1.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-18">
+        <img src="./assets/forma-2.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-19">
+        <img src="./assets/forma-3.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-20">
+        <img src="./assets/forma-4.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-21">
+      </div>
+      <div class="imgRow">
+        <img class="imag-distri image-trainings"> 
+        <img class="imag-distri image-trainings">
+        <img class="imag-distri image-trainings">
+        <img class="imag-distri image-trainings">
+      </div>
+      <div class="imgRow">
+        <img class="imag-distri image-trainings">
+        <img class="imag-distri image-trainings">
+        <img class="imag-distri image-trainings">
+        <img class="imag-distri image-trainings">
+      </div>
+      <div class="imgRow">
+        <img class="imag-distri image-trainings">
+        <img class="imag-distri image-trainings">
+        <img class="imag-distri image-trainings">
+      </div>
+    </div> 
+
+    <div id="cont-variable" class="secciones"> 
+      
+      <div id="conti-img-info"> 
+        <img class="maq-seccion aumentar" src="./assets/IBM 4000.jpg" alt="IBM4000">
+        <img class="maq-seccion aumentar" src="./assets/IBM 5000.jpg" alt="IBM4000">
+        <img class="maq-seccion aumentar" src="./assets/info print.jpg" alt="IBM4000">  
+      </div>
+
+      <div  id="conti-videos-infoprint">
+        <video id="video-infoprint-I" class="video-training" src="./assets/info-I.mp4" autoplay loop></video>
+        <video id="video-infoprint-II" class="video-training" src="./assets/info-II.mp4" autoplay loop></video>
+        <video id="video-infoprint-III" class="video-training" src="./assets/info-III.mp4" autoplay loop></video>
+      </div>
+
+    </div>
+    <div id="cont-plana" class="secciones">
+
+      <div id="conti-img-planas">
+        <img class="maq-seccion aumentar" src="./assets/sor-m.jpg" alt="GTO52">
+        <img class="maq-seccion aumentar" src="./assets/GTO 52.jpg" alt="GTO52">
+        <img class="maq-seccion aumentar" src="./assets/pinza heidelberg.jpg" alt="GTO52">
+      </div>
+
+      <div  id="conti-videos-planas">
+        <video id="video-planas-I" class="video-training" src="./assets/Planas-I.mp4" autoplay loop></video>
+        <video id="video-planas-II" class="video-training" src="./assets/planas-II.mp4" autoplay loop></video>
+        <video id="video-planas-III" class="video-training" src="./assets/planas-III.mp4" autoplay loop></video>
+      </div>
+
+    </div>
+    <div id="cont-secador">
+
+      <div class="video-container">
+        <video class="video-training" id="curado-uv" src="./assets/secador.mp4" autoplay loop></video>
+      </div>
+      
+      <div id="imgsSecador">
+        <img class="maq-seccion aumentar" src="./assets/secado uv3.png" alt="">
+      </div>
+
+    </div>
+    <div id="bateria-entintado-II">
+
+      <div id="contenedor-7-IV" class="contene-botones"> 
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','images-distribuidor')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3','images-entintador')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('plate-smed','images-entintador')">Montaje entintador medio <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement5')">Montaje entintador trasero<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
+      </div>
+      <div id="contenedor-7-III" class="contene-botones"> 
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','images-distribuidor')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3','images-entintador')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('plate-smed','images-entintador')">Montaje entintador medio <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement5')">Montaje entintador trasero<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
+      </div>
+      <div id="contenedor-7-II" class="contene-botones"> 
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','images-distribuidor')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3','images-entintador')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('plate-smed','images-entintador')">Montaje entintador medio <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement5')">Montaje entintador trasero<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
+      </div>      
+      <div id="contenedor-7" class="contene-botones"> 
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','images-distribuidor')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3','images-entintador')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('plate-smed','images-entintador')">Montaje entintador medio <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement5')">Montaje entintador trasero<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
+      </div>
+      <div id="video-entintado">  
+        <video class="video-training" id="videoElement1-II" src="./assets/Bateria de entintado.mp4" autoplay loop></video>  
+      </div> 
+    </div>
+    <div id="bancada-torre-II">
+
+      <div id="contenedor-8" class="contene-botones"> 
+        <button class="boton-g bot-entre" onclick="muestraRodillo()">Estacion cassets<div class="linea-horizontal"></div></button>                
+        <button class="boton-g bot-entre" onclick="muestraRodillo()">Puente guía <div class="linea-horizontal"></div></button>  
+        <button class="boton-g bot-entre" onclick="muestraRodillo()">Alojamiento del casset <div class="linea-horizontal"></div></button>  
+        <button class="boton-g bot-entre" onclick="muestraRodillo()">Expulsión y halado<div class="linea-horizontal"></div></button>                
+      </div>
+      <div id="imgsIsopropil" class="images-training">
+        <img class="image-training image-trainings image-trainings1 image-isopropil" id="isopropil1" src="./assets/isopropil alcoholimetro.png" alt="iso">
+        <img class="image-training image-trainings image-trainings1 image-isopropil" id="isopropil2" src="./assets/isopropil ph.png" alt="iso">
+        <img class="image-training image-trainings image-trainings1 image-isopropil" id="isopropil3" src="./assets/isopropil.png" alt="iso">
+      </div>
+      <div id="conti-boton-repuestos-III">
+        <button class="butt-partes" id="butt-repuestos-III">PARTES  /  REPUESTOS</button>
+      </div>
+      <div id="conti-video-bancada">
+        <video class="video-training" id="plate-smed-I" src="./assets/plate smed.mp4" autoplay loop></video>
+      </div>
+    </div>
+    <div id="sitema-humedad"> 
+      <div id="contenedor-9" class="contene-7"> 
+        <button class="boton-f bot-entre" id="btt1" onclick="muestraHumedad()">Estacion cassets<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" id="btt2" onclick="muestraRodillo()">Puente guía <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" id="btt3" onclick="muestraRodillo()">Alojamiento del casset <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" id="btt4" onclick="muestraRodillo()">Expulsión y halado<div class="linea-horizontal"></div></button> 
+      </div>  
+      
+      <div id="sitio-en-construccion">
+        <p>Sitio en Construcción</p>
+      </div>
+
+    </div>
+    <div id="pre-prensa">
+      <video id="vidCicodelia" class="vidTeoria video-training" src="./assets/cicodelia.mp4" autoplay loop></video>      
+
+      <div id="vidColor">
+        <video class="video-training" id="prisma-vid" src="./assets/prisma.mp4" autoplay loop></video>
+      </div>
+      <div id="vidColor-II">
+        <video class="video-training" id="color-vid" src="./assets/color.mp4"></video>
+      </div> 
+      
+      <div id="imgs-prepress">
+        <div id="contColor" class="contColor">
+          <img class='imgTeoria' src="./assets/preprensa13.png" alt="pre13"> 
+          <img class='imgTeoria' src="./assets/preprensa.jpg" alt="pre1">
+          <img class='imgTeoria' src="./assets/preprensa2.jpg" alt="pre2">
+          <img class='imgTeoria' onclick="muestraVidPrisma('vidColor')" src="./assets/preprensa17.jpg" alt="pre3">          
+          <img class='imgTeoria' src="./assets/preprensa4.jpg" alt="pre4">  
+          <img class='imgTeoria' src="./assets/preprensa12.png" alt="pre12">
+        </div>
+        <div id="segundoCont" class="contColor">
+          <img class='imgTeoria' src="./assets/luz6.jfif" alt="pre18">
+          <img class='imgTeoria' src="./assets/preprensa7.jpg" alt="pre7">
+          <video class='vidTeoria' id="vid01" src="./assets/luz.mp4" autoplay loop></video>
+          <img class='imgTeoria' src="./assets/preprensa8.jpg" alt="pre8">
+          <img class='imgTeoria' onclick="muestraVidColor('vidColor-II')" src="./assets/preprensa10.jpg" alt="pre10">
+          <video class='vidTeoria' id="vid02" src="./assets/luz2.mp4" autoplay loop></video>
+        </div>
+        <div id="tercerCont" class="contColor">
+          <img class='imgTeoria' src="./assets/preprensa6.jpg" alt="pre6">
+          <img class='imgTeoria' src="./assets/preprensa1.jpg" alt="pre19">
+          <img class='imgTeoria' src="./assets/preprensa14.jpg" alt="pre14">
+          <img class='imgTeoria' src="./assets/preprensa15.jpg" alt="pre15">
+          <img class='imgTeoria' src="./assets/preprensa16.jpg" alt="pre16">
+          <img class='imgTeoria' src="./assets/preprensa10.png" alt="pre18">
+        </div>
+        <div id="cuartoCont" class="contColor">
+          <img class='imgTeoria' src="./assets/preprensa11.png" alt="pre17">
+          <img class='imgTeoria' src="./assets/preprensa9.jpg" alt="pre9"> 
+          <video class='vidTeoria' id="vid03" src="./assets/luz3.mp4" autoplay loop></video>
+          <img class='imgTeoria' src="./assets/luz4.jfif" alt="pre18">
+          <img class='imgTeoria' src="./assets/luz5.jfif" alt="pre18">
+          <img class='imgTeoria' src="./assets/preprensa5.jpg" alt="pre5">
+        </div>
+        <div class="conte-botDensitoII" id="conte-botDensitoII">
+          <button class="butt-mautonomo image-trainings" id="troubleshoot" onclick="mantAutonomo('troubleshooting')">MONTAJES</button>
+          <button class="butt-mautonomo image-trainings" id="def1" onclick="mantAutonomo('def-tipo1')">ANGULACION</button>
+          <button class="butt-mautonomo image-trainings" id="def2" onclick="mantAutonomo('def-tipo2')">INSOLADOR</button>
+          <button class="butt-mautonomo image-trainings" id="adtBut" onclick="mantAutonomo('ayudastrabajo')">AYUDAS</button>
+          <button class="butt-mautonomo image-trainings" id="fua2" onclick="mantAutonomo('fua')">DOBLADOR</button>           
+          <button class="butt-mautonomo image-trainings" id="lup" onclick="mantAutonomo('lup')">CALIBRES</button>
+        </div> 
+      </div>
+    </div>  
+    <div id="densitometria">
+      <video id="vidCicodeliaII" class="vidTeoria" src="./assets/cicodelia.mp4" loop autoplay ></video>        
+
+      <div id="vidDensito">
+        <video class="video-training" id="prisma-vid" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" src="./assets/prisma.mp4"></video>
+      </div>
+      <div id="vidDensito-II">
+        <video class="video-training" id="color-vid" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" src="./assets/color.mp4"></video><br><br><br>
+        <label style="position: absolute; left: 177px;top: 300px;" for="training"></label>
+      </div>
+
+      <div id="imgs-densito" class="image-grid">
+        <div id="contDensito">
+          <img class='imgDensito' src="./assets/densito906.jfif" alt="pre10018">
+          <img class='imgDensito' src="./assets/densito1.jpg" alt="pre1002">
+          <img class='imgDensito' src="./assets/densito2.jpg" alt="pre1003">
+          <img class='imgDensito' src="./assets/densito3.jpg" alt="pre1004">          
+          <img class='imgDensito' src="./assets/densito4.jpg" alt="pre1005"> 
+          <img class='imgDensito' src="./assets/densito904.jfif" alt="pre10016">          
+        </div>
+        <div id="segundoContDensito">
+          <img class='imgDensito' src="./assets/densito5.jpg" alt="pre1006">
+          <img class='imgDensito' src="./assets/densito7.jpg" alt="pre1008">
+          <img class='imgDensito' src="./assets/densito8.jpg" alt="pre1009">
+          <img class='imgDensito' src="./assets/densito9.jpg" alt="pre10010">          
+          <img class='imgDensito' src="./assets/densito910.jfif" alt="pre10011">  
+          <img class='imgDensito' src="./assets/densito911.jfif" alt="pre10012">
+        </div>
+        <div id="tercerContDensito">
+          <img class='imgDensito' src="./assets/densito901.png" alt="pre10013"> 
+          <img class='imgDensito' src="./assets/densito902.jpg" alt="pre10014">
+          <img class='imgDensito' src="./assets/densito903.jpg" alt="pre10015">
+          <img class='imgDensito' src="./assets/densito6.jpg" alt="pre1007"> 
+          <img class='imgDensito' src="./assets/densito909.jfif" alt="pre10015">         
+          <img class='imgDensito' src="./assets/densito.jpg" alt="pre1001"> 
+        </div>
+        <div id="cuartoContDensito">
+          <img class='imgDensito' src="./assets/densito907.jfif" alt="pre10013"> 
+          <img class='imgDensito' src="./assets/densito908.jfif" alt="pre10014">
+          <img class='imgDensito' src="./assets/densito905.jfif" alt="pre10017"> 
+          <img class='imgDensito' src="./assets/densito912.jfif" alt="pre10016">          
+          <img class='imgDensito' src="./assets/densito913.jfif" alt="pre10017">  
+          <img class='imgDensito' src="./assets/densito914.jfif" alt="pre10018">
+        </div>
+      </div>
+
+      <div class="conte-botDensito" id="conte-botDensito">
+        <button class="butt-mautonomo image-trainings" id="troubleshoot" onclick="mantAutonomo('troubleshooting')">MONTAJES</button>
+        <button class="butt-mautonomo image-trainings" id="def1" onclick="mantAutonomo('def-tipo1')">ANGULACION</button>
+        <button class="butt-mautonomo image-trainings" id="def2" onclick="mantAutonomo('def-tipo2')">INSOLADOR</button>
+        <button class="butt-mautonomo image-trainings" id="adtBut" onclick="mantAutonomo('ayudastrabajo')">AYUDAS</button>
+        <button class="butt-mautonomo image-trainings" id="fua3" onclick="mantAutonomo('fua')">DOBLADOR</button>           
+        <button class="butt-mautonomo image-trainings" id="lup" onclick="mantAutonomo('lup')">CALIBRES</button>
+      </div> 
+    </div>
+    <div id="largoImpresion">
+
+
+      <div id="contImgEntrenos" class="imgs-entrenos" style="display: flex;">
+        
+      </div>
+
+      <div id="linksMA">
+        <div style="position: absolute;top: 0%;left: 0%;">
+          <h2 style="margin-left: 20px;width: 517px;color: orange;">Largo de impresión ajustes preliminares</h2>  
+          <ol class="linksTraining" id="linkLis">
+            <li><a href="#" id="link1" class="colorClick"data-imagen="imag11" onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')">Asegurar PSI neumática</a></li><br>
+            <li><a href="#" id="link2" class="colorClick"data-imagen="imag22" onclick="imagenesPasoApaso('contImgEntrenos','padre-neumat','pneumatico','imag2','link2','vid-pneumatic')">Optimización al freno de bobina</a></li><br> 
+            <li><a href="#" id="link3" class="colorClick"data-imagen="imag33" onclick="imagenesPasoApaso('contImgEntrenos','bailarina','vid-basculante','imag3','link3','contImaginario')">Ajuste parámetros en basculante</a></li><br>  
+            <li><a href="#" id="link4" class="colorClick"data-imagen="imag44" onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag4','link4','rodillo-infeed')">Calibración / Limpieza / Rugosidad en INFEED</a></li><br>
+            <li><a href="#" id="link5" class="colorClick"data-imagen="imag55" onclick="imagenesPasoApaso('','','contBotInfeed','','link5','puesta-punto',)">Paso a paso puesta a punto</a></li><br>
+          </ol> 
+        </div>        
+      </div>  
+    </div> 
+    <div id="contImaginario">
+      <div id="imag3" >
+        <div style="display: flex;flex-direction: column;align-items: center;">
+          <img class="img-1" src="./assets/neumatica3.jpg" alt="neuma5"><br>
+          <h4>CARRERA DE CILINDRO </h4>
+        </div>
+        <div style="display: flex;flex-direction: column;align-items: center">
+          <img class="img-1" src="./assets/neumatica4.jpg" alt="neuma6"><br>
+          <h4>ACOPLES DE CILINDRO</h4>
+        </div>
+        <div style="display: flex;flex-direction: column;align-items: center">
+          <img class="img-1" src="./assets/neumatica33.jpg" alt="neuma6"><br>
+          <h4>CONTROL NEUMATICO</h4>
+        </div>
+      </div>
+      <div id="bailarina">
+        <video id="vid-basculante" src="./assets/oscilante rotativa.mp4" loop></video> 
+      </div>
+    </div>     
+    <div id="padre-1">
+
+      <div id="imag1" class="img1">
+        <img class="img-presion" src="./assets/neumatica.jpg" alt="neuma1">
+        <h6>PRESIÓN NEUMÁTICA 90 PSI</h6>          
+        <img class="img-presion" src="./assets/neumatica2.jpg" alt="neuma2">
+      </div>
+
+      <div id="control-neumatico">
+        <h1 class="casos-h1" >Estándar 1: Presión Nominal</h1>
+        <p class="parrafo-casos">
+          La presión nominal para un cilindro neumático debe cumplir con las especificaciones del fabricante y no exceder los límites establecidos para garantizar un rendimiento óptimo y seguro.
+        </p>
+        <h1 class="casos-h1" >Estándar 2: Tolerancias de Presión</h1>
+        <p class="parrafo-casos">
+          Las tolerancias de presión deben cumplir con las normativas internacionales para garantizar la precisión y consistencia en la operación del cilindro, evitando daños y asegurando una vida útil prolongada.
+        </p>
+        <h1 class="casos-h1" >Estándar 3: Seguridad de Operación</h1>
+        <p class="parrafo-casos">
+          Se deben seguir prácticas seguras de operación para evitar presiones excesivas que puedan comprometer la integridad del cilindro, asegurando un entorno de trabajo seguro y protegiendo a los operadores.
+        </p>
+        <h1 class="casos-h1" >Estándar 4: Mantenimiento Preventivo</h1>
+        <p class="parrafo-casos">
+          Se recomienda realizar un mantenimiento preventivo periódico para verificar y ajustar la presión neumática, asegurando un funcionamiento eficiente del cilindro y evitando posibles fallas y desgastes prematuros.
+        </p>
+      </div>  
+
+    </div>
+    <div id="contBotCasos" class="contOblicuosTorre" style="left: 1357px;top: 44px;display: none;">
+      <button class="Bot-inicio33" id="butt-17" onclick="tamaño100()">Cerrar</button>
+      <button class="Bot-inicio33-fondo" id="butt-18"></button>  
+    </div>    
+    <div id="padre-2">
+
+      <div id="imag2" class="img1">
+        <img class="img-1" src="./assets/freno.jpg" alt="neuma3">
+        <h6>LIMPIEZA ZAPATAS.<br>
+          JUEGO EN SEGUROS DE MANO. <br>
+          REVISION CAUCHOS. <br>
+          JUEGO EN EL EJE.</h6>
+        <img class="img-1" src="./assets/freno2.jpg" alt="neuma4">
+      </div>
+      
+      <div id="pneumatico">
+        <video id="vid-pneumatic" src="./assets/pneumatic video.mp4" loop muted autoplay></video> 
+      </div>
+
+    </div>
+    <div id="puesta-punto">
+      <h1 class="casos-h1" >1. Inspección de la Máquina</h1>
+      <p class="parrafo-casos">
+        Antes de comenzar, realiza una inspección visual de la impresora litográfica. Verifica que todos los componentes estén en buen estado, desde los rodillos hasta los sistemas de alimentación de papel. Asegúrate de que no haya residuos de tinta seca u otros obstrucciones.
+      </p>
+      <h1 class="casos-h1" >2. Ajuste de la Presión de los Rodillos</h1>
+      <p class="parrafo-casos">
+        Ajusta la presión de los rodillos de la máquina para garantizar un contacto uniforme entre la plancha y el papel. Demasiada presión puede causar distorsiones en la imagen, mientras que una presión insuficiente puede resultar en áreas mal impresas.      
+      </p>
+      <h1 class="casos-h1" >3. Verificación de la Alineación</h1>
+      <p class="parrafo-casos">
+        Comprueba la alineación de la plancha con precisión. Ajusta las guías para asegurar que la plancha se coloque de manera centrada y sin desviaciones, evitando así problemas de registro en la impresión.
+      </p>
+      <h1 class="casos-h1" >4. Limpieza de Rodillos y Mantenimiento</h1>
+      <p class="parrafo-casos">
+        Realiza una limpieza exhaustiva de los rodillos. Utiliza soluciones de limpieza específicas para eliminar cualquier residuo de tinta seca que pueda afectar la calidad de impresión. Asimismo, realiza el mantenimiento regular según las recomendaciones del fabricante.     
+     
+      </p>
+      <h1 class="casos-h1" >5. Calibración del Sistema de Tintas </h1>
+      <p class="parrafo-casos">
+        Calibra el sistema de tintas para asegurar la consistencia del color y evitar variaciones no deseadas. Ajusta la densidad de tinta y la proporción de colores según las especificaciones de la impresión que estás realizando.
+      </p>
+      <h1 class="casos-h1" >6. Ajuste de la Temperatura y Humedad </h1>
+      <p class="parrafo-casos">
+        La temperatura y la humedad afectan la viscosidad de la tinta y el comportamiento del papel. Ajusta la temperatura y la humedad en la sala de impresión según las recomendaciones del fabricante para lograr condiciones óptimas.      
+      </p>
+      <h1 class="casos-h1" >7. Comprobación de la Tensión del Papel </h1>
+      <p class="parrafo-casos">
+        Verifica la tensión del papel en la máquina. Asegúrate de que la tensión sea uniforme para evitar arrugas o desalineaciones. Ajusta los mecanismos de tensión según el tipo y grosor del papel que estás utilizando.      
+      </p>
+      <h1 class="casos-h1" >8. Alineación del Cilindro de Impresión</h1>
+      <p class="parrafo-casos">
+        Alinea cuidadosamente el cilindro de impresión para evitar desplazamientos no deseados durante el proceso de impresión. Utiliza herramientas de medición precisas y ajusta según las especificaciones del fabricante.
+      </p>
+      <h1 class="casos-h1" >9. Verificación del Registro de Color </h1>
+      <p class="parrafo-casos">
+        Comprueba el registro de color para asegurar que las diferentes tintas se superpongan correctamente, evitando desalineaciones. Ajusta los controles de registro según sea necesario para lograr una impresión nítida y precisa.      
+      </p> 
+      <h1 class="casos-h1" >10. Pruebas de Impresión y Ajustes Finales </h1>
+      <p class="parrafo-casos">
+        Realiza pruebas de impresión en pequeñas cantidades antes de la producción completa. Analiza la calidad de impresión y realiza ajustes finos según sea necesario en la velocidad, presión, y otros parámetros para optimizar el rendimiento.      
+      </p>     
+    </div>
+    <div id="contBotInfeed" class="contOblicuosTorre">
+      <button class="Bot-inicio333" id="butt-19" onclick="tamaño100()">Cerrar</button>
+      <button class="Bot-inicio333-fondo" id="butt-20"></button>  
+    </div>    
+    <div id="contImaginario-II">
+      <div id="rodillo-infeed">
+        <h1 class="casos-h1" >1. Inspección Visual Regular</h1>
+        <p class="parrafo-casos">
+          La clave para el rendimiento óptimo de un rodillo grafilado es realizar inspecciones visuales regulares. Examina la superficie del rodillo en busca de desgaste, daños o acumulación de residuos
+        </p>
+        <h1 class="casos-h1" >2. Limpieza Cuidadosa</h1>
+        <p class="parrafo-casos">
+          La limpieza adecuada es esencial. Utiliza solventes suaves para eliminar cualquier acumulación de material en la superficie. Evita productos abrasivos que puedan dañar el recubrimiento del rodillo
+        </p>
+        <h1 class="casos-h1" >3. Control de la Lubricación</h1>
+        <p class="parrafo-casos">
+          Verifica y ajusta los niveles de lubricación según las especificaciones del fabricante. Una lubricación inadecuada puede afectar la eficiencia y la vida útil del rodillo.
+        </p>
+        <h1 class="casos-h1" >4. Ajuste de Tensión</h1>
+        <p class="parrafo-casos">
+          Mantén la tensión correcta en el rodillo para garantizar un rendimiento constante. Ajusta según sea necesario para prevenir deformaciones o desalineaciones.     
+        </p>
+        <h1 class="casos-h1" >5. Monitoreo de la Temperatura</h1>
+        <p class="parrafo-casos">
+          Controla la temperatura del rodillo durante su funcionamiento. Temperaturas extremas pueden afectar la durabilidad y eficiencia del grafilado
+        </p>
+        <h1 class="casos-h1" >6. Reemplazo de Elementos Desgastados</h1>
+        <p class="parrafo-casos">
+          Cambia cualquier elemento del rodillo, como cojinetes o sellos, que muestre signos de desgaste. Esto ayuda a prevenir fallos mayores y garantiza un funcionamiento suave.
+        </p>
+        <h1 class="casos-h1" >7. Verificación de la Geometría</h1>
+        <p class="parrafo-casos">
+          Comprueba la geometría del rodillo para asegurarte de que se mantiene dentro de las tolerancias especificadas. Ajusta según sea necesario para mantener la precisión del grafilado.
+        </p>
+        <h1 class="casos-h1" >8. Análisis de Vibraciones</h1>
+        <p class="parrafo-casos">
+          Realiza análisis de vibraciones periódicos para identificar posibles problemas mecánicos. Las vibraciones inusuales pueden ser indicativas de desequilibrios o desalineaciones
+        </p>
+        <h1 class="casos-h1" >9. Capacitación del Personal</h1>
+        <p class="parrafo-casos">
+          Asegúrate de que el personal a cargo del mantenimiento esté debidamente capacitado. Esto garantiza procedimientos adecuados y mejora la eficacia del mantenimiento
+        </p> 
+        <h1 class="casos-h1" >10. Registro Documentado</h1>
+        <p class="parrafo-casos">
+          Lleva un registro detallado de todas las actividades de mantenimiento. Un historial documentado facilita el seguimiento del rendimiento y ayuda en la planificación de futuras intervenciones
+        </p>     
+      </div>
+      <div id="imag4">
+        <img id="imgGrafilado1" src="./assets/grafilado.jpg" alt="neuma7">
+        <img id="imgGrafilado2" src="./assets/grafilado2.jpg" alt="neuma8">
+        <img id="imgGrafilado3" src="./assets/grafilado4.jpg" alt="neuma9">
+        <img id="imgGrafilado4" src="./assets/grafilado5.jpg" alt="neuma10">
+      </div>
+    </div>
+    <div id="iconos">     
+      <h1 id="title-interfaz">Interfaz de seguimiento Mantenimiento Autonomo</h1>
+
+      <div id="conte-secundario">
+        <div class="cont-user"  id="icon-carlos">
+          <img id="img1" class="icono-user" onclick="resultadosEmpleado('icon-carlos','updateCarlos','img1')" src="./assets/icono1.jpg" alt="icono">
+          <label for="nombres">Carlos Mario Sanchez</label>  
+        </div>
+        <div class="cont-user" id="icon-andres">
+          <img id="img2" class="icono-user" onclick="resultadosEmpleado('icon-andres','updateAndres','img2')" src="./assets/icono1.jpg" alt="icono">
+          <label for="nombres">Andres Felipe Montoya</labelclass=>
+        </div>
+        <div class="cont-user" id="icon-jorge">
+          <img id="img3" class="icono-user" onclick="resultadosEmpleado('icon-jorge','updateJorge','img3')" src="./assets/icono1.jpg" alt="icono">
+          <label for="nombres">Jorge Alberto Lozada</label>
+        </div>
+        <div class="cont-user" id="icon-jesus">
+          <img id="img4" class="icono-user" onclick="resultadosEmpleado('icon-jesus','updateJesus','img4')" src="./assets/icono1.jpg" alt="icono">
+          <label for="nombres">Jesus Norvey Cordoba</label>
+        </div>
+        <div class="cont-user" id="icon-sandra">
+          <img id="img5" class="icono-user" onclick="resultadosEmpleado('icon-sandra','updateSandra','img5')" src="./assets/icono1.jpg" alt="icono">
+          <label for="nombres">Sandra Milena Alvarez</label>
+        </div>
+        <div class="cont-user" id="icon-mario">
+          <img id="img6" class="icono-user" onclick="resultadosEmpleado('icon-mario','updateMario','img6')" src="./assets/icono1.jpg" alt="icono">
+          <label for="nombres">John Mario Mira Pineda</label>
+        </div>
+        <div class="cont-user" id="icon-ana">
+          <img id="img7" class="icono-user" onclick="resultadosEmpleado('icon-ana','updateAna','img7')" src="./assets/icono1.jpg" alt="icono">
+          <label for="nombres">Ana Maria Duarte Pineda</label>
+        </div>
+      </div>
+
+       <!-- 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
+      <div id="contLineas">
+        <div id="linea-vertical-III"></div>
+        <div id="canvasContainer4">
+          <canvas id="MiGrafica4"></canvas> 
+        </div> 
+        <div id="linea-vertical-IV"></div> 
+        <div id="canvasContainer5">
+          <canvas id="MiGrafica5"></canvas> 
+        </div>  
+        <div id="linea-vertical-V"></div>
+        <div id="canvasContainer6">
+          <canvas id="MiGrafica6"></canvas> 
+        </div>        
+        <div id="linea-vertical-VI"></div> 
+        <div id="canvasContainer7">
+          <canvas id="MiGrafica7"></canvas> 
+        </div>
+        <div id="linea-horizontal-I"></div> 
+        <div id="canvasContainer8">
+          <canvas id="MiGrafica8"></canvas> 
+        </div> 
+        <div id="linea-horizontal-II"></div> 
+
+        <div id="canvasContainer9">
+          <canvas id="MiGrafica9"></canvas>
+        </div>         
+
+        <div id="linea-horizontal-III"></div> 
+      </div>
+      <!-- 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
+      <div id="contLineas-II">
+        <div id="canvasContainer4-II">
+          <canvas id="MiGrafica4-II"></canvas> 
+        </div> 
+        <div id="canvasContainer5-II">
+          <canvas id="MiGrafica5-II"></canvas> 
+        </div>       
+        <div id="linea-vertical-V-II"></div>
+        <div id="canvasContainer6-II">
+          <canvas id="MiGrafica6-II"></canvas> 
+        </div> 
+        <div id="linea-vertical-VI-II"></div> 
+        <div id="canvasContainer7-II">
+          <canvas id="MiGrafica7-II" style="width: 100px;"></canvas> 
+        </div>
+        <div id="canvasContainer8-II">
+          <canvas id="MiGrafica8-II"></canvas> 
+        </div> 
+        <div id="linea-horizontal-II-II"></div> 
+        <div id="canvasContainer9-II">
+          <canvas id="MiGrafica9-II"></canvas>
+        </div>  
+        <div id="linea-horizontal-III-II"></div> 
+        <div id="linea-horizontal-IV-II"></div> 
+        <div id="linea-horizontal-V-II"></div> 
+
+
+
+      </div>
+
+      <!-- 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
+      
+      <div class="contenedor-vertical" id="contenedor-vertical">
+        <div class="cont-userI" id="icon-carlos-I">
+          <img class="icono-user imgEmploye" onclick="resultadosEmpleado('icon-carlos-I','updateCarlos')" src="./assets/icono1.jpg" alt="icono">
+          <label class="lblNombres" for="nombres">Carlos Mario Sanchez</label>  
+        </div><br>
+        <div class="cont-userI" id="icon-andres-I">
+          <img class="icono-user imgEmploye" onclick="resultadosEmpleado('icon-andres-I','updateAndres')" src="./assets/icono1.jpg" alt="icono">
+          <label class="lblNombres" for="nombres">Andres Felipe Montoya</label>
+        </div><br>     
+        <div class="cont-userI" id="icon-jorge-I">
+          <img class="icono-user imgEmploye" onclick="resultadosEmpleado('icon-jorge-I','updateJorge')" src="./assets/icono1.jpg" alt="icono">
+          <label class="lblNombres" for="nombres">Jorge Alberto Lozada</label>
+        </div><br>    
+        <div class="cont-userI" id="icon-jesus-I">
+          <img class="icono-user imgEmploye" onclick="resultadosEmpleado('icon-jesus-I','updateJesus')" src="./assets/icono1.jpg" alt="icono">
+          <label class="lblNombres" for= "nombres">Jesus Norvey Cordoba</label>
+        </div><br>    
+        <div class="cont-userI" id="icon-sandra-I">
+          <img class="icono-user imgEmploye" onclick="resultadosEmpleado('icon-sandra-I','updateSandra')" src="./assets/icono1.jpg" alt="icono">
+          <label class="lblNombres" for="nombres">Sandra Milena Alvarez</label>
+        </div><br>  
+        <div class="cont-userI" id="icon-mario-I">
+          <img class="icono-user imgEmploye" onclick="resultadosEmpleado('icon-mario-I','updateMario')" src="./assets/icono1.jpg" alt="icono">
+          <label class="lblNombres" for="nombres">John Mario Mira Pineda</label>
+        </div><br>  
+        <div class="cont-userI" id="icon-ana-I">
+          <img class="icono-user imgEmploye" onclick="resultadosEmpleado('icon-ana-I','updateAna')" src="./assets/icono1.jpg" alt="icono">
+          <label class="lblNombres" for="nombres">Ana Maria Duarte Pineda</label>
+        </div>
+      </div>
+
+    </div> 
+
+    <div id="padre-interfaz">
+      <div id="hijo-interaz-1" class="columna"></div>
+      <div id="hijo-interaz-2" class="columna"></div>  
+    </div>
+
+    <script src="./Matriz-II.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+  </body>
+</html>
