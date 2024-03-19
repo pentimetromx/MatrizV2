@@ -4544,8 +4544,7 @@ h4{
   }
   #agrupaOblicuos-XXIV,
   #agrupaOblicuos-XIV,
-  #agrupaOblicuos-XVI,
-  #agrupaOblicuos-XII{
+  #agrupaOblicuos-XVI{
     position: absolute;
     flex-direction: column;
     align-items: center;
@@ -4553,6 +4552,20 @@ h4{
     margin-top:47%;
     left: 60%;
   } 
+  #agrupaOblicuos-XII{
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    margin-top:47%;
+    overflow: hidden;
+    gap: 7%;
+    left: 50%;
+    width: 50%;
+    height: 400px;
+    border-radius: 11px;
+    background-color: #000;  
+  }
   #agrupaOblicuos-XII > * {
     margin-bottom: 1px;
  }
