@@ -4531,10 +4531,8 @@ h4{
     transform: translateX(-50%);
     margin-top: 10%;
   }
-  #agrupaOblicuos-XXI,
   #agrupaOblicuos-XIX,
-  #agrupaOblicuos-XX,
-  #agrupaOblicuos-XVIII{
+  #agrupaOblicuos-XX{
     position:absolute;
     flex-direction: column;
     align-items: center;
@@ -4552,13 +4550,25 @@ h4{
     margin-top:47%;
     left: 60%;
   } 
+  #agrupaOblicuos-XVIII{
+    position:absolute;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    margin-top: 116%;
+    left: 2%;
+    overflow: auto;
+    gap: 7%;
+    border-radius: 11px;
+    background-color: #000;  
+  }
   #agrupaOblicuos-XII{
     position: absolute;
     flex-direction: column;
     align-items: center;
     display: flex;
     margin-top:47%;
-    overflow: hidden;
+    overflow: auto;
     gap: 7%;
     left: 50%;
     width: 50%;
