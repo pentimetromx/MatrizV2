@@ -3531,6 +3531,19 @@ h4{
   float: left;
 }
 
+@keyframes giro-vertical {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+#hijo-interaz-2,
+#hijo-interaz-1 {
+  animation: giro-vertical 3s infinite linear;
+}
+
 
 @keyframes aumentarTamano{
   to {

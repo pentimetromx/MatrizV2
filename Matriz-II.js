@@ -9122,7 +9122,7 @@ textToColorI.addEventListener("mouseover", () => {
   clearTimeout(hideTimeout)
   hoverTimeout = setTimeout(() => {
     linkListI.style.display = "block";
-    lineI.style.width = textToColorI.offsetWidth + "px"; // desde aqui se llevan las variables a que se lleven los demas estados de las funciones
+    lineI.style.width = textToColorI.offsetWidth + "px";
   }, 7)
 })
 linkListI.addEventListener("mouseover", () => {
