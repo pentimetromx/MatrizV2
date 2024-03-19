@@ -4557,6 +4557,8 @@ h4{
     display: flex;
     margin-top: 116%;
     left: 2%;
+    width: 50%;
+    height: 400px;
     overflow: auto;
     gap: 7%;
     border-radius: 11px;
