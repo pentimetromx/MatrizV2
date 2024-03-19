@@ -201,9 +201,9 @@ transform: scale(1.1);
   left: 27px;
 }
 #subtitulo-I{
-  position: relative;
-  margin-top: -27%;
-  font-family: 'Candara', sans-serif;
+  position: absolute;
+  margin-top: -38%;
+  font-family: 'Candara', sans-serif; 
   font-size: 51px;
   font-weight: bold; color: white;
   margin-bottom: 10px;
@@ -213,7 +213,17 @@ transform: scale(1.1);
   font-size: 20px; 
   color: white; 
   text-align: center; 
-  margin-top: -1%;
+  margin-top: -26%;
+}
+#butt-Institucional{
+  display: flex;
+  position: relative;
+  left: 300px;
+  margin-top: 1%; 
+  height: 19px;
+  width: 147px;
+  background: linear-gradient(45deg,#ff1837 15%, #333333 85%);
+  opacity: 50%; border-radius: 9px; box-shadow: none;
 }
 #seccion-gris {
   display: flex;
@@ -230,16 +240,6 @@ transform: scale(1.1);
  position: relative;
  left:-318px;
  top: -1px;
-}
-#butt-Institucional{
-  display: flex;
-  position: relative;
-  left: 300px;
-  margin-top: 2%; 
-  height: 19px;
-  width: 147px;
-  background: linear-gradient(45deg,#ff1837 15%, #333333 85%);
-  opacity: 50%; border-radius: 9px; box-shadow: none;
 }
 #container1{
   position: relative;
@@ -4582,35 +4582,6 @@ h4{
     width: 100%;
   }
   /* Apply styles for the fourth container (main content) */
-  #cont-titulo {
-    position: absolute;
-    top: 35%;
-    left: 0;
-    width: 100%;
-    height: 70%;
-  }  
-  #subtitulo-I{
-    position: absolute;
-    font-size: 30px;
-    text-align: center;
-    top: 17%;
-  }
-  #descripcion-I{
-    position: absolute;
-    font-size: 17px;
-    top: 10%;
-  }
-  #butt-Institucional{
-    position: absolute;
-    display: block;
-    top: 73px; 
-    height: 19px;
-    width: 147px;
-    background: linear-gradient(45deg,#ff1837 15%, #333333 85%);
-    opacity: 50%; border-radius: 9px; box-shadow: none;
-    left: 50%;
-    transform: translateX(-50%);
-  }
   #search-form {
     position: absolute;
     display: flex;
@@ -5950,6 +5921,36 @@ h4{
     box-sizing: border-box;
     float: left;
   }
+  #cont-titulo {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    width: 100%;
+    height: 70%;
+  }  
+  #subtitulo-I{
+    position: absolute;
+    font-size: 30px;
+    text-align: center;
+    top: 19%;
+  }
+  #descripcion-I{
+    position: absolute;
+    font-size: 17px;
+    top: 10%;
+  }
+  #butt-Institucional{
+    position: absolute;
+    display: block;
+    top: 73px; 
+    height: 19px;
+    width: 147px;
+    background: linear-gradient(45deg,#ff1837 15%, #333333 85%);
+    opacity: 50%; border-radius: 9px; box-shadow: none;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   
   
 
