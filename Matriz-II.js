@@ -9507,26 +9507,41 @@ function moveScroll(container) {
 function iniciarMovimiento(instrucId) {
   var container = document.getElementById(instrucId);
   container.scrollTop = 500;
-
   var posicionFinal = 0; // Ajusta la posición final según tus necesidades
   var duracion = 600; // Duración del desplazamiento en milisegundos (0.4 segundos)
-
   var inicio = container.scrollTop;
   var tiempoInicio = performance.now();
-
   function animarScroll(timestamp) {
+    var tiempoTranscurrido = timestamp - tiempoInicio;
+    var progreso = tiempoTranscurrido / duracion;
+    if (progreso < 1) {
+        container.scrollTop = inicio + (posicionFinal - inicio) * progreso;
+        requestAnimationFrame(animarScroll);
+    } else {
+        container.scrollTop = posicionFinal;
+    }
+  }
+  requestAnimationFrame(animarScroll);
+
+  if(instrucId === 'agrupaOblicuos-XVIII') {
+    var posicionFinal = 300; // Ajusta la posición final según tus necesidades
+    var duracion = 600; // Duración del desplazamiento en milisegundos (0.4 segundos)
+    var inicio = container.scrollTop;
+    var tiempoInicio = performance.now();
+    function animarScroll(timestamp) {
       var tiempoTranscurrido = timestamp - tiempoInicio;
       var progreso = tiempoTranscurrido / duracion;
-
       if (progreso < 1) {
           container.scrollTop = inicio + (posicionFinal - inicio) * progreso;
           requestAnimationFrame(animarScroll);
       } else {
           container.scrollTop = posicionFinal;
       }
-  }
-
+    }
   requestAnimationFrame(animarScroll);
+
+
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
