@@ -2789,12 +2789,6 @@ document.addEventListener("DOMContentLoaded", function () {                     
   });
 });
 function abrirSeccionOperativa(elementId){
-/*   allContenedores.forEach(elemen => {
-    var element = document.getElementById(elemen)
-    if (element) {
-    element.style.display = 'none'
-    }    
-  });*/
   var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','cont-titulo-operacion']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -2802,14 +2796,13 @@ function abrirSeccionOperativa(elementId){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }  
-  iniciarMovimiento('agrupaOblicuos-XII');
-  iniciarMovimiento('agrupaOblicuos-XVIII');
+
+  setTimeout(function () {
+    iniciarMovimiento('agrupaOblicuos-XII');
+    iniciarMovimiento('agrupaOblicuos-XVIII'); 
+  }, 300);
 
 
-
-
-/*   contOperativa.style.display = 'flex'
-  container1.style.display = 'flex' */
 
   // Retrasar la llamada a cambiarColoresConRetraso después de 100 msg
   setTimeout(function () {
@@ -9275,7 +9268,7 @@ searchForm.addEventListener('submit', function (e) {
       container1.style.display = 'flex'           
     break;
     default:
-      alert("No se encontró ninguna coincidencia para la búsqueda: " + searchTerm)
+      alert("No se encontró ninguna coincidencia para la búsqueda: " + searchTerm)  
     break;
   }
   // Verifica si suggestionsList no es nulo antes de intentar establecer su propiedad innerHTML
@@ -9522,26 +9515,59 @@ function iniciarMovimiento(instrucId) {
     }
   }
   requestAnimationFrame(animarScroll);
-
   if(instrucId === 'agrupaOblicuos-XVIII') {
-    var posicionFinal = 300; // Ajusta la posición final según tus necesidades
-    var duracion = 600; // Duración del desplazamiento en milisegundos (0.4 segundos)
-    var inicio = container.scrollTop;
-    var tiempoInicio = performance.now();
-    function animarScroll(timestamp) {
-      var tiempoTranscurrido = timestamp - tiempoInicio;
-      var progreso = tiempoTranscurrido / duracion;
-      if (progreso < 1) {
-          container.scrollTop = inicio + (posicionFinal - inicio) * progreso;
-          requestAnimationFrame(animarScroll);
-      } else {
-          container.scrollTop = posicionFinal;
-      }
-    }
-  requestAnimationFrame(animarScroll);
-
-
+    const contenedor = document.getElementById('agrupaOblicuos-XVIII');
+    // Función para animar el scroll hacia arriba
+    function scrollToTopSmoothly() {
+      const currentPosition = contenedor.scrollTop;
+      const targetPosition = 0;
+      const duration = 500; // Duración de la animación en     
+      const startTime = performance.now();    
+      function animateScroll(timestamp) {
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeInOutCubic(progress);    
+        contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        }
+      }    
+      requestAnimationFrame(animateScroll);
+    }    
+    // Función para aplicar una función de easing (interpolación suave)
+    function easeInOutCubic(t) {
+      return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+    }    
+    // Llama a la función para animar el scroll hacia arriba
+    scrollToTopSmoothly();
   }
+  if(instrucId === 'agrupaOblicuos-XII') {
+    const contenedor = document.getElementById('agrupaOblicuos-XII');
+    // Función para animar el scroll hacia arriba
+    function scrollToTopSmoothly() {
+      const currentPosition = contenedor.scrollTop;
+      const targetPosition = 0;
+      const duration = 500; // Duración de la animación en     
+      const startTime = performance.now();    
+      function animateScroll(timestamp) {
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeInOutCubic(progress);    
+        contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        }
+      }    
+      requestAnimationFrame(animateScroll);
+    }    
+    // Función para aplicar una función de easing (interpolación suave)
+    function easeInOutCubic(t) {
+      return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+    }    
+    // Llama a la función para animar el scroll hacia arriba
+    scrollToTopSmoothly();
+  }
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
