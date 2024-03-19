@@ -2789,14 +2789,28 @@ document.addEventListener("DOMContentLoaded", function () {                     
   });
 });
 function abrirSeccionOperativa(elementId){
-  allContenedores.forEach(elemen => {
+/*   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen)
     if (element) {
     element.style.display = 'none'
     }    
-  });
-  contOperativa.style.display = 'flex'
-  container1.style.display = 'flex'
+  });*/
+  var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','cont-titulo-operacion']  
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }  
+  iniciarMovimiento('agrupaOblicuos-XII');
+  iniciarMovimiento('agrupaOblicuos-XVIII');
+
+
+
+
+/*   contOperativa.style.display = 'flex'
+  container1.style.display = 'flex' */
+
   // Retrasar la llamada a cambiarColoresConRetraso después de 100 msg
   setTimeout(function () {
     cambiarColoresConRetrasoI();
@@ -6480,10 +6494,6 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
       element.style.display = 'none'
     }
    } 
-
-    /*    if (contUserScroll) {
-        contUserScroll.style.display = 'flex'
-      } */
     contUserArrayI.forEach(element => {
     if (element.id === idEmpleado) {  
       var originalColor = element.style.backgroundColor = '';
@@ -6515,7 +6525,6 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
         element.style.top = '21.5%'
         element.style.left = '5%' 
 
-              // Accede al label dentro del div
       var label = element.querySelector('label')
       if (label) {
         intervaloColor = setInterval(function () {
@@ -9494,17 +9503,6 @@ function moveScroll(container) {
     container.scrollTop = 0;
   }
 }
-
-/* function iniciarMovimiento(instrucId) {
-  // Obtener el elemento con ID "puesta-punto"
-  var container = document.getElementById(instrucId);
-  // Asegurarse de que el scroll esté en la parte superior
-  container.scrollTop = 0;
-  // Restablecer el número de iteraciones
-  iterations = 11;
-  // Iniciar el movimiento del scroll
-  moveScroll(container);
-} */
 
 function iniciarMovimiento(instrucId) {
   var container = document.getElementById(instrucId);
