@@ -10209,10 +10209,17 @@ function transicionElementos() {
   contibotsDistri.classList.add('move-up')
   contVideo.classList.add('move-up-left')
 }
+
+var contOblicuosInicio = document.getElementById('cont-titulo')
+function transitoInicio(){
+  contOblicuosInicio.style.animation = "giro-y 1s linear";
+  contOblicuosInicio.classList.add('move-images-IV');
+}
+
 function transicionElementosII() {
-  contibotsDistriII.classList.add('move-butts') 
-  contImgsDistribuidor.classList.add('move-images') 
-  buttRepuest.classList.add('move-repuest') 
+  contibotsDistriII.classList.add('move-butts')
+  contImgsDistribuidor.classList.add('move-images')
+  buttRepuest.classList.add('move-repuest')
   contiVidDistribuidor.classList.add('move-video')    
 }
 function transicionElementosIII() {
