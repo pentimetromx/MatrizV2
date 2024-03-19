@@ -5901,7 +5901,7 @@ h4{
   }
   #padre-interfaz{
     position: absolute;
-    left: 22%;
+    left: 24%;
     top: 37%;
     display: flex;
     flex-direction: row;
@@ -5932,17 +5932,17 @@ h4{
     position: absolute;
     font-size: 30px;
     text-align: center;
-    top: 19%;
+    top: 28%;
   }
   #descripcion-I{
     position: absolute;
     font-size: 17px;
-    top: 10%;
+    top: 32%;
   }
   #butt-Institucional{
     position: absolute;
     display: block;
-    top: 73px; 
+    margin-top: 6%; 
     height: 19px;
     width: 147px;
     background: linear-gradient(45deg,#ff1837 15%, #333333 85%);
