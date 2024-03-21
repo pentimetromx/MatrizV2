@@ -68,7 +68,7 @@ var currentID = null;
 var butInicio = document.getElementById('bot-inic')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
-var allContenedores = ['padre-interfaz','hijo-interaz-1','hijo-interaz-2','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
+var allContenedores = ['primerCont','vidColor','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
@@ -3278,21 +3278,16 @@ function abrirPilarMA(){
   }    
 }
 function abrirPrepress(elementId) {
-  var elementosExcluidos = ['conte-botDensitoII','imgs-prepress','pre-prensa','container01'];                                /// OCULTA TODO MENOS (2 ELEMENTOS) 
-  document.getElementById('linkList').style.display = 'none'         
-  for (var i = 0; i < allContenedores.length; i++) { 
+  var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','pre-prensa','primerCont','imgs-prepress','conte-botDensitoII'] 
+  for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
       // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
-  for (var i = 0; i < linksIniciales.length; i++) {
-    var elemento = document.getElementById(linksIniciales[i]);
-    elemento.style.display = 'flex'
-  }
+
   document.body.style.zoom = "100%"
-  container1.style.left=''
   // Crear un array con los IDs de los videos
   const videoIds = ["vidCicodelia", "vid01", "vid02", "vid03"]
   // Reproducir los videos simultáneamente
@@ -3364,53 +3359,31 @@ function abrirDensitometria(elementId){
     console.log(idsArray);
   }
 } 
-function muestraVidPrisma(elementId) {
-  if (screenWidth > 900) {
-      allContenedores.forEach(contenedor => {
-    if (contenedor === 'vidColor') {
-      if(contenedor.style.display !== 'none'){
-        contenedor.style.display = 'none'
-      }             
-    }  
-    })  
-    var contImgsTeoria = document.getElementsByClassName('imgTeoria') // Obtén elementos por su 
-    for (var i = 0; i < contImgsTeoria.length; i++) {
-      var teorImage = contImgsTeoria[i] // Accede al elemento actual
-      teorImage.style.display = 'none' // Oculta el elemento  
+function muestraVidPrisma(eltoHtml) {
+  var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','pre-prensa','vidColor']  
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
-    videoElements.forEach(video => {
-    if (video.id === 'prisma-vid') {
+  } 
+  animateVideoWidthII(eltoHtml)
+  videoElements.forEach(video => {
+    if (video.id === eltoHtml) {
+      video.currentTime = 0
       video.style.display = 'block'
       video.play()      
-    } else {
-      video.pause()
-      video.style.display = 'none'
     }
     })
-    const videos = document.querySelectorAll('.vidTeoria')
-    // Detener todos los videos simultáneamente
-    videos.forEach(video => {
-        video.pause()
-        video.style.display='none'
-    })
-    /* // 4. Verificar si el elemento está definido y si ya existe en arrayIds
-    if (typeof elementId !== 'undefined') {
-      const index = idsArray.indexOf(elementId);
-      if (index !== -1) {
-        // 4. Si el elemento ya existe, moverlo a la última posición
-        idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+  if(screenWidth < 500){
+    var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','pre-prensa','vidColor','imgs-prepress','primerCont'] 
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i])  
+      if (elemento) {
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }
-      // 5. Agregar el elemento al final de arrayIds
-      idsArray.push(elementId);
-      console.log(idsArray);
-    } */
-  }else{
-    var contiVidPrisma = document.getElementById('vidColor')
-    var vidPrisma = document.getElementById('prisma-vid')
-    contiVidPrisma.style.display = 'flex'
-    vidPrisma.style.display = 'flex'
-    vidPrisma.currentTime = '0'
-    vidPrisma.play()
+    } 
+    animateVideoWidth(eltoHtml)
   }  
 }
 function muestraVidColor(elementId){
@@ -10289,31 +10262,40 @@ function restablecerEstilos(elemento) {
   // Agregar la clase que define el lugar desde CSS
   elemento.classList.add('clase-contenedor-7');  // Ajusta el nombre de la clase según tu caso
 }
+function volverApre(){
+  var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','pre-prensa','imgs-prepress','primerCont','vidCicodelia']  
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }  
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // COMBINACION TECLAS EJECUTA FUNCION
 document.addEventListener('keydown', function(event) {             
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
       case 'Z':
-        abrirSeccionOperativa('cont-titulo-operacion') 
-
+        abrirSeccionOperativa('cont-titulo-operacion')
         setTimeout(function() {
-        abrirSeccionContinua('pantalla-inicial')        
-        },577) 
-
+          abrirSeccionContinua('pantalla-inicial')        
+        },577)
         setTimeout(function() {
-          cierraContenedores('uTeñido')
+          abrirPrepress('pre-prensa')        
         },977) 
 
+
+
         setTimeout(function() {
-          UnidadTeñido('boton9','boton7')
+
         },1177) 
 
         setTimeout(function() {
-          /* lubricacion('boton3','boton1') */
+
         },1177) 
         setTimeout(function() {
-        /* resultadosEmpleado('icon-jesus','updateJesus') */
+
         },1177) 
       break;
       case 'H':                                
@@ -10325,7 +10307,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('agrupaOblicuos-XII')
+  var contiBoton = document.getElementById('conte-botDensitoII')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
@@ -10342,3 +10324,40 @@ function Geometria() {
   console.log('Display:', displayType);
 }
 let contFriends = []
+
+function animateVideoWidth(eltoHtml) {
+  const videoElement = document.getElementById(eltoHtml); // Obtén el elemento de video
+  const initialWidth = 60; // Ancho inicial en píxeles
+  const targetWidth = 320; // Ancho final en píxeles
+  const duration = 500; // Duración de la animación en milisegundos (0.5 segundos)
+  let startTime;
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1); // Asegúrate de no exceder el 100% de progreso
+    const newWidth = initialWidth + (targetWidth - initialWidth) * progress;
+    videoElement.style.width = `${newWidth}px`; // Aplica el nuevo ancho al elemento de video
+    if (progress < 1) {
+      requestAnimationFrame(step); // Sigue animando hasta que se complete el tiempo
+    }
+  }
+  requestAnimationFrame(step); // Comienza la animación
+}
+function animateVideoWidthII(eltoHtml) {
+  const videoElement = document.getElementById(eltoHtml); // Obtén el elemento de video
+  const initialWidth = 60; // Ancho inicial en píxeles
+  const targetWidth = 800; // Ancho final en píxeles
+  const duration = 500; // Duración de la animación en milisegundos (0.5 segundos)
+  let startTime;
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1); // Asegúrate de no exceder el 100% de progreso
+    const newWidth = initialWidth + (targetWidth - initialWidth) * progress;
+    videoElement.style.width = `${newWidth}px`; // Aplica el nuevo ancho al elemento de video
+    if (progress < 1) {
+      requestAnimationFrame(step); // Sigue animando hasta que se complete el tiempo
+    }
+  }
+  requestAnimationFrame(step); // Comienza la animación
+}

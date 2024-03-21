@@ -762,6 +762,30 @@ width:447px ;
   height:489px;
   border-radius: 17px;
 }
+#conte-botDensitoII{  
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 77%;
+  top: 22%;
+  height: 400px;
+  width: auto;
+}
+.butt-prepre{
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  font-family: "GothamRounded", sans-serif;
+  color: white;
+  height: 27px;
+  width: 177px;
+  border-radius: 9px;
+  background-color: rgba(83, 82, 82, 0.678); 
+  position: relative;
+  margin-bottom: 17px;
+  cursor: pointer;
+  padding-left: 27px;
+}
 .butt-mautonomo{
   display: none;
   flex-direction: column;
@@ -879,7 +903,6 @@ width:447px ;
   height: 27px;
   background-color: rgb(255, 174, 0);
 }
-
 .labl-class{
   font-family: "GothamRounded", sans-serif;
   color: yellow;
@@ -1969,14 +1992,6 @@ header {
   width: 240px;
   height: 180px;
 }
-#imgs-prepress{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  top: 77px;
-  left: -157px;
-  display: none;
-}
 #cuartoContDensito,
 #tercerContDensito,
 #segundoContDensito,
@@ -2019,22 +2034,6 @@ header {
 .vidTeoria{
   height: 120px;
   width: 160px;
-}
-#vidCicodelia{
-  position: fixed;
-  left: 5%;
-  top: 22%;
-  height: 487px; 
-  object-fit: fill; /* Elimina la relación de aspecto original */
-  width: 973px;
-  z-index: -1; 
-}
-.conte-botDensitoII{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  left: 1034px;
-  top: 9px;
 }
 .conte-botDensito{
   display: flex;
@@ -3351,10 +3350,27 @@ h4{
   display: none;
 }
 #pre-prensa{
-  position: absolute;
-  left: 17%;
+  position: relative;  
+  left: 1%;
   top: 10%;
 }
+#vidCicodelia{
+  position: absolute;
+  height: 497px; 
+  object-fit: fill; /* Elimina la relación de aspecto original */
+  width: 975px;
+  z-index: -1; 
+}
+#imgs-prepress{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: -3px;
+  left: -3px;
+  display: none;
+}
+
+
 @keyframes parpadeo {
   from {
     opacity: 1;
@@ -3376,12 +3392,17 @@ h4{
   top: 77px;
   left: -157px;
 }
-#prisma-vid{
+#vidColor{
   position: absolute;
-  left: 137px;
-  top: 80px;
-  width: 638px;
-  height: 480px;
+  left: 17%;
+}
+#prisma-vid{
+  position: relative;
+  width: 100%;
+  height: auto;
+  border: 1px solid gray;
+  border-radius: 17px;
+  cursor: pointer;
 }
 #color-vid{
   position: absolute;
@@ -6005,8 +6026,16 @@ h4{
     left: 50%;
     transform: translateX(-50%);
   }
+  #conte-botDensitoII{  
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  left: -22%;
+  margin-top: 227%;
+  height: 400px;
+  width: auto;
+}
 
-  
   
 
       

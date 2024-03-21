@@ -469,7 +469,7 @@
       <ul class="iridescent-element" id="linkListI">
         <!-- <li><a href="#" onclick="ElementosMa('conteneMantaut')">Pilar de Mantenimiento Autonomo</a></li><br> -->
         <li><a href="#" onclick="ElementosMaII('conteneMantaut')">Pilar de Mantenimiento Autonomo</a></li><br>        
-        <li><a href="#">Pilar Educación y Entrenamiento</a></li><br>
+        <li><a href="#" onclick="Geometria()">Pilar Educación y Entrenamiento</a></li><br>
         <li><a href="#" onclick="abrirPilarSSA()">Pilar Salud Seguridad y Ambiente</a></li><br>  
         <li><a href="#" onclick="abrirPilarMP()">Pilar Mantenimiento Progresivo</a></li><br>
         <li><a href="#" onclick="abrirPilarME()">Pilar Mejora Enfocada</a></li><br>
@@ -617,8 +617,8 @@
       <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
       <button class="boton-a" id="bot-inicial" style="text-align: center;;position: relative" onclick="VolveraInicio()">PANEL INICIO</button>
       <button class="boton-a" id="iniciar" style="position: relative;" onclick="soloEnsayo()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
-      <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="Geometria()"></button>
-      <!-- <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="soloEnsayo()"></button> -->
+      <!-- <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="Geometria()"></button> -->
+      <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="animateVideoWidth('prisma-vid')"></button>
 
      </div><br>
 
@@ -1503,18 +1503,26 @@
       <video id="vidCicodelia" class="vidTeoria video-training" src="./assets/cicodelia.mp4" autoplay loop></video>      
 
       <div id="vidColor">
-        <video class="video-training" id="prisma-vid" src="./assets/prisma.mp4" autoplay loop></video>
+        <video class="video-training" id="prisma-vid" src="./assets/prisma.mp4" autoplay loop onclick="abrirPrepress('pre-prensa')"></video>
       </div>
+
       <div id="vidColor-II">
         <video class="video-training" id="color-vid" src="./assets/color.mp4"></video>
       </div> 
-      
+      <div id="conte-botDensitoII">
+        <button class="butt-prepre" id="troubleshoot" onclick="mantAutonomo('troubleshooting')">MONTAJES</button>
+        <button class="butt-prepre" id="def1" onclick="mantAutonomo('def-tipo1')">ANGULACION</button>
+        <button class="butt-prepre" id="def2" onclick="mantAutonomo('def-tipo2')">INSOLADOR</button>
+        <button class="butt-prepre" id="adtBut" onclick="mantAutonomo('ayudastrabajo')">AYUDAS</button>
+        <button class="butt-prepre" id="fua2" onclick="mantAutonomo('fua')">DOBLADOR</button>           
+        <button class="butt-prepre" id="lup" onclick="mantAutonomo('lup')">CALIBRES</button>
+      </div>
       <div id="imgs-prepress">
-        <div id="contColor" class="contColor">
+        <div id="primerCont" class="contColor">
           <img class='imgTeoria' src="./assets/preprensa13.png" alt="pre13"> 
           <img class='imgTeoria' src="./assets/preprensa.jpg" alt="pre1">
           <img class='imgTeoria' src="./assets/preprensa2.jpg" alt="pre2">
-          <img class='imgTeoria' onclick="muestraVidPrisma('vidColor')" src="./assets/preprensa17.jpg" alt="pre3">          
+          <img class='imgTeoria' onclick="muestraVidPrisma('prisma-vid')" src="./assets/preprensa17.jpg" alt="pre3">          
           <img class='imgTeoria' src="./assets/preprensa4.jpg" alt="pre4">  
           <img class='imgTeoria' src="./assets/preprensa12.png" alt="pre12">
         </div>
@@ -1542,16 +1550,8 @@
           <img class='imgTeoria' src="./assets/luz5.jfif" alt="pre18">
           <img class='imgTeoria' src="./assets/preprensa5.jpg" alt="pre5">
         </div>
-        <div class="conte-botDensitoII" id="conte-botDensitoII">
-          <button class="butt-mautonomo image-trainings" id="troubleshoot" onclick="mantAutonomo('troubleshooting')">MONTAJES</button>
-          <button class="butt-mautonomo image-trainings" id="def1" onclick="mantAutonomo('def-tipo1')">ANGULACION</button>
-          <button class="butt-mautonomo image-trainings" id="def2" onclick="mantAutonomo('def-tipo2')">INSOLADOR</button>
-          <button class="butt-mautonomo image-trainings" id="adtBut" onclick="mantAutonomo('ayudastrabajo')">AYUDAS</button>
-          <button class="butt-mautonomo image-trainings" id="fua2" onclick="mantAutonomo('fua')">DOBLADOR</button>           
-          <button class="butt-mautonomo image-trainings" id="lup" onclick="mantAutonomo('lup')">CALIBRES</button>
-        </div> 
       </div>
-    </div>  
+    </div> 
     <div id="densitometria">
       <video id="vidCicodeliaII" class="vidTeoria" src="./assets/cicodelia.mp4" loop autoplay ></video>        
 
