@@ -335,10 +335,6 @@ margin-right: 5px;
   flex-direction: row;
   justify-content: space-between;
 }
-.video-training{
-  display: none;
-  border-radius: 11px;
-}
 #videoElement3,
 #videoElement2{
   position: absolute;
@@ -2016,7 +2012,6 @@ header {
   height: 120px;
   width: 160px;
 }
-.vidTeoria,
 .imgDensito,
 .imgTeoria {
   margin-right: 3px;
@@ -2031,9 +2026,43 @@ header {
   display: none;
   z-index: -1; 
 }
+#nicho-videos{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 800px;
+  left: 17%;
+  top: 7%;
+}
+#vid06,
+#vid05,
+#vid04,
+#prisma-vid-II{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  border: 1px solid gray;
+  border-radius: 17px;
+  cursor: pointer;
+}
+#prisma-vid{
+  position: relative;
+  width: 100%;
+  height: auto;
+  border: 1px solid gray;
+  border-radius: 17px;
+  cursor: pointer;
+}
+.video-training{
+  display: none;
+  border-radius: 11px;  
+}
 .vidTeoria{
   height: 120px;
   width: 160px;
+  margin-right: 3px;
+  display: none;
+  border-radius: 11px;
 }
 .conte-botDensito{
   display: flex;
@@ -3396,14 +3425,6 @@ h4{
   position: absolute;
   left: 17%;
 }
-#prisma-vid{
-  position: relative;
-  width: 100%;
-  height: auto;
-  border: 1px solid gray;
-  border-radius: 17px;
-  cursor: pointer;
-}
 #color-vid{
   position: absolute;
   left: 137px;
@@ -3553,18 +3574,6 @@ h4{
   float: left;
 }
 /* 99999999999999999999999999999999999999999999999999999999999999999999 */
-/*@keyframes giro-x {
-   0% {
-    transform: rotateX(0deg);
-  }
-  50% {
-    transform: rotateX(360deg);
-  }
-  100% {
-    transform: rotateX(0deg);
-  }
-} */
-
 @keyframes giro-y {
   0% {
     transform: rotateY(0deg);
@@ -3576,8 +3585,6 @@ h4{
     transform: rotateY(0deg);
   }
 }
-/* #padre-interfaz, */
-/* .oblicuosInicio*/
 #hijo-interaz-2,
 #hijo-interaz-1{
   animation: giro-y 6s infinite linear;
@@ -4752,12 +4759,12 @@ h4{
     display: none;
   }
   #pre-prensa{
-    position: absolute;
-    left: 170px;
-    top: 6px;
+    position: relative;
+    left: 5%;
+    top: 22%;
   }
   #vidCicodeliaII{
-    position: fixed;
+    position: absolute;
     left: 20px;
     top: 27.5%;
     height: 23%;
@@ -4767,9 +4774,8 @@ h4{
     z-index: -1; 
   }
   #imgs-prepress{
-    position: fixed;
-    top: 29%;
-    left: 6%;
+    position: absolute;
+    display: flex;
     display: none;
   }
   .contColor{
@@ -4786,10 +4792,9 @@ h4{
     width: 60px;
   }
   #vidCicodelia{
-    position: fixed;
-    left: 26px;
-    top: 29.5%;
-    height: 23.5%;
+    position: absolute;
+    display: flex;
+    height: 13%;
     width: 88.1%;
     object-fit: fill; /* Elimina la relación de aspecto original */
     display: none;
@@ -6029,14 +6034,33 @@ h4{
   #conte-botDensitoII{  
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   left: -22%;
   margin-top: 227%;
   height: 400px;
   width: auto;
+  display: none;
+}  
+#nicho-videos{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 800px;
+  left: 17%;
+  top: 7%;
+}
+#vid06,
+#vid05,
+#vid04,
+#prisma-vid-II{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  border: 1px solid gray;
+  border-radius: 17px;
+  cursor: pointer;
 }
 
-  
 
       
   
@@ -6110,4 +6134,44 @@ h4{
     transform: translateX(200px);
   }
 
+}
+
+
+/* #line {
+  background-color: white;
+  width: 100%;
+  height: 30px;
+  margin: 5px 0;
+} */
+
+#circle-container {
+  position: relative;
+  top: -2%;
+  left: 22%;
+}
+
+#circle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center; /* Alinea las líneas horizontalmente */
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: darkgray;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+
+.line {
+  width: 15px;
+  height: 2px;
+  background-color: whitesmoke;
+}
+
+#circle .line {
+  margin: 0.1px 0; /* Separación entre líneas */
 }

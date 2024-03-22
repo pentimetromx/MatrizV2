@@ -68,7 +68,7 @@ var currentID = null;
 var butInicio = document.getElementById('bot-inic')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
-var allContenedores = ['primerCont','vidColor','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
+var allContenedores = ['nicho-videos','primerCont','vidColor','vid01','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
@@ -103,7 +103,8 @@ const seccionTintero = document.getElementById('pantalla-tintero')
 const pantallas = ['pantalla-frente', 'pantalla-mandos','pantalla-servicio','pantalla-atras']
 const imgsRepuestos = document.getElementById('imgsRepuestos')
 
-const videoElements = document.querySelectorAll('.video-training')   
+const videoElements = document.querySelectorAll('.video-training') 
+const videosPrepress = document.querySelectorAll('.vid-prepress')  
 const video = document.getElementById("videoBackground")
 const imgsDistribuidor = document.getElementById('contImgDistribuidor')
 const imgsForma = document.getElementById('contImgEntintador')
@@ -3286,15 +3287,30 @@ function abrirPrepress(elementId) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
+  videosPrepress.forEach(video => {
+    if (video) {
+      video.pause()
+      video.style.display = 'none'
 
+    }})
+  // Obtener el elemento padre
+  var padreVidPress = document.getElementById('imgs-prepress');
+  var imagenes = padreVidPress.getElementsByTagName('img');
+  for (var i = 0; i < imagenes.length; i++) {
+    imagenes[i].style.display = 'flex';
+  }
+  // Obtener todas las etiquetas de video dentro del elemento padre
+  var videos = padreVidPress.getElementsByTagName('video');
+  for (var i = 0; i < videos.length; i++) {
+    videos[i].style.display = 'flex';
+  }
   document.body.style.zoom = "100%"
   // Crear un array con los IDs de los videos
   const videoIds = ["vidCicodelia", "vid01", "vid02", "vid03"]
-  // Reproducir los videos simultáneamente
   videoIds.forEach(function (videoId) {
     const video = document.getElementById(videoId);
-    // Asegurarse de que el elemento de video existe antes de intentar reproducirlo
     if (video) {
+      video.removeAttribute('style')
       video.style.display = 'block'
       video.currentTime = 0
       video.play();
@@ -3360,31 +3376,54 @@ function abrirDensitometria(elementId){
   }
 } 
 function muestraVidPrisma(eltoHtml) {
-  var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','pre-prensa','vidColor']  
+  var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','nicho-videos']
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'                 
     }
   } 
-  animateVideoWidthII(eltoHtml)
-  videoElements.forEach(video => {
-    if (video.id === eltoHtml) {
-      video.currentTime = 0
-      video.style.display = 'block'
-      video.play()      
+  switch(eltoHtml){
+    case 'prisma-vid-II' :
+      formateaPrepress('prisma-vid-II')      
+    break;
+    case 'vid04' :
+      formateaPrepress('vid04')      
+    break; 
+    case 'vid05' :
+      formateaPrepress('vid05')      
+    break; 
+    case 'vid06' :
+      formateaPrepress('vid06')      
+    break;    
+    default:
+  } 
+
+    if(screenWidth < 500){
+      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','pre-prensa','vidColor','imgs-prepress','primerCont'] 
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      } 
+    }  
+}
+function formateaPrepress(eltoHtml){
+  videosPrepress.forEach(video => {
+    if (video) {
+      video.pause() 
+      video.style.display = 'none'
     }
     })
-  if(screenWidth < 500){
-    var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','pre-prensa','vidColor','imgs-prepress','primerCont'] 
-    for (var i = 0; i < allContenedores.length; i++) { 
-      var elemento = document.getElementById(allContenedores[i])  
-      if (elemento) {
-        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    videosPrepress.forEach(video => {
+      if (video.id === eltoHtml) {
+        video.style.display = 'flex'
+        video.currentTime = 0
+        video.play()      
       }
-    } 
-    animateVideoWidth(eltoHtml)
-  }  
+      })   
+    animateVideoWidthII(eltoHtml) 
 }
 function muestraVidColor(elementId){
   if (screenWidth > 900) {
@@ -10307,13 +10346,13 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('conte-botDensitoII')
+  var contiBoton = document.getElementById('vid05')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
   var widthValue = rect.width
   var heightValue = rect.height
-  var positionType = window.getComputedStyle(buttRepuest).position 
+  var positionType = window.getComputedStyle(buttRepuest).position
   var displayType = window.getComputedStyle(buttRepuest).display
   console.log(contiBoton.id);
   console.log('Top:', topPosition);

@@ -1500,10 +1500,11 @@
 
     </div>
     <div id="pre-prensa">
-      <video id="vidCicodelia" class="vidTeoria video-training" src="./assets/cicodelia.mp4" autoplay loop></video>      
+
+      <video id="vidCicodelia" class="vidTeoria video-training" src="./assets/cicodelia.mp4" autoplay loop></video>     
 
       <div id="vidColor">
-        <video class="video-training" id="prisma-vid" src="./assets/prisma.mp4" autoplay loop onclick="abrirPrepress('pre-prensa')"></video>
+        <video class="video-training vid-prepress" id="prisma-vid" src="./assets/prisma.mp4" autoplay loop onclick="abrirPrepress('pre-prensa')"></video>
       </div>
 
       <div id="vidColor-II">
@@ -1522,17 +1523,19 @@
           <img class='imgTeoria' src="./assets/preprensa13.png" alt="pre13"> 
           <img class='imgTeoria' src="./assets/preprensa.jpg" alt="pre1">
           <img class='imgTeoria' src="./assets/preprensa2.jpg" alt="pre2">
-          <img class='imgTeoria' onclick="muestraVidPrisma('prisma-vid')" src="./assets/preprensa17.jpg" alt="pre3">          
+          <img class='imgTeoria' onclick="muestraVidPrisma('prisma-vid-II')" src="./assets/preprensa17.jpg" alt="pre3">          
           <img class='imgTeoria' src="./assets/preprensa4.jpg" alt="pre4">  
           <img class='imgTeoria' src="./assets/preprensa12.png" alt="pre12">
         </div>
         <div id="segundoCont" class="contColor">
           <img class='imgTeoria' src="./assets/luz6.jfif" alt="pre18">
           <img class='imgTeoria' src="./assets/preprensa7.jpg" alt="pre7">
-          <video class='vidTeoria' id="vid01" src="./assets/luz.mp4" autoplay loop></video>
+
+          <video class='vidTeoria' id="vid01" onclick="muestraVidPrisma('vid04')" src="./assets/luz.mp4" autoplay loop></video>
+
           <img class='imgTeoria' src="./assets/preprensa8.jpg" alt="pre8">
           <img class='imgTeoria' onclick="muestraVidColor('vidColor-II')" src="./assets/preprensa10.jpg" alt="pre10">
-          <video class='vidTeoria' id="vid02" src="./assets/luz2.mp4" autoplay loop></video>
+          <video class='vidTeoria' id="vid02" onclick="muestraVidPrisma('vid05')" src="./assets/luz2.mp4" autoplay loop></video>
         </div>
         <div id="tercerCont" class="contColor">
           <img class='imgTeoria' src="./assets/preprensa6.jpg" alt="pre6">
@@ -1542,21 +1545,29 @@
           <img class='imgTeoria' src="./assets/preprensa16.jpg" alt="pre16">
           <img class='imgTeoria' src="./assets/preprensa10.png" alt="pre18">
         </div>
-        <div id="cuartoCont" class="contColor">
+        <div id="cuartoCont" class="contColor"> 
           <img class='imgTeoria' src="./assets/preprensa11.png" alt="pre17">
           <img class='imgTeoria' src="./assets/preprensa9.jpg" alt="pre9"> 
-          <video class='vidTeoria' id="vid03" src="./assets/luz3.mp4" autoplay loop></video>
+          <video class='vidTeoria' id="vid03" onclick="muestraVidPrisma('vid06')" src="./assets/luz3.mp4" autoplay loop></video>
           <img class='imgTeoria' src="./assets/luz4.jfif" alt="pre18">
           <img class='imgTeoria' src="./assets/luz5.jfif" alt="pre18">
           <img class='imgTeoria' src="./assets/preprensa5.jpg" alt="pre5">
         </div>
       </div>
     </div> 
+
+    <div id="nicho-videos">
+      <video class='video-training vidTeoria vid-prepress' id="vid04" onclick="abrirPrepress('pre-prensa')" src="./assets/luz.mp4" autoplay loop></video>
+      <video class='vidTeoria vid-prepress' id="vid05" onclick="abrirPrepress('pre-prensa')" src="./assets/luz2.mp4" autoplay loop></video>
+      <video class='vidTeoria vid-prepress' id="vid06" onclick="abrirPrepress('pre-prensa')" src="./assets/luz3.mp4" autoplay loop></video>
+      <video class="video-training vid-prepress" id="prisma-vid-II" onclick="abrirPrepress('pre-prensa')" src="./assets/prisma.mp4"></video>
+    </div>
+    
     <div id="densitometria">
       <video id="vidCicodeliaII" class="vidTeoria" src="./assets/cicodelia.mp4" loop autoplay ></video>        
 
       <div id="vidDensito">
-        <video class="video-training" id="prisma-vid" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" src="./assets/prisma.mp4"></video>
+        <video class="video-training" id="prisma-vid" src="./assets/prisma.mp4"></video>
       </div>
       <div id="vidDensito-II">
         <video class="video-training" id="color-vid" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" src="./assets/color.mp4"></video><br><br><br>
@@ -1916,6 +1927,14 @@
       </div>
 
     </div> 
+
+    <div id="circle-container">
+      <div id="circle">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
 
     <script src="./Matriz-II.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
