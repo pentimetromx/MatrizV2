@@ -3586,6 +3586,8 @@ h4{
   border-radius: 50%;
   cursor: pointer;
   overflow: hidden;
+  /* display: none; */
+
 }
 .line {
   width: 15px;
@@ -3596,8 +3598,6 @@ h4{
 #circle .line {
   margin: 0.1px 0; /* Separación entre líneas */
 }
-
-
 
 /* 99999999999999999999999999999999999999999999999999999999999999999999 */
 @keyframes giro-y {
@@ -6045,7 +6045,7 @@ h4{
     position: absolute;
     font-size: 17px;
     top: 32%;
-  }
+  } 
   #butt-Institucional{
     position: absolute;
     display: block;
@@ -6085,11 +6085,36 @@ h4{
   border: 1px solid gray;
   border-radius: 17px;
   cursor: pointer;
+} 
+#circle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: -93%;
+  left: 4%;
+  align-items: center; /* Alinea las líneas horizontalmente */ 
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(100,100,125);
+  border-radius: 50%;
+  cursor: pointer;
+  /* display: none; */
+}
+#ventana-lateral{
+  position: absolute;
+  display: flex;
+  background-color: #000;
+  margin-left: -94%;
+  margin-top: -23.4%;
+  width: 377px;
+  height: 677px;
+  z-index: 100;
+  transition: transform 0.3s;
+  display: none;
 }
 
 
-      
-  
 
 
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
@@ -6159,20 +6184,8 @@ h4{
   .mover-up{
     transform: translateX(200px);
   }
-
-  #circle {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-top: -297%;
-    left: 22%;
-    align-items: center; /* Alinea las líneas horizontalmente */
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    background-color: rgb(100,100,125);
-    border-radius: 50%;
-    cursor: pointer;
+  .move-window{
+    transform: translateX(377px);
   }
 
 }

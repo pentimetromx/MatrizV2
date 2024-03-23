@@ -3376,6 +3376,8 @@ function abrirDensitometria(elementId){
   }
 } 
 function muestraVidPrisma(eltoHtml) {
+  var circulo = document.getElementById('circle')
+  circulo.style.display = 'flex'
   var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','nicho-videos']
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -10251,6 +10253,24 @@ function abrirInterfaz(){
   }  
 
 }
+function ventanaLateral(){
+  var ventaFlotante = document.getElementById('ventana-lateral')
+  document.getElementById('ventana-lateral').classList.remove('move-window');
+  setTimeout(function() {
+    ventaFlotante.style.display = 'flex'
+  }, 7)
+  setTimeout(function() {
+    document.getElementById('ventana-lateral').classList.add('move-window');
+  }, 77)
+}
+
+function cerrarVentana(){
+  var ventaFlotante = document.getElementById('ventana-lateral')
+  document.getElementById('ventana-lateral').classList.remove('move-window');
+  ventaFlotante.style.display = 'none'
+
+
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // EVENTOS DINAMICOS MOVER CONTENEDORES
 document.getElementById('iniciar').addEventListener('click', function() {
@@ -10324,11 +10344,8 @@ document.addEventListener('keydown', function(event) {
         setTimeout(function() {
           abrirPrepress('pre-prensa')        
         },977) 
-
-
-
         setTimeout(function() {
-
+          muestraVidPrisma('prisma-vid-II')
         },1177) 
 
         setTimeout(function() {
@@ -10347,7 +10364,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('vid01')
+  var contiBoton = document.getElementById('ventana-lateral')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
