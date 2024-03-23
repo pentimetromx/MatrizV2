@@ -3573,6 +3573,32 @@ h4{
   box-sizing: border-box;
   float: left;
 }
+#circle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center; /* Alinea las líneas horizontalmente */
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(100,100,125);
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+}
+.line {
+  width: 15px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: whitesmoke;
+}
+#circle .line {
+  margin: 0.1px 0; /* Separación entre líneas */
+}
+
+
+
 /* 99999999999999999999999999999999999999999999999999999999999999999999 */
 @keyframes giro-y {
   0% {
@@ -6044,10 +6070,10 @@ h4{
 #nicho-videos{
   position: relative;
   display: flex;
-  width: 100%;
-  height: 800px;
-  left: 17%;
-  top: 7%;
+  width: auto;
+  height: 500px;
+  left: 2.7%;
+  top: 49%;
 }
 #vid06,
 #vid05,
@@ -6134,6 +6160,21 @@ h4{
     transform: translateX(200px);
   }
 
+  #circle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: -297%;
+    left: 22%;
+    align-items: center; /* Alinea las líneas horizontalmente */
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(100,100,125);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
 }
 
 
@@ -6144,34 +6185,3 @@ h4{
   margin: 5px 0;
 } */
 
-#circle-container {
-  position: relative;
-  top: -2%;
-  left: 22%;
-}
-
-#circle {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  align-items: center; /* Alinea las líneas horizontalmente */
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  background-color: darkgray;
-  border-radius: 50%;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-
-.line {
-  width: 15px;
-  height: 2px;
-  background-color: whitesmoke;
-}
-
-#circle .line {
-  margin: 0.1px 0; /* Separación entre líneas */
-}

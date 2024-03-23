@@ -3289,7 +3289,7 @@ function abrirPrepress(elementId) {
   }
   videosPrepress.forEach(video => {
     if (video) {
-      video.pause()
+      /* video.pause() */
       video.style.display = 'none'
 
     }})
@@ -3385,7 +3385,7 @@ function muestraVidPrisma(eltoHtml) {
   } 
   switch(eltoHtml){
     case 'prisma-vid-II' :
-      formateaPrepress('prisma-vid-II')      
+      formateaPrepress('prisma-vid-II')    
     break;
     case 'vid04' :
       formateaPrepress('vid04')      
@@ -3398,21 +3398,10 @@ function muestraVidPrisma(eltoHtml) {
     break;    
     default:
   } 
-
-    if(screenWidth < 500){
-      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','pre-prensa','vidColor','imgs-prepress','primerCont'] 
-      for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i])  
-        if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-        }
-      } 
-    }  
 }
 function formateaPrepress(eltoHtml){
   videosPrepress.forEach(video => {
     if (video) {
-      video.pause() 
       video.style.display = 'none'
     }
     })
@@ -3422,8 +3411,20 @@ function formateaPrepress(eltoHtml){
         video.currentTime = 0
         video.play()      
       }
-      })   
-    animateVideoWidthII(eltoHtml) 
+    })  
+    if(screenWidth < 500){
+      var padreImagenesPres = document.getElementById('pre-prensa')
+      var hijoPadrePres = document.getElementById('imgs-prepress')
+      var primerCont = document.getElementById('primerCont')
+      var video1 = document.getElementById('vid01')
+      padreImagenesPres.style.display = 'flex'
+      hijoPadrePres.style.display = 'flex'
+      primerCont.style.display = 'flex'
+      video1.style.display = 'flex'
+      animateVideoWidth(eltoHtml)
+    }else{
+      animateVideoWidthII(eltoHtml) 
+    }
 }
 function muestraVidColor(elementId){
   if (screenWidth > 900) {
@@ -10346,7 +10347,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('vid05')
+  var contiBoton = document.getElementById('vid01')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
@@ -10367,7 +10368,7 @@ let contFriends = []
 function animateVideoWidth(eltoHtml) {
   const videoElement = document.getElementById(eltoHtml); // Obtén el elemento de video
   const initialWidth = 60; // Ancho inicial en píxeles
-  const targetWidth = 320; // Ancho final en píxeles
+  const targetWidth = 400; // Ancho final en píxeles
   const duration = 500; // Duración de la animación en milisegundos (0.5 segundos)
   let startTime;
   function step(timestamp) {
