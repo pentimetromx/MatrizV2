@@ -10420,7 +10420,7 @@ function SOLOENSAYO(){
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
-  }  
+  } 
 }
 
 
@@ -10441,4 +10441,10 @@ function mostrarLinea(elemento) {
       numeroDiv.textContent = numero;
     }
   });
+
+  // Enfocar el campo de entrada oculto
+  var input = elemento.querySelector('.hidden-input');
+  if (input) {
+    input.focus();
+  }  
 }
