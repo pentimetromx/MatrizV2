@@ -6118,21 +6118,22 @@ h4{
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
+  gap: 7px;
   top: 27%;
   left: 2%;
-  width: 360px;
-  height: 117px;
+  width: 287px;
+  height: 87px;
   border: 1px solid black;
-  border-radius: 22px;
+  border-radius: 10px;
   background-color: rgb(77,77,77);
 }
 .numero {
   position: relative;
   display: flex;
   bottom: 5px;
-  width: 77px;
-  height: 97px;
-  color: blue;
+  width: 55px;
+  height: 70px;
+  color: rgb(0,0,255);
   background-color: rgb(27,27,27);
   border-radius: 11px;
   font-size: 40px;
