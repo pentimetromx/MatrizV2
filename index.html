@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">        
     <title>Interfaz de entrenamiento</title>
-    <link rel="stylesheet" href="./Matriz-II.css"> 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>   <!-- LIBRERIA DE GRAFICOS -->
+    <link rel="stylesheet" href="./Matriz-II.css">
   </head>
   <body  onload="aumentoBotonesBody()">
 
@@ -470,7 +469,8 @@
         <!-- <li><a href="#" onclick="ElementosMa('conteneMantaut')">Pilar de Mantenimiento Autonomo</a></li><br> -->
         <li><a href="#" onclick="ElementosMaII('conteneMantaut')">Pilar de Mantenimiento Autonomo</a></li><br>        
         <li><a href="#" onclick="Geometria()">Pilar Educación y Entrenamiento</a></li><br>
-        <li><a href="#" onclick="abrirPilarSSA()">Pilar Salud Seguridad y Ambiente</a></li><br>  
+        <!-- <li><a href="#" onclick="abrirPilarSSA()">Pilar Salud Seguridad y Ambiente</a></li><br> -->  
+        <li><a href="#" onclick="SOLOENSAYO()">Pilar Salud Seguridad y Ambiente</a></li><br>        
         <li><a href="#" onclick="abrirPilarMP()">Pilar Mantenimiento Progresivo</a></li><br>
         <li><a href="#" onclick="abrirPilarME()">Pilar Mejora Enfocada</a></li><br>
         <li><a href="#" onclick="abrirPilarME()">Pilar Administrativo y soporte</a></li><br>
@@ -1930,14 +1930,39 @@
         </div>
       </div>
 
-    </div> 
-
-    <div id="circle" onclick="ventanaLateral()">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
+    </div>
+    
+    <div id="padre-circle">  
+      <div id="circle" onclick="ventanaLateral()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>    
+      <div id="options">
+        <h6>Opciones</h6>
+      </div>    
     </div>
 
+    <div id="contenedor-principal">
+      <div class="contenedor" tabindex="1" onfocus="mostrarLinea(this)" onclick="mostrarLinea(this)">
+        <div class="linea-azul"></div>
+        <p class="numero"></p>        
+      </div>
+      <div class="contenedor" tabindex="2" onfocus="mostrarLinea(this)" onclick="mostrarLinea(this)">
+        <div class="linea-azul"></div>
+        <p class="numero"></p>        
+      </div>
+      <div class="contenedor" tabindex="3" onfocus="mostrarLinea(this)" onclick="mostrarLinea(this)">
+        <div class="linea-azul"></div>
+        <p class="numero"></p>
+      </div>
+      <div class="contenedor" tabindex="4" onfocus="mostrarLinea(this)" onclick="mostrarLinea(this)">
+        <div class="linea-azul"></div>
+        <p class="numero"></p>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>   <!-- LIBRERIA DE GRAFICOS -->
     <script src="./Matriz-II.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
   </body>
