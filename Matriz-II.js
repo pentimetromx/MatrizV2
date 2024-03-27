@@ -10425,26 +10425,6 @@ function SOLOENSAYO(){
 
 
 
-function mostrarLinea(elemento) {
-  var lineas = document.querySelectorAll('.linea-azul');
-  lineas.forEach(function(linea) {
-    linea.style.display = 'none';
-  });
-
-  var linea = elemento.querySelector('.linea-azul');
-  linea.style.display = 'block';
-
-  elemento.addEventListener('keydown', function(event) {
-    if (event.key.match(/[0-9]/)) {
-      var numero = event.key;
-      var numeroDiv = elemento.querySelector('.numero');
-      numeroDiv.textContent = numero;
-    }
-  });
-
-  // Enfocar el campo de entrada oculto
-  var input = elemento.querySelector('.hidden-input');
-  if (input) {
-    input.focus();
-  }  
+function handleInputClick(input) {
+  input.setSelectionRange(0, 0); // Establecer el cursor al principio del input
 }

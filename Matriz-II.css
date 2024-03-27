@@ -6114,6 +6114,10 @@ h4{
 
 #contenedor-principal{
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
   top: 27%;
   left: 2%;
   width: 360px;
@@ -6121,42 +6125,22 @@ h4{
   border: 1px solid black;
   border-radius: 22px;
   background-color: rgb(77,77,77);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
-
-.contenedor{
-  width: 80px;
-  height: 100px;
-  border-radius: 22%;
-  background-color: rgb(27,27,27);
-  position: relative;
-}
-
-.linea-azul{
-  position: relative;
-  left: 44%;
-  top: 9%;
-  width: 3px;
-  height: 80px;
-  background-color: blue;
-  border-radius: 2px;
-  display: none;
-  transform: translateX(50%);  
-  animation: parpadeo 0.3s infinite alternate;
-}
-
 .numero {
-  position: absolute;
+  position: relative;
+  display: flex;
   bottom: 5px;
-  left: 36%;
-  top: -7%;
-  /* transform: translateX(-50%); */
-  color: white;
+  width: 77px;
+  height: 97px;
+  color: blue;
+  background-color: rgb(27,27,27);
+  border-radius: 11px;
   font-size: 40px;
-  font-family: Arial, sans-serif; 
+  text-align: center;
+  font-family: Arial, sans-serif;   
 }
+
+
 
 @keyframes parpadeo {
   0% {
