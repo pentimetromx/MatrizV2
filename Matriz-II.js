@@ -10413,18 +10413,97 @@ function animateVideoWidthII(eltoHtml) {
   requestAnimationFrame(step); // Comienza la animación
 }
 
-function SOLOENSAYO(){
-  var elementosExcluidos = ['contenedor-principal','contenedor']  
+/*function SOLOENSAYO(){
+  const masterKey = [1,2,3,6]
+  var elementosExcluidos = ['contenedor-principal','contenedor'];
   for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i])  
+    var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
-  } 
+  }  
+  // Obtener todos los inputs con la clase "numero"
+  var inputs = document.querySelectorAll('.numero');
+  // Array para almacenar los números ingresados
+  var numerosIngresados = [];
+  // Iterar sobre cada input
+  inputs.forEach(function(input) {
+    // Agregar event listener para el evento de enfoque (focus)
+    input.addEventListener('focus', function() {
+      // Variable para almacenar el valor original
+      var valorOriginal = this.value;
+      // Agregar event listener para cambiar el valor por asterisco y almacenar el número ingresado
+      input.addEventListener('input', function() {
+        var numero = parseInt(this.value);
+        if (!isNaN(numero)) { // Verificar si es un número válido
+          numerosIngresados.push(numero); // Agregar el número al array
+          console.log("Números ingresados:", numerosIngresados); // Mostrar el array en la consola
+        }
+        valorOriginal = this.value; // Almacenar el valor original
+        setTimeout(function() {
+          input.value = '*'.repeat(valorOriginal.length); // Cambiar el valor por asteriscos después de 0.77 segundos
+        }, 177);
+      });
+    });
+  });
+  // Establecer el foco en el primer input
+  var primerInput = document.querySelector('.numero');
+  if (primerInput) {
+    primerInput.focus();
+  }
+}*/
+
+function SOLOENSAYO(){
+  const masterKey = [1, 2, 3, 6];
+  var elementosExcluidos = ['contenedor-principal', 'contenedor'];
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+    }
+  }  
+  // Obtener todos los inputs con la clase "numero"
+  var inputs = document.querySelectorAll('.numero');
+  // Array para almacenar los números ingresados
+  var numerosIngresados = [];
+  // Iterar sobre cada input
+  inputs.forEach(function(input) {
+    // Agregar event listener para el evento de enfoque (focus)
+    input.addEventListener('focus', function() {
+      // Variable para almacenar el valor original
+      var valorOriginal = this.value;
+      // Agregar event listener para cambiar el valor por asterisco y almacenar el número ingresado
+      input.addEventListener('input', function() {
+        var numero = parseInt(this.value);
+        if (!isNaN(numero)) { // Verificar si es un número válido
+          numerosIngresados.push(numero); // Agregar el número al array
+          console.log("Números ingresados:", numerosIngresados); // Mostrar el array en la consola
+
+          // Verificar si el contenido del array 'numerosIngresados' es igual al de 'masterKey'
+          if (JSON.stringify(numerosIngresados) === JSON.stringify(masterKey)) {
+            console.log("El contenido del array 'numerosIngresados' es igual a 'masterKey'");
+            console.log("Contenido del array 'numerosIngresados':", numerosIngresados);
+          }
+        }
+        valorOriginal = this.value; // Almacenar el valor original
+        setTimeout(function() {
+          input.value = '*'.repeat(valorOriginal.length); // Cambiar el valor por asteriscos después de 0.77 segundos
+        }, 177);
+      });
+    });
+  });
+  // Establecer el foco en el primer input
+  var primerInput = document.querySelector('.numero');
+  if (primerInput) {
+    primerInput.focus();
+  }
 }
 
+function moveCursorToEnd(input) {
+  // Obtener la longitud del texto en el input
+  var textLength = input.value.length;
+  // Mover el cursor al final del input
+  input.setSelectionRange(textLength, textLength); 
+} 
 
 
-function handleInputClick(input) {
-  input.setSelectionRange(0, 0); // Establecer el cursor al principio del input
-}

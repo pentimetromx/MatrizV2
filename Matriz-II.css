@@ -6084,10 +6084,12 @@ h4{
   border-radius: 50%;
   cursor: pointer;
   overflow: hidden;
+  display: none;
 }
 #padre-circle h6{
   margin-left: 40px;
   font-size: 17px; 
+  display: none;
 }
 #circle .line{
   position: relative;  
@@ -6127,7 +6129,7 @@ h4{
   border-radius: 10px;
   background-color: rgb(77,77,77);
 }
-.numero {
+/* .numero {
   position: relative;
   display: flex;
   bottom: 5px;
@@ -6140,7 +6142,28 @@ h4{
   text-align: center;
   font-family: Arial, sans-serif;   
 }
+.numero:focus {
+  border-color: blue;
+}
+ */
+ input.numero {
+  position: relative;
+  display: flex;
+  bottom: 5px;
+  width: 55px;
+  height: 70px;
+  color: rgb(0, 0, 255);
+  background-color: rgb(27, 27, 27);
+  border-radius: 11px;
+  font-size: 40px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  border: 2px solid transparent; /* Establece un borde transparente por defecto */
+}
 
+input.numero:focus {
+  border-color: blue; /* Cambia el color del borde al azul cuando el input está enfocado */
+}
 
 
 @keyframes parpadeo {
