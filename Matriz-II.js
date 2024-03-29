@@ -68,7 +68,7 @@ var currentID = null;
 var butInicio = document.getElementById('bot-inic')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
-var allContenedores = ['contenedor-principal','contenedor','padre-circle','circle','options','nicho-videos','primerCont','vidColor','vid01','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
+var allContenedores = ['linkList','contenedor-principal','contenedor','padre-circle','circle','options','nicho-videos','primerCont','vidColor','vid01','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
@@ -3287,6 +3287,7 @@ function abrirPrepress(elementId) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
+  /* document.getElementById('linkList').style.display = 'none' */
   videosPrepress.forEach(video => {
     if (video) {
       /* video.pause() */
@@ -3330,8 +3331,7 @@ function abrirPrepress(elementId) {
   }
 }
 function abrirDensitometria(elementId){
-  var elementosExcluidos = ['densitometria','container01','imgs-densito','contDensito','segundoContDensito','tercerContDensito','cuartoContDensito'] /// OCULTA TODO MENOS (2 ELEMENTOS)          
-  document.getElementById('linkList').style.display = 'none'
+  var elementosExcluidos = ['densitometria','container01','imgs-densito','contDensito','segundoContDensito','tercerContDensito','cuartoContDensito','linkList'] /// OCULTA TODO MENOS (2 ELEMENTOS)          
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -3348,7 +3348,7 @@ function abrirDensitometria(elementId){
   container1.style.left=''
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   var vidDensitometria = document.getElementById('vidCicodeliaII')
-  vidDensitometria.style.display = 'block'
+  vidDensitometria.style.display = 'flex'
   vidDensitometria.pause();
   setTimeout(function() {
     vidDensitometria.currentTime = '0'
@@ -8090,11 +8090,14 @@ function showButtonsPlanosRetraso() {
   mostrarConRetraso(0) // Comienza desde el primer botón
 }
 function aumentoBotonesBody() {
-  var contiRebobinador = document.getElementById('rebobinador')
-  contInicial.style.display = 'none' 
-  contiRebobinador.style.display = 'none'
-  const buttonsIds = ['butt-7', 'butt-5', 'butt-3', 'butt-111'];
-  container1.style.display = 'none'
+  var elementosExcluidos = ['franja-Blanca','cont-titulo','subtitulo-I','descripcion-I','contenedor-principal']
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }  
+
 
   // Función para aumentar el tamaño de un botón y luego restaurarlo
   function aumentarYRestaurar(index) {
@@ -9510,8 +9513,12 @@ function moveScroll(container) {
 }
 
 function iniciarMovimiento(instrucId) {
+
   var container = document.getElementById(instrucId);
-  container.scrollTop = 500;
+  container.scrollTop = container.scrollHeight;
+  
+
+/*   container.scrollTop = 500;
   var posicionFinal = 0; // Ajusta la posición final según tus necesidades
   var duracion = 600; // Duración del desplazamiento en milisegundos (0.4 segundos)
   var inicio = container.scrollTop;
@@ -9526,60 +9533,67 @@ function iniciarMovimiento(instrucId) {
         container.scrollTop = posicionFinal;
     }
   }
-  requestAnimationFrame(animarScroll);
-  if(instrucId === 'agrupaOblicuos-XVIII') {
-    const contenedor = document.getElementById('agrupaOblicuos-XVIII');
-    // Función para animar el scroll hacia arriba
-    function scrollToTopSmoothly() {
-      const currentPosition = contenedor.scrollTop;
-      const targetPosition = 0;
-      const duration = 500; // Duración de la animación en     
-      const startTime = performance.now();    
-      function animateScroll(timestamp) {
-        const elapsed = timestamp - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const easedProgress = easeInOutCubic(progress);    
-        contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
-        if (progress < 1) {
-          requestAnimationFrame(animateScroll);
-        }
+  requestAnimationFrame(animarScroll); */
+  
+  setTimeout(function() {
+    if(instrucId === 'agrupaOblicuos-XII') {
+      const contenedor = document.getElementById('agrupaOblicuos-XII');
+      // Función para animar el scroll hacia arriba
+      function scrollToTopSmoothly() {
+        const currentPosition = contenedor.scrollTop;
+        const targetPosition = 0;
+        const duration = 500; // Duración de la animación en     
+        const startTime = performance.now();    
+        function animateScroll(timestamp) {
+          const elapsed = timestamp - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easedProgress = easeInOutCubic(progress);    
+          contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+          if (progress < 1) {
+            requestAnimationFrame(animateScroll);
+          }
+        }    
+        requestAnimationFrame(animateScroll);
       }    
-      requestAnimationFrame(animateScroll);
-    }    
-    // Función para aplicar una función de easing (interpolación suave)
-    function easeInOutCubic(t) {
-      return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-    }    
-    // Llama a la función para animar el scroll hacia arriba
-    scrollToTopSmoothly();
-  }
-  if(instrucId === 'agrupaOblicuos-XII') {
-    const contenedor = document.getElementById('agrupaOblicuos-XII');
-    // Función para animar el scroll hacia arriba
-    function scrollToTopSmoothly() {
-      const currentPosition = contenedor.scrollTop;
-      const targetPosition = 0;
-      const duration = 500; // Duración de la animación en     
-      const startTime = performance.now();    
-      function animateScroll(timestamp) {
-        const elapsed = timestamp - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const easedProgress = easeInOutCubic(progress);    
-        contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
-        if (progress < 1) {
-          requestAnimationFrame(animateScroll);
-        }
+      // Función para aplicar una función de easing (interpolación suave)
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
       }    
-      requestAnimationFrame(animateScroll);
-    }    
-    // Función para aplicar una función de easing (interpolación suave)
-    function easeInOutCubic(t) {
-      return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-    }    
-    // Llama a la función para animar el scroll hacia arriba
-    scrollToTopSmoothly();
-  }
+      // Llama a la función para animar el scroll hacia arriba
+      scrollToTopSmoothly();
+    }}, 277);
+    
+    setTimeout(function() {
+ 
+      if(instrucId === 'agrupaOblicuos-XVIII') {
+        const contenedor = document.getElementById('agrupaOblicuos-XVIII');
+        // Función para animar el scroll hacia arriba
+        function scrollToTopSmoothly() {
+          const currentPosition = contenedor.scrollTop;
+          const targetPosition = 0; // Desplazar hacia arriba
+          const duration = 500; // Duración de la animación en milisegundos
+          const startTime = performance.now();    
+          function animateScroll(timestamp) {
+            const elapsed = timestamp - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easedProgress = easeInOutCubic(progress);    
+            contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+            if (progress < 1) {
+              requestAnimationFrame(animateScroll);
+            }
+          }    
+          requestAnimationFrame(animateScroll);
+        }    
+        // Función para aplicar una función de easing (interpolación suave)
+        function easeInOutCubic(t) {
+          return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+        }    
+        // Llama a la función para animar el scroll hacia arriba
+        scrollToTopSmoothly();
+      }
+      }, 677);     
 
+    
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -10282,7 +10296,6 @@ function transitoInicio(){
   contOblicuosInicio.style.animation = "giro-y 1s linear";
   contOblicuosInicio.classList.add('move-images-IV');
 }
-
 function transicionElementosII() {
   contibotsDistriII.classList.add('move-butts')
   contImgsDistribuidor.classList.add('move-images')
@@ -10332,19 +10345,16 @@ document.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
       case 'Z':
-        abrirSeccionOperativa('cont-titulo-operacion')
+        abrirSeccionOperativa('cont-titulo-operacion')        
         setTimeout(function() {
           abrirSeccionContinua('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          abrirPrepress('pre-prensa')        
+          abrirDensitometria('densitometria')        
         },977) 
         setTimeout(function() {
-          muestraVidPrisma('prisma-vid-II')
         },1177) 
-
         setTimeout(function() {
-          SOLOENSAYO()        
         },1177) 
         setTimeout(function() {
 
@@ -10412,56 +10422,14 @@ function animateVideoWidthII(eltoHtml) {
   }
   requestAnimationFrame(step); // Comienza la animación
 }
-
-/*function SOLOENSAYO(){
-  const masterKey = [1,2,3,6]
-  var elementosExcluidos = ['contenedor-principal','contenedor'];
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i]);  
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
-    }
-  }  
-  // Obtener todos los inputs con la clase "numero"
-  var inputs = document.querySelectorAll('.numero');
-  // Array para almacenar los números ingresados
-  var numerosIngresados = [];
-  // Iterar sobre cada input
-  inputs.forEach(function(input) {
-    // Agregar event listener para el evento de enfoque (focus)
-    input.addEventListener('focus', function() {
-      // Variable para almacenar el valor original
-      var valorOriginal = this.value;
-      // Agregar event listener para cambiar el valor por asterisco y almacenar el número ingresado
-      input.addEventListener('input', function() {
-        var numero = parseInt(this.value);
-        if (!isNaN(numero)) { // Verificar si es un número válido
-          numerosIngresados.push(numero); // Agregar el número al array
-          console.log("Números ingresados:", numerosIngresados); // Mostrar el array en la consola
-        }
-        valorOriginal = this.value; // Almacenar el valor original
-        setTimeout(function() {
-          input.value = '*'.repeat(valorOriginal.length); // Cambiar el valor por asteriscos después de 0.77 segundos
-        }, 177);
-      });
-    });
-  });
-  // Establecer el foco en el primer input
-  var primerInput = document.querySelector('.numero');
-  if (primerInput) {
-    primerInput.focus();
-  }
-}*/
-
-function SOLOENSAYO(){
-  const masterKey = [1, 2, 3, 6];
-  var elementosExcluidos = ['contenedor-principal', 'contenedor'];
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i]);  
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
-    }
-  }  
+function moveCursorToEnd(input) {
+  // Obtener la longitud del texto en el input
+  var textLength = input.value.length;
+  // Mover el cursor al final del input
+  input.setSelectionRange(textLength, textLength); 
+} 
+function iniciarAplicacion() {
+  const masterKey = [1]; 
   // Obtener todos los inputs con la clase "numero"
   var inputs = document.querySelectorAll('.numero');
   // Array para almacenar los números ingresados
@@ -10483,6 +10451,7 @@ function SOLOENSAYO(){
           if (JSON.stringify(numerosIngresados) === JSON.stringify(masterKey)) {
             console.log("El contenido del array 'numerosIngresados' es igual a 'masterKey'");
             console.log("Contenido del array 'numerosIngresados':", numerosIngresados);
+            abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
           }
         }
         valorOriginal = this.value; // Almacenar el valor original
@@ -10499,11 +10468,34 @@ function SOLOENSAYO(){
   }
 }
 
-function moveCursorToEnd(input) {
-  // Obtener la longitud del texto en el input
-  var textLength = input.value.length;
-  // Mover el cursor al final del input
-  input.setSelectionRange(textLength, textLength); 
-} 
+
+function abrirInterfaz() {
+  var elementosExcluidos = ['videoBackgroundII', 'padre-interfaz', 'cont-titulo', 'franja-Blanca', 'subtitulo-I', 'descripcion-I', 'butt-Institucional', 'padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V'];
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+    }
+  }
+  // Paso 1: Capturar el elemento padre por su ID
+  var elementoPadre = document.getElementById('cont-titulo');
+
+  elementoPadre.classList.remove('move-oblicuos');  console.log('se removio la clase')
 
 
+
+  
+  setTimeout(function () {
+  // Paso 2: Agregar una clase al elemento padre para moverlo hacia abajo
+  elementoPadre.classList.add('move-oblicuos');  console.log('se removio la clase')
+  }, 177);
+}
+
+function trasladarOblicuos(){
+  var contOblicuosXI = document.getElementById('agrupaOblicuos-XI');
+
+  contOblicuosXI.classList.add('move-oblicuos');
+  console.log('se AGREGO la clase')
+
+  /* contOblicuosXI.style.top = '10%' */
+}

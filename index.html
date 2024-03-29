@@ -7,7 +7,8 @@
     <title>Interfaz de entrenamiento</title>
     <link rel="stylesheet" href="./Matriz-II.css">
   </head>
-  <body>
+<!--   <body  onload="aumentoBotonesBody()"> -->
+  <body onload="iniciarAplicacion()">
 
     <header class="buscador" id="buscador" style="position: absolute;left: 3px;top: 2px;">
       <form id="search-form">
@@ -26,13 +27,20 @@
       <section id="seccion-blamca" style="display: flex;width: 100%;height: 79px;background-color: white;"></section>
       <img id="img-logo" src="./assets/cadena logo.png" alt="logo">
     </div>
+
+    <div id="contenedor-principal">
+      <input type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" >    
+      <input type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" >    
+      <input type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" >    
+      <input type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" >    
+    </div>
+
     <div id="cont-titulo">
       <h4 id="subtitulo-I">Aplicamos la transformación tecnológica V2</h4>
       <p id="descripcion-I">
         En cadena experimentamos internamente el crecimiento que ofrecemos a nuestros clientes<br>usando las mismas herramientas
         <button id="butt-Institucional"></button>
       </p>
-
       <div class="oblicuos-XI" id="agrupaOblicuos-XI">   
         <div id="contFrente-V" class="oblicuosInicio">
           <button  class="Bot-inicio3" id="butt-111" onclick="transitoInicio()">Area Calidad</button>
@@ -238,33 +246,33 @@
           <button class="Bot-inicio3" id="butt-700" onclick="iniciaMove('')">Video Juego</button>
           <button class="Bot-inicio3-fondo" id="butt-9000"></button>  
         </div> 
-      </div>  
+      </div> 
+
       <div class="oblicuos-XI" id="agrupaOblicuos-XII">
-        <div id="contFrente-V-operacion" class="contOblicuosTorre elemento-hijo">
-          <button  class="Bot-inicio3" id="butt-113" onclick="abrirSeccionContinua('pantalla-inicial')">Terminacion</button>        
-          <button class="Bot-inicio3333-fondo" id="butt-7112000"></button>  
-        </div>
-        <div id="contLateral-V-operacion" class="contOblicuosTorre elemento-hijo">
-          <button class="Bot-inicio3" id="butt-12">Planas</button> 
-          <button class="Bot-inicio3333-fondo" id="butt-013000"></button>  
+        <div id="contMedio-V-operacion" class="contOblicuosTorre elemento-hijo">
+          <button class="Bot-inicio3" id="butt-22" onclick="abrirSeccionContinua('pantalla-inicial')">Rotativas</button>
+          <button class="Bot-inicio3333-fondo" id="butt-023000"></button>  
+        </div> 
+        <div id="contAtras-V-operacion" class="contOblicuosTorre elemento-hijo">
+          <button class="Bot-inicio3" id="butt-21">Variable</button>
+          <button class="Bot-inicio3333-fondo" id="butt-024000"></button>  
         </div>
         <div id="contArriba-V-operacion" class="contOblicuosTorre elemento-hijo">
           <button class="Bot-inicio3" id="butt-16" onclick="moverArriba()">Colectoras</button>          
           <button class="Bot-inicio3333-fondo" id="butt-015000"></button>  
         </div>
-        <div id="contAtras-V-operacion" class="contOblicuosTorre elemento-hijo">
-          <button class="Bot-inicio3" id="butt-21">Variable</button>
-          <button class="Bot-inicio3333-fondo" id="butt-024000"></button>  
-        </div> 
+        <div id="contLateral-V-operacion" class="contOblicuosTorre elemento-hijo">
+          <button class="Bot-inicio3" id="butt-12">Planas</button> 
+          <button class="Bot-inicio3333-fondo" id="butt-013000"></button>  
+        </div>
         <div id="contAtras-V-armadora" class="contOblicuosTorre elemento-hijo">
           <button class="Bot-inicio3" id="butt-21">Armadora</button>
           <button class="Bot-inicio3333-fondo" id="butt-024000"></button>  
         </div> 
-
-        <div id="contMedio-V-operacion" class="contOblicuosTorre elemento-hijo">
-          <button class="Bot-inicio3" id="butt-22" onclick="abrirSeccionContinua('pantalla-inicial')">Rotativas</button>
-          <button class="Bot-inicio3333-fondo" id="butt-023000"></button>  
-        </div> 
+        <div id="contFrente-V-operacion" class="contOblicuosTorre elemento-hijo">
+          <button  class="Bot-inicio3" id="butt-113" onclick="abrirSeccionContinua('pantalla-inicial')">Terminacion</button>        
+          <button class="Bot-inicio3333-fondo" id="butt-7112000"></button>  
+        </div>
       </div>
       <div class="oblicuos-XI" id="agrupaOblicuos-XIII">
         <div id="contMedio-V-operacion" class="contOblicuosTorre elemento-hijo">
@@ -470,7 +478,7 @@
         <li><a href="#" onclick="ElementosMaII('conteneMantaut')">Pilar de Mantenimiento Autonomo</a></li><br>        
         <li><a href="#" onclick="Geometria()">Pilar Educación y Entrenamiento</a></li><br>
         <!-- <li><a href="#" onclick="abrirPilarSSA()">Pilar Salud Seguridad y Ambiente</a></li><br> -->  
-        <li><a href="#" onclick="SOLOENSAYO()">Pilar Salud Seguridad y Ambiente</a></li><br>        
+        <li><a href="#" onclick="iniciarAplicacion()">Pilar Salud Seguridad y Ambiente</a></li><br>        
         <li><a href="#" onclick="abrirPilarMP()">Pilar Mantenimiento Progresivo</a></li><br>
         <li><a href="#" onclick="abrirPilarME()">Pilar Mejora Enfocada</a></li><br>
         <li><a href="#" onclick="abrirPilarME()">Pilar Administrativo y soporte</a></li><br>
@@ -1483,7 +1491,7 @@
         <button class="butt-partes" id="butt-repuestos-III">PARTES  /  REPUESTOS</button>
       </div>
       <div id="conti-video-bancada">
-        <video class="video-training" id="plate-smed-I" src="./assets/plate smed.mp4" autoplay loop></video>
+        <video class="video-training" id="plate-smed-I" src="./assets/plate smed.mp4" autoplay loop></video> 
       </div>
     </div>
     <div id="sitema-humedad"> 
@@ -1568,7 +1576,7 @@
     </div>
     
     <div id="densitometria">
-      <video id="vidCicodeliaII" class="vidTeoria" src="./assets/cicodelia.mp4" loop autoplay ></video>        
+      <video id="vidCicodeliaII" src="./assets/cicodelia.mp4" loop autoplay ></video>        
 
       <div id="vidDensito">
         <video class="video-training" id="prisma-vid" src="./assets/prisma.mp4"></video>
@@ -1943,13 +1951,6 @@
       </div>    
     </div>
 
-    <div id="contenedor-principal">
-      <input type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" onfocus="mostrarLinea(this)" onclick="handleInputClick(this)">    
-      <input type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" onfocus="mostrarLinea(this)" onclick="handleInputClick(this)">    
-      <input type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" onfocus="mostrarLinea(this)" onclick="handleInputClick(this)">    
-      <input type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" onfocus="mostrarLinea(this)" onclick="handleInputClick(this)">    
-    </div>
- 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>   <!-- LIBRERIA DE GRAFICOS -->
     <script src="./Matriz-II.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
