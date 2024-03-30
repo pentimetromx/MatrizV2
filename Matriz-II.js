@@ -10472,6 +10472,8 @@ function moveCursorToEnd(input) {
  */
 
 function iniciarAplicacion() {
+  var contCtx = document.getElementById('ctx')
+  contCtx.style.display = 'none'
   const masterKey = [1]; 
   // Obtener todos los inputs con la clase "numero"
   var inputs = document.querySelectorAll('.numero');
@@ -10509,11 +10511,11 @@ function iniciarAplicacion() {
       }
     });
   });
-  // Establecer el foco en el primer input
+/*   // Establecer el foco en el primer input
   var primerInput = document.querySelector('.numero');
   if (primerInput) {
     primerInput.focus();
-  }
+  } */
 }
 
 function abrirInterfaz() {
