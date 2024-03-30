@@ -10430,7 +10430,7 @@ function moveCursorToEnd(input) {
   // Mover el cursor al final del input
   input.setSelectionRange(textLength, textLength); 
 } 
-function iniciarAplicacion() {
+/* function iniciarAplicacion() {
   const masterKey = [1]; 
   // Obtener todos los inputs con la clase "numero"
   var inputs = document.querySelectorAll('.numero');
@@ -10469,7 +10469,52 @@ function iniciarAplicacion() {
     primerInput.focus();
   }
 }
+ */
 
+function iniciarAplicacion() {
+  const masterKey = [1]; 
+  // Obtener todos los inputs con la clase "numero"
+  var inputs = document.querySelectorAll('.numero');
+  // Array para almacenar los números ingresados
+  var numerosIngresados = [];
+  // Iterar sobre cada input
+  inputs.forEach(function(input) {
+    // Agregar event listener para el evento de enfoque (focus)
+    input.addEventListener('focus', function() {
+      // Variable para almacenar el valor original
+      var valorOriginal = this.value;
+      // Agregar event listener para cambiar el valor por asterisco y almacenar el número ingresado
+      input.addEventListener('input', function() {
+        var numero = parseInt(this.value);
+        if (!isNaN(numero)) { // Verificar si es un número válido
+          numerosIngresados.push(numero); // Agregar el número al array
+          console.log("Números ingresados:", numerosIngresados); // Mostrar el array en la consola
+
+          // Verificar si el contenido del array 'numerosIngresados' es igual al de 'masterKey'
+          if (JSON.stringify(numerosIngresados) === JSON.stringify(masterKey)) {
+            console.log("El contenido del array 'numerosIngresados' es igual a 'masterKey'");
+            console.log("Contenido del array 'numerosIngresados':", numerosIngresados);
+            abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
+          }
+        }
+        valorOriginal = this.value; // Almacenar el valor original
+        setTimeout(function() {
+          input.value = '*'.repeat(valorOriginal.length); // Cambiar el valor por asteriscos después de 0.77 segundos
+        }, 177);
+      });
+
+      // Agregar enfoque al input para dispositivos móviles
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        input.focus();
+      }
+    });
+  });
+  // Establecer el foco en el primer input
+  var primerInput = document.querySelector('.numero');
+  if (primerInput) {
+    primerInput.focus();
+  }
+}
 
 function abrirInterfaz() {
   var elementosExcluidos = ['videoBackgroundII', 'padre-interfaz', 'cont-titulo', 'franja-Blanca', 'subtitulo-I', 'descripcion-I', 'butt-Institucional', 'padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V'];
