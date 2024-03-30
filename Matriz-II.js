@@ -10511,11 +10511,11 @@ function iniciarAplicacion() {
       }
     });
   });
-/*   // Establecer el foco en el primer input
+  // Establecer el foco en el primer input
   var primerInput = document.querySelector('.numero');
   if (primerInput) {
     primerInput.focus();
-  } */
+  }
 }
 
 function abrirInterfaz() {
