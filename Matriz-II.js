@@ -722,12 +722,10 @@ function muestraRodillo (vidElem, imgCont){
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
-
         contibotsDistriII.classList.remove('move-butts')
         contImgsDistribuidor.classList.remove('move-images')
         buttRepuest.classList.remove('move-repuest')
-        contiVidDistribuidor.classList.remove('move-video')    
-
+        contiVidDistribuidor.classList.remove('move-video')   
         videoElements.forEach(video => {
           if (video.id === 'videoElement2') {
             video.play()      
@@ -10269,19 +10267,51 @@ function ventanaLateral(){
   var conteVentana = document.getElementById('pre-prensa')
   conteVentana.style.display = 'flex'
   ventaFlotante.style.display = 'flex'
-
-document.getElementById('ventana-lateral').classList.remove('move-window');
+  document.getElementById('ventana-lateral').classList.remove('forward-window')
+  document.getElementById('ventana-lateral').classList.remove('move-window');
   setTimeout(function() {
   }, 77)
   setTimeout(function() {
     document.getElementById('ventana-lateral').classList.add('move-window');
   }, 177)
+  setTimeout(function() {
+    aumentarIconos()
+  }, 377)
+
+
+}
+function cerrarVentana(){
+  /* document.getElementById('ventana-lateral').classList.add('forward-window'); */
+  document.getElementById('ventana-lateral').classList.add('forward-window');
+}
+function aumentarIconos() {
+  const iconosLateral = document.getElementsByClassName('iconos-laterales');
+  let currentIndex = 0;
+  function applyEffect() {
+    if (currentIndex < iconosLateral.length) {
+      const currentImage = iconosLateral[currentIndex]
+      currentImage.style.transition = 'transform 0.1s'
+      currentImage.style.transform = 'scale(4.0)'
+      setTimeout(() => {
+        currentImage.style.transition = 'transform 0.7s'
+        currentImage.style.transform = 'scale(1)'
+        currentIndex++;
+        applyEffect()
+      }, 117)
+     }}
+      applyEffect()
+}
+function moverIconos(){ 
+  document.getElementById('icono1').classList.remove('icon1-up');
+  document.getElementById('icono2').classList.remove('icon1-up');
+
+  setTimeout(() => {
+    document.getElementById('icono1').classList.add('icon1-up');
+    document.getElementById('icono2').classList.add('icon1-up');
+
+  }, 117)
 }
 
-function cerrarVentana(){
-  document.getElementById('ventana-lateral').classList.remove('move-window');
-  /* ventaFlotante.style.display = 'none' */
-}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // EVENTOS DINAMICOS MOVER CONTENEDORES
 document.getElementById('iniciar').addEventListener('click', function() {
@@ -10430,46 +10460,6 @@ function moveCursorToEnd(input) {
   // Mover el cursor al final del input
   input.setSelectionRange(textLength, textLength); 
 } 
-/* function iniciarAplicacion() {
-  const masterKey = [1]; 
-  // Obtener todos los inputs con la clase "numero"
-  var inputs = document.querySelectorAll('.numero');
-  // Array para almacenar los números ingresados
-  var numerosIngresados = [];
-  // Iterar sobre cada input
-  inputs.forEach(function(input) {
-    // Agregar event listener para el evento de enfoque (focus)
-    input.addEventListener('focus', function() {
-      // Variable para almacenar el valor original
-      var valorOriginal = this.value;
-      // Agregar event listener para cambiar el valor por asterisco y almacenar el número ingresado
-      input.addEventListener('input', function() {
-        var numero = parseInt(this.value);
-        if (!isNaN(numero)) { // Verificar si es un número válido
-          numerosIngresados.push(numero); // Agregar el número al array
-          console.log("Números ingresados:", numerosIngresados); // Mostrar el array en la consola
-
-          // Verificar si el contenido del array 'numerosIngresados' es igual al de 'masterKey'
-          if (JSON.stringify(numerosIngresados) === JSON.stringify(masterKey)) {
-            console.log("El contenido del array 'numerosIngresados' es igual a 'masterKey'");
-            console.log("Contenido del array 'numerosIngresados':", numerosIngresados);
-            abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
-          }
-        }
-        valorOriginal = this.value; // Almacenar el valor original
-        setTimeout(function() {
-          input.value = '*'.repeat(valorOriginal.length); // Cambiar el valor por asteriscos después de 0.77 segundos
-        }, 177);
-      });
-    });
-  });
-  // Establecer el foco en el primer input
-  var primerInput = document.querySelector('.numero');
-  if (primerInput) {
-    primerInput.focus();
-  }
-}
- */
 
 function iniciarAplicacion() {
   var contCtx = document.getElementById('ctx')
@@ -10505,10 +10495,10 @@ function iniciarAplicacion() {
         }, 177);
       });
 
-      // Agregar enfoque al input para dispositivos móviles
+/*       // Agregar enfoque al input para dispositivos móviles
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         input.focus();
-      }
+      } */
     });
   });
   // Establecer el foco en el primer input
@@ -10528,12 +10518,7 @@ function abrirInterfaz() {
   }
   // Paso 1: Capturar el elemento padre por su ID
   var elementoPadre = document.getElementById('cont-titulo');
-
-  elementoPadre.classList.remove('move-oblicuos');  console.log('se removio la clase')
-
-
-
-  
+  elementoPadre.classList.remove('move-oblicuos');  console.log('se removio la clase')  
   setTimeout(function () {
   // Paso 2: Agregar una clase al elemento padre para moverlo hacia abajo
   elementoPadre.classList.add('move-oblicuos');  console.log('se removio la clase')

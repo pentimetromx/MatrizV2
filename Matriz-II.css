@@ -6172,15 +6172,24 @@ h4{
 #ventana-lateral{
   position: absolute;
   display: flex;
+  flex-direction: column;
+  align-content: space-around;
   background-color: #000;
   margin-left: -94%;
   margin-top: -23.4%;
-  width: 377px;
+  width: 422px;
   height: 677px;
   cursor: pointer;
   z-index: 100;
   transition: transform 0.3s;
   display: none;
+}
+#icono2,
+#icono1{
+  position: absolute;
+  display: flex;
+  transition: transform 1.6s;
+
 }
 #contenedor-principal{
   position: relative;
@@ -6248,10 +6257,6 @@ input.numero:focus {
   margin-top: -7%;
 }
 
-
-
-
-
 @keyframes parpadeo {
   0% {
     opacity: 0;
@@ -6260,9 +6265,6 @@ input.numero:focus {
     opacity: 1;
   }
 }
-
-
-
 
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left{
@@ -6331,10 +6333,80 @@ input.numero:focus {
   .mover-up{
     transform: translateX(200px);
   }
-  .move-window{
-    transform: translateX(377px);
-  }
   .move-oblicuos{
     transform: translateY(143%);
   }
+  .move-window{
+    transform: translateX(377px);
+  }
+  .forward-window{
+    transform: translateX(-400px);
+  }
+  .icon1-up{
+    transform: translateX(377px);
+  }
+
+  /* 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
+
+  .contenedor{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    top: 41%;
+    left: 17%;
+    background-color:transparent;
+    display: none;
+  }
+  .linea{
+    position: fixed;
+    width: 2.2px; 
+    height: 78px;
+    background-color: white;
+    border-radius: 3px;
+    top: 44.5%;
+    left: 81%;
+    transform: rotate(-45deg);
+  }
+  .linea1{
+    position: fixed;
+    width: 2.2px; 
+    height: 65px;
+    background-color: white;
+    border-radius: 3px;
+    top: 44.7%;
+    left: 82.2%;
+    transform: rotate(-45deg);
+  }
+  .linea2{
+    position: fixed;
+    width: 2.2px; 
+    height: 49.8px;
+    background-color: white;
+    border-radius: 3px;
+    top: 44.9%;
+    left: 82.9%;
+    transform: rotate(-45deg);
+  }
+  .linea3{
+    position: absolute;
+    display: flex;
+    width: 54px; 
+    height: 2.2px;
+    background-color: white;
+    border-radius: 3px;
+    top:-0.3%;
+    left: 80.9%;
+  }
+  .linea4{
+    position: absolute;
+    display: flex;
+    width: 2.2px; 
+    height: 56px;
+    background-color: white;
+    border-radius: 3px;
+    top:-0.3%;
+    left: 98.7%;
+  }
+
+
 }
