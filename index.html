@@ -621,11 +621,13 @@
       </div> 
     </div>
     <div class="contene-2" id="container01" style="display: none;">
-      <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
+      <!-- <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button> -->
+      <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="Geometria()"></button>
+      
       <button class="boton-a" id="bot-inicial" style="text-align: center;;position: relative" onclick="VolveraInicio()">PANEL INICIO</button>
       <button class="boton-a" id="iniciar" style="position: relative;" onclick="soloEnsayo()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
       <!-- <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="Geometria()"></button> -->
-      <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="moverIconos()"></button>
+      <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="reducirTamaño()"></button>
 
      </div><br>
     <div id="pantalla-tintero">       
@@ -1500,34 +1502,30 @@
 
     <div id="pre-prensa">
       <div id="ventana-lateral" onclick="cerrarVentana()">  
-        <div>
+        <div id="icono1">
           <img class="iconos-laterales" src="./assets/icono arroba.png">  
         </div>
-        <div>
+        <div id="icono2">
           <img class="iconos-laterales" src="./assets/icono llamada whatsapp.png"> 
         </div>
-        <div>
+        <div id="icono3">
           <img class="iconos-laterales" src="./assets/icono mensaje importante.png">
         </div>
-        <div>
+        <div id="icono4">
           <img class="iconos-laterales" src="./assets/icono home.png">  
         </div>
-        <div>
+        <div id="icono5">
           <img class="iconos-laterales" src="./assets/icono papelera.png"> 
         </div>
-        <div id="icono1">
-          <img id="icono11" class="iconos-laterales" src="./assets/icono herramientas.png">
+        <div id="icono6">
+          <img class="iconos-laterales" src="./assets/icono herramientas.png">
         </div>
-        <div id="icono2">
-          <img id="icono22" class="iconos-laterales" src="./assets/icono configuracion.png">
+        <div id="icono7">
+          <img class="iconos-laterales" src="./assets/icono configuracion.png">
         </div>
-        <div id="icono3">
-          <img id="icono33" class="iconos-laterales" src="./assets/icono ajustes.png">
+        <div id="icono8">
+          <img class="iconos-laterales" src="./assets/icono ajustes.png">
         </div>
-        <div id="icono4">
-          <img id="icono44" class="iconos-laterales" src="./assets/icono recargar.png">
-        </div>
-
       </div>
       <video id="vidCicodelia" class="vidTeoria video-training" src="./assets/cicodelia.mp4" autoplay loop></video>     
 

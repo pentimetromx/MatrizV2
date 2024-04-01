@@ -10273,10 +10273,13 @@ function ventanaLateral(){
   }, 77)
   setTimeout(function() {
     document.getElementById('ventana-lateral').classList.add('move-window');
-  }, 177)
+  }, 377)
   setTimeout(function() {
     aumentarIconos()
-  }, 377)
+  }, 877)
+  setTimeout(function() {
+    moverIconos()
+  }, 1077)
 
 
 }
@@ -10301,16 +10304,31 @@ function aumentarIconos() {
      }}
       applyEffect()
 }
-function moverIconos(){ 
-  document.getElementById('icono1').classList.remove('icon1-up');
-  document.getElementById('icono2').classList.remove('icon1-up');
-
+function moverIconos(){  
+  for (let i = 1; i <= 8; i++) {
+    // Generar el ID del elemento actual
+    const elementoId = 'icono' + i;
+    // Eliminar la clase 'icon1-up' del elemento actual
+    document.getElementById(elementoId).classList.remove('icon1-up');
+  }  
   setTimeout(() => {
-    document.getElementById('icono1').classList.add('icon1-up');
-    document.getElementById('icono2').classList.add('icon1-up');
-
-  }, 117)
+    document.getElementById('icono5').classList.add('icon1-up');
+  }, 77)
+  setTimeout(() => {
+    document.getElementById('icono6').classList.add('icon1-up');
+  }, 157)
+  setTimeout(() => {
+    document.getElementById('icono7').classList.add('icon1-up');
+  }, 237)
+  setTimeout(() => {
+    document.getElementById('icono8').classList.add('icon1-up');
+  }, 317)
 }
+
+document.getElementById('icono1').addEventListener('click', function(event) {
+  event.stopPropagation(); // Detener la propagación del evento
+  moverIconos() // Ejecutar la función asociada al child
+});
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // EVENTOS DINAMICOS MOVER CONTENEDORES
@@ -10322,7 +10340,6 @@ function transicionElementos() {
   contibotsDistri.classList.add('move-up')
   contVideo.classList.add('move-up-left')
 }
-
 var contOblicuosInicio = document.getElementById('cont-titulo')
 function transitoInicio(){
   contOblicuosInicio.style.animation = "giro-y 1s linear";
@@ -10379,17 +10396,18 @@ document.addEventListener('keydown', function(event) {
       case 'Z':
         abrirSeccionOperativa('cont-titulo-operacion')        
         setTimeout(function() {
-          abrirSeccionContinua('pantalla-inicial')        
+        abrirSeccionContinua('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          abrirDensitometria('densitometria')        
+          abrirPrepress('pre-prensa')        
         },977) 
         setTimeout(function() {
+          muestraVidPrisma('vid04')          
         },1177) 
         setTimeout(function() {
+          /* ventanaLateral() */          
         },1177) 
         setTimeout(function() {
-
         },1177) 
       break;
       case 'H':                                
@@ -10401,7 +10419,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('ventana-lateral')
+  var contiBoton = document.getElementById('vid04')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
@@ -10460,7 +10478,6 @@ function moveCursorToEnd(input) {
   // Mover el cursor al final del input
   input.setSelectionRange(textLength, textLength); 
 } 
-
 function iniciarAplicacion() {
   var contCtx = document.getElementById('ctx')
   contCtx.style.display = 'none'
@@ -10507,7 +10524,6 @@ function iniciarAplicacion() {
     primerInput.focus();
   }
 }
-
 function abrirInterfaz() {
   var elementosExcluidos = ['videoBackgroundII', 'padre-interfaz', 'cont-titulo', 'franja-Blanca', 'subtitulo-I', 'descripcion-I', 'butt-Institucional', 'padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V'];
   for (var i = 0; i < allContenedores.length; i++) { 
@@ -10524,7 +10540,6 @@ function abrirInterfaz() {
   elementoPadre.classList.add('move-oblicuos');  console.log('se removio la clase')
   }, 177);
 }
-
 function trasladarOblicuos(){
   var contOblicuosXI = document.getElementById('agrupaOblicuos-XI');
 
@@ -10532,4 +10547,32 @@ function trasladarOblicuos(){
   console.log('se AGREGO la clase')
 
   /* contOblicuosXI.style.top = '10%' */
+}
+
+
+
+function reducirTamaño() {
+  var contVideo = document.getElementById('vid04')
+  contVideo.classList.remove('move-video-up')
+
+  const ventanaLateral = document.getElementById('ventana-lateral');
+  let tamañoActual = 677;
+  // Verificar si el tamaño actual es mayor que 100px
+  if (tamañoActual > 100) {
+    // Reducir el tamaño del elemento en 20px
+    tamañoActual -= 20;
+    // Aplicar el nuevo tamaño al elemento
+    ventanaLateral.style.height = tamañoActual + 'px';    
+    // Esperar 0.2 segundos antes de ejecutar de nuevo la función
+    setTimeout(reducirTamaño, 200);
+    ventanaLateral.style.height = '277px'
+
+    setTimeout(() => {
+      contVideo.classList.add('move-video-up')
+    }, 277);
+
+    contVideo.classList.add('move-video-up')
+
+
+  }
 }
