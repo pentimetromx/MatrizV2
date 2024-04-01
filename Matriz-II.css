@@ -6194,6 +6194,7 @@ h4{
 .iconos-laterales {
   width: 100%; /* Ajusta el ancho de los elementos al 100% del contenedor */
   max-width: 100%; /* Ajusta el ancho máximo de los elementos al 100% del contenedor */
+  user-select: none;  
 }
 
 #ventana-lateral > div {
@@ -6352,7 +6353,7 @@ input.numero:focus {
     transform: translateX(347px) translateY(-268px);
   }
   .move-video-up{
-    transform: translateY(-177px)
+    transform: translateY(-180px)
 
   }
 

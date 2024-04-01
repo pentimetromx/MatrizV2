@@ -1859,7 +1859,6 @@ function mostrarTroublesshIntervalo() {
   // Inicia la primera visibilidad
   hacerVisibleSiguienteElemento()
 }
-
 function deslizAutomatic(){
   var elementosExcluidos = ['container01','links-inicialesI', 'links-iniciales', 'conteneMantaut', 'conti-boton','troubleshooting','canvascontainer2','MiGrafica','canvascontainer3','kaizenCont','vidElem'];
   for (var i = 0; i < allContenedores.length; i++) {
@@ -3376,7 +3375,7 @@ function abrirDensitometria(elementId){
 function muestraVidPrisma(eltoHtml) {
   var circulo = document.getElementById('circle')
   circulo.style.display = 'flex'
-  var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','nicho-videos','padre-circle','circle','options']
+  var elementosExcluidos = ['container01','nicho-videos','padre-circle','circle','options']
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -3399,6 +3398,79 @@ function muestraVidPrisma(eltoHtml) {
     default:
   } 
 }
+function ventanaLateral(){
+  var ventaFlotante = document.getElementById('ventana-lateral') 
+  var conteVentana = document.getElementById('pre-prensa')
+  conteVentana.style.display = 'flex'
+  ventaFlotante.style.display = 'flex'
+  document.getElementById('ventana-lateral').classList.remove('forward-window')
+  document.getElementById('ventana-lateral').classList.remove('move-window');
+  setTimeout(function() {
+  }, 77)
+  setTimeout(function() {
+    document.getElementById('ventana-lateral').classList.add('move-window');               
+  }, 377)
+  setTimeout(function() {
+    aumentarIconos()
+  }, 877)
+  setTimeout(function() {
+    moverIconos()
+  }, 1077)
+  setTimeout(function() {
+    reducirAlturaVentana()
+  }, 1777)                                       
+}
+function reducirTamaño() {
+  /* var contVideo = document.getElementById(eltoHtml) */
+
+  /* switch(eltoHtml){
+     case 'vid04': */
+      /* contVideo.classList.remove('move-video-up')
+      setTimeout(() => {
+        contVideo.classList.add('move-video-up')
+      }, 277);
+      contVideo.classList.add('move-video-up')   
+      reducirAlturaVentana()  */      
+   /*  break;
+    default:
+  } */
+
+}
+function reducirAlturaVentana() {
+
+  let arrayVideos = ['prisma-vid-II','vid04','vid05','vid06']
+  
+  // Obtener el elemento #ventana-lateral
+  const ventanaLateral = document.getElementById('ventana-lateral');
+  // Establecer el tamaño inicial del elemento
+  let alturaActual = 677;
+  // Establecer un intervalo para reducir la altura cada 0.1 segundos
+  const intervalo = setInterval(() => {
+    // Verificar si la altura actual es mayor que 100px
+    if (alturaActual > 290) {
+      // Reducir la altura del elemento en 20px
+      alturaActual -= 5;      
+      // Aplicar el nuevo tamaño al elemento
+      ventanaLateral.style.height = alturaActual + 'px';
+    } else {
+      // Si la altura llega a 100px, detener el intervalo
+      clearInterval(intervalo);
+    }
+  }, 33); // Intervalo de 0.1 segundos (100 milisegundos)
+
+  setTimeout(() => {
+    document.getElementById('nicho-videos').style.display = 'flex'
+    /* document.getElementById('vid04').classList.add('move-video-up') */ 
+    arrayVideos.forEach(videoId => {
+      let videoElement = document.getElementById(videoId);
+      if (videoElement) {
+          videoElement.classList.add('move-video-up');
+      }
+  });    
+
+  }, 977);
+}
+
 function formateaPrepress(eltoHtml){
   videosPrepress.forEach(video => {
     if (video) {
@@ -6866,7 +6938,6 @@ function deslizaMosaico(){
     }, 300)
   //}, 50) 
 }
-
 function graficosAutomaticos(idGrafico){
 
   for (var i = 0; i < idsMA.length; i++) {
@@ -9509,7 +9580,6 @@ function moveScroll(container) {
     container.scrollTop = 0;
   }
 }
-
 function iniciarMovimiento(instrucId) {
 
   var container = document.getElementById(instrucId);
@@ -9593,7 +9663,6 @@ function iniciarMovimiento(instrucId) {
 
     
 }
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Obtén el contexto del lienzo
 var canvas = document.getElementById("sinusoidalCanvas");
@@ -10262,31 +10331,6 @@ function abrirInterfaz(){
   }  
 
 }
-function ventanaLateral(){
-  var ventaFlotante = document.getElementById('ventana-lateral') 
-  var conteVentana = document.getElementById('pre-prensa')
-  conteVentana.style.display = 'flex'
-  ventaFlotante.style.display = 'flex'
-  document.getElementById('ventana-lateral').classList.remove('forward-window')
-  document.getElementById('ventana-lateral').classList.remove('move-window');
-  setTimeout(function() {
-  }, 77)
-  setTimeout(function() {
-    document.getElementById('ventana-lateral').classList.add('move-window');               
-  }, 377)
-  setTimeout(function() {
-    aumentarIconos()
-  }, 877)
-  setTimeout(function() {
-    moverIconos()
-  }, 1077)
-  setTimeout(function() {
-    reducirTamaño()
-  }, 1577)                                       
-
-
-
-}
 function cerrarVentana(){
   /* document.getElementById('ventana-lateral').classList.add('forward-window'); */
   document.getElementById('ventana-lateral').classList.add('forward-window');
@@ -10328,12 +10372,10 @@ function moverIconos(){
     document.getElementById('icono8').classList.add('icon1-up');
   }, 317)
 }
-
 document.getElementById('icono1').addEventListener('click', function(event) {
   event.stopPropagation(); // Detener la propagación del evento
   moverIconos() // Ejecutar la función asociada al child
 });
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // EVENTOS DINAMICOS MOVER CONTENEDORES
 document.getElementById('iniciar').addEventListener('click', function() {
@@ -10415,7 +10457,7 @@ document.addEventListener('keydown', function(event) {
         },1177) 
       break;
       case 'H': 
-      reducirTamaño()                                     
+      reducirAlturaVentana()      
       break;
       case 'J':
       break;                  
@@ -10552,34 +10594,4 @@ function trasladarOblicuos(){
   console.log('se AGREGO la clase')
 
   /* contOblicuosXI.style.top = '10%' */
-}
-
-function reducirTamaño() {
-  var contVideo = document.getElementById('vid04')
-  contVideo.classList.remove('move-video-up')
-  setTimeout(() => {
-    contVideo.classList.add('move-video-up')
-  }, 277);
-  contVideo.classList.add('move-video-up')   
-  reducirAlturaVentana()  
-}
-
-function reducirAlturaVentana() {
-  // Obtener el elemento #ventana-lateral
-  const ventanaLateral = document.getElementById('ventana-lateral');
-  // Establecer el tamaño inicial del elemento
-  let alturaActual = 677;
-  // Establecer un intervalo para reducir la altura cada 0.1 segundos
-  const intervalo = setInterval(() => {
-    // Verificar si la altura actual es mayor que 100px
-    if (alturaActual > 290) {
-      // Reducir la altura del elemento en 20px
-      alturaActual -= 5;      
-      // Aplicar el nuevo tamaño al elemento
-      ventanaLateral.style.height = alturaActual + 'px';
-    } else {
-      // Si la altura llega a 100px, detener el intervalo
-      clearInterval(intervalo);
-    }
-  }, 33); // Intervalo de 0.1 segundos (100 milisegundos)
 }
