@@ -10565,7 +10565,7 @@ function reducirTamaño() {
     ventanaLateral.style.height = tamañoActual + 'px';    
     // Esperar 0.2 segundos antes de ejecutar de nuevo la función
     setTimeout(reducirTamaño, 200);
-    ventanaLateral.style.height = '277px'
+    ventanaLateral.style.height = '297px'
 
     setTimeout(() => {
       contVideo.classList.add('move-video-up')
