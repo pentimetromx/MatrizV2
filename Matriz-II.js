@@ -10272,7 +10272,7 @@ function ventanaLateral(){
   setTimeout(function() {
   }, 77)
   setTimeout(function() {
-    document.getElementById('ventana-lateral').classList.add('move-window');
+    document.getElementById('ventana-lateral').classList.add('move-window');               
   }, 377)
   setTimeout(function() {
     aumentarIconos()
@@ -10280,6 +10280,10 @@ function ventanaLateral(){
   setTimeout(function() {
     moverIconos()
   }, 1077)
+  setTimeout(function() {
+    reducirTamaño()
+  }, 1577)                                       
+
 
 
 }
@@ -10550,22 +10554,14 @@ function trasladarOblicuos(){
   /* contOblicuosXI.style.top = '10%' */
 }
 
-
-
 function reducirTamaño() {
   var contVideo = document.getElementById('vid04')
   contVideo.classList.remove('move-video-up')
-
-    /* ventanaLateral.style.height = '297px' */
-
-    setTimeout(() => {
-      contVideo.classList.add('move-video-up')
-    }, 277);
-
+  setTimeout(() => {
     contVideo.classList.add('move-video-up')
-
-    reducirAlturaVentana()
-  
+  }, 277);
+  contVideo.classList.add('move-video-up')   
+  reducirAlturaVentana()  
 }
 
 function reducirAlturaVentana() {
