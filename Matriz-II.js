@@ -3374,13 +3374,20 @@ function abrirDensitometria(elementId){
   }
 } 
 function muestraVidPrisma(eltoHtml) {
+  document.getElementById('padre-circle').removeAttribute('style')
+
   var circulo = document.getElementById('circle')
   var elemento = document.getElementById(eltoHtml)
-  elemento.classList.remove('move-video-up')
-  elemento.removeAttribute('style')    
+
+  arrayVideos.forEach(videoId => {
+    let videoElement = document.getElementById(videoId);
+    if (videoElement) {
+        videoElement.removeAttribute('style'); // Eliminar los estilos en línea
+        videoElement.classList.remove('move-video-up'); // Quitar la clase 'move-video-up'
+    }
+  });
 
   circulo.style.display = 'flex'
-
   var elementosExcluidos = ['container01','nicho-videos','padre-circle','circle','options']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -3390,27 +3397,15 @@ function muestraVidPrisma(eltoHtml) {
   }
   switch(eltoHtml){
     case 'prisma-vid-II' :
-      /*var removerClase = document.getElementById('prisma-vid-II')
-      removerClase.classList.remove('move-video-up') 
-      removerClase.removeAttribute('style')  */    
       formateaPrepress('prisma-vid-II')    
     break;
     case 'vid04' :
-      /* var removerClase = document.getElementById('vid04')
-      removerClase.classList.remove('move-video-up') 
-      removerClase.removeAttribute('style') */     
       formateaPrepress('vid04')      
     break; 
     case 'vid05' :
-      /* var removerClase = document.getElementById('vid05')
-      removerClase.classList.remove('move-video-up') 
-      removerClase.removeAttribute('style') */     
       formateaPrepress('vid05')      
     break; 
     case 'vid06' :
-      /* var removerClase = document.getElementById('vid06')
-      removerClase.classList.remove('move-video-up') 
-      removerClase.removeAttribute('style')  */    
       formateaPrepress('vid06')      
     break;    
     default:
@@ -3419,6 +3414,20 @@ function muestraVidPrisma(eltoHtml) {
 function ventanaLateral(){
   var ventaFlotante = document.getElementById('ventana-lateral') 
   ventaFlotante.removeAttribute('style')
+
+  if(screenWidth < 500){
+    desactivarClicsPorUnTiempo()
+
+    arrayVideos.forEach(videoId => {
+      let videoElement = document.getElementById(videoId);
+      if (videoElement) {
+          videoElement.removeAttribute('style'); // Eliminar los estilos en línea
+          videoElement.classList.remove('move-video-up'); // Quitar la clase 'move-video-up'
+      }
+    });
+
+  }  
+
   var conteVentana = document.getElementById('pre-prensa')
   conteVentana.style.display = 'flex'
   ventaFlotante.style.display = 'flex'
@@ -3441,25 +3450,15 @@ function ventanaLateral(){
     }
   }, 1777)                                       
 }
-function reducirTamaño() {
-  /* var contVideo = document.getElementById(eltoHtml) */
-
-  /* switch(eltoHtml){
-     case 'vid04': */
-      /* contVideo.classList.remove('move-video-up')
-      setTimeout(() => {
-        contVideo.classList.add('move-video-up')
-      }, 277);
-      contVideo.classList.add('move-video-up')   
-      reducirAlturaVentana()  */      
-   /*  break;
-    default:
-  } */
-
-}
-function reducirAlturaVentana() {  
-  // Obtener el elemento #ventana-lateral
-  const ventanaLateral = document.getElementById('ventana-lateral');
+function reducirAlturaVentana() {
+  const ventanaLateral = document.getElementById('ventana-lateral');  
+  arrayVideos.forEach(videoId => {
+    let videoElement = document.getElementById(videoId);
+    if (videoElement) {
+        videoElement.removeAttribute('style'); // Eliminar los estilos en línea
+        videoElement.classList.remove('move-video-up'); // Quitar la clase 'move-video-up'
+    }
+  });
   // Establecer el tamaño inicial del elemento
   let alturaActual = 677;
   // Establecer un intervalo para reducir la altura cada 0.1 segundos
@@ -3488,6 +3487,19 @@ function reducirAlturaVentana() {
 
   }, 977);
 }
+function cerrarVentana(){
+  document.getElementById('ventana-lateral').classList.remove('move-window');  
+
+  document.getElementById('padre-circle').style.display = 'flex'
+  document.getElementById('padre-circle').style.marginTop = '1%'
+  document.getElementById('ventana-lateral').classList.add('forward-window');
+
+  if(screenWidth < 500){
+    document.getElementById('padre-circle').style.display = 'flex'
+    document.getElementById('padre-circle').style.marginTop = '-45%'
+  }
+}
+
 
 function formateaPrepress(eltoHtml){
   videosPrepress.forEach(video => {
@@ -10349,10 +10361,6 @@ function abrirInterfaz(){
   }  
 
 }
-function cerrarVentana(){
-  /* document.getElementById('ventana-lateral').classList.add('forward-window'); */
-  document.getElementById('ventana-lateral').classList.add('forward-window');
-}
 function aumentarIconos() {
   const iconosLateral = document.getElementsByClassName('iconos-laterales');
   let currentIndex = 0;
@@ -10484,7 +10492,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('nicho-videos')
+  var contiBoton = document.getElementById('padre-circle')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
@@ -10613,3 +10621,17 @@ function trasladarOblicuos(){
 
   /* contOblicuosXI.style.top = '10%' */
 }
+function desactivarClicsPorUnTiempo() {
+  // Desactivar los clics
+  document.addEventListener('click', bloquearClic, true);
+  // Volver a habilitar los clics después de 1 segundo
+  setTimeout(function() {
+      document.removeEventListener('click', bloquearClic, true);
+  }, 4000);
+}
+// Función para bloquear los clics
+function bloquearClic(event) {
+  event.stopPropagation();
+  event.preventDefault();
+}
+

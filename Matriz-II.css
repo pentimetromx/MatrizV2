@@ -4857,6 +4857,7 @@ h4{
   .vidTeoria{
     height: 43px;
     width: 60px;
+    cursor: pointer;
   }
   #vidCicodeliaII{
     position: absolute;
