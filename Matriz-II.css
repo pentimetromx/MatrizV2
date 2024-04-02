@@ -6125,6 +6125,9 @@ h4{
 #vid04,
 #prisma-vid-II{
   position: absolute;
+  display: flex;
+  left: 1px;
+  top: 1px;
   width: 100%;
   height: auto;
   border: 1px solid gray;

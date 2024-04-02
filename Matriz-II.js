@@ -1,6 +1,7 @@
 var anchoPantalla = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth; 
 var intervaloColor;
-var colorPorDefecto; 
+var colorPorDefecto;
+let arrayVideos = ['prisma-vid-II','vid04','vid05','vid06']
 
 var contenedor2 = document.getElementById('canvasContainer2')
 var troublesh = document.getElementById('troubleshooting')
@@ -3374,25 +3375,42 @@ function abrirDensitometria(elementId){
 } 
 function muestraVidPrisma(eltoHtml) {
   var circulo = document.getElementById('circle')
+  var elemento = document.getElementById(eltoHtml)
+  elemento.classList.remove('move-video-up')
+  elemento.removeAttribute('style')    
+
   circulo.style.display = 'flex'
-  var elementosExcluidos = ['container01','nicho-videos','padre-circle','circle','options']
+
+  var elementosExcluidos = ['container01','nicho-videos','padre-circle','circle','options']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'                 
     }
-  } 
+  }
   switch(eltoHtml){
     case 'prisma-vid-II' :
+      /*var removerClase = document.getElementById('prisma-vid-II')
+      removerClase.classList.remove('move-video-up') 
+      removerClase.removeAttribute('style')  */    
       formateaPrepress('prisma-vid-II')    
     break;
     case 'vid04' :
+      /* var removerClase = document.getElementById('vid04')
+      removerClase.classList.remove('move-video-up') 
+      removerClase.removeAttribute('style') */     
       formateaPrepress('vid04')      
     break; 
     case 'vid05' :
+      /* var removerClase = document.getElementById('vid05')
+      removerClase.classList.remove('move-video-up') 
+      removerClase.removeAttribute('style') */     
       formateaPrepress('vid05')      
     break; 
     case 'vid06' :
+      /* var removerClase = document.getElementById('vid06')
+      removerClase.classList.remove('move-video-up') 
+      removerClase.removeAttribute('style')  */    
       formateaPrepress('vid06')      
     break;    
     default:
@@ -3400,6 +3418,7 @@ function muestraVidPrisma(eltoHtml) {
 }
 function ventanaLateral(){
   var ventaFlotante = document.getElementById('ventana-lateral') 
+  ventaFlotante.removeAttribute('style')
   var conteVentana = document.getElementById('pre-prensa')
   conteVentana.style.display = 'flex'
   ventaFlotante.style.display = 'flex'
@@ -3417,7 +3436,9 @@ function ventanaLateral(){
     moverIconos()
   }, 1077)
   setTimeout(function() {
-    reducirAlturaVentana()
+    if(screenWidth < 580){
+      reducirAlturaVentana()
+    }
   }, 1777)                                       
 }
 function reducirTamaño() {
@@ -3436,10 +3457,7 @@ function reducirTamaño() {
   } */
 
 }
-function reducirAlturaVentana() {
-
-  let arrayVideos = ['prisma-vid-II','vid04','vid05','vid06']
-  
+function reducirAlturaVentana() {  
   // Obtener el elemento #ventana-lateral
   const ventanaLateral = document.getElementById('ventana-lateral');
   // Establecer el tamaño inicial del elemento
@@ -10466,7 +10484,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('vid04')
+  var contiBoton = document.getElementById('nicho-videos')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
