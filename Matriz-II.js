@@ -1,7 +1,9 @@
-var anchoPantalla = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth; 
+var anchoPantalla = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+var acumuladorVideos = []
+
 var intervaloColor;
-var colorPorDefecto;
-let arrayVideos = ['prisma-vid-II','vid04','vid05','vid06']
+/* var colorPorDefecto; */
+let arrayVideos = ['vid06','prisma-vid-II','vid04','vid05']
 
 var contenedor2 = document.getElementById('canvasContainer2')
 var troublesh = document.getElementById('troubleshooting')
@@ -3372,12 +3374,18 @@ function abrirDensitometria(elementId){
     idsArray.push(elementId);
     console.log(idsArray);
   }
-} 
+}
+
 function muestraVidPrisma(eltoHtml) {
-  document.getElementById('padre-circle').removeAttribute('style')
+
+  acumuladorVideos.pop()
+  acumuladorVideos.push(eltoHtml)
+  console.log(eltoHtml)
 
   var circulo = document.getElementById('circle')
-  var elemento = document.getElementById(eltoHtml)
+  circulo.style.display = 'flex'
+  document.getElementById('padre-circle').removeAttribute('style')
+
 
   arrayVideos.forEach(videoId => {
     let videoElement = document.getElementById(videoId);
@@ -3387,7 +3395,6 @@ function muestraVidPrisma(eltoHtml) {
     }
   });
 
-  circulo.style.display = 'flex'
   var elementosExcluidos = ['container01','nicho-videos','padre-circle','circle','options']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -3411,21 +3418,21 @@ function muestraVidPrisma(eltoHtml) {
     default:
   } 
 }
-function ventanaLateral(){
-  var ventaFlotante = document.getElementById('ventana-lateral') 
+function ventanaLateral(eltoHtml){
+  acumuladorVideos.push(eltoHtml)
+  var ventaFlotante = document.getElementById('ventana-lateral')
   ventaFlotante.removeAttribute('style')
 
   if(screenWidth < 500){
     desactivarClicsPorUnTiempo()
 
-    arrayVideos.forEach(videoId => {
+    /* arrayVideos.forEach(videoId => {
       let videoElement = document.getElementById(videoId);
       if (videoElement) {
           videoElement.removeAttribute('style'); // Eliminar los estilos en línea
           videoElement.classList.remove('move-video-up'); // Quitar la clase 'move-video-up'
       }
-    });
-
+    }); */
   }  
 
   var conteVentana = document.getElementById('pre-prensa')
@@ -3451,14 +3458,16 @@ function ventanaLateral(){
   }, 1777)                                       
 }
 function reducirAlturaVentana() {
-  const ventanaLateral = document.getElementById('ventana-lateral');  
-  arrayVideos.forEach(videoId => {
+  const ventanaLateral = document.getElementById('ventana-lateral');
+  
+  /* arrayVideos.forEach(videoId => {
     let videoElement = document.getElementById(videoId);
     if (videoElement) {
         videoElement.removeAttribute('style'); // Eliminar los estilos en línea
         videoElement.classList.remove('move-video-up'); // Quitar la clase 'move-video-up'
     }
-  });
+  });  */
+
   // Establecer el tamaño inicial del elemento
   let alturaActual = 677;
   // Establecer un intervalo para reducir la altura cada 0.1 segundos
@@ -3496,6 +3505,8 @@ function cerrarVentana(){
 
   if(screenWidth < 500){
     document.getElementById('padre-circle').style.display = 'flex'
+    document.getElementById('padre-circle').removeAttribute('style')
+
     document.getElementById('padre-circle').style.marginTop = '-45%'
   }
 }
@@ -10402,6 +10413,12 @@ document.getElementById('icono1').addEventListener('click', function(event) {
   event.stopPropagation(); // Detener la propagación del evento
   moverIconos() // Ejecutar la función asociada al child
 });
+
+document.getElementById('icono2').addEventListener('click', function(event) {
+  event.stopPropagation(); // Detener la propagación del evento
+  moverIconos() // Ejecutar la función asociada al child
+});
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // EVENTOS DINAMICOS MOVER CONTENEDORES
 document.getElementById('iniciar').addEventListener('click', function() {

@@ -1106,8 +1106,6 @@ width:447px ;
   left: 597px;
   top: 336px;
 }
-/*-------------------------------------------------------------------------------------------------------------------------------------------------------- */ 
-
 #butt-001{
   position: relative;
   left: 7px;
@@ -1724,7 +1722,6 @@ width:447px ;
   left: 17px;
   top: 1px;  
 }
-
 #contPortManta video,
 #contImpresor video,
 #contPortPlaca video{
@@ -1830,7 +1827,6 @@ margin-right: 7px;
   transition: color 0.2s;
   cursor: pointer;
 }
-/* Estilo para el punto después del título */
 #titleContainerI::after,
 #titleContainer::after {
   content: " ";
@@ -3672,12 +3668,9 @@ h4{
     transform: scale(3); /* Aumenta el tamaño 2x */
   }
 }
-
 .move-window{
   transform: translateX(388px);
 }
-
-
  @media screen and (max-width: 420px) {
   #cont-titulo-comercial,  
   #cont-titulo-admin,
