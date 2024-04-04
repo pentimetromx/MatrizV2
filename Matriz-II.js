@@ -1878,6 +1878,13 @@ function deslizAutomatic(){
     arrayPosicionnador = []  
     troublesh.removeAttribute('style') 
     destino = 277;
+    if(screenWidth < 500){
+      var contBoton = document.getElementById('conti-boton')
+      contBoton.style.top = '-44px' 
+
+      /* var contChecks = document.getElementById('contChecks')
+      contChecks.style.top = '-27px' */      
+    }
   
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   idsMA.forEach(function (elto) {                                                                                                            /// OCULTA TODO M.A
@@ -1945,7 +1952,7 @@ function desencadenar(idElemento) {
       if(screenWidth < 500){
         contBotsMA.style.marginTop = '15%'
         troubleCont.style.marginTop = '7%'
-        troublesh.style.marginTop = '14%';
+        troublesh.style.marginTop = '10%';
         setTimeout(function () {
           troublesh.style.left = '57%';
         }, 277);       
@@ -3465,8 +3472,6 @@ function empujarLeft() {
   // Establecer la posición del elemento basándose en la posición de la referencia
   elemento.style.left = (referenciaLeft + 177) + 'px'; // Ajustar según tus necesidades
 }
-
-
 function reducirAlturaVentana() {
   const ventanaLateral = document.getElementById('ventana-lateral');
   // Establecer el tamaño inicial del elemento
@@ -4314,25 +4319,25 @@ function listaEntrenamientosII(btnList) {
   troubleTable.removeAttribute('style')                                                                                                                    
   switch(btnList){                                                                                                                      
     case 'archivo': 
-    var elementosExcluidos = ['buscador','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
-    for (var i = 0; i < allContenedores.length; i++) { 
-      var elemento = document.getElementById(allContenedores[i])  
-      if (elemento) {
-        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-        /* elemento.removeAttribute('style'); */
+      var elementosExcluidos = ['buscador','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          /* elemento.removeAttribute('style'); */
+        }
       }
-    }
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    for (var i = 0; i < contiBtt.length; i++) {                                                                                            /// NARANJA A BOTON
-      var botonId = contiBtt[i];
-      var boton = document.getElementById(botonId);
-      // Restablecer el color de fondo para todos los botones
-      boton.style.backgroundColor = '';
-      if (botonId === btnList) {
-          // Cambiar el color de fondo a naranja para el botón seleccionado
-          boton.style.backgroundColor = 'orange';
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      for (var i = 0; i < contiBtt.length; i++) {                                                                                            /// NARANJA A BOTON
+        var botonId = contiBtt[i];
+        var boton = document.getElementById(botonId);
+        // Restablecer el color de fondo para todos los botones
+        boton.style.backgroundColor = '';
+        if (botonId === btnList) {
+            // Cambiar el color de fondo a naranja para el botón seleccionado
+            boton.style.backgroundColor = 'orange';  
+        }
       }
-    }
       if(screenWidth < 500){
         var elementosExcluidos = ['buscador','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales']  
         for (var i = 0; i < allContenedores.length; i++) { 
@@ -4482,6 +4487,8 @@ function listaEntrenamientosII(btnList) {
     vinculosTrouble.style.marginLeft = '-64%'
     vinculosTrouble.style.marginTop = '13%'
 
+    var contBoton = document.getElementById('conti-boton')
+    contBoton.removeAttribute('style')
   }
 }   
 function listaEntrenamientos(){
@@ -10487,7 +10494,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('conte-botDensitoII')
+  var contiBoton = document.getElementById('linkLis')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left

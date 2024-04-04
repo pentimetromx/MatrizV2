@@ -2213,7 +2213,7 @@ h6{
   height: 497px;
   width: 717px;
   left: 31%;
-  top: -52%;
+  margin-top: 8%;
 }
 #conti-boton-teñido{
   position: absolute;
@@ -4770,7 +4770,7 @@ h4{
     display: flex;
     flex-direction: column;
     z-index: 2;
-    top: 14%;
+    top: -1px;
     left:1px;
   }
   #resultados{
@@ -5394,7 +5394,7 @@ h4{
     flex-direction: column;
     background-color:#333333;
     width: 277px;
-    height: 344px;
+    height: 357px;
     left: 0%;
     top:0%;
   } 
@@ -5619,7 +5619,8 @@ h4{
     display: flex;
     flex-direction: column;
     left:37%;
-    top:30%;
+    /* top:30%; */
+    top: -37px;
     width: 350px;
     height: 377px;
     border-radius: 20px;
@@ -5792,14 +5793,14 @@ h4{
     border: 1px solid orange;  
     flex-direction: column;
     border-radius: 20px;
-    position: fixed;
+    position: relative;
     overflow: hidden;
     display: flex;
     display: none;
     height: 177px;
     width: 257px;
     left: 36%;
-    top: 42%;
+    margin-top: 2%;
     z-index: 999;
   }
   #toyota1,
