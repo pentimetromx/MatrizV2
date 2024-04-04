@@ -2213,7 +2213,7 @@ h6{
   height: 497px;
   width: 717px;
   left: 31%;
-  margin-top: 8%;
+  margin-top: -13%;
 }
 #conti-boton-teñido{
   position: absolute;
@@ -2271,7 +2271,7 @@ h6{
   flex-direction: column;
   left: 16.7%;
   /* margin-top: 37.6%; */
-  top:-8%;
+  top:13%;
   /* z-index: 7; */
   
 }
@@ -2863,17 +2863,11 @@ elemento.visible {
   border-radius: 7px;
   cursor: pointer;
 }
-#casos-kaizen,
-#toyota-kaizen-antes{
-  position: absolute;
+#toyota-kaizen{
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 751px;
-  margin: 0 auto;
-  left: 394px;
-  top: 71px;
   display: none;
+  top: -34%;
 }
 .imgs-Antes {
   margin: 5px;
@@ -2915,10 +2909,32 @@ elemento.visible {
   font-size: 21px;
   color: whitesmoke;
 }
+#casos-kaizen{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 751px;
+  margin: 0 auto;
+  left: 394px;
+  margin-top: 52px;
+  display: none;
+}
+#toyota-kaizen-antes{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 751px;
+  margin: 0 auto;
+  left: 125px;
+  margin-top: -169px;
+  display: none;
+}
 #mejoras-kai{
-  position: absolute;
+  position: relative;
   left: 957px;
-  top: 117px;
+  top: -111px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -3503,7 +3519,7 @@ h4{
   height: 600px;
   margin: 10px;
   left: 29%;
-  top: -52.5%;
+  top: -24%;
   display: none;
 }
 #segundo-hijo{
@@ -5658,7 +5674,7 @@ h4{
     display: flex;
     flex-direction: column;
     left:50%;
-    top: -4.8%;
+    top: 22%;
   } 
   #conti-boton-kaizen button{
     margin-bottom: 9px;

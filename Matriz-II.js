@@ -1881,9 +1881,6 @@ function deslizAutomatic(){
     if(screenWidth < 500){
       var contBoton = document.getElementById('conti-boton')
       contBoton.style.top = '-44px' 
-
-      /* var contChecks = document.getElementById('contChecks')
-      contChecks.style.top = '-27px' */      
     }
   
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2005,7 +2002,7 @@ function desencadenar(idElemento) {
         vidkaizen.play()
 
         troublesh.style.display = 'flex';
-        troublesh.style.top = '-1%'
+        troublesh.style.top = '-3%'
         troublesh.style.left = '100%'; 
         troublesh.classList.add('move-grafica');
         setTimeout(function () {
@@ -10494,7 +10491,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('linkLis')
+  var contiBoton = document.getElementById('kaizenCont')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
