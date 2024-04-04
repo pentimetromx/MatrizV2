@@ -9622,8 +9622,8 @@ function iniciarMovimiento(instrucId) {
   container.scrollTop = container.scrollHeight;  
 
   setTimeout(function() {
-    if(instrucId === 'agrupaOblicuos-XII') {
-      const contenedor = document.getElementById('agrupaOblicuos-XII');
+    if(instrucId === 'rodillo-infeed') {
+      const contenedor = document.getElementById('rodillo-infeed');
       // Función para animar el scroll hacia arriba
       function scrollToTopSmoothly() {
         const currentPosition = contenedor.scrollTop;
@@ -9651,8 +9651,8 @@ function iniciarMovimiento(instrucId) {
     
   setTimeout(function() {
 
-    if(instrucId === 'agrupaOblicuos-XVIII') {
-      const contenedor = document.getElementById('agrupaOblicuos-XVIII');
+    if(instrucId === 'puesta-punto') {
+      const contenedor = document.getElementById('puesta-punto');
       // Función para animar el scroll hacia arriba
       function scrollToTopSmoothly() {
         const currentPosition = contenedor.scrollTop;
@@ -9677,7 +9677,7 @@ function iniciarMovimiento(instrucId) {
       // Llama a la función para animar el scroll hacia arriba
       scrollToTopSmoothly();
     }
-  }, 677);     
+  }, 277);     
 
     
 }
@@ -10468,13 +10468,14 @@ document.addEventListener('keydown', function(event) {
           abrirPrepress('pre-prensa')        
         },977) 
         setTimeout(function() {
-          /* muestraVidPrisma('vid04') */          
+          ElementosMaII('conteneMantaut')         
         },1177) 
         setTimeout(function() {
-          /* ventanaLateral() */          
-        },1177) 
+          deslizaContenedor('troubleshooting','troubleshoot')         
+        },1377) 
         setTimeout(function() {
-        },1177) 
+          listaEntrenamientosII('archivo')          
+        },1677) 
       break;
       case 'H': 
       reducirAlturaVentana()      
