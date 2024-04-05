@@ -7948,15 +7948,6 @@ function rodillosKaizen(idButton,vidElem) {
       } 
 
       if(screenWidth < 500){
-        var elementosExcluidos = ['buscador','mejoras-kai','casos-kaizen','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','toyota-kaizen']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
-        } 
-  
-
 
         for (var i = 0; i < buttsToyota.length; i++) {                                            /// OBTENER 'window.getcomputedStyle' DE LAS (8 IMAGENES EN UNA)
           var elemento = document.getElementById(buttsToyota[i])      
@@ -7964,16 +7955,21 @@ function rodillosKaizen(idButton,vidElem) {
           var estiloDisplay = window.getComputedStyle(elemento).getPropertyValue('display')
           elemento.style.display = 'none'
         }
-        imgsEstudio.classList.remove('move-casos')       
+        imgsEstudio.style.display = 'none'       
+        casoEstudio.style.display = 'none' 
+        
+        imgsEstudio.classList.remove('move-casos')        
         casoEstudio.classList.remove('move-label')         
+
+
         const imagenes = document.querySelectorAll('.imgs-toyota');
         imagenes.forEach((imagen, index) => {
           setTimeout(() => {
               imagen.style.display = 'block';
           }, 400 + index * 177);
           setTimeout(() => {
-            imgsEstudio.classList.remove('move-casos')        
-            casoEstudio.classList.remove('move-label')         
+            imgsEstudio.style.display = 'flex'       
+            casoEstudio.style.display = 'flex'       
           }, 1700);
           setTimeout(() => {
             casoEstudio.classList.add('move-label')         
