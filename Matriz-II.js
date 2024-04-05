@@ -283,17 +283,17 @@ function changeButtonStyles(elementId){
       }
       });
      if(screenWidth < 500){        
-        var elementosExcluidos = ['buscador','buscador','cont-links','pantalla-inicial','pantalla-tintero','container01','links-inicialesI','links-iniciales','agrupaOblicuos-II','imgTorre','video-entintado','videoElement1-II']  
-        var contLinksTintero = document.getElementById('cont-links')
-        var contOblicuos = document.getElementById('agrupaOblicuos-II')
+        var elementosExcluidos = ['buscador','cont-links','pantalla-tintero','container01','links-inicialesI','links-iniciales','agrupaOblicuos-II','imgTorre','video-entintado','videoElement1-II']  
+/*         var contLinksTintero = document.getElementById('cont-links')
+        var contOblicuos = document.getElementById('agrupaOblicuos-II') */
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
             // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
-          contLinksTintero.style.marginTop = '-3.7%'
-          contOblicuos.style.marginLeft = '-2.4%'
+/*           contLinksTintero.style.marginTop = '-3.7%'
+          contOblicuos.style.marginLeft = '-2.4%' */
         }
       }
   
@@ -2825,14 +2825,10 @@ function abrirSeccionOperativa(elementId){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }  
-
   setTimeout(function () {
     iniciarMovimiento('agrupaOblicuos-XII');
     iniciarMovimiento('agrupaOblicuos-XVIII'); 
   }, 300);
-
-
-
   // Retrasar la llamada a cambiarColoresConRetraso después de 100 msg
   setTimeout(function () {
     cambiarColoresConRetrasoI();
@@ -2847,6 +2843,12 @@ function abrirSeccionOperativa(elementId){
   boton.style.backgroundColor = 'rgb(0,0,255)'
   boton.style.color = 'white'
   }}  
+
+  iniciarMovimiento('agrupaOblicuos-XVIII')
+  setTimeout(() => {
+  iniciarMovimiento('agrupaOblicuos-XII')      
+  }, 400);
+
   // 4. Verificar si el elemento está definido y si ya existe en arrayIds
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
@@ -7956,12 +7958,9 @@ function rodillosKaizen(idButton,vidElem) {
           elemento.style.display = 'none'
         }
         imgsEstudio.style.display = 'none'       
-        casoEstudio.style.display = 'none' 
-        
+        casoEstudio.style.display = 'none'         
         imgsEstudio.classList.remove('move-casos')        
-        casoEstudio.classList.remove('move-label')         
-
-
+        casoEstudio.classList.remove('move-label')        
         const imagenes = document.querySelectorAll('.imgs-toyota');
         imagenes.forEach((imagen, index) => {
           setTimeout(() => {
@@ -9683,7 +9682,6 @@ function moveScroll(container) {
 function iniciarMovimiento(instrucId) {
   var container = document.getElementById(instrucId);
   container.scrollTop = container.scrollHeight;  
-
   setTimeout(function() {
     if(instrucId === 'rodillo-infeed') {
       const contenedor = document.getElementById('rodillo-infeed');
@@ -9740,13 +9738,69 @@ function iniciarMovimiento(instrucId) {
       // Llama a la función para animar el scroll hacia arriba
       scrollToTopSmoothly();
     }
-  }, 277);     
+  }, 277); 
+  
+  setTimeout(function() {
+    if(instrucId === 'agrupaOblicuos-XII') {
+      const contenedor = document.getElementById('agrupaOblicuos-XII');
+      // Función para animar el scroll hacia arriba
+      function scrollToTopSmoothly() {
+        const currentPosition = contenedor.scrollTop;
+        const targetPosition = 0;
+        const duration = 400; // Duración de la animación en ms     
+        const startTime = performance.now();    
+        function animateScroll(timestamp) {
+          const elapsed = timestamp - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easedProgress = easeInOutCubic(progress);    
+          contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+          if (progress < 1) {
+            requestAnimationFrame(animateScroll);
+          }
+        }    
+        requestAnimationFrame(animateScroll);
+      }    
+      // Función para aplicar una función de easing (interpolación suave)
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      }    
+      // Llama a la función para animar el scroll hacia arriba
+      scrollToTopSmoothly();
+    }}, 277
+  );
 
-    
+  setTimeout(function() {
+    if(instrucId === 'agrupaOblicuos-XVIII') {
+      const contenedor = document.getElementById('agrupaOblicuos-XVIII');
+      // Función para animar el scroll hacia arriba
+      function scrollToTopSmoothly() {
+        const currentPosition = contenedor.scrollTop;
+        const targetPosition = 0;
+        const duration = 400; // Duración de la animación en ms     
+        const startTime = performance.now();    
+        function animateScroll(timestamp) {
+          const elapsed = timestamp - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easedProgress = easeInOutCubic(progress);    
+          contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+          if (progress < 1) {
+            requestAnimationFrame(animateScroll);
+          }
+        }    
+        requestAnimationFrame(animateScroll);
+      }    
+      // Función para aplicar una función de easing (interpolación suave)
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      }    
+      // Llama a la función para animar el scroll hacia arriba
+      scrollToTopSmoothly();
+    }}, 277
+  );
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Obtén el contexto del lienzo
-var canvas = document.getElementById("sinusoidalCanvas");
+var canvas = document.getElementById("sinusoidalCanvas");         
 var ctx = canvas.getContext("2d");
 // Configura el color y el grosor de la línea
 ctx.strokeStyle = "rgb(0, 255, 0)"; // Verde
@@ -10453,12 +10507,10 @@ document.getElementById('icono1').addEventListener('click', function(event) {
   event.stopPropagation(); // Detener la propagación del evento
   moverIconos() // Ejecutar la función asociada al child
 });
-
 document.getElementById('icono2').addEventListener('click', function(event) {
   event.stopPropagation(); // Detener la propagación del evento
   moverIconos() // Ejecutar la función asociada al child
 });
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // EVENTOS DINAMICOS MOVER CONTENEDORES
 document.getElementById('iniciar').addEventListener('click', function() {
@@ -10537,10 +10589,10 @@ document.addEventListener('keydown', function(event) {
           deslizaContenedor('troubleshooting','troubleshoot')         
         },1377) 
         setTimeout(function() {
-          listaEntrenamientosII('archivo')                                  
+          abrirSeccionContinua()                                  
         },1677) 
         setTimeout(function() {
-          deslizaContenedor('conti-boton-kaizen','kaizen')        
+          changeButtonStyles('pantalla-tintero')        
         },1977)         
       break;
       case 'H': 
@@ -10553,7 +10605,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('mejoras-kai')
+  var contiBoton = document.getElementById('linkDistribuidor')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
