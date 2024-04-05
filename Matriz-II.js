@@ -2,7 +2,6 @@ var anchoPantalla = window.innerWidth || document.documentElement.clientWidth ||
 var acumuladorVideos = []
 
 var intervaloColor;
-/* var colorPorDefecto; */
 let arrayVideos = ['vid06','prisma-vid-II','vid04','vid05']
 
 var contenedor2 = document.getElementById('canvasContainer2')
@@ -267,41 +266,53 @@ function changeButtonStyles(elementId){
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }  
-      videoElements.forEach(video => {
-      if (video.id === 'vidTintero') {
-        video.style.top = '17px'
-        video.style.display = 'block'
-        video.play();
-    
-        // Después de 977 milisegundos, ocultar el video
-        setTimeout(function () {
-          video.style.display = 'none'
-        }, 977);
-      } else {
-        video.style.display = 'none'
-      }
-      });
-     if(screenWidth < 500){        
+      } 
+      if(screenWidth < 500){        
         var elementosExcluidos = ['buscador','cont-links','pantalla-tintero','container01','links-inicialesI','links-iniciales','agrupaOblicuos-II','imgTorre','video-entintado','videoElement1-II']  
-/*         var contLinksTintero = document.getElementById('cont-links')
-        var contOblicuos = document.getElementById('agrupaOblicuos-II') */
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
             // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
-/*           contLinksTintero.style.marginTop = '-3.7%'
-          contOblicuos.style.marginLeft = '-2.4%' */
         }
-      }
-  
+        videoElements.forEach(video => {
+          if (video.id === 'vidTintero') {
+            video.style.top = '17px'
+            video.style.display = 'block'
+            video.play();
+        
+            // Después de 977 milisegundos, ocultar el video
+            setTimeout(function () {
+              video.style.display = 'none'
+            }, 977);
+          } else {
+            video.style.display = 'none'
+          }
+          });
+      }else{
 
-      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
-        idsArray.push(elementId);
-        console.log(idsArray);
-      } 
+        videoElements.forEach(video => {
+        if (video.id === 'vidTintero') {
+          video.style.top = '17px'
+          video.style.display = 'block'
+          video.play();
+      
+          // Después de 977 milisegundos, ocultar el video
+          setTimeout(function () {
+            video.style.display = 'none'
+          }, 977);
+        } else {
+          video.style.display = 'none'
+        }
+        });
+    
+
+        if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+          idsArray.push(elementId);
+          console.log(idsArray);
+        } 
+      }  
     break;    
     case 'bateria-entintado-II': 
       var elementosExcluidos = ['buscador','buscador','contenedor-7','container01','links-inicialesI','links-iniciales','video-entintado','videoElement1-II','bateria-entintado-II'];         

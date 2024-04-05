@@ -4418,8 +4418,8 @@ h4{
 
   #vidTintero{
     position: relative;
-    margin-left: -135%;
-    margin-top: 0.8%;
+    margin-left: -157%;
+    margin-top: -0.2%;
     height: 224px;
     width: 308px;
   }
@@ -4445,7 +4445,6 @@ h4{
   }
   /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #agrupaOblicuos,
-  #agrupaOblicuos-II,
   #agrupaOblicuos-III,
   #agrupaOblicuos-IV,
   #agrupaOblicuos-V{
@@ -4455,6 +4454,14 @@ h4{
     left: 44%;
     margin-top: 1%;
   }
+  #agrupaOblicuos-II{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 63.8%;
+    margin-top: -5.3%;
+  }
+
   .Bot-inicio2{
     position: relative;
     left: 7px;
@@ -4492,8 +4499,8 @@ h4{
     flex-direction: column;
     height: 222px;
     width: 222px;
-    top:11%;
-    left:-83%;
+    top:-9%;
+    left:-91%;
     z-index: 99;
   }
   .custom-link{
