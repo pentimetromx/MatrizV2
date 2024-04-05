@@ -7948,22 +7948,31 @@ function rodillosKaizen(idButton,vidElem) {
       } 
 
       if(screenWidth < 500){
+        var elementosExcluidos = ['buscador','mejoras-kai','casos-kaizen','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','toyota-kaizen']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        } 
+  
+
+
         for (var i = 0; i < buttsToyota.length; i++) {                                            /// OBTENER 'window.getcomputedStyle' DE LAS (8 IMAGENES EN UNA)
           var elemento = document.getElementById(buttsToyota[i])      
           // Accede a la propiedad 'display' utilizando window.getComputedStyle
           var estiloDisplay = window.getComputedStyle(elemento).getPropertyValue('display')
           elemento.style.display = 'none'
         }
-        
+        imgsEstudio.classList.remove('move-casos')       
+        casoEstudio.classList.remove('move-label')         
         const imagenes = document.querySelectorAll('.imgs-toyota');
         imagenes.forEach((imagen, index) => {
           setTimeout(() => {
               imagen.style.display = 'block';
           }, 400 + index * 177);
           setTimeout(() => {
-            imgsEstudio.style.display = 'flex'            
             imgsEstudio.classList.remove('move-casos')        
-            casoEstudio.style.display = 'flex'
             casoEstudio.classList.remove('move-label')         
           }, 1700);
           setTimeout(() => {
@@ -7972,11 +7981,8 @@ function rodillosKaizen(idButton,vidElem) {
           setTimeout(() => {
             imgsEstudio.classList.add('move-casos')         
           }, 1910);  
-
         });
-
       } else{               
-      
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       for (var i = 0; i < buttsToyota.length; i++) {                                            /// OBTENER 'window.getcomputedStyle' DE LAS (8 IMAGENES EN UNA)
         var elemento = document.getElementById(buttsToyota[i])      
