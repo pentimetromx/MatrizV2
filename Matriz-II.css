@@ -4461,7 +4461,6 @@ h4{
     left: 63.8%;
     margin-top: -5.3%;
   }
-
   .Bot-inicio2{
     position: relative;
     left: 7px;
@@ -4492,14 +4491,13 @@ h4{
     cursor: pointer;
     z-index: 0;
   }
-
    #cont-links{
     position: absolute;
     display: flex;
     flex-direction: column;
     height: 222px;
     width: 222px;
-    top:-9%;
+    top:-10%;
     left:-91%;
     z-index: 99;
   }
