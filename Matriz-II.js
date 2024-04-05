@@ -1802,6 +1802,12 @@ function deslizaContenedor(identificador, idButton) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
+      if(screenWidth < 500){
+        var contChecks = document.getElementById(identificador);
+        if (contChecks !== null) {
+          contChecks.style.marginTop = '12%';
+        }
+      }
       break;
     case 'canvasContainer3' :
       var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','canvasContainer3']  
@@ -1809,6 +1815,12 @@ function deslizaContenedor(identificador, idButton) {
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }
+      if(screenWidth < 500){
+        var canvas3 = document.getElementById(identificador);
+        if (canvas3 !== null) {
+          canvas3.style.marginTop = '12%';
         }
       }
     break;
@@ -1820,6 +1832,12 @@ function deslizaContenedor(identificador, idButton) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
+      if(screenWidth < 500){
+        var imagNeg = document.getElementById(identificador);
+        if (imagNeg !== null) {
+          imagNeg.style.marginTop = '12%';
+        }
+      }
     break;
     case 'contImagGraf' :
       var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagGraf']  
@@ -1827,6 +1845,12 @@ function deslizaContenedor(identificador, idButton) {
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }
+      if(screenWidth < 500){
+        var imagGraf = document.getElementById(identificador);
+        if (imagGraf !== null) {
+          imagGraf.style.marginTop = '12%';
         }
       }
     break;
@@ -1969,7 +1993,7 @@ function desencadenar(idElemento) {
       if(screenWidth < 500){
         contBotsMA.style.marginTop = '15%'
         troubleCont.style.marginTop = '7%'
-        troublesh.style.marginTop = '14%';
+        troublesh.style.marginTop = '5%';
         setTimeout(function () {
           troublesh.style.left = '61%';
         }, 277);       
@@ -2002,7 +2026,7 @@ function desencadenar(idElemento) {
         vidkaizen.play()
 
         troublesh.style.display = 'flex';
-        troublesh.style.top = '-3%'
+        troublesh.style.top = '35%'
         troublesh.style.left = '100%'; 
         troublesh.classList.add('move-grafica');
         setTimeout(function () {
@@ -2013,7 +2037,7 @@ function desencadenar(idElemento) {
       if(screenWidth < 500){
         contBotsMA.style.marginTop = '15%'
         troubleCont.style.marginTop = '7%'
-        troublesh.style.marginTop = '107%';
+        troublesh.style.marginTop = '44%';
         troublesh.style.width = '377px'
         troublesh.style.height = '263px'
         setTimeout(function () {
@@ -7897,7 +7921,8 @@ function ocultarIndicaciones(idIndicador) {
 }
 function rodillosKaizen(idButton,vidElem) {
   var buttsTerceros = document.getElementsByClassName('butt-mautonomo-planos') 
-  /* var kaizenPropuestos = document.getElementById('kaizen-propuestos') */
+  var imgsEstudio = document.getElementById('mejoras-kai')
+  var casoEstudio = document.getElementById('casos-kaizen')
   var contMateriales = document.getElementById('materiales-kaizen')
   var contplanosKaizen = document.getElementById('planos-kaizen')
   var videoKaizen = document.getElementById('videoElem')
@@ -7920,7 +7945,38 @@ function rodillosKaizen(idButton,vidElem) {
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }  
+      } 
+
+      if(screenWidth < 500){
+        for (var i = 0; i < buttsToyota.length; i++) {                                            /// OBTENER 'window.getcomputedStyle' DE LAS (8 IMAGENES EN UNA)
+          var elemento = document.getElementById(buttsToyota[i])      
+          // Accede a la propiedad 'display' utilizando window.getComputedStyle
+          var estiloDisplay = window.getComputedStyle(elemento).getPropertyValue('display')
+          elemento.style.display = 'none'
+        }
+        
+        const imagenes = document.querySelectorAll('.imgs-toyota');
+        imagenes.forEach((imagen, index) => {
+          setTimeout(() => {
+              imagen.style.display = 'block';
+          }, 400 + index * 177);
+          setTimeout(() => {
+            imgsEstudio.style.display = 'flex'            
+            imgsEstudio.classList.remove('move-casos')        
+            casoEstudio.style.display = 'flex'
+            casoEstudio.classList.remove('move-label')         
+          }, 1700);
+          setTimeout(() => {
+            casoEstudio.classList.add('move-label')         
+          }, 1710);
+          setTimeout(() => {
+            imgsEstudio.classList.add('move-casos')         
+          }, 1910);  
+
+        });
+
+      } else{               
+      
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       for (var i = 0; i < buttsToyota.length; i++) {                                            /// OBTENER 'window.getcomputedStyle' DE LAS (8 IMAGENES EN UNA)
         var elemento = document.getElementById(buttsToyota[i])      
@@ -7935,10 +7991,8 @@ function rodillosKaizen(idButton,vidElem) {
         }
       }
       transicionImagenes()
+    }
 
-      if(screenWidth < 500){
-        
-      }
     break;
     case 'btn11':
       var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-planos','conti-boton-kaizen']  
@@ -8098,28 +8152,31 @@ function transicionImagenes() {
   var index = 0;
   casoEstudio.style.display = 'none'
 
-  function ocultarSiguienteImagen() {
-      var imageId = buttsToyota[index]
-      var image = document.getElementById(imageId)
-      if (image) {
-        image.style.display = 'none'
-      }
-      index++;
-      if (index < buttsToyota.length) {
-        // Si hay más imágenes, programa la siguiente ocultación después de 0.3 segundos
-        setTimeout(ocultarSiguienteImagen, 150)
-      } else {
-        // Después de mostrar todas las imágenes, ejecuta el código adicional
-        var imgToyota = document.getElementById('toyota7')
-        imgToyota.style.display = 'flex'
-        casoEstudio.style.display = 'flex'                                                                     
-        // Aquí, pasa el índice 0 a la función mostrarBotonConRetardo
-        /* mostrarBotonConRetardo(0) */
-        aumentarTamanosDeBotonesVI()
-      }
-  }
-  // Inicia la primera ocultación
-  ocultarSiguienteImagen()
+    function ocultarSiguienteImagen() {
+        var imageId = buttsToyota[index]
+        var image = document.getElementById(imageId)
+        if (image) {
+          image.style.display = 'none'
+        }
+        index++;
+        if (index < buttsToyota.length) {
+          // Si hay más imágenes, programa la siguiente ocultación después de 0.3 segundos
+          setTimeout(ocultarSiguienteImagen, 150)
+        } else {
+          // Después de mostrar todas las imágenes, ejecuta el código adicional
+          var imgToyota = document.getElementById('toyota7')
+          imgToyota.style.display = 'flex'
+          casoEstudio.style.display = 'flex' 
+          casoEstudio.style.marginLeft = '7%'                                                                    
+          // Aquí, pasa el índice 0 a la función mostrarBotonConRetardo
+          /* mostrarBotonConRetardo(0) */
+          aumentarTamanosDeBotonesVI()
+        }
+    }
+    // Inicia la primera ocultación
+    ocultarSiguienteImagen()
+  
+  
 }
 function mostrarBotonConRetardo(index) {
   let arrayButtCasos = ['caso1', 'caso2', 'caso3']
@@ -10478,8 +10535,11 @@ document.addEventListener('keydown', function(event) {
           deslizaContenedor('troubleshooting','troubleshoot')         
         },1377) 
         setTimeout(function() {
-          listaEntrenamientosII('archivo')          
+          listaEntrenamientosII('archivo')                                  
         },1677) 
+        setTimeout(function() {
+          deslizaContenedor('conti-boton-kaizen','kaizen')        
+        },1977)         
       break;
       case 'H': 
       reducirAlturaVentana()      
@@ -10491,7 +10551,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('kaizenCont')
+  var contiBoton = document.getElementById('mejoras-kai')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
