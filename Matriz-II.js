@@ -9317,7 +9317,6 @@ textToColorI.addEventListener("mouseover", () => {
     lineI.style.width = textToColorI.offsetWidth + "px";
   }, 7)
 })
-
 linkListI.addEventListener("mouseover", () => {
   clearTimeout(hideTimeout)
 })
@@ -10613,7 +10612,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('conte-botDensito')
+  var contiBoton = document.getElementById('wave')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
@@ -10728,25 +10727,31 @@ function iniciarAplicacion() {
   }
 }
 function abrirInterfaz() {
-  var elementosExcluidos = ['buscador','videoBackgroundII', 'padre-interfaz', 'cont-titulo', 'franja-Blanca', 'subtitulo-I', 'descripcion-I', 'butt-Institucional', 'padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V'];
+  var elementosExcluidos = ['buscador','videoBackgroundII','padre-interfaz','cont-titulo','franja-Blanca','subtitulo-I','descripcion-I','butt-Institucional','padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V'];
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
+
+  var titulo = document.getElementById('subtitulo-I')
+
   // Paso 1: Capturar el elemento padre por su ID
   var elementoPadre = document.getElementById('cont-titulo');
-  elementoPadre.classList.remove('move-oblicuos');  console.log('se removio la clase')  
+  elementoPadre.classList.remove('move-oblicuos');
   setTimeout(function () {
   // Paso 2: Agregar una clase al elemento padre para moverlo hacia abajo
-  elementoPadre.classList.add('move-oblicuos');  console.log('se removio la clase')
+  elementoPadre.classList.add('move-oblicuos');
   }, 177);
   setTimeout(() => {
     var contenedor = document.getElementById('videoBackgroundII');  
     contenedor.style.filter = 'none'; // Puedes ajustar el valor de desenfoque según tus preferencias
     reduccionGradualVideo()
   }, 1800);
+  setTimeout(() => {
+    titulo.classList.add('move-title')    
+  }, 2222);
 }
 function trasladarOblicuos(){
   var contOblicuosXI = document.getElementById('agrupaOblicuos-XI');
@@ -10799,3 +10804,4 @@ function reduccionGradualVideo() {
       }
   }, interval);
 }
+
