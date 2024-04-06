@@ -1875,7 +1875,6 @@ margin-right: 7px;
   height: 360px;
   left: 0%;
   margin-top:1%;
-
 } 
 .imgs-entrenos{
   position: absolute;
@@ -2270,10 +2269,7 @@ h6{
   display: flex;
   flex-direction: column;
   left: 16.7%;
-  /* margin-top: 37.6%; */
   top:13%;
-  /* z-index: 7; */
-  
 }
 #conti-boton-kaizen button,
 #conti-boton-rodilleria button,
@@ -3719,7 +3715,7 @@ h4{
   #rebobinador{
   position: relative;
   padding-right: 77px;
-}
+  }
   #cont-Verticales1,
   #cont-Verticales2,
   #cont-Verticales33,
@@ -4631,12 +4627,12 @@ h4{
     height:197px;
     width: 262px;
   }
- #contenedor-7-IV button, 
-  #contenedor-7-III button, 
-  #contenedor-7-II button, 
-  #contenedor-7 button{
-    height: 50px;
- }
+  #contenedor-7-IV button, 
+    #contenedor-7-III button, 
+    #contenedor-7-II button, 
+    #contenedor-7 button{
+      height: 50px;
+  }
  
   /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #subtitulo-operacion,
@@ -5392,7 +5388,7 @@ h4{
     flex-direction: column;
     height: 222px;
     width: 277px;
-    left:55%;
+    left:57%;
     margin-top:74%;
     z-index: 3;
     display: none;
@@ -6149,179 +6145,189 @@ h4{
     opacity: 50%; border-radius: 9px; box-shadow: none;
     left: 50%;
     transform: translateX(-50%);
+  } 
+  #conte-botDensito{
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    margin-left: 60%;
+    margin-top: 40%;
+    height: 400px;
+    width: auto;
+    display: none;
   }
-#conte-botDensitoII{  
-  position: relative;
-  display: flex;
-  flex-direction: column; 
-  left: 47%;
-  margin-top: 47%;
-  height: 400px;
-  width: auto;
-  display: none;
-}  
-#nicho-videos{
-  position: relative;
-  display: flex;
-  width: auto;
-  height: 500px;
-  left: 1.7%;
-  top: 49%;
-}
-#vid06,
-#vid05,
-#vid04,
-#prisma-vid-II{
-  position: absolute;
-  display: flex;
-  left: 1px;
-  top: 1px;
-  width: 100%;
-  height: auto;
-  border: 1px solid gray;
-  border-radius: 17px;
-  cursor: pointer;
-  transition: transform 1.6s;
-}
-#padre-circle{
-  position: relative;
-  display: flex;
-  top: -55%;
-  left: 4%; 
-  width: 300px;
-  height:50px ;
-  display: none;
-}
-#circle{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  background-color: rgb(100,100,125);
-  border-radius: 50%;
-  cursor: pointer;
-  overflow: hidden;
-  display: none;
-}
-#padre-circle h6{
-  position: absolute;
-  margin-left: 13%;
-  margin-top:2%;
-  font-size: 17px; 
-  display: none;
-}
-#circle .line{
-  position: relative;  
-  width: 15px;
-  height: 2px;
-  border-radius: 2px;
-  background-color: whitesmoke;
-  margin: 0.1px 0;
-  left: 7px;
-}
-#ventana-lateral{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background-color: #000;
-  margin-left: -105%;
-  margin-top: -23.4%;
-  width: 422px;
-  height: 677px;
-  cursor: pointer;
-  z-index: 100;
-  transition: transform 0.5s;
-  display: none;
-}
-#icono8,
-#icono7,
-#icono6,
-#icono5{
-  transition: transform 1.6s;
-}
-.iconos-laterales {
-  width: 100%; /* Ajusta el ancho de los elementos al 100% del contenedor */
-  max-width: 100%; /* Ajusta el ancho máximo de los elementos al 100% del contenedor */
-  user-select: none;  
-}
-#ventana-lateral > div {
-  width: 100%; /* Ajusta el ancho de cada div al 100% del contenedor */
-}
-#contenedor-principal{
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 7px; 
-  top: 33%;
-  left: 17%;
-  width: 287px;
-  height: 87px;
-  border-radius: 10px;
-  background-color: transparent;
-}
- input.numero {
-  position: relative;
-  display: flex;
-  bottom: 5px;
-  width: 55px;
-  height: 70px;
-  color: rgb(0, 0, 255);
-  background-color: rgb(0,0,0);
-  border-color: goldenrod; /* Cambia el color del borde al azul cuando el input está enfocado */
-  border-radius: 11px;
-  font-size: 40px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  border: 2px solid transparent; /* Establece un borde transparente por defecto */
+  #conte-botDensitoII{  
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    left: 47%;
+    margin-top: 47%;
+    height: 400px;
+    width: auto;
+    display: none;
+  }  
+  #nicho-videos{
+    position: relative;
+    display: flex;
+    width: auto;
+    height: 500px;
+    left: 1.7%;
+    top: 49%;
+  }
+  #vid06,
+  #vid05,
+  #vid04,
+  #prisma-vid-II{
+    position: absolute;
+    display: flex;
+    left: 1px;
+    top: 1px;
+    width: 100%;
+    height: auto;
+    border: 1px solid gray;
+    border-radius: 17px;
+    cursor: pointer;
+    transition: transform 1.6s;
+  }
+  #padre-circle{
+    position: relative;
+    display: flex;
+    top: -55%;
+    left: 4%; 
+    width: 300px;
+    height:50px ;
+    display: none;
+  }
+  #circle{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(100,100,125);
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    display: none;
+  }
+  #padre-circle h6{
+    position: absolute;
+    margin-left: 13%;
+    margin-top:2%;
+    font-size: 17px; 
+    display: none;
+  }
+  #circle .line{
+    position: relative;  
+    width: 15px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: whitesmoke;
+    margin: 0.1px 0;
+    left: 7px;
+  }
+  #ventana-lateral{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background-color: #000;
+    margin-left: -105%;
+    margin-top: -23.4%;
+    width: 422px;
+    height: 677px;
+    cursor: pointer;
+    z-index: 100;
+    transition: transform 0.5s;
+    display: none;
+  }
+  #icono8,
+  #icono7,
+  #icono6,
+  #icono5{
+    transition: transform 1.6s;
+  }
+  .iconos-laterales {
+    width: 100%; /* Ajusta el ancho de los elementos al 100% del contenedor */
+    max-width: 100%; /* Ajusta el ancho máximo de los elementos al 100% del contenedor */
+    user-select: none;  
+  }
+  #ventana-lateral > div {
+    width: 100%; /* Ajusta el ancho de cada div al 100% del contenedor */
+  }
+  #contenedor-principal{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 7px; 
+    top: 33%;
+    left: 17%;
+    width: 287px;
+    height: 87px;
+    border-radius: 10px;
+    background-color: transparent;
+  }
+  input.numero {
+    position: relative;
+    display: flex;
+    bottom: 5px;
+    width: 55px;
+    height: 70px;
+    color: rgb(0, 0, 255);
+    background-color: rgb(0,0,0);
+    border-color: goldenrod; /* Cambia el color del borde al azul cuando el input está enfocado */
+    border-radius: 11px;
+    font-size: 40px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border: 2px solid transparent; /* Establece un borde transparente por defecto */
 
-}
-input.numero:focus {
-  border-color: blue; /* Cambia el color del borde al azul cuando el input está enfocado */
-}
-#densitometria{
-  position: relative;
-  left:5%;
-  top: 25.2%;
-  height:24.7%;
-  display: none;
-}
-#vidCicodelia{
-  position: absolute;
-  display: flex;
-  height: 175px;
-  width: 88.1%;
-  object-fit: fill; /* Elimina la relación de aspecto original */
-  display: none;
-  z-index: -1; 
-}
-#imgs-densito{
-  position: absolute;
-  height: 497px; 
-  object-fit: fill; /* Elimina la relación de aspecto original */
-  width: 975px;
-  z-index: -1;
-}
-.image-grid {
-  position: absolute;
-  flex-direction: column;
-  display: none;
-  left: -1px;
-  margin-top: -7%;
-}
-@keyframes parpadeo {
-  0% {
-    opacity: 0;
   }
-  100% {
-    opacity: 1;
+  input.numero:focus {
+    border-color: blue; /* Cambia el color del borde al azul cuando el input está enfocado */
   }
-}
+  #densitometria{
+    position: relative;
+    left:5%;
+    top: 25.2%;
+    height:24.7%;
+    display: none;
+  }
+  #vidCicodelia{
+    position: absolute;
+    display: flex;
+    height: 175px;
+    width: 88.1%;
+    object-fit: fill; /* Elimina la relación de aspecto original */
+    display: none;
+    z-index: -1; 
+  }
+  #imgs-densito{
+    position: absolute;
+    height: 497px; 
+    object-fit: fill; /* Elimina la relación de aspecto original */
+    width: 975px;
+    z-index: -1;
+  }
+  .image-grid {
+    position: absolute;
+    flex-direction: column;
+    display: none;
+    left: -1px;
+    margin-top: -7%;
+  }
+  @keyframes parpadeo {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left{
     transform: translateY(457px); 
