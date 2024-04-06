@@ -10750,6 +10750,9 @@ function abrirInterfaz() {
   setTimeout(() => {
     titulo.classList.add('move-title')    
   }, 2222);
+  setTimeout(() => {
+    animarBoton()    
+  }, 2977);
 }
 function trasladarOblicuos(){
   var contOblicuosXI = document.getElementById('agrupaOblicuos-XI');
@@ -10803,3 +10806,13 @@ function reduccionGradualVideo() {
   }, interval);
 }
 
+/* 9999999999999999999999999999999999999999999999999999999999999999999999999999999 */
+const boton = document.getElementById('butt-Institucional');
+
+function animarBoton() {
+  boton.classList.add('big-button'); // Agregar clase para aumentar tamaño
+
+  setTimeout(() => {
+    boton.classList.remove('big-button');    
+  }, 400);
+}
