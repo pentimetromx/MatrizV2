@@ -10734,9 +10734,7 @@ function abrirInterfaz() {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
-
   var titulo = document.getElementById('subtitulo-I')
-
   // Paso 1: Capturar el elemento padre por su ID
   var elementoPadre = document.getElementById('cont-titulo');
   elementoPadre.classList.remove('move-oblicuos');

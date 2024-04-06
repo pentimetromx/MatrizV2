@@ -6145,9 +6145,10 @@ h4{
     height: 19px;
     width: 147px;
     background: linear-gradient(45deg,#ff1837 15%, #333333 85%);
-    opacity: 50%; border-radius: 9px; box-shadow: none;
+    opacity: 50%; border-radius: 9px; box-shadow: none;    
     left: 50%;
     transform: translateX(-50%);
+    transition: all 0.3s ease;    
   } 
   #conte-botDensito{
     position: relative;
@@ -6420,7 +6421,10 @@ h4{
     transform: translateX(415px)
   }
   .move-title{
-    transform: translateX(-417px);
+    transform: translateX(-413px);
+  }
+  .big-button{
+    transform: scale(3);
   }
   /* 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 
