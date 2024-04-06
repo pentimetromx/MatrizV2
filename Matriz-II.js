@@ -1738,10 +1738,7 @@ function mantAutonomo (idElement) {
 }}
 function deslizaContenedor(identificador, idButton) { 
   var contBotKaizen = document.getElementById('conti-boton-kaizen')
-  var contenedor = document.getElementById('conti-boton');
-  contenedor.style.filter = 'blur(5px)';
   contBotKaizen.removeAttribute('style')
-
   linkIni1.style.left = ''
   linkIni2.style.left = ''  
   arrayIdButtsMA.forEach(element => {                                                                                                        
@@ -10703,15 +10700,14 @@ function iniciarAplicacion() {
         if (!isNaN(numero)) { // Verificar si es un número válido
           numerosIngresados.push(numero); // Agregar el número al array
           console.log("Números ingresados:", numerosIngresados); // Mostrar el array en la consola
-
           // Verificar si el contenido del array 'numerosIngresados' es igual al de 'masterKey'
           if (JSON.stringify(numerosIngresados) === JSON.stringify(masterKey)) {
             console.log("El contenido del array 'numerosIngresados' es igual a 'masterKey'");
             console.log("Contenido del array 'numerosIngresados':", numerosIngresados);
-
             setTimeout(() => {
-              var contenedor = document.getElementById('videoBackgroundII');  
-              contenedor.style.filter = 'blur(10px)'; // Puedes ajustar el valor de desenfoque según tus preferencias
+              /* var contenedor = document.getElementById('videoBackgroundII');  
+              contenedor.style.filter = 'blur(10px)'; // Puedes ajustar el valor de desenfoque según tus preferencias */
+              aumentoGradualVideo()              
             }, 200);
             setTimeout(() => {
               abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
@@ -10723,7 +10719,6 @@ function iniciarAplicacion() {
           input.value = '*'.repeat(valorOriginal.length); // Cambiar el valor por asteriscos después de 0.77 segundos
         }, 177);
       });
-
     });
   });
   // Establecer el foco en el primer input
@@ -10748,8 +10743,9 @@ function abrirInterfaz() {
   elementoPadre.classList.add('move-oblicuos');  console.log('se removio la clase')
   }, 177);
   setTimeout(() => {
-    var contenedor = document.getElementById('videoBackgroundII');  
-    contenedor.style.filter = 'none'; // Puedes ajustar el valor de desenfoque según tus preferencias
+    /* var contenedor = document.getElementById('videoBackgroundII');  
+    contenedor.style.filter = 'none'; // Puedes ajustar el valor de desenfoque según tus preferencias */
+    reduccionGradualVideo()
   }, 1800);
 }
 function trasladarOblicuos(){
@@ -10772,4 +10768,37 @@ function desactivarClicsPorUnTiempo() {
 function bloquearClic(event) {
   event.stopPropagation();
   event.preventDefault();
+}
+function aumentoGradualVideo() {
+  var video = document.getElementById('videoBackgroundII');
+  var currentScale = 1; // Escala inicial del video
+  var targetScale = 10; // Escala objetivo del video
+  var increment = 0.1; // Incremento de escala en cada paso
+  var interval = 1; // Intervalo de tiempo entre cada paso (en milisegundos)
+  var scaleUp = setInterval(function() {
+      currentScale += increment; // Aumentar la escala actual
+      video.style.transform = 'scale(' + currentScale + ')'; // Aplicar la escala al video
+      // Verificar si se alcanzó la escala objetivo
+      if (currentScale >= targetScale) {
+          clearInterval(scaleUp); // Detener el aumento progresivo
+      }
+  }, interval);
+}
+
+function reduccionGradualVideo() {
+  var video = document.getElementById('videoBackgroundII');
+  var currentScale = 10; // Escala inicial del video (10x)
+  var targetScale = 1.1; // Escala objetivo del video (1x)
+  var decrement = 0.1; // Decremento de escala en cada paso
+  var interval = 1; // Intervalo de tiempo entre cada paso (en milisegundos)
+
+  var scaleDown = setInterval(function() {
+      currentScale -= decrement; // Reducir la escala actual
+      video.style.transform = 'scale(' + currentScale + ')'; // Aplicar la escala al video
+
+      // Verificar si se alcanzó la escala objetivo
+      if (currentScale <= targetScale) {
+          clearInterval(scaleDown); // Detener la reducción progresiva
+      }
+  }, interval);
 }
