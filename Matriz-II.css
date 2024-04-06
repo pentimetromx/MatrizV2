@@ -4061,8 +4061,7 @@ h4{
     left: 1%;
     height: 100vh;
     
-  }
-  
+  }  
   #conti-boton-teñido{   
     position: absolute;
     display: flex;
@@ -4090,8 +4089,7 @@ h4{
     left: 8%;
     top: 44%;
     display: none;
-  }
-  
+  }  
   #teñido-I{
     display: flex;
     position: fixed;
@@ -4415,7 +4413,6 @@ h4{
     border-radius: 8px;
 
   }
-
   #vidTintero{
     position: relative;
     margin-left: -157%;
@@ -4846,8 +4843,7 @@ h4{
     left: 9%;
     top: 37%;
     border-radius: 19px;
-  }
-  
+  }  
   #cuartoContDensito,
   #tercerContDensito,
   #segundoContDensito,
@@ -5301,7 +5297,6 @@ h4{
     left: 79%;
     top: 15%; 
   }
-
   #imagenes-impresor,
   #imagenes-manta,
   #imagenes-plancha{ /*  */
@@ -5966,7 +5961,6 @@ h4{
     border-radius: 21px;
     display: none;
   }
-
   #canvasContainer4-II{
     position: absolute;
     display: flex;
@@ -6098,7 +6092,6 @@ h4{
     height: 70%;
     transition: transform 1.6s ease; /* Aplica la transición a la propiedad 'transform' */
   }  
-
   #agrupaOblicuos-XI{
     position: absolute;
     display: flex;
@@ -6112,7 +6105,6 @@ h4{
     z-index: 2;   
     overflow: auto;
   }
-
   #padre-interfaz{
     position: absolute;
     left: 24%;
@@ -6256,7 +6248,6 @@ h4{
   max-width: 100%; /* Ajusta el ancho máximo de los elementos al 100% del contenedor */
   user-select: none;  
 }
-
 #ventana-lateral > div {
   width: 100%; /* Ajusta el ancho de cada div al 100% del contenedor */
 }
@@ -6323,7 +6314,6 @@ input.numero:focus {
   left: -1px;
   margin-top: -7%;
 }
-
 @keyframes parpadeo {
   0% {
     opacity: 0;
@@ -6332,7 +6322,6 @@ input.numero:focus {
     opacity: 1;
   }
 }
-
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left{
     transform: translateY(457px); 
@@ -6421,7 +6410,6 @@ input.numero:focus {
   .move-casos{
     transform: translateX(415px)
   }
-
   /* 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 
   .contenedor{

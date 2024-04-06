@@ -1738,7 +1738,10 @@ function mantAutonomo (idElement) {
 }}
 function deslizaContenedor(identificador, idButton) { 
   var contBotKaizen = document.getElementById('conti-boton-kaizen')
+  var contenedor = document.getElementById('conti-boton');
+  contenedor.style.filter = 'blur(5px)';
   contBotKaizen.removeAttribute('style')
+
   linkIni1.style.left = ''
   linkIni2.style.left = ''  
   arrayIdButtsMA.forEach(element => {                                                                                                        
@@ -6612,7 +6615,6 @@ function antesImagenes(){
 function resultadosEmpleado(idEmpleado, functionExe,icono) {
   var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered'] // Colores en formato RGB
   const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
-  /* var contUserScroll = document.getElementById('contenedor-vertical') */
   var contUserElementsI = document.getElementsByClassName('cont-userI') 
   var contSecundario = document.getElementById('conte-secundario')
   var contUserArrayI = Array.from(contUserElementsI)  
@@ -8276,8 +8278,6 @@ function aumentoBotonesBody() {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }  
-
-
   // Función para aumentar el tamaño de un botón y luego restaurarlo
   function aumentarYRestaurar(index) {
     if (index < buttonsIds.length) {
@@ -10708,7 +10708,14 @@ function iniciarAplicacion() {
           if (JSON.stringify(numerosIngresados) === JSON.stringify(masterKey)) {
             console.log("El contenido del array 'numerosIngresados' es igual a 'masterKey'");
             console.log("Contenido del array 'numerosIngresados':", numerosIngresados);
-            abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
+
+            setTimeout(() => {
+              var contenedor = document.getElementById('videoBackgroundII');  
+              contenedor.style.filter = 'blur(10px)'; // Puedes ajustar el valor de desenfoque según tus preferencias
+            }, 200);
+            setTimeout(() => {
+              abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
+            }, 1100);
           }
         }
         valorOriginal = this.value; // Almacenar el valor original
@@ -10740,6 +10747,10 @@ function abrirInterfaz() {
   // Paso 2: Agregar una clase al elemento padre para moverlo hacia abajo
   elementoPadre.classList.add('move-oblicuos');  console.log('se removio la clase')
   }, 177);
+  setTimeout(() => {
+    var contenedor = document.getElementById('videoBackgroundII');  
+    contenedor.style.filter = 'none'; // Puedes ajustar el valor de desenfoque según tus preferencias
+  }, 1800);
 }
 function trasladarOblicuos(){
   var contOblicuosXI = document.getElementById('agrupaOblicuos-XI');
@@ -10762,4 +10773,3 @@ function bloquearClic(event) {
   event.stopPropagation();
   event.preventDefault();
 }
-
