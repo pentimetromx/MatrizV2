@@ -3372,7 +3372,8 @@ function abrirPrepress(elementId) {
   }
 }
 function abrirDensitometria(elementId){
-  var elementosExcluidos = ['buscador','densitometria','container01','imgs-densito','contDensito','segundoContDensito','tercerContDensito','cuartoContDensito','linkList'] /// OCULTA TODO MENOS (2 ELEMENTOS)          
+  var contieneLinks = document.getElementById('linkList')
+  var elementosExcluidos = ['buscador','densitometria','links-inicialesI','links-iniciales','container01','imgs-densito','contDensito','segundoContDensito','tercerContDensito','cuartoContDensito','linkList'] /// OCULTA TODO MENOS (2 ELEMENTOS)          
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -3380,13 +3381,9 @@ function abrirDensitometria(elementId){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  for (var i = 0; i < linksIniciales.length; i++) {
-    var elemento = document.getElementById(linksIniciales[i]);
-    elemento.style.display = 'flex'
-  }
   document.body.style.zoom = "100%"
   container1.style.left=''
+  contieneLinks.style.display = 'none'
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   var vidDensitometria = document.getElementById('vidCicodeliaII')
   vidDensitometria.style.display = 'flex'
@@ -3397,7 +3394,6 @@ function abrirDensitometria(elementId){
   }, 77);
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
   const imagenesDensito = document.querySelectorAll('.imgDensito');
-
   // Paso 2: Recorrer el array y hacer las imágenes visibles
   imagenesDensito.forEach((imagen) => {
       // Hacer visible cada imagen
@@ -10743,8 +10739,8 @@ function abrirInterfaz() {
   elementoPadre.classList.add('move-oblicuos');  console.log('se removio la clase')
   }, 177);
   setTimeout(() => {
-    /* var contenedor = document.getElementById('videoBackgroundII');  
-    contenedor.style.filter = 'none'; // Puedes ajustar el valor de desenfoque según tus preferencias */
+    var contenedor = document.getElementById('videoBackgroundII');  
+    contenedor.style.filter = 'none'; // Puedes ajustar el valor de desenfoque según tus preferencias
     reduccionGradualVideo()
   }, 1800);
 }
@@ -10784,18 +10780,15 @@ function aumentoGradualVideo() {
       }
   }, interval);
 }
-
 function reduccionGradualVideo() {
   var video = document.getElementById('videoBackgroundII');
   var currentScale = 10; // Escala inicial del video (10x)
   var targetScale = 1.1; // Escala objetivo del video (1x)
   var decrement = 0.1; // Decremento de escala en cada paso
   var interval = 1; // Intervalo de tiempo entre cada paso (en milisegundos)
-
   var scaleDown = setInterval(function() {
       currentScale -= decrement; // Reducir la escala actual
       video.style.transform = 'scale(' + currentScale + ')'; // Aplicar la escala al video
-
       // Verificar si se alcanzó la escala objetivo
       if (currentScale <= targetScale) {
           clearInterval(scaleDown); // Detener la reducción progresiva

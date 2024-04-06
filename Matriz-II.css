@@ -2040,8 +2040,8 @@ header {
 .conte-botDensito{
   display: flex;
   flex-direction: column;
-  margin-top: 57px;
-  margin-left:877px;
+  margin-top: -5px;
+  margin-left:977px;
 }
 #largoImpresion h2 {
   font-family: "GothamRounded", sans-serif;
@@ -3385,7 +3385,7 @@ h4{
   position: absolute;
   left: 0.5%;
   top: 5%;
-  height: 497px; 
+  height: 477px; 
   width: 955px;
   object-fit: fill; /* Elimina la relación de aspecto original */
   z-index: -1; 
@@ -4496,7 +4496,7 @@ h4{
     width: 222px;
     top:-10%;
     left:-91%;
-    z-index: 99;
+    z-index: 1;
   }
   .custom-link{
     position: absolute;
@@ -6158,7 +6158,7 @@ h4{
   margin-top: 47%;
   height: 400px;
   width: auto;
-  /* display: none; */
+  display: none;
 }  
 #nicho-videos{
   position: relative;
