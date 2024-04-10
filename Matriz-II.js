@@ -70,7 +70,7 @@ var currentID = null;
 var butInicio = document.getElementById('bot-inic')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
-var allContenedores = ['ventana-lateral','buscador','linkList','contenedor-principal','contenedor','padre-circle','circle','options','nicho-videos','primerCont','vidColor','vid01','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
+var allContenedores = ['subtitulo-I','logo-grande','agrupaOblicuos-XI','titulo-ancho','descripcion-I','ventana-lateral','buscador','linkList','contenedor-principal','contenedor','padre-circle','circle','options','nicho-videos','primerCont','vidColor','vid01','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
@@ -2855,10 +2855,10 @@ function abrirSeccionOperativa(elementId){
   boton.style.color = 'white'
   }}  
 
-  iniciarMovimiento('agrupaOblicuos-XVIII')
+  /* iniciarMovimiento('agrupaOblicuos-XVIII')
   setTimeout(() => {
   iniciarMovimiento('agrupaOblicuos-XII')      
-  }, 400);
+  }, 400); */
 
   // 4. Verificar si el elemento está definido y si ya existe en arrayIds
   if (typeof elementId !== 'undefined') {
@@ -2892,7 +2892,7 @@ function abrirSeccionAdministrativa(elementId) {
   var arrayOblicuos = Array.from(elementosOblicuos)
   for (var i = 0; i < arrayOblicuos.length; i++) {
     var elemento = arrayOblicuos[i];
-    elemento.style.display = "block";
+    elemento.style.display = "flex";
   }
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   for (var i = 0; i < arrayButtsIniciales.length; i++) {                                                                          /// COLECCION BOTONES DAR COLOR
@@ -7954,19 +7954,18 @@ function rodillosKaizen(idButton,vidElem) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       } 
-
       if(screenWidth < 500){
-
-        for (var i = 0; i < buttsToyota.length; i++) {                                            /// OBTENER 'window.getcomputedStyle' DE LAS (8 IMAGENES EN UNA)
+        for (var i = 0; i < buttsToyota.length; i++) {                                          /// OBTENER 'window.getcomputedStyle' DE LAS (8 IMAGENES EN UNA)
           var elemento = document.getElementById(buttsToyota[i])      
           // Accede a la propiedad 'display' utilizando window.getComputedStyle
           var estiloDisplay = window.getComputedStyle(elemento).getPropertyValue('display')
           elemento.style.display = 'none'
         }
-        imgsEstudio.style.display = 'none'       
-        casoEstudio.style.display = 'none'         
         imgsEstudio.classList.remove('move-casos')        
-        casoEstudio.classList.remove('move-label')        
+        casoEstudio.classList.remove('move-label') 
+        casoEstudio.removeAttribute('style')
+        casoEstudio.style.display = 'none' 
+        imgsEstudio.style.display = 'none'       
         const imagenes = document.querySelectorAll('.imgs-toyota');
         imagenes.forEach((imagen, index) => {
           setTimeout(() => {
@@ -10463,16 +10462,6 @@ function moverMA() {
     container.classList.toggle('move-down-II')
   }
 }
-function abrirInterfaz(){
-  var elementosExcluidos = ['buscador','padre-interfaz','hijo-interaz-1','hijo-interaz-2']  
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i])  
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-    }
-  }  
-
-}
 function aumentarIconos() {
   const iconosLateral = document.getElementsByClassName('iconos-laterales');
   let currentIndex = 0;
@@ -10603,16 +10592,17 @@ document.addEventListener('keydown', function(event) {
         },1977)         
       break;
       case 'H': 
-      reducirAlturaVentana()      
+      Geometria()      
       break;
       case 'J':
+        soloEnsayos()
       break;                  
     }
   }
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('wave')
+  var contiBoton = document.getElementById('agrupaOblicuos-XXI')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
@@ -10672,94 +10662,168 @@ function moveCursorToEnd(input) {
   input.setSelectionRange(textLength, textLength); 
 } 
 function iniciarAplicacion() {
- for(var i = 0; i < arrayVideos.length; i++){
+  for(var i = 0; i < arrayVideos.length; i++){
   var videoInt = document.getElementById(arrayVideos[i])  
   if(videoInt){
     videoInt.style.display = 'none'
   }
  }
-  var contCtx = document.getElementById('ctx')
-  var search = document.getElementById('buscador')
-  search.style.display = 'none'  
-  contCtx.style.display = 'none'
-  const masterKey = [1]; 
-  // Obtener todos los inputs con la clase "numero"
-  var inputs = document.querySelectorAll('.numero');
-  // Array para almacenar los números ingresados
-  var numerosIngresados = [];
-  // Iterar sobre cada input
-  inputs.forEach(function(input) {
-    // Agregar event listener para el evento de enfoque (focus)
-    input.addEventListener('focus', function() {
-      // Variable para almacenar el valor original
-      var valorOriginal = this.value;
-      // Agregar event listener para cambiar el valor por asterisco y almacenar el número ingresado
-      input.addEventListener('input', function() {
-        var numero = parseInt(this.value);
-        if (!isNaN(numero)) { // Verificar si es un número válido
-          numerosIngresados.push(numero); // Agregar el número al array
-          console.log("Números ingresados:", numerosIngresados); // Mostrar el array en la consola
-          // Verificar si el contenido del array 'numerosIngresados' es igual al de 'masterKey'
-          if (JSON.stringify(numerosIngresados) === JSON.stringify(masterKey)) {
-            console.log("El contenido del array 'numerosIngresados' es igual a 'masterKey'");
-            console.log("Contenido del array 'numerosIngresados':", numerosIngresados);
-            setTimeout(() => {
-              /* var contenedor = document.getElementById('videoBackgroundII');  
-              contenedor.style.filter = 'blur(10px)'; // Puedes ajustar el valor de desenfoque según tus preferencias */
-              aumentoGradualVideo()              
-            }, 200);
-            setTimeout(() => {
-              abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
-            }, 1100);
+
+ if(screenWidth < 500)
+  {
+
+    var contCtx = document.getElementById('ctx') 
+    var search = document.getElementById('buscador')
+    search.style.display = 'none'  
+    contCtx.style.display = 'none'
+    const masterKey = [1]; 
+    // Obtener todos los inputs con la clase "numero"
+    var inputs = document.querySelectorAll('.numero');
+    // Array para almacenar los números ingresados
+    var numerosIngresados = [];
+    // Iterar sobre cada input
+    inputs.forEach(function(input) {
+      // Agregar event listener para el evento de enfoque (focus)
+      input.addEventListener('focus', function() {
+        // Variable para almacenar el valor original
+        var valorOriginal = this.value;
+        // Agregar event listener para cambiar el valor por asterisco y almacenar el número ingresado
+        input.addEventListener('input', function() {
+          var numero = parseInt(this.value);
+          if (!isNaN(numero)) { // Verificar si es un número válido
+            numerosIngresados.push(numero); // Agregar el número al array
+            console.log("Números ingresados:", numerosIngresados); // Mostrar el array en la consola
+            // Verificar si el contenido del array 'numerosIngresados' es igual al de 'masterKey'
+            if (JSON.stringify(numerosIngresados) === JSON.stringify(masterKey)) {
+              console.log("El contenido del array 'numerosIngresados' es igual a 'masterKey'");
+              console.log("Contenido del array 'numerosIngresados':", numerosIngresados);
+              setTimeout(() => {
+                aumentoGradualVideo()              
+              }, 200);
+              setTimeout(() => {
+                abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
+              }, 1100);
+            }
           }
-        }
-        valorOriginal = this.value; // Almacenar el valor original
-        setTimeout(function() {
-          input.value = '*'.repeat(valorOriginal.length); // Cambiar el valor por asteriscos después de 0.77 segundos
-        }, 177);
+          valorOriginal = this.value; // Almacenar el valor original
+          setTimeout(function() {
+            input.value = '*'.repeat(valorOriginal.length); // Cambiar el valor por asteriscos después de 0.77 segundos
+          }, 177);
+        });
       });
     });
-  });
-  // Establecer el foco en el primer input
-  var primerInput = document.querySelector('.numero');
-  if (primerInput) {
-    primerInput.focus();
+    // Establecer el foco en el primer input
+    var primerInput = document.querySelector('.numero');
+    if (primerInput) {
+      primerInput.focus();
+      var contFranjaBlanca = document.getElementById('franja-Blanca');
+      contFranjaBlanca.classList.add('move-franja') 
+    }
+  }else{
+    var contCtx = document.getElementById('ctx')
+    var search = document.getElementById('buscador')
+    search.style.display = 'none'  
+    contCtx.style.display = 'none'
+    const masterKey = [1]; 
+    // Obtener todos los inputs con la clase "numero"
+    var inputs = document.querySelectorAll('.numero');
+    // Array para almacenar los números ingresados
+    var numerosIngresados = [];
+    // Iterar sobre cada input
+    inputs.forEach(function(input) {
+      // Agregar event listener para el evento de enfoque (focus)
+      input.addEventListener('focus', function() {
+        // Variable para almacenar el valor original
+        var valorOriginal = this.value;
+        // Agregar event listener para cambiar el valor por asterisco y almacenar el número ingresado
+        input.addEventListener('input', function() {
+          var numero = parseInt(this.value);
+          if (!isNaN(numero)) { // Verificar si es un número válido
+            numerosIngresados.push(numero); // Agregar el número al array
+            console.log("Números ingresados:", numerosIngresados); // Mostrar el array en la consola
+            // Verificar si el contenido del array 'numerosIngresados' es igual al de 'masterKey'
+            if (JSON.stringify(numerosIngresados) === JSON.stringify(masterKey)) {
+              console.log("El contenido del array 'numerosIngresados' es igual a 'masterKey'");
+              console.log("Contenido del array 'numerosIngresados':", numerosIngresados);
+              setTimeout(() => {
+                aumentoGradualVideo()              
+              }, 200);
+              setTimeout(() => {
+                abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
+              }, 800);
+            }
+          }
+          valorOriginal = this.value; // Almacenar el valor original
+          setTimeout(function() {
+            input.value = '*'.repeat(valorOriginal.length); // Cambiar el valor por asteriscos después de 0.77 segundos
+          }, 177);
+        });
+      });
+    });
+    // Establecer el foco en el primer input
+    var primerInput = document.querySelector('.numero');
+    if (primerInput) {
+      primerInput.focus();
+      efectoTitulo()
+    }
+    
   }
 }
 function abrirInterfaz() {
-  var elementosExcluidos = ['buscador','videoBackgroundII','padre-interfaz','cont-titulo','franja-Blanca','subtitulo-I','descripcion-I','butt-Institucional','padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V'];
+  var elementosExcluidos = ['videoBackgroundII','padre-interfaz','cont-titulo','franja-Blanca','subtitulo-I','descripcion-I','butt-Institucional','padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V','titulo-ancho','logo-grande'];
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
-  var titulo = document.getElementById('subtitulo-I')
-  // Paso 1: Capturar el elemento padre por su ID
-  var elementoPadre = document.getElementById('cont-titulo');
-  elementoPadre.classList.remove('move-oblicuos');
-  setTimeout(function () {
-  // Paso 2: Agregar una clase al elemento padre para moverlo hacia abajo
-  elementoPadre.classList.add('move-oblicuos');
-  }, 177);
-  setTimeout(() => {
-    var contenedor = document.getElementById('videoBackgroundII');  
-    contenedor.style.filter = 'none'; // Puedes ajustar el valor de desenfoque según tus preferencias
-    reduccionGradualVideo()
-  }, 1800);
-  setTimeout(() => {
-    titulo.classList.add('move-title')    
-  }, 2222);
-  setTimeout(() => {
-    animarBoton()    
-  }, 2977);
+
+  if(screenWidth < 500){
+    var titulo = document.getElementById('subtitulo-I')
+    // Paso 1: Capturar el elemento padre por su ID
+    var elementoPadre = document.getElementById('cont-titulo');
+    elementoPadre.classList.remove('move-oblicuos');
+    setTimeout(function () {
+    // Paso 2: Agregar una clase al elemento padre para moverlo hacia abajo
+    elementoPadre.classList.add('move-oblicuos');
+    }, 177);
+    setTimeout(() => {
+      var contenedor = document.getElementById('videoBackgroundII');  
+      contenedor.style.filter = 'none'; // Puedes ajustar el valor de desenfoque según tus preferencias
+      reduccionGradualVideo()
+    }, 1800);
+    setTimeout(() => {
+      titulo.classList.add('move-title')    
+    }, 2222);
+    setTimeout(() => {
+      animarBoton() 
+    }, 2977);
+  }else{
+    var titulo = document.getElementById('subtitulo-I')
+    // Paso 1: Capturar el elemento padre por su ID
+    var elementoPadre = document.getElementById('cont-titulo');
+    elementoPadre.classList.remove('move-oblicuosII');
+    setTimeout(function () {
+    // Paso 2: Agregar una clase al elemento padre para moverlo hacia abajo
+    elementoPadre.classList.add('move-oblicuosII');
+    }, 177);
+    setTimeout(() => {
+      var contenedor = document.getElementById('videoBackgroundII');  
+      contenedor.style.filter = 'none'; // Puedes ajustar el valor de desenfoque según tus preferencias
+      reduccionGradualVideo()
+    }, 1000);
+    setTimeout(() => {
+      titulo.classList.add('move-title')    
+    }, 2222);
+    setTimeout(() => {
+      animarBoton() 
+    }, 1777);
+  }
 }
 function trasladarOblicuos(){
   var contOblicuosXI = document.getElementById('agrupaOblicuos-XI');
-
   contOblicuosXI.classList.add('move-oblicuos');
   console.log('se AGREGO la clase')
-
   /* contOblicuosXI.style.top = '10%' */
 }
 function desactivarClicsPorUnTiempo() {
@@ -10782,12 +10846,12 @@ function aumentoGradualVideo() {
   var increment = 0.1; // Incremento de escala en cada paso
   var interval = 1; // Intervalo de tiempo entre cada paso (en milisegundos)
   var scaleUp = setInterval(function() {
-      currentScale += increment; // Aumentar la escala actual
-      video.style.transform = 'scale(' + currentScale + ')'; // Aplicar la escala al video
-      // Verificar si se alcanzó la escala objetivo
-      if (currentScale >= targetScale) {
-          clearInterval(scaleUp); // Detener el aumento progresivo
-      }
+    currentScale += increment; // Aumentar la escala actual
+    video.style.transform = 'scale(' + currentScale + ')'; // Aplicar la escala al video
+    // Verificar si se alcanzó la escala objetivo
+    if (currentScale >= targetScale) {
+        clearInterval(scaleUp); // Detener el aumento progresivo
+    }
   }, interval);
 }
 function reduccionGradualVideo() {
@@ -10797,22 +10861,38 @@ function reduccionGradualVideo() {
   var decrement = 0.1; // Decremento de escala en cada paso
   var interval = 1; // Intervalo de tiempo entre cada paso (en milisegundos)
   var scaleDown = setInterval(function() {
-      currentScale -= decrement; // Reducir la escala actual
-      video.style.transform = 'scale(' + currentScale + ')'; // Aplicar la escala al video
-      // Verificar si se alcanzó la escala objetivo
-      if (currentScale <= targetScale) {
-          clearInterval(scaleDown); // Detener la reducción progresiva
-      }
+    currentScale -= decrement; // Reducir la escala actual
+    video.style.transform = 'scale(' + currentScale + ')'; // Aplicar la escala al video
+    // Verificar si se alcanzó la escala objetivo
+    if (currentScale <= targetScale) {
+        clearInterval(scaleDown); // Detener la reducción progresiva
+    }
   }, interval);
 }
-
 /* 9999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 const boton = document.getElementById('butt-Institucional');
-
 function animarBoton() {
-  boton.classList.add('big-button'); // Agregar clase para aumentar tamaño
-
+  if(screenWidth < 500){  
+    boton.classList.add('big-button'); // Agregar clase para aumentar tamaño
+    setTimeout(() => {
+      boton.classList.remove('big-button'); 
+    }, 400);
+  }else{
+    boton.classList.add('big-buttonII'); // Agregar clase para aumentar tamaño
+    setTimeout(() => {
+      boton.classList.remove('big-buttonII'); 
+    }, 400);
+  }  
+}
+function efectoTitulo(){
+  var logoAncho = document.getElementById('logo-grande')
   setTimeout(() => {
-    boton.classList.remove('big-button');    
-  }, 400);
+    logoAncho.classList.remove('move-logo')   
+  }, 10);
+  setTimeout(() => {
+    logoAncho.style.display = 'flex' 
+  }, 77);
+  setTimeout(() => {
+    logoAncho.classList.add('move-logo')
+  }, 177);
 }

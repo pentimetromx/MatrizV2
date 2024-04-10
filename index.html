@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
 <html>
   <head>
     <meta charset="UTF-8">
@@ -7,7 +6,6 @@
     <title>Interfaz de entrenamiento</title>
     <link rel="stylesheet" href="./Matriz-II.css">
   </head>
-<!--   <body  onload="aumentoBotonesBody()"> -->
   <body onload="iniciarAplicacion()">
 
     <header class="buscador" id="buscador" style="position: absolute;left: 3px;top: 2px;">
@@ -19,12 +17,12 @@
           </button>
       </form>
     </header>
-    <div class="franja-gris-ini" id="franja-gris">
-      <section id="seccion-gris"></section>
-      <img id="img-Titulos" src="./assets/cadena titulos.png" alt="logo">
+
+    <div id="logo-grande">
+      <img id="titulo-ancho" src="./assets/cadena logo big.png" alt="logo">
     </div>
-    <div class="franja-blamca-ini" id="franja-Blanca">
-      <section id="seccion-blamca" style="display: flex;width: 100%;height: 79px;background-color: white;"></section>
+
+    <div id="franja-Blanca">
       <img id="img-logo" src="./assets/cadena logo.png" alt="logo">
     </div>
 
@@ -43,7 +41,7 @@
       </p>
       <div class="oblicuos-XI" id="agrupaOblicuos-XI">   
         <div id="contFrente-V" class="oblicuosInicio">
-          <button  class="Bot-inicio3" id="butt-111" onclick="animarBoton()">Area Calidad</button>
+          <button  class="Bot-inicio3" id="butt-111" onclick="abrirSeccionCalidad('cont-titulo-calidad')">Area Calidad</button>
           <button class="Bot-inicio3-fondo" id="butt-112"></button>  
         </div>
         <div id="contLateral-V" class="oblicuosInicio">
@@ -273,14 +271,11 @@
           <button  class="Bot-inicio3" id="butt-113" onclick="abrirSeccionContinua('pantalla-inicial')">Terminacion</button>        
           <button class="Bot-inicio3333-fondo" id="butt-7112000"></button>  
         </div>
-      </div>
-      <div class="oblicuos-XI" id="agrupaOblicuos-XIII">
         <div id="contMedio-V-operacion" class="contOblicuosTorre elemento-hijo">
           <button class="Bot-inicio3" id="butt-25">Pinzas</button>
           <button class="Bot-inicio3333-fondo" id="butt-023000"></button>  
         </div> 
-      </div>  
-
+      </div>
     </div>
     <div id="cont-titulo-admin" style="display: none;">
       <h4 id="subtitulo-admin">Aplicamos la transformación tecnológica</h4>
