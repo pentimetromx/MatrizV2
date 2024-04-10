@@ -10671,7 +10671,6 @@ function iniciarAplicacion() {
 
  if(screenWidth < 500)
   {
-
     var contCtx = document.getElementById('ctx') 
     var search = document.getElementById('buscador')
     search.style.display = 'none'  
