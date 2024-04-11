@@ -10662,14 +10662,30 @@ function moveCursorToEnd(input) {
   input.setSelectionRange(textLength, textLength); 
 } 
 
-// Función para poner el foco y el cursor en el primer input
-function focusOnFirstInput() {
+// Función para poner foco en el primer input dependiendo del ancho de la pantalla
+function handleInputFocus() {
   const firstInput = document.querySelector('#contenedor-principal input.numero');
+  
   if (firstInput) {
-    firstInput.focus();
+      // Determina el ancho de la pantalla
+      const screenWidth = window.innerWidth;
+      
+      // Estructura 'switch' para manejar diferentes casos según el ancho de la pantalla
+      switch (true) {
+          case screenWidth < 500:
+              // Si el ancho de pantalla es menor a 500px
+              firstInput.click(); // Simula un clic para activar el teclado virtual
+              break;
+          default:
+              // Si el ancho de pantalla es mayor o igual a 500px
+              firstInput.focus(); // Enfoca el input directamente
+              break;
+      }
   }
 }
-window.onload = focusOnFirstInput;
+
+// Ejecutar la función cuando la página se cargue
+window.onload = handleInputFocus;
 
 function iniciarAplicacion() {
   for(var i = 0; i < arrayVideos.length; i++){
