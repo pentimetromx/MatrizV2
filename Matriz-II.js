@@ -10669,8 +10669,6 @@ function focusOnFirstInput() {
     firstInput.focus();
   }
 }
-
-// Llama a la función para poner el foco en el primer input cuando se carga la página
 window.onload = focusOnFirstInput;
 
 function iniciarAplicacion() {
