@@ -10696,12 +10696,12 @@ function iniciarAplicacion() {
             if (JSON.stringify(numerosIngresados) === JSON.stringify(masterKey)) {
               console.log("El contenido del array 'numerosIngresados' es igual a 'masterKey'");
               console.log("Contenido del array 'numerosIngresados':", numerosIngresados);
-              setTimeout(() => {
+              /* setTimeout(() => {
                 aumentoGradualVideo()              
               }, 200);
               setTimeout(() => {
                 abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
-              }, 1100);
+              }, 1100); */
             }
           }
           valorOriginal = this.value; // Almacenar el valor original
@@ -10790,6 +10790,8 @@ function abrirInterfaz() {
       var contenedor = document.getElementById('videoBackgroundII');  
       contenedor.style.filter = 'none'; // Puedes ajustar el valor de desenfoque según tus preferencias
       reduccionGradualVideo()
+      var contFranjaBlanca = document.getElementById('franja-Blanca');
+      contFranjaBlanca.classList.add('move-franja')
     }, 1800);
     setTimeout(() => {
       titulo.classList.add('move-title')    
