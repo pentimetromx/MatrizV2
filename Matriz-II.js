@@ -10674,11 +10674,13 @@ function handleInputFocus() {
       switch (true) {
           case screenWidth < 500:
               // Si el ancho de pantalla es menor a 500px
+              firstInput.focus(); // Enfoca el input directamente
               firstInput.click(); // Simula un clic para activar el teclado virtual
               break;
           default:
               // Si el ancho de pantalla es mayor o igual a 500px
               firstInput.focus(); // Enfoca el input directamente
+              
               break;
       }
   }
