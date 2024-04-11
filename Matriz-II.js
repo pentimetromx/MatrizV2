@@ -9283,7 +9283,7 @@ textToColor.addEventListener("mouseover", () => {
     clearTimeout(hideTimeout)
     hoverTimeout = setTimeout(() => {
       linkList.style.display = "block";
-      linkListI,style.display = 'none'
+      linkListI.style.display = 'none'
       line.style.width = textToColor.offsetWidth + "px";
       linkListI.style.display = "none";
     }, 7)
@@ -10696,12 +10696,12 @@ function iniciarAplicacion() {
             if (JSON.stringify(numerosIngresados) === JSON.stringify(masterKey)) {
               console.log("El contenido del array 'numerosIngresados' es igual a 'masterKey'");
               console.log("Contenido del array 'numerosIngresados':", numerosIngresados);
-              /* setTimeout(() => {
+              setTimeout(() => {
                 aumentoGradualVideo()              
               }, 200);
               setTimeout(() => {
                 abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
-              }, 1100); */
+              }, 1100);
             }
           }
           valorOriginal = this.value; // Almacenar el valor original
@@ -10715,8 +10715,8 @@ function iniciarAplicacion() {
     var primerInput = document.querySelector('.numero');
     if (primerInput) {
       primerInput.focus();
-      /* var contFranjaBlanca = document.getElementById('franja-Blanca');
-      contFranjaBlanca.classList.add('move-franja')  */
+      var contFranjaBlanca = document.getElementById('franja-Blanca');
+      contFranjaBlanca.classList.add('move-franja') 
     }
   }else{
     var contCtx = document.getElementById('ctx')
