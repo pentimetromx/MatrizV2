@@ -10661,33 +10661,59 @@ function moveCursorToEnd(input) {
   // Mover el cursor al final del input
   input.setSelectionRange(textLength, textLength); 
 } 
+/* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 
-// Función para poner foco en el primer input dependiendo del ancho de la pantalla
-function handleInputFocus() {
-  const firstInput = document.querySelector('#contenedor-principal input.numero');
-  
-  if (firstInput) {
-    // Determina el ancho de la pantalla
-    const screenWidth = window.innerWidth;
-    
-    // Estructura 'switch' para manejar diferentes casos según el ancho de la pantalla
-    switch (true) {
-      case screenWidth < 500:
-        // Si el ancho de pantalla es menor a 500px
-        firstInput.focus(); // Enfoca el input directamente
-        /* firstInput.click(); // Simula un clic para activar el teclado virtual */
-      break;
-      default:
-        // Si el ancho de pantalla es mayor o igual a 500px
-        firstInput.focus(); // Enfoca el input directamente
-        firstInput.click();
-      break;
+// Crea la constante masterKey con el valor 10
+const masterKey = [1];
+
+// Función para manejar la lógica
+function manejarLogica() {
+  document.getElementById('franja-Blanca').classList.add('move-franja')
+
+    // Obtén todos los inputs con la clase "numero"
+    const inputs = document.querySelectorAll('.numero');
+    // Posiciona el foco en el primer input
+    if (inputs.length > 0) {
+        inputs[0].focus();
+    }    
+    // Array para almacenar los valores ingresados en cada input
+    let valoresIngresados = [0, 0, 0, 0];
+    // Función para manejar el evento de entrada (input) en los inputs
+    function manejarEntrada() {
+        // Recorre cada input para sumar los valores ingresados
+        let suma = 0;
+        for (let i = 0; i < inputs.length; i++) {
+          // Convierte el valor del input a número
+          const valor = parseInt(inputs[i].value);
+          // Si el valor es un número válido, guárdalo en el array y suma
+          if (!isNaN(valor)) {
+              valoresIngresados[i] = valor;
+              suma += valor;
+          }
+        }
+        // Verifica si la suma de los valores ingresados es igual a masterKey
+        if (suma === masterKey[0]) {
+          setTimeout(() => {
+            aumentoGradualVideo()              
+          }, 200);
+          setTimeout(() => {
+            abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
+          }, 1100);
+
+
+        }
     }
-  }
+    // Agrega el evento de entrada a cada input para llamar a manejarEntrada
+    inputs.forEach(input => {
+        input.addEventListener('input', manejarEntrada);
+    });
 }
 
-/* // Ejecutar la función cuando la página se cargue
-window.onload = handleInputFocus; */
+// Llama a la función manejarLogica cuando la página se carga
+document.addEventListener('DOMContentLoaded', manejarLogica);
+
+/* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
+
 
 function iniciarAplicacion() {
   for(var i = 0; i < arrayVideos.length; i++){

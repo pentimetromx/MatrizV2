@@ -4859,7 +4859,6 @@ input.numero {
     width: 70%;
     text-align: center; /* Centrar el texto */
   }
-    /* Apply styles for the first container (header with search bar) */
   #buscador{
     position: absolute;
     left: 0;
@@ -4868,14 +4867,12 @@ input.numero {
     height: 5%;
     background-color: #333333;
   }
-  /* Apply styles for the second container (gray section with logo) */
    #seccion-gris {
     display: flex;
     width: 100%;
     height: 77px;
     display: none;  
   }
-  /* Apply styles for the third container (white section with logo) */
   #franja-Blanca{
     position: relative;
     display: flex;

@@ -6,7 +6,7 @@
     <title>Interfaz de entrenamiento</title>
     <link rel="stylesheet" href="./Matriz-II.css">
   </head>
-  <body onload="handleInputFocus()" >
+  <body>
     <!-- onload="iniciarAplicacion()" -->
 
     <header class="buscador" id="buscador" style="position: absolute;left: 3px;top: 2px;">
@@ -28,10 +28,10 @@
     </div>
 
     <div id="contenedor-principal">
-      <input type="text" class="numero" maxlength="1">    
-      <input type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" >    
-      <input type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" >    
-      <input type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" >    
+      <input id="input1" type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" onclick="primerInput('input1')">    
+      <input id="input2" type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)">    
+      <input id="input3" type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)">    
+      <input id="input4" type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)">    
     </div>
 
     <div id="cont-titulo">
