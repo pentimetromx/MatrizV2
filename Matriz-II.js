@@ -10661,6 +10661,18 @@ function moveCursorToEnd(input) {
   // Mover el cursor al final del input
   input.setSelectionRange(textLength, textLength); 
 } 
+
+// Función para poner el foco y el cursor en el primer input
+function focusOnFirstInput() {
+  const firstInput = document.querySelector('#contenedor-principal input.numero');
+  if (firstInput) {
+    firstInput.focus();
+  }
+}
+
+// Llama a la función para poner el foco en el primer input cuando se carga la página
+window.onload = focusOnFirstInput;
+
 function iniciarAplicacion() {
   for(var i = 0; i < arrayVideos.length; i++){
   var videoInt = document.getElementById(arrayVideos[i])  

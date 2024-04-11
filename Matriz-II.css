@@ -6406,7 +6406,7 @@ input.numero {
     height: 70px;
     color: rgb(0, 0, 255);
     background-color: rgb(0,0,0);
-    border-color: goldenrod; /* Cambia el color del borde al azul cuando el input está enfocado */
+    border-color: goldenrod; 
     border-radius: 11px;
     font-size: 40px;
      text-align: center;
