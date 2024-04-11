@@ -10667,22 +10667,22 @@ function handleInputFocus() {
   const firstInput = document.querySelector('#contenedor-principal input.numero');
   
   if (firstInput) {
-      // Determina el ancho de la pantalla
-      const screenWidth = window.innerWidth;
-      
-      // Estructura 'switch' para manejar diferentes casos según el ancho de la pantalla
-      switch (true) {
-          case screenWidth < 500:
-              // Si el ancho de pantalla es menor a 500px
-              firstInput.focus(); // Enfoca el input directamente
-              firstInput.click(); // Simula un clic para activar el teclado virtual
-              break;
-          default:
-              // Si el ancho de pantalla es mayor o igual a 500px
-              firstInput.focus(); // Enfoca el input directamente
-              
-              break;
-      }
+    // Determina el ancho de la pantalla
+    const screenWidth = window.innerWidth;
+    
+    // Estructura 'switch' para manejar diferentes casos según el ancho de la pantalla
+    switch (true) {
+      case screenWidth < 500:
+        // Si el ancho de pantalla es menor a 500px
+        firstInput.focus(); // Enfoca el input directamente
+        /* firstInput.click(); // Simula un clic para activar el teclado virtual */
+      break;
+      default:
+        // Si el ancho de pantalla es mayor o igual a 500px
+        firstInput.focus(); // Enfoca el input directamente
+        firstInput.click();
+      break;
+    }
   }
 }
 
