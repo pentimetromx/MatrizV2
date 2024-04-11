@@ -10715,8 +10715,8 @@ function iniciarAplicacion() {
     var primerInput = document.querySelector('.numero');
     if (primerInput) {
       primerInput.focus();
-      var contFranjaBlanca = document.getElementById('franja-Blanca');
-      contFranjaBlanca.classList.add('move-franja') 
+      /* var contFranjaBlanca = document.getElementById('franja-Blanca');
+      contFranjaBlanca.classList.add('move-franja')  */
     }
   }else{
     var contCtx = document.getElementById('ctx')
