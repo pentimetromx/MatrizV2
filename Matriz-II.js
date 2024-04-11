@@ -10686,8 +10686,8 @@ function handleInputFocus() {
   }
 }
 
-// Ejecutar la función cuando la página se cargue
-window.onload = handleInputFocus;
+/* // Ejecutar la función cuando la página se cargue
+window.onload = handleInputFocus; */
 
 function iniciarAplicacion() {
   for(var i = 0; i < arrayVideos.length; i++){
