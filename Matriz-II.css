@@ -2074,11 +2074,14 @@ header {
   display: none;
   border-radius: 11px;
 }
-.conte-botDensito{
+#conte-botDensito{
+  position: absolute;
   display: flex;
   flex-direction: column;
-  margin-top: -5px;
-  margin-left:977px;
+  width: 222px;
+  height: 400px;
+  margin-top: 1%;
+  margin-left:77%;
 }
 #largoImpresion h2 {
   font-family: "GothamRounded", sans-serif;
@@ -3332,6 +3335,14 @@ h4{
   position: absolute;
   transition: transform 1.6s ease;
 }
+#contenedor-9{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  left: 2%;
+  display: none;
+}
+
 #conti-video-bancada,
 #conti-video-smed,
 #conti-video-entintador,
@@ -3648,7 +3659,7 @@ input.numero {
     bottom: 5px;
     width: 55px;
     height: 70px;
-    color: rgb(0, 0, 255);
+    color: rgb(0,255,0);
     background-color: rgb(0,0,0);
     border-color: goldenrod; /* Cambia el color del borde al azul cuando el input está enfocado */
     border-radius: 11px;
@@ -6278,6 +6289,7 @@ input.numero {
     margin-left: 60%;
     margin-top: 40%;
     height: 400px;
+    gap: 7px;
     width: auto;
     display: none;
   }
@@ -6404,8 +6416,7 @@ input.numero {
     bottom: 5px;
     width: 55px;
     height: 70px;
-    /* color: rgb(0, 0, 255); */
-    color: rgb(255, 255,0);
+    color: rgb(0,255,0);
     background-color: rgb(0,0,0);
     border-color: goldenrod;
     border-radius: 11px;

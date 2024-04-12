@@ -35,6 +35,7 @@ var buttRepuestI = document.getElementById('butt-repuestos-I')
 var buttRepuestV = document.getElementById('conti-boton-repuestos-III')
 var contVideo = document.getElementById('video-entintado')
 var contVideoSmed = document.getElementById('conti-video-bancada')
+var conteBancada = document.getElementById('bancada-torre-II')
 
 let firstClick = true;
 var iterations;
@@ -212,7 +213,7 @@ function setInitialPosition(){
   contiBoton.style.transform = ''; // Restablecer la transformación
 }
 function ElementosMaII(elementId){
-  var elementosExcluidos = ['buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales','buscador']  
+  var elementosExcluidos = ['buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
   /* document.getElementById('linkList').style.display = 'none' */
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -3373,7 +3374,7 @@ function abrirPrepress(elementId) {
 }
 function abrirDensitometria(elementId){
   var contieneLinks = document.getElementById('linkList')
-  var elementosExcluidos = ['buscador','densitometria','links-inicialesI','links-iniciales','container01','imgs-densito','contDensito','conte-botDensito','segundoContDensito','tercerContDensito','cuartoContDensito','linkList'] /// OCULTA TODO MENOS (2 ELEMENTOS)          
+  var elementosExcluidos = ['buscador','densitometria','links-inicialesI','links-iniciales','container01','imgs-densito','contDensito','conte-botDensito','segundoContDensito','tercerContDensito','cuartoContDensito','linkList']         
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -3381,6 +3382,17 @@ function abrirDensitometria(elementId){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
+  var conteBotsDensito = ['bot-densi-1', 'bot-densi-2', 'bot-densi-3', 'bot-densi-4', 'bot-densi-5', 'bot-densi-6'];
+  for (var i = 0; i < conteBotsDensito.length; i++) {
+    var botDensitometria = document.getElementById(conteBotsDensito[i]);
+    // Verifica si el elemento existe antes de manipularlo
+    if (botDensitometria) {
+        botDensitometria.style.display = 'flex';
+    }
+  }
+  
+
+  
   document.body.style.zoom = "100%"
   container1.style.left=''
   contieneLinks.style.display = 'none'
@@ -10602,7 +10614,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('agrupaOblicuos-XXI')
+  var contiBoton = document.getElementById('conte-botDensito')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
@@ -10670,6 +10682,13 @@ function manejarLogica() {
   const inputs = document.querySelectorAll('.numero');
   let valoresIngresados = [0, 0, 0, 0];
   document.getElementById('ctx').style.display = 'none'
+  document.getElementById('sitema-humedad').style.display = 'none'
+  document.getElementById('contenedor-9').style.display = 'none'
+  document.getElementById('bancada-torre-II').style.display = 'none'
+  document.getElementById('contenedor-8').style.display = 'none'
+
+
+
 
   if(screenWidth < 500){
     document.getElementById('franja-Blanca').classList.add('move-franja')
