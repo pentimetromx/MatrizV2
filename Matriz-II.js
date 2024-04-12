@@ -10663,54 +10663,66 @@ function moveCursorToEnd(input) {
 } 
 /* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 
-// Crea la constante masterKey con el valor 10
-const masterKey = [1];
-
+// Crea la constante masterKey con el valor 4
+const masterKey = [4];
 // Función para manejar la lógica
 function manejarLogica() {
-  document.getElementById('franja-Blanca').classList.add('move-franja')
-
-    // Obtén todos los inputs con la clase "numero"
-    const inputs = document.querySelectorAll('.numero');
-    // Posiciona el foco en el primer input
-    if (inputs.length > 0) {
-        inputs[0].focus();
-    }    
-    // Array para almacenar los valores ingresados en cada input
-    let valoresIngresados = [0, 0, 0, 0];
-    // Función para manejar el evento de entrada (input) en los inputs
-    function manejarEntrada() {
-        // Recorre cada input para sumar los valores ingresados
-        let suma = 0;
-        for (let i = 0; i < inputs.length; i++) {
-          // Convierte el valor del input a número
-          const valor = parseInt(inputs[i].value);
-          // Si el valor es un número válido, guárdalo en el array y suma
-          if (!isNaN(valor)) {
-              valoresIngresados[i] = valor;
-              suma += valor;
-          }
-        }
-        // Verifica si la suma de los valores ingresados es igual a masterKey
-        if (suma === masterKey[0]) {
-          setTimeout(() => {
-            aumentoGradualVideo()              
-          }, 200);
-          setTimeout(() => {
-            abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
-          }, 1100);
-
-
-        }
+  // Obtén todos los inputs con la clase "numero"
+  const inputs = document.querySelectorAll('.numero');
+  // Posiciona el foco en el primer input
+  if (inputs.length > 0) {
+    inputs[0].focus();
+  }
+  // Array para almacenar los valores ingresados en cada input
+  let valoresIngresados = [0, 0, 0, 0];
+  // Función para manejar el evento de entrada (input) en los inputs
+  function manejarEntrada(event) {
+    // Obtén el input actual desde el evento
+    const inputActual = event.target;
+    // Convierte el valor del input a número
+    const valor = parseInt(inputActual.value);
+    // Inicializa la suma en cero
+    let suma = 0;
+    // Encuentra el índice del input actual dentro de inputs
+    const indice = Array.from(inputs).indexOf(inputActual);
+    // Almacena el valor ingresado en el índice correspondiente
+    if (!isNaN(valor)) {
+      valoresIngresados[indice] = valor;
+    } else {
+      valoresIngresados[indice] = 0; // Establece el valor a cero si no es un número válido
     }
-    // Agrega el evento de entrada a cada input para llamar a manejarEntrada
-    inputs.forEach(input => {
-        input.addEventListener('input', manejarEntrada);
-    });
+    // Después de que se ingrese un número, cambia el valor del input actual a asterisco después de 177 ms
+    setTimeout(() => {
+      inputActual.value = '*';
+      // Mueve el foco al siguiente input después de cambiar a asterisco
+      if (indice < inputs.length - 1) {
+        inputs[indice + 1].focus();
+      }
+    }, 177);
+    // Suma todos los valores ingresados
+    suma = valoresIngresados.reduce((acumulador, valor) => acumulador + valor, 0);
+    // Verifica si la suma de los valores ingresados es igual a masterKey
+    if (suma === masterKey[0]) {
+      // Lanza el alert con el mensaje "clave identica"
+      alert('clave identica');
+      setTimeout(() => {
+        aumentoGradualVideo()              
+      }, 200);
+      setTimeout(() => {
+        abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
+      }, 1100);
+      // Limpia el contenido de todos los inputs
+      inputs.forEach(input => {
+      input.value = ''; // Establece el valor de cada input como una cadena vacía
+      });         
+    }
+  }
+  // Agrega el evento de entrada a cada input para llamar a manejarEntrada
+  inputs.forEach(input => {
+    input.addEventListener('input', manejarEntrada);
+  });
 }
 
-// Llama a la función manejarLogica cuando la página se carga
-document.addEventListener('DOMContentLoaded', manejarLogica);
 
 /* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 
