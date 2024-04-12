@@ -10667,6 +10667,7 @@ function moveCursorToEnd(input) {
 const masterKey = [4];
 // Función para manejar la lógica
 function manejarLogica() {
+  document.getElementById('franja-Blanca').classList.add('move-franja')
   // Obtén todos los inputs con la clase "numero"
   const inputs = document.querySelectorAll('.numero');
   // Posiciona el foco en el primer input
@@ -10703,8 +10704,8 @@ function manejarLogica() {
     suma = valoresIngresados.reduce((acumulador, valor) => acumulador + valor, 0);
     // Verifica si la suma de los valores ingresados es igual a masterKey
     if (suma === masterKey[0]) {
+      document.getElementById('contenedor-principal').style.display = 'none'
       // Lanza el alert con el mensaje "clave identica"
-      alert('clave identica');
       setTimeout(() => {
         aumentoGradualVideo()              
       }, 200);
