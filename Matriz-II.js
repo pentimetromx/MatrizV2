@@ -10669,9 +10669,10 @@ const masterKey = [4];
 function manejarLogica() {
   const inputs = document.querySelectorAll('.numero');
   let valoresIngresados = [0, 0, 0, 0];
+  document.getElementById('ctx').style.display = 'none'
 
   if(screenWidth < 500){
-    /* document.getElementById('franja-Blanca').classList.add('move-franja') */
+    document.getElementById('franja-Blanca').classList.add('move-franja')
     if (inputs.length > 0) {
       inputs[0].focus();
     }

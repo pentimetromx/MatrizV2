@@ -3323,6 +3323,7 @@ h4{
   width: 100%;
   top: 15%;
   left: 1%;
+  display: none;
 }
 #contenedor-8,
 #contenedor-7-VII,
@@ -5932,6 +5933,7 @@ input.numero {
     left:51.7%;
     top: 51%;  
     z-index: 7;
+    display: none;
   }
   #materiales-kaizen,  
   #planos-kaizen{
@@ -6296,6 +6298,7 @@ input.numero {
     height: 500px;
     left: 1.7%;
     top: 49%;
+    display: none;
   }
   #vid06,
   #vid05,
@@ -6402,7 +6405,7 @@ input.numero {
     width: 55px;
     height: 70px;
     /* color: rgb(0, 0, 255); */
-    color: rgb(0, 255,0);
+    color: rgb(255, 255,0);
     background-color: rgb(0,0,0);
     border-color: goldenrod;
     border-radius: 11px;
