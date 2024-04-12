@@ -10671,7 +10671,7 @@ function manejarLogica() {
   let valoresIngresados = [0, 0, 0, 0];
 
   if(screenWidth < 500){
-    document.getElementById('franja-Blanca').classList.add('move-franja')
+    /* document.getElementById('franja-Blanca').classList.add('move-franja') */
     if (inputs.length > 0) {
       inputs[0].focus();
     }
