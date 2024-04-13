@@ -6693,16 +6693,7 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
     }
   }
   
-  // Verifica si la función ya se ha llamado
-  if (!llamadaEjecutada) {
-    // Ejecutar iniciarMovimiento('contenedor-vertical') solo la primera vez
-    iniciarMovimiento('contenedor-vertical');
-    // Establecer llamadaEjecutada a true para indicar que la función ya se ha llamado
-    llamadaEjecutada = true;
-  }
-  
-
-  for (var i = 0; i < contUserElements.length; i++) {
+  for (var i = 0; i < contUserElements.length; i++) { 
     var element = contUserElements[i]
     if (element.id === idEmpleado) {
       contSecundario.style.display = 'flex'
@@ -6711,32 +6702,24 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
       element.style.height = '19.6%'
       element.style.width = '12%'
       element.style.top = '10.7%'
-      element.style.left = '3%'
+      element.style.left = '3%' 
 
-      // Accede al label dentro del div
-      var label = element.querySelector('label')
-      if (label) {
-        intervaloColor = setInterval(function () {
-          label.style.color = colors[colorIndex] // Cambia el color del texto
-          colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
-        }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
-      }
-    } else {
-      element.style.display = 'none'
+    var label = element.querySelector('label')
+    if (label) {
+      intervaloColor = setInterval(function () {
+        label.style.color = colors[colorIndex] // Cambia el color del texto
+        colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
+      }, 200)
     }
-  } 
-  contUserArrayI.forEach(element => {
-  if (element.id === idEmpleado) {  
-    var originalColor = element.style.backgroundColor = '';
-    element.style.backgroundColor = 'green';
-    (function (element, originalColor) {
-      setTimeout(function () {
-      element.style.backgroundColor = originalColor;
-      }, 200);
-    })(element, originalColor);
-    }
-  });                              
+  } else {
+    element.style.display = 'none'
+  }
+  }       
+  if (iconosPermitidos.includes(icono)) {
+    iniciarMovimiento('contenedor-vertical');
+  }    
 
+  
   if(screenWidth < 500){
     var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer9-II','MiGrafica9-II']
     for (var i = 0; i < allContenedores.length; i++) { 
@@ -6745,7 +6728,6 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }
     }  
-
     for (var i = 0; i < contUserElements.length; i++) { 
       var element = contUserElements[i]
       if (element.id === idEmpleado) {
@@ -6766,14 +6748,13 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
     } else {
       element.style.display = 'none'
     }
-  } 
-    
-  if (iconosPermitidos.includes(icono)) {
-    iniciarMovimiento('contenedor-vertical');
-  }    
+    }       
+    if (iconosPermitidos.includes(icono)) {
+      iniciarMovimiento('contenedor-vertical');
+    }    
   }
 
-switch (idEmpleado) {
+  switch (idEmpleado) {
     case 'icon-carlos-I':
       var ContIconoAnaI = document.getElementById('icon-carlos')
       var contSecundarios = document.getElementById('conte-secundario')
