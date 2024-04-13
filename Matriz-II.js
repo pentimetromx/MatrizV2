@@ -6674,7 +6674,9 @@ function antesImagenes(){
   var contImagenAntes = document.getElementById('toyota-kaizen-antes')
   contImagenAntes.style.display = 'flex'
 }
+
 let llamadaEjecutada = false;
+
 function resultadosEmpleado(idEmpleado, functionExe,icono) {
   var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered'] // Colores en formato RGB
   const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
@@ -9743,6 +9745,8 @@ function moveScroll(container) {
     container.scrollTop = 0;
   }
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 function iniciarMovimiento(instrucId) {
   var container = document.getElementById(instrucId);
   container.scrollTop = container.scrollHeight;  
@@ -9888,6 +9892,9 @@ function iniciarMovimiento(instrucId) {
     }}, 277
   );
 }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Obtén el contexto del lienzo
 var canvas = document.getElementById("sinusoidalCanvas");         
 var ctx = canvas.getContext("2d");
@@ -10685,7 +10692,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('franja-Blanca')
+  var contiBoton = document.getElementById('conti-boton-planos')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
@@ -10744,9 +10751,7 @@ function moveCursorToEnd(input) {
   // Mover el cursor al final del input
   input.setSelectionRange(textLength, textLength); 
 } 
-// Crea la constante masterKey con el valor 4
 const masterKey = [4];
-// Función para manejar la lógica
 function manejarLogica() {
   const inputs = document.querySelectorAll('.numero');
   let valoresIngresados = [0, 0, 0, 0];
@@ -10758,10 +10763,8 @@ function manejarLogica() {
   if(screenWidth < 500){
     if (inputs.length > 0) {
       inputs[0].focus();
-    // Inicia la animación de desenrollar
-    var tituloAncho = document.getElementById('img-logo');
-    // Establece el ancho al 100% para hacer que la imagen se desenrolle completamente
-    tituloAncho.style.width = '100%';
+      var tituloAngosto = document.getElementById('img-logo');
+      tituloAngosto.style.width = '100%';      
     }
     function manejarEntrada(event) {
       // Obtén el input actual desde el evento
@@ -10796,7 +10799,7 @@ function manejarLogica() {
           aumentoGradualVideo()              
         }, 200);
         setTimeout(() => {
-          abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
+          abrirInterfaz();
         }, 1100);
         // Limpia el contenido de todos los inputs
         inputs.forEach(input => {
@@ -10811,10 +10814,8 @@ function manejarLogica() {
   }else{
     if (inputs.length > 0) {
       inputs[0].focus();
-    // Inicia la animación de desenrollar
-    var tituloAncho = document.getElementById('titulo-ancho');
-    // Establece el ancho al 100% para hacer que la imagen se desenrolle completamente
-    tituloAncho.style.width = '100%';
+      var tituloAncho = document.getElementById('titulo-ancho');
+      tituloAncho.style.width = '100%'      
     }
     function manejarEntrada(event) {
       // Obtén el input actual desde el evento
@@ -10864,125 +10865,6 @@ function manejarLogica() {
 
   }
 }
-function iniciarAplicacion() {
-  for(var i = 0; i < arrayVideos.length; i++){
-  var videoInt = document.getElementById(arrayVideos[i])  
-  if(videoInt){
-    videoInt.style.display = 'none'
-  }
- }
-
- if(screenWidth < 500)
-  {
-    var contCtx = document.getElementById('ctx') 
-    var search = document.getElementById('buscador')
-    search.style.display = 'none'  
-    contCtx.style.display = 'none'
-    const masterKey = [1]; 
-    // Obtener todos los inputs con la clase "numero"
-    var inputs = document.querySelectorAll('.numero');
-    // Array para almacenar los números ingresados
-    var numerosIngresados = [];
-    // Iterar sobre cada input
-    inputs.forEach(function(input) {
-      // Agregar event listener para el evento de enfoque (focus)
-      input.addEventListener('focus', function() {
-        // Variable para almacenar el valor original
-        var valorOriginal = this.value;
-        // Agregar event listener para cambiar el valor por asterisco y almacenar el número ingresado
-        input.addEventListener('input', function() {
-          var numero = parseInt(this.value);
-          if (!isNaN(numero)) { // Verificar si es un número válido
-            numerosIngresados.push(numero); // Agregar el número al array
-            console.log("Números ingresados:", numerosIngresados); // Mostrar el array en la consola
-            // Verificar si el contenido del array 'numerosIngresados' es igual al de 'masterKey'
-            if (JSON.stringify(numerosIngresados) === JSON.stringify(masterKey)) {
-              console.log("El contenido del array 'numerosIngresados' es igual a 'masterKey'");
-              console.log("Contenido del array 'numerosIngresados':", numerosIngresados);
-              setTimeout(() => {
-                aumentoGradualVideo()              
-              }, 200);
-              setTimeout(() => {
-                abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
-              }, 1100);
-            }
-          }
-          valorOriginal = this.value; // Almacenar el valor original
-          setTimeout(function() {
-            input.value = '*'.repeat(valorOriginal.length); // Cambiar el valor por asteriscos después de 0.77 segundos
-          }, 177);
-        });
-      });
-    });
-    // Establecer el foco en el primer input
-    var primerInput = document.querySelector('.numero');
-    if (primerInput) {
-      primerInput.focus();
-      var contFranjaBlanca = document.getElementById('franja-Blanca');
-      contFranjaBlanca.classList.add('move-franja') 
-    }
-  }else{
-    var contCtx = document.getElementById('ctx')
-    var search = document.getElementById('buscador')
-    search.style.display = 'none'  
-    contCtx.style.display = 'none'
-    const masterKey = [1]; 
-    // Obtener todos los inputs con la clase "numero"
-    var inputs = document.querySelectorAll('.numero');
-    // Array para almacenar los números ingresados
-    var numerosIngresados = [];
-    // Iterar sobre cada input
-    inputs.forEach(function(input) {
-      // Agregar event listener para el evento de enfoque (focus)
-      input.addEventListener('focus', function() {
-        // Variable para almacenar el valor original
-        var valorOriginal = this.value;
-        // Agregar event listener para cambiar el valor por asterisco y almacenar el número ingresado
-        input.addEventListener('input', function() {
-          var numero = parseInt(this.value);
-          if (!isNaN(numero)) { // Verificar si es un número válido
-            numerosIngresados.push(numero); // Agregar el número al array
-            console.log("Números ingresados:", numerosIngresados); // Mostrar el array en la consola
-            // Verificar si el contenido del array 'numerosIngresados' es igual al de 'masterKey'
-            if (JSON.stringify(numerosIngresados) === JSON.stringify(masterKey)) {
-              console.log("El contenido del array 'numerosIngresados' es igual a 'masterKey'");
-              console.log("Contenido del array 'numerosIngresados':", numerosIngresados);
-              setTimeout(() => {
-                aumentoGradualVideo()              
-              }, 200);
-              setTimeout(() => {
-                abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
-              }, 800);
-            }
-          }
-          valorOriginal = this.value; // Almacenar el valor original
-          setTimeout(function() {
-            input.value = '*'.repeat(valorOriginal.length); // Cambiar el valor por asteriscos después de 0.77 segundos
-          }, 177);
-        });
-      });
-    });
-    // Establecer el foco en el primer input
-    var primerInput = document.querySelector('.numero');
-    if (primerInput) {
-      primerInput.focus();
-      efectoTitulo()
-    }
-    
-  }
-}
-function efectoTitulo(){
-  var logoAncho = document.getElementById('logo-grande')
-  setTimeout(() => {
-    logoAncho.classList.remove('move-logo')   
-  }, 10);
-  setTimeout(() => {
-    logoAncho.style.display = 'flex' 
-  }, 77);
-  setTimeout(() => {
-    logoAncho.classList.add('move-logo')
-  }, 177);
-}
 function abrirInterfaz() {
   var elementosExcluidos = ['videoBackgroundII','padre-interfaz','cont-titulo','franja-Blanca','subtitulo-I','descripcion-I','butt-Institucional','padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V','titulo-ancho','logo-grande'];
   for (var i = 0; i < allContenedores.length; i++) { 
@@ -10991,41 +10873,35 @@ function abrirInterfaz() {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
-
   if(screenWidth < 500){
     var titulo = document.getElementById('subtitulo-I')
     // Paso 1: Capturar el elemento padre por su ID
     var elementoPadre = document.getElementById('cont-titulo');
     elementoPadre.classList.remove('move-oblicuos');
     setTimeout(function () {
-    // Paso 2: Agregar una clase al elemento padre para moverlo hacia abajo
     elementoPadre.classList.add('move-oblicuos');
     }, 177);
     setTimeout(() => {
       var contenedor = document.getElementById('videoBackgroundII');  
-      contenedor.style.filter = 'none'; // Puedes ajustar el valor de desenfoque según tus preferencias
+      contenedor.style.filter = 'none';
       reduccionGradualVideo()
-      var contFranjaBlanca = document.getElementById('franja-Blanca');
-      contFranjaBlanca.classList.add('move-franja')
     }, 1800);
     setTimeout(() => {
       titulo.classList.add('move-title')    
     }, 2222);
     setTimeout(() => {
       animarBoton() 
-    }, 2977);
+    }, 1977);
   }else{
     var titulo = document.getElementById('subtitulo-I')
-    // Paso 1: Capturar el elemento padre por su ID
     var elementoPadre = document.getElementById('cont-titulo');
     elementoPadre.classList.remove('move-oblicuosII');
     setTimeout(function () {
-    // Paso 2: Agregar una clase al elemento padre para moverlo hacia abajo
     elementoPadre.classList.add('move-oblicuosII');
     }, 177);
     setTimeout(() => {
       var contenedor = document.getElementById('videoBackgroundII');  
-      contenedor.style.filter = 'none'; // Puedes ajustar el valor de desenfoque según tus preferencias
+      contenedor.style.filter = 'none';
       reduccionGradualVideo()
     }, 1000);
     setTimeout(() => {
@@ -11085,7 +10961,6 @@ function reduccionGradualVideo() {
     }
   }, interval);
 }
-/* 9999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 const boton = document.getElementById('butt-Institucional');
 function animarBoton() {
   if(screenWidth < 500){  
@@ -11100,4 +10975,13 @@ function animarBoton() {
     }, 400);
   }  
 }
-
+const flashButtons = document.querySelectorAll('.boton-b');
+flashButtons.forEach(button => {
+  button.addEventListener('click', () => {
+  // Alternar la clase 'flash-effect' para iniciar o detener el efecto de destello
+  button.classList.toggle('flash-effect');
+  setTimeout(() => {
+  button.classList.remove('flash-effect');
+  }, 500);
+  });
+})
