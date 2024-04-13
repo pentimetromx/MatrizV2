@@ -6674,9 +6674,7 @@ function antesImagenes(){
   var contImagenAntes = document.getElementById('toyota-kaizen-antes')
   contImagenAntes.style.display = 'flex'
 }
-
 let llamadaEjecutada = false;
-
 function resultadosEmpleado(idEmpleado, functionExe,icono) {
   var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered'] // Colores en formato RGB
   const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
@@ -9745,8 +9743,6 @@ function moveScroll(container) {
     container.scrollTop = 0;
   }
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 function iniciarMovimiento(instrucId) {
   var container = document.getElementById(instrucId);
   container.scrollTop = container.scrollHeight;  
@@ -9892,9 +9888,6 @@ function iniciarMovimiento(instrucId) {
     }}, 277
   );
 }
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Obtén el contexto del lienzo
 var canvas = document.getElementById("sinusoidalCanvas");         
 var ctx = canvas.getContext("2d");
@@ -10751,11 +10744,9 @@ function moveCursorToEnd(input) {
   // Mover el cursor al final del input
   input.setSelectionRange(textLength, textLength); 
 } 
-
 // Crea la constante masterKey con el valor 4
 const masterKey = [4];
 // Función para manejar la lógica
-
 function manejarLogica() {
   const inputs = document.querySelectorAll('.numero');
   let valoresIngresados = [0, 0, 0, 0];
@@ -10765,16 +10756,12 @@ function manejarLogica() {
   document.getElementById('bancada-torre-II').style.display = 'none'
   document.getElementById('contenedor-8').style.display = 'none'
   if(screenWidth < 500){
-
+    if (inputs.length > 0) {
+      inputs[0].focus();
     // Inicia la animación de desenrollar
     var tituloAncho = document.getElementById('img-logo');
     // Establece el ancho al 100% para hacer que la imagen se desenrolle completamente
     tituloAncho.style.width = '100%';
-
-
-    /* document.getElementById('franja-Blanca').classList.add('move-franja') */
-    if (inputs.length > 0) {
-      inputs[0].focus();
     }
     function manejarEntrada(event) {
       // Obtén el input actual desde el evento
@@ -10822,13 +10809,12 @@ function manejarLogica() {
       input.addEventListener('input', manejarEntrada);
     });
   }else{
+    if (inputs.length > 0) {
+      inputs[0].focus();
     // Inicia la animación de desenrollar
     var tituloAncho = document.getElementById('titulo-ancho');
     // Establece el ancho al 100% para hacer que la imagen se desenrolle completamente
     tituloAncho.style.width = '100%';
-    /* document.getElementById('logo-grande').classList.add('move-logo') */
-    if (inputs.length > 0) {
-      inputs[0].focus();
     }
     function manejarEntrada(event) {
       // Obtén el input actual desde el evento
@@ -10985,6 +10971,18 @@ function iniciarAplicacion() {
     
   }
 }
+function efectoTitulo(){
+  var logoAncho = document.getElementById('logo-grande')
+  setTimeout(() => {
+    logoAncho.classList.remove('move-logo')   
+  }, 10);
+  setTimeout(() => {
+    logoAncho.style.display = 'flex' 
+  }, 77);
+  setTimeout(() => {
+    logoAncho.classList.add('move-logo')
+  }, 177);
+}
 function abrirInterfaz() {
   var elementosExcluidos = ['videoBackgroundII','padre-interfaz','cont-titulo','franja-Blanca','subtitulo-I','descripcion-I','butt-Institucional','padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V','titulo-ancho','logo-grande'];
   for (var i = 0; i < allContenedores.length; i++) { 
@@ -11102,34 +11100,4 @@ function animarBoton() {
     }, 400);
   }  
 }
-function efectoTitulo(){
-  var logoAncho = document.getElementById('logo-grande')
-  setTimeout(() => {
-    logoAncho.classList.remove('move-logo')   
-  }, 10);
-  setTimeout(() => {
-    logoAncho.style.display = 'flex' 
-  }, 77);
-  setTimeout(() => {
-    logoAncho.classList.add('move-logo')
-  }, 177);
-}
 
-
-
-// Obtener todos los elementos con la clase 'boton-b'
-const flashButtons = document.querySelectorAll('.boton-b');
-// Iterar sobre cada elemento con la clase 'boton-b'
-flashButtons.forEach(button => {
-  // Agregar un evento de clic a cada botón
-  button.addEventListener('click', () => {
-  // Alternar la clase 'flash-effect' para iniciar o detener el efecto de destello
-  button.classList.toggle('flash-effect');
-
-  // Si deseas detener el destello después de un tiempo específico, puedes usar setTimeout
-  // Aquí se detiene el efecto de destello después de 5 segundos (5000 milisegundos)
-  setTimeout(() => {
-  button.classList.remove('flash-effect');
-  }, 500);
-  });
-})
