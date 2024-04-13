@@ -216,7 +216,7 @@ transform: scale(1.1);
   left: -101%;  
   width: 100%;
   /* display: none; */
-  transition: transform 1.6s ease;
+  transition: transform 1.0s ease;
 }
 #titulo-ancho{
   position: absolute;
@@ -284,10 +284,10 @@ transform: scale(1.1);
 #agrupaOblicuos-XI{       
   position: absolute;
   display: flex;
-  flex-direction: column;
+  flex-direction:column-reverse;
   align-items: center;
   width: 100%;
-  top: 68%;
+  top: 58.2%;
   left: 4%;
   gap: 55px;
   transform: translateY(-50%);
@@ -4892,7 +4892,7 @@ input.numero {
     height: auto;
     top:-0.5%;
     left:-101%;
-    transition: transform 1.6s ease;
+    transition: transform 0.5s ease;
   }
   #img-logo{
     position: absolute;
@@ -6223,10 +6223,10 @@ input.numero {
   #agrupaOblicuos-XI{
     position: absolute;
     display: flex;
-    flex-direction: column;
+    flex-direction:column-reverse;
     align-items: center;
     width: 100%;
-    top: 72.5%;
+    top: 65%;
     left: -15%;
     gap: 20px;
     transform: translateY(-50%); 
@@ -6623,7 +6623,7 @@ input.numero {
     top:-0.3%;
     left: 98.7%;
   }
-  .butt-prepre {
+  .butt-prepre{
     transition: transform 0.3s ease;
   }
   .butt-prepre:hover {

@@ -619,7 +619,7 @@
       <button class="boton-a" id="bot-inicial" style="text-align: center;;position: relative" onclick="VolveraInicio()">PANEL INICIO</button>
       <button class="boton-a" id="iniciar" style="position: relative;" onclick="soloEnsayo()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
       <!-- <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="Geometria()"></button> -->
-      <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="Geometria()"></button>
+      <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="showButtonsTeoriaConRetraso()"></button>
 
      </div><br>
     <div id="pantalla-tintero">       
@@ -860,16 +860,16 @@
     <div id="conteneMantaut" class="mantAuto">
 
       <div class="conti-boton" id="conti-boton">
-        <button class="butt-mautonomo image-trainings mobile-button" id="troubleshoot" onclick="deslizaContenedor('troubleshooting','troubleshoot')">TROUBLESHOOTING</button>
-        <button class="butt-mautonomo image-trainings" id="def1" onclick="deslizaContenedor('canvasContainer2','def1')">DEFECTOS TIPO 1</button>
-        <button class="butt-mautonomo image-trainings" id="def2" onclick="deslizaContenedor('contChecks','def2')">DEFECTOS TIPO 2</button>
-        <button class="butt-mautonomo image-trainings" id="adtBut" onclick="deslizaContenedor('canvasContainer3','adtBut')">ADT</button>
-        <button class="butt-mautonomo image-trainings" id="fua1" onclick="deslizaContenedor('contImagNeg','fua1')">FUA</button>          
-        <button class="butt-mautonomo image-trainings" id="lup" onclick="deslizaContenedor('contImagGraf','lup')">LUP</button>
-        <button class="butt-mautonomo image-trainings" id="kaizen" onclick="deslizaContenedor('conti-boton-kaizen','kaizen')">KAIZEN</button>
-        <button class="butt-mautonomo image-trainings" id="reset" onclick="resetBotns('troubleshoot')" style="background-color: red;color: white;">Reset</button>
-        <button class="butt-mautonomo image-trainings" id="auto" onclick="deslizAutomatic('troubleshooting','troubleshoot')" style="background-color: red;color: white;">Show everything</button>
-        <button class="butt-mautonomo image-trainings" id="resultados" onclick="resultadosMA()">TRACKING DASHBOARD</button>
+        <button class="butt-mautonomo image-trainings button-deployed mobile-button" id="troubleshoot" onclick="deslizaContenedor('troubleshooting','troubleshoot')">TROUBLESHOOTING</button>
+        <button class="butt-mautonomo image-trainings button-deployed" id="def1" onclick="deslizaContenedor('canvasContainer2','def1')">DEFECTOS TIPO 1</button>
+        <button class="butt-mautonomo image-trainings button-deployed" id="def2" onclick="deslizaContenedor('contChecks','def2')">DEFECTOS TIPO 2</button>
+        <button class="butt-mautonomo image-trainings button-deployed" id="adtBut" onclick="deslizaContenedor('canvasContainer3','adtBut')">ADT</button>
+        <button class="butt-mautonomo image-trainings button-deployed" id="fua1" onclick="deslizaContenedor('contImagNeg','fua1')">FUA</button>          
+        <button class="butt-mautonomo image-trainings button-deployed" id="lup" onclick="deslizaContenedor('contImagGraf','lup')">LUP</button>
+        <button class="butt-mautonomo image-trainings button-deployed" id="kaizen" onclick="deslizaContenedor('conti-boton-kaizen','kaizen')">KAIZEN</button>
+        <button class="butt-mautonomo image-trainings button-deployed" id="reset" onclick="resetBotns('troubleshoot')" style="background-color: red;color: white;">Reset</button>
+        <button class="butt-mautonomo image-trainings button-deployed" id="auto" onclick="deslizAutomatic('troubleshooting','troubleshoot')" style="background-color: red;color: white;">Show everything</button>
+        <button class="butt-mautonomo image-trainings button-deployed" id="resultados" onclick="resultadosMA()">TRACKING DASHBOARD</button>
       </div> 
 
       <div id="troubleshooting" style="display: none;">
@@ -1624,12 +1624,12 @@
       </div>
 
       <div id="conte-botDensito">
-        <button class="butt-mautonomo image-trainings" id="bot-densi-1" onclick="mantAutonomo('troubleshooting')">MONTAJES</button>
-        <button class="butt-mautonomo image-trainings" id="bot-densi-2" onclick="mantAutonomo('def-tipo1')">ANGULACION</button>
-        <button class="butt-mautonomo image-trainings" id="bot-densi-3" onclick="mantAutonomo('def-tipo2')">INSOLADOR</button>
-        <button class="butt-mautonomo image-trainings" id="bot-densi-4" onclick="mantAutonomo('ayudastrabajo')">AYUDAS</button>
-        <button class="butt-mautonomo image-trainings" id="bot-densi-5" onclick="mantAutonomo('fua')">DOBLADOR</button>           
-        <button class="butt-mautonomo image-trainings" id="bot-densi-6" onclick="mantAutonomo('lup')">CALIBRES</button>
+        <button class="butt-mautonomo image-trainings deploy-butt" id="bot-densi-1" onclick="mantAutonomo('troubleshooting')">MONTAJES</button>
+        <button class="butt-mautonomo image-trainings deploy-butt" id="bot-densi-2" onclick="mantAutonomo('def-tipo1')">ANGULACION</button>
+        <button class="butt-mautonomo image-trainings deploy-butt" id="bot-densi-3" onclick="mantAutonomo('def-tipo2')">INSOLADOR</button>
+        <button class="butt-mautonomo image-trainings deploy-butt" id="bot-densi-4" onclick="mantAutonomo('ayudastrabajo')">AYUDAS</button>
+        <button class="butt-mautonomo image-trainings deploy-butt" id="bot-densi-5" onclick="mantAutonomo('fua')">DOBLADOR</button>           
+        <button class="butt-mautonomo image-trainings deploy-butt" id="bot-densi-6" onclick="mantAutonomo('lup')">CALIBRES</button>
       </div> 
     </div>
     <div id="largoImpresion">

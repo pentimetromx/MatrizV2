@@ -221,9 +221,15 @@ function ElementosMaII(elementId){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
-  document.body.style.zoom = "100%"
-  container1.style.left=''
-  showButtonsMAconRetraso()
+  setTimeout(() => {
+    document.body.style.zoom = "100%"    
+  }, 10);
+  setTimeout(() => {
+    container1.style.left=''    
+  }, 20);
+  setTimeout(() => {
+    showButtonsMAconRetraso()  
+  }, 50);  
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     arrayIdButtsMA .forEach(function (elto) {                                                                                          /// RESTAURA GRIS A BOTONES
       var elemento = document.getElementById(elto)    
@@ -245,7 +251,7 @@ function ElementosMaII(elementId){
   } 
 }
 function showButtonsMAconRetraso(){
-  var botones = document.querySelectorAll('.butt-mautonomo') // Selecciona todos los botones
+  var botones = document.querySelectorAll('.button-deployed') // Selecciona todos los botones
   function mostrarBotonConRetraso(i) {
     if (i < botones.length) {
       var boton = botones[i]
@@ -253,11 +259,57 @@ function showButtonsMAconRetraso(){
       boton.style.marginTop = '10px';      
       setTimeout(function() {
         mostrarBotonConRetraso(i + 1)
-      }, 50) // 100 milisegundos de retraso entre botones
+      },100) // 100 milisegundos de retraso entre botones
     }
   }
   mostrarBotonConRetraso(0) // Comienza desde el primer botón
 }
+function showButtonsTeoriaConRetraso() {
+  // Obtén todos los botones con la clase 'butt-prepre'
+  var botones = document.querySelectorAll('.butt-prepre');
+  // Primero, oculta todos los botones
+  for (var i = 0; i < botones.length; i++) {
+      botones[i].style.display = 'none';
+  }
+  // Función para mostrar un botón con retraso
+  function mostrarBotonConRetraso(i) {
+    if (i < botones.length) {
+      var boton = botones[i];
+      boton.style.display = 'inline-block';
+      boton.style.marginTop = '10px';
+
+      // Llama a la función recursivamente con un retraso de 100 ms
+      setTimeout(function() {
+          mostrarBotonConRetraso(i + 1);
+      }, 100);
+    }
+  }
+  // Comienza mostrando el primer botón con retraso
+  mostrarBotonConRetraso(0);
+}
+function showButtonsDensitoConRetraso() {
+  // Obtén todos los botones con la clase 'butt-prepre'
+  var botones = document.querySelectorAll('.deploy-butt');
+  // Primero, oculta todos los botones
+  for (var i = 0; i < botones.length; i++) {
+      botones[i].style.display = 'none';
+  }
+  // Función para mostrar un botón con retraso
+  function mostrarBotonConRetraso(i) {
+    if (i < botones.length) {
+      var boton = botones[i];
+      boton.style.display = 'inline-block';
+      boton.style.marginTop = '10px';
+      // Llama a la función recursivamente con un retraso de 100 ms
+      setTimeout(function() {
+          mostrarBotonConRetraso(i + 1);
+      }, 100);
+    }
+  }
+  // Comienza mostrando el primer botón con retraso
+  mostrarBotonConRetraso(0);
+}
+
 function changeButtonStyles(elementId){
   switch (elementId) {
     case 'pantalla-tintero':
@@ -3329,19 +3381,21 @@ function abrirPrepress(elementId) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
-  /* document.getElementById('linkList').style.display = 'none' */
   videosPrepress.forEach(video => {
     if (video) {
-      /* video.pause() */
       video.style.display = 'none'
+  }})
 
-    }})
+
   // Obtener el elemento padre
   var padreVidPress = document.getElementById('imgs-prepress');
   var imagenes = padreVidPress.getElementsByTagName('img');
   for (var i = 0; i < imagenes.length; i++) {
-    imagenes[i].style.display = 'flex';
-  }
+    imagenes[i].removeAttribute('style')
+  }    
+  setTimeout(() => {
+    showButtonsTeoriaConRetraso()   
+  }, 25);
   // Obtener todas las etiquetas de video dentro del elemento padre
   var videos = padreVidPress.getElementsByTagName('video');
   for (var i = 0; i < videos.length; i++) {
@@ -3382,7 +3436,9 @@ function abrirDensitometria(elementId){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
-  var conteBotsDensito = ['bot-densi-1', 'bot-densi-2', 'bot-densi-3', 'bot-densi-4', 'bot-densi-5', 'bot-densi-6'];
+
+  
+  var conteBotsDensito = ['bot-densi-1','bot-densi-2','bot-densi-3','bot-densi-4','bot-densi-5','bot-densi-6'];
   for (var i = 0; i < conteBotsDensito.length; i++) {
     var botDensitometria = document.getElementById(conteBotsDensito[i]);
     // Verifica si el elemento existe antes de manipularlo
@@ -3390,10 +3446,7 @@ function abrirDensitometria(elementId){
         botDensitometria.style.display = 'flex';
     }
   }
-  
-
-  
-  document.body.style.zoom = "100%"
+  document.body.style.zoom = "100%" 
   container1.style.left=''
   contieneLinks.style.display = 'none'
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3403,6 +3456,9 @@ function abrirDensitometria(elementId){
   setTimeout(function() {
     vidDensitometria.currentTime = '0'
     vidDensitometria.play();
+  }, 77);
+  setTimeout(() => {
+    showButtonsDensitoConRetraso()        
   }, 77);
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
   const imagenesDensito = document.querySelectorAll('.imgDensito');
@@ -8045,13 +8101,11 @@ function rodillosKaizen(idButton,vidElem) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
         } 
-
         if (screenWidth < 500){
           /* contiButts.style.top = '7%' */
-          contiButts.removeAttribute('style')
+          /* contiButts.removeAttribute('style') */
           /* contBotKaizen.removeAttribute('style') */
         }
-     
       } else if (contadorClicks === 2) {
           miBot.innerText = 'DESPUES';
           miBot.style.backgroundColor = 'green' 
@@ -10588,33 +10642,33 @@ document.addEventListener('keydown', function(event) {
         abrirSeccionContinua('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          abrirPrepress('pre-prensa')        
+          ElementosMaII('conteneMantaut')        
         },977) 
         setTimeout(function() {
-          ElementosMaII('conteneMantaut')         
+          deslizaContenedor('conti-boton-kaizen','kaizen')         
         },1177) 
         setTimeout(function() {
-          deslizaContenedor('troubleshooting','troubleshoot')         
+          /* deslizaContenedor('troubleshooting','troubleshoot') */         
         },1377) 
         setTimeout(function() {
-          abrirSeccionContinua()                                  
+          /* abrirSeccionContinua() */                                  
         },1677) 
         setTimeout(function() {
-          changeButtonStyles('pantalla-tintero')        
+          /* changeButtonStyles('pantalla-tintero') */        
         },1977)         
       break;
       case 'H': 
       Geometria()      
       break;
       case 'J':
-        soloEnsayos()
+        showButtonsTeoriaConRetraso()
       break;                  
     }
   }
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('conte-botDensito')
+  var contiBoton = document.getElementById('conti-boton-planos')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
@@ -10686,10 +10740,6 @@ function manejarLogica() {
   document.getElementById('contenedor-9').style.display = 'none'
   document.getElementById('bancada-torre-II').style.display = 'none'
   document.getElementById('contenedor-8').style.display = 'none'
-
-
-
-
   if(screenWidth < 500){
     document.getElementById('franja-Blanca').classList.add('move-franja')
     if (inputs.length > 0) {
@@ -10793,11 +10843,7 @@ function manejarLogica() {
 
   }
 }
-
-
 /* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
-
-
 function iniciarAplicacion() {
   for(var i = 0; i < arrayVideos.length; i++){
   var videoInt = document.getElementById(arrayVideos[i])  
