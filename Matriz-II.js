@@ -10692,7 +10692,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('conti-boton-planos')
+  var contiBoton = document.getElementById('franja-Blanca')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
@@ -10751,11 +10751,11 @@ function moveCursorToEnd(input) {
   // Mover el cursor al final del input
   input.setSelectionRange(textLength, textLength); 
 } 
-/* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 
 // Crea la constante masterKey con el valor 4
 const masterKey = [4];
 // Función para manejar la lógica
+
 function manejarLogica() {
   const inputs = document.querySelectorAll('.numero');
   let valoresIngresados = [0, 0, 0, 0];
@@ -10765,7 +10765,14 @@ function manejarLogica() {
   document.getElementById('bancada-torre-II').style.display = 'none'
   document.getElementById('contenedor-8').style.display = 'none'
   if(screenWidth < 500){
-    document.getElementById('franja-Blanca').classList.add('move-franja')
+
+    // Inicia la animación de desenrollar
+    var tituloAncho = document.getElementById('img-logo');
+    // Establece el ancho al 100% para hacer que la imagen se desenrolle completamente
+    tituloAncho.style.width = '100%';
+
+
+    /* document.getElementById('franja-Blanca').classList.add('move-franja') */
     if (inputs.length > 0) {
       inputs[0].focus();
     }
@@ -10815,7 +10822,11 @@ function manejarLogica() {
       input.addEventListener('input', manejarEntrada);
     });
   }else{
-    document.getElementById('logo-grande').classList.add('move-logo')
+    // Inicia la animación de desenrollar
+    var tituloAncho = document.getElementById('titulo-ancho');
+    // Establece el ancho al 100% para hacer que la imagen se desenrolle completamente
+    tituloAncho.style.width = '100%';
+    /* document.getElementById('logo-grande').classList.add('move-logo') */
     if (inputs.length > 0) {
       inputs[0].focus();
     }
@@ -10867,7 +10878,6 @@ function manejarLogica() {
 
   }
 }
-/* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 function iniciarAplicacion() {
   for(var i = 0; i < arrayVideos.length; i++){
   var videoInt = document.getElementById(arrayVideos[i])  

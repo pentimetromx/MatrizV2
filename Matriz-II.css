@@ -209,15 +209,14 @@ transform: scale(1.1);
   background-color: #333333;
   display: none;
 }
-#logo-grande{
+/* #logo-grande{
   position: relative;
   display: flex;
   top: 0.1%;
   left: -101%;  
   width: 100%;
-  /* display: none; */
   transition: transform 1.0s ease;
-}
+} */
 #titulo-ancho{
   position: absolute;
   display: flex;
@@ -3774,6 +3773,16 @@ input.numero {
   transform: scale(30);
 }
 
+#logo-grande {
+  overflow: hidden;
+}
+
+#titulo-ancho {
+  width: 0; /* Inicia con ancho de 0 para el efecto de desenrollar */
+  transition: width 1.1s ease; /* Transición para el efecto de desenrollar */
+}
+
+
  @media screen and (max-width: 420px) {
   #cont-titulo-comercial,  
   #cont-titulo-admin,
@@ -4885,7 +4894,7 @@ input.numero {
     height: 77px;
     display: none;  
   }
-  #franja-Blanca{
+  /* #franja-Blanca{
     position: relative;
     display: flex;
     width:100%;
@@ -4893,7 +4902,7 @@ input.numero {
     top:-0.5%;
     left:-101%;
     transition: transform 0.5s ease;
-  }
+  } */
   #img-logo{
     position: absolute;
     display: block;
@@ -6626,8 +6635,18 @@ input.numero {
   .butt-prepre{
     transition: transform 0.3s ease;
   }
-  .butt-prepre:hover {
+  .butt-prepre:hover{
     transform: scale(1.3);
+  }
+
+
+  #franja-Blanca{
+    overflow: hidden;
+  }
+  
+  #img-logo{
+    width: 0; /* Inicia con ancho de 0 para el efecto de desenrollar */
+    transition: width 0.7s ease; /* Transición para el efecto de desenrollar */
   }
 
 }
