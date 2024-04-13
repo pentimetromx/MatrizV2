@@ -604,7 +604,7 @@ function cambioContenedor(elementId){
     console.log(idsArray);
   }
 }
-function cierraContenedores(elementId){
+function cierraContenedores(elementId,buttonID){
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80','btn600','btn700','btn800']
   var arrayButtsRojos = ['boton2','boton3','boton4','boton5','boton6','boton8','boton9','boton10','boton11','boton12']
   for (var i = 0; i < arrayButtsRojos.length; i++) {                                                                                  /// QUITAR ESTILOS A BOTONES
@@ -622,7 +622,7 @@ function cierraContenedores(elementId){
       console.log(idsArray);
     }     
     switch (elementId) {
-      case 'desbobinadorId':
+      case 'desbobinadorId':        
         // Obtén el elemento padre 'pantalla-inicial'
         var pantallaInicial = document.getElementById('pantalla-inicial');
         if (pantallaInicial) {
@@ -641,7 +641,8 @@ function cierraContenedores(elementId){
         }      
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
         video.style.display = 'none'
-        aumentarTamanosDeBotones()
+        aumentarTamanosDeBotones()          
+
       break;
       case 'uTeñido':
         // Obtén el elemento padre 'pantalla-inicial'
@@ -6673,6 +6674,9 @@ function antesImagenes(){
   var contImagenAntes = document.getElementById('toyota-kaizen-antes')
   contImagenAntes.style.display = 'flex'
 }
+
+let llamadaEjecutada = false;
+
 function resultadosEmpleado(idEmpleado, functionExe,icono) {
   var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered'] // Colores en formato RGB
   const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
@@ -6687,7 +6691,16 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
-  }  
+  }
+  
+  // Verifica si la función ya se ha llamado
+  if (!llamadaEjecutada) {
+    // Ejecutar iniciarMovimiento('contenedor-vertical') solo la primera vez
+    iniciarMovimiento('contenedor-vertical');
+    // Establecer llamadaEjecutada a true para indicar que la función ya se ha llamado
+    llamadaEjecutada = true;
+  }
+  
 
   for (var i = 0; i < contUserElements.length; i++) {
     var element = contUserElements[i]
@@ -6711,18 +6724,18 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
     } else {
       element.style.display = 'none'
     }
-   } 
-    contUserArrayI.forEach(element => {
-    if (element.id === idEmpleado) {  
-      var originalColor = element.style.backgroundColor = '';
-      element.style.backgroundColor = 'green';
-      (function (element, originalColor) {
-        setTimeout(function () {
-          element.style.backgroundColor = originalColor;
-        }, 200);
-      })(element, originalColor);
+  } 
+  contUserArrayI.forEach(element => {
+  if (element.id === idEmpleado) {  
+    var originalColor = element.style.backgroundColor = '';
+    element.style.backgroundColor = 'green';
+    (function (element, originalColor) {
+      setTimeout(function () {
+      element.style.backgroundColor = originalColor;
+      }, 200);
+    })(element, originalColor);
     }
-  });
+  });                              
 
   if(screenWidth < 500){
     var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer9-II','MiGrafica9-II']
@@ -6756,7 +6769,7 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
   } 
     
   if (iconosPermitidos.includes(icono)) {
-      iniciarMovimiento('contenedor-vertical');
+    iniciarMovimiento('contenedor-vertical');
   }    
   }
 
@@ -9751,6 +9764,8 @@ function moveScroll(container) {
     container.scrollTop = 0;
   }
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 function iniciarMovimiento(instrucId) {
   var container = document.getElementById(instrucId);
   container.scrollTop = container.scrollHeight;  
@@ -9780,10 +9795,9 @@ function iniciarMovimiento(instrucId) {
       }    
       // Llama a la función para animar el scroll hacia arriba
       scrollToTopSmoothly();
-    }}, 277);
-    
+    }}, 277
+  );    
   setTimeout(function() {
-
     if(instrucId === 'puesta-punto') {
       const contenedor = document.getElementById('puesta-punto');
       // Función para animar el scroll hacia arriba
@@ -9810,8 +9824,8 @@ function iniciarMovimiento(instrucId) {
       // Llama a la función para animar el scroll hacia arriba
       scrollToTopSmoothly();
     }
-  }, 277); 
-  
+  }, 277
+  );   
   setTimeout(function() {
     if(instrucId === 'agrupaOblicuos-XII') {
       const contenedor = document.getElementById('agrupaOblicuos-XII');
@@ -9840,7 +9854,6 @@ function iniciarMovimiento(instrucId) {
       scrollToTopSmoothly();
     }}, 277
   );
-
   setTimeout(function() {
     if(instrucId === 'agrupaOblicuos-XVIII') {
       const contenedor = document.getElementById('agrupaOblicuos-XVIII');
@@ -9868,8 +9881,38 @@ function iniciarMovimiento(instrucId) {
       // Llama a la función para animar el scroll hacia arriba
       scrollToTopSmoothly();
     }}, 277
+  );  
+  setTimeout(function() {
+    if(instrucId === 'contenedor-vertical') {
+      const contenedor = document.getElementById('contenedor-vertical');
+      // Función para animar el scroll hacia arriba
+      function scrollToTopSmoothly() {
+        const currentPosition = contenedor.scrollTop;
+        const targetPosition = 0;
+        const duration = 400; // Duración de la animación en ms     
+        const startTime = performance.now();    
+        function animateScroll(timestamp) {
+          const elapsed = timestamp - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easedProgress = easeInOutCubic(progress);    
+          contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+          if (progress < 1) {
+            requestAnimationFrame(animateScroll);
+          }
+        }    
+        requestAnimationFrame(animateScroll);
+      }    
+      // Función para aplicar una función de easing (interpolación suave)
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      }    
+      // Llama a la función para animar el scroll hacia arriba
+      scrollToTopSmoothly();
+    }}, 277
   );
 }
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Obtén el contexto del lienzo
 var canvas = document.getElementById("sinusoidalCanvas");         
@@ -11080,3 +11123,22 @@ function efectoTitulo(){
     logoAncho.classList.add('move-logo')
   }, 177);
 }
+
+
+
+// Obtener todos los elementos con la clase 'boton-b'
+const flashButtons = document.querySelectorAll('.boton-b');
+// Iterar sobre cada elemento con la clase 'boton-b'
+flashButtons.forEach(button => {
+  // Agregar un evento de clic a cada botón
+  button.addEventListener('click', () => {
+  // Alternar la clase 'flash-effect' para iniciar o detener el efecto de destello
+  button.classList.toggle('flash-effect');
+
+  // Si deseas detener el destello después de un tiempo específico, puedes usar setTimeout
+  // Aquí se detiene el efecto de destello después de 5 segundos (5000 milisegundos)
+  setTimeout(() => {
+  button.classList.remove('flash-effect');
+  }, 500);
+  });
+})
