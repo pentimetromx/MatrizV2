@@ -2881,6 +2881,61 @@ document.addEventListener("DOMContentLoaded", function () {                     
     });
   });
 });
+function alternarColorRojo(){
+  var buttons = document.querySelectorAll('.Bot-inicio7');  
+  // Recorre la colección de botones
+  buttons.forEach(function(currentButton, index) {
+      // Establece un temporizador con un retraso basado en el índice
+      setTimeout(function () {
+          // Cambia el color de fondo a rojo
+          currentButton.style.backgroundColor = "red";          
+          // Restablece el color de fondo después de 0.2 segundos
+          setTimeout(function () {
+              currentButton.style.backgroundColor = ""; // Restablece el color original
+          }, 33);
+      }, index * 33); // Retraso basado en el índice para cada elemento
+  });
+}
+function alternarColorVerde(){
+  var buttons = document.querySelectorAll('.Bot-inicio3');  
+  // Recorre la colección de botones
+  buttons.forEach(function(currentButton, index) {
+    // Establece un temporizador con un retraso basado en el índice
+    setTimeout(function () {
+      // Cambia el color de fondo a rojo
+      currentButton.style.backgroundColor = "green";          
+      // Restablece el color de fondo después de 0.2 segundos
+      setTimeout(function () {
+          currentButton.style.backgroundColor = ""; // Restablece el color original
+      }, 77);
+    }, index * 77); // Retraso basado en el índice para cada elemento
+  });
+
+}
+function alternarColorVerdeInverso() {
+  // Matriz de IDs de botones
+  var buttonIDs = ['butt-7','butt-5','butt-3','butt-01110'];
+  
+  // Recorre la colección de botones usando sus IDs
+  buttonIDs.forEach(function(buttonID, index) {
+    // Obtén el elemento DOM usando el ID
+    var currentButton = document.getElementById(buttonID);      
+    // Verifica si el elemento DOM existe
+    if (currentButton) {
+      // Establece un temporizador con un retraso basado en el índice
+      setTimeout(function () {
+        // Cambia el color de fondo a verde
+        currentButton.style.backgroundColor = "green";
+        
+        // Restablece el color de fondo después de 77 ms
+        setTimeout(function () {
+          currentButton.style.backgroundColor = ""; // Restablece el color original
+        }, 77);
+      }, index * 77); // Retraso basado en el índice para cada elemento
+      }
+  });
+}
+
 function abrirSeccionOperativa(elementId){
   var elementosExcluidos = ['buscador','container01','buscador','links-inicialesI','links-iniciales','cont-titulo-operacion']  
   for (var i = 0; i < allContenedores.length; i++) { 
@@ -10681,10 +10736,10 @@ document.addEventListener('keydown', function(event) {
         },1977)         
       break;
       case 'H': 
-      Geometria()      
+      alternarColorRojo()      
       break;
-      case 'J':
-        showButtonsTeoriaConRetraso()
+      case 'X':
+        alternarColorVerde()
       break;                  
     }
   }
@@ -10886,11 +10941,17 @@ function abrirInterfaz() {
       reduccionGradualVideo()
     }, 1800);
     setTimeout(() => {
+      animarBoton() 
+    }, 1977);  
+    setTimeout(() => {
       titulo.classList.add('move-title')    
     }, 2222);
     setTimeout(() => {
-      animarBoton() 
-    }, 1977);
+      alternarColorVerde() 
+    }, 2500);
+    setTimeout(() => {
+      alternarColorVerdeInverso() 
+    }, 2800);       
   }else{
     var titulo = document.getElementById('subtitulo-I')
     var elementoPadre = document.getElementById('cont-titulo');
@@ -10904,11 +10965,17 @@ function abrirInterfaz() {
       reduccionGradualVideo()
     }, 1000);
     setTimeout(() => {
+      animarBoton() 
+    }, 1777);
+    setTimeout(() => {
       titulo.classList.add('move-title')    
     }, 2222);
     setTimeout(() => {
-      animarBoton() 
-    }, 1777);
+      alternarColorVerde() 
+    }, 3500);  
+    setTimeout(() => {
+      alternarColorVerdeInverso() 
+    }, 3800);     
   }
 }
 function trasladarOblicuos(){
