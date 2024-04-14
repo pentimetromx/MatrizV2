@@ -2870,9 +2870,8 @@ function abrirSeccionContinua(elementId) {
   }
   firstClick = true;   
 }
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 document.addEventListener("DOMContentLoaded", function () {                                                                   // BOTON EN ROJO * 0.2 SEGUNDOS 
-  var buttons = document.querySelectorAll('.Bot-inicio3');
+  var buttons = document.querySelectorAll('.Bot-inicio3,.Bot-inicio7');
   buttons.forEach(function(currentButton) {
     currentButton.addEventListener("mouseover", function () {
       currentButton.style.backgroundColor = "red"; 
