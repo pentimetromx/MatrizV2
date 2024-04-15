@@ -4928,7 +4928,7 @@ input.numero {
   #img-logo{
     position: absolute;
     display: block;
-    top: 1%;
+    top: 0.1%;
     left: 1%;
     width:100%;
     height: auto;
@@ -6278,7 +6278,7 @@ input.numero {
     position: absolute;
     font-size: 30px;
     text-align: center;
-    top: 28%;
+    top: 24%;
     left: 99%;
     width:100%;
     transition: transform 0.7s ease;
