@@ -309,7 +309,6 @@ function showButtonsDensitoConRetraso() {
   // Comienza mostrando el primer botón con retraso
   mostrarBotonConRetraso(0);
 }
-
 function changeButtonStyles(elementId){
   switch (elementId) {
     case 'pantalla-tintero':
@@ -2935,7 +2934,6 @@ function alternarColorVerdeInverso() {
       }
   });
 }
-
 function abrirSeccionOperativa(elementId){
   var elementosExcluidos = ['buscador','container01','buscador','links-inicialesI','links-iniciales','cont-titulo-operacion']  
   for (var i = 0; i < allContenedores.length; i++) { 
@@ -9800,7 +9798,6 @@ function moveScroll(container) {
   }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 function iniciarMovimiento(instrucId) {
   var container = document.getElementById(instrucId);
   container.scrollTop = container.scrollHeight;  
@@ -9946,8 +9943,6 @@ function iniciarMovimiento(instrucId) {
     }}, 277
   );
 }
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Obtén el contexto del lienzo
 var canvas = document.getElementById("sinusoidalCanvas");         
@@ -10951,7 +10946,13 @@ function abrirInterfaz() {
     }, 2500);
     setTimeout(() => {
       alternarColorVerdeInverso() 
-    }, 2800);       
+    }, 2800);   
+    setTimeout(() => {
+      alternarColorVerde() 
+    }, 3100);
+    setTimeout(() => {
+      alternarColorVerdeInverso() 
+    }, 3400);      
   }else{
     var titulo = document.getElementById('subtitulo-I')
     var elementoPadre = document.getElementById('cont-titulo');
@@ -10975,7 +10976,13 @@ function abrirInterfaz() {
     }, 3500);  
     setTimeout(() => {
       alternarColorVerdeInverso() 
-    }, 3800);     
+    }, 3800);  
+    setTimeout(() => {
+      alternarColorVerde() 
+    }, 4100);
+    setTimeout(() => {
+      alternarColorVerdeInverso() 
+    }, 4400);        
   }
 }
 function trasladarOblicuos(){
@@ -11050,4 +11057,4 @@ flashButtons.forEach(button => {
   button.classList.remove('flash-effect');
   }, 500);
   });
-})
+})  
