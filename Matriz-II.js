@@ -1034,6 +1034,21 @@ function applyImageEffects4() { // aumento secuencial imagenes repuestos
         applyEffect()
       }, 177) }}applyEffect()
 }
+function applyImageEffects5() { // aumento secuencial imagenes repuestos
+  const imageElements = document.getElementsByClassName('butts-inicio')
+  let currentIndex = 0;
+  function applyEffect() {
+    if (currentIndex < imageElements.length) {
+      const currentImage = imageElements[currentIndex]
+      currentImage.style.transition = 'transform 0.1s'
+      currentImage.style.transform = 'scale(2.0)'
+      setTimeout(() => {
+        currentImage.style.transition = 'transform 0.7s'
+        currentImage.style.transform = 'scale(1)'
+        currentIndex++;
+        applyEffect()
+      }, 177) }}applyEffect()
+}
 function alternarVisibilidad(docId) {
   var elementosParaAlternar = document.querySelectorAll('.bot-entre, .video-training,.image-training, .butt-partes, .documentos')
   for (var i = 0; i < elementosParaAlternar.length; i++) {
@@ -10712,7 +10727,7 @@ document.addEventListener('keydown', function(event) {
       case 'Z':
         abrirSeccionOperativa('cont-titulo-operacion')        
         setTimeout(function() {
-          changeColorToRedAndBack()        
+          abrirInterfaz()        
         },577)
         setTimeout(function() {
           /* ElementosMaII('conteneMantaut')  */       
@@ -10734,7 +10749,7 @@ document.addEventListener('keydown', function(event) {
       changeColorRedAndBack()      
       break;
       case 'X':
-        changeColorToRedAndBack()
+        applyImageEffects5()
       break;                  
     }
   }
@@ -10850,7 +10865,6 @@ function manejarLogica() {
         setTimeout(() => {
           abrirInterfaz();
         }, 1100);
-        // Limpia el contenido de todos los inputs
         inputs.forEach(input => {
         input.value = ''; // Establece el valor de cada input como una cadena vacía
         });         
@@ -10936,11 +10950,8 @@ function abrirInterfaz() {
       reduccionGradualVideo()
     }, 1800);
     setTimeout(() => {
-      animarBoton() 
-    }, 1977);  
-    setTimeout(() => {
       titulo.classList.add('move-title')    
-    }, 2222);
+    }, 1977);
     setTimeout(() => {
       alternarColorVerde() 
     }, 2500);
@@ -10952,7 +10963,10 @@ function abrirInterfaz() {
     }, 3100);
     setTimeout(() => {
       alternarColorVerdeInverso() 
-    }, 3400);      
+    }, 3400); 
+    setTimeout(() => {
+      applyImageEffects5()      
+    }, 2800);    
   }else{
     var titulo = document.getElementById('subtitulo-I')
     var elementoPadre = document.getElementById('cont-titulo');
@@ -10982,7 +10996,7 @@ function abrirInterfaz() {
     }, 4100);
     setTimeout(() => {
       alternarColorVerdeInverso() 
-    }, 4400);        
+    }, 4400);      
   }
 }
 function trasladarOblicuos(){
