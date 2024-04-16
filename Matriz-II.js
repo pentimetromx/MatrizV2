@@ -10731,10 +10731,10 @@ document.addEventListener('keydown', function(event) {
         },1977)         
       break;
       case 'H': 
-      alternarColorRojo()      
+      changeColorRedAndBack()      
       break;
       case 'X':
-        alternarColorVerde()
+        changeColorToRedAndBack()
       break;                  
     }
   }
@@ -11048,13 +11048,44 @@ function animarBoton() {
     }, 400);
   }  
 }
-const flashButtons = document.querySelectorAll('.boton-b');
-flashButtons.forEach(button => {
-  button.addEventListener('click', () => {
-  // Alternar la clase 'flash-effect' para iniciar o detener el efecto de destello
-  button.classList.toggle('flash-effect');
+const elements = document.querySelectorAll('.Bot-inicio7');
+function changeColorToRedAndBack() {
+  elements.forEach((element, index) => {
   setTimeout(() => {
-  button.classList.remove('flash-effect');
-  }, 500);
+    element.style.backgroundColor = 'gold';
+    // Verificar si es el último elemento
+    if (index === elements.length - 1) {
+      // Después de cambiar todos los elementos a rojo, programar el retorno del color original
+      setTimeout(() => {
+        elements.forEach((elem, idx) => {
+          setTimeout(() => {
+            elem.style.backgroundColor = '';
+          }, idx * 25);
+        });
+      },25); // Retraso inicial de 100 milisegundos
+    }
+    }, index * 25);
   });
-})  
+  changeColorRedAndBack()
+}
+
+const elementos = document.querySelectorAll('.accion-secuencial');
+function changeColorRedAndBack() {
+  elementos.forEach((element, index) => {
+  setTimeout(() => {
+    element.style.backgroundColor = 'gold';
+    // Verificar si es el último elemento
+    if (index === elementos.length - 1) {
+      // Después de cambiar todos los elementos a rojo, programar el retorno del color original
+      setTimeout(() => {
+        elementos.forEach((elem, idx) => {
+          setTimeout(() => {
+            elem.style.backgroundColor = '';
+          }, idx * 25);
+        });
+      },25); // Retraso inicial de 100 milisegundos
+    }
+    }, index * 25);
+  });
+}
+
