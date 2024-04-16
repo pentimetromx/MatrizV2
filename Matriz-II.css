@@ -4864,7 +4864,7 @@ input.numero {
     margin-top: 49%;
     left: 4%;
     width: 48%;
-    height: 200px;
+    height: 400px;
     overflow-y: auto; /* Controla el desbordamiento vertical */
     overflow-x: hidden;
     gap: 17%;

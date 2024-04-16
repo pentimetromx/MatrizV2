@@ -81,7 +81,7 @@ var contVid = document.getElementById('videosTraining')
 var contIMPlaca = document.getElementById('placa')
 var contIMmanta = document.getElementById('manta')
 var arrayButtsRutilantes = ['butt-113','butt-12','butt-16','butt-21','butt-22','butt-1130','butt-120','butt-160','butt-210','butt-220']
-var arrayButtsRutilantesI = ['butt-024000','butt-023000','butt-015000','butt-013000','butt-7112000']
+var arrayButtsRutilantesI = ['butt-024000','butt-020000','butt-023000','butt-015000','butt-013000','butt-7112000']
 var arrayButtsRutilantesII = ['butt-01130','butt-012','butt-016','butt-021','butt-0202','butt-011300','butt-0120']
 var arrayButtsRutilantesIII = ['butt-001130','butt-0012','butt-0016','butt-0021','butt-00202']
 var buttonsMA = document.getElementsByClassName("butt-mautonomo")
@@ -2941,30 +2941,27 @@ function abrirSeccionOperativa(elementId){
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
-  }  
-  setTimeout(function () {
+  }
+  if(screenWidth < 500){
+    setTimeout(function () {
+      iniciarMovimiento('agrupaOblicuos-XII');
+      iniciarMovimiento('agrupaOblicuos-XVIII'); 
+    }, 300);
+  }else{
+    setTimeout(() => {
+      changeColorToRedAndBack();      
+    }, 177);
+
+  }
+  
+  /* setTimeout(function () {
     iniciarMovimiento('agrupaOblicuos-XII');
     iniciarMovimiento('agrupaOblicuos-XVIII'); 
   }, 300);
   // Retrasar la llamada a cambiarColoresConRetraso después de 100 msg
   setTimeout(function () {
-    cambiarColoresConRetrasoI();
-  }, 100);
-  for (var i = 0; i < arrayButtsIniciales.length; i++) {
-  var botonId = arrayButtsIniciales[i];
-  // Obtener el elemento del DOM por su ID
-  var boton = document.getElementById(botonId);
-  // Verificar si el elemento existe antes de intentar cambiar su estilo
-  if (boton) {
-  // Cambiar el color de fondo a 'rgb
-  boton.style.backgroundColor = 'rgb(0,0,255)'
-  boton.style.color = 'white'
-  }}  
-
-  /* iniciarMovimiento('agrupaOblicuos-XVIII')
-  setTimeout(() => {
-  iniciarMovimiento('agrupaOblicuos-XII')      
-  }, 400); */
+    changeColorToRedAndBack();
+  }, 377); */
 
   // 4. Verificar si el elemento está definido y si ya existe en arrayIds
   if (typeof elementId !== 'undefined') {
@@ -9884,8 +9881,11 @@ function iniciarMovimiento(instrucId) {
       }    
       // Llama a la función para animar el scroll hacia arriba
       scrollToTopSmoothly();
-    }}, 277
+    }}, 277    
   );
+  setTimeout(() => {
+    changeColorToRedAndBack();    
+  }, 877);
   setTimeout(function() {
     if(instrucId === 'agrupaOblicuos-XVIII') {
       const contenedor = document.getElementById('agrupaOblicuos-XVIII');
@@ -10712,13 +10712,13 @@ document.addEventListener('keydown', function(event) {
       case 'Z':
         abrirSeccionOperativa('cont-titulo-operacion')        
         setTimeout(function() {
-        abrirSeccionContinua('pantalla-inicial')        
+          changeColorToRedAndBack()        
         },577)
         setTimeout(function() {
-          ElementosMaII('conteneMantaut')        
+          /* ElementosMaII('conteneMantaut')  */       
         },977) 
         setTimeout(function() {
-          deslizaContenedor('conti-boton-kaizen','kaizen')         
+          /* deslizaContenedor('conti-boton-kaizen','kaizen') */         
         },1177) 
         setTimeout(function() {
           /* deslizaContenedor('troubleshooting','troubleshoot') */         
@@ -11035,6 +11035,7 @@ function reduccionGradualVideo() {
   }, interval);
 }
 const boton = document.getElementById('butt-Institucional');
+const elementos = document.querySelectorAll('.accion-secuencial');
 function animarBoton() {
   if(screenWidth < 500){  
     boton.classList.add('big-button'); // Agregar clase para aumentar tamaño
@@ -11052,7 +11053,7 @@ const elements = document.querySelectorAll('.Bot-inicio7');
 function changeColorToRedAndBack() {
   elements.forEach((element, index) => {
   setTimeout(() => {
-    element.style.backgroundColor = 'gold';
+    element.style.backgroundColor = 'rgb(255,160,0)';
     // Verificar si es el último elemento
     if (index === elements.length - 1) {
       // Después de cambiar todos los elementos a rojo, programar el retorno del color original
@@ -11066,14 +11067,12 @@ function changeColorToRedAndBack() {
     }
     }, index * 25);
   });
-  changeColorRedAndBack()
+  changeColorRedAndBack() 
 }
-
-const elementos = document.querySelectorAll('.accion-secuencial');
 function changeColorRedAndBack() {
   elementos.forEach((element, index) => {
   setTimeout(() => {
-    element.style.backgroundColor = 'gold';
+    element.style.backgroundColor = 'rgb(255,160,0)';
     // Verificar si es el último elemento
     if (index === elementos.length - 1) {
       // Después de cambiar todos los elementos a rojo, programar el retorno del color original
