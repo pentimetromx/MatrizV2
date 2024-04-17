@@ -3683,8 +3683,7 @@ function cerrarVentana(){
   document.getElementById('ventana-lateral').classList.add('forward-window');
   if(screenWidth < 500){
     document.getElementById('padre-circle').style.display = 'flex'
-    document.getElementById('padre-circle').removeAttribute('style')
-
+    /* document.getElementById('padre-circle').removeAttribute('style') */
     document.getElementById('padre-circle').style.marginTop = '-45%'
   }
 }
@@ -10768,7 +10767,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('conte-ayudas')
+  var contiBoton = document.getElementById('padre-circle')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left

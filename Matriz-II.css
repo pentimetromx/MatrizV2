@@ -6742,7 +6742,8 @@ input.numero {
  #conte-ayudas{
   position: absolute;
   display: flex;
-  top: 19.5%;
+  /* top: 19.5%; */
+  top: 18%;
   left: 41%;
   width: 77px;
   height: 77px;
