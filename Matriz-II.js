@@ -3604,6 +3604,14 @@ function ventanaLateral(eltoHtml){
   acumuladorVideos.push(eltoHtml)
   var ventaFlotante = document.getElementById('ventana-lateral')
   ventaFlotante.removeAttribute('style')
+
+  for (let i = 1; i <= 8; i++) {
+    // Generar el ID del elemento actual
+    const elementoId = 'icono' + i;
+    // Eliminar la clase 'icon1-up' del elemento actual
+    document.getElementById(elementoId).classList.remove('icon1-up');
+  } 
+
   if(screenWidth < 500){
     desactivarClicsPorUnTiempo()
   } 
@@ -3628,9 +3636,6 @@ function ventanaLateral(eltoHtml){
       reducirAlturaVentana()
     }
   }, 1777) 
-  setTimeout(function() {
-      /* empujarLeft() */
-  }, 2007)  
 }
 function empujarLeft() {
   var referencia = document.getElementById('ventana-lateral');
@@ -10630,13 +10635,13 @@ function aumentarIconos() {
     if (currentIndex < iconosLateral.length) {
       const currentImage = iconosLateral[currentIndex]
       currentImage.style.transition = 'transform 0.1s'
-      currentImage.style.transform = 'scale(4.0)'
+      currentImage.style.transform = 'scale(3.0)'
       setTimeout(() => {
         currentImage.style.transition = 'transform 0.7s'
         currentImage.style.transform = 'scale(1)'
         currentIndex++;
         applyEffect()
-      }, 117)
+      }, 17)
      }}
       applyEffect()
 }
