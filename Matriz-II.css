@@ -6441,7 +6441,7 @@ input.numero {
     height: 677px;
     cursor: pointer;
     z-index: 100;
-    transition: transform 0.5s;
+    transition: transform 0.1s;
     display: none;
   }
   #icono8,
