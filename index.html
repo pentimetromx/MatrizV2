@@ -1955,7 +1955,7 @@
     </div>
 
     <div id="conte-ayudas">
-      <img id="imagen-ayudas" onclick="alternarAyudas()" src="./assets/ayudas.png" alt="">
+      <img id="imagen-ayudas" onclick="alternarAyudas()" onmouseout="ocultarElementos('imagen-ayudas')" src="./assets/ayudas.png" alt="">
       <img id="imagen-ayudasII" onclick="alternarAyudasII()" src="./assets/ayudasII.png" alt="">
       <h6 id="ayudas-video" style="position: relative;display: flex;left: 62%;top: -42%;font-size: 17px;display: none;">Ayudas</h6>
     </div>
@@ -1968,6 +1968,33 @@
       <div class="linea4"></div>
     </div>
     <div id="container"> </div> 
+    <!-- 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
+
+    <div id="contenedorElementos" onmouseove="mostrarElementos()" onmouseout="ocultarElementos('contenedorElementos')">
+      <div id="linea-1" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Optimizar parámetros</div>
+      <div id="linea-2" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Análisis de patrones</div>
+      <div id="linea-3" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Reflectividad</div>
+      <div id="linea-4" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Datos densitométricos</div>
+      <div id="linea-5" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Técnica densitometrica</div>
+      <div id="linea-6" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Poblemas de medición </div>
+      <div id="linea-7" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Precisión</div>
+      <div id="linea-8" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Calibración y ajuste</div>
+      <div id="linea-9" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Resultados densitométricos</div>
+      <div id="linea-10" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Iluminación</div>
+      
+      <div class="conte-listado" id="ultimoElemento" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Aplicaciones
+        <div id="segundaLista">
+          <div id="linea-11" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Tratamiento 1</div>
+          <div id="linea-12" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Tratamiento 2</div>
+          <div id="linea-13" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Análisis de datos</div>
+          <div id="linea-14" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Comparación</div>
+          <div id="linea-15" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Ajuste de equipo</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>   <!-- LIBRERIA DE GRAFICOS -->
     <script src="./Matriz-II.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>

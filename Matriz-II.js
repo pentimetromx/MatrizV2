@@ -153,8 +153,6 @@ function VolveraInicio(){
   idsArray = []
   idsArrayEliminados = []
 }
-function botoGrand() {
-}
 function muestraBateria(elementId){  
   // Recorre el array y oculta los elementos por su ID
   for (var i = 0; i < allContenedores.length; i++) {
@@ -3553,9 +3551,9 @@ function muestraVidPrisma(eltoHtml) {
   var circulo = document.getElementById('circle')
   var conteAyudas = document.getElementById('conte-ayudas')
   var primerAyuda = document.getElementById('imagen-ayudas')
-  var secondAyuda = document.getElementById('imagen-ayudasII')
+  /* var secondAyuda = document.getElementById('imagen-ayudasII') */
   primerAyuda.style.display = 'flex'
-  secondAyuda.style.display = 'flex'
+  /* secondAyuda.style.display = 'flex' */
   conteAyudas.style.display = 'flex'
   circulo.style.display = 'flex'
   document.getElementById('padre-circle').removeAttribute('style')
@@ -3575,7 +3573,7 @@ function muestraVidPrisma(eltoHtml) {
       }
     }
   }else{
-    var elementosExcluidos = ['buscador','container01','nicho-videos','padre-circle','circle','options','conte-ayudas','imagen-ayudasII','imagen-ayudas','ayudas-video']  
+    var elementosExcluidos = ['buscador','container01','nicho-videos','padre-circle','circle','options','conte-ayudas','imagen-ayudas','ayudas-video']  
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])  
       if (elemento) {
@@ -6749,9 +6747,7 @@ function antesImagenes(){
   var contImagenAntes = document.getElementById('toyota-kaizen-antes')
   contImagenAntes.style.display = 'flex'
 }
-
 let llamadaEjecutada = false;
-
 function resultadosEmpleado(idEmpleado, functionExe,icono) {
   var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered'] // Colores en formato RGB
   const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
@@ -10767,7 +10763,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('padre-circle')
+  var contiBoton = document.getElementById('imagen-ayudasII')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
@@ -11118,33 +11114,159 @@ function changeColorRedAndBack() {
     }, index * 25);
   });
 }
-/* 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
-function alternarAyudas(){
-  const imagenAyudas = document.getElementById('imagen-ayudas');
-  const imagenAyudasII = document.getElementById('imagen-ayudasII');
-    // Añadir la clase 'pressed' para aplicar el efecto visual
-    imagenAyudas.classList.add('pressed');    
-    // Establecer un temporizador para eliminar la clase 'pressed' después de 200 ms
-    setTimeout(() => {
-      imagenAyudas.classList.remove('pressed');
-    }, 50)
-    setTimeout(() => {
-      imagenAyudas.style.display = 'none'
-      imagenAyudasII.style.display = 'flex'
-    }, 100)
+function dañarLogo() {
+  var imagenAyudas = document.getElementById('imagen-ayudas')
+  var imagenAyudasII = document.getElementById('imagen-ayudasII')
+
+  imagenAyudas.style.display = 'none'
+  setTimeout(() => {  
+    imagenAyudasII.style.display = 'flex'      
+  }, 77);
+  setTimeout(() => {  
+    imagenAyudasII.style.display = 'none' 
+    imagenAyudas.style.display = 'flex'
+  }, 350);  
+
 }
 
-function alternarAyudasII(){
-  const imagenAyudasII = document.getElementById('imagen-ayudasII');
-  const imagenAyudas = document.getElementById('imagen-ayudas');
-    // Añadir la clase 'pressed' para aplicar el efecto visual
-    imagenAyudasII.classList.add('pressed');    
-    // Establecer un temporizador para eliminar la clase 'pressed' después de 200 ms
-    setTimeout(() => {
-      imagenAyudasII.classList.remove('pressed');
-    }, 50)
-    setTimeout(() => {
-      imagenAyudasII.style.display = 'none'
+let ejecutando = false; // Bandera para evitar ejecuciones simultáneas
+function alternarAyudas() {
+  var imagenAyudas = document.getElementById('imagen-ayudas')
+  var contenedorElementos = document.getElementById('contenedorElementos')
+  imagenAyudas.classList.remove('pressed');
+  if (ejecutando) {
+    // Si la función ya está ejecutándose, salimos para no ejecutarla de nuevo
+    return;
+  }
+  // Establecemos la bandera a true para indicar que la función está ejecutándose
+  ejecutando = true;
+  // Los diferentes temporizadores con los cambios que mencionaste
+  setTimeout(() => {
+    imagenAyudas.classList.add('pressed');
+  }, 17);
+  setTimeout(() => {
+    contenedorElementos.style.display = 'block';
+  }, 77);
+  setTimeout(() => {
+    // Restablecemos la bandera a false cuando la función ha finalizado su ejecución
+    imagenAyudas.classList.remove('pressed');
+    ejecutando = false;
+  },277);
+}
+
+
+// Variable para almacenar el temporizador
+let ocultarTimer = null;
+function mostrarElementos() {
+  const contenedorElementos = document.getElementById('contenedorElementos');
+  contenedorElementos.style.display = 'block';
+}
+let isMouseOver = false;
+var conteElementos = document.getElementById('contenedorElementos');
+conteElementos.addEventListener('mouseover', () => {
+  isMouseOver = true;
+});
+conteElementos.addEventListener('mouseout', () => {
+  isMouseOver = false;
+});
+function ocultarElementos(eltoID) {
+  const contenedorElementos = document.getElementById('contenedorElementos');
+  const segundoListado = document.getElementById('segundaLista');
+  segundoListado.style.display = 'none'
+  switch(eltoID){
+    case 'miBoton':
+      if (segundoListado.style.display === 'block') {
+        return;
+      }      
+      ocultarTimer = setTimeout(() => {
+        // Verifica si el ratón todavía está sobre el contenedor
+        if (!contenedorElementos.matches(':hover')) {
+          contenedorElementos.style.display = 'none';
+        }
+      }, 100)
+    break;
+    case 'contenedorElementos':
+      if (segundoListado.style.display === 'none') {   
+        ocultarTimer = setTimeout(() => {
+          // Verifica si el ratón todavía está sobre el contenedor
+          if (!contenedorElementos.matches(':hover')) {
+            contenedorElementos.style.display = 'none';
+          }
+        }, 200)        
+      }else{
+        contenedorElementos.style.display = 'block';
+        segundoListado.style.display = 'block';
+      }
+    break;
+    case 'imagen-ayudas':
+      const imagenAyudas = document.getElementById('imagen-ayudas');
+      const imagenAyudasII = document.getElementById('imagen-ayudasII');
       imagenAyudas.style.display = 'flex'
-    }, 100)
+      imagenAyudasII.style.display = 'none' 
+      if (conteElementos.style.display === 'block') { // Asegúrate de usar `===` para comparación
+        // Espera 500 ms antes de ocultar el elemento
+        setTimeout(() => {
+          // Solo oculta el elemento si el ratón no está sobre él
+          if (!isMouseOver) {
+            conteElementos.style.display = 'none';
+          }
+        }, 200);
+      }
+    break;
+    case 'imagen-ayudasII':
+      const imageAyudas = document.getElementById('imagen-ayudas');
+      const imageAyudasII = document.getElementById('imagen-ayudasII');
+      imageAyudas.style.display = 'flex'
+      imageAyudasII.style.display = 'none' 
+      if (conteElementos.style.display === 'block') { // Asegúrate de usar `===` para comparación
+        // Espera 500 ms antes de ocultar el elemento
+        setTimeout(() => {
+          // Solo oculta el elemento si el ratón no está sobre él
+          if (!isMouseOver) {
+            conteElementos.style.display = 'none';
+          }
+        }, 200);
+      }
+    break;
+  }
+}
+function cambiarColor(elemento, encendido) {
+  switch(elemento.className){
+    case 'conte-listado':
+      const segundoListado = document.getElementById('segundaLista');
+      if (encendido) {
+        elemento.style.backgroundColor = 'rgb(0,255,0)'
+        elemento.style.color = 'rgb(0,0,77)';
+        elemento.style.fontSize = '19px'
+        elemento.style.fontWeight = 'bold';       
+      } else {
+        elemento.style.backgroundColor = '';
+        elemento.style.color = 'rgb(255, 255, 177)';
+        elemento.style.fontSize = ''
+        elemento.style.fontWeight = 'normal'
+      }
+      if(encendido && elemento.id === 'ultimoElemento'){
+        segundoListado.style.display = 'block'
+        var lineas = document.getElementsByClassName('listado');
+
+        for(var i = 0; i < lineas.length; i ++){
+          lineas[i].style.fontWeight = 'normal';
+          lineas[i].style.fontSize = '16px'
+        }
+      }
+    break;
+    case 'listado':
+      if (encendido) {
+        elemento.style.backgroundColor = 'rgb(0,255,0)'
+        elemento.style.color = 'rgb(0,0,77)';
+        elemento.style.fontSize = '16px'
+        elemento.style.fontWeight = 'bold';             
+      } else {
+        elemento.style.backgroundColor = '';
+        elemento.style.color = 'rgb(255, 255, 177)';
+        elemento.style.fontSize = '19px'
+        elemento.style.fontWeight = 'normal'
+      }     
+    break;
+  }
 }
