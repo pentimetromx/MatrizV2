@@ -11225,10 +11225,31 @@ function ocultarElementos(eltoID) {
   }
 }
 function cambiarColor(elemento, encendido) {
+  const segundoListado = document.getElementById('segundaLista');
   switch(elemento.className){
     case 'conte-listado':
       if(screenWidth < 500){
-        const segundoListado = document.getElementById('segundaLista');
+        if (encendido) {
+          elemento.style.backgroundColor = 'rgb(0,255,0)'
+          elemento.style.color = 'rgb(0,0,77)';
+          elemento.style.fontSize = '16px'
+          elemento.style.fontWeight = 'bold';       
+        } else {
+          elemento.style.backgroundColor = '';
+          elemento.style.color = 'rgb(255, 255, 177)';
+          elemento.style.fontSize = '16px'
+          elemento.style.fontWeight = 'normal'
+        }
+        if(encendido && elemento.id === 'ultimoElemento'){
+          segundoListado.style.display = 'block'
+          var lineas = document.getElementsByClassName('listado');
+
+          for(var i = 0; i < lineas.length; i ++){
+            lineas[i].style.fontWeight = 'normal';
+            lineas[i].style.fontSize = '14px'
+          }
+        }
+      }else {
         if (encendido) {
           elemento.style.backgroundColor = 'rgb(0,255,0)'
           elemento.style.color = 'rgb(0,0,77)';
@@ -11248,30 +11269,8 @@ function cambiarColor(elemento, encendido) {
             lineas[i].style.fontWeight = 'normal';
             lineas[i].style.fontSize = '16px'
           }
-        } 
-      }else {
-      const segundoListado = document.getElementById('segundaLista');
-      if (encendido) {
-        elemento.style.backgroundColor = 'rgb(0,255,0)'
-        elemento.style.color = 'rgb(0,0,77)';
-        elemento.style.fontSize = '19px'
-        elemento.style.fontWeight = 'bold';       
-      } else {
-        elemento.style.backgroundColor = '';
-        elemento.style.color = 'rgb(255, 255, 177)';
-        elemento.style.fontSize = ''
-        elemento.style.fontWeight = 'normal'
-      }
-      if(encendido && elemento.id === 'ultimoElemento'){
-        segundoListado.style.display = 'block'
-        var lineas = document.getElementsByClassName('listado');
-
-        for(var i = 0; i < lineas.length; i ++){
-          lineas[i].style.fontWeight = 'normal';
-          lineas[i].style.fontSize = '16px'
         }
-      }
-    }
+      }  
     break;
     case 'listado':
       if (encendido) {

@@ -6602,10 +6602,10 @@ input.numero:focus {
     display: flex;
     display: none;
     top: -58%;
-    left: 30%;
-    width: 60%;
+    left: 17%;
+    width: 52%;
     height:40%;
-    background-color: rgba(1,1,15,0.7);
+    background-color: rgba(1,1,15,0.9);
     padding: 10px; 
     gap: 34px;
     border-radius: 3px;
@@ -6616,10 +6616,10 @@ input.numero:focus {
     position: relative; 
     margin-left:100%; 
     margin-top: -20px;
-    width: 95%; 
+    width: 51%; 
     padding: 10px; 
     border-radius: 3px; 
-    background-color: rgba(1,1,15,0.7);
+    background-color: rgba(1,1,15,0.9);
     display: none; 
   }
   .conte-listado{
