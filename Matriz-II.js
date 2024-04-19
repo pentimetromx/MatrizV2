@@ -10763,14 +10763,14 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('imagen-ayudasII')
+  var contiBoton = document.getElementById('contenedorElementos')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
   var widthValue = rect.width
   var heightValue = rect.height
   var positionType = window.getComputedStyle(buttRepuest).position
-  var displayType = window.getComputedStyle(buttRepuest).display
+  var displayType = window.getComputedStyle(buttRepuest).display    
   console.log(contiBoton.id);
   console.log('Top:', topPosition);
   console.log('Left:', leftPosition);
@@ -11128,7 +11128,6 @@ function dañarLogo() {
   }, 350);  
 
 }
-
 let ejecutando = false; // Bandera para evitar ejecuciones simultáneas
 function alternarAyudas() {
   var imagenAyudas = document.getElementById('imagen-ayudas')
@@ -11138,9 +11137,7 @@ function alternarAyudas() {
     // Si la función ya está ejecutándose, salimos para no ejecutarla de nuevo
     return;
   }
-  // Establecemos la bandera a true para indicar que la función está ejecutándose
   ejecutando = true;
-  // Los diferentes temporizadores con los cambios que mencionaste
   setTimeout(() => {
     imagenAyudas.classList.add('pressed');
   }, 17);
@@ -11148,13 +11145,10 @@ function alternarAyudas() {
     contenedorElementos.style.display = 'block';
   }, 77);
   setTimeout(() => {
-    // Restablecemos la bandera a false cuando la función ha finalizado su ejecución
     imagenAyudas.classList.remove('pressed');
     ejecutando = false;
   },277);
 }
-
-
 // Variable para almacenar el temporizador
 let ocultarTimer = null;
 function mostrarElementos() {
@@ -11233,6 +11227,29 @@ function ocultarElementos(eltoID) {
 function cambiarColor(elemento, encendido) {
   switch(elemento.className){
     case 'conte-listado':
+      if(screenWidth < 500){
+        const segundoListado = document.getElementById('segundaLista');
+        if (encendido) {
+          elemento.style.backgroundColor = 'rgb(0,255,0)'
+          elemento.style.color = 'rgb(0,0,77)';
+          elemento.style.fontSize = '19px'
+          elemento.style.fontWeight = 'bold';       
+        } else {
+          elemento.style.backgroundColor = '';
+          elemento.style.color = 'rgb(255, 255, 177)';
+          elemento.style.fontSize = ''
+          elemento.style.fontWeight = 'normal'
+        }
+        if(encendido && elemento.id === 'ultimoElemento'){
+          segundoListado.style.display = 'block'
+          var lineas = document.getElementsByClassName('listado');
+  
+          for(var i = 0; i < lineas.length; i ++){
+            lineas[i].style.fontWeight = 'normal';
+            lineas[i].style.fontSize = '16px'
+          }
+        } 
+      }else {
       const segundoListado = document.getElementById('segundaLista');
       if (encendido) {
         elemento.style.backgroundColor = 'rgb(0,255,0)'
@@ -11254,6 +11271,7 @@ function cambiarColor(elemento, encendido) {
           lineas[i].style.fontSize = '16px'
         }
       }
+    }
     break;
     case 'listado':
       if (encendido) {

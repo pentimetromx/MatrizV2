@@ -3685,14 +3685,13 @@ input.numero {
     border: 2px solid transparent; /* Establece un borde transparente por defecto */
 
   }
-  input.numero:focus {
-    border-color: blue; /* Cambia el color del borde al azul cuando el input está enfocado */
-  }
+input.numero:focus {
+  border-color: blue; /* Cambia el color del borde al azul cuando el input está enfocado */
+}
 
 #padre-circle{
   position: relative;
   display: flex;
-  /* top: -102%; */
   top: -94%;  
   left: 4%; 
   width: 300px;
@@ -3800,7 +3799,6 @@ input.numero {
 #conte-ayudas{
   position: absolute;
   display: flex;
-  /* top: 22%; */
   top: 14%;
   left: 4%;
   width: 77px;
@@ -3877,9 +3875,6 @@ input.numero {
   margin-bottom: 7px;
   color: rgb(255, 255, 177);
 } 
-
-
-
 
 
  @media screen and (max-width: 420px) {
@@ -6602,6 +6597,43 @@ input.numero {
     left: 47%;
     top: -3%;
   }
+  #contenedorElementos{
+    position: relative;
+    display: flex;
+    display: none;
+    top: -58%;
+    left: 30%;
+    width: 60%;
+    height:40%;
+    background-color: rgba(1,1,15,0.7);
+    padding: 10px; 
+    gap: 34px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'GothamRounded', sans-serif;
+  }
+  #segundaLista{
+    position: relative; 
+    margin-left:100%; 
+    margin-top: -20px;
+    width: 95%; 
+    padding: 10px; 
+    border-radius: 3px; 
+    background-color: rgba(1,1,15,0.7);
+    display: none; 
+  }
+  .conte-listado{
+    position: relative;
+    height: 19px;
+    margin-bottom: 7px;
+    color: rgb(255, 255, 177);
+  } 
+  .listado{
+    position: relative;
+    height: 19px;
+    margin-bottom: 7px;
+    color: rgb(255, 255, 177);
+  }   
   
   
   @keyframes parpadeo {
@@ -6783,7 +6815,7 @@ input.numero {
  #conte-ayudas{
   position: absolute;
   display: flex;
-  top: 19%;
+  top: 18.5%;
   left: 41%;
   width: 77px;
   height: 77px;
