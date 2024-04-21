@@ -2950,6 +2950,7 @@ function alternarColorVerdeInverso() {
   });
 }
 function abrirSeccionOperativa(elementId){
+  const buttsIniciales = ['bot-atras','bot-inicial','iniciar','bot-atras12']
   var elementosExcluidos = ['buscador','container01','buscador','links-inicialesI','links-iniciales','cont-titulo-operacion']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -2957,6 +2958,12 @@ function abrirSeccionOperativa(elementId){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
+  buttsIniciales.forEach(element => {
+    var boton = document.getElementById(element)
+    boton.style.backgroundColor = 'rgba(255, 24, 55)'
+    boton.style.color = 'white'
+  });
+
   if(screenWidth < 500){
     setTimeout(function () {
       iniciarMovimiento('agrupaOblicuos-XII');
@@ -2968,16 +2975,6 @@ function abrirSeccionOperativa(elementId){
     }, 177);
 
   }
-  
-  /* setTimeout(function () {
-    iniciarMovimiento('agrupaOblicuos-XII');
-    iniciarMovimiento('agrupaOblicuos-XVIII'); 
-  }, 300);
-  // Retrasar la llamada a cambiarColoresConRetraso después de 100 msg
-  setTimeout(function () {
-    changeColorToRedAndBack();
-  }, 377); */
-
   // 4. Verificar si el elemento está definido y si ya existe en arrayIds
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
@@ -8475,7 +8472,6 @@ document.addEventListener("DOMContentLoaded", function() {
   toggleVideoButton.addEventListener("click", function() {
     video.pause()
   })
-
 })
 // LOGICA PARA FULL SCREEN A IMAGENES
 images.forEach(image => {
@@ -11133,6 +11129,7 @@ function alternarAyudas() {
   var imagenAyudas = document.getElementById('imagen-ayudas')
   var contenedorElementos = document.getElementById('contenedorElementos')
   imagenAyudas.classList.remove('pressed');
+
   if (ejecutando) {
     // Si la función ya está ejecutándose, salimos para no ejecutarla de nuevo
     return;
@@ -11287,3 +11284,8 @@ function cambiarColor(elemento, encendido) {
     break;
   }
 }
+
+
+
+
+

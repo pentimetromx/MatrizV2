@@ -44,7 +44,7 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color:#333333; /* Color de fondo gris con transparencia */
+  background-color:#333333;
   z-index: -2; /* Coloca el fondo gris detrás del video */
   pointer-events: none;
 }
@@ -2012,6 +2012,7 @@ header {
 #bot-atras-m::before{
   content: "\25C0"; /* Código HTML para el triángulo de reproducción */
   font-size: 2em; /* Aumentar el tamaño al doble */
+  color: white;
 }
 #bot-atras12::before,
 #bot-atras11::before,
@@ -2037,6 +2038,7 @@ header {
 #bot-atras33::before{
   content: "\25B6"; /* Código HTML para el triángulo de reproducción hacia la derecha */
   font-size: 2em; /* Aumentar el tamaño al doble */
+  color: white;
 }
 #imgsSecador img{
   width: 240px;
