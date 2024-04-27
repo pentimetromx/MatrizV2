@@ -16,22 +16,18 @@
           </button>
       </form>
     </header>
-
     <div id="logo-grande">
       <img id="titulo-ancho" src="./assets/cadena logo big.png" alt="logo">
     </div>
-
     <div id="franja-Blanca">
       <img id="img-logo" src="./assets/cadena logo.png" alt="logo">
     </div>
-
     <div id="contenedor-principal">
       <input id="input1" type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" inputmode="numeric" autofocus>    
       <input id="input2" type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" inputmode="numeric">    
       <input id="input3" type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" inputmode="numeric">    
       <input id="input4" type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" inputmode="numeric">    
     </div>
-
     <div id="cont-titulo">
 
       <h4 id="subtitulo-I">Aplicamos la transformación tecnológica V2</h4>
@@ -65,8 +61,7 @@
         <div id="hijo-interaz-2" class="columna"></div>  
       </div>
 
-    </div>
-    
+    </div>    
     <div id="cont-videojuegos" style="display: none;">
       <div id="contMetrics" class="sinusoidales">
         <canvas id="sinusoidalCanvas" width="300" height="177"></canvas>
@@ -503,7 +498,6 @@
       <button class="boton-a" id="toggleVideoButt" style="margin-left: 477px;">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
       <button class="boton-a" id="bot-atras32" style="text-align: center;width: 47px;position: relative;left: 685px;top: 5px;;display: none" onclick="irContenedorSiguiente('rotatek-1')"></button>
     </div><br>
-
     <div id="pantalla-inicial"> 
 
       <div class="desbobinador" id="desbobinadorId">
@@ -1355,7 +1349,6 @@
       </div>
 
     </div>
-
     <div id="contImgEntintador" style="display: none;">
       <div class="imgRow">
         <img src="./assets/forma-1.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-18">
@@ -1522,11 +1515,9 @@
         </div>
         <h6 id="cerrar-ventana" onclick="cerrarVentana()">Cerrar</h6>
       </div>
-
       <div id="vidColor">
         <video class="video-training vid-prepress" id="prisma-vid" src="./assets/prisma.mp4" autoplay loop onclick="abrirPrepress('pre-prensa')"></video>
       </div>
-
       <div id="vidColor-II">
         <video class="video-training" id="color-vid" src="./assets/color.mp4"></video>
       </div> 
@@ -1951,13 +1942,11 @@
       </div>    
         <h6 id="options">Opciones</h6>
     </div>
-
     <div id="conte-ayudas">
       <img id="imagen-ayudas" onclick="alternarAyudas()" onmouseout="ocultarElementos('imagen-ayudas')" src="./assets/ayudas.png" alt="">
       <img id="imagen-ayudasII" onclick="alternarAyudasII()" src="./assets/ayudasII.png" alt="">
       <h6 id="ayudas-video" style="position: relative;display: flex;left: 62%;top: -42%;font-size: 17px;display: none;">Ayudas</h6>
     </div>
-
     <div class="contenedor">
       <div class="linea"></div>
       <div class="linea1"></div>
@@ -1966,8 +1955,6 @@
       <div class="linea4"></div>
     </div>
     <div id="container"> </div> 
-    <!-- 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
-
     <div id="contenedorElementos" onmouseover="mostrarElementos()" onmouseout="ocultarElementos('contenedorElementos')">
       <div id="linea-1" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Optimizar parámetros</div>
       <div id="linea-2" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Análisis de patrones</div>
@@ -1985,13 +1972,157 @@
           <div id="linea-11" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Tratamiento 1</div>
           <div id="linea-12" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Tratamiento 2</div>
           <div id="linea-13" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Análisis de datos</div>
-          <div id="linea-14" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Comparación</div>
+          <div id="linea-14" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)" onclick="interfazAvance()">Comparación</div>
           <div id="linea-15" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Ajuste de equipo</div>
         </div>
       </div>
     </div>
 
     <!-- 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
+
+    <div id="display">
+      <span id="positionDisplay">0</span>
+    </div>
+    <div id="container-interfaz" class="container">
+      <button class="slider-button" id="button1">Intensidad</button>
+      <div class="guide"></div>
+      <div id="slider" class="slider-track"></div>
+      <div id="slider_2" class="slider-track"></div>
+      <div id="slider_3" class="slider-track"></div>
+
+      <div class="linea-numerada">
+        <span class="numero">0</span>
+        <span class="numero">45</span>
+        <span class="numero">90</span>
+        <span class="numero">135</span>
+        <span class="numero">180</span>
+        <span class="numero">225</span>
+        <span class="numero">270</span>
+        <span class="numero">315</span>
+        <span class="numero">360</span>
+      </div>
+      <div id="contenedor-1" class="rule-container">
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>                 
+      </div>      
+    </div>
+    <div id="butts-interfaz">
+      <button id="buttonLeft"></button>
+      <button id="buttonRight"></button>
+      <button id="buttonReset"></button> 
+    </div>
+    <div id="container-interfaz-2" class="container">
+      <button class="slider-button" id="button2">Croma</button>
+      <div class="guide"></div>
+      <div id="slider_1" class="slider-track"></div>
+      <div class="linea-numerada">
+        <span class="numero">0</span>
+        <span class="numero">50</span>
+        <span class="numero">100</span>
+        <span class="numero">150</span>
+        <span class="numero">200</span>
+        <span class="numero">250</span>
+      </div>
+      <div id="contenedor-2" class="rule-container">
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>                 
+      </div>  
+    </div>  
+
+    <div id="butts-interfaz-2">
+      <button id="buttonLeft-2"></button>
+      <button id="buttonRight-2"></button>
+      <button id="buttonReset-2"></button></button> 
+    </div>
+    <!-- 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
+
+    <div class="interfaz" id="interfaz">
+      <div id="zona_titulo">
+        <h1 id="titulo">CONTINUAR CON PRECAUCION</h1>
+      </div>      
+      <div id="zona_botones">
+        <button id="butt_green" class="verde"></button>
+        <button id="butt_orange" class="naranja"></button>
+        <button id="butt_red" class="rojo"></button> 
+      </div>
+      <div id="zona_span">
+        <span class="texto_izquierdo">Continuar</span>
+        <span class="texto_izquierdo">Suspender</span>
+        <span class="texto_izquierdo">Eliminar</span>
+      </div>      
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>   <!-- LIBRERIA DE GRAFICOS -->
     <script src="./Matriz-II.js"></script> 

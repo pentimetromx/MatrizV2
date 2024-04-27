@@ -71,7 +71,9 @@ var currentID = null;
 var butInicio = document.getElementById('bot-inic')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
-var allContenedores = ['subtitulo-I','conte-ayudas','ayudas-video','imagen-ayudas','imagen-ayudasII','logo-grande','agrupaOblicuos-XI','titulo-ancho','descripcion-I','ventana-lateral','buscador','linkList','contenedor-principal','contenedor','padre-circle','circle','options','nicho-videos','primerCont','vidColor','vid01','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
+var display = document.getElementById('display') 
+var posicionPantalla = document.getElementById('positionDisplay')
+var allContenedores = ['subtitulo-I','display','container-interfaz','butts-interfaz','interfaz','conte-ayudas','ayudas-video','imagen-ayudas','imagen-ayudasII','logo-grande','agrupaOblicuos-XI','titulo-ancho','descripcion-I','ventana-lateral','buscador','linkList','contenedor-principal','contenedor','padre-circle','circle','options','nicho-videos','primerCont','vidColor','vid01','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
@@ -105,6 +107,7 @@ const reBobinado = document.getElementById('rebobinador')
 const seccionTintero = document.getElementById('pantalla-tintero')
 const pantallas = ['pantalla-frente', 'pantalla-mandos','pantalla-servicio','pantalla-atras']
 const imgsRepuestos = document.getElementById('imgsRepuestos')
+const videoPrisma = document.getElementById('prisma-vid-II')
 
 const videoElements = document.querySelectorAll('.video-training') 
 const videosPrepress = document.querySelectorAll('.vid-prepress')  
@@ -117,6 +120,31 @@ const input = document.querySelectorAll('.input-class')
 const checks = document.querySelectorAll('.input-class')
 const inpt = document.querySelectorAll('grafMini')
 
+const verButtsInterfaz = document.getElementById('butts-interfaz')
+const positionDisplay = document.getElementById('positionDisplay')
+const container = document.getElementById('container-interfaz')
+const cortina = document.getElementsByClassName('overlay')[0]
+const buttonRight2 = document.getElementById('buttonRight-2')
+const buttReset2 = document.getElementById('buttonReset-2')  
+const buttonLeft2 = document.getElementById('buttonLeft-2')
+const buttonRight = document.getElementById('buttonRight')
+const buttonLeft = document.getElementById('buttonLeft')
+const buttReset = document.getElementById('buttonReset')  
+const anchoBarra2 = document.getElementById('slider_1')
+const botVerde = document.getElementById('butt_green')
+const botNaran = document.getElementById('butt_orange')
+const botRed = document.getElementById('butt_red')
+const interfaz = document.getElementById('interfaz')
+const slider2 = document.getElementById('slider_2')
+const slider3 = document.getElementById('slider_3')
+const button = document.getElementById('button1')
+const slider1 = document.getElementById('slider')
+const butt2 = document.getElementById('button2')
+
+let currentLeft = parseFloat(window.getComputedStyle(button).left)
+var newLeft = currentLeft + 2
+
+
 let miCanvas2 = document.getElementById('MiSegundaGrafica').getContext('2d')
 let miCanvas3 = document.getElementById('MiTerceraGrafica').getContext('2d')
 let miCanvas4 = document.getElementById('MiCuartaGrafica').getContext('2d')
@@ -128,25 +156,133 @@ let miCanvas7 = document.getElementById('MiGrafica5').getContext('2d')
 let miCanvas7II = document.getElementById('MiGrafica5-II').getContext('2d')
 let miCanvas8 = document.getElementById('MiGrafica6').getContext('2d')
 let miCanvas8II = document.getElementById('MiGrafica6-II').getContext('2d')
-
 let miCanvas9 = document.getElementById('MiGrafica7').getContext('2d')
 let miCanvas9II = document.getElementById('MiGrafica7-II').getContext('2d')
-
 let miCanvas10 = document.getElementById('MiGrafica8').getContext('2d')
 let miCanvas10II = document.getElementById('MiGrafica8-II').getContext('2d')
-
 let miCanvas11 = document.getElementById('MiGrafica9').getContext('2d');
 let miCanvas11II = document.getElementById('MiGrafica9-II').getContext('2d')
-
-
 var botones = document.querySelectorAll('.butt-mautonomo')
 var arrayButtsIniciales = ['bot-atras','bot-inicial','iniciar','bot-atras12']
-
 let currentIndex = 0;
 let actualtIndex = 0;
 let nowIndex = 0;
 idsArray.push("cont-titulo") 
 idsArrayEliminados.push('cont-titulo')
+
+const masterKey = [4];
+function manejarLogica() {
+  const inputs = document.querySelectorAll('.numero');
+  let valoresIngresados = [0, 0, 0, 0];
+  document.getElementById('ctx').style.display = 'none'
+  document.getElementById('sitema-humedad').style.display = 'none'
+  document.getElementById('contenedor-9').style.display = 'none'
+  document.getElementById('bancada-torre-II').style.display = 'none'
+  document.getElementById('contenedor-8').style.display = 'none'
+  if(screenWidth < 500){
+    if (inputs.length > 0) {
+      inputs[0].focus();
+      var tituloAngosto = document.getElementById('img-logo');
+      tituloAngosto.style.width = '100%';      
+    }
+    function manejarEntrada(event) {
+      // Obtén el input actual desde el evento
+      const inputActual = event.target;
+      // Convierte el valor del input a número
+      const valor = parseInt(inputActual.value);
+      // Inicializa la suma en cero
+      let suma = 0;
+      // Encuentra el índice del input actual dentro de inputs
+      const indice = Array.from(inputs).indexOf(inputActual);
+      // Almacena el valor ingresado en el índice correspondiente
+      if (!isNaN(valor)) {
+        valoresIngresados[indice] = valor;
+      } else {
+        valoresIngresados[indice] = 0; // Establece el valor a cero si no es un número válido
+      }
+      // Después de que se ingrese un número, cambia el valor del input actual a asterisco después de 177 ms
+        setTimeout(() => {
+        inputActual.value = '*';
+        // Mueve el foco al siguiente input después de cambiar a asterisco
+        if (indice < inputs.length - 1) {
+          inputs[indice + 1].focus();
+        }
+      }, 177);
+      // Suma todos los valores ingresados
+      suma = valoresIngresados.reduce((acumulador, valor) => acumulador + valor, 0);
+      // Verifica si la suma de los valores ingresados es igual a masterKey
+      if (suma === masterKey[0]) {
+        document.getElementById('contenedor-principal').style.display = 'none'
+        // Lanza el alert con el mensaje "clave identica"
+        setTimeout(() => {
+          aumentoGradualVideo()              
+        }, 200);
+        setTimeout(() => {
+          abrirInterfaz();
+        }, 1100);
+        inputs.forEach(input => {
+        input.value = ''; // Establece el valor de cada input como una cadena vacía
+        });         
+      }
+    }
+    // Agrega el evento de entrada a cada input para llamar a manejarEntrada
+    inputs.forEach(input => {
+      input.addEventListener('input', manejarEntrada);
+    });
+  }else{
+    if (inputs.length > 0) {
+      inputs[0].focus();
+      var tituloAncho = document.getElementById('titulo-ancho');
+      tituloAncho.style.width = '100%'      
+    }
+    function manejarEntrada(event) {
+      // Obtén el input actual desde el evento
+      const inputActual = event.target;
+      // Convierte el valor del input a número
+      const valor = parseInt(inputActual.value);
+      // Inicializa la suma en cero
+      let suma = 0;
+      // Encuentra el índice del input actual dentro de inputs
+      const indice = Array.from(inputs).indexOf(inputActual);
+      // Almacena el valor ingresado en el índice correspondiente
+      if (!isNaN(valor)) {
+        valoresIngresados[indice] = valor;
+      } else {
+        valoresIngresados[indice] = 0; // Establece el valor a cero si no es un número válido
+      }
+      // Después de que se ingrese un número, cambia el valor del input actual a asterisco después de 177 ms
+        setTimeout(() => {
+        inputActual.value = '*';
+        // Mueve el foco al siguiente input después de cambiar a asterisco
+        if (indice < inputs.length - 1) {
+          inputs[indice + 1].focus();
+        }
+      }, 177);
+      // Suma todos los valores ingresados
+      suma = valoresIngresados.reduce((acumulador, valor) => acumulador + valor, 0);
+      // Verifica si la suma de los valores ingresados es igual a masterKey
+      if (suma === masterKey[0]) {
+        document.getElementById('contenedor-principal').style.display = 'none'
+        // Lanza el alert con el mensaje "clave identica"
+        setTimeout(() => {
+          aumentoGradualVideo()              
+        }, 200);
+        setTimeout(() => {
+          abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
+        }, 1100);
+        // Limpia el contenido de todos los inputs
+        inputs.forEach(input => {
+        input.value = ''; // Establece el valor de cada input como una cadena vacía
+        });         
+      }
+    }
+    // Agrega el evento de entrada a cada input para llamar a manejarEntrada
+    inputs.forEach(input => {
+      input.addEventListener('input', manejarEntrada);
+    });
+
+  }
+}
 
 function VolveraInicio(){
   location.reload()
@@ -3548,9 +3684,7 @@ function muestraVidPrisma(eltoHtml) {
   var circulo = document.getElementById('circle')
   var conteAyudas = document.getElementById('conte-ayudas')
   var primerAyuda = document.getElementById('imagen-ayudas')
-  /* var secondAyuda = document.getElementById('imagen-ayudasII') */
   primerAyuda.style.display = 'flex'
-  /* secondAyuda.style.display = 'flex' */
   conteAyudas.style.display = 'flex'
   circulo.style.display = 'flex'
   document.getElementById('padre-circle').removeAttribute('style')
@@ -3682,33 +3816,6 @@ function cerrarVentana(){
     document.getElementById('padre-circle').style.marginTop = '-45%'
   }
 }
-function formateaPrepress(eltoHtml){
-  videosPrepress.forEach(video => {
-    if (video) {
-      video.style.display = 'none'
-    }
-    })
-    videosPrepress.forEach(video => {
-      if (video.id === eltoHtml) {
-        video.style.display = 'flex'
-        video.currentTime = 0
-        video.play()      
-      }
-    })  
-    if(screenWidth < 500){
-      var padreImagenesPres = document.getElementById('pre-prensa')
-      var hijoPadrePres = document.getElementById('imgs-prepress')
-      var primerCont = document.getElementById('primerCont')
-      var video1 = document.getElementById('vid01')
-      padreImagenesPres.style.display = 'flex'
-      hijoPadrePres.style.display = 'flex'
-      primerCont.style.display = 'flex'
-      video1.style.display = 'flex'
-      animateVideoWidth(eltoHtml)
-    }else{
-      animateVideoWidthII(eltoHtml) 
-    }
-}
 function muestraVidColor(elementId){
   if (screenWidth > 900) {
     allContenedores.forEach(contenedor => {
@@ -3756,6 +3863,33 @@ function muestraVidColor(elementId){
     vidPrisma.currentTime = '0'
     vidPrisma.play()
   }  
+}
+function formateaPrepress(eltoHtml){
+  videosPrepress.forEach(video => {
+    if (video) {
+      video.style.display = 'none'
+    }
+    })
+    videosPrepress.forEach(video => {
+      if (video.id === eltoHtml) {
+        video.style.display = 'flex'
+        video.currentTime = 0
+        video.play()  
+      }
+    })  
+    if(screenWidth < 500){
+      var padreImagenesPres = document.getElementById('pre-prensa')
+      var hijoPadrePres = document.getElementById('imgs-prepress')
+      var primerCont = document.getElementById('primerCont')
+      var video1 = document.getElementById('vid01')
+      padreImagenesPres.style.display = 'flex'
+      hijoPadrePres.style.display = 'flex'
+      primerCont.style.display = 'flex'
+      video1.style.display = 'flex'
+      animateVideoWidth(eltoHtml)
+    }else{
+      animateVideoWidthII(eltoHtml) 
+    }
 }
 function irContenedorAnterior() {
   var previousElementID = idsArray[idsArray.length - 2];
@@ -9385,8 +9519,6 @@ var chart12II = new Chart(miCanvas11II, {
     }
   }
 });
-// Aumentar el grosor de las barras
-/* chart8.options.scales.x.barThickness = 100; // Ajusta el valor a un grosor mayor */
 /* //////////////////////////////////AUMENTO Y MOVIMIENTO IMAGENES ///////////////////////////////////////////// */
 const zoomableImages = document.querySelectorAll('.image-trainings')
 const sensitivity = 5; 
@@ -9461,7 +9593,6 @@ linkListI.addEventListener("mouseout", () => {
     lineI.style.width = "0";
   }, 1)
 })
-/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 const searchForm = document.getElementById('search-form')
 const searchInput = document.getElementById('search-input')
 const suggestionsList = document.getElementById('suggestions') // Agrega el elemento datalist
@@ -9601,12 +9732,10 @@ searchForm.addEventListener('submit', function (e) {
     console.error('No se encontró el elemento con ID "suggestions"');
   }
 })
- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Obtén los elementos canvas de canvasContainer2 y canvasContainer3
 const canvasElements2 = document.querySelectorAll('#canvasContainer2 canvas')
 const canvasElements3 = document.querySelectorAll('#canvasContainer3 canvas')
 const canvasElements4 = document.querySelectorAll('#contChecks input')
-// Función para agregar/eliminar pantalla completa a un elemento
 // Agrega un evento click a cada elemento canvas en canvasContainer2
 canvasElements2.forEach(canvas => {
   canvas.addEventListener('click', () => {
@@ -9625,7 +9754,6 @@ canvasElements4.forEach(input => {
     toggleFullScreen(input)
   })
 })
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Obten todos los elementos con la clase "colorClick"
 var colorClickLinks = document.querySelectorAll('.colorClick')
 // Recorre todos los elementos y agrega el evento a cada uno
@@ -9812,7 +9940,6 @@ function moveScroll(container) {
     container.scrollTop = 0;
   }
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function iniciarMovimiento(instrucId) {
   var container = document.getElementById(instrucId);
   container.scrollTop = container.scrollHeight;  
@@ -9961,14 +10088,10 @@ function iniciarMovimiento(instrucId) {
     }}, 277
   );
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Obtén el contexto del lienzo
 var canvas = document.getElementById("sinusoidalCanvas");         
 var ctx = canvas.getContext("2d");
-// Configura el color y el grosor de la línea
 ctx.strokeStyle = "rgb(0, 255, 0)"; // Verde
 ctx.lineWidth = 1;
-// Dibuja la onda sinusoidal
 drawSinusoidalI();
 function drawSinusoidalI() {
   // Ajusta la escala de la onda y el desplazamiento
@@ -10022,14 +10145,10 @@ function drawVerticalAxis() {
   ctx.fillText(canvas.height / 2 - y, canvas.width / 2 - 30, y + 5);
   }
 }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Obtén el contexto del lienzo
 var canvasI = document.getElementById("diagonalCanvas");
 var dcx = canvasI.getContext("2d");
-// Configura el color y el grosor de la línea
 dcx.strokeStyle = "rgb(0,255,0)"; // Azul
 dcx.lineWidth = 1;
-// Dibuja la línea diagonal
 drawDiagonalLine();
 function drawDiagonalLine() {
   // Comienza el trazado de la línea
@@ -10078,21 +10197,14 @@ function drawVerticalAxisII() {
   dcx.fillText(canvasI.height / 2 - y, canvasI.width / 2 - 30, y + 5);
   }
 }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Obtén el contexto del lienzo
 var canvasII = document.getElementById("dualSinusoidalCanvas");
 var cdsc = canvasII.getContext("2d");
-// Configura el color y el grosor de la primera línea
 cdsc.strokeStyle = "rgb(0, 255, 0)"; // Verde
 cdsc.lineWidth = 1;
-// Dibuja la primera onda sinusoidal
 drawSinusoidalDoubleI(50, 0.05, 0);
-// Configura el color y el grosor de la segunda línea
 cdsc.strokeStyle = "rgb(0, 0, 255)"; // Amarillo
 cdsc.lineWidth = 1;
-// Dibuja la segunda onda sinusoidal
 drawSinusoidalDoubleI(60, 0.05, Math.PI / 2); // Parámetros diferentes para la segunda onda
-// Dibuja la cuadrícula
 drawGridI(4, 7);
 function drawSinusoidalDoubleI(amplitude, frequency, phase) {
   // Comienza el trazado de la onda
@@ -10127,26 +10239,17 @@ function drawGridI(horizontalLinesI, verticalLinesI) {
   cdsc.stroke();
   }
 }        
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Obtén el contexto del lienzo
 var canvas = document.getElementById("tripleSinusoidalCanvas");
 var ctx = canvas.getContext("2d");
-// Configura el color y el grosor de la primera línea
 ctx.strokeStyle = "rgb(255, 125, 0)"; // Verde
 ctx.lineWidth = 1;
-// Dibuja la primera onda sinusoidal
 drawSinusoidalDouble(50, 0.05, 0);
-// Configura el color y el grosor de la segunda línea
 ctx.strokeStyle = "rgb(255, 0, 255)"; // Amarillo
 ctx.lineWidth = 1;
-// Dibuja la segunda onda sinusoidal
 drawSinusoidalDouble(60, 0.05, Math.PI / 2); // Parámetros diferentes para la segunda onda
-// Configura el color y el grosor de la tercera línea
 ctx.strokeStyle = "rgb(255, 255, 0)"; // Azul
 ctx.lineWidth = 1;
-// Dibuja la tercera onda senoidal
 drawSinusoidal(40, 0.1, Math.PI); // Parámetros diferentes para la tercera onda
-// Dibuja la cuadrícula
 drawGrid(4, 7);
 function drawSinusoidal(amplitude, frequency, phase) {
 // Comienza el trazado de la onda
@@ -10193,7 +10296,6 @@ function drawGrid(horizontalLines, verticalLines) {
   ctx.stroke();
   }
 }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var intervalId; // Declara la variable en un ámbito accesible                                   /// BOTONERA CICODELICA  PARE/SIGA
 function iniciarEventos() {
   var contSinusoidales = document.getElementById('contMetrics')
@@ -10223,13 +10325,11 @@ function iniciarEventos() {
   contCicodelicos.style.display = 'grid'
 
 }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function detenerEventos() {
   clearInterval(intervalId);
   var contCicodelicos = document.getElementById('botonesContainer')  
   contCicodelicos.style.left = '555px'
 }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function iniciarTransito() {                                                                                            /// BOTON BAILARIN ALREDEDOR DE PANTALLA
   var boton = document.getElementById("buttSolitario");
   var stopFlag = false;
@@ -10322,13 +10422,10 @@ function iniciarTransito() {                                                    
   moverDerechaIzquierda();
   iniciarEventos()
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Función para detener el movimiento
 function detenerMovimiento() {
   stopFlag = true;
   clearTimeout(timeoutId);
 }
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var botonSolitario = document.getElementById('buttSolitario');
 var botonSeguidor = document.getElementById('boton2');
 function moverDerecha() {
@@ -10556,7 +10653,6 @@ function iniciaMove() {
   });
   iniciarTransito()
 }
-//////////////////////////////////////////////////////// BOTON PARPADEA INDICADOR //////////////////////////////////////////////////////////////////////////
 function palpitarBotonDesbob() {
     document.getElementById('boton1').classList.add('parpadea');
     setTimeout(function () {
@@ -10664,8 +10760,6 @@ document.getElementById('icono2').addEventListener('click', function(event) {
   event.stopPropagation(); // Detener la propagación del evento
   moverIconos() // Ejecutar la función asociada al child
 });
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// EVENTOS DINAMICOS MOVER CONTENEDORES
 document.getElementById('iniciar').addEventListener('click', function() {
   contibotsDistri.classList.toggle('move-down')
   contVideo.classList.toggle('move-down-I')
@@ -10722,7 +10816,304 @@ function volverApre(){
     }
   }  
 }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const applyFilters = () => {
+videoPrisma.style.filter = `blur(${blurAmount}px) brightness(${brightnessAmount})`;
+};
+let blurAmount = 0;
+let brightnessAmount = 1;
+let intervalId2 = null
+let intervalId3 = null
+var intervalId = null
+let greyIntensity = 0
+buttonLeft.addEventListener('mousedown', () => {
+  intervalId = setInterval(() => {
+    var tituloElement = document.getElementById("titulo");
+    let currentLeft = parseFloat(window.getComputedStyle(button).left)
+    let newLeft = currentLeft + 2
+    if(newLeft <= 2){
+      makeFilters()
+      blurAmount = 0;
+      brightnessAmount = 1;      
+    }
+    if (newLeft <= 150) {
+      console.log(newLeft)
+      posicionPantalla.style.color = 'rgb(0,255,0)'
+      posicionPantalla.style.borderColor = 'rgb(0,255,0)'
+      button.style.left = `${newLeft}px`;
+      slider1.style.width = `${newLeft}px`;
+      blurAmount += 0.01
+      applyFilters(); // Aplicar los filtros actualizados
+      /* brightnessAmount += 0.1; */
+      /* greyIntensity += 0.1;
+      cortina.style.backgroundColor = `rgb(${greyIntensity},${greyIntensity},${greyIntensity})` */
+    }    
+    if(newLeft === 150){
+      console.log(newLeft)
+      clearInterval(intervalId)
+      verButtsInterfaz.style.pointerEvents = "none";    
+      interfaz.style.display = 'flex'
+      tituloElement.textContent = "CONTINUAR CON PRECAUCION"; 
+      tituloElement.style.backgroundColor = 'orange'
+      tituloElement.style.color = 'black'           
+      container.style.visibility = 'hidden'
+      verButtsInterfaz.style.visibility = 'hidden'
+      button.style.visibility = 'hidden'
+      posicionPantalla.style.visibility = 'hidden'
+      console.log(`${newLeft}px`)
+    }
+    if(newLeft >= 150){
+      console.log(newLeft)
+      posicionPantalla.style.color = 'orange'
+      posicionPantalla.style.borderColor = 'orange'
+      slider2.style.width = `${newLeft-150}px`
+      button.style.left = `${newLeft}px`
+      blurAmount += 0.01
+      applyFilters(); // Aplicar los filtros actualizados      
+      /* greyIntensity += 0.1
+      cortina.style.backgroundColor = `rgb(${greyIntensity},${greyIntensity},${greyIntensity})` */
+      console.log(`${newLeft}px`)
+    } 
+    if(newLeft === 330){
+      console.log(newLeft)
+      clearInterval(intervalId)
+      interfaz.style.display = 'flex'
+      container.style.visibility = 'hidden'
+      verButtsInterfaz.style.visibility = 'hidden'
+      button.style.visibility = 'hidden'
+      posicionPantalla.style.visibility = 'hidden'
+      tituloElement.textContent = "ALTO RIESGO";
+      tituloElement.style.backgroundColor = 'rgb(255,0,0)'
+      tituloElement.style.color = 'white'
+      verButtsInterfaz.style.pointerEvents = "none";
+      console.log(`${newLeft}px`)
+    }
+    if(newLeft >= 330){
+      console.log(newLeft)
+      posicionPantalla.style.color = 'rgb(255,0,0)'
+      posicionPantalla.style.borderColor = 'rgb(255,0,0)'
+      slider3.style.width = `${newLeft-327}px`
+      button.style.left = `${newLeft}px`
+      blurAmount += 0.1
+      applyFilters(); // Aplicar los filtros actualizados      
+      /* greyIntensity += 0.1;
+      cortina.style.backgroundColor = `rgb(${greyIntensity},${greyIntensity},${greyIntensity})`   */
+      console.log(`${newLeft}px`)  
+    }
+    if(newLeft >= 400){clearInterval(intervalId)
+      setTimeout(() => {          
+        positionDisplay.textContent = `${newLeft} - µpm`
+      }, 17);
+    }
+    positionDisplay.textContent = `${newLeft} - µpm` 
+  }, 7);
+});
+buttonLeft.addEventListener('mouseup', () => {
+  clearInterval(intervalId)
+}); 
+buttonLeft.addEventListener('mouseleave', () => {
+  clearInterval(intervalId)
+});
+buttonRight.addEventListener('mousedown', () => {
+  intervalId2 = setInterval(() => {
+    const currentLeft = parseFloat(window.getComputedStyle(button).left)
+    const barraWidth = parseFloat(window.getComputedStyle(slider3).width)
+    const barraWidth1 = parseFloat(window.getComputedStyle(slider2).width)
+    const barraWidth2 = parseFloat(window.getComputedStyle(slider1).width)
+    const newLeft = currentLeft - 2
+    const newWidth = barraWidth -2 
+    const withNew1 = barraWidth1 - 2
+    const withNew2 = barraWidth2 - 2
+    if (newLeft >=330) {
+      button.style.left = `${newLeft}px`
+      slider3.style.width = `${newWidth}px`
+      blurAmount -= 0.025;
+      applyFilters(); // Aplicar los filtros actualizados
+      /* greyIntensity -= 0.13; 
+      cortina.style.backgroundColor = `rgb(${greyIntensity},${greyIntensity},${greyIntensity})`*/   
+      posicionPantalla.style.borderColor = 'rgb(255,0,0)'
+      display.style.color = 'rgb(255,0,0)'
+    }
+    if (newLeft >= 130 && newLeft <= 330) {
+      button.style.left = `${newLeft}px`
+      slider2.style.width = `${withNew1}px`
+      blurAmount -= 0.025;
+      applyFilters(); // Aplicar los filtros actualizados
+      /* greyIntensity -= 0.13;
+      cortina.style.backgroundColor = `rgb(${greyIntensity},${greyIntensity},${greyIntensity})`*/  
+      posicionPantalla.style.color = 'orange'
+      posicionPantalla.style.borderColor = 'orange'      
+      display.style.color = 'rgb(255,100,0)'
+    }
+    if (newLeft >= 0 && newLeft <= 150) {
+      button.style.left = `${newLeft}px`
+      slider1.style.width = `${withNew2}px`
+      blurAmount -= 0.025;
+      applyFilters(); // Aplicar los filtros actualizados
+      /* greyIntensity -= 0.13;
+      cortina.style.backgroundColor = `rgb(${greyIntensity},${greyIntensity},${greyIntensity})`*/  
+      posicionPantalla.style.color = 'rgb(0,255,0)'
+      posicionPantalla.style.borderColor = 'rgb(0,255,0)'    
+      display.style.color = 'rgb(0,255,0)'
+    }
+    if (newLeft <= 0) {
+      setTimeout(() => {
+      positionDisplay.textContent = `${'0'} - bpm`     
+      clearInterval(intervalId2)        
+      }, 17);
+      makeFilters()
+      blurAmount = 0;
+      brightnessAmount = 1;
+    }
+    positionDisplay.textContent = `${newLeft} - bpm`
+  }, 7)
+})
+buttonRight.addEventListener('mouseup', () => {
+  clearInterval(intervalId2)
+})
+buttonRight.addEventListener('mouseleave', () => {
+  clearInterval(intervalId2)
+})
+const makeFilters = () => { // Resetear filtros
+  videoPrisma.style.filter = `blur(${1}px) brightness(${1})`;
+};
+buttReset.addEventListener('mousedown', () => {
+  button.style.left = '0'
+  slider1.style.width = '0'
+  slider2.style.width = '0'
+  slider3.style.width = '0'
+  display.style.color = 'rgb(0,255,0)'
+  posicionPantalla.style.borderColor = 'rgb(0,255,0)'
+  posicionPantalla.style.color = 'rgb(0,255,0)'
+  cortina.style.backgroundColor = '#333333'
+  positionDisplay.textContent = `${'0'} - bpm`
+  makeFilters()
+})
+buttonLeft2.addEventListener('mousedown', () => {
+  intervalId = setInterval(() => {
+    const currentLeft = parseFloat(window.getComputedStyle(butt2).left)
+    const containerWidth = parseFloat(window.getComputedStyle(container).width)
+    const buttonWidth = parseFloat(window.getComputedStyle(butt2).width)
+    const newLeft = currentLeft + 2
+    const maxLeft = containerWidth - buttonWidth
+    if (newLeft <= maxLeft) {
+      butt2.style.left = `${newLeft}px`
+      anchoBarra2.style.width = `${newLeft}px`
+    }
+  }, 7)
+})
+buttonLeft2.addEventListener('mouseup', () => {
+  clearInterval(intervalId);
+})
+buttonLeft2.addEventListener('mouseleave', () => {
+  clearInterval(intervalId);
+})
+buttonRight2.addEventListener('mousedown', () => {
+  intervalId = setInterval(() => {
+    const currentLeft = parseFloat(window.getComputedStyle(butt2).left)
+    const newLeft = currentLeft - 2
+    const minLeft = 0;
+    if (newLeft >= minLeft) {
+      butt2.style.left = `${newLeft}px`
+      anchoBarra2.style.width = `${newLeft}px`
+    }
+  }, 7)
+})
+buttonRight2.addEventListener('mouseup', () => {
+  clearInterval(intervalId)
+})
+buttonRight2.addEventListener('mouseleave', () => {
+  clearInterval(intervalId)
+})
+buttReset2.addEventListener('mousedown', () => {
+  butt2.style.left = '0'
+  slider1.style.width = '0'
+})
+botVerde.addEventListener('mousedown', () => {
+  verButtsInterfaz.style.pointerEvents = "auto"
+  interfaz.style.display = 'none'
+  container.style.visibility = 'visible'
+  verButtsInterfaz.style.visibility = 'visible'
+  button.style.visibility = 'visible'
+  posicionPantalla.style.visibility = 'visible'
+})
+botNaran.addEventListener('mousedown', () => {
+  verButtsInterfaz.style.pointerEvents = "auto"
+  interfaz.style.display = 'none'
+  container.style.visibility = 'visible'
+  verButtsInterfaz.style.visibility = 'visible'
+  button.style.visibility = 'visible'
+  posicionPantalla.style.visibility = 'visible'
+  slider1.style.width = '0'
+  slider2.style.width = '0'
+  slider3.style.width = '0'
+  positionDisplay.textContent = `${'0'} - bpm`
+  positionDisplay.style.borderColor = 'rgb(0,255,0)'  
+  positionDisplay.style.color = 'rgb(0,255,0)'  
+  button.style.left = '0'
+  makeFilters()
+})
+botRed.addEventListener('mousedown', () => {
+  verButtsInterfaz.style.pointerEvents = "auto"
+  slider1.style.width = '0'
+  slider2.style.width = '0'
+  slider3.style.width = '0'
+  posicionPantalla.textContent = `${'0'} - bpm`
+  posicionPantalla.style.borderColor = 'rgb(0,255,0)'  
+  posicionPantalla.style.color = 'rgb(0,255,0)'  
+  button.style.left = '0'
+  container.style.visibility = 'none'
+  verButtsInterfaz.style.display = 'none'
+  display.style.display = 'none'
+  button.style.display = 'none'
+  posicionPantalla.style.display = 'none'
+  interfaz.style.display = 'none'    
+  newLeft = 0  
+  makeFilters() 
+})
+function mostrarInterfaz() { 
+  container.style.display = 'flex'
+  verButtsInterfaz.style.display = 'flex'
+  display.style.display = 'flex'
+  button.style.display = 'flex'
+  posicionPantalla.style.display = 'flex'
+  slider1.style.width = '0'
+  slider2.style.width = '0'
+  slider3.style.width = '0'
+  posicionPantalla.textContent = `${'0'} - bpm`
+  posicionPantalla.style.borderColor = 'rgb(0,255,0)'  
+  posicionPantalla.style.color = 'rgb(0,255,0)'  
+  button.style.left = '0'
+  container.style.zIndex = '3'
+  verButtsInterfaz.style.zIndex = '3'
+  button.style.zIndex = '3'
+  posicionPantalla.style.zIndex = '3'
+  display.style.zIndex = '3'
+} 
+let isDragging = false;
+let offsetX, offsetY;
+function interfazAvance() {
+  eliminarEstilosInline(container);
+  eliminarEstilosInline(verButtsInterfaz);
+  eliminarEstilosInline(display);
+  eliminarEstilosInline(button);
+  eliminarEstilosInline(posicionPantalla)
+  let verInterfaz = document.getElementById('container-interfaz')
+  let verDisplay = document.getElementById('display')
+  verInterfaz.style.visibility = 'visible'
+  verInterfaz.style.display = 'flex' 
+  verButtsInterfaz.style.visibility = 'visible' 
+  verButtsInterfaz.style.display = 'flex'
+  verDisplay.style.visibility = 'visible'  
+  verDisplay.style.display = 'flex'
+}
+function eliminarEstilosInline(elemento) {
+  var estilosAplicados = window.getComputedStyle(elemento)
+  for (var i = 0; i < estilosAplicados.length; i++) {
+    var propiedad = estilosAplicados[i];
+    elemento.style[propiedad] = ""
+  }
+}
+/* 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 // COMBINACION TECLAS EJECUTA FUNCION
 document.addEventListener('keydown', function(event) {             
   if (event.ctrlKey && event.shiftKey) {
@@ -10739,7 +11130,7 @@ document.addEventListener('keydown', function(event) {
           muestraVidPrisma('prisma-vid-II')         
         },1177) 
         setTimeout(function() {
-          /* deslizaContenedor('troubleshooting','troubleshoot') */         
+          alternarAyudas()        
         },1377) 
         setTimeout(function() {
           /* abrirSeccionContinua() */                                  
@@ -10759,7 +11150,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('contenedorElementos')
+  var contiBoton = document.getElementById('container-interfaz')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
@@ -10818,119 +11209,6 @@ function moveCursorToEnd(input) {
   // Mover el cursor al final del input
   input.setSelectionRange(textLength, textLength); 
 } 
-const masterKey = [4];
-function manejarLogica() {
-  const inputs = document.querySelectorAll('.numero');
-  let valoresIngresados = [0, 0, 0, 0];
-  document.getElementById('ctx').style.display = 'none'
-  document.getElementById('sitema-humedad').style.display = 'none'
-  document.getElementById('contenedor-9').style.display = 'none'
-  document.getElementById('bancada-torre-II').style.display = 'none'
-  document.getElementById('contenedor-8').style.display = 'none'
-  if(screenWidth < 500){
-    if (inputs.length > 0) {
-      inputs[0].focus();
-      var tituloAngosto = document.getElementById('img-logo');
-      tituloAngosto.style.width = '100%';      
-    }
-    function manejarEntrada(event) {
-      // Obtén el input actual desde el evento
-      const inputActual = event.target;
-      // Convierte el valor del input a número
-      const valor = parseInt(inputActual.value);
-      // Inicializa la suma en cero
-      let suma = 0;
-      // Encuentra el índice del input actual dentro de inputs
-      const indice = Array.from(inputs).indexOf(inputActual);
-      // Almacena el valor ingresado en el índice correspondiente
-      if (!isNaN(valor)) {
-        valoresIngresados[indice] = valor;
-      } else {
-        valoresIngresados[indice] = 0; // Establece el valor a cero si no es un número válido
-      }
-      // Después de que se ingrese un número, cambia el valor del input actual a asterisco después de 177 ms
-        setTimeout(() => {
-        inputActual.value = '*';
-        // Mueve el foco al siguiente input después de cambiar a asterisco
-        if (indice < inputs.length - 1) {
-          inputs[indice + 1].focus();
-        }
-      }, 177);
-      // Suma todos los valores ingresados
-      suma = valoresIngresados.reduce((acumulador, valor) => acumulador + valor, 0);
-      // Verifica si la suma de los valores ingresados es igual a masterKey
-      if (suma === masterKey[0]) {
-        document.getElementById('contenedor-principal').style.display = 'none'
-        // Lanza el alert con el mensaje "clave identica"
-        setTimeout(() => {
-          aumentoGradualVideo()              
-        }, 200);
-        setTimeout(() => {
-          abrirInterfaz();
-        }, 1100);
-        inputs.forEach(input => {
-        input.value = ''; // Establece el valor de cada input como una cadena vacía
-        });         
-      }
-    }
-    // Agrega el evento de entrada a cada input para llamar a manejarEntrada
-    inputs.forEach(input => {
-      input.addEventListener('input', manejarEntrada);
-    });
-  }else{
-    if (inputs.length > 0) {
-      inputs[0].focus();
-      var tituloAncho = document.getElementById('titulo-ancho');
-      tituloAncho.style.width = '100%'      
-    }
-    function manejarEntrada(event) {
-      // Obtén el input actual desde el evento
-      const inputActual = event.target;
-      // Convierte el valor del input a número
-      const valor = parseInt(inputActual.value);
-      // Inicializa la suma en cero
-      let suma = 0;
-      // Encuentra el índice del input actual dentro de inputs
-      const indice = Array.from(inputs).indexOf(inputActual);
-      // Almacena el valor ingresado en el índice correspondiente
-      if (!isNaN(valor)) {
-        valoresIngresados[indice] = valor;
-      } else {
-        valoresIngresados[indice] = 0; // Establece el valor a cero si no es un número válido
-      }
-      // Después de que se ingrese un número, cambia el valor del input actual a asterisco después de 177 ms
-        setTimeout(() => {
-        inputActual.value = '*';
-        // Mueve el foco al siguiente input después de cambiar a asterisco
-        if (indice < inputs.length - 1) {
-          inputs[indice + 1].focus();
-        }
-      }, 177);
-      // Suma todos los valores ingresados
-      suma = valoresIngresados.reduce((acumulador, valor) => acumulador + valor, 0);
-      // Verifica si la suma de los valores ingresados es igual a masterKey
-      if (suma === masterKey[0]) {
-        document.getElementById('contenedor-principal').style.display = 'none'
-        // Lanza el alert con el mensaje "clave identica"
-        setTimeout(() => {
-          aumentoGradualVideo()              
-        }, 200);
-        setTimeout(() => {
-          abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
-        }, 1100);
-        // Limpia el contenido de todos los inputs
-        inputs.forEach(input => {
-        input.value = ''; // Establece el valor de cada input como una cadena vacía
-        });         
-      }
-    }
-    // Agrega el evento de entrada a cada input para llamar a manejarEntrada
-    inputs.forEach(input => {
-      input.addEventListener('input', manejarEntrada);
-    });
-
-  }
-}
 function abrirInterfaz() {
   var elementosExcluidos = ['videoBackgroundII','padre-interfaz','cont-titulo','franja-Blanca','subtitulo-I','descripcion-I','butt-Institucional','padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V','titulo-ancho','logo-grande'];
   for (var i = 0; i < allContenedores.length; i++) { 
@@ -11284,8 +11562,3 @@ function cambiarColor(elemento, encendido) {
     break;
   }
 }
-
-
-
-
-
