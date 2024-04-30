@@ -6,8 +6,6 @@
   font-family: "Oswald"; /* Nombre de la familia de fuentes personalizada */
   src: url('C:\Users\Juan\Downloads\matrix\matrix.ttf') format('ttf'), /* Ruta hacia el archivo .woff2 de la fuente */
 }
-
-
 body, html {
   zoom: 100%;
   -moz-transform: scale(1.0);
@@ -193,8 +191,6 @@ transform: scale(1.1);
   top: -17px;
   left: 120px;
 }
-
-/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
 #container2,
 #container3,
 #container4,
@@ -293,7 +289,6 @@ transform: scale(1.1);
   transition: transform 1.6s ease;
   display: none;
 }
-
 #img-logo{
  position: relative;
  left:-318px;
@@ -846,7 +841,6 @@ width:447px ;
 .butt-prepre:hover {
   transform: scale(1.3);
 }
-
 .butt-mautonomo{
   display: none;
   flex-direction: column;
@@ -1034,7 +1028,6 @@ width:447px ;
   height:490px;
   border-radius: 17px;
 }
-
 #canvasContainer4{
   position: absolute;
   display: flex;
@@ -3882,8 +3875,6 @@ input.numero:focus {
   margin-bottom: 7px;
   color: rgb(255, 255, 177);
 } 
-
-
 .container{
   position: relative;
   display: flex;
@@ -3891,15 +3882,44 @@ input.numero:focus {
   background-color: rgba(0,0,0,0.7);
   overflow: hidden;
 }
+#aplique_3,
+#aplique_2,
+#aplique{
+  position: relative;
+  display:flex;
+  width: auto;
+  padding: 4px;
+}
 #display{
-  position: absolute;
-  display: grid;
-  place-items: center;
-  top:44%;
-  left:49.2%;
+  position:absolute ;
+  display: flex; /* Utilizar flexbox para los elementos hijos */
+  flex-direction: row;
+  justify-content: flex-start; /* Alinear los elementos al principio */  
+  top:41.5%;
+  left:42%;
   display:none;
 }
-#container-interfaz{
+#display_2{
+  position:absolute ;
+  display: flex; /* Utilizar flexbox para los elementos hijos */
+  flex-direction: row;
+  justify-content: flex-start; /* Alinear los elementos al principio */  
+  top:57.6%;
+  left:42%;
+  width: auto;
+  display:none;
+}
+#display_3{
+  position:absolute ;
+  display: flex; /* Utilizar flexbox para los elementos hijos */
+  flex-direction: row;
+  justify-content: flex-start; /* Alinear los elementos al principio */  
+  top:73%;
+  left:42%;
+  width: auto;
+  display:none;
+}
+#container_interfaz{
   position: absolute;
   display: flex;
   top: 47%;
@@ -3908,46 +3928,118 @@ input.numero:focus {
   height: 33px;
   display: none;
 }
-#butts-interfaz{
+.linea-numerada {
+  position: relative;
+  display: flex;
+  top: 20%;
+  left: -4%;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+#container_interfaz_2{
   position: absolute;
   display: flex;
-  flex-direction: row;
+  top: 63%;
   left: 37%;
-  top: 52%;
-  z-index: 3;
-  display: none;
-}
-#butts-interfaz button{
-  margin-right: 7px;
-}
-#container-interfaz-2{
-  margin-top: 7%;
-  left: 17%;
-  width: 400px;
+  width: 368px;
   height: 33px;  
   display: none;
 }
-.linea-numerada {
+#container_interfaz_3{
   position: absolute;
   display: flex;
+  top: 79%;
+  left: 37%;
+  width: 347px;
+  height: 33px;  
+  display: none;
+}
+#butts_interfaz{
+  position: absolute;
+  display: flex;
+  top: 52%;
+  left: 37%;
+  z-index: 3;
+  display: none;
+}
+#butts_interfaz_2{
+  position: absolute;
+  display: flex;
+  top: 68%;
+  left: 37%;
+  z-index: 3;
+  display: none;  
+}
+#butts_interfaz_3{
+  position: absolute;
+  display: flex;
+  top: 84%;
+  left: 37%;
+  z-index: 3;
+  display: none;  
+}
+.linea-numerada_2{
+  position: relative;
+  display: flex;
   top: 20%;
-  left: -7%;
-  justify-content: space-between;
-  width: 100%;
+  left: 0%;
+  gap: 22px;
+  width:100%;
+  height: 100%;
+}
+.linea-numerada_3{
+  position: relative;
+  display: flex;
+  top: 20%;
+  left: 0%;
+  gap: 18px;
+  width:100%;
   height: 100%;
 }
 .slider-button{
   position: absolute;
   top: 47%;
-  width: 77px;
-  height: 15px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 9px;
+  width: 2px;
+  height: 33px;
+  background-color: rgb(0,255,0);
   outline: none;
   z-index: 2;
   transition: left 0.001s ease;
+}
+#unicoide_flecha,
+#unicoide_triangulo{
+  transition: width 0.001s ease;
+}
+.guide_2 {
+  position: absolute;
+  top: 70%;
+  left: 0%;
+  width: 7px;
+  height: 15px; 
+}
+.guide_2::after {
+  content: '\25B2'; /* triángulo */ 
+  position: absolute;
+  top: -8px; /* Ajusta la posición del triángulo */
+  left: calc(50% - 4px); /* Ajusta la posición del triángulo */
+  font-size: 16px; /* Tamaño triángulo */
+  color: rgb(255, 255, 0); /* Color triángulo */
+}
+.guide_3 {
+  position: absolute;
+  top: 70%;
+  left: 0%;
+  width: 7px;
+  height: 15px; 
+}
+.guide_3::after {
+  content: "\25B6";
+  position: absolute;
+  top: -8px; /* Ajusta la posición del triángulo */
+  left: calc(50% - 4px); /* Ajusta la posición del triángulo */
+  font-size: 16px; /* Tamaño triángulo */
+  color: rgb(0,2556,255)
 }
 .guide{
   position: absolute;
@@ -3965,6 +4057,16 @@ input.numero:focus {
   height: 7px;
   max-width: 150px;
   background: linear-gradient(to bottom, rgb(0,255,0) 3px, rgb(0,255,0) 3px, rgb(0,255,0) 17px);
+  transition: width 0.001s ease;
+}
+#slider_1{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  height: 7px;
+  max-width: 400px;
+  background-color: rgb(255,255,0);
   transition: width 0.001s ease;
 }
 #slider_2{
@@ -3987,13 +4089,39 @@ input.numero:focus {
   background-color: rgb(255,0,0);
   transition: width 0.001s ease;
 }
-.numero {
+#slider_4{
+  position: absolute;
+  bottom: 0;
+  left:1%;
+  top: 0;
+  height: 7px;
+  max-width: 360px;
+  background-color: rgb(0,255,255);
+  transition: width 0.001s ease;
+}
+.numero{
   position: relative;
   width: calc(400px / 6);
   text-align: center;
   font-family: "Courier New", Courier, monospace;
   font-size: 10px;
   color:rgb(0,255,0);
+}
+.numero_2{
+  position: relative;
+  width: calc(400px / 6);
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  color:rgb(255,255,0);
+}
+.numero_3{
+  position: relative;
+  width: calc(400px / 6);
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  color:rgb(0,255,255);
 }
 .rule-container{
   position: absolute;
@@ -4004,12 +4132,44 @@ input.numero:focus {
   top: 7%;
   left: 0.2%;
 }
+#contenedor-2{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 0.5px;
+  height: 300px;
+  top: 7%;
+  left: 0.2%;
+}
+#contenedor-3{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 0.5px;
+  height: 300px;
+  top: 7%;
+  left: 0.2%;
+}
+.rule_2{
+  width: 100%;
+  height: 5px;
+  background-color: rgb(255,255,0);
+  position: absolute;
+}
+.rule_3{
+  width: 100%;
+  height: 5px;
+  background-color: rgb(0,255,255);
+  position: absolute;
+}
 .rule {
   width: 100%;
   height: 5px;
   background-color: rgb(0,255,0);
   position: absolute;
 }
+.rule_3:nth-child(odd),
+.rule_2:nth-child(odd),
 .rule:nth-child(odd) {
   height: 9px;
 }
@@ -4051,6 +4211,84 @@ input.numero:focus {
 .rule:nth-child(36) { left: 385px; }
 .rule:nth-child(37) { left: 396px; }
 .rule:nth-child(38) { left: 407px; }
+
+.rule_2:nth-child(1) { left: 0px; }
+.rule_2:nth-child(2) { left: 11px; }
+.rule_2:nth-child(3) { left: 22px; }
+.rule_2:nth-child(4) { left: 33px; }
+.rule_2:nth-child(5) { left: 44px; }
+.rule_2:nth-child(6) { left: 55px; }
+.rule_2:nth-child(7) { left: 66px; }
+.rule_2:nth-child(8) { left: 77px; }
+.rule_2:nth-child(9) { left: 88px; }
+.rule_2:nth-child(10) { left: 99px; }
+.rule_2:nth-child(11) { left: 110px; }
+.rule_2:nth-child(12) { left: 121px; }
+.rule_2:nth-child(13) { left: 132px; }
+.rule_2:nth-child(14) { left: 143px; }
+.rule_2:nth-child(15) { left: 154px; }
+.rule_2:nth-child(16) { left: 165px; }
+.rule_2:nth-child(17) { left: 176px; }
+.rule_2:nth-child(18) { left: 187px; }
+.rule_2:nth-child(19) { left: 198px; }
+.rule_2:nth-child(20) { left: 209px; }
+.rule_2:nth-child(21) { left: 220px; }
+.rule_2:nth-child(22) { left: 231px; }
+.rule_2:nth-child(23) { left: 242px; }
+.rule_2:nth-child(24) { left: 253px; }
+.rule_2:nth-child(25) { left: 264px; }
+.rule_2:nth-child(26) { left: 275px; }
+.rule_2:nth-child(27) { left: 286px; }
+.rule_2:nth-child(28) { left: 297px; }
+.rule_2:nth-child(29) { left: 308px; }
+.rule_2:nth-child(30) { left: 319px; }
+.rule_2:nth-child(31) { left: 330px; }
+.rule_2:nth-child(32) { left: 341px; }
+.rule_2:nth-child(33) { left: 352px; }
+.rule_2:nth-child(34) { left: 363px; }
+.rule_2:nth-child(35) { left: 374px; }
+.rule_2:nth-child(36) { left: 385px; }
+.rule_2:nth-child(37) { left: 396px; }
+.rule_2:nth-child(38) { left: 407px; }
+
+.rule_3:nth-child(1) { left: 0px; }
+.rule_3:nth-child(2) { left: 11px; }
+.rule_3:nth-child(3) { left: 22px; }
+.rule_3:nth-child(4) { left: 33px; }
+.rule_3:nth-child(5) { left: 44px; }
+.rule_3:nth-child(6) { left: 55px; }
+.rule_3:nth-child(7) { left: 66px; }
+.rule_3:nth-child(8) { left: 77px; }
+.rule_3:nth-child(9) { left: 88px; }
+.rule_3:nth-child(10) { left: 99px; }
+.rule_3:nth-child(11) { left: 110px; }
+.rule_3:nth-child(12) { left: 121px; }
+.rule_3:nth-child(13) { left: 132px; }
+.rule_3:nth-child(14) { left: 143px; }
+.rule_3:nth-child(15) { left: 154px; }
+.rule_3:nth-child(16) { left: 165px; }
+.rule_3:nth-child(17) { left: 176px; }
+.rule_3:nth-child(18) { left: 187px; }
+.rule_3:nth-child(19) { left: 198px; }
+.rule_3:nth-child(20) { left: 209px; }
+.rule_3:nth-child(21) { left: 220px; }
+.rule_3:nth-child(22) { left: 231px; }
+.rule_3:nth-child(23) { left: 242px; }
+.rule_3:nth-child(24) { left: 253px; }
+.rule_3:nth-child(25) { left: 264px; }
+.rule_3:nth-child(26) { left: 275px; }
+.rule_3:nth-child(27) { left: 286px; }
+.rule_3:nth-child(28) { left: 297px; }
+.rule_3:nth-child(29) { left: 308px; }
+.rule_3:nth-child(30) { left: 319px; }
+.rule_3:nth-child(31) { left: 330px; }
+.rule_3:nth-child(32) { left: 341px; }
+.rule_3:nth-child(33) { left: 352px; }
+.rule_3:nth-child(34) { left: 363px; }
+.rule_3:nth-child(35) { left: 374px; }
+.rule_3:nth-child(36) { left: 385px; }
+.rule_3:nth-child(37) { left: 396px; }
+.rule_3:nth-child(38) { left: 407px; }
 #butts-interfaz-2{
   position: relative;
   display: flex;
@@ -4061,15 +4299,6 @@ input.numero:focus {
 }
 #butts-interfaz-2 button{
   margin-right: 7px;
-}
-#slider_1{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  top: 0;
-  height: 7px;
-  background: linear-gradient(to bottom, rgb(0,255,0) 3px, rgb(0,255,0) 3px, rgb(0,255,0) 17px);
-  transition: width 0.001s ease;
 }
 #buttonLeft{
   position: relative;
@@ -4084,15 +4313,29 @@ input.numero:focus {
   border: none;
   cursor: pointer;
 }
-#buttonLeft-2{
+#buttonLeft_2{
   display: flex;
   justify-content: center;
   align-items: center;
   top: 1%;
-  background-color: rgb(0,255,09);
+  background-color: rgb(255,255,0);
   width: 20px;
   height: 20px;
   border-radius: 100%;
+  border: none;
+  cursor: pointer;
+}
+#buttonLeft_3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 1%;
+  background-color: rgb(0,255,0);
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  font-size: 1.7em;
+  font-weight: bold;
   border: none;
   cursor: pointer;
 }
@@ -4109,10 +4352,19 @@ input.numero:focus {
   cursor: pointer;
   z-index: 3;
 }
-#buttonRight-2{
+#buttonRight_2{
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 1%;
+  background-color: rgb(255,255,0);
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+}
+#buttonRight_3{
   top: 1%;
   background-color: rgb(0,255,0);
   width: 20px;
@@ -4133,7 +4385,7 @@ input.numero:focus {
   border: none;
   cursor: pointer;
 }
-#buttonReset-2{
+#buttonReset_2{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4145,22 +4397,43 @@ input.numero:focus {
   border: none;
   cursor: pointer;
 }
-#buttonReset::before,
-#buttonReset-2::before {
-  content: "\25A1";
-  color: transparent;
-  background-color: white;
-  height: 9px;
-  width: 9px;
+#buttonReset_3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 1%;
+  background-color: rgb(255,0,0);
+  width: 20px;
+  height: 20px;
   border-radius: 100%;
+  border: none;
+  cursor: pointer;  
+}
+#menos {
+  position: absolute;
+  display: flex;
+  top: -80%;
+  left: 40%;
+  font-size: 2.8em;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+.punto{
+  position: relative;
+  top: -130%;
+  left: 1%;  
+  font-size: 6em;
+  text-align: center;
+  color: white;
 }
 #buttonRight::before{
   content: "\25C0";
   font-size: 1.1em;
   color: rgb(0,0,100);
 }
-#buttonRight-2::before{
-  content: "\25C0";
+#buttonRight_2::before{
   font-size: 1.1em;
   color: rgb(0,0,100);
 }
@@ -4169,23 +4442,47 @@ input.numero:focus {
   font-size: 1.1em;
   color: rgb(0,0,100);
 }
-#buttonLeft-2::before {
-  content: "\25B6";
+#buttonLeft_2::before {
   font-size: 1.1em;
   color: rgb(0,0,100);
 }
+#positionDisplay_3,
+#positionDisplay_2,
 #positionDisplay{
-  position: absolute;
-  display: grid;
-  left:45%;
-  place-items: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 77px;
+}
+.span_interfaz{
   border-radius: 7px;  
+  border: 2px solid #0f0;
   background-color: rgb(0,0,33);
   color: #0f0;
-  border: 2px solid #0f0;
   font-family: "Oswald", sans-serif;  
-  width: 77px;
-  height: 33px;
+  height: auto;
+  width: auto;
+  margin-right: 4px;
+}
+.span_interfaz_2{
+  border-radius: 7px;  
+  border: 2px solid rgb(255,255,0);
+  background-color: rgb(0,0,33);
+  color: rgb(255,255,0);
+  font-family: "Oswald", sans-serif;  
+  height: auto;
+  width: auto;
+  margin-right: 4px;
+}
+.span_interfaz_3{
+  border-radius: 7px;  
+  border: 2px solid rgb(0,255,255);
+  background-color: rgb(0,0,33);
+  color: rgb(0,255,255);
+  font-family: "Oswald", sans-serif;  
+  height: auto;
+  width: auto;
+  margin-right: 4px;
 }
 /* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 .interfaz {
@@ -4193,7 +4490,7 @@ input.numero:focus {
   display: flex;
   flex-direction: column;
   top: 50%;
-  left: 39%;
+  left: 43%;
   width: 177px;
   height: 77px;
   background-color: rgb(0,0,22);
@@ -4265,9 +4562,6 @@ input.numero:focus {
   color: yellow;
   font-family: "Oswald", sans-serif;
 }
-
-/* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
-
 
  @media screen and (max-width: 420px) {
   #cont-titulo-comercial,  
@@ -4380,7 +4674,6 @@ input.numero:focus {
     top: 6%;
     margin-right: 25%;
  }
-
   .torre-imp{
     position: absolute;  
     display: flex;
@@ -4420,8 +4713,6 @@ input.numero:focus {
     cursor: pointer; 
     transition: transform 0.1s;
   } 
-
-  /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
   #conti-boton-desb{
     position: absolute;
     display: flex;
@@ -4466,8 +4757,7 @@ input.numero:focus {
     left:33%;
     top:-24%;
     display: none;
-  }
-  
+  }  
   #vidLub{
     position: absolute;
     display: flex;
@@ -4836,8 +5126,7 @@ input.numero:focus {
   }
   #conti-boton-freno button{
     margin-bottom: 9px;
-  }
-  
+  }  
   #cont-arriba-freno {
     position: absolute;
     left: 20%;
@@ -5210,8 +5499,7 @@ input.numero:focus {
     #contenedor-7-II button, 
     #contenedor-7 button{
       height: 50px;
-  }
- 
+  } 
   /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #subtitulo-calidad,
   #subtitulo-comercial{
@@ -5232,8 +5520,7 @@ input.numero:focus {
     text-align: center;
     font-size: 18px;
     top: 8.7%;
-  }
-  
+  }  
   #agrupaOblicuos-XXI{
     position: relative;
     display: flex;
@@ -5245,7 +5532,6 @@ input.numero:focus {
     margin-left: auto; /* Establece el margen izquierdo automático */
     margin-right: auto; /* Establece el margen derecho automático */
   }
-
   #subtitulo-operacion{
     position: absolute;
     text-align: center;
@@ -5380,14 +5666,6 @@ input.numero:focus {
     height: 77px;
     display: none;  
   }
-  /* #franja-Blanca{
-    position: relative;
-    display: flex;
-    width:100%;
-    height: auto;
-    top:-0.5%;
-    left:-101%;
-  } */
   #img-logo{
     position: absolute;
     display: block;
@@ -5396,7 +5674,6 @@ input.numero:focus {
     width:100%;
     height: auto;
   } 
-
   #seccion-blamca {
     width: 100%;
   }
@@ -6497,8 +6774,7 @@ input.numero:focus {
   }
   #sector-distribuidor{
   display: none;  
- }
-  
+  }  
   .caso-estudio{
     display: flex;
     width: 112px;
@@ -6751,7 +7027,7 @@ input.numero:focus {
     position: absolute;
     font-size: 17px;
     top: 32%;
-    } 
+  } 
   #butt-Institucional{
     position: absolute;
     display: block;
@@ -7024,9 +7300,7 @@ input.numero:focus {
     height: 19px;
     margin-bottom: 7px;
     color: rgb(255, 255, 177);
-  }   
-  
-  
+  }    
   @keyframes parpadeo {
     0% {
       opacity: 0;
@@ -7098,7 +7372,6 @@ input.numero:focus {
   .move-grafica{
     left: 100px; /* Este valor se ajustará durante la transición */
   }
-
   .mover-up{
     transform: translateX(200px);
   }
@@ -7126,9 +7399,6 @@ input.numero:focus {
   .move-title{
     transform: translateX(-413px);
   }
-  /* .move-franja{
-    transform: translateX(420px);
-  } */
   .contenedor{
     position: relative;
     width: 300px;
@@ -7201,8 +7471,6 @@ input.numero:focus {
     width: 0; /* Inicia con ancho de 0 para el efecto de desenrollar */
     transition: width 0.7s ease; /* Transición para el efecto de desenrollar */
   }
- /*9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999*/
-
  #conte-ayudas{
   position: absolute;
   display: flex;
@@ -7231,7 +7499,6 @@ input.numero:focus {
     display: none;
     transition: all 0.2s ease; /* Transición suave para el efecto */
   }
-
 }
 
 

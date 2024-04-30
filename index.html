@@ -29,9 +29,7 @@
       <input id="input4" type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" inputmode="numeric">    
     </div>
     <div id="cont-titulo">
-
       <h4 id="subtitulo-I">Aplicamos la transformación tecnológica V2</h4>
-
       <p id="descripcion-I">
         En cadena experimentamos internamente el crecimiento que ofrecemos a nuestros clientes<br>usando las mismas herramientas
         <button id="butt-Institucional"></button>
@@ -1976,15 +1974,13 @@
           <div id="linea-15" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Ajuste de equipo</div>
         </div>
       </div>
-    </div>
-
-    <!-- 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
-
+    </div>      
     <div id="display">
-      <span id="positionDisplay">0</span>
+      <span id="aplique" class="span_interfaz">Nivel desenfoque</span>
+      <span id="positionDisplay" class="span_interfaz">0 µpm</span>
     </div>
-    <div id="container-interfaz" class="container">
-      <button class="slider-button" id="button1">Intensidad</button>
+    <div id="container_interfaz" class="container">
+      <div  class="slider-button" id="button1"></div>
       <div class="guide"></div>
       <div id="slider" class="slider-track"></div>
       <div id="slider_2" class="slider-track"></div>
@@ -2042,73 +2038,179 @@
         <div class="rule"></div>                 
       </div>      
     </div>
-    <div id="butts-interfaz">
+    <div id="butts_interfaz">
       <button id="buttonLeft"></button>
       <button id="buttonRight"></button>
-      <button id="buttonReset"></button> 
+      <button id="buttonReset"><span class="punto">.</span></button> 
     </div>
-    <div id="container-interfaz-2" class="container">
-      <button class="slider-button" id="button2">Croma</button>
-      <div class="guide"></div>
+<!-- 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
+    <div id="display_2">
+      <span id="aplique_2" class="span_interfaz_2">Grados rotacion</span>
+      <span id="positionDisplay_2" class="span_interfaz_2">0°</span>
+    </div> 
+    <div id="container_interfaz_2" class="container">
+      <span id="unicoide_triangulo" class="guide_2"></span>
+      <div class="guide" style="background-color: rgb(255,255,0)"></div>
       <div id="slider_1" class="slider-track"></div>
-      <div class="linea-numerada">
-        <span class="numero">0</span>
-        <span class="numero">50</span>
-        <span class="numero">100</span>
-        <span class="numero">150</span>
-        <span class="numero">200</span>
-        <span class="numero">250</span>
+      <div class="linea-numerada_2">
+        <span class="numero_2">0</span>
+        <span class="numero_2">36</span>
+        <span class="numero_2">72</span>
+        <span class="numero_2">108</span>
+        <span class="numero_2">144</span>
+        <span class="numero_2">180</span>
+        <span class="numero_2">216</span>
+        <span class="numero_2">252</span>
+        <span class="numero_2">288</span>
+        <span class="numero_2">324</span>
+        <span class="numero_2">360</span>
       </div>
-      <div id="contenedor-2" class="rule-container">
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>                 
+      <div id="contenedor-2"> 
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
+        <div class="rule_2"></div>
       </div>  
-    </div>  
-
-    <div id="butts-interfaz-2">
-      <button id="buttonLeft-2"></button>
-      <button id="buttonRight-2"></button>
-      <button id="buttonReset-2"></button></button> 
+    </div> 
+    <div id="butts_interfaz_2">
+      <button id="buttonLeft_2">&#9650;</button>
+      <button id="buttonRight_2">&#9660;</button>
+      <button id="buttonReset_2"><span class="punto">.</span></button> 
     </div>
-    <!-- 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
+<!-- 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
+<div id="display_3">
+  <span id="aplique_3" class="span_interfaz_3">Zoom</span>
+  <span id="positionDisplay_3" class="span_interfaz_3">100 %</span>
+</div> 
+<div id="container_interfaz_3" class="container">
+  <span id="unicoide_flecha" class="guide_3"></span>
+  <div class="guide" style="background-color: rgb(0,255,255)"></div>
+  <div id="slider_4" class="slider-track"></div>
+  <div class="linea-numerada_3">
+    <span class="numero_3">0</span>
+    <span class="numero_3">30</span>
+    <span class="numero_3">60</span>
+    <span class="numero_3">90</span>
+    <span class="numero_3">120</span>
+    <span class="numero_3">150</span>
+    <span class="numero_3">180</span>
+    <span class="numero_3">210</span>
+    <span class="numero_3">240</span>
+    <span class="numero_3">270</span>
+    <span class="numero_3">300</span>
+  </div>
+  <div id="contenedor-3"> 
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+    <div class="rule_3"></div>
+  </div>  
+</div> 
+<div id="butts_interfaz_3">
+  <button id="buttonLeft_3">+</button>
+  <button id="buttonRight_3"><span id="menos" class="menor">-</span></button>
+  <button id="buttonReset_3"><span class="punto">.</span></button>
+</div>
 
-    <div class="interfaz" id="interfaz">
+<!-- 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
+
+<div class="interfaz" id="interfaz">
       <div id="zona_titulo">
         <h1 id="titulo">CONTINUAR CON PRECAUCION</h1>
       </div>      
@@ -2120,7 +2222,7 @@
       <div id="zona_span">
         <span class="texto_izquierdo">Continuar</span>
         <span class="texto_izquierdo">Suspender</span>
-        <span class="texto_izquierdo">Eliminar</span>
+        <span class="texto_izquierdo">Salir</span>
       </div>      
     </div>
 
