@@ -149,8 +149,8 @@ const buttonLeft3 = document.getElementById('buttonLeft_3')
 const buttonRight = document.getElementById('buttonRight')
 const buttonLeft = document.getElementById('buttonLeft')
 const buttReset = document.getElementById('buttonReset') 
-const barra = document.getElementById('slider_1')
-const barraI = document.getElementById('slider_4')
+const slider5 = document.getElementById('slider_1')
+const slider4 = document.getElementById('slider_4')
 const botVerde = document.getElementById('butt_green')
 const botNaran = document.getElementById('butt_orange')
 const botRed = document.getElementById('butt_red')
@@ -304,7 +304,6 @@ function manejarLogica() {
 
   }
 }
-
 function VolveraInicio(){
   location.reload()
   idsArray = []
@@ -10389,56 +10388,46 @@ function iniciarTransito() {                                                    
       } 
     }, duracion);
   }
-
   // Primer movimiento: Derecha a izquierda
   function moverDerechaIzquierda() {
     boton.style.backgroundColor = 'rgb(0,255,0)'
     mover(anchoPantalla - boton.offsetWidth, 0, 'left ' + duracion / 1000 + 's', moverArribaAbajo);
   }
-
   // Segundo movimiento: Arriba a abajo
   function moverArribaAbajo() {
     boton.style.backgroundColor = 'rgb(255,0,0)'
     mover(anchoPantalla - boton.offsetWidth, altoPantalla - boton.offsetHeight, 'top ' + duracion / 1000 + 's', moverIzquierdaDerecha);
   }
-
   // Tercer movimiento: Izquierda a derecha
   function moverIzquierdaDerecha() {
     boton.style.backgroundColor = 'rgb(255,255,0)'
     mover(0, altoPantalla - boton.offsetHeight, 'left ' + duracion / 1000 + 's', moverAbajoArriba);
   }
-
   // Cuarto movimiento: Abajo a arriba
   function moverAbajoArriba() {
     boton.style.backgroundColor = 'rgb(0,0,255)'
     mover(0, 0, 'top ' + duracion / 1000 + 's', moverDiagonal);
   }
-
   // Quinto movimiento: Diagonal
   function moverDiagonal() {
     boton.style.backgroundColor = 'rgb(255,0,255)'
     mover(anchoPantalla - boton.offsetWidth, altoPantalla - boton.offsetHeight, 'left ' + duracion / 1000 + 's, top ' + duracion / 1000 + 's', moverAbajoArribaII);
   }
-
   // Sexto movimiento: Abajo a arriba
   function moverAbajoArribaII() {
     boton.style.backgroundColor = 'orangered'
     mover(anchoPantalla - boton.offsetWidth, 0, 'top ' + duracion / 1000 + 's',moverDiagonalI);
-  }
- 
-
+  } 
   // séptimo movimiento: Diagonal inversa
   function moverDiagonalI() {
     boton.style.backgroundColor = 'white'
     mover(0, altoPantalla - boton.offsetHeight, 'left ' + duracion / 1000 + 's, top ' + duracion / 1000 + 's', moverAbajoArribaI);
   }
-
   // Cuarto movimiento: Abajo a arriba
   function moverAbajoArribaI() {
     boton.style.backgroundColor = 'purple'
     mover(0, 0, 'top ' + duracion / 1000 + 's', moverDerechaIzquierda);
-  }
-  
+  }  
   // Iniciar el ciclo de movimientos
   moverDerechaIzquierda();
   iniciarEventos()
@@ -10838,6 +10827,57 @@ function volverApre(){
   }  
 }
 
+const applyFilters = () => {
+  videoPrisma.style.filter = `blur(${blurAmount}px)`;
+  };
+const applyFiltersII = () => {
+  videoPrisma.style.transform = `rotate(${degreesAmount}deg)`;
+};
+const applyFiltersIII = () => {
+  videoPrisma.style.transform = `scale(${zoomAmount}%) rotate(${degreesAmount}deg)`;
+};
+const applyFiltersIV = () => {
+  videoPrisma.style.filter = `blur(${blurAmount}px)`;
+}
+const makeFilters = () => { // Resetear filtros
+  blurAmount = 1
+  videoPrisma.style.filter = `blur(${1}px)`;
+  button.style.left = '0'
+  slider1.style.width = '0'
+  slider2.style.width = '0'
+  slider3.style.width = '0'
+  display.style.color = 'rgb(0,255,0)'
+  posicionPantalla.style.borderColor = 'rgb(0,255,0)'
+  posicionPantalla.style.color = 'rgb(0,255,0)'
+  positionDisplay.textContent = `${'0'} - µpm`
+  /* applyFilters() */
+  applyFiltersII()
+  applyFiltersIII()
+};
+const makeFiltersII = () => { // Resetear filtros 
+  degreesAmount = 0
+  videoPrisma.style.transform = `rotate(${0}deg)`;  
+  spanGuide.style.left = '0'
+  slider5.style.width = '0'
+  degreesAmount = 0
+  positionDisplayII.textContent = `${'0'}°`
+  applyFilters()
+  applyFiltersII()
+  applyFiltersIII()
+  applyFiltersIV()
+};
+const makeFiltersIII = () => { // Resetear filtros
+  zoomAmount = 100;
+  videoPrisma.style.transform = `scale(100%)`;
+  spanGuideI.style.left = '0'
+  slider4.style.width = '0'
+  positionDisplayIII.textContent = `${'100'}°`
+  applyFilters()
+  applyFiltersII()
+  applyFiltersIII()
+  applyFiltersIV()
+};
+
 let degreesAmount = 0
 let zoomAmount = 100
 let blurAmount = 0
@@ -10861,7 +10901,6 @@ buttonLeft.addEventListener('mousedown', () => {
       brightnessAmount = 1;      
     }
     if (newLeft <= 150) {
-      console.log(newLeft)
       posicionPantalla.style.color = 'rgb(0,255,0)'
       posicionPantalla.style.borderColor = 'rgb(0,255,0)'
       button.style.left = `${newLeft}px`;
@@ -10870,7 +10909,6 @@ buttonLeft.addEventListener('mousedown', () => {
       applyFilters(); // Aplicar los filtros actualizados
     }    
     if(newLeft === 150){
-      console.log(newLeft)
       clearInterval(intervalId)
       verButtsInterfaz.style.pointerEvents = "none";    
       interfaz.style.display = 'flex'
@@ -10881,22 +10919,16 @@ buttonLeft.addEventListener('mousedown', () => {
       verButtsInterfaz.style.visibility = 'hidden'
       button.style.visibility = 'hidden'
       posicionPantalla.style.visibility = 'hidden'
-      console.log(`${newLeft}px`)
     }
     if(newLeft >= 150){
-      console.log(newLeft)
       posicionPantalla.style.color = 'orange'
       posicionPantalla.style.borderColor = 'orange'
       slider2.style.width = `${newLeft-150}px`
       button.style.left = `${newLeft}px`
       blurAmount += 0.01
       applyFilters(); // Aplicar los filtros actualizados      
-      /* greyIntensity += 0.1
-      cortina.style.backgroundColor = `rgb(${greyIntensity},${greyIntensity},${greyIntensity})` */
-      console.log(`${newLeft}px`)
     } 
     if(newLeft === 330){
-      console.log(newLeft)
       clearInterval(intervalId)
       interfaz.style.display = 'flex'
       container.style.visibility = 'hidden'
@@ -10907,19 +10939,14 @@ buttonLeft.addEventListener('mousedown', () => {
       tituloElement.style.backgroundColor = 'rgb(255,0,0)'
       tituloElement.style.color = 'white'
       verButtsInterfaz.style.pointerEvents = "none";
-      console.log(`${newLeft}px`)
     }
     if(newLeft >= 330){
-      console.log(newLeft)
       posicionPantalla.style.color = 'rgb(255,0,0)'
       posicionPantalla.style.borderColor = 'rgb(255,0,0)'
       slider3.style.width = `${newLeft-327}px`
       button.style.left = `${newLeft}px`
       blurAmount += 0.1
       applyFilters(); // Aplicar los filtros actualizados      
-      /* greyIntensity += 0.1;
-      cortina.style.backgroundColor = `rgb(${greyIntensity},${greyIntensity},${greyIntensity})`   */
-      console.log(`${newLeft}px`)  
     }
     if(newLeft >= 400){clearInterval(intervalId)
       setTimeout(() => {          
@@ -10995,51 +11022,21 @@ buttonRight.addEventListener('mouseup', () => {
 buttonRight.addEventListener('mouseleave', () => {
   clearInterval(intervalId2)
 })
-
 buttReset.addEventListener('mousedown', () => {
-  button.style.left = '0'
-  slider1.style.width = '0'
-  slider2.style.width = '0'
-  slider3.style.width = '0'
-  display.style.color = 'rgb(0,255,0)'
-  posicionPantalla.style.borderColor = 'rgb(0,255,0)'
-  posicionPantalla.style.color = 'rgb(0,255,0)'
-  cortina.style.backgroundColor = '#333333'
-  positionDisplay.textContent = `${'0'} - µpm`
   makeFilters()
 })
 /* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
-const applyFilters = () => {
-  videoPrisma.style.filter = `blur(${blurAmount}px) brightness(${brightnessAmount})`;
-  };
-const applyFiltersII = () => {
-  videoPrisma.style.transform = `rotate(${degreesAmount}deg)`;
-};
-const applyFiltersIII = () => {
-  videoPrisma.style.transform = `scale(${zoomAmount}%)`;
-  barraI.style.width = `scale(${zoomAmount}%)`;
-};
-const makeFilters = () => { // Resetear filtros
-  videoPrisma.style.filter = `blur(${1}px) brightness(${1})`;
-};
-const makeFiltersII = () => { // Resetear filtros
-  videoPrisma.style.transform = "rotate(0deg)"
-  degreesAmount = 0;
-};
-const makeFiltersIII = () => { // Resetear filtros
-  videoPrisma.style.transform = "scale(100%)";  
-  zoomAmount = 100;
-};
 buttonLeft2.addEventListener('mousedown', () => {
   clearInterval(intervalId5); // Limpiar intervalo anterior si existe
   intervalId5 = setInterval(() => {    
     if (currentRotation < 360) {
       currentRotation++;
-      console.log(currentRotation);
+      currentZoom = currentZoom + 0
+      console.log(currentZoom)
       posicionPantalla.style.color = 'rgb(0,255,0)';
       posicionPantalla.style.borderColor = 'rgb(0,255,0)';
       spanGuide.style.left = `${currentRotation}px`;
-      barra.style.width = `${currentRotation}px`;
+      slider5.style.width = `${currentRotation}px`;
       degreesAmount += 1;
       applyFiltersII(); // Aplicar los filtros actualizados
       positionDisplayII.textContent = `${currentRotation}°`;
@@ -11062,11 +11059,10 @@ buttonRight2.addEventListener('mousedown', () => {
   intervalId4 = setInterval(() => {    
     if (currentRotation > 0) {
       currentRotation--;
-      console.log(currentRotation);
       posicionPantalla.style.color = 'rgb(0,255,0)';
       posicionPantalla.style.borderColor = 'rgb(0,255,0)';
       spanGuide.style.left = `${currentRotation}px`;
-      barra.style.width = `${currentRotation}px`;
+      slider5.style.width = `${currentRotation}px`;
       degreesAmount -= 1;
       applyFiltersII(); // Aplicar los filtros actualizados
       positionDisplayII.textContent = `${currentRotation}°`;
@@ -11080,26 +11076,17 @@ buttonRight2.addEventListener('mouseleave', () => {
   clearInterval(intervalId4);
 })
 buttReset2.addEventListener('mousedown', () => {
-  currentRotation = 0;
-  positionDisplayII.textContent = `0°`;
-  spanGuide.style.left = 0
-  barra.style.width = 0
-  newLeft = 0
   makeFiltersII()
 })
-
 buttonLeft3.addEventListener('mousedown', () => {
-
   clearInterval(intervalId6); // Limpiar intervalo anterior si existe
-  intervalId6 = setInterval(() => { 
-       
+  intervalId6 = setInterval(() => {        
     if (currentZoom <= 300) {
       currentZoom++;
-      console.log(currentZoom);
       posicionPantallaI.style.color = 'rgb(0,255,255)';
       posicionPantallaI.style.borderColor = 'rgb(0,255,255)';
       spanGuideI.style.left = `${(currentZoom-100)*1.7}px`;
-      barraI.style.width = `${(currentZoom-100)*1.7}px`;
+      slider4.style.width = `${(currentZoom-100)*1.7}px`;
       zoomAmount += 1;
       applyFiltersIII(); // Aplicar los filtros actualizados
       positionDisplayIII.textContent = `${currentZoom}°`;
@@ -11107,7 +11094,8 @@ buttonLeft3.addEventListener('mousedown', () => {
       clearInterval(intervalId6);
       videoPrisma.style.transform = "zoom(100%)";
       positionDisplayIII.textContent = `300 %`;
-      /* currentZoom = 100; // Reiniciar rotación */
+      currentZoom = 100; // Reiniciar rotación
+
     }  
   }, 77);
 });
@@ -11123,13 +11111,13 @@ buttonRight3.addEventListener('mousedown', () => {
     
     if (currentZoom >= 101) {
       currentZoom--;
-      console.log(currentZoom);
       posicionPantallaI.style.color = 'rgb(0,255,255)';
       posicionPantallaI.style.borderColor = 'rgb(0,255,255)';
       spanGuideI.style.left = `${(currentZoom-100)*1.7}px`;
-      barraI.style.width = `${(currentZoom-100)*1.7}px`;
+      slider4.style.width = `${(currentZoom-100)*1.7}px`;
       zoomAmount -= 1;
       applyFiltersIII(); // Aplicar los filtros actualizados
+      applyFilters()
       positionDisplayIII.textContent = `${currentZoom}°`;
     }
     if(currentZoom === 301){
@@ -11144,11 +11132,6 @@ buttonRight3.addEventListener('mouseleave', () => {
   clearInterval(intervalId7);
 })
 buttReset3.addEventListener('mousedown', () => {
-  currentZoom = 100;
-  positionDisplayIII.textContent = `100 %`;
-  spanGuideI.style.left = 0
-  barraI.style.width = 0
-  newLeft = 0
   makeFiltersIII()
 })
 

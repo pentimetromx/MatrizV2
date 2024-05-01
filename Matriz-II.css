@@ -4132,7 +4132,7 @@ input.numero:focus {
   top: 7%;
   left: 0.2%;
 }
-#contenedor-2{
+#contenedor_2{
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -4141,7 +4141,7 @@ input.numero:focus {
   top: 7%;
   left: 0.2%;
 }
-#contenedor-3{
+#contenedor_3{
   position: absolute;
   display: flex;
   flex-direction: row;
