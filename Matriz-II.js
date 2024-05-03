@@ -114,6 +114,7 @@ const seccionTintero = document.getElementById('pantalla-tintero')
 const pantallas = ['pantalla-frente', 'pantalla-mandos','pantalla-servicio','pantalla-atras']
 const imgsRepuestos = document.getElementById('imgsRepuestos')
 const videoPrisma = document.getElementById('prisma-vid-II')
+const padreVideos = document.getElementById('nicho-videos')
 
 const videoElements = document.querySelectorAll('.video-training') 
 const videosPrepress = document.querySelectorAll('.vid-prepress')  
@@ -10918,15 +10919,10 @@ buttonLeft.addEventListener('touchstart', () => {
     }    
     if(newLeft === 150){
       clearInterval(intervalId)
-      verButtsInterfaz.style.pointerEvents = "none";    
       interfaz.style.display = 'flex'
       tituloElement.textContent = "BAJA DEFINICION DE VIDEO"; 
       tituloElement.style.backgroundColor = 'orange'
       tituloElement.style.color = 'black'           
-      container.style.visibility = 'hidden'
-      verButtsInterfaz.style.visibility = 'hidden'
-      button.style.visibility = 'hidden'
-      posicionPantalla.style.visibility = 'hidden'
     }
     if(newLeft >= 150){
       posicionPantalla.style.color = 'orange'
@@ -10991,10 +10987,6 @@ buttonLeft.addEventListener('mousedown', () => {
       tituloElement.textContent = "BAJA DEFINICION DE VIDEO"; 
       tituloElement.style.backgroundColor = 'orange'
       tituloElement.style.color = 'black'           
-      container.style.visibility = 'hidden'
-      verButtsInterfaz.style.visibility = 'hidden'
-      button.style.visibility = 'hidden'
-      posicionPantalla.style.visibility = 'hidden'
     }
     if(newLeft >= 150){
       posicionPantalla.style.color = 'orange'
@@ -11007,10 +10999,6 @@ buttonLeft.addEventListener('mousedown', () => {
     if(newLeft === 330){
       clearInterval(intervalId)
       interfaz.style.display = 'flex'
-      container.style.visibility = 'hidden'
-      verButtsInterfaz.style.visibility = 'hidden'
-      button.style.visibility = 'hidden'
-      posicionPantalla.style.visibility = 'hidden'
       tituloElement.textContent = "PERDIDA TOTAL DE DEFINICION";  
       tituloElement.style.backgroundColor = 'rgb(255,0,0)'
       tituloElement.style.color = 'white'
@@ -11229,6 +11217,8 @@ botNaran.addEventListener('mousedown', () => {
 botRed.addEventListener('mousedown', resetButtons);
 botClose.addEventListener('mousedown', resetButtons);
 function resetButtons() {
+  makeFilters()
+  desactivarClicsPorUnTiempoIII()
   verButtsInterfaz.style.pointerEvents = "auto";
   slider1.style.width = '0';
   slider2.style.width = '0';
@@ -11244,10 +11234,10 @@ function resetButtons() {
   posicionPantalla.style.display = 'none';
   interfaz.style.display = 'none';
   newLeft = 0;
-  makeFilters();
 }
 botCloseII.addEventListener('mousedown', resetButtonsII);
 function resetButtonsII() {
+  makeFiltersII()
   desactivarClicsPorUnTiempoIII()
   displayII.style.display = 'none';
   positionDisplayII.textContent = `${'0'}°`;
@@ -11259,6 +11249,7 @@ function resetButtonsII() {
 }
 botCloseIII.addEventListener('mousedown', resetButtonsIII);
 function resetButtonsIII() {
+  makeFiltersIII()
   desactivarClicsPorUnTiempoIII()
   positionDisplayIII.style.display = 'none';
   positionDisplayIII.textContent = `${'100'}%`;
@@ -11291,6 +11282,14 @@ function mostrarInterfaz() {
   display.style.zIndex = '3'
 } 
 function interfazAvance() {
+  desactivarClicsPorUnTiempoIII()
+
+  padreVideos.classList.remove('move_video');  
+  setTimeout(function () {
+    padreVideos.classList.add('move_video');
+  }, 500);
+
+  ocultarElementos('contenedorElementos') 
   eliminarEstilosInline(container);
   eliminarEstilosInline(verButtsInterfaz);
   eliminarEstilosInline(display);
@@ -11313,15 +11312,11 @@ function interfazAvance() {
   verDisplayII.style.visibility = 'visible'  
   verDisplayII.style.display = 'flex'
   let verInterfazIII = document.getElementById('container_interfaz_3')               
-  let verDisplayIII = document.getElementById('display_3')
-  
+  let verDisplayIII = document.getElementById('display_3')  
   positionDisplayIII.style.display = 'flex'
   positionDisplayIII.style.visibility = 'visible'
-
   positionDisplayII.style.display = 'flex'
   positionDisplayII.style.visibility = 'visible'
-
-
   verInterfazIII.style.visibility = 'visible'
   verInterfazIII.style.display = 'flex' 
   verButtsInterfazIII.style.visibility = 'visible'
@@ -11332,8 +11327,6 @@ function interfazAvance() {
   aplique.style.display = 'flex'
   apliqueII.style.visibility = 'visible'  
   apliqueII.style.display = 'flex'
-
-
 }
 function eliminarEstilosInline(elemento) {
   var estilosAplicados = window.getComputedStyle(elemento)

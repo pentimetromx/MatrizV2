@@ -2059,6 +2059,7 @@ header {
   left: 17%;
   top: 7%;
   display: none;
+  transition: transform 1.6s ease;
 }
 #vid06,
 #vid05,
@@ -3771,21 +3772,6 @@ input.numero:focus {
     transform: scale(3); /* Aumenta el tamaño 2x */
   }
 }
-.move-window{
-  transform: translateX(388px);
-}
-.move-logo{
-  transform: translateX(1300px);
-}
-.move-oblicuos{
-  transform: translateY(143%);
-}
-.move-oblicuosII{
-  transform: translateY(100%);
-}
-.move-title{
-  transform: translateX(-1111px);
-}
 #butt-Institucional.big-button{
   transform: scale(30);
 }
@@ -3887,8 +3873,7 @@ input.numero:focus {
   display: flex; /* Utilizar flexbox para los elementos hijos */
   flex-direction: row;
   justify-content: flex-start; /* Alinear los elementos al principio */  
-  top:41.5%;
-  left:42%;
+  top:28.5%;
   display:none;
 }
 #display_2{
@@ -3896,8 +3881,7 @@ input.numero:focus {
   display: flex; /* Utilizar flexbox para los elementos hijos */
   flex-direction: row;
   justify-content: flex-start; /* Alinear los elementos al principio */  
-  top:57.6%;
-  left:42%;
+  top:28.5%;
   width: auto;
   display:none;
 }
@@ -3906,10 +3890,8 @@ input.numero:focus {
   display: flex; /* Utilizar flexbox para los elementos hijos */            
   flex-direction: row;
   justify-content: flex-start;
-  top:73%;
-  left:42%;
+  top:28.5%;
   width: auto;
-  /* width: 300px; */
   display:none;
 }
 #aplique_3,
@@ -3935,7 +3917,6 @@ input.numero:focus {
   position: absolute;
   display: flex;
   top: 47%;
-  left: 37%;
   width: 400px;
   height: 33px;
   display: none;
@@ -3952,8 +3933,7 @@ input.numero:focus {
 #container_interfaz_2{
   position: absolute;
   display: flex;
-  top: 63%;
-  left: 37%;
+  top: 47%;
   width: 368px;
   height: 33px;  
   display: none;
@@ -3961,8 +3941,7 @@ input.numero:focus {
 #container_interfaz_3{
   position: absolute;
   display: flex;
-  top: 79%;
-  left: 37%;
+  top: 47%;
   width: 347px;
   height: 33px;  
   display: none;
@@ -3970,24 +3949,21 @@ input.numero:focus {
 #butts_interfaz{
   position: absolute;
   display: flex;
-  top: 52%;
-  left: 37%;
+  top: 63%;
   z-index: 3;
   display: none;
 }
 #butts_interfaz_2{
   position: absolute;
   display: flex;
-  top: 68%;
-  left: 37%;
+  top: 63%;
   z-index: 3;
   display: none;  
 }
 #butts_interfaz_3{
   position: absolute;
   display: flex;
-  top: 84%;
-  left: 37%;
+  top: 63%;
   z-index: 3;
   display: none;  
 }
@@ -4483,8 +4459,8 @@ input.numero:focus {
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 50%;
-  left: 43%;
+  top: 47%;
+  left: 23%;
   width: 177px;
   height: 77px;
   background-color: rgb(0,0,22);
@@ -4557,7 +4533,26 @@ input.numero:focus {
   font-family: "Oswald", sans-serif;
 }
 
- @media screen and (max-width: 420px) {
+.move-window{
+  transform: translateX(388px);
+}
+.move-logo{
+  transform: translateX(1300px);
+}
+.move-oblicuos{
+  transform: translateY(143%);
+}
+.move-oblicuosII{
+  transform: translateY(100%);
+}
+.move-title{
+  transform: translateX(-1111px);
+}
+.move_video{
+  transform: translateX(200px);
+}
+
+ @media screen and (max-width: 480px) {
   #cont-titulo-comercial,  
   #cont-titulo-admin,
   #cont-titulo-calidad,
