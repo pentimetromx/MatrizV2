@@ -10896,8 +10896,7 @@ let intervalId4 = null
 let intervalId5 = null
 let intervalId6 = null
 let intervalId7 = null
-let greyIntensity = 0
-
+let greyIntensity = 
 
 buttonLeft.addEventListener('touchstart', () => {
   intervalId = setInterval(() => {
@@ -10967,8 +10966,6 @@ buttonLeft.addEventListener('touchstart', () => {
     positionDisplay.textContent = `${newLeft} - µpm`
   }, 7);
 });
-
-
 buttonLeft.addEventListener('mousedown', () => {
   intervalId = setInterval(() => {
     var tituloElement = document.getElementById("titulo");
