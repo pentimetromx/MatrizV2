@@ -3882,14 +3882,6 @@ input.numero:focus {
   background-color: rgba(0,0,0,0.7);
   overflow: hidden;
 }
-#aplique_3,
-#aplique_2,
-#aplique{
-  position: relative;
-  display:flex;
-  width: auto;
-  padding: 4px;
-}
 #display{
   position:absolute ;
   display: flex; /* Utilizar flexbox para los elementos hijos */
@@ -3911,13 +3903,33 @@ input.numero:focus {
 }
 #display_3{
   position:absolute ;
-  display: flex; /* Utilizar flexbox para los elementos hijos */
+  display: flex; /* Utilizar flexbox para los elementos hijos */            
   flex-direction: row;
-  justify-content: flex-start; /* Alinear los elementos al principio */  
+  justify-content: flex-start;
   top:73%;
   left:42%;
   width: auto;
+  /* width: 300px; */
   display:none;
+}
+#aplique_3,
+#aplique_2,
+#aplique{
+  position: relative;  
+  display:flex;
+  width: auto;
+  padding: 4px;
+}
+#positionDisplay_3,
+#positionDisplay_2,
+#positionDisplay{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 77px;
+}
+.span_interfaz_3 {
+  margin-right: 20px;
 }
 #container_interfaz{
   position: absolute;
@@ -3984,7 +3996,7 @@ input.numero:focus {
   display: flex;
   top: 20%;
   left: 0%;
-  gap: 22px;
+  gap: 19px;
   width:100%;
   height: 100%;
 }
@@ -3993,7 +4005,7 @@ input.numero:focus {
   display: flex;
   top: 20%;
   left: 0%;
-  gap: 18px;
+  gap: 15px;
   width:100%;
   height: 100%;
 }
@@ -4117,7 +4129,7 @@ input.numero:focus {
 }
 .numero_3{
   position: relative;
-  width: calc(400px / 6);
+  /* width: calc(400px / 6); */
   text-align: center;
   font-family: "Courier New", Courier, monospace;
   font-size: 10px;
@@ -4373,10 +4385,15 @@ input.numero:focus {
   border: none;
   cursor: pointer;
 }
+#buttonReset_3,
+#buttonReset_2,
 #buttonReset{
-  display: flex;
+  position: relative;
+  display: flex; 
   justify-content: center;
   align-items: center;
+  color: white;
+  font-size: 20px;
   top: 1%;
   background-color: red;
   width: 20px;
@@ -4384,49 +4401,34 @@ input.numero:focus {
   border-radius: 100%;
   border: none;
   cursor: pointer;
+  padding-bottom: 4px; /* Relleno en la parte inferior */
 }
-#buttonReset_2{
+#buttonClose_I,
+#buttonClose_II,
+#buttonClose {
   display: flex;
   justify-content: center;
   align-items: center;
   top: 1%;
-  background-color: red;
+  background-color: rgb(33, 33, 33);
+  background-image: url(./assets/cerrar.png);
+  background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
   width: 20px;
   height: 20px;
   border-radius: 100%;
   border: none;
   cursor: pointer;
-}
-#buttonReset_3{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 1%;
-  background-color: rgb(255,0,0);
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  border: none;
-  cursor: pointer;  
 }
 #menos {
   position: absolute;
   display: flex;
-  top: -80%;
-  left: 40%;
+  top: -75%;
+  left: 28.4%;
   font-size: 2.8em;
   font-weight: bold;
   color: black;
   display: flex;
   justify-content: center;
-}
-.punto{
-  position: relative;
-  top: -130%;
-  left: 1%;  
-  font-size: 6em;
-  text-align: center;
-  color: white;
 }
 #buttonRight::before{
   content: "\25C0";
@@ -4445,14 +4447,6 @@ input.numero:focus {
 #buttonLeft_2::before {
   font-size: 1.1em;
   color: rgb(0,0,100);
-}
-#positionDisplay_3,
-#positionDisplay_2,
-#positionDisplay{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 77px;
 }
 .span_interfaz{
   border-radius: 7px;  
@@ -4476,7 +4470,7 @@ input.numero:focus {
 }
 .span_interfaz_3{
   border-radius: 7px;  
-  border: 2px solid rgb(0,255,255);
+  border: 2px solid rgb(0,255,255); 
   background-color: rgb(0,0,33);
   color: rgb(0,255,255);
   font-family: "Oswald", sans-serif;  

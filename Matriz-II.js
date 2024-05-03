@@ -72,9 +72,14 @@ var butInicio = document.getElementById('bot-inic')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
 var display = document.getElementById('display') 
-var posicionPantalla = document.getElementById('positionDisplay')
-var posicionPantallaI = document.getElementById('positionDisplay_3')
-var allContenedores = ['subtitulo-I','display','container_interfaz','butts_interfaz','interfaz','conte-ayudas','ayudas-video','imagen-ayudas','imagen-ayudasII','logo-grande','agrupaOblicuos-XI','titulo-ancho','descripcion-I','ventana-lateral','buscador','linkList','contenedor-principal','contenedor','padre-circle','circle','options','nicho-videos','primerCont','vidColor','vid01','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
+var displayII = document.getElementById('display_2')
+var aplique = document.getElementById('aplique_3')
+var apliqueII = document.getElementById('aplique_2')
+
+
+var posicionPantalla = document.getElementById('positionDisplay')              
+var positionDisplayIII = document.getElementById('positionDisplay_3')
+var allContenedores = ['positionDisplay_3','display_2','container_interfaz_2','butts_interfaz_2','container_interfaz_3','butts_interfaz_3','display_3','subtitulo-I','display','container_interfaz','butts_interfaz','interfaz','conte-ayudas','ayudas-video','imagen-ayudas','imagen-ayudasII','logo-grande','agrupaOblicuos-XI','titulo-ancho','descripcion-I','ventana-lateral','buscador','linkList','contenedor-principal','contenedor','padre-circle','circle','options','nicho-videos','primerCont','vidColor','vid01','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
@@ -125,14 +130,12 @@ const verButtsInterfaz = document.getElementById('butts_interfaz')
 const verButtsInterfazII = document.getElementById('butts_interfaz_2')
 const verButtsInterfazIII = document.getElementById('butts_interfaz_3')
 
-
 const positionDisplay = document.getElementById('positionDisplay')
 const positionDisplayII = document.getElementById('positionDisplay_2')
-const positionDisplayIII = document.getElementById('positionDisplay_3')
-
 
 const container = document.getElementById('container_interfaz')
 const containerII = document.getElementById('container_interfaz_2')
+const containerIII = document.getElementById('container_interfaz_3')
 
 const spanGuide = document.getElementById('unicoide_triangulo')
 const spanGuideI = document.getElementById('unicoide_flecha')
@@ -154,6 +157,10 @@ const slider4 = document.getElementById('slider_4')
 const botVerde = document.getElementById('butt_green')
 const botNaran = document.getElementById('butt_orange')
 const botRed = document.getElementById('butt_red')
+const botClose = document.getElementById('buttonClose')
+const botCloseII = document.getElementById('buttonClose_I')
+const botCloseIII = document.getElementById('buttonClose_II')
+
 const interfaz = document.getElementById('interfaz')
 const slider2 = document.getElementById('slider_2')
 const slider3 = document.getElementById('slider_3')
@@ -161,7 +168,7 @@ const button = document.getElementById('button1')
 const slider1 = document.getElementById('slider')
 const butt2 = document.getElementById('button2')
 var currentRotation = 0;
-var currentZoom = 100;
+var currentZoom = 0;
 
 let currentLeft = parseFloat(window.getComputedStyle(button).left)
 var newLeft = currentLeft + 2
@@ -3416,7 +3423,6 @@ function devolverColoresConRetrasoIII() {
       }, 77);
     }
   }
-
   // Iniciar el proceso cambiando el color del primer botón después de 77 milisegundos
   setTimeout(function () {
     cambiarColorConRetrasoIII(0);
@@ -3603,8 +3609,6 @@ function abrirPrepress(elementId) {
     if (video) {
       video.style.display = 'none'
   }})
-
-
   // Obtener el elemento padre
   var padreVidPress = document.getElementById('imgs-prepress');
   var imagenes = padreVidPress.getElementsByTagName('img');
@@ -10826,13 +10830,12 @@ function volverApre(){
     }
   }  
 }
-
 const applyFilters = () => {
   videoPrisma.style.filter = `blur(${blurAmount}px)`;
   };
-const applyFiltersII = () => {
-  videoPrisma.style.transform = `rotate(${degreesAmount}deg)`;
-};
+  const applyFiltersII = () => {
+    videoPrisma.style.transform = `scale(${zoomAmount}%) rotate(${degreesAmount}deg)`; // Conserva el zoom actual y aplica solo la rotación
+  };
 const applyFiltersIII = () => {
   videoPrisma.style.transform = `scale(${zoomAmount}%) rotate(${degreesAmount}deg)`;
 };
@@ -10849,17 +10852,17 @@ const makeFilters = () => { // Resetear filtros
   display.style.color = 'rgb(0,255,0)'
   posicionPantalla.style.borderColor = 'rgb(0,255,0)'
   posicionPantalla.style.color = 'rgb(0,255,0)'
+
   positionDisplay.textContent = `${'0'} - µpm`
-  /* applyFilters() */
   applyFiltersII()
   applyFiltersIII()
 };
 const makeFiltersII = () => { // Resetear filtros 
+  currentRotation = 0
   degreesAmount = 0
   videoPrisma.style.transform = `rotate(${0}deg)`;  
   spanGuide.style.left = '0'
   slider5.style.width = '0'
-  degreesAmount = 0
   positionDisplayII.textContent = `${'0'}°`
   applyFilters()
   applyFiltersII()
@@ -10867,21 +10870,25 @@ const makeFiltersII = () => { // Resetear filtros
   applyFiltersIV()
 };
 const makeFiltersIII = () => { // Resetear filtros
-  zoomAmount = 100;
-  videoPrisma.style.transform = `scale(100%)`;
+  currentZoom = 0
+  zoomAmount = 100
+  videoPrisma.style.transform = `scale(100%)`
   spanGuideI.style.left = '0'
   slider4.style.width = '0'
-  positionDisplayIII.textContent = `${'100'}°`
+  positionDisplayIII.textContent = `${'100'} %`
   applyFilters()
   applyFiltersII()
   applyFiltersIII()
   applyFiltersIV()
 };
-
+const makeFiltersIV = () => { // Resetear filtros
+  positionDisplay.textContent = `${'400'} - µpm`
+  applyFilters()
+};
 let degreesAmount = 0
 let zoomAmount = 100
 let blurAmount = 0
-let brightnessAmount = 1 
+let brightnessAmount = 1   
 var intervalId = null
 let intervalId2 = null
 let intervalId3 = null
@@ -10889,7 +10896,79 @@ let intervalId4 = null
 let intervalId5 = null
 let intervalId6 = null
 let intervalId7 = null
-let greyIntensity = 0  
+let greyIntensity = 0
+
+
+buttonLeft.addEventListener('touchstart', () => {
+  intervalId = setInterval(() => {
+    var tituloElement = document.getElementById("titulo");
+    let currentLeft = parseFloat(window.getComputedStyle(button).left)
+    let newLeft = currentLeft + 2
+    if(newLeft <= 2){
+      makeFilters()
+      blurAmount = 0;
+      brightnessAmount = 1;      
+    }
+    if (newLeft <= 150) {
+      posicionPantalla.style.color = 'rgb(0,255,0)'
+      posicionPantalla.style.borderColor = 'rgb(0,255,0)'
+      button.style.left = `${newLeft}px`;
+      slider1.style.width = `${newLeft}px`;
+      blurAmount += 0.01
+      applyFilters(); // Aplicar los filtros actualizados
+    }    
+    if(newLeft === 150){
+      clearInterval(intervalId)
+      verButtsInterfaz.style.pointerEvents = "none";    
+      interfaz.style.display = 'flex'
+      tituloElement.textContent = "BAJA DEFINICION DE VIDEO"; 
+      tituloElement.style.backgroundColor = 'orange'
+      tituloElement.style.color = 'black'           
+      container.style.visibility = 'hidden'
+      verButtsInterfaz.style.visibility = 'hidden'
+      button.style.visibility = 'hidden'
+      posicionPantalla.style.visibility = 'hidden'
+    }
+    if(newLeft >= 150){
+      posicionPantalla.style.color = 'orange'
+      posicionPantalla.style.borderColor = 'orange'
+      slider2.style.width = `${newLeft-150}px`
+      button.style.left = `${newLeft}px`
+      blurAmount += 0.01
+      applyFilters(); // Aplicar los filtros actualizados      
+    } 
+    if(newLeft === 330){
+      clearInterval(intervalId)
+      interfaz.style.display = 'flex'
+      container.style.visibility = 'hidden'
+      verButtsInterfaz.style.visibility = 'hidden'
+      button.style.visibility = 'hidden'
+      posicionPantalla.style.visibility = 'hidden'
+      tituloElement.textContent = "PERDIDA TOTAL DE DEFINICION";  
+      tituloElement.style.backgroundColor = 'rgb(255,0,0)'
+      tituloElement.style.color = 'white'
+      verButtsInterfaz.style.pointerEvents = "none";
+    }
+    if(newLeft >= 330){
+      posicionPantalla.style.color = 'rgb(255,0,0)'
+      posicionPantalla.style.borderColor = 'rgb(255,0,0)'
+      slider3.style.width = `${newLeft-327}px`
+      button.style.left = `${newLeft}px`
+      blurAmount += 0.1
+      applyFilters(); // Aplicar los filtros actualizados      
+    }
+    if (newLeft >= 400) {
+      setTimeout(() => {
+      positionDisplay.textContent = `${'400'} - µpm`     
+      clearInterval(intervalId)        
+      }, 17);
+      makeFiltersIV()
+    }
+    positionDisplay.textContent = `${newLeft} - µpm`
+  }, 7);
+});
+
+
 buttonLeft.addEventListener('mousedown', () => {
   intervalId = setInterval(() => {
     var tituloElement = document.getElementById("titulo");
@@ -10948,12 +11027,14 @@ buttonLeft.addEventListener('mousedown', () => {
       blurAmount += 0.1
       applyFilters(); // Aplicar los filtros actualizados      
     }
-    if(newLeft >= 400){clearInterval(intervalId)
-      setTimeout(() => {          
-        positionDisplay.textContent = `${newLeft} - µpm`
+    if (newLeft >= 400) {
+      setTimeout(() => {
+      positionDisplay.textContent = `${'400'} - µpm`     
+      clearInterval(intervalId)        
       }, 17);
+      makeFiltersIV()
     }
-    positionDisplay.textContent = `${newLeft} - µpm` 
+    positionDisplay.textContent = `${newLeft} - µpm`
   }, 7);
 });
 buttonLeft.addEventListener('mouseup', () => {
@@ -10977,8 +11058,6 @@ buttonRight.addEventListener('mousedown', () => {
       slider3.style.width = `${newWidth}px`
       blurAmount -= 0.025;
       applyFilters(); // Aplicar los filtros actualizados
-      /* greyIntensity -= 0.13; 
-      cortina.style.backgroundColor = `rgb(${greyIntensity},${greyIntensity},${greyIntensity})`*/   
       posicionPantalla.style.borderColor = 'rgb(255,0,0)'
       display.style.color = 'rgb(255,0,0)'
     }
@@ -10987,8 +11066,6 @@ buttonRight.addEventListener('mousedown', () => {
       slider2.style.width = `${withNew1}px`
       blurAmount -= 0.025;
       applyFilters(); // Aplicar los filtros actualizados
-      /* greyIntensity -= 0.13;
-      cortina.style.backgroundColor = `rgb(${greyIntensity},${greyIntensity},${greyIntensity})`*/  
       posicionPantalla.style.color = 'orange'
       posicionPantalla.style.borderColor = 'orange'      
       display.style.color = 'rgb(255,100,0)'
@@ -10998,8 +11075,6 @@ buttonRight.addEventListener('mousedown', () => {
       slider1.style.width = `${withNew2}px`
       blurAmount -= 0.025;
       applyFilters(); // Aplicar los filtros actualizados
-      /* greyIntensity -= 0.13;
-      cortina.style.backgroundColor = `rgb(${greyIntensity},${greyIntensity},${greyIntensity})`*/  
       posicionPantalla.style.color = 'rgb(0,255,0)'
       posicionPantalla.style.borderColor = 'rgb(0,255,0)'    
       display.style.color = 'rgb(0,255,0)'
@@ -11027,11 +11102,9 @@ buttReset.addEventListener('mousedown', () => {
 })
 /* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 buttonLeft2.addEventListener('mousedown', () => {
-  clearInterval(intervalId5); // Limpiar intervalo anterior si existe
   intervalId5 = setInterval(() => {    
     if (currentRotation < 360) {
       currentRotation++;
-      currentZoom = currentZoom + 0
       console.log(currentZoom)
       posicionPantalla.style.color = 'rgb(0,255,0)';
       posicionPantalla.style.borderColor = 'rgb(0,255,0)';
@@ -11040,13 +11113,13 @@ buttonLeft2.addEventListener('mousedown', () => {
       degreesAmount += 1;
       applyFiltersII(); // Aplicar los filtros actualizados
       positionDisplayII.textContent = `${currentRotation}°`;
-    } else {
-      clearInterval(intervalId5);
-      videoPrisma.style.transform = "rotate(0deg)";
-      positionDisplayII.textContent = `360°`;
-      currentRotation = 0; // Reiniciar rotación
-    }  
+    }
+    if(currentRotation >= 360){
+      clearInterval(intervalId5)
+    }
+
   }, 77);
+
 });
 buttonLeft2.addEventListener('mouseup', () => {
   clearInterval(intervalId5)
@@ -11078,25 +11151,24 @@ buttonRight2.addEventListener('mouseleave', () => {
 buttReset2.addEventListener('mousedown', () => {
   makeFiltersII()
 })
+/* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 buttonLeft3.addEventListener('mousedown', () => {
-  clearInterval(intervalId6); // Limpiar intervalo anterior si existe
   intervalId6 = setInterval(() => {        
-    if (currentZoom <= 300) {
+    if (currentZoom + 101 <= 300) {
       currentZoom++;
-      posicionPantallaI.style.color = 'rgb(0,255,255)';
-      posicionPantallaI.style.borderColor = 'rgb(0,255,255)';
-      spanGuideI.style.left = `${(currentZoom-100)*1.7}px`;
-      slider4.style.width = `${(currentZoom-100)*1.7}px`;
+      positionDisplayIII.style.color = 'rgb(0,255,255)';
+      positionDisplayIII.style.borderColor = 'rgb(0,255,255)';
+      spanGuideI.style.left = `${(currentZoom)*1.7}px`;
+      slider4.style.width = `${(currentZoom)*1.7}px`;
       zoomAmount += 1;
       applyFiltersIII(); // Aplicar los filtros actualizados
-      positionDisplayIII.textContent = `${currentZoom}°`;
-    } else {
+      positionDisplayIII.textContent = `${currentZoom + 100} %`;
+      console.log(currentZoom)
+    }
+    if(currentZoom + 100 === 300){
       clearInterval(intervalId6);
-      videoPrisma.style.transform = "zoom(100%)";
-      positionDisplayIII.textContent = `300 %`;
-      currentZoom = 100; // Reiniciar rotación
-
-    }  
+      console.log(currentZoom)
+    }
   }, 77);
 });
 buttonLeft3.addEventListener('mouseup', () => {
@@ -11106,22 +11178,19 @@ buttonLeft3.addEventListener('mouseleave', () => {
   clearInterval(intervalId6);
 })
 buttonRight3.addEventListener('mousedown', () => {
-  clearInterval(intervalId7); // Limpiar intervalo anterior si existe
-  intervalId7 = setInterval(() => { 
-    
-    if (currentZoom >= 101) {
+  intervalId7 = setInterval(() => {     
+    if (currentZoom + 100 <= 300 && currentZoom + 99 >= 100) {
       currentZoom--;
-      posicionPantallaI.style.color = 'rgb(0,255,255)';
-      posicionPantallaI.style.borderColor = 'rgb(0,255,255)';
-      spanGuideI.style.left = `${(currentZoom-100)*1.7}px`;
-      slider4.style.width = `${(currentZoom-100)*1.7}px`;
+      positionDisplayIII.style.color = 'rgb(0,255,255)';
+      positionDisplayIII.style.borderColor = 'rgb(0,255,255)';
+      spanGuideI.style.left = `${(currentZoom)*1.7}px`;
+      slider4.style.width = `${(currentZoom)*1.7}px`;
       zoomAmount -= 1;
       applyFiltersIII(); // Aplicar los filtros actualizados
-      applyFilters()
-      positionDisplayIII.textContent = `${currentZoom}°`;
-    }
-    if(currentZoom === 301){
-      clearInterval(intervalId7)
+      /* applyFilters() */
+      positionDisplayIII.textContent = `${currentZoom + 100} %`;
+      console.log(currentZoom)
+
     }
   }, 77);
 });
@@ -11134,9 +11203,7 @@ buttonRight3.addEventListener('mouseleave', () => {
 buttReset3.addEventListener('mousedown', () => {
   makeFiltersIII()
 })
-
 /* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
-
 botVerde.addEventListener('mousedown', () => {
   verButtsInterfaz.style.pointerEvents = "auto"
   interfaz.style.display = 'none'
@@ -11161,24 +11228,52 @@ botNaran.addEventListener('mousedown', () => {
   button.style.left = '0'
   makeFilters()
 })
-botRed.addEventListener('mousedown', () => {
-  verButtsInterfaz.style.pointerEvents = "auto"
-  slider1.style.width = '0'
-  slider2.style.width = '0'
-  slider3.style.width = '0'
-  posicionPantalla.textContent = `${'0'} - µpm`
-  posicionPantalla.style.borderColor = 'rgb(0,255,0)'  
-  posicionPantalla.style.color = 'rgb(0,255,0)'  
-  button.style.left = '0'
-  container.style.visibility = 'none'
-  verButtsInterfaz.style.display = 'none'
-  display.style.display = 'none'
-  button.style.display = 'none'
-  posicionPantalla.style.display = 'none'
-  interfaz.style.display = 'none'    
-  newLeft = 0  
-  makeFilters() 
-})
+/* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
+botRed.addEventListener('mousedown', resetButtons);
+botClose.addEventListener('mousedown', resetButtons);
+function resetButtons() {
+  verButtsInterfaz.style.pointerEvents = "auto";
+  slider1.style.width = '0';
+  slider2.style.width = '0';
+  slider3.style.width = '0';
+  posicionPantalla.textContent = `${'0'} - µpm`;
+  posicionPantalla.style.borderColor = 'rgb(0,255,0)';
+  posicionPantalla.style.color = 'rgb(0,255,0)';
+  button.style.left = '0';
+  container.style.display = 'none';
+  verButtsInterfaz.style.display = 'none';
+  display.style.display = 'none';
+  button.style.display = 'none';
+  posicionPantalla.style.display = 'none';
+  interfaz.style.display = 'none';
+  newLeft = 0;
+  makeFilters();
+}
+botCloseII.addEventListener('mousedown', resetButtonsII);
+function resetButtonsII() {
+  desactivarClicsPorUnTiempoIII()
+  displayII.style.display = 'none';
+  positionDisplayII.textContent = `${'0'}°`;
+  containerII.style.display = 'none';
+  spanGuide.style.display = 'none';
+  slider5.style.width = '0';
+  verButtsInterfazII.style.display = 'none';
+  positionDisplayII.style.display = 'none';
+}
+botCloseIII.addEventListener('mousedown', resetButtonsIII);
+function resetButtonsIII() {
+  desactivarClicsPorUnTiempoIII()
+  positionDisplayIII.style.display = 'none';
+  positionDisplayIII.textContent = `${'100'}%`;
+  containerIII.style.display = 'none';
+  spanGuideI.style.display = 'none';
+  slider4.style.width = '0';
+  verButtsInterfazIII.style.display = 'none';
+  positionDisplayIII.style.display = 'none';
+  aplique.style.display = 'none'
+}
+/* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
+
 function mostrarInterfaz() { 
   container.style.display = 'flex'
   verButtsInterfaz.style.display = 'flex'
@@ -11220,14 +11315,28 @@ function interfazAvance() {
   verButtsInterfazII.style.display = 'flex'
   verDisplayII.style.visibility = 'visible'  
   verDisplayII.style.display = 'flex'
-  let verInterfazIII = document.getElementById('container_interfaz_3')
+  let verInterfazIII = document.getElementById('container_interfaz_3')               
   let verDisplayIII = document.getElementById('display_3')
+  
+  positionDisplayIII.style.display = 'flex'
+  positionDisplayIII.style.visibility = 'visible'
+
+  positionDisplayII.style.display = 'flex'
+  positionDisplayII.style.visibility = 'visible'
+
+
   verInterfazIII.style.visibility = 'visible'
   verInterfazIII.style.display = 'flex' 
   verButtsInterfazIII.style.visibility = 'visible'
   verButtsInterfazIII.style.display = 'flex'
   verDisplayIII.style.visibility = 'visible'  
   verDisplayIII.style.display = 'flex'
+  aplique.style.visibility = 'visible'  
+  aplique.style.display = 'flex'
+  apliqueII.style.visibility = 'visible'  
+  apliqueII.style.display = 'flex'
+
+
 }
 function eliminarEstilosInline(elemento) {
   var estilosAplicados = window.getComputedStyle(elemento)
@@ -11273,7 +11382,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('slider_4')
+  var contiBoton = document.getElementById('container_interfaz')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
@@ -11406,6 +11515,14 @@ function trasladarOblicuos(){
   contOblicuosXI.classList.add('move-oblicuos');
   console.log('se AGREGO la clase')
   /* contOblicuosXI.style.top = '10%' */
+}
+function desactivarClicsPorUnTiempoIII() {
+  // Desactivar los clics
+  document.addEventListener('click', bloquearClic, true);
+  // Volver a habilitar los clics después de 1 segundo
+  setTimeout(function() {
+      document.removeEventListener('click', bloquearClic, true);
+  }, 1000);
 }
 function desactivarClicsPorUnTiempoII() {
   // Desactivar los clics
