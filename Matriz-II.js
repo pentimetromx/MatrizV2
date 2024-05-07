@@ -3,6 +3,7 @@ var acumuladorVideos = []
 
 var intervaloColor;
 let arrayVideos = ['vid06','prisma-vid-II','vid04','vid05']
+let videoStore = []
 
 var contenedor2 = document.getElementById('canvasContainer2')
 var troublesh = document.getElementById('troubleshooting')
@@ -36,8 +37,16 @@ var buttRepuestV = document.getElementById('conti-boton-repuestos-III')
 var contVideo = document.getElementById('video-entintado')
 var contVideoSmed = document.getElementById('conti-video-bancada')
 var conteBancada = document.getElementById('bancada-torre-II')
+var padreManometro = document.getElementById('padre-1')
 
 let firstClick = true;
+let clickHabilitado = true;
+let botonClick = document.getElementById('boton1')
+let botonClickII = document.getElementById('boton7')
+let botonClickIII = document.getElementById('boton13')
+let botonClickIV = document.getElementById('boton19')
+let botonClickV = document.getElementById('boton25')
+
 var iterations;
 var arrayIdButtsMA = ['resultados','troubleshoot','def1','def2','adtBut','fua1','lup','kaizen']
 var arrayButtsKaizen = ['btn10','btn11','btn12','btn17']
@@ -71,15 +80,17 @@ var currentID = null;
 var butInicio = document.getElementById('bot-inic')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
+const padreUno = document.getElementById('contenedor_padre')
+const padreDos = document.getElementById('contenedor_padre_2')
+const padreTres = document.getElementById('contenedor_padre_3')
 var display = document.getElementById('display') 
 var displayII = document.getElementById('display_2')
 var aplique = document.getElementById('aplique_3')
 var apliqueII = document.getElementById('aplique_2')
 
-
 var posicionPantalla = document.getElementById('positionDisplay')              
 var positionDisplayIII = document.getElementById('positionDisplay_3')
-var allContenedores = ['positionDisplay_3','display_2','container_interfaz_2','butts_interfaz_2','container_interfaz_3','butts_interfaz_3','display_3','subtitulo-I','display','container_interfaz','butts_interfaz','interfaz','conte-ayudas','ayudas-video','imagen-ayudas','imagen-ayudasII','logo-grande','agrupaOblicuos-XI','titulo-ancho','descripcion-I','ventana-lateral','buscador','linkList','contenedor-principal','contenedor','padre-circle','circle','options','nicho-videos','primerCont','vidColor','vid01','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
+var allContenedores = ['vid_festo','instrucciones_manometro','positionDisplay_3','display_2','container_interfaz_2','butts_interfaz_2','container_interfaz_3','butts_interfaz_3','display_3','subtitulo-I','display','container_interfaz','butts_interfaz','interfaz','conte-ayudas','ayudas-video','imagen-ayudas','imagen-ayudasII','logo-grande','agrupaOblicuos-XI','titulo-ancho','descripcion-I','ventana-lateral','buscador','linkList','contenedor-principal','contenedor','padre-circle','circle','options','nicho-videos','primerCont','vidColor','vid01','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
@@ -104,8 +115,9 @@ const lineI = document.getElementById("lineI")
 let hoverTimeout;
 let hideTimeout;
 let contadorClicks = 0;
-
 var container1 = document.getElementById('container01')
+var botIzquierda = document.getElementById('bot-atras')
+var botDerecha = document.getElementById('bot-atras12')
 
 const uniTeñido = document.getElementById('uTeñidos')
 const alimentadorId = document.getElementById('alimentadorId')
@@ -317,7 +329,7 @@ function VolveraInicio(){
   idsArray = []
   idsArrayEliminados = []
 }
-function muestraBateria(elementId){  
+/* function muestraBateria(elementId){  
   // Recorre el array y oculta los elementos por su ID
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])
@@ -364,8 +376,10 @@ function muestraBateria(elementId){
     idsArray.push(elementId);
     console.log(idsArray);
   }
-}
-function setInitialPosition(){
+} */
+
+
+/* function setInitialPosition(){
   var contiBoton = document.querySelector('.conti-boton')
   // Aplica los estilos al elemento
   contiBoton.style.position = 'absolute';
@@ -373,7 +387,7 @@ function setInitialPosition(){
   contiBoton.style.top = '257px';
   contiBoton.style.left = '270px';
   contiBoton.style.transform = ''; // Restablecer la transformación
-}
+} */
 function ElementosMaII(elementId){
   var elementosExcluidos = ['buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
   /* document.getElementById('linkList').style.display = 'none' */
@@ -765,6 +779,50 @@ function cambioContenedor(elementId){
     console.log(idsArray);
   }
 }
+
+const neumatica = document.getElementById('neumatica');
+const moveButton = document.getElementById('moveButton');
+let moved = false;
+padreManometro.addEventListener('dblclick', () => {
+  var elementosExcluidos = ['padre-1','imag1','instrucciones_manometro','vid_festo']  
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }
+  if (!moved) {
+    padreManometro.style.left = '1%'
+    padreManometro.style.top = '-36%'
+    padreManometro.style.width = 'calc(100% - 25%)'
+    moved = true;
+  }
+  else {
+    imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
+    padreManometro.style.top = ''
+    padreManometro.style.left = ''
+    padreManometro.style.width = ''
+    moved = false;
+  }
+})
+botonClick.addEventListener('mouseup', () => {                   
+  cierraContenedores('desbobinadorId','boton1')
+}) 
+botonClickII.addEventListener('mouseup', () => {                
+  cierraContenedores('uTeñido')
+})   
+botonClickIII.addEventListener('mouseup', () => {                
+ cierraContenedores('alimentadorId')
+}) 
+botonClickIV.addEventListener('mouseup', () => {                
+  cierraContenedores('unidProceso')
+}) 
+botonClickV.addEventListener('mouseup', () => {                
+  cierraContenedores('rebobinador')
+}) 
+videoPrisma.addEventListener('mouseup', () =>{
+  abrirPrepress('pre-prensa')
+})
 function cierraContenedores(elementId,buttonID){
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80','btn600','btn700','btn800']
   var arrayButtsRojos = ['boton2','boton3','boton4','boton5','boton6','boton8','boton9','boton10','boton11','boton12']
@@ -3606,6 +3664,8 @@ function abrirPrepress(elementId) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
+  botIzquierda.style.display = 'flex'
+  botDerecha.style.display = 'flex'
   videosPrepress.forEach(video => {
     if (video) {
       video.style.display = 'none'
@@ -3636,8 +3696,6 @@ function abrirPrepress(elementId) {
       video.play();
     }
   });
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {
@@ -3704,22 +3762,25 @@ function abrirDensitometria(elementId){
   }
 }
 function muestraVidPrisma(eltoHtml) {
+  clickHabilitado = true
   acumuladorVideos.pop()
   acumuladorVideos.push(eltoHtml)
+  videoStore.pop()
   var circulo = document.getElementById('circle')
   var conteAyudas = document.getElementById('conte-ayudas')
   var primerAyuda = document.getElementById('imagen-ayudas')
+  const videoComponent = document.getElementById(eltoHtml)
   primerAyuda.style.display = 'flex'
   conteAyudas.style.display = 'flex'
   circulo.style.display = 'flex'
   document.getElementById('padre-circle').removeAttribute('style')
   arrayVideos.forEach(videoId => {
-    let videoElement = document.getElementById(videoId);
+    let videoElement = document.getElementById(videoId)
     if (videoElement) {
-        videoElement.removeAttribute('style'); 
-        videoElement.classList.remove('move-video-up');
+      videoElement.removeAttribute('style')
+      videoElement.classList.remove('move-video-up')
     }
-  });
+  })
   if(screenWidth < 500){
     var elementosExcluidos = ['buscador','container01','vidCicodelia','nicho-videos','padre-circle','circle','options','conte-ayudas','imagen-ayudas','ayudas-video']  
     for (var i = 0; i < allContenedores.length; i++) { 
@@ -3737,19 +3798,22 @@ function muestraVidPrisma(eltoHtml) {
       }
     }
   }
-
-  switch(eltoHtml){
-    case 'prisma-vid-II' :
-      formateaPrepress('prisma-vid-II')    
-    break;
+  switch(eltoHtml){    
+    case 'prisma-vid-II':
+      formateaPrepress('prisma-vid-II')
+      videoStore.push(videoComponent)
+    break
     case 'vid04' :
-      formateaPrepress('vid04')      
+      formateaPrepress('vid04')
+      videoStore.push(videoComponent)
     break; 
     case 'vid05' :
-      formateaPrepress('vid05')      
+      formateaPrepress('vid05')   
+      videoStore.push(videoComponent)
     break; 
     case 'vid06' :
-      formateaPrepress('vid06')      
+      formateaPrepress('vid06')
+      videoStore.push(videoComponent)      
     break;    
     default:
   } 
@@ -3889,7 +3953,7 @@ function muestraVidColor(elementId){
     vidPrisma.play()
   }  
 }
-function formateaPrepress(eltoHtml){
+function formateaPrepress(eltoHtml){ 
   videosPrepress.forEach(video => {
     if (video) {
       video.style.display = 'none'
@@ -3903,14 +3967,10 @@ function formateaPrepress(eltoHtml){
       }
     })  
     if(screenWidth < 500){
-      var padreImagenesPres = document.getElementById('pre-prensa')
-      var hijoPadrePres = document.getElementById('imgs-prepress')
-      var primerCont = document.getElementById('primerCont')
-      var video1 = document.getElementById('vid01')
-      padreImagenesPres.style.display = 'flex'
-      hijoPadrePres.style.display = 'flex'
-      primerCont.style.display = 'flex'
-      video1.style.display = 'flex'
+      document.getElementById('pre-prensa').style.display = 'flex'
+      document.getElementById('imgs-prepress').style.display = 'flex'
+      document.getElementById('primerCont').style.display = 'flex'
+      document.getElementById('vid01').style.display = 'flex'
       animateVideoWidth(eltoHtml)
     }else{
       animateVideoWidthII(eltoHtml) 
@@ -3993,7 +4053,7 @@ function irContenedorAnterior() {
       changeButtonStyles('bancada-torre-II')
     break; 
     case "conteneMantaut":
-      ElementosMa('conteneMantaut')
+      ElementosMaII('conteneMantaut')
     break; 
     case "torre-imp":
       location.reload()
@@ -5519,19 +5579,14 @@ function LubricaDesbobinador(idButt) {
       vidFreno.play()     
     break;
     case 'btn70': 
-      // Paso 1: Obtener el elemento padre
       var contFreno = document.getElementById('freno')
-      // Paso 2: Iterar a través de los elementos hijos
       for (var i = 0; i < contFreno.children.length; i++) {
         var hijo = contFreno.children[i]
-        // Paso 3: Verificar si el hijo tiene la propiedad 'flex' en la propiedad de estilo
         var estiloCalculado = window.getComputedStyle(hijo)
         if (estiloCalculado.getPropertyValue('display') === 'flex') {
-          // Paso 4: Cambiar la propiedad de estilo 'display' a 'none'
           hijo.style.display = 'none'
         }
       }
-      // Paso 5: Hacer visible solo el hijo con la clase 'conti-boton'
       contPadre.style.display = 'flex'  // Suponiendo que 'flex' es la propiedad de estilo 
     break;
     case 'btn80': 
@@ -6711,6 +6766,7 @@ function rodillosTeñido(botId) {
 
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       padreDurezas.style.display = 'flex'                                                                                             /// MUESTRA IMAGENES DUREZA
+      padreDurezas.style.top = '-80vh'      
       for (var i = 0; i < arrayImgsRodilleria.length; i++) {                                                                           
         var imagen = arrayImgsRodilleria[i];
         imagen.style.display = 'flex';
@@ -7840,22 +7896,22 @@ function updateJorgeII() {
    graficosAutomaticos('canvasContainer9-II')
  }, 700) // 0.3 segundos (300 ms + 300 ms)
  var nuevosDatos = [/* Nuevos valores de datos */ 10,20,50,10,10,5]
-// Actualiza los datos del gráfico
-chart7II.data.datasets[0].data = nuevosDatos;
-// Actualiza el gráfico
-chart7II.update()
-///////////////////////////////////////////////////////////////////
-var nuevosDatosI = [/* Nuevos valores de datos */ 77,33,44,66,55,17]
-// Actualiza los datos del gráfico
-chart8II.data.datasets[0].data = nuevosDatosI;
-// Actualiza el gráfico
-chart8II.update()
-//////////////////////////////////////////////////////////////////
-var nuevosDatosII = [/* Nuevos valores de datos */ 50,5,5,10,100,77]
-// Actualiza los datos del gráfico
-chart9II.data.datasets[0].data = nuevosDatosII;
-// Actualiza el gráfico
-chart9II.update() 
+  // Actualiza los datos del gráfico
+  chart7II.data.datasets[0].data = nuevosDatos;
+  // Actualiza el gráfico
+  chart7II.update()
+  ///////////////////////////////////////////////////////////////////
+  var nuevosDatosI = [/* Nuevos valores de datos */ 77,33,44,66,55,17]
+  // Actualiza los datos del gráfico
+  chart8II.data.datasets[0].data = nuevosDatosI;
+  // Actualiza el gráfico
+  chart8II.update()
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosII = [/* Nuevos valores de datos */ 50,5,5,10,100,77]
+  // Actualiza los datos del gráfico
+  chart9II.data.datasets[0].data = nuevosDatosII;
+  // Actualiza el gráfico
+  chart9II.update() 
   //////////////////////////////////////////////////////////////////
   var nuevosDatosIII = [/* Nuevos valores de datos */ 55,17,77,100,47,7]
   // Actualiza los datos del gráfico
@@ -7863,11 +7919,11 @@ chart9II.update()
   // Actualiza el gráfico
   chart10II.update()
     //////////////////////////////////////////////////////////////////
-var nuevosDatosIIII = [/* Nuevos valores de datos */ 44,99,17,77,10,5]
-// Actualiza los datos del gráfico
-chart11II.data.datasets[0].data = nuevosDatosIIII;
-// Actualiza el gráfico
-chart11II.update() 
+  var nuevosDatosIIII = [/* Nuevos valores de datos */ 44,99,17,77,10,5]
+  // Actualiza los datos del gráfico
+  chart11II.data.datasets[0].data = nuevosDatosIIII;
+  // Actualiza el gráfico
+  chart11II.update() 
  //////////////////////////////////////////////////////////////////
  var nuevosDatosV = [/* Nuevos valores de datos */ 100,37,55,77,77,77,81,99]
  // Actualiza los datos del gráfico
@@ -7952,22 +8008,22 @@ function updateAndresII() {
    graficosAutomaticos('canvasContainer9-II')
  }, 700) // 0.3 segundos (300 ms + 300 ms)
  var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
-// Actualiza los datos del gráfico
-chart7II.data.datasets[0].data = nuevosDatos;
-// Actualiza el gráfico
-chart7II.update()
-///////////////////////////////////////////////////////////////////
-var nuevosDatosI = [/* Nuevos valores de datos */ 7,3,4,6,5,7]
-// Actualiza los datos del gráfico
-chart8II.data.datasets[0].data = nuevosDatosI;
-// Actualiza el gráfico
-chart8II.update()
-//////////////////////////////////////////////////////////////////
-var nuevosDatosII = [/* Nuevos valores de datos */ 5,15,55,10,100,77]
-// Actualiza los datos del gráfico
-chart9II.data.datasets[0].data = nuevosDatosII;
-// Actualiza el gráfico
-chart9II.update() 
+  // Actualiza los datos del gráfico
+  chart7II.data.datasets[0].data = nuevosDatos;
+  // Actualiza el gráfico
+  chart7II.update()
+  ///////////////////////////////////////////////////////////////////
+  var nuevosDatosI = [/* Nuevos valores de datos */ 7,3,4,6,5,7]
+  // Actualiza los datos del gráfico
+  chart8II.data.datasets[0].data = nuevosDatosI;
+  // Actualiza el gráfico
+  chart8II.update()
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosII = [/* Nuevos valores de datos */ 5,15,55,10,100,77]
+  // Actualiza los datos del gráfico
+  chart9II.data.datasets[0].data = nuevosDatosII;
+  // Actualiza el gráfico
+  chart9II.update() 
   //////////////////////////////////////////////////////////////////
   var nuevosDatosIII = [/* Nuevos valores de datos */ 0,17,37,50,97,27]
   // Actualiza los datos del gráfico
@@ -7975,17 +8031,17 @@ chart9II.update()
   // Actualiza el gráfico
   chart10II.update()
     //////////////////////////////////////////////////////////////////
-var nuevosDatosIIII = [/* Nuevos valores de datos */ 5,29,17,47,3,19]
-// Actualiza los datos del gráfico
-chart11II.data.datasets[0].data = nuevosDatosIIII;
-// Actualiza el gráfico
-chart11II.update()
- //////////////////////////////////////////////////////////////////
- var nuevosDatosV = [/* Nuevos valores de datos */ 77,37,55,41,33,77,50,60]
- // Actualiza los datos del gráfico
- chart12II.data.datasets[0].data = nuevosDatosV;
- // Actualiza el gráfico
- chart12II.update()  
+  var nuevosDatosIIII = [/* Nuevos valores de datos */ 5,29,17,47,3,19]
+  // Actualiza los datos del gráfico
+  chart11II.data.datasets[0].data = nuevosDatosIIII;
+  // Actualiza el gráfico
+  chart11II.update()
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosV = [/* Nuevos valores de datos */ 77,37,55,41,33,77,50,60]
+  // Actualiza los datos del gráfico
+  chart12II.data.datasets[0].data = nuevosDatosV;
+  // Actualiza el gráfico
+  chart12II.update()  
 }
 function updateCarlos() {
    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
@@ -8087,11 +8143,11 @@ function updateCarlosII() {
   // Actualiza el gráfico
   chart10II.update()
     //////////////////////////////////////////////////////////////////
-var nuevosDatosIIII = [/* Nuevos valores de datos */ 50,91,17,77,33,89]
-// Actualiza los datos del gráfico
-chart11II.data.datasets[0].data = nuevosDatosIIII;
-// Actualiza el gráfico
-chart11II.update() 
+  var nuevosDatosIIII = [/* Nuevos valores de datos */ 50,91,17,77,33,89]
+  // Actualiza los datos del gráfico
+  chart11II.data.datasets[0].data = nuevosDatosIIII;
+  // Actualiza el gráfico
+  chart11II.update() 
  //////////////////////////////////////////////////////////////////
  var nuevosDatosV = [/* Nuevos valores de datos */ 17,37,22,30,5,60,77,80]
  // Actualiza los datos del gráfico
@@ -8108,22 +8164,17 @@ function deslizaMosaicoII(idElement) {
     contLinkMant.style.display = 'none'
     contImgEntrenos.style.display = 'none'
   }
-
   // Verificar si el elemento ya está en el array
   if (!arrayPosicionnador.includes(idElement)) {
     arrayPosicionnador.push(idElement)
   }
-
-  var contenedor = document.getElementById(idElement)
-  
+  var contenedor = document.getElementById(idElement)  
   contenedor.style.display = 'flex'
   contenedor.style.left = '257px'
-
   var inicio = 1100;
   var velocidad = 500;
   var duracion = Math.abs(destino - inicio) / velocidad * 100;
   var inicioTiempo = null;
-
   function animar(tiempo) {
     if (!inicioTiempo) inicioTiempo = tiempo;
     var progreso = (tiempo - inicioTiempo) / duracion;
@@ -9659,7 +9710,7 @@ searchForm.addEventListener('submit', function (e) {
   switch (searchTerm) {
     case 'autonomo':
     case 'mantenimiento autonomo':
-      ElementosMa('conteneMantaut')
+      ElementosMaII('conteneMantaut')
     break;
     case 'densitometria':
       abrirDensitometria()
@@ -10722,14 +10773,14 @@ function palpitarBotonHumedad() {
     document.getElementById('humedadButton').classList.remove('parpadea');
   }, 277);  
 }
-function moverMA() {
+/* function moverMA() {
   setInitialPosition()
   var anchoPantalla = window.innerWidth;
   if (anchoPantalla < 700) {
     var container = document.getElementById('conti-boton')
     container.classList.toggle('move-down-II')
   }
-}
+} */
 function aumentarIconos() {
   const iconosLateral = document.getElementsByClassName('iconos-laterales');
   let currentIndex = 0;
@@ -10832,20 +10883,35 @@ function volverApre(){
   }  
 }
 const applyFilters = () => {
-  videoPrisma.style.filter = `blur(${blurAmount}px)`;
-  };
-  const applyFiltersII = () => {
-    videoPrisma.style.transform = `scale(${zoomAmount}%) rotate(${degreesAmount}deg)`; // Conserva el zoom actual y aplica solo la rotación
-  };
+  videoStore.forEach(videoElement => {
+    videoElement.style.filter = `blur(${blurAmount}px)`;
+  });   
+};
+const applyFiltersII = () => {
+  videoStore.forEach(videoElement => {
+    videoElement.style.transform = `scale(${zoomAmount}%) rotate(${degreesAmount}deg)`
+  })
+};
+const applyFiltersV = () => {
+  videoStore.forEach(videoElement => {
+    videoElement.style.transform = `scale(${zoomAmount}%) rotate(${degreesAmount}deg)`;
+  });
+};
 const applyFiltersIII = () => {
-  videoPrisma.style.transform = `scale(${zoomAmount}%) rotate(${degreesAmount}deg)`;
+  videoStore.forEach(videoElement => {
+    videoElement.style.transform = `scale(${zoomAmount}%) rotate(${degreesAmount}deg)`;
+  });
+
+  
 };
 const applyFiltersIV = () => {
   videoPrisma.style.filter = `blur(${blurAmount}px)`;
 }
 const makeFilters = () => { // Resetear filtros
   blurAmount = 1
-  videoPrisma.style.filter = `blur(${1}px)`;
+  videoStore.forEach(videoElement => {
+    videoElement.style.filter = `blur(${1}px)`;
+  });
   button.style.left = '0'
   slider1.style.width = '0'
   slider2.style.width = '0'
@@ -10853,7 +10919,6 @@ const makeFilters = () => { // Resetear filtros
   display.style.color = 'rgb(0,255,0)'
   posicionPantalla.style.borderColor = 'rgb(0,255,0)'
   posicionPantalla.style.color = 'rgb(0,255,0)'
-
   positionDisplay.textContent = `${'0'} - µpm`
   applyFiltersII()
   applyFiltersIII()
@@ -10861,7 +10926,9 @@ const makeFilters = () => { // Resetear filtros
 const makeFiltersII = () => { // Resetear filtros 
   currentRotation = 0
   degreesAmount = 0
-  videoPrisma.style.transform = `rotate(${0}deg)`;  
+  videoStore.forEach(videoElement => {
+    videoElement.style.transform = `rotate(${0}deg)`;
+  });
   spanGuide.style.left = '0'
   slider5.style.width = '0'
   positionDisplayII.textContent = `${'0'}°`
@@ -10884,7 +10951,6 @@ const makeFiltersIII = () => { // Resetear filtros
 };
 const makeFiltersIV = () => { // Resetear filtros
   positionDisplay.textContent = `${'400'} - µpm`
-  applyFilters()
 };
 let degreesAmount = 0
 let zoomAmount = 100
@@ -10897,8 +10963,6 @@ let intervalId4 = null
 let intervalId5 = null
 let intervalId6 = null
 let intervalId7 = null
-let greyIntensity = 
-
 buttonLeft.addEventListener('touchstart', () => {
   intervalId = setInterval(() => {
     var tituloElement = document.getElementById("titulo");
@@ -10962,10 +11026,12 @@ buttonLeft.addEventListener('touchstart', () => {
     positionDisplay.textContent = `${newLeft} - µpm`
   }, 7);
 });
+
 buttonLeft.addEventListener('mousedown', () => {
+  if (!clickHabilitado) return; 
   intervalId = setInterval(() => {
     var tituloElement = document.getElementById("titulo");
-    let currentLeft = parseFloat(window.getComputedStyle(button).left)
+    let currentLeft = parseFloat(window.getComputedStyle(button).left)        
     let newLeft = currentLeft + 2
     if(newLeft <= 2){
       makeFilters()
@@ -10978,7 +11044,8 @@ buttonLeft.addEventListener('mousedown', () => {
       button.style.left = `${newLeft}px`;
       slider1.style.width = `${newLeft}px`;
       blurAmount += 0.01
-      applyFilters(); // Aplicar los filtros actualizados
+      applyFilters();
+      console.log(videoStore)
     }    
     if(newLeft === 150){
       clearInterval(intervalId)
@@ -10994,7 +11061,7 @@ buttonLeft.addEventListener('mousedown', () => {
       slider2.style.width = `${newLeft-150}px`
       button.style.left = `${newLeft}px`
       blurAmount += 0.01
-      applyFilters(); // Aplicar los filtros actualizados      
+      applyFilters();
     } 
     if(newLeft === 330){
       clearInterval(intervalId)
@@ -11010,15 +11077,13 @@ buttonLeft.addEventListener('mousedown', () => {
       slider3.style.width = `${newLeft-327}px`
       button.style.left = `${newLeft}px`
       blurAmount += 0.1
-      applyFilters(); // Aplicar los filtros actualizados      
+      applyFilters();
     }
     if (newLeft >= 400) {
-      setTimeout(() => {
-      positionDisplay.textContent = `${'400'} - µpm`     
-      clearInterval(intervalId)        
-      }, 17);
-      makeFiltersIV()
-    }
+      positionDisplay.textContent = `400 - µpm`
+      clearInterval(intervalId);
+      clickHabilitado = false;
+    }    
     positionDisplay.textContent = `${newLeft} - µpm`
   }, 7);
 });
@@ -11029,6 +11094,7 @@ buttonLeft.addEventListener('mouseleave', () => {
   clearInterval(intervalId)
 });
 buttonRight.addEventListener('mousedown', () => {
+  /* clickHabilitado = true; */
   intervalId2 = setInterval(() => {
     const currentLeft = parseFloat(window.getComputedStyle(button).left)
     const barraWidth = parseFloat(window.getComputedStyle(slider3).width)
@@ -11071,7 +11137,6 @@ buttonRight.addEventListener('mousedown', () => {
       }, 17);
       makeFilters()
       blurAmount = 0;
-      brightnessAmount = 1;
     }
     positionDisplay.textContent = `${newLeft} - µpm`
   }, 7)
@@ -11084,25 +11149,25 @@ buttonRight.addEventListener('mouseleave', () => {
 })
 buttReset.addEventListener('mousedown', () => {
   makeFilters()
+    clickHabilitado = true;
 })
 /* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 buttonLeft2.addEventListener('mousedown', () => {
   intervalId5 = setInterval(() => {    
     if (currentRotation < 360) {
-      currentRotation++;
+      currentRotation++
       console.log(currentZoom)
-      posicionPantalla.style.color = 'rgb(0,255,0)';
-      posicionPantalla.style.borderColor = 'rgb(0,255,0)';
-      spanGuide.style.left = `${currentRotation}px`;
-      slider5.style.width = `${currentRotation}px`;
-      degreesAmount += 1;
-      applyFiltersII(); // Aplicar los filtros actualizados
-      positionDisplayII.textContent = `${currentRotation}°`;
+      posicionPantalla.style.color = 'rgb(0,255,0)'
+      posicionPantalla.style.borderColor = 'rgb(0,255,0)'
+      spanGuide.style.left = `${currentRotation}px`
+      slider5.style.width = `${currentRotation}px`
+      degreesAmount += 1
+      applyFiltersV();  
+      positionDisplayII.textContent = `${currentRotation}°` 
     }
     if(currentRotation >= 360){
       clearInterval(intervalId5)
     }
-
   }, 77);
 
 });
@@ -11146,7 +11211,7 @@ buttonLeft3.addEventListener('mousedown', () => {
       spanGuideI.style.left = `${(currentZoom)*1.7}px`;
       slider4.style.width = `${(currentZoom)*1.7}px`;
       zoomAmount += 1;
-      applyFiltersIII(); // Aplicar los filtros actualizados
+      applyFiltersIII(videoStore); // Aplicar los filtros actualizados
       positionDisplayIII.textContent = `${currentZoom + 100} %`;
       console.log(currentZoom)
     }
@@ -11215,37 +11280,75 @@ botNaran.addEventListener('mousedown', () => {
 })
 /* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 botRed.addEventListener('mousedown', resetButtons);
-botClose.addEventListener('mousedown', resetButtons);
+botClose.addEventListener('mousedown', resetButtons);     // SEGUNDO BOTON CIERRE TOTAL
 function resetButtons() {
+  clickHabilitado = true; 
   makeFilters()
   desactivarClicsPorUnTiempoIII()
-  verButtsInterfaz.style.pointerEvents = "auto";
-  slider1.style.width = '0';
-  slider2.style.width = '0';
-  slider3.style.width = '0';
-  posicionPantalla.textContent = `${'0'} - µpm`;
-  posicionPantalla.style.borderColor = 'rgb(0,255,0)';
-  posicionPantalla.style.color = 'rgb(0,255,0)';
-  button.style.left = '0';
-  container.style.display = 'none';
-  verButtsInterfaz.style.display = 'none';
-  display.style.display = 'none';
-  button.style.display = 'none';
-  posicionPantalla.style.display = 'none';
-  interfaz.style.display = 'none';
-  newLeft = 0;
+  if(containerII.style.display === 'flex'){
+    verButtsInterfaz.style.pointerEvents = "auto";
+    slider1.style.width = '0';
+    slider2.style.width = '0';
+    slider3.style.width = '0';
+    posicionPantalla.textContent = `${'0'} - µpm`;
+    posicionPantalla.style.borderColor = 'rgb(0,255,0)';
+    posicionPantalla.style.color = 'rgb(0,255,0)';
+    button.style.left = '0';
+    container.style.display = 'none';
+    verButtsInterfaz.style.display = 'none';
+    display.style.display = 'none';
+    button.style.display = 'none';
+    posicionPantalla.style.display = 'none';
+    interfaz.style.display = 'none';
+    newLeft = 0;
+    padreTres.classList.add('move_containerI')
+  }else{
+    verButtsInterfaz.style.pointerEvents = "auto";
+    slider1.style.width = '0';
+    slider2.style.width = '0';
+    slider3.style.width = '0';
+    posicionPantalla.textContent = `${'0'} - µpm`;
+    posicionPantalla.style.borderColor = 'rgb(0,255,0)';
+    posicionPantalla.style.color = 'rgb(0,255,0)';
+    button.style.left = '0';
+    container.style.display = 'none';
+    verButtsInterfaz.style.display = 'none';
+    display.style.display = 'none';
+    button.style.display = 'none';
+    posicionPantalla.style.display = 'none';
+    interfaz.style.display = 'none';
+    newLeft = 0;
+    padreTres.classList.add('move_containerII')
+  }
 }
-botCloseII.addEventListener('mousedown', resetButtonsII);
+botCloseII.addEventListener('mouseup', resetButtonsII);   // PRIMER BOTON CIERRE TOTAL 
 function resetButtonsII() {
   makeFiltersII()
   desactivarClicsPorUnTiempoIII()
-  displayII.style.display = 'none';
-  positionDisplayII.textContent = `${'0'}°`;
-  containerII.style.display = 'none';
-  spanGuide.style.display = 'none';
-  slider5.style.width = '0';
-  verButtsInterfazII.style.display = 'none';
-  positionDisplayII.style.display = 'none';
+  if(container.style.display === 'none'){
+    displayII.style.display = 'none';
+    positionDisplayII.textContent = `${'0'}°`;
+    containerII.style.display = 'none';
+    spanGuide.style.display = 'none';
+    slider5.style.width = '0';
+    verButtsInterfazII.style.display = 'none';
+    positionDisplayII.style.display = 'none';
+    padreTres.classList.add('move_containerII')    
+  }else{
+    displayII.style.display = 'none';
+    positionDisplayII.textContent = `${'0'}°`;
+    containerII.style.display = 'none';
+    spanGuide.style.display = 'none';
+    slider5.style.width = '0';
+    verButtsInterfazII.style.display = 'none';
+    positionDisplayII.style.display = 'none';
+    setTimeout(() => {
+      padreUno.classList.add('move_container')    
+    },177);
+    setTimeout(() => {
+      padreTres.classList.add('move_container')    
+    },400);
+  }
 }
 botCloseIII.addEventListener('mousedown', resetButtonsIII);
 function resetButtonsIII() {
@@ -11261,7 +11364,6 @@ function resetButtonsIII() {
   aplique.style.display = 'none'
 }
 /* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
-
 function mostrarInterfaz() { 
   container.style.display = 'flex'
   verButtsInterfaz.style.display = 'flex'
@@ -11280,54 +11382,56 @@ function mostrarInterfaz() {
   button.style.zIndex = '3'
   posicionPantalla.style.zIndex = '3'
   display.style.zIndex = '3'
-} 
-function interfazAvance() {
-  desactivarClicsPorUnTiempoIII()
-
-  padreVideos.classList.remove('move_video');  
-  setTimeout(function () {
-    padreVideos.classList.add('move_video');
-  }, 500);
-
-  ocultarElementos('contenedorElementos') 
-  eliminarEstilosInline(container);
-  eliminarEstilosInline(verButtsInterfaz);
-  eliminarEstilosInline(display);
-  eliminarEstilosInline(button);
-  eliminarEstilosInline(posicionPantalla)
-  let verInterfaz = document.getElementById('container_interfaz')
-  let verDisplay = document.getElementById('display')
-  verInterfaz.style.visibility = 'visible'
-  verInterfaz.style.display = 'flex' 
-  verButtsInterfaz.style.visibility = 'visible' 
-  verButtsInterfaz.style.display = 'flex'
-  verDisplay.style.visibility = 'visible'  
-  verDisplay.style.display = 'flex'
-  let verInterfazII = document.getElementById('container_interfaz_2')
-  let verDisplayII = document.getElementById('display_2')
-  verInterfazII.style.visibility = 'visible'
-  verInterfazII.style.display = 'flex' 
-  verButtsInterfazII.style.visibility = 'visible'
-  verButtsInterfazII.style.display = 'flex'
-  verDisplayII.style.visibility = 'visible'  
-  verDisplayII.style.display = 'flex'
-  let verInterfazIII = document.getElementById('container_interfaz_3')               
-  let verDisplayIII = document.getElementById('display_3')  
-  positionDisplayIII.style.display = 'flex'
-  positionDisplayIII.style.visibility = 'visible'
-  positionDisplayII.style.display = 'flex'
-  positionDisplayII.style.visibility = 'visible'
-  verInterfazIII.style.visibility = 'visible'
-  verInterfazIII.style.display = 'flex' 
-  verButtsInterfazIII.style.visibility = 'visible'
-  verButtsInterfazIII.style.display = 'flex'
-  verDisplayIII.style.visibility = 'visible'  
-  verDisplayIII.style.display = 'flex'
-  aplique.style.visibility = 'visible'  
-  aplique.style.display = 'flex'
-  apliqueII.style.visibility = 'visible'  
-  apliqueII.style.display = 'flex'
 }
+
+function interfazAvance() {
+  let verInterfaz = document.getElementById('container_interfaz')
+  let verInterfazII = document.getElementById('container_interfaz_2')
+  let verInterfazIII = document.getElementById('container_interfaz_3')              
+  let verDisplay = document.getElementById('display')
+  let verDisplayII = document.getElementById('display_2')
+  let verDisplayIII = document.getElementById('display_3') 
+  botIzquierda.style.display = 'none'
+  botDerecha.style.display = 'none'
+  clickHabilitado = true  
+  if (botIzquierda && botDerecha && padreUno && padreDos && padreTres) {
+    botIzquierda.style.display = 'none';
+    botDerecha.style.display = 'none';
+    [padreUno, padreDos, padreTres].forEach(padre => {
+      padre.style.display = 'block';
+      padre.classList.remove('move_container', 'move_containerI', 'move_containerII');
+    });
+  }
+  makeFilters()
+  makeFiltersII()
+  makeFiltersIII()
+  desactivarClicsPorUnTiempoIII()
+  padreVideos.classList.remove('move_video');
+  setTimeout(() => {
+  padreVideos.classList.add('move_video');
+}, 500);
+  ocultarElementos('contenedorElementos');
+  [container, verButtsInterfaz, display, button, posicionPantalla].forEach(elemento => {
+    eliminarEstilosInline(elemento);
+  });
+  const elementosFlex = [
+    verInterfaz, verButtsInterfaz, verDisplay, verInterfazII, verButtsInterfazII,
+    verDisplayII, positionDisplayIII, positionDisplayII, verInterfazIII,
+    verButtsInterfazIII, verDisplayIII, aplique, apliqueII
+  ];  
+  const elementosVisible = [
+    verInterfaz, verButtsInterfaz, verDisplay, verInterfazII, verButtsInterfazII,
+    verDisplayII, positionDisplayIII, positionDisplayII, verInterfazIII,
+    verButtsInterfazIII, verDisplayIII, aplique, apliqueII
+  ];
+  for (let i = 0; i < elementosFlex.length; i++) {
+    elementosFlex[i].style.display = 'flex';
+  }  
+  for (let i = 0; i < elementosVisible.length; i++) {
+    elementosVisible[i].style.visibility = 'visible';
+  }
+}
+
 function eliminarEstilosInline(elemento) {
   var estilosAplicados = window.getComputedStyle(elemento)
   for (var i = 0; i < estilosAplicados.length; i++) {
@@ -11343,19 +11447,19 @@ document.addEventListener('keydown', function(event) {
       case 'Z':
         abrirSeccionOperativa('cont-titulo-operacion')        
         setTimeout(function() {
-          /* abrirInterfaz() */        
+          abrirSeccionContinua('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          abrirPrepress('pre-prensa')      
+          ElementosMaII('conteneMantaut')
         },977) 
         setTimeout(function() {
-          muestraVidPrisma('prisma-vid-II')         
+          deslizaContenedor('troubleshooting','troubleshoot')        
         },1177) 
         setTimeout(function() {
-          alternarAyudas()        
+          listaEntrenamientosII('archivo')       
         },1377) 
         setTimeout(function() {
-          interfazAvance()                                  
+          imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')                                 
         },1677) 
         setTimeout(function() {
           /* changeButtonStyles('pantalla-tintero') */        
@@ -11372,7 +11476,8 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('container_interfaz')
+  console.clear();
+  var contiBoton = document.getElementById('imag1')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left

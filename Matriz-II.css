@@ -2158,6 +2158,7 @@ header {
   padding: 7px;
   border: 2px solid orange;
   border-radius: 13px;
+  cursor: pointer;
 }
 #control-neumatico > *,
 #rodillo-infeed > *,
@@ -2285,8 +2286,8 @@ h6{
   flex-direction: column;
   display: flex;
   left: 12%;
-  margin-top: -38.3%;
-  display: none;
+  margin-top: -45.3%;
+  /* display: none; */
 }
 #conti-boton-freno{
   position: absolute;
@@ -2824,7 +2825,11 @@ elemento.visible {
   border: 7px solid rgba(255,0,255,1);
   border-radius: 17px;
 }
-#rodilleria,
+#rodilleria{
+  position: relative;
+  top: 13%;
+  display: none;  
+}
 #uniTeñido{
   position: relative;
   top: 1%;
@@ -2893,7 +2898,15 @@ elemento.visible {
   flex-direction: row; 
   top: 220px;
 }
-#durezas,
+#durezas{
+  position:absolute;
+  left:27%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 707px;
+  margin: 0 auto;
+}
 #materiales-kaizen,
 #planos-kaizen{
   position: absolute;
@@ -3246,8 +3259,6 @@ h4{
   left: 28%;
   gap: 7px;
 }
-
-
 #subtitulo-calidad{
   font-family: 'Candara', sans-serif; 
   font-size: 51px; 
@@ -3359,7 +3370,6 @@ h4{
   left: 2%;
   display: none;
 }
-
 #conti-video-bancada,
 #conti-video-smed,
 #conti-video-entintador,
@@ -3461,7 +3471,6 @@ h4{
   width: 975px;
   z-index: -1; 
 }
-
 #densitometria{
   position: relative;  
   left: 1%;
@@ -3516,9 +3525,9 @@ h4{
   flex-direction: column;
   top: -3px;
   left: -3px;
+  /* user-select: none; */
   display: none;
 }
-
 @keyframes parpadeo {
   from {
     opacity: 1;
@@ -3528,7 +3537,6 @@ h4{
   }
 }
 /* Utilizamos CSS Grid para crear la grilla de imágenes */
-
 #vidColor{
   position: absolute;
   left: 17%;
@@ -3689,7 +3697,6 @@ input.numero {
 input.numero:focus {
   border-color: blue; /* Cambia el color del borde al azul cuando el input está enfocado */
 }
-
 #padre-circle{
   position: relative;
   display: flex;
@@ -3731,7 +3738,7 @@ input.numero:focus {
   width: 377px;
   height: 677px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 4;
   transition: transform 0.3s;
   display: none;
 }
@@ -3751,7 +3758,6 @@ input.numero:focus {
   font-size: 17px; 
   display: none;
 }
-
 @keyframes giro-y {
   0% {
     transform: rotateY(0deg);
@@ -3838,6 +3844,7 @@ input.numero:focus {
   border-radius: 3px;
   cursor: pointer;
   font-family: 'GothamRounded', sans-serif;
+  z-index: 3;
 }
 #segundaLista{
   position: relative; 
@@ -3868,31 +3875,39 @@ input.numero:focus {
   background-color: rgba(0,0,0,0.7);
   overflow: hidden;
 }
-#display{
-  position:absolute ;
-  display: flex; /* Utilizar flexbox para los elementos hijos */
-  flex-direction: row;
-  justify-content: flex-start; /* Alinear los elementos al principio */  
-  top:28.5%;
-  display:none;
+#contenedor_padre_2{
+  display: inline-block; /* Cambiar a inline-block porque flex esta dando problemas */
+  grid-template-columns: 1fr; /* Solo una columna */
+  position: absolute; /* Agregar position: absolute para usar top y left */
+  width: 32%;
+  top: 37%;
+  left: 1%;
+  display: none;
+  transition: transform 1.6s ease;  
 }
-#display_2{
-  position:absolute ;
-  display: flex; /* Utilizar flexbox para los elementos hijos */
-  flex-direction: row;
-  justify-content: flex-start; /* Alinear los elementos al principio */  
-  top:28.5%;
-  width: auto;
-  display:none;
+#contenedor_padre{
+  display: inline-block;
+  grid-template-columns: 1fr;
+  position: absolute;
+  width: 32%;
+  top: 57%;
+  left: 1%;
+  display: none;
+  transition: transform 1.6s ease;  
 }
+#contenedor_padre_3{
+  display: inline-block;
+  grid-template-columns: 1fr;
+  position: absolute;
+  top: 75.2%;
+  left: 1%;
+  display: none;
+  transition: transform 1.6s ease;  
+}
+#display,
+#display_2,
 #display_3{
-  position:absolute ;
-  display: flex; /* Utilizar flexbox para los elementos hijos */            
-  flex-direction: row;
-  justify-content: flex-start;
-  top:28.5%;
-  width: auto;
-  display:none;
+  margin-bottom: 5px; 
 }
 #aplique_3,
 #aplique_2,
@@ -3900,6 +3915,7 @@ input.numero:focus {
   position: relative;  
   display:flex;
   width: auto;
+  height: 24px;
   padding: 4px;
 }
 #positionDisplay_3,
@@ -3908,71 +3924,57 @@ input.numero:focus {
   position: relative;
   display: flex;
   justify-content: center;
-  width: 77px;
+  padding: 4px;
+  width: auto;
 }
-.span_interfaz_3 {
-  margin-right: 20px;
+#container_interfaz_2{
+  margin-bottom: 5px; 
+  height: 33px;
+  width: 90%;
 }
 #container_interfaz{
-  position: absolute;
-  display: flex;
-  top: 47%;
-  width: 400px;
+  margin-bottom: 5px; 
   height: 33px;
-  display: none;
+  width: 100%;
 }
-.linea-numerada {
+.linea-numerada{
   position: relative;
   display: flex;
   top: 20%;
   left: -4%;
-  justify-content: space-between;
-  width: 100%;
+  width: 95%;
   height: 100%;
 }
-#container_interfaz_2{
-  position: absolute;
-  display: flex;
-  top: 47%;
-  width: 368px;
-  height: 33px;  
-  display: none;
+.numero{
+  width: calc(10% - 2px); /* Divide el espacio en 10 elementos y resta el margen */
+  margin: 0 12px; /* Espacio de margen entre los elementos */
+
+
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  color:rgb(0,255,0);
 }
 #container_interfaz_3{
-  position: absolute;
-  display: flex;
-  top: 47%;
-  width: 347px;
-  height: 33px;  
-  display: none;
+  margin-bottom: 5px; 
+  height: 33px;
+  width:100%;
 }
 #butts_interfaz{
-  position: absolute;
-  display: flex;
-  top: 63%;
-  z-index: 3;
-  display: none;
+  margin-bottom: 5px; 
 }
 #butts_interfaz_2{
-  position: absolute;
-  display: flex;
-  top: 63%;
-  z-index: 3;
-  display: none;  
+  margin-bottom: 5px; 
 }
 #butts_interfaz_3{
-  position: absolute;
-  display: flex;
-  top: 63%;
-  z-index: 3;
-  display: none;  
+  margin-bottom: 5px; 
 }
 .linea-numerada_2{
-  position: relative;
+  position: relative;       
   display: flex;
   top: 20%;
   left: 0%;
-  gap: 19px;
+  gap: 18px;
   width:100%;
   height: 100%;
 }
@@ -4087,14 +4089,6 @@ input.numero:focus {
   background-color: rgb(0,255,255);
   transition: width 0.001s ease;
 }
-.numero{
-  position: relative;
-  width: calc(400px / 6);
-  text-align: center;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 10px;
-  color:rgb(0,255,0);
-}
 .numero_2{
   position: relative;
   width: calc(400px / 6);
@@ -4199,7 +4193,6 @@ input.numero:focus {
 .rule:nth-child(36) { left: 385px; }
 .rule:nth-child(37) { left: 396px; }
 .rule:nth-child(38) { left: 407px; }
-
 .rule_2:nth-child(1) { left: 0px; }
 .rule_2:nth-child(2) { left: 11px; }
 .rule_2:nth-child(3) { left: 22px; }
@@ -4238,7 +4231,6 @@ input.numero:focus {
 .rule_2:nth-child(36) { left: 385px; }
 .rule_2:nth-child(37) { left: 396px; }
 .rule_2:nth-child(38) { left: 407px; }
-
 .rule_3:nth-child(1) { left: 0px; }
 .rule_3:nth-child(2) { left: 11px; }
 .rule_3:nth-child(3) { left: 22px; }
@@ -4396,10 +4388,9 @@ input.numero:focus {
   cursor: pointer;
 }
 #menos {
-  position: absolute;
-  display: flex;
-  top: -75%;
-  left: 28.4%;
+  position: relative;
+  top: -90%;
+  left: 1%;
   font-size: 2.8em;
   font-weight: bold;
   color: black;
@@ -4455,15 +4446,15 @@ input.numero:focus {
   margin-right: 4px;
 }
 /* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
-.interfaz {
+.interfaz{
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 47%;
+  top: 67%;
   left: 23%;
   width: 177px;
   height: 77px;
-  background-color: rgb(0,0,22);
+  background-color: rgba(0,0,22,0.7);
   border-radius: 15px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
   transform: translate(-50%, -50%);
@@ -4532,6 +4523,48 @@ input.numero:focus {
   color: yellow;
   font-family: "Oswald", sans-serif;
 }
+#instrucciones_manometro{
+  position: absolute;
+  display: flex;
+  left: 17%;
+  top:1%;
+  background-color: transparent; 
+  color: white;
+  font-family: "Oswald", sans-serif; 
+  font-size: 27px;
+  z-index: 2;
+  display: none;
+}
+#vid_festo{
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  position: relative;
+  left: 1%;
+  top: 58%; 
+  border-radius: 14px;
+  width: calc(100% - 2%);
+  gap: 20%;
+  height: 50vh;
+  display: none;
+  overflow: hidden;
+
+  /* position: relative;
+  left: 1%;
+  top:58%; 
+  border-radius: 14px;
+  width: 90vh;
+  height: 50vh;
+  display: none; */
+}
+#vid_festo video{
+  border-radius: 17px;
+  width: 100%; /* Asegura que el video ocupe todo el espacio disponible */
+  height: 100%; /* Asegura que el video ocupe todo el espacio disponible */
+  object-fit: fill; 
+}
+
+
 
 .move-window{
   transform: translateX(388px);
@@ -4549,7 +4582,16 @@ input.numero:focus {
   transform: translateX(-1111px);
 }
 .move_video{
-  transform: translateX(200px);
+  transform: translateX(200px);    
+}
+.move_container{
+  transform: translateY(-137px);
+}
+.move_containerI{
+  transform: translateY(-137px);
+}
+.move_containerII{
+  transform: translateY(-277px);
 }
 
  @media screen and (max-width: 480px) {

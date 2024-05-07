@@ -446,8 +446,7 @@
         </div> 
       </div>
     </div>
-    <div class="overlay"></div>
-    
+    <div class="overlay"></div>    
     <video id="videoBackground" style="display: none;" loop muted autoplay>
       <source src="./assets/Rotatek.mp4" type="video/mp4">  
     </video>
@@ -464,10 +463,8 @@
       </div>
       
       <ul class="iridescent-element" id="linkListI">
-        <!-- <li><a href="#" onclick="ElementosMa('conteneMantaut')">Pilar de Mantenimiento Autonomo</a></li><br> -->
         <li><a href="#" onclick="ElementosMaII('conteneMantaut')">Pilar de Mantenimiento Autonomo</a></li><br>        
         <li><a href="#" onclick="Geometria()">Pilar Educación y Entrenamiento</a></li><br>
-        <!-- <li><a href="#" onclick="abrirPilarSSA()">Pilar Salud Seguridad y Ambiente</a></li><br> -->  
         <li><a href="#" onclick="iniciarAplicacion()">Pilar Salud Seguridad y Ambiente</a></li><br>        
         <li><a href="#" onclick="abrirPilarMP()">Pilar Mantenimiento Progresivo</a></li><br>
         <li><a href="#" onclick="abrirPilarME()">Pilar Mejora Enfocada</a></li><br>
@@ -500,7 +497,7 @@
     <div id="pantalla-inicial"> 
 
       <div class="desbobinador" id="desbobinadorId">
-        <button class="boton-b btn-bloque" id="boton1" onclick="cierraContenedores('desbobinadorId','boton1')">DESBOBINADOR</button><br>
+        <button class="boton-b btn-bloque" id="boton1">DESBOBINADOR</button><br>
         <div class="contene-7" id="cont-Verticales1">
           <div class="linea-vertical-33"></div>
           <button id="boton2" class="boton-c aumentarc" onclick="lubricacion('boton2','boton1')">Lubricacion<div class="linea-horizontal"></div></button>
@@ -512,7 +509,7 @@
       </div>
 
       <div class="uTeñido" id="uTeñidos">  
-        <button class="boton-b btn-bloque" id="boton7" onclick="cierraContenedores('uTeñido')">UNIDAD TEÑIDO</button><br>       
+        <button class="boton-b btn-bloque" id="boton7">UNIDAD TEÑIDO</button><br>       
         <div class="contene-7" id="cont-Verticales2">
           <div class="linea-vertical-33"></div>
           <button class="boton-c" id="boton8" onclick="UnidadTeñido('boton8','boton7')">Sistema neumático<div class="linea-horizontal"></div></button>
@@ -524,7 +521,7 @@
       </div>
 
       <div class="alimentadorId" id="alimentadorId">
-        <button class="boton-b btn-bloque" id="boton13" onclick="cierraContenedores('alimentadorId')">ALIMENTADOR</button><br> 
+        <button class="boton-b btn-bloque" id="boton13">ALIMENTADOR</button><br> 
         <div class="contene-7" id="cont-Verticales33">
           <div class="linea-vertical-33"></div>
           <button class="boton-c" id="boton14" onclick="UnidadAlimenta('boton14','boton13')">Estructura<div class="linea-horizontal"></div></button>
@@ -536,7 +533,7 @@
       </div>
 
       <div class="unidProceso" id="unidProceso">  
-        <button class="boton-b btn-bloque" id="boton19" onclick="cierraContenedores('unidProceso')">UNIDAD DE PROCESO</button><br>  
+        <button class="boton-b btn-bloque" id="boton19">UNIDAD DE PROCESO</button><br>  
         <div class="contene-7" id="cont-Verticales7">
           <div class="linea-vertical-33"></div>
           <button class="boton-c" id="boton20" onclick="UnidadProceso('boton20','boton19')">Rodillos de transporte<div class="linea-horizontal"></div></button>
@@ -548,7 +545,7 @@
       </div>
 
       <div class="rebobinador" id="rebobinador">
-        <button class="boton-b btn-bloque" id="boton25" onclick="cierraContenedores('rebobinador')">REBOBINADOR</button><br>                     
+        <button class="boton-b btn-bloque" id="boton25">REBOBINADOR</button><br>                     
         <div class="contene-7"  id="cont-Verticales8">
           <div class="linea-vertical-33"></div>
           <button class="boton-c" id="boton26" onclick="UnidadRebonina('boton26','boton25')">Estructura<div class="linea-horizontal"></div></button>
@@ -610,12 +607,10 @@
       </div> 
     </div>
     <div class="contene-2" id="container01" style="display: none;">
-      <!-- <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button> -->
-      <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="aplicarDesenfoque()"></button>
+      <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
       <button class="boton-a" id="bot-inicial" style="text-align: center;;position: relative;color: white;" onclick="VolveraInicio()">PANEL INICIO</button>
-      <button class="boton-a" id="iniciar" style="position: relative;" onclick="soloEnsayo()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
-      <!-- <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="Geometria()"></button> -->
-      <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="showButtonsTeoriaConRetraso()"></button>
+      <button class="boton-a" id="iniciar" style="position: relative;">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="irContenedorSiguiente()"></button>
      </div><br>
     <div id="pantalla-tintero">       
       
@@ -1182,6 +1177,7 @@
           <video class="video-training" id="rodilleria-vid" src="./assets/tinter vid.mp4" autoplay loop muted></video>
         </div>       
       </div>
+      
       <div id="rodillos-II">
         <div id="imgs-superiores">
           <img class="img-rodillo" src="./assets/tinter.jpg" alt="freno">
@@ -1192,17 +1188,23 @@
           <img class="img-rodillo" src="./assets/tinter 3.jpg" alt="freno">
         </div>
       </div>
-      <div id="durezas" style="display: none;" >
+
+      <div id="durezas" style="top: 1%;">
+
         <div id="img-sup">
           <img class="img-rodillo durezas" src="./assets/durometro 1.jpg" alt="freno">
           <img class="img-rodillo durezas" src="./assets/durometro 2.jpg" alt="freno">
         </div>
+
         <div class="linea-horizontal-VIII"></div>
+
         <div id="img-inf">
           <img class="img-rodillo durezas" src="./assets/durometro 3.jpg" alt="freno">
           <img class="img-rodillo durezas" src="./assets/durometro 4.jpg" alt="freno">
         </div>
+
       </div>
+
     </div>
     <div id="contPortPlaca">
       <video class="video-training" id="video-placa" src="./assets/video-plancha-v2.mp4" loop autoplay></video>
@@ -1487,7 +1489,7 @@
     <div id="pre-prensa">
       <video id="vidCicodelia" class="vidTeoria video-training" src="./assets/cicodelia.mp4" autoplay loop></video>
 
-      <div id="ventana-lateral" onclick="cerrarVentana()">  
+      <div id="ventana-lateral" onmouseup="cerrarVentana()">  
         <div id="icono1">
           <img class="iconos-laterales" src="./assets/icono arroba.png">  
         </div>
@@ -1512,7 +1514,7 @@
         <div id="icono8">
           <img class="iconos-laterales" src="./assets/icono ajustes.png">
         </div>
-        <h6 id="cerrar-ventana" onclick="cerrarVentana()">Cerrar</h6>
+        <h6 id="cerrar-ventana" onmouseup="cerrarVentana()">Cerrar</h6>
       </div>
       <div id="vidColor">
         <video class="video-training vid-prepress" id="prisma-vid" src="./assets/prisma.mp4" autoplay loop onclick="abrirPrepress('pre-prensa')"></video>
@@ -1567,7 +1569,7 @@
       <video class='vidTeoria vid-prepress' id="vid04" onclick="abrirPrepress('pre-prensa')" src="./assets/luz.mp4" autoplay loop></video>
       <video class='vidTeoria vid-prepress' id="vid05" onclick="abrirPrepress('pre-prensa')" src="./assets/luz2.mp4" autoplay loop></video>
       <video class='vidTeoria vid-prepress' id="vid06" onclick="abrirPrepress('pre-prensa')" src="./assets/luz3.mp4" autoplay loop></video>
-      <video class="video-training vid-prepress" id="prisma-vid-II" onclick="abrirPrepress('pre-prensa')" src="./assets/prisma.mp4" autoplay loop></video>
+      <video class="video-training vid-prepress" id="prisma-vid-II" src="./assets/prisma.mp4" autoplay loop></video>
     </div>    
     <div id="densitometria">
       <video id="vidCicodeliaII" class="vidTeoria video-training" src="./assets/cicodelia.mp4" loop autoplay ></video>        
@@ -1662,15 +1664,31 @@
       <div id="bailarina">
         <video id="vid-basculante" src="./assets/oscilante rotativa.mp4" loop></video> 
       </div>
-    </div>     
-    <div id="padre-1">
+    </div>   
+    
+    <p id="instrucciones_manometro">
+      1. Limpia el manómetro antes de calibrar.<br>
+      2. Verifica la precisión utilizando un dispositivo de referencia conocido.<br>
+      3. Ajusta el manómetro si es necesario para corregir cualquier desviación.<br>
+      4. Establece el rango de medición adecuado para tu aplicación.<br>
+      5. Confirma que la conexión entre el manómetro y el dispositivo de medición esté segura y sin fugas.<br>
+      6. Realiza la calibración en un ambiente con temperatura y presión estables.<br>
+      7. Ajusta la lectura del manómetro para compensar las variaciones de temperatura si es necesario.<br>
+      8. Documenta las lecturas obtenidas durante la calibración para referencia futura.<br>
+      9. Establece un programa de calibración regular para mantener la precisión a lo largo del tiempo.<br>
+    </p>
+    <div id="vid_festo">
+      <video src="./assets/festo.mp4" muted autoplay controls></video>
+      <video src="./assets/festo-II.mp4" muted autoplay controls></video>
 
+    </div>
+
+    <div id="padre-1">
       <div id="imag1" class="img1">
         <img class="img-presion" src="./assets/neumatica.jpg" alt="neuma1">
         <h6>PRESIÓN NEUMÁTICA 90 PSI</h6>          
         <img class="img-presion" src="./assets/neumatica2.jpg" alt="neuma2">
       </div>
-
       <div id="control-neumatico">
         <h1 class="casos-h1" >Estándar 1: Presión Nominal</h1>
         <p class="parrafo-casos">
@@ -1689,7 +1707,6 @@
           Se recomienda realizar un mantenimiento preventivo periódico para verificar y ajustar la presión neumática, asegurando un funcionamiento eficiente del cilindro y evitando posibles fallas y desgastes prematuros.
         </p>
       </div>  
-
     </div>
     <div id="contBotCasos" class="contOblicuosTorre" style="left: 1357px;top: 44px;display: none;">
       <button class="Bot-inicio33" id="butt-17" onclick="tamaño100()">Cerrar</button>
@@ -1840,6 +1857,10 @@
           <img id="img7" class="icono-user" onclick="resultadosEmpleado('icon-ana','updateAna','img7')" src="./assets/icono1.jpg" alt="icono">
           <label for="nombres">Ana Maria Duarte Pineda</label>
         </div>
+        <div class="cont-user" id="icon-anam">
+          <img id="img1007" class="icono-user" onclick="resultadosEmpleado('icon-ana','updateAna','img7')" src="./assets/icono1.jpg" alt="icono">
+          <label for="nombres">Ana Maria Duarte Pineda</label>
+        </div>
       </div>
 
        <!-- 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
@@ -1958,6 +1979,15 @@
       <div id="linea-1" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Optimizar parámetros</div>
       <div id="linea-2" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Análisis de patrones</div>
       <div id="linea-3" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Reflectividad</div>
+      <div class="conte-listado" id="ultimoElemento" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Aplicaciones
+        <div id="segundaLista">
+          <div id="linea-11" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Tratamiento 1</div>
+          <div id="linea-14" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)" onclick="interfazAvance()">Comparación</div>
+          <div id="linea-12" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Tratamiento 2</div>
+          <div id="linea-13" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Análisis de datos</div>
+          <div id="linea-15" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Ajuste de equipo</div>
+        </div>
+      </div>
       <div id="linea-4" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Datos densitométricos</div>
       <div id="linea-5" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Técnica densitometrica</div>
       <div id="linea-6" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Poblemas de medición </div>
@@ -1966,90 +1996,10 @@
       <div id="linea-9" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Resultados densitométricos</div>
       <div id="linea-10" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Iluminación</div>
       
-      <div class="conte-listado" id="ultimoElemento" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Aplicaciones
-        <div id="segundaLista">
-          <div id="linea-11" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Tratamiento 1</div>
-          <div id="linea-12" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Tratamiento 2</div>
-          <div id="linea-13" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Análisis de datos</div>
-          <div id="linea-14" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)" onclick="interfazAvance()">Comparación</div>
-          <div id="linea-15" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Ajuste de equipo</div>
-        </div>
-      </div>
+      
     </div>  
     <!-- 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
-    <div id="contenedor_padre" style="position:relative;display: flex;margin-top:-51%;left: 1%; height: 30%;width: 33%;">
-      <div id="display">
-        <span id="aplique" class="span_interfaz">Nivel desenfoque</span>
-        <span id="positionDisplay" class="span_interfaz">0 - µpm</span>
-      </div>
-      <div id="container_interfaz" class="container">
-        <div  class="slider-button" id="button1"></div>
-        <div id="guia_1" class="guide"></div>
-        <div id="slider" class="slider-track"></div>
-        <div id="slider_2" class="slider-track"></div>
-        <div id="slider_3" class="slider-track"></div>
-  
-        <div class="linea-numerada">
-          <span class="numero">0</span>
-          <span class="numero">45</span>
-          <span class="numero">90</span>
-          <span class="numero">135</span>
-          <span class="numero">180</span>
-          <span class="numero">225</span>
-          <span class="numero">270</span>
-          <span class="numero">315</span>
-          <span class="numero">360</span>
-        </div>
-        <div id="contenedor_1" class="rule-container">
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>
-          <div class="rule"></div>                 
-        </div>      
-      </div>
-      <div id="butts_interfaz">
-        <button id="buttonLeft"></button>
-        <button id="buttonRight"></button>
-        <button id="buttonReset">&#9632;</button>    
-        <button id="buttonClose"></button>
-      </div>
-    </div>   
-    <!-- 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
-    <div id="contenedor_padre_2" style="position:relative;display: flex;margin-top:-7%;left: 1%; height: 30%;width: 33%;">  
+    <div id="contenedor_padre_2">  
       <div id="display_2">
         <span id="aplique_2" class="span_interfaz_2">Grados rotacion</span>
         <span id="positionDisplay_2" class="span_interfaz_2">0°</span>
@@ -2139,9 +2089,83 @@
         <button id="buttonReset_2">&#9632;</button> 
         <button id="buttonClose_I"></button>
       </div>
-    </div>  
+    </div> 
     <!-- 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
-    <div id="contenedor_padre_2" style="position:relative;display: flex;margin-top:-7%;left: 1%; height: 30%;width: 33%;">      
+    <div id="contenedor_padre">
+      <div id="display">
+        <span id="aplique" class="span_interfaz">Nivel desenfoque</span>
+        <span id="positionDisplay" class="span_interfaz">0 - µpm</span>
+      </div>
+      <div id="container_interfaz" class="container">
+        <div  class="slider-button" id="button1"></div>
+        <div id="guia_1" class="guide"></div>
+        <div id="slider" class="slider-track"></div>
+        <div id="slider_2" class="slider-track"></div>
+        <div id="slider_3" class="slider-track"></div>
+  
+        <div class="linea-numerada">
+          <span class="numero">0</span>
+          <span class="numero">40</span>
+          <span class="numero">80</span>
+          <span class="numero">120</span>
+          <span class="numero">160</span>
+          <span class="numero">200</span>
+          <span class="numero">240</span>
+          <span class="numero">280</span>
+          <span class="numero">320</span>
+          <span class="numero">360</span>
+          <span class="numero">400</span>
+        </div>
+        <div id="contenedor_1" class="rule-container">
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+          <div class="rule"></div>                 
+        </div>      
+      </div>
+      <div id="butts_interfaz">
+        <button id="buttonLeft"></button>
+        <button id="buttonRight"></button>
+        <button id="buttonReset">&#9632;</button>    
+        <button id="buttonClose"></button>
+      </div>
+    </div> 
+    <!-- 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
+    <div id="contenedor_padre_3">      
       <div id="display_3">
         <span id="aplique_3" class="span_interfaz_3">Zoom</span>
         <span id="positionDisplay_3" class="span_interfaz_3">100 %</span>
@@ -2217,12 +2241,9 @@
         <button id="buttonReset_3">&#9632;</button>
         <button id="buttonClose_II"></button>
       </div>
-    </div>    
-
-
+    </div>  
     <!-- 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
-
-<div class="interfaz" id="interfaz">
+    <div class="interfaz" id="interfaz">
       <div id="zona_titulo">
         <h1 id="titulo">CONTINUAR CON PRECAUCION</h1>
       </div>      
