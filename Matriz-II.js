@@ -793,8 +793,8 @@ padreManometro.addEventListener('dblclick', () => {
   }
   if (!moved) {
     padreManometro.style.left = '1%'
-    padreManometro.style.top = '-36%'
-    padreManometro.style.width = 'calc(100% - 25%)'
+    padreManometro.style.top = '-30%'
+    padreManometro.style.width = 'calc(100% - 34%)'
     moved = true;
   }
   else {
@@ -804,6 +804,7 @@ padreManometro.addEventListener('dblclick', () => {
     padreManometro.style.width = ''
     moved = false;
   }
+  cortina.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
 })
 botonClick.addEventListener('mouseup', () => {                   
   cierraContenedores('desbobinadorId','boton1')
@@ -11477,7 +11478,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('imag1')
+  var contiBoton = document.getElementById('parrafo_video')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
