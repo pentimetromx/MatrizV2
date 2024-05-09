@@ -6,20 +6,21 @@
   font-family: "Oswald"; /* Nombre de la familia de fuentes personalizada */
   src: url('C:\Users\Juan\Downloads\matrix\matrix.ttf') format('ttf'), /* Ruta hacia el archivo .woff2 de la fuente */
 }
-body, html {
+body,html {
   zoom: 100%;
   -moz-transform: scale(1.0);
   transform: scale(1.0);
   font-family: "GothamRounded";
   background-size: cover;
   background-position: center;
+  background-image: url('./assets/eintein.png');
   background-repeat: no-repeat; 
-  height: 100%; /* Ajusta la altura del body para que cubra toda la pantalla */  
+  height: 100%; /* Ajusta la altura del body para que cubra toda la pantalla */   
   margin: 0; /* Elimina los márgenes predeterminados del body */
   padding: 0; /* Elimina los rellenos predeterminados del body */
   overflow:hidden;
   transition: zoom 0.5s;   
-}    
+}
 #videoBackground {
   position: fixed;
   top: 0;
@@ -51,6 +52,30 @@ body, html {
   z-index: -2;
   pointer-events: none;
 }
+
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; 
+  object-fit: cover; 
+  z-index: -1; /* Ajustado para estar detrás de la imagen de fondo */
+}
+#image-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+
+
 h1, h2, h3 {
   font-family: "GothamRounded";
 }
@@ -2649,7 +2674,7 @@ elemento.visible {
   align-items: center;
   height: 100vh;
   transition: transform 1.6s ease; /* Aplica la transición a la propiedad 'transform' */
-  /* display: none; */
+  z-index: 2;  
 }
 #cont-titulo-calidad,
 #cont-titulo-comercial,
@@ -2885,7 +2910,6 @@ elemento.visible {
   border-radius: 7px;
   border: 1px solid rgba(255,0,255);
 }
-
 #img-sup{
   position: absolute;
   display: flex;
@@ -3670,7 +3694,7 @@ h4{
   justify-content: center;
   align-items: flex-end;
   gap: 7px; 
-  top: 33%;
+  top: 43%;
   /* left: 17%; */
   width: 287px;
   height: 87px;
