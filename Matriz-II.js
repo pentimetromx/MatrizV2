@@ -310,7 +310,7 @@ function manejarLogica() {
         }, 200);
         setTimeout(() => {
           abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
-        }, 1100);
+        }, 600);
         // Limpia el contenido de todos los inputs
         inputs.forEach(input => {
         input.value = ''; // Establece el valor de cada input como una cadena vacía
@@ -321,8 +321,10 @@ function manejarLogica() {
     inputs.forEach(input => {
       input.addEventListener('input', manejarEntrada);
     });
-
   }
+  let imgBackgound = document.getElementById('image-background')
+  imgBackgound.style.display = 'flex'
+
 }
 function VolveraInicio(){
   location.reload()
@@ -377,8 +379,6 @@ function VolveraInicio(){
     console.log(idsArray);
   }
 } */
-
-
 /* function setInitialPosition(){
   var contiBoton = document.querySelector('.conti-boton')
   // Aplica los estilos al elemento
@@ -11386,7 +11386,6 @@ function mostrarInterfaz() {
   posicionPantalla.style.zIndex = '3'
   display.style.zIndex = '3'
 }
-
 function interfazAvance() {
   let verInterfaz = document.getElementById('container_interfaz')
   let verInterfazII = document.getElementById('container_interfaz_2')
@@ -11483,7 +11482,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('parrafo_video')
+  var contiBoton = document.getElementById('arow-direction_II')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
@@ -11592,23 +11591,23 @@ function abrirInterfaz() {
       var contenedor = document.getElementById('video-background');  
       contenedor.style.filter = 'none';
       reduccionGradualVideo()
-    }, 1000);
+    }, 500);
     setTimeout(() => {
       titulo.classList.add('move-title')    
-    }, 2222);
+    }, 1722);
     setTimeout(() => {
       alternarColorVerde() 
-    }, 3500);  
+    }, 300);  
     setTimeout(() => {
       alternarColorVerdeInverso() 
       applyImageEffects5()            
-    }, 3800);  
+    }, 3300);  
     setTimeout(() => {
       alternarColorVerde() 
-    }, 4100);
+    }, 3600);
     setTimeout(() => {
       alternarColorVerdeInverso() 
-    }, 4400);      
+    }, 3900);      
   }
 }
 function trasladarOblicuos(){
@@ -11766,7 +11765,7 @@ function alternarAyudas() {
   },277);
 }
 // Variable para almacenar el temporizador
-let ocultarTimer = null;
+let ocultarTimer = null; 
 function mostrarElementos() {
   const contenedorElementos = document.getElementById('contenedorElementos');
   contenedorElementos.style.display = 'block';
@@ -11840,8 +11839,9 @@ function ocultarElementos(eltoID) {
     break;
   }
 }
+
 function cambiarColor(elemento, encendido) {
-  const segundoListado = document.getElementById('segundaLista');
+  const segundoListado = document.getElementById('segundaLista')
   switch(elemento.className){
     case 'conte-listado':
       if(screenWidth < 500){
@@ -11859,30 +11859,28 @@ function cambiarColor(elemento, encendido) {
         if(encendido && elemento.id === 'ultimoElemento'){
           segundoListado.style.display = 'block'
           var lineas = document.getElementsByClassName('listado');
-
           for(var i = 0; i < lineas.length; i ++){
             lineas[i].style.fontWeight = 'normal';
             lineas[i].style.fontSize = '14px'
           }
         }
-      }else {
+       }else {
         if (encendido) {
           elemento.style.backgroundColor = 'rgb(0,255,0)'
-          elemento.style.color = 'rgb(0,0,77)';
+          elemento.style.color = 'rgb(0,0,77)'
           elemento.style.fontSize = '19px'
-          elemento.style.fontWeight = 'bold';       
+          elemento.style.fontWeight = 'bold'
         } else {
-          elemento.style.backgroundColor = '';
-          elemento.style.color = 'rgb(255, 255, 177)';
+          elemento.style.backgroundColor = ''
+          elemento.style.color = 'rgb(255, 255, 177)'
           elemento.style.fontSize = ''
           elemento.style.fontWeight = 'normal'
         }
         if(encendido && elemento.id === 'ultimoElemento'){
           segundoListado.style.display = 'block'
-          var lineas = document.getElementsByClassName('listado');
-  
+          var lineas = document.getElementsByClassName('listado')  
           for(var i = 0; i < lineas.length; i ++){
-            lineas[i].style.fontWeight = 'normal';
+            lineas[i].style.fontWeight = 'normal'
             lineas[i].style.fontSize = '16px'
           }
         }

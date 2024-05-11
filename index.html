@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Interfaz de entrenamiento</title>
     <link rel="stylesheet" href="./Matriz-II.css">
   </head> 
@@ -53,6 +53,11 @@
           <button class="Bot-inicio3-fondo" id="butt-8"></button>  
         </div><br> 
       </div>
+
+
+      <span class="sub-arrow">
+        <i class="fas fa-caret-down"></i> 
+      </span>
 
       <div id="padre-interfaz">
         <div id="hijo-interaz-1" class="columna"></div>
@@ -1708,6 +1713,7 @@
     <div id="padre-1">
       <div id="imag1" class="img1">
         <img class="img-presion" src="./assets/neumatica.jpg" alt="neuma1">
+        <video src="./assets/festo_manometro.mp4" style="height: 122px;border-radius: 12px;" muted loop autoplay controls></video>
         <h6>PRESIÓN NEUMÁTICA 90 PSI</h6>          
         <img class="img-presion" src="./assets/neumatica2.jpg" alt="neuma2">
       </div>
@@ -1999,6 +2005,7 @@
       <div id="linea-2" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Análisis de patrones</div>
       <div id="linea-3" class="conte-listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Reflectividad</div>
       <div class="conte-listado" id="ultimoElemento" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Aplicaciones
+        <span id="arow-direction"></span>
         <div id="segundaLista">
           <div id="linea-11" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)">Tratamiento 1</div>
           <div id="linea-14" class="listado" onmouseover="cambiarColor(this, true)" onmouseout="cambiarColor(this, false)" onclick="interfazAvance()">Comparación</div>

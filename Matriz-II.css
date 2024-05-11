@@ -71,11 +71,9 @@ body,html {
   background-size: cover;
   background-position: center;
   opacity: 0.1;
+  display: none;
   z-index: 0;
 }
-
-
-
 h1, h2, h3 {
   font-family: "GothamRounded";
 }
@@ -131,6 +129,8 @@ h1, h2, h3 {
 .boton-g:hover,
 .boton-h:hover{
 transform: scale(1.1);
+background: blue;
+color: white;
 }
 .boton-d:hover {
   transform: scale(1.1);
@@ -2037,6 +2037,12 @@ header {
   font-size: 2em; /* Aumentar el tamaño al doble */
   color: white;
 }
+#arow-direction::after{
+  content: "\25B6"; /* Código HTML para el triángulo de reproducción hacia la derecha */
+  font-size: 1em; /* Aumentar el tamaño al doble */
+  color: rgb(0,255,0);
+  margin-left: 83px;
+}
 #bot-atras12::before,
 #bot-atras11::before,
 #bot-atras13::before,
@@ -3873,7 +3879,7 @@ input.numero:focus {
 #segundaLista{
   position: relative; 
   margin-left:100%; 
-  margin-top: -20px;
+  margin-top: -88px;
   width: 95%; 
   padding: 10px; 
   border-radius: 3px; 
