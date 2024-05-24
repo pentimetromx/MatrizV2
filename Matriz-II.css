@@ -4614,13 +4614,6 @@ input.numero:focus {
 .move_containerII{
   transform: translateY(-277px);
 }
-#borrar{
-  top: 40%;
-  height: 177px;
-  width: 100vh;
-  background-color: #000;
-}
-
  @media screen and (max-width: 480px) {
   #cont-titulo-comercial,  
   #cont-titulo-admin,
