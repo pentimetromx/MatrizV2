@@ -3701,11 +3701,11 @@ h4{
   align-items: flex-end;
   gap: 7px; 
   top: 43%;
-  /* left: 17%; */
   width: 287px;
   height: 87px;
   border-radius: 10px;
   margin: 0 auto;  
+  z-index: 2;
   background-color: transparent;
 }
 input.numero {
