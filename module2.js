@@ -1,3 +1,74 @@
+function resetearBarras(){
+  let ensayos = document.querySelectorAll('.first_table');
+  ensayos.forEach(ensayo => {
+    ensayo.style.top = '';
+    ensayo.style.height = '';
+    ensayo.style.width = '';
+  });
+  imgWallStreetI.style.width = ''
+  imgWallStreet.style.height = ''
+  parentElements.style.display = 'none'
+
+  isAnimatingVIII = false
+  isAnimatingVII = false
+  isAnimating = false
+}
+
+// COMBINACION TECLAS EJECUTA FUNCION
+  document.addEventListener('keydown', function(event) {             
+    if (event.ctrlKey && event.shiftKey) {
+      switch (event.key) {
+        case 'Z':
+            /* barraInteligente() */
+          abrirSeccionOperativa('cont-titulo-operacion')       
+          setTimeout(function() {
+            abrirSeccionContinua('pantalla-inicial')        
+          },577)
+          setTimeout(function() {
+            ElementosMaII('conteneMantaut')
+          },977) 
+          /*setTimeout(function() {
+            deslizaContenedor('troubleshooting','troubleshoot')        
+          },1177) 
+          setTimeout(function() {
+            listaEntrenamientosII('archivo')       
+          },1377) 
+          setTimeout(function() {
+            imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')                                 
+          },1677) 
+          setTimeout(function() {
+            //changeButtonStyles('pantalla-tintero')       
+          },1977) */        
+        break;
+        case 'H': 
+        changeColorRedAndBack()      
+        break;
+        case 'X':
+          Geometria()
+        break;                  
+      }
+    }
+  });
+  // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
+  function Geometria() {
+    console.clear();
+    var contiBoton = document.getElementById('first_half')
+    var rect = contiBoton.getBoundingClientRect();
+    var topPosition = rect.top
+    var leftPosition = rect.left
+    var widthValue = rect.width
+    var heightValue = rect.height 
+    var positionType = window.getComputedStyle(buttRepuest).position
+    var displayType = window.getComputedStyle(buttRepuest).display    
+    console.log(contiBoton.id);
+    console.log('Top:', topPosition);
+    console.log('Left:', leftPosition);
+    console.log('Height:', heightValue);
+    console.log('Width:', widthValue);
+    console.log('Position:', positionType); 
+    console.log('Display:', displayType);
+  }
+ 
 function updateAna() {
     // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
     setTimeout(function() {
@@ -3404,14 +3475,6 @@ function updateAna() {
      document.getElementById('humedadButton').classList.remove('parpadea');
    }, 277);  
  }
- /* function moverMA() {
-   setInitialPosition()
-   var anchoPantalla = window.innerWidth;
-   if (anchoPantalla < 700) {
-     var container = document.getElementById('conti-boton')
-     container.classList.toggle('move-down-II')
-   }
- } */
  function aumentarIconos() {
    const iconosLateral = document.getElementsByClassName('iconos-laterales');
    let currentIndex = 0;
@@ -4070,62 +4133,6 @@ function updateAna() {
    }
  }
  /* 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
- // COMBINACION TECLAS EJECUTA FUNCION
- document.addEventListener('keydown', function(event) {             
-   if (event.ctrlKey && event.shiftKey) {
-     switch (event.key) {
-       case 'Z':
-         abrirSeccionOperativa('cont-titulo-operacion')        
-         setTimeout(function() {
-           abrirSeccionContinua('pantalla-inicial')        
-         },577)
-         setTimeout(function() {
-           ElementosMaII('conteneMantaut')
-         },977) 
-         setTimeout(function() {
-           deslizaContenedor('troubleshooting','troubleshoot')        
-         },1177) 
-         setTimeout(function() {
-           listaEntrenamientosII('archivo')       
-         },1377) 
-         setTimeout(function() {
-           imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')                                 
-         },1677) 
-         setTimeout(function() {
-           /* changeButtonStyles('pantalla-tintero') */        
-         },1977)         
-       break;
-       case 'H': 
-       changeColorRedAndBack()      
-       break;
-       case 'X':
-         /* Geometria() */
- 
-         alert('')
-         quitImage()
-       break;                  
-     }
-   }
- });
- // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
- function Geometria() {
-   console.clear();
-   var contiBoton = document.getElementById('arow-direction_II')
-   var rect = contiBoton.getBoundingClientRect();
-   var topPosition = rect.top
-   var leftPosition = rect.left
-   var widthValue = rect.width
-   var heightValue = rect.height
-   var positionType = window.getComputedStyle(buttRepuest).position
-   var displayType = window.getComputedStyle(buttRepuest).display    
-   console.log(contiBoton.id);
-   console.log('Top:', topPosition);
-   console.log('Left:', leftPosition);
-   console.log('Height:', heightValue);
-   console.log('Width:', widthValue);
-   console.log('Position:', positionType); 
-   console.log('Display:', displayType);
- }
  let contFriends = []
  function animateVideoWidth(eltoHtml) {
    const videoElement = document.getElementById(eltoHtml); // Obtén el elemento de video
@@ -4466,8 +4473,7 @@ function updateAna() {
        }
      break;
    }
- }
- 
+ } 
  function cambiarColor(elemento, encendido) {
    const segundoListado = document.getElementById('segundaLista')
    switch(elemento.className){
@@ -4529,3 +4535,600 @@ function updateAna() {
      break;
    }
  }
+// SECCION GRAFICOS AUTONOMOS 
+let barraI = document.getElementById('iniciador_1')
+let barraII = document.getElementById('iniciador_2')
+let barraIII = document.getElementById('iniciador_3')
+let barraIV = document.getElementById('iniciador_4')
+let barraV = document.getElementById('iniciador_5')
+let barraVI = document.getElementById('iniciador_6')
+let barraVII = document.getElementById('iniciador_7')
+let barraVIII = document.getElementById('iniciador_8')
+let barraIX = document.getElementById('iniciador_9')
+let barraX = document.getElementById('iniciador_10')
+let barraXI = document.getElementById('animatedDiv')
+let pantallaI = document.getElementById('pantalla');
+let pantallaII = document.getElementById('pantalla_II')
+let pantallaIII = document.getElementById('pantalla_III')
+let pantallaIV = document.getElementById('pantalla_IV')
+let pantallaV = document.getElementById('pantalla_V')
+let pantallaVI = document.getElementById('pantalla_VI')
+let imgWallStreet = document.getElementById('cortina')
+let imgWallStreetI = document.getElementById('cortina_II')  
+let parentElements = document.getElementById('nicho_spans');
+let wallSt = document.getElementById('wall_street')
+let wallStI = document.getElementById('wall_street_II')
+
+let alturaBarras = 177 
+let topBarra = 320
+let topBarraI = 300
+let topBarraII = 270
+let topBarraIII = 330
+let topBarraIV = 290 
+let heightBarra = 0
+let contador = 0
+let contadorII = 0
+let contadorIII = 0
+let stopFunction = false
+const INTERVALOS = {
+    intervaloI: null,
+    intervaloII: null,
+    intervaloIII: null,
+    intervaloIV: null,
+    intervaloV: null,
+    intervaloXI: null,
+    intervaloXII: null,
+    intervaloXIII: null,
+    intervaloXIV: null,
+    intervaloXV: null,
+    intervaloXVI: null,
+    intervaloXVII: null,
+    intervaloXVIII: null,
+    intervaloXIX: null,
+    intervaloXX: null,
+    intervaloXXI: null,
+    intervaloXXII: null,
+    intervaloXXIII: null,
+    intervaloXXIV: null,
+    intervaloXXV: null,
+    intervaloXXVI: null,
+    intervaloXXVII: null,
+    intervaloXXVIII: null,
+    intervaloXXIX: null,
+    intervaloXXX: null,
+    intervaloXXXI: null,
+    intervaloXXXII: null,
+    intervaloXXXIII: null,
+    intervaloXXXIV: null,
+    intervaloXXXV: null,
+};
+
+function barraInteligente() { 
+  var elementosExcluidos = ['first_half','second_half','cortina','wall_street_II','nicho_spans','buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }
+
+  clearAllIntervals()
+  resetearBarras()
+
+    incrementoHeightXI()
+    incrementoHeightXII()  
+    incrementoHeightXIII()  
+    incrementoHeightXIV()  
+    incrementoHeightXV()    
+
+
+
+
+
+
+ /*  setTimeout(() => {
+    if(stopFunction){
+      clearAllIntervals()
+      resetStyles();
+      return
+    }
+    let parentElement = document.getElementById('wall_street_II');
+    parentElement.style.display = 'flex'; 
+    parentElement.style.visibility = 'visible';
+    let childElements = parentElement.children;
+    for (let i = 0; i < childElements.length; i++) {
+      childElements[i].style.display = 'flex';
+      childElements[i].style.visibility = 'visible';
+    }
+    incrementoHeightVI();
+    incrementoHeightVII();
+    incrementoHeightVIII();
+    incrementoHeightIX();
+    incrementoHeightX(); 
+  }, 4077);
+  setTimeout(() => {
+    if(stopFunction){
+      clearAllIntervals()
+      resetStyles();
+      return
+    }
+    incrementarBlur()
+  }, 7077);
+  setTimeout(() => {
+    if(stopFunction){
+      clearAllIntervals()
+      resetStyles();
+      return
+    }
+    aumentarOverSize()
+  }, 8500); */
+}
+function resetStyles() {
+  let elements = [
+    document.getElementById('animatedDiv'),
+    document.getElementById('first_half'),
+    document.getElementById('cortina'),
+    document.getElementById('second_half'),
+    document.getElementById('nicho_spans'),
+    document.getElementById('wall_street_II'),
+    document.getElementById('over_size'),
+    document.getElementById('over_side'),
+  ];
+  
+  elements.forEach(el => {
+    if (el) {
+      el.style.height = '';
+      el.style.width = '';
+      el.style.display = '';
+      el.style.visibility = '';
+      el.style.filter = ''; 
+      el.style.top = ''; 
+      el.style.display = 'none'    
+    }
+  });
+    imgWallStreetI.style.display = ''
+    imgWallStreet.style.display = ''
+  clearAllIntervals()
+}
+function stopLogic() {
+  clearAllIntervals()
+  stopFunction = true
+}
+function clearAllIntervals() {
+    for (let key in INTERVALOS) {
+      if (INTERVALOS[key]) {
+        clearInterval(INTERVALOS[key]);
+        INTERVALOS[key] = null;
+      }
+    }
+}
+function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {   // BARRAS SEGUNDA MITAD
+  INTERVALOS[intervaloVariable] = setInterval(() => {
+    let currentValue = parseInt(pantalla.textContent);
+    let newValue = currentValue + 5773;
+    pantalla.textContent = newValue;
+    let alturaAct = parseInt(barra.style.height) || 0;
+    barra.style.height = (alturaAct + 5) + 'px';
+    let alturaAcumuladaBarra = alturaAct + 1;
+    pantalla.style.display = 'flex';
+    let alturaMaxima = 90;
+    let iniciador = 180
+    contador++
+
+    if (parseInt (alturaAcumuladaBarra) >= alturaMaxima) {
+      clearInterval(INTERVALOS[intervaloVariable]);
+      if(barra.id === 'iniciador_1'){
+        reduccionHeight(barraI, pantallaI,'intervaloI', 30);
+      }
+      if(barra.id === 'iniciador_2'){
+        reduccionHeight(barraII, pantallaII,'intervaloII',30);
+      }
+      if(barra.id === 'iniciador_3'){
+        reduccionHeight(barraIII, pantallaIII,'intervaloIII',30); 
+      }
+      if(barra.id === 'iniciador_4'){
+        reduccionHeight(barraIV, pantallaIV,'intervaloIV',30); 
+      }
+      if(barra.id === 'iniciador_5'){
+        reduccionHeight(barraV, pantallaV,'intervaloV',30); 
+      }
+    } 
+    if (contador >= iniciador) {
+      incrementoHeightVI();
+    }
+  }, intervaloTiempo);
+}
+function reduccionHeight(elementoBarra, elementoPantalla, intervaloVariable, intervaloTiempo) {
+  INTERVALOS[intervaloVariable] = setInterval(() => {
+    let currentValue = parseInt(elementoPantalla.textContent);
+    let newValue = currentValue + 7328;
+    elementoPantalla.textContent = newValue;
+    let altura = parseInt(elementoBarra.style.height) || 0;
+    elementoBarra.style.height = (altura - 4) + 'px';
+    let alturaAcumuladaBarra = altura - 4;
+    elementoPantalla.style.display = 'flex';
+    if (parseInt(alturaAcumuladaBarra) <= 0) {
+      clearInterval(INTERVALOS[intervaloVariable]);
+        if(elementoBarra.id === 'iniciador_1'){
+          incrementoHeight(barraI, pantallaI,'intervaloI', 25);
+        }
+        if(elementoBarra.id === 'iniciador_2'){
+          incrementoHeight(barraII, pantallaII,'intervaloII', 25);
+        }
+        if(elementoBarra.id === 'iniciador_3'){
+          incrementoHeight(barraIII, pantallaIII,'intervaloIII', 25);
+        }
+        if(elementoBarra.id === 'iniciador_4'){
+          incrementoHeight(barraIV, pantallaIV,'intervaloIV', 25);
+        }
+        if(elementoBarra.id === 'iniciador_5'){
+          incrementoHeight(barraV, pantallaV,'intervaloV', 25);
+        }
+    }
+  }, intervaloTiempo);
+}
+
+let isAnimating = false; 
+let isAnimatingVII = false;
+let isAnimatingVIII = false;
+
+function incrementoHeightVI() {
+  if (isAnimating) return;
+  isAnimating = true;
+  contadorII = 0;
+  let r = 0;
+  let g = 255;
+  let b = 0;
+
+  INTERVALOS.intervaloXVI = setInterval(() => {
+      let alturaAct = parseInt(barraVI.style.width) || 0;
+      barraVI.style.width = (alturaAct + 1) + 'px';
+      let alturaAcumuladaBarraI = alturaAct + 1;
+
+      if (alturaAcumuladaBarraI <= alturaBarras) {
+          let progreso = alturaAcumuladaBarraI / alturaBarras;
+          b = alturaAcumuladaBarraI + 1.4;
+      }
+      barraVI.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+      if (alturaAcumuladaBarraI >= alturaBarras) {
+        isAnimating = false
+          clearInterval(INTERVALOS.intervaloXVI);
+          reduccionHeightVI();      }
+  }, 1);
+}
+function reduccionHeightVI() {
+  if (isAnimating) return;
+  isAnimating = true;
+  INTERVALOS.intervaloXXI = setInterval(() => {
+      let altura = parseInt(barraVI.style.width) || 0;
+      barraVI.style.width = (altura - 1) + 'px';
+      let alturaAcumuladaBarraIII = altura - 1;
+      if (alturaAcumuladaBarraIII <= 0) {
+          clearInterval(INTERVALOS.intervaloXXI);
+          isAnimating = false; // Marca que la animación ha terminado
+          incrementoHeightVI();
+      }
+      if (alturaAcumuladaBarraIII <= 10 && !isAnimatingVII) {             
+          incrementoHeightVII();
+      }    
+  }, 5);
+}
+function incrementoHeightVII() {
+  if (isAnimatingVII) return;
+  isAnimatingVII = true;
+  contadorII = 0;
+  let r = 0;
+  let g = 255;
+  let b = 255;
+  barraVII.style.display = 'flex';
+  INTERVALOS.intervaloXVII = setInterval(() => {
+      let alturaAct = parseInt(barraVII.style.width) || 0;
+      barraVII.style.width = (alturaAct + 1) + 'px';
+      let alturaAcumuladaBarraI = alturaAct + 1;
+      if (alturaAcumuladaBarraI <= alturaBarras) {
+          let progreso = alturaAcumuladaBarraI / alturaBarras;
+          g = alturaAcumuladaBarraI + 1.4;
+      }
+      // Aplica el nuevo color a la barra
+      barraVI.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+      barraVII.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+      if (alturaAcumuladaBarraI >= alturaBarras) {
+          clearInterval(INTERVALOS.intervaloXVII);
+          isAnimatingVII = false;
+          reduccionHeightVII();
+      }
+  }, 6);
+}
+function reduccionHeightVII() {
+  if (isAnimatingVII) return;
+  isAnimatingVII = true;
+  INTERVALOS.intervaloXXII = setInterval(() => {
+    let altura = parseInt(barraVII.style.width) || 0;
+    barraVII.style.width = (altura - 1) + 'px';
+    let alturaAcumuladaBarraIII = altura - 1;
+    if (parseInt(alturaAcumuladaBarraIII) <= 0) {             
+      clearInterval(INTERVALOS.intervaloXXII);
+      isAnimatingVII = false
+      incrementoHeightVII();
+    }
+    if (alturaAcumuladaBarraIII <= 10 && !isAnimatingVII) {             
+      incrementoHeightVIII();
+  }    
+  }, 5); 
+}
+
+
+
+
+function incrementoHeightVIII() {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  let r = 255; 
+  let g = 0; 
+  let b = 0; 
+  INTERVALOS.intervaloXVIII = setInterval(() => {
+    let alturaAct = parseInt(barraVIII.style.width) || 0;
+    barraVIII.style.width = (alturaAct + 1) + 'px';
+    let alturaAcumuladaBarraI = alturaAct + 1;
+    if (alturaAcumuladaBarraI <= alturaBarras) {
+      let progreso = alturaAcumuladaBarraI / alturaBarras;
+      /* b = alturaAcumuladaBarraI + 1.4 */ 
+      g = alturaAcumuladaBarraI + 1.4
+    }
+    // Aplica el nuevo color a la barra
+    barraVIII.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    barraVII.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+    if (parseInt(alturaAcumuladaBarraI) >=alturaBarras) {
+      clearInterval(INTERVALOS.intervaloXVIII);
+      reduccionHeightVIII();
+    }
+  }, 7);
+}
+function incrementoHeightIX() {
+  let r = 100; 
+  let g = 50; 
+  let b = 255; 
+  INTERVALOS.intervaloXIX = setInterval(() => {
+    let alturaAct = parseInt(barraIX.style.width) || 0;
+    barraIX.style.width = (alturaAct + 1) + 'px';
+    let alturaAcumuladaBarraI = alturaAct + 1;
+    if (alturaAcumuladaBarraI <= alturaBarras) {
+      let progreso = alturaAcumuladaBarraI / alturaBarras;
+      b = alturaAcumuladaBarraI + 1.4 
+      /* g = alturaAcumuladaBarraI + 2 */
+    }
+    // Aplica el nuevo color a la barra
+    barraVIII.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    barraIX.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    if (parseInt(alturaAcumuladaBarraI) >=alturaBarras) {
+      clearInterval(INTERVALOS.intervaloXIX);
+      reduccionHeightIX();
+    }
+  }, 8);
+}
+function incrementoHeightX() {
+  let r = 170;
+  let g = 50; 
+  let b = 255; 
+  INTERVALOS.intervaloXX = setInterval(() => {
+    let alturaAct = parseInt(barraX.style.width) || 0;
+    barraX.style.width = (alturaAct + 1) + 'px';
+    let alturaAcumuladaBarraI = alturaAct + 1;
+    if (alturaAcumuladaBarraI <= alturaBarras) {
+      let progreso = alturaAcumuladaBarraI / alturaBarras;
+      b = alturaAcumuladaBarraI + 1.4 
+      g = alturaAcumuladaBarraI + 1.4
+    }
+    // Aplica el nuevo color a la barra
+    barraX.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    barraIX.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+    if (parseInt(alturaAcumuladaBarraI) >=alturaBarras) {
+      clearInterval(INTERVALOS.intervaloXX);
+      reduccionHeightX();
+    }
+  }, 9);
+}
+function incrementoWidth() {   // PRIMERA CORTINA Y LLAMADO A SEGUNDA MITAD
+  INTERVALOS.intervaloXXXII = setInterval(() => {
+    let currentWidth = parseInt(window.getComputedStyle(imgWallStreetI).width);
+    imgWallStreetI.style.width = (currentWidth + 5) + 'px'
+    if(parseInt(currentWidth) >= 395.2){
+      clearInterval(INTERVALOS.intervaloXXXII);      
+      
+      let parentElement = document.getElementById('second_half');
+      parentElement.style.display = 'block'; 
+      parentElement.style.visibility = 'visible';
+      let childElements = parentElement.children;
+      for (let i = 0; i < childElements.length; i++) {
+        childElements[i].style.display = 'block';
+        childElements[i].style.visibility = 'visible';
+      }
+      incrementoHeight(barraI, pantallaI,'intervaloI',1);
+      incrementoHeight(barraII, pantallaII,'intervaloII',15);
+      incrementoHeight(barraIII, pantallaIII,'intervaloIII',25);
+      incrementoHeight(barraIV, pantallaIV,'intervaloIV',35);
+      incrementoWidthI();
+      incrementoHeight(barraV, pantallaV,'intervaloV',45)  
+      parentElements.style.display = 'flex'; 
+      parentElements.style.visibility = 'visible';
+      let childElement = parentElements.children;
+      for (let i = 0; i < childElement.length; i++) {
+        childElement[i].style.display = 'flex';
+        childElement[i].style.visibility = 'visible';
+      }
+    }
+  }, 1);
+}
+function incrementoWidthI() {
+  INTERVALOS.intervaloXXXIII = setInterval(() => {
+    let currentWidth = parseInt(window.getComputedStyle(imgWallStreet).height);
+    imgWallStreet.style.height = (currentWidth + 1) + 'px'
+    if(parseInt(currentWidth) >= 103){
+      clearInterval(INTERVALOS.intervaloXXXIII);
+    }
+  }, 9); 
+}
+function incrementoHeightXI() {
+  imgWallStreetI.style.display = 'flex'
+  INTERVALOS.intervaloXXVI = setInterval(() => {
+    const animatedDiv = document.getElementById('animatedDiv');
+    let currentTop = parseInt(window.getComputedStyle(animatedDiv).top);
+    let currentHeight = parseInt(window.getComputedStyle(animatedDiv).height);    
+    animatedDiv.style.top = (currentTop - 1) + 'px';
+    animatedDiv.style.height = (currentHeight + 2) + 'px';    
+    if(parseInt(currentTop) <= 320){
+      clearInterval(INTERVALOS.intervaloXXVI);
+      incrementoWidth()
+    }
+  }, 7);
+}
+function incrementoHeightXII() {
+  INTERVALOS.intervaloXXVIII = setInterval(() => {
+    const animatedDiv = document.getElementById('animatedDivI');
+    let currentTop = parseInt(window.getComputedStyle(animatedDiv).top);
+    let currentHeight = parseInt(window.getComputedStyle(animatedDiv).height);    
+    // Decrementar la posición top y aumentar height
+    animatedDiv.style.top = (currentTop - 1) + 'px';
+    animatedDiv.style.height = (currentHeight + 2) + 'px';
+    if(currentTop <= topBarraI){
+      clearInterval(INTERVALOS.intervaloXXVIII);
+    }
+  }, 7);
+}
+function incrementoHeightXIII() {
+  INTERVALOS.intervaloXXIX = setInterval(() => {
+    const animatedDiv = document.getElementById('animatedDivII');
+    let currentTop = parseInt(window.getComputedStyle(animatedDiv).top);
+    let currentHeight = parseInt(window.getComputedStyle(animatedDiv).height);    
+    // Decrementar la posición top y aumentar height
+    animatedDiv.style.top = (currentTop - 1) + 'px';
+    animatedDiv.style.height = (currentHeight + 2) + 'px';
+    if(currentTop <= topBarraII){
+      clearInterval(INTERVALOS.intervaloXXIX);
+    }
+  }, 7);
+}
+function incrementoHeightXIV() {
+  INTERVALOS.intervaloXXX = setInterval(() => {
+    const animatedDiv = document.getElementById('animatedDivIII');
+    let currentTop = parseInt(window.getComputedStyle(animatedDiv).top);
+    let currentHeight = parseInt(window.getComputedStyle(animatedDiv).height);    
+    // Decrementar la posición top y aumentar height
+    animatedDiv.style.top = (currentTop - 1) + 'px';
+    animatedDiv.style.height = (currentHeight + 2) + 'px';
+    if(currentTop <= topBarraIII){
+      clearInterval(INTERVALOS.intervaloXXX);
+    }
+  }, 7);
+}
+function incrementoHeightXV() {
+  INTERVALOS.intervaloXXXI = setInterval(() => {
+    const animatedDiv = document.getElementById('animatedDivIV');
+    let currentTop = parseInt(window.getComputedStyle(animatedDiv).top);
+    let currentHeight = parseInt(window.getComputedStyle(animatedDiv).height);    
+    // Decrementar la posición top y aumentar height
+    animatedDiv.style.top = (currentTop - 1) + 'px';
+    animatedDiv.style.height = (currentHeight + 2) + 'px';
+    if(currentTop <= topBarraIV){
+      clearInterval(INTERVALOS.intervaloXXXI);
+    }
+  }, 7);
+}
+
+function reduccionHeightVIII() {  
+  INTERVALOS.intervaloXXIII = setInterval(() => {
+    let altura = parseInt(barraVIII.style.width) || 0;
+    barraVIII.style.width = (altura - 1) + 'px';
+    let alturaAcumuladaBarraIII = altura - 1;
+    if (parseInt(alturaAcumuladaBarraIII) <= 0) {             
+      clearInterval(INTERVALOS.intervaloXXIII);
+      incrementoHeightVIII();
+    }    
+  }, 5); 
+}
+function reduccionHeightIX() {  
+  INTERVALOS.intervaloXXIV = setInterval(() => {
+    let altura = parseInt(barraIX.style.width) || 0;
+    barraIX.style.width = (altura - 1) + 'px';
+    let alturaAcumuladaBarraIII = altura - 1;
+    if (parseInt(alturaAcumuladaBarraIII) <= 0) {             
+      clearInterval(INTERVALOS.intervaloXXIV);
+      incrementoHeightIX();
+    }    
+  }, 5); 
+}
+function eliminarBlur() {
+  var elementsWithBlur = [
+    document.getElementById('first_half'),
+    document.getElementById('cortina'),
+    document.getElementById('second_half'),
+    document.getElementById('nicho_spans'),
+    document.getElementById('wall_street_II')
+  ];
+  // Iteramos sobre los elementos y eliminamos el efecto blur
+  elementsWithBlur.forEach(function(element) {
+    if (element) {
+      element.style.filter = 'none';
+    }
+  });
+}
+function reduccionHeightX() {  
+  INTERVALOS.intervaloXXV = setInterval(() => {
+    let altura = parseInt(barraX.style.width) || 0;
+    barraX.style.width = (altura - 1) + 'px';
+    let alturaAcumuladaBarraIII = altura - 1;
+    if (parseInt(alturaAcumuladaBarraIII) <= 0) {             
+      clearInterval(INTERVALOS.intervaloXXV);
+    }    
+  }, 5); 
+}
+function aumentarOverSize() {
+  let overSize = document.getElementById('over_size');
+  let overSide = document.getElementById('over_side');
+  overSize.style.display = 'flex'
+  overSide.style.display = 'flex'
+  let actualHeight = parseInt(window.getComputedStyle(overSize).height);
+  INTERVALOS.intervaloXXXIV = setInterval(() => {
+    actualHeight += 10;
+    overSize.style.height = actualHeight + 'px';
+    overSide.style.width = actualHeight + 'px'
+    console.log(actualHeight)
+    console.log(window.innerHeight)
+    if (actualHeight >= window.innerHeight) {
+    clearInterval(INTERVALOS.intervaloXXXIV);
+    resetStyles();
+    console.log('Se han restablecido los estilos.');
+    }
+  },5);
+}
+function incrementarBlur() {
+  let overSize = document.getElementById('wall_street_II');
+  let overSizeI = document.getElementById('second_half');
+  let overSizeII = document.getElementById('first_half');
+  let overSizeIII = document.getElementById('cortina');
+  let overSizeIV = document.getElementById('nicho_spans');
+  let blurValue = 0;
+  INTERVALOS.intervaloXXXV = setInterval(() => {
+    blurValue += 1;
+    overSize.style.filter = `blur(${blurValue}px)`; 
+    overSizeI.style.filter = `blur(${blurValue}px)`;
+    overSizeII.style.filter = `blur(${blurValue}px)`;
+    overSizeIII.style.filter = `blur(${blurValue}px)`;
+    overSizeIV.style.filter = `blur(${blurValue}px)`;
+    if (blurValue >= 20) { // Ajusta este valor según sea necesario
+      clearInterval(INTERVALOS.intervaloXXXV);
+    }
+  }, 100);
+}
+
+
+
+
+
+
+
