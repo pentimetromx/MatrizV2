@@ -1,3 +1,159 @@
+function deslizaContenedor(identificador, idButton) {
+  clearAllIntervals() 
+  let visor3 = document.getElementById('nicho_spans')
+  visor3.style.display = 'none'
+  visor3.style.visibility = 'hidden'  
+  var contBotKaizen = document.getElementById('conti-boton-kaizen')
+  contBotKaizen.removeAttribute('style')
+  linkIni1.style.left = ''
+  linkIni2.style.left = ''  
+  arrayIdButtsMA.forEach(element => {                                                                                                        
+    var elemento = document.getElementById(element)
+    if (elemento) {
+      if (element === idButton) {
+         elemento.style.backgroundColor = 'orange'
+         elemento.style.color = 'black'
+      } else {
+        elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'
+        elemento.style.color = ''
+      }
+    }
+  })
+  contiBtt.forEach(element => {                                                                                                                                                   
+    var elemento = document.getElementById(element)
+    if (elemento) {
+      elemento.style.backgroundColor = ''
+    }
+  })  
+   contenedoresMA.forEach(element => {
+    var elementos = document.getElementById(element)
+    if(elementos){
+      elementos.removeAttribute('style');
+    }
+  })  
+  if (document.body.style.zoom !== "100%") {                                                                                         
+    document.body.style.zoom = "100%";
+  }
+  container1.style.left = '50%'
+  switch(identificador){
+    case 'troubleshooting' :
+
+      /* let visor1 = document.getElementById('pantalla')
+      visor1.style.visibility = 'hidden'
+      let visor2 = document.getElementById('pantalla_II')
+      visor2.style.visibility = 'hidden' */
+
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }
+      var contenedor = document.getElementById(identificador)                                                     
+      if (identificador !== 'troubleshooting' && contenedor) {
+        contenedor.style.display = 'flex'
+        contenedor.style.left = '257%'   
+      } else{
+        var contenedorPadre = document.getElementById(identificador)
+        if (contenedorPadre) {
+          contenedorPadre.style.display = 'flex'  
+          var elementosHijos = contenedorPadre.children;  
+          for (var i = 0; i < elementosHijos.length; i++) {
+            elementosHijos[i].style.display = 'none'
+          }
+        }
+      }
+      mostrarTroublesshIntervalo()
+    break;
+    case 'canvasContainer2' :
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer2','MiGrafica']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }
+    break;
+    case 'contChecks' :
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','contChecks']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }
+      if(screenWidth < 500){
+        var contChecks = document.getElementById(identificador);
+        if (contChecks !== null) {
+          contChecks.style.marginTop = '12%';
+        }
+      }
+      break;
+    case 'canvasContainer3' :
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','canvasContainer3']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }
+      if(screenWidth < 500){
+        var canvas3 = document.getElementById(identificador);
+        if (canvas3 !== null) {
+          canvas3.style.marginTop = '12%';
+        }
+      }
+    break;
+    case 'contImagNeg' :
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagNeg']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }
+      if(screenWidth < 500){
+        var imagNeg = document.getElementById(identificador);
+        if (imagNeg !== null) {
+          imagNeg.style.marginTop = '12%';
+        }
+      }
+    break;
+    case 'contImagGraf' :
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagGraf']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }
+      if(screenWidth < 500){
+        var imagGraf = document.getElementById(identificador);
+        if (imagGraf !== null) {
+          imagGraf.style.marginTop = '12%';
+        }
+      }
+    break;
+    case 'conti-boton-kaizen' :
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }
+      hideButtonsKaizenRetraso()
+
+
+      setTimeout(function() {
+        showButtonsKaizenRetraso();
+      }, 500);
+      break;
+    default:
+  }
+}
+
 function resetearBarras(){
   let ensayos = document.querySelectorAll('.first_table');
   ensayos.forEach(ensayo => {
@@ -9,8 +165,13 @@ function resetearBarras(){
   imgWallStreet.style.height = ''
   parentElements.style.display = 'none'
 
+  isAnimatingXIII = false;      
+  isAnimatingXIV = false;      
+  isAnimatingXV = false; 
+  isAnimatingXII = false
+  isAnimatingXI = false
   isAnimatingX = false
-  isAnimatingIX = false;
+  isAnimatingIX = false
   isAnimatingVIII = false
   isAnimatingVII = false
   isAnimatingVI = false
@@ -21,7 +182,7 @@ function resetearBarras(){
     if (event.ctrlKey && event.shiftKey) {
       switch (event.key) {
         case 'Z':
-            /* barraInteligente() */
+            /* smartBars() */
           abrirSeccionOperativa('cont-titulo-operacion')       
           setTimeout(function() {
             abrirSeccionContinua('pantalla-inicial')        
@@ -54,7 +215,7 @@ function resetearBarras(){
   // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
   function Geometria() {
     console.clear();
-    var contiBoton = document.getElementById('first_half')
+    var contiBoton = document.getElementById('cortina_II')   
     var rect = contiBoton.getBoundingClientRect();
     var topPosition = rect.top
     var leftPosition = rect.left
@@ -4537,7 +4698,10 @@ function updateAna() {
      break;
    }
  }
-// SECCION GRAFICOS AUTONOMOS 
+
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
 let barraI = document.getElementById('iniciador_1')
 let barraII = document.getElementById('iniciador_2')
 let barraIII = document.getElementById('iniciador_3')
@@ -4568,10 +4732,12 @@ let topBarraII = 270
 let topBarraIII = 330
 let topBarraIV = 290 
 let heightBarra = 0
+let counter = 0
 let contador = 0
 let contadorII = 0
 let contadorIII = 0
 let stopFunction = false
+let stopWidth = true
 const INTERVALOS = {
     intervaloI: null,
     intervaloII: null,
@@ -4603,9 +4769,15 @@ const INTERVALOS = {
     intervaloXXXIII: null,
     intervaloXXXIV: null,
     intervaloXXXV: null,
+    intervaloXXXVI: null,
+    intervaloXXXVII: null,
+    intervaloXXXVIII: null,
+    intervaloXXXIX: null,
+    intervaloXL: null,
+    intervaloXLI: null,
 };
 
-function barraInteligente() { 
+function barraInteligente() {
   var elementosExcluidos = ['first_half','second_half','cortina','wall_street_II','nicho_spans','buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -4614,71 +4786,51 @@ function barraInteligente() {
     }
   }
 
+    let childElement = parentElements.children;
+    for (let i = 0; i < childElement.length; i++) {
+      childElement[i].style.display = '';
+      childElement[i].style.visibility = '';
+    }
+
+  stopWidth = false
   clearAllIntervals()
   resetearBarras()
-
-    incrementoHeightXI()
-    incrementoHeightXII()  
-    incrementoHeightXIII()  
-    incrementoHeightXIV()  
-    incrementoHeightXV()    
-
-
-
-
-
-
- /*  setTimeout(() => {
-    if(stopFunction){
-      clearAllIntervals()
-      resetStyles();
-      return
-    }
-    let parentElement = document.getElementById('wall_street_II');
-    parentElement.style.display = 'flex'; 
-    parentElement.style.visibility = 'visible';
-    let childElements = parentElement.children;
-    for (let i = 0; i < childElements.length; i++) {
-      childElements[i].style.display = 'flex';
-      childElements[i].style.visibility = 'visible';
-    }
-    incrementoHeightVI();
-    incrementoHeightVII();
-    incrementoHeightVIII();
-    incrementoHeightIX();
-    incrementoHeightX(); 
-  }, 4077);
-  setTimeout(() => {
-    if(stopFunction){
-      clearAllIntervals()
-      resetStyles();
-      return
-    }
-    incrementarBlur()
-  }, 7077);
-  setTimeout(() => {
-    if(stopFunction){
-      clearAllIntervals()
-      resetStyles();
-      return
-    }
-    aumentarOverSize()
-  }, 8500); */
+  incrementoHeightXI()
+  incrementoHeightXII()
+  incrementoHeightXIII()
+  incrementoHeightXIV()
+  incrementoHeightXV()
 }
 /* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
 function incrementoHeightXI() {
-  imgWallStreetI.style.display = 'flex'
-  INTERVALOS.intervaloXXVI = setInterval(() => {
+  INTERVALOS.intervaloXXVI = setInterval(() => {  
     const animatedDiv = document.getElementById('animatedDiv');
     let currentTop = parseInt(window.getComputedStyle(animatedDiv).top);
     let currentHeight = parseInt(window.getComputedStyle(animatedDiv).height);    
     animatedDiv.style.top = (currentTop - 1) + 'px';
-    animatedDiv.style.height = (currentHeight + 2) + 'px';    
-    if(parseInt(currentTop) <= 320){
+    animatedDiv.style.height = (currentHeight + 1) + 'px';
+    if (currentTop <= 50) {
       clearInterval(INTERVALOS.intervaloXXVI);
-      incrementoWidth()
+      reduccionHeightXI()
+      if(stopWidth === false){
+        incrementoWidth()
+        stopWidth = true; 
+      }
     }
-  }, 7);
+  }, 1);
+}
+function reduccionHeightXI() {
+  INTERVALOS.intervaloXXXVII = setInterval(() => {  
+    const animatedDiv = document.getElementById('animatedDiv');
+    let currentTop = parseInt(window.getComputedStyle(animatedDiv).top);
+    let currentHeight = parseInt(window.getComputedStyle(animatedDiv).height);    
+    animatedDiv.style.top = (currentTop + 1) + 'px';
+    animatedDiv.style.height = (currentHeight - 1) + 'px';
+    if (currentTop >= 215) {
+      clearInterval(INTERVALOS.intervaloXXXVII);
+      incrementoHeightXI()
+    }
+  }, 1);
 }
 function incrementoHeightXII() {
   INTERVALOS.intervaloXXVIII = setInterval(() => {
@@ -4687,11 +4839,25 @@ function incrementoHeightXII() {
     let currentHeight = parseInt(window.getComputedStyle(animatedDiv).height);    
     // Decrementar la posición top y aumentar height
     animatedDiv.style.top = (currentTop - 1) + 'px';
-    animatedDiv.style.height = (currentHeight + 2) + 'px';
-    if(currentTop <= topBarraI){
+    animatedDiv.style.height = (currentHeight + 1) + 'px';
+    if(currentTop <= 50){
       clearInterval(INTERVALOS.intervaloXXVIII);
+      reduccionHeightXII()
     }
-  }, 7);
+  }, 11);
+} 
+function reduccionHeightXII() {
+  INTERVALOS.intervaloXXVIII = setInterval(() => {  
+    const animatedDiv = document.getElementById('animatedDivI');
+    let currentTop = parseInt(window.getComputedStyle(animatedDiv).top);
+    let currentHeight = parseInt(window.getComputedStyle(animatedDiv).height);    
+    animatedDiv.style.top = (currentTop + 1) + 'px';
+    animatedDiv.style.height = (currentHeight - 1) + 'px';
+    if (currentTop >= 215) {
+      clearInterval(INTERVALOS.intervaloXXVIII);
+      incrementoHeightXII()
+    }
+  }, 11);
 }
 function incrementoHeightXIII() {
   INTERVALOS.intervaloXXIX = setInterval(() => {
@@ -4700,11 +4866,25 @@ function incrementoHeightXIII() {
     let currentHeight = parseInt(window.getComputedStyle(animatedDiv).height);    
     // Decrementar la posición top y aumentar height
     animatedDiv.style.top = (currentTop - 1) + 'px';
-    animatedDiv.style.height = (currentHeight + 2) + 'px';
-    if(currentTop <= topBarraII){
+    animatedDiv.style.height = (currentHeight + 1) + 'px';
+    if(currentTop <= 50){
       clearInterval(INTERVALOS.intervaloXXIX);
+      reduccionHeightXIII()
     }
-  }, 7);
+  }, 22);
+}
+function reduccionHeightXIII() {
+  INTERVALOS.intervaloXXXVIII = setInterval(() => {  
+    const animatedDiv = document.getElementById('animatedDivII');
+    let currentTop = parseInt(window.getComputedStyle(animatedDiv).top);
+    let currentHeight = parseInt(window.getComputedStyle(animatedDiv).height);    
+    animatedDiv.style.top = (currentTop + 1) + 'px';
+    animatedDiv.style.height = (currentHeight - 1) + 'px';
+    if (currentTop >= 215) {
+      clearInterval(INTERVALOS.intervaloXXXVIII);
+      incrementoHeightXIII()
+    }
+  }, 22);
 }
 function incrementoHeightXIV() {
   INTERVALOS.intervaloXXX = setInterval(() => {
@@ -4713,12 +4893,27 @@ function incrementoHeightXIV() {
     let currentHeight = parseInt(window.getComputedStyle(animatedDiv).height);    
     // Decrementar la posición top y aumentar height
     animatedDiv.style.top = (currentTop - 1) + 'px';
-    animatedDiv.style.height = (currentHeight + 2) + 'px';
-    if(currentTop <= topBarraIII){
+    animatedDiv.style.height = (currentHeight + 1) + 'px';
+    if(currentTop <= 50){
       clearInterval(INTERVALOS.intervaloXXX);
+      reduccionHeightXIV()
     }
-  }, 7);
+  }, 33);
 }
+function reduccionHeightXIV() {
+  INTERVALOS.intervaloXXXIX = setInterval(() => {  
+    const animatedDiv = document.getElementById('animatedDivIII');
+    let currentTop = parseInt(window.getComputedStyle(animatedDiv).top);
+    let currentHeight = parseInt(window.getComputedStyle(animatedDiv).height);    
+    animatedDiv.style.top = (currentTop + 1) + 'px';
+    animatedDiv.style.height = (currentHeight - 1) + 'px';
+    if (currentTop >= 215) {
+      clearInterval(INTERVALOS.intervaloXXXIX);
+      incrementoHeightXIV()
+    }
+  }, 33);
+}
+
 function incrementoHeightXV() {
   INTERVALOS.intervaloXXXI = setInterval(() => {
     const animatedDiv = document.getElementById('animatedDivIV');
@@ -4726,18 +4921,34 @@ function incrementoHeightXV() {
     let currentHeight = parseInt(window.getComputedStyle(animatedDiv).height);    
     // Decrementar la posición top y aumentar height
     animatedDiv.style.top = (currentTop - 1) + 'px';
-    animatedDiv.style.height = (currentHeight + 2) + 'px';
-    if(currentTop <= topBarraIV){
+    animatedDiv.style.height = (currentHeight + 1) + 'px';
+    if(currentTop <= 50){
       clearInterval(INTERVALOS.intervaloXXXI);
+      reduccionHeightXV()
     }
-  }, 7);
+  }, 17);
+}
+function reduccionHeightXV() {
+  INTERVALOS.intervaloXL = setInterval(() => {  
+    const animatedDiv = document.getElementById('animatedDivIV');
+    let currentTop = parseInt(window.getComputedStyle(animatedDiv).top);
+    let currentHeight = parseInt(window.getComputedStyle(animatedDiv).height);    
+    animatedDiv.style.top = (currentTop + 1) + 'px';
+    animatedDiv.style.height = (currentHeight - 1) + 'px';
+    if (currentTop >= 215) {
+      clearInterval(INTERVALOS.intervaloXL);
+      incrementoHeightXV()
+    }
+  }, 17);
 }
 /* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
 function incrementoWidth() {   // PRIMERA CORTINA Y LLAMADO A SEGUNDA MITAD
+  imgWallStreetI.style.display = 'flex'
+  stopWidth === true
   INTERVALOS.intervaloXXXII = setInterval(() => {
     let currentWidth = parseInt(window.getComputedStyle(imgWallStreetI).width);
     imgWallStreetI.style.width = (currentWidth + 5) + 'px'
-    if(parseInt(currentWidth) >= 395.2){
+    if(parseInt(currentWidth) >= 390){
       clearInterval(INTERVALOS.intervaloXXXII);      
       
       let parentElement = document.getElementById('second_half');
@@ -4754,19 +4965,14 @@ function incrementoWidth() {   // PRIMERA CORTINA Y LLAMADO A SEGUNDA MITAD
       incrementoHeight(barraIV, pantallaIV,'intervaloIV',35);
       incrementoWidthI();
       incrementoHeight(barraV, pantallaV,'intervaloV',45)  
-      parentElements.style.display = 'flex'; 
-      parentElements.style.visibility = 'visible';
-      let childElement = parentElements.children;
-      for (let i = 0; i < childElement.length; i++) {
-        childElement[i].style.display = 'flex';
-        childElement[i].style.visibility = 'visible';
-      }
+      
     }
   }, 1);
 }
 
 /* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
 function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {   // BARRAS SEGUNDA MITAD
+  parentElements.style.display = 'flex'
   INTERVALOS[intervaloVariable] = setInterval(() => {
     let currentValue = parseInt(pantalla.textContent);
     let newValue = currentValue + 5773;
@@ -4774,7 +4980,6 @@ function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {
     let alturaAct = parseInt(barra.style.height) || 0;
     barra.style.height = (alturaAct + 5) + 'px';
     let alturaAcumuladaBarra = alturaAct + 1;
-    pantalla.style.display = 'flex';
     let alturaMaxima = 90;
     let iniciador = 180
     contador++
@@ -4783,6 +4988,7 @@ function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {
       clearInterval(INTERVALOS[intervaloVariable]);
       if(barra.id === 'iniciador_1'){
         reduccionHeight(barraI, pantallaI,'intervaloI', 30);
+        pantallaI.style.display = 'flex'
       }
       if(barra.id === 'iniciador_2'){
         reduccionHeight(barraII, pantallaII,'intervaloII',30);
@@ -5153,5 +5359,36 @@ function clearAllIntervals() {
         INTERVALOS[key] = null;
       }
     }
+}
+
+
+function changeColorToGreen() {
+  const lines = document.querySelectorAll('#column_1 .lineas');
+  let index = 0;
+  
+  const interval = setInterval(() => {
+    if (index < lines.length) {
+      lines[index].style.backgroundColor = 'rgb(0, 128, 0)'; // Color verde
+      index++;
+    } else {
+      clearInterval(interval); // Detiene el intervalo una vez que todos los elementos han sido coloreados
+      changeColorToTransparent()
+    }
+  }, 17); // 100 ms = 0.1 segundos
+}
+
+function changeColorToTransparent() {
+  const lines = document.querySelectorAll('#column_1 .lineas');
+  let index = lines.length - 1;
+  
+  const intervaloXLI = setInterval(() => {
+    if (index >= 0) {
+      lines[index].style.backgroundColor = ''; // Remueve el color
+      index--;
+    } else {
+      clearInterval(intervaloXLI); // Detiene el intervalo una vez que todos los elementos han sido procesados
+      changeColorToGreen(); // Llama a changeColorToGreen después de completar
+    }
+  }, 100); // 100 ms = 0.1 segundos
 }
 

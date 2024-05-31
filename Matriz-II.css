@@ -4616,11 +4616,28 @@ input.numero:focus {
 }
 
 /* 8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888 */
+#first_half {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2px;
+  left: 27%;
+  top: 12%;
+  height: 30%;
+  width: 31%;
+  display: none;
+}
 
+#first_half > div {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+}
 #cortina_II{
   position: absolute;
   display: flex;
-  top: 50%;
+  top: 22%;
   width:0.1px;
   height: 178px;
   opacity: 0.7;
@@ -4630,73 +4647,44 @@ input.numero:focus {
   z-index: 4;
   display: none;
 }
-#first_half{
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  left: 26.8%;
-  top: -7%;
-  gap: 5px;
-  height: 350px;
-  width: 477px;
-  padding: 3px;
-  display: none;
-}
 #animatedDiv{
+  top: 100%;
   width: 77px;
   height: 1px;
-  top: 100%;
   background-color: #adff2f;
   border-radius: 5px 5px 0px 0px;
-  position: absolute;
-  transform: translateY(-50%)
 }
 #animatedDivI{
-  display: flex;
+  top: 100%;
+  left: 20%;
   width: 77px;
   height: 1px;
-  top: 100%;
-  left: 84px;
   background-color: #adff2f;
   border-radius: 5px 5px 0px 0px;
-  position: absolute;
-  transform: translateY(-50%);
 }
 #animatedDivII{
-  display: flex;
+  top: 100%;
+  left: 40%;
   width: 77px;
   height: 1px;
-  top: 100%;
-  /* left: 24.5%; */
-  left: 165px;
   background-color: #adff2f;
   border-radius: 5px 5px 0px 0px;
-  position: absolute;
-  transform: translateY(-50%);
 }
 #animatedDivIII{
-  display: flex;
+  top: 100%;
+  left: 60%;
   width: 77px;
   height: 1px;
-  top: 100%;
-  /* left: 36.5%; */
-  left: 246px;
   background-color: #adff2f;
   border-radius: 5px 5px 0px 0px;
-  position: absolute;  
-  transform: translateY(-50%);
 }
 #animatedDivIV{
-  position: absolute;
-  display: flex;
+  top: 100%;
+  left: 80%;
   width: 77px;
   height: 1px;
-  top: 100%;
-  /* left: 48.5%; */
-  left: 327px;
   background-color: #adff2f;
   border-radius: 5px 5px 0px 0px;
-  transform: translateY(-50%);
 }
 #cortina{
   position: absolute;
@@ -4761,24 +4749,24 @@ input.numero:focus {
   gap: 2px;
   height: 47px;
   width: 477px;
-  display: none;
+  z-index: 13;
 }
-#nicho_spans .spans{
-  background-color: black; 
-  width: 77px;
-  height: 20px;
+#nicho_spans .spans {
   border: solid rgb(177, 255, 0) 1px;
-  border-radius: 5px;
   font-family: "Oswald", sans-serif;
-  font-size: 17px;
-  font-weight: bold;
-  text-align: center;
+  background-color: black; 
+  color: rgb(177, 255, 0);
   justify-content: center;
   align-items: center;
-  display: flex;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
   user-select: none;
-  color: rgb(177, 255, 0);
-  z-index: 3;
+  font-size: 17px;
+  display: none;
+  height: 20px;
+  width: 77px;
+  z-index: 13;
 }
 #wall_street_II{
   position: absolute;
@@ -4789,7 +4777,6 @@ input.numero:focus {
   top: 60%;
   height: 200px;
   width: 477px;
-  display: none;
 }
 #butts_wallstreeet{
   position: absolute;
@@ -4820,7 +4807,7 @@ input.numero:focus {
   width: 1px;
   height: 4.9%;
   border-radius: 5px;
-  justify-content: center; /* Centra horizontalmente */
+  justify-content: center;
   align-items: flex-end;
   z-index: 3;
 }
@@ -4848,7 +4835,45 @@ input.numero:focus {
   top: 130%;
   height: 27px;
   background-color: rgb(255,255,180);
-}   
+}  
+#equalizer{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  top: 16%;
+  left: 60%;
+}
+#column_2{
+  position:relative;
+  display: flex;
+   margin-top:0.5%;
+  flex-direction: column;
+  font-family: "Oswald", sans-serif;
+  margin-left: 20px 
+}
+.column{
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.column_spans{
+  margin-top:7.2px;
+  font-size: 15px;
+  color: white;
+  font: bolder;
+}
+.lineas{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 14px;
+  width: 120px;
+  margin-top: 15px;
+  background-color: white;
+  border-radius: 3px;
+} 
 #desencadenante_II{
   width: 77px;
   height: 22px;

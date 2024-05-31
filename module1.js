@@ -1199,153 +1199,6 @@ function cierraContenedores(elementId,buttonID){
       break;
     default:
   }}
-  function deslizaContenedor(identificador, idButton) { 
-    var contBotKaizen = document.getElementById('conti-boton-kaizen')
-    contBotKaizen.removeAttribute('style')
-    linkIni1.style.left = ''
-    linkIni2.style.left = ''  
-    arrayIdButtsMA.forEach(element => {                                                                                                        
-      var elemento = document.getElementById(element)
-      if (elemento) {
-        if (element === idButton) {
-           elemento.style.backgroundColor = 'orange'
-           elemento.style.color = 'black'
-        } else {
-          elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'
-          elemento.style.color = ''
-        }
-      }
-    })
-    contiBtt.forEach(element => {                                                                                                                                                   
-      var elemento = document.getElementById(element)
-      if (elemento) {
-        elemento.style.backgroundColor = ''
-      }
-    })
-  
-     contenedoresMA.forEach(element => {
-      var elementos = document.getElementById(element)
-      if(elementos){
-        elementos.removeAttribute('style');
-      }
-    })
-  
-    if (document.body.style.zoom !== "100%") {                                                                                         
-      document.body.style.zoom = "100%";
-    }
-    container1.style.left = '50%'
-    switch(identificador){
-      case 'troubleshooting' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
-        }
-        var contenedor = document.getElementById(identificador)                                                     
-        if (identificador !== 'troubleshooting' && contenedor) {
-          contenedor.style.display = 'flex'
-          contenedor.style.left = '257%'   
-        } else{
-          var contenedorPadre = document.getElementById(identificador)
-          if (contenedorPadre) {
-            contenedorPadre.style.display = 'flex'  
-            var elementosHijos = contenedorPadre.children;  
-            for (var i = 0; i < elementosHijos.length; i++) {
-              elementosHijos[i].style.display = 'none'
-            }
-          }
-        }
-        mostrarTroublesshIntervalo()
-      break;
-      case 'canvasContainer2' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer2','MiGrafica']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
-        }
-      break;
-      case 'contChecks' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','contChecks']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
-        }
-        if(screenWidth < 500){
-          var contChecks = document.getElementById(identificador);
-          if (contChecks !== null) {
-            contChecks.style.marginTop = '12%';
-          }
-        }
-        break;
-      case 'canvasContainer3' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','canvasContainer3']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
-        }
-        if(screenWidth < 500){
-          var canvas3 = document.getElementById(identificador);
-          if (canvas3 !== null) {
-            canvas3.style.marginTop = '12%';
-          }
-        }
-      break;
-      case 'contImagNeg' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagNeg']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
-        }
-        if(screenWidth < 500){
-          var imagNeg = document.getElementById(identificador);
-          if (imagNeg !== null) {
-            imagNeg.style.marginTop = '12%';
-          }
-        }
-      break;
-      case 'contImagGraf' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagGraf']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
-        }
-        if(screenWidth < 500){
-          var imagGraf = document.getElementById(identificador);
-          if (imagGraf !== null) {
-            imagGraf.style.marginTop = '12%';
-          }
-        }
-      break;
-      case 'conti-boton-kaizen' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
-        }
-        hideButtonsKaizenRetraso()
-  
-  
-        setTimeout(function() {
-          showButtonsKaizenRetraso();
-        }, 500);
-        break;
-      default:
-    }
-  }
   function mostrarTroublesshIntervalo() {
     var contenedor = document.getElementById('troubleshooting')
     var elementos = contenedor.children;
@@ -1373,6 +1226,14 @@ function cierraContenedores(elementId,buttonID){
           elemento.style.backgroundColor = ''
        }
       } 
+      clearAllIntervals()
+      let visor = document.getElementById('nicho_spans')
+      let visor1 = document.getElementById('pantalla')
+      visor.style.display = 'none'
+      visor.style.visibility = 'hidden'
+      visor1.style.display = 'none' 
+      visor1.style.visibility = 'hidden'
+
       arrayPosicionnador = []  
       troublesh.removeAttribute('style') 
       destino = 277;
@@ -1627,6 +1488,30 @@ function cierraContenedores(elementId,buttonID){
     }, 300)
   }
   function resetBotns() {  
+    clearAllIntervals()
+
+  var elementosExcluidos = ['nicho_spans','pantalla','conti-boton','conteneMantaut','buscador','container01','links-inicialesI','links-iniciales'];          
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+      if (elementosExcluidos.includes(allContenedores[i])) {
+        elemento.style.display = 'flex';
+      } else {
+        elemento.style.display = 'none';
+      }
+    }
+} 
+var padre = document.getElementById('nicho_spans');    
+  if (padre) {
+    padre.style.display = 'none';
+    padre.style.visibility = 'hidden';
+      var hijos = padre.children;
+    for (var i = 0; i < hijos.length; i++) {
+      hijos[i].style.display = 'none';
+      hijos[i].style.visibility = 'hidden';
+    }
+  }
     var contProblema = document.getElementById('linksMA')
     var contProblema2 = document.getElementById('contImgEntrenos')
     var contVidPlanos = document.getElementById('kaizenCont')
