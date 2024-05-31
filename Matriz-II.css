@@ -4847,10 +4847,10 @@ input.numero:focus {
 #column_2{
   position:relative;
   display: flex;
-   margin-top:0.5%;
+  margin-top:0.5%;
   flex-direction: column;
   font-family: "Oswald", sans-serif;
-  margin-left: 20px 
+  margin-left: 23px;
 }
 .column{
   position:relative;
@@ -4861,8 +4861,9 @@ input.numero:focus {
 .column_spans{
   margin-top:7.2px;
   font-size: 15px;
-  color: white;
+  color:'';
   font: bolder;
+  display: none;
 }
 .lineas{
   position: relative;
@@ -4871,7 +4872,7 @@ input.numero:focus {
   height: 14px;
   width: 120px;
   margin-top: 15px;
-  background-color: white;
+  background-color:'';
   border-radius: 3px;
 } 
 #desencadenante_II{

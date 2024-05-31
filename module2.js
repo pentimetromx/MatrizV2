@@ -4775,6 +4775,11 @@ const INTERVALOS = {
     intervaloXXXIX: null,
     intervaloXL: null,
     intervaloXLI: null,
+    intervaloXLII: null,
+    intervaloXLIII: null,
+    intervaloXLIV: null,
+    intervaloXLV: null,
+    intervaloXLVI: null,
 };
 
 function barraInteligente() {
@@ -5363,32 +5368,119 @@ function clearAllIntervals() {
 
 
 function changeColorToGreen() {
+  let index = 0;  
+    clearInterval(INTERVALOS.intervaloXLI);  
   const lines = document.querySelectorAll('#column_1 .lineas');
-  let index = 0;
-  
-  const interval = setInterval(() => {
+  lines.forEach(line => {
+    line.style.backgroundColor = '';
+  });
+  changeColorToGreenII();
+  changeColorToNumbres();
+  INTERVALOS.intervaloXLI = setInterval(() => {
     if (index < lines.length) {
-      lines[index].style.backgroundColor = 'rgb(0, 128, 0)'; // Color verde
+      if (index < 6) {
+        lines[index].style.backgroundColor = 'rgb(0, 255, 0)'; // Verde
+      } else if (index < 10) {
+        lines[index].style.backgroundColor = 'rgb(255, 165, 0)'; // Naranja
+      } else if (index < 14) {
+        lines[index].style.backgroundColor = 'rgb(255, 0, 0)'; // Rojo
+      }
       index++;
     } else {
-      clearInterval(interval); // Detiene el intervalo una vez que todos los elementos han sido coloreados
-      changeColorToTransparent()
+      clearInterval(INTERVALOS.intervaloXLI); 
+      changeColorToTransparent();
     }
-  }, 17); // 100 ms = 0.1 segundos
+  }, 57);
 }
+function changeColorToGreenII() {
+  let index = 0;  
+  const lines = document.querySelectorAll('#column_3 .lineas');
+  clearInterval(INTERVALOS.intervaloXLII);
+
+  INTERVALOS.intervaloXLII = setInterval(() => {
+    if (index < lines.length) {
+      if (index < 6) {
+        lines[index].style.backgroundColor = 'rgb(0, 255, 0)'; // Verde
+      } else if (index < 10) {
+        lines[index].style.backgroundColor = 'rgb(255, 165, 0)'; // Naranja
+      } else if (index < 14) {
+        lines[index].style.backgroundColor = 'rgb(255, 0, 0)'; // Rojo
+      }
+      index++;
+    } else {
+      clearInterval(INTERVALOS.intervaloXLII); 
+      changeColorToTransparentII()
+    }
+  }, 57);
+}
+function changeColorToNumbres() {
+  let index = 0;  
+  clearInterval(INTERVALOS.intervaloXLV);
+  const numbers = document.querySelectorAll('#column_2 .column_spans')
+  numbers.forEach(line => {
+    line.style.backgroundColor = '';
+  });
+  INTERVALOS.intervaloXLV = setInterval(() => {
+    if (index < numbers.length) {
+      if (index < 6) {
+        numbers[index].style.display = 'flex'
+        numbers[index].style.color = 'rgb(0, 255, 0)'; // Verde
+      } else if (index < 10) {
+        numbers[index].style.display = 'flex'
+        numbers[index].style.color = 'rgb(255, 165, 0)'; // Naranja
+      } else if (index < 14) {
+        numbers[index].style.display = 'flex'
+        numbers[index].style.color = 'rgb(255, 0, 0)'; // Rojo
+      }
+      index++;
+    } else {
+      clearInterval(INTERVALOS.intervaloXLV); 
+      changeColorTransparent()
+    }
+  }, 57);
+}
+
+
+
 
 function changeColorToTransparent() {
   const lines = document.querySelectorAll('#column_1 .lineas');
-  let index = lines.length - 1;
-  
-  const intervaloXLI = setInterval(() => {
+  let index = lines.length - 1;  
+  INTERVALOS.intervaloXLIII = setInterval(() => {
     if (index >= 0) {
-      lines[index].style.backgroundColor = ''; // Remueve el color
+      lines[index].style.backgroundColor = '';
       index--;
     } else {
-      clearInterval(intervaloXLI); // Detiene el intervalo una vez que todos los elementos han sido procesados
-      changeColorToGreen(); // Llama a changeColorToGreen después de completar
+      clearInterval(INTERVALOS.intervaloXLIII); 
+      changeColorToGreen(); 
     }
-  }, 100); // 100 ms = 0.1 segundos
+  }, 50);
+}
+function changeColorToTransparentII() {
+  const lines = document.querySelectorAll('#column_3 .lineas');
+  let index = lines.length - 1;  
+  INTERVALOS.intervaloXLIV = setInterval(() => {
+    if (index >= 0) {
+      lines[index].style.backgroundColor = '';
+      index--;
+    } else {
+      clearInterval(INTERVALOS.intervaloXLIV); 
+      changeColorToGreenII(); 
+    }
+  }, 50);
+}
+function changeColorTransparent() {
+  const numbers = document.querySelectorAll('#column_2 .column_spans')
+  let index = numbers.length - 1;  
+  INTERVALOS.intervaloXLVI = setInterval(() => {
+    if (index >= 0) {
+      numbers[index].style.color = '';
+      numbers[index].style.display = 'none'
+      index--;
+    } else {
+      clearInterval(INTERVALOS.intervaloXLVI); 
+      changeColorToNumbres()
+    }
+  }, 50);
 }
 
