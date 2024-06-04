@@ -4628,7 +4628,6 @@ input.numero:focus {
   width: 31%;
   display: none;
 }
-
 #first_half > div {
   position: absolute;
   bottom: 0;
@@ -4777,6 +4776,7 @@ input.numero:focus {
   top: 60%;
   height: 200px;
   width: 477px;
+display: none;
 }
 #butts_wallstreeet{
   position: absolute;
@@ -4840,9 +4840,14 @@ input.numero:focus {
   position: absolute;
   display: flex;
   flex-direction: row;
-  width: 50%;
+  background-color: rgb(0, 0,10 );                 
+  border-radius: 8px;                               
+  width: 25.3%;
+  height:38%; 
   top: 16%;
   left: 60%;
+  padding: 27px;
+  display: none;
 }
 #column_2{
   position:relative;
@@ -4852,6 +4857,32 @@ input.numero:focus {
   font-family: "Oswald", sans-serif;
   margin-left: 23px;
 }
+#column_4{
+  position: absolute;
+  display: flex;
+  /* justify-content: space-evenly; */
+  background-color: #000;
+  align-items: flex-end;
+  /* gap: 2px; */
+  left: 57%;
+  top: 62%;
+  height: 15%;
+  width: 35%;
+  /* display: none; */
+}
+#column_4 > div {
+  position: relative;
+  bottom: 0;
+  margin-bottom: 0;
+}
+.vertcal_bar{
+  position: relative;
+  width:1%;
+  height:1px;
+  margin-left: 1px;
+  background-color: #000;
+  border-radius: 2px 2px 0 0;
+}
 .column{
   position:relative;
   display: flex;
@@ -4859,8 +4890,8 @@ input.numero:focus {
   margin-left: 20px;
 }
 .column_spans{
-  margin-top:7.2px;
-  font-size: 15px;
+  margin-top:3px;
+  font-size: 11px;
   color:'';
   font: bolder;
   display: none;
@@ -4871,7 +4902,7 @@ input.numero:focus {
   flex-direction: column;
   height: 14px;
   width: 120px;
-  margin-top: 15px;
+  margin-top: 5px;
   background-color:'';
   border-radius: 3px;
 } 
@@ -4916,6 +4947,117 @@ input.numero:focus {
   z-index: 5;
   display: flex;
   display: none;
+}
+#padre {
+  position: relative;
+  top: 56.7%;
+  left: 67.7%;
+  width: 14.4%;
+  height: 22%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1px;
+  background-color: rgb(0,0,10);
+  border-radius: 6px;
+  align-items: flex-start; /* Alinear elementos en la parte superior */
+  display: none;
+}
+#padre > div {
+  width: 7px;
+  height: 0;
+  background-color: lightblue;
+  border-radius: 2px;
+}
+#patern .irisado:nth-child(1) {
+  background-color: rgb(255, 0, 0); /* Rojo */
+}
+#patern .irisado:nth-child(2) {
+  background-color: rgb(255, 85, 0); /* Degradado intermedio hacia naranja */
+}
+#patern .irisado:nth-child(3) {
+  background-color: rgb(255, 170, 0); /* Naranja */
+}
+#patern .irisado:nth-child(4) {
+  background-color: rgb(255, 191, 0); /* Degradado intermedio hacia amarillo */
+}
+#patern .irisado:nth-child(5) {
+  background-color: rgb(255, 212, 0); /* Degradado intermedio hacia amarillo */
+}
+#patern .irisado:nth-child(6) {
+  background-color: rgb(255, 255, 0); /* Amarillo */
+}
+#patern .irisado:nth-child(7) {
+  background-color: rgb(255, 255, 0); /* Amarillo */
+}
+#patern .irisado:nth-child(8) {
+  background-color: rgb(204, 255, 0); /* Degradado intermedio */
+}
+#patern .irisado:nth-child(9) {
+  background-color: rgb(153, 255, 0); /* Degradado intermedio */
+}
+#patern .irisado:nth-child(10) {
+  background-color: rgb(102, 255, 0); /* Degradado intermedio */
+}
+#patern .irisado:nth-child(11) {
+  background-color: rgb(0, 255, 0); /* Verde */
+}
+#patern .irisado:nth-child(12) {
+  background-color: rgb(0, 204, 51); /* Degradado intermedio */
+}
+#patern .irisado:nth-child(13) {
+  background-color: rgb(0, 153, 102); /* Degradado intermedio */
+}
+#patern .irisado:nth-child(14) {
+  background-color: rgb(0, 102, 153); /* Degradado intermedio */
+}
+#patern .irisado:nth-child(15) {
+  background-color: rgb(0, 51, 204); /* Degradado intermedio */
+}
+#patern .irisado:nth-child(16) {
+  background-color: rgb(0, 0, 255); /* Azul */
+}
+#patern .irisado:nth-child(17) {
+  background-color: rgb(51, 0, 255); /* Degradado intermedio */
+}
+#patern .irisado:nth-child(18) {
+  background-color: rgb(102, 0, 255); /* Degradado intermedio */
+}
+#patern .irisado:nth-child(19) {
+  background-color: rgb(153, 0, 255); /* Degradado intermedio */
+}
+#patern .irisado:nth-child(20) {
+  background-color: rgb(204, 0, 255); /* Degradado intermedio */
+}
+#patern .irisado:nth-child(21) {
+  background-color: rgb(255, 0, 255); /* Púrpura */
+}
+#patern .irisado:nth-child(22) {
+  background-color: rgb(204, 0, 255); /* Degradado intermedio */
+}
+#patern .irisado:nth-child(23) {
+  background-color: rgb(153, 0, 255); /* Degradado intermedio */
+}
+#patern .irisado:nth-child(24) {
+  background-color: rgb(102, 0, 255); /* Azul */
+}
+
+#patern {
+  position: relative;
+  top: 34.6%;
+  left: 41%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  background-color: RGB(0,0,10);
+  height: 37vh; /* Ajusta el tamaño del contenedor padre según tus necesidades */
+  width: 19vw; /* Ajusta el tamaño del contenedor padre según tus necesidades */
+  gap: 5px; /* Puedes ajustar el espacio entre los elementos */
+  display: none;
+}
+#patern .irisado {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
  @media screen and (max-width: 480px) {

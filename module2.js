@@ -153,7 +153,6 @@ function deslizaContenedor(identificador, idButton) {
     default:
   }
 }
-
 function resetearBarras(){
   let ensayos = document.querySelectorAll('.first_table');
   ensayos.forEach(ensayo => {
@@ -176,7 +175,6 @@ function resetearBarras(){
   isAnimatingVII = false
   isAnimatingVI = false
 }
-
 // COMBINACION TECLAS EJECUTA FUNCION
   document.addEventListener('keydown', function(event) {             
     if (event.ctrlKey && event.shiftKey) {
@@ -215,7 +213,7 @@ function resetearBarras(){
   // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
   function Geometria() {
     console.clear();
-    var contiBoton = document.getElementById('cortina_II')   
+    var contiBoton = document.getElementById('column_4')   
     var rect = contiBoton.getBoundingClientRect();
     var topPosition = rect.top
     var leftPosition = rect.left
@@ -4438,11 +4436,11 @@ function updateAna() {
        document.removeEventListener('click', bloquearClic, true);
    }, 4000);
  }
- // Función para bloquear los clics
- function bloquearClic(event) {
-   event.stopPropagation();
-   event.preventDefault();
- }
+// Función para bloquear los clics
+function bloquearClic(event) {
+  event.stopPropagation();
+  event.preventDefault();
+}
  function aumentoGradualVideo() {
    var video = document.getElementById('video-background');
    var currentScale = 1; // Escala inicial del video
@@ -4974,7 +4972,6 @@ function incrementoWidth() {   // PRIMERA CORTINA Y LLAMADO A SEGUNDA MITAD
     }
   }, 1);
 }
-
 /* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
 function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {   // BARRAS SEGUNDA MITAD
   parentElements.style.display = 'flex'
@@ -4986,7 +4983,7 @@ function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {
     barra.style.height = (alturaAct + 5) + 'px';
     let alturaAcumuladaBarra = alturaAct + 1;
     let alturaMaxima = 90;
-    let iniciador = 180
+    let iniciador = 100
     contador++
 
     if (parseInt (alturaAcumuladaBarra) >= alturaMaxima) {
@@ -5005,7 +5002,7 @@ function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {
         reduccionHeight(barraIV, pantallaIV,'intervaloIV',30); 
       }
       if(barra.id === 'iniciador_5'){
-        reduccionHeight(barraV, pantallaV,'intervaloV',30); 
+        reduccionHeight(barraV, pantallaV,'intervaloV',30); // este es el codigoque se solicito para que se accionen las casas de los divisores
       }
     } 
     if (contador >= iniciador) {
@@ -5013,8 +5010,6 @@ function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {
     }
   }, intervaloTiempo);
 }
-
-
 /* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
 function reduccionHeight(elementoBarra, elementoPantalla, intervaloVariable, intervaloTiempo) {
   INTERVALOS[intervaloVariable] = setInterval(() => {
@@ -5045,25 +5040,29 @@ function reduccionHeight(elementoBarra, elementoPantalla, intervaloVariable, int
     }
   }, intervaloTiempo);
 }
-
-
-
 /* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
-
 let isAnimatingVI = false; 
 let isAnimatingVII = false;
-let isAnimatingVIII = false;      // ULTIMAS BARRAS
-let isAnimatingIX = false;      // ULTIMAS BARRAS
-let isAnimatingX = false;      // ULTIMAS BARRAS
+let isAnimatingVIII = false;  
+let isAnimatingIX = false;   
+let isAnimatingX = false;
+let isAnimatingXI = false;
 
 function incrementoHeightVI() {
   if (isAnimatingVI) return;
   isAnimatingVI = true;
-  contadorII = 0;
   let r = 0;
   let g = 255;
   let b = 0;
+  let horizontalBars = document.getElementById('column_2')
+  horizontalBars.style.display = 'flex'
+
   INTERVALOS.intervaloXVI = setInterval(() => {
+    contadorII++
+    if (contadorII >= 100 && !isAnimatingXI) {
+      isAnimatingXI = true; // Asegurarse de que esta línea se ejecuta una sola vez
+      changeColorToGreen();
+    }
     let alturaAct = parseInt(barraVI.style.width) || 0;
     barraVI.style.width = (alturaAct + 1) + 'px';
     let alturaAcumuladaBarraI = alturaAct + 1;
@@ -5071,7 +5070,7 @@ function incrementoHeightVI() {
       let progreso = alturaAcumuladaBarraI / alturaBarras;
       b = alturaAcumuladaBarraI + 1.4;
     }
-    barraVI.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    barraVI.style.backgroundColor = `rgb(${r}, ${g}, ${b})`; 
     if (alturaAcumuladaBarraI >= 20 && !isAnimatingVII) {
       isAnimatingVII = false
       incrementoHeightVII();
@@ -5082,6 +5081,8 @@ function incrementoHeightVI() {
       reduccionHeightVI();
     }
   }, 1);
+
+
 }
 function reduccionHeightVI() {
   if (isAnimatingVI) return;
@@ -5365,10 +5366,11 @@ function clearAllIntervals() {
       }
     }
 }
-
-
-function changeColorToGreen() {
+function changeColorToGreen() { 
   let index = 0;  
+  let paternStreet = document.getElementById('equalizer')
+  let paternLittles = document.getElementById('padre')
+  paternStreet.style.display = 'flex'
     clearInterval(INTERVALOS.intervaloXLI);  
   const lines = document.querySelectorAll('#column_1 .lineas');
   lines.forEach(line => {
@@ -5378,19 +5380,25 @@ function changeColorToGreen() {
   changeColorToNumbres();
   INTERVALOS.intervaloXLI = setInterval(() => {
     if (index < lines.length) {
-      if (index < 6) {
+      if (index < 8) {
         lines[index].style.backgroundColor = 'rgb(0, 255, 0)'; // Verde
-      } else if (index < 10) {
-        lines[index].style.backgroundColor = 'rgb(255, 165, 0)'; // Naranja
-      } else if (index < 14) {
+      } else if (index < 11) {
+        lines[index].style.backgroundColor = 'rgb(255, 235, 0)'; // Naranja
+      } else if (index < 13) {
+        lines[index].style.backgroundColor = 'rgb(255, 115, 0)'; // Naranja
+      } else if(index < 14) {
         lines[index].style.backgroundColor = 'rgb(255, 0, 0)'; // Rojo
-      }
+        paternLittles.style.display = 'flex'
+        document.getElementById('patern').style.display = 'grid';
+        startFlashing()
+      }      
       index++;
     } else {
       clearInterval(INTERVALOS.intervaloXLI); 
       changeColorToTransparent();
     }
   }, 57);
+  
 }
 function changeColorToGreenII() {
   let index = 0;  
@@ -5399,13 +5407,15 @@ function changeColorToGreenII() {
 
   INTERVALOS.intervaloXLII = setInterval(() => {
     if (index < lines.length) {
-      if (index < 6) {
+      if (index < 8) {
         lines[index].style.backgroundColor = 'rgb(0, 255, 0)'; // Verde
-      } else if (index < 10) {
-        lines[index].style.backgroundColor = 'rgb(255, 165, 0)'; // Naranja
-      } else if (index < 14) {
+      } else if (index < 11) {
+        lines[index].style.backgroundColor = 'rgb(255, 235, 0)'; // Naranja
+      } else if (index < 13) {
+        lines[index].style.backgroundColor = 'rgb(255, 115, 0)'; // Naranja
+      } else if(index < 14) {
         lines[index].style.backgroundColor = 'rgb(255, 0, 0)'; // Rojo
-      }
+      }      
       index++;
     } else {
       clearInterval(INTERVALOS.intervaloXLII); 
@@ -5421,14 +5431,18 @@ function changeColorToNumbres() {
     line.style.backgroundColor = '';
   });
   INTERVALOS.intervaloXLV = setInterval(() => {
+
     if (index < numbers.length) {
-      if (index < 6) {
+      if (index < 8) {
         numbers[index].style.display = 'flex'
         numbers[index].style.color = 'rgb(0, 255, 0)'; // Verde
-      } else if (index < 10) {
+      } else if (index < 11) {
         numbers[index].style.display = 'flex'
-        numbers[index].style.color = 'rgb(255, 165, 0)'; // Naranja
-      } else if (index < 14) {
+        numbers[index].style.color = 'rgb(255,235, 0)'; // Naranja
+      } else if (index < 13) {
+        numbers[index].style.display = 'flex'
+        numbers[index].style.color = 'rgb(255, 115, 0)'; // Rojo
+      }else if (index < 14) {
         numbers[index].style.display = 'flex'
         numbers[index].style.color = 'rgb(255, 0, 0)'; // Rojo
       }
@@ -5439,10 +5453,6 @@ function changeColorToNumbres() {
     }
   }, 57);
 }
-
-
-
-
 function changeColorToTransparent() {
   const lines = document.querySelectorAll('#column_1 .lineas');
   let index = lines.length - 1;  
@@ -5474,8 +5484,8 @@ function changeColorTransparent() {
   let index = numbers.length - 1;  
   INTERVALOS.intervaloXLVI = setInterval(() => {
     if (index >= 0) {
-      numbers[index].style.color = '';
-      numbers[index].style.display = 'none'
+      numbers[index].style.color = 'rgb(255,255,255)';
+      /* numbers[index].style.display = 'none' */
       index--;
     } else {
       clearInterval(INTERVALOS.intervaloXLVI); 
@@ -5483,4 +5493,132 @@ function changeColorTransparent() {
     }
   }, 50);
 }
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
+const INTERVALOSA = {
+  intervaloA: null,
+  intervaloB: null,
+};
+function incremento(element, tope) {
+  desactivarClicsPorUnTiempoII();
+  detenerIntervalos(element);
+  let barra = document.getElementById(element);
+  barra.style.height = 0;
+  let acumulador = 0;
+
+  const colores = ['rgb(0,255,255)','blue','rgb(200,0,255)','rgb(255,0,255)','red','rgb(255,100,0)','rgb(255,255,0)','rgb(177,255,0)','rgb(0,255,0)','green', 'yellow'];
+  const colorIndex = Array.from(document.getElementsByClassName('barras')).indexOf(barra) % colores.length;
+  barra.style.backgroundColor = colores[colorIndex];
+
+  INTERVALOSA[element] = setInterval(() => {
+    acumulador += 1;
+    let currentHeight = parseInt(barra.style.height) || 0;
+    let newHeight = currentHeight + 1;
+    barra.style.height = newHeight + 'px';
+
+    if (newHeight >= tope) {
+      clearInterval(INTERVALOSA[element]);
+      INTERVALOSA[element] = null;
+      decremento(element, tope);
+    }
+  }, 15);
+}
+function decremento(element,tope) {
+
+  INTERVALOSA[element] = setInterval(() => {
+    let barra = document.getElementById(element);
+    let currentHeight = parseInt(barra.style.height) || 0;
+    let newHeight = currentHeight - 1;
+    barra.style.height = newHeight + 'px';
+
+    if (newHeight <= 0) {
+      bloqueo = false
+      clearInterval(INTERVALOSA[element]);
+      INTERVALOSA[element] = null;
+      incremento(element,tope);
+    }
+  }, 15);
+}
+function detenerIntervalos(element) {
+  if (INTERVALOSA[element]) {
+    clearInterval(INTERVALOSA[element]);
+    INTERVALOSA[element] = null;
+  }
+}
+function detenerlosTodos() {
+  Object.keys(INTERVALOSA).forEach(key => {
+    clearInterval(INTERVALOSA[key]);
+    INTERVALOSA[key] = null;
+  });
+}
+const eltos = [
+  { id: 'barra', tope: 50 },
+  { id: 'barra_I', tope: 50 },
+  { id: 'barra_II', tope: 50 },
+  { id: 'barra_III', tope: 100 },
+  { id: 'barra_IV', tope: 100 },
+  { id: 'barra_V', tope: 100 },
+  { id: 'barra_VI', tope: 100 },
+  { id: 'barra_VII', tope: 150 },
+  { id: 'barra_VIII', tope: 150 },
+  { id: 'barra_IX', tope: 150 },
+  { id: 'barra_X', tope: 150 },
+  { id: 'barra_XI', tope: 150 },
+  { id: 'barra_XII', tope: 150 },
+  { id: 'barra_XIII', tope: 150 },
+  { id: 'barra_XIV', tope: 150 },
+  { id: 'barra_XV', tope: 150 },
+  { id: 'barra_XVI', tope: 150 },
+  { id: 'barra_XVII', tope: 150 },
+  { id: 'barra_XVIII', tope: 150 },
+  { id: 'barra_XIX', tope: 150 },
+  { id: 'barra_XX', tope: 150 },
+  { id: 'barra_XXI', tope: 150 },
+  { id: 'barra_XXII', tope: 150 }
+];
+eltos.forEach((elemento, index) => {
+  setTimeout(() => {
+    incremento(elemento.id, elemento.tope);
+  }, index * 250);
+});
+function desactivarClicsPorUnTiempoII() {
+                                                                                                
+  document.addEventListener('click', bloquearClic, true);
+  
+  setTimeout(function() {
+    document.removeEventListener('click', bloquearClic, true);
+  }, 1500);
+}
+function bloquearClic(event) {
+  event.stopPropagation();
+  event.preventDefault();
+}
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+const elementsB = document.querySelectorAll("#patern .irisado");
+const originalColors = Array.from(elementsB).map(el => el.style.backgroundColor);
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+function flashElements() {
+  const flashedElements = new Set();
+
+  while (flashedElements.size < 4) {
+    const randomIndex = getRandomInt(elementsB.length);
+    if (!flashedElements.has(randomIndex)) {
+      flashedElements.add(randomIndex);
+    }
+  }
+  flashedElements.forEach(index => {
+    const element = elementsB[index];
+    const originalColor = originalColors[index];
+    element.style.backgroundColor = "black";
+    setTimeout(() => {
+      element.style.backgroundColor = originalColor;
+    }, 7);
+  });
+}
+function startFlashing() {
+  flashElements();
+  setInterval(flashElements, 7);
+}
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */

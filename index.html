@@ -623,7 +623,7 @@
       <button class="boton-a" id="iniciar" style="position: relative;">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
       <!-- <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="irContenedorSiguiente()"></button> -->
       <!-- <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="clearAllIntervals()"></button> -->
-      <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="clearAllIntervals()"></button>
+      <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="motionLittleBar()"></button>
 
      </div><br>
     <div id="pantalla-tintero">       
@@ -2291,7 +2291,6 @@
       <div id="animatedDivIV" class="first_table"></div>   
     </div>
     <div id="cortina"></div>
-
     <div id="second_half">
       <div id="iniciador_1" class="iniciadores first_table"></div>
       <div id="iniciador_2" class="iniciadores first_table"></div>
@@ -2299,15 +2298,13 @@
       <div id="iniciador_4" class="iniciadores first_table"></div>
       <div id="iniciador_5" class="iniciadores first_table"></div>
     </div>  
-
     <div id="nicho_spans">
       <span id="pantalla" class="spans first_table">5890</span>
       <span id="pantalla_II" class="spans first_table">9832</span>
       <span id="pantalla_III" class="spans first_table">7819</span>
       <span id="pantalla_IV" class="spans first_table">4987</span>
       <span id="pantalla_V" class="spans first_table">0123</span>
-    </div> 
-       
+    </div>        
     <div id="wall_street_II">
       <div id="iniciador_6" class="horizontales first_table"></div>
       <div id="iniciador_7" class="horizontales first_table"></div>
@@ -2315,7 +2312,6 @@
       <div id="iniciador_9" class="horizontales first_table"></div>
       <div id="iniciador_10" class="horizontales first_table"></div>
     </div>
-
     <div id="equalizer">
       <div id="column_1" class="column">
         <div id="line_1" class="lineas"></div>
@@ -2334,11 +2330,11 @@
         <div id="line_14" class="lineas"></div>
       </div>
       <div id="column_2">
-        <span id="indic_1" class="column_spans">1</span><span id="indic_2" class="column_spans">2</span><span id="indic_3" class="column_spans">3</span>
-        <span id="indic_4" class="column_spans">4</span><span id="indic_5" class="column_spans">5</span><span id="indic_6" class="column_spans">6</span>
-        <span id="indic_7" class="column_spans">7</span><span id="indic_1" class="column_spans">-1</span><span id="indic_2" class="column_spans">-2</span>
-        <span id="indic_3" class="column_spans">-3</span><span id="indic_4" class="column_spans">-4</span><span id="indic_5" class="column_spans">-5</span>
-        <span id="indic_6" class="column_spans">-6</span><span id="indic_7" class="column_spans">-7</span>
+        <span id="indic_1" class="column_spans">- 1 -</span><span id="indic_2" class="column_spans">- 2 -</span><span id="indic_3" class="column_spans">- 3 -</span>
+        <span id="indic_4" class="column_spans">- 4 -</span><span id="indic_5" class="column_spans">- 5 -</span><span id="indic_6" class="column_spans">- 6 -</span>
+        <span id="indic_7" class="column_spans">- 7 -</span><span id="indic_1" class="column_spans">- 6 -</span><span id="indic_2" class="column_spans">- 5 -</span>
+        <span id="indic_3" class="column_spans">- 4 -</span><span id="indic_4" class="column_spans">- 3 -</span><span id="indic_5" class="column_spans">- 2 -</span>
+        <span id="indic_6" class="column_spans">- 1 -</span><span id="indic_7" class="column_spans">- 0 -</span>
       </div>
       <div id="column_3" class="column">
         <div id="line_15" class="lineas"></div>
@@ -2357,6 +2353,60 @@
         <div id="line_28" class="lineas"></div>
       </div>
     </div>
+
+    <div id="padre">
+      <div id="barra" class="barras"></div>
+      <div id="barra_I" class="barras"></div>
+      <div id="barra_II" class="barras"></div>
+      <div id="barra_III" class="barras"></div>
+      <div id="barra_IV" class="barras"></div>
+      <div id="barra_V" class="barras"></div>
+      <div id="barra_VI" class="barras"></div>
+      <div id="barra_VII" class="barras"></div>
+      <div id="barra_VIII" class="barras"></div>
+      <div id="barra_IX" class="barras"></div>
+      <div id="barra_X" class="barras"></div>
+      <div id="barra_XI" class="barras"></div>
+      <div id="barra_XII" class="barras"></div>
+      <div id="barra_XIII" class="barras"></div>
+      <div id="barra_XIV" class="barras"></div>
+      <div id="barra_XV" class="barras"></div>
+      <div id="barra_XVI" class="barras"></div>
+      <div id="barra_XVII" class="barras"></div>
+      <div id="barra_XVIII" class="barras"></div>
+      <div id="barra_XIX" class="barras"></div>
+      <div id="barra_XX" class="barras"></div> 
+      <div id="barra_XXI" class="barras"></div>
+      <div id="barra_XXII" class="barras"></div> 
+    </div>
+
+    <div id="patern">
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+      <div class="irisado"></div>
+    </div>
+
     
     <script src="./Matriz-II.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>   <!-- LIBRERIA DE GRAFICOS -->
