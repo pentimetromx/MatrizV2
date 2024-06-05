@@ -333,7 +333,6 @@ function VolveraInicio(){
 }
 function ElementosMaII(elementId){
   var elementosExcluidos = ['buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
-  /* document.getElementById('linkList').style.display = 'none' */
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {

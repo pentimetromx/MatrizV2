@@ -4135,7 +4135,7 @@ function updateAna() {
  })
  /* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
  botRed.addEventListener('mousedown', resetButtons);
- botClose.addEventListener('mousedown', resetButtons);     // SEGUNDO BOTON CIERRE TOTAL
+ botClose.addEventListener('mousedown', resetButtons); 
  function resetButtons() {
    clickHabilitado = true; 
    makeFilters()
@@ -4174,8 +4174,8 @@ function updateAna() {
      interfaz.style.display = 'none';
      newLeft = 0;
      padreTres.classList.add('move_containerII')
-   }
- }
+  }
+}
  botCloseII.addEventListener('mouseup', resetButtonsII);   // PRIMER BOTON CIERRE TOTAL 
  function resetButtonsII() {
    makeFiltersII()
@@ -4217,7 +4217,7 @@ function updateAna() {
    verButtsInterfazIII.style.display = 'none';
    positionDisplayIII.style.display = 'none';
    aplique.style.display = 'none'
- }
+}
  /* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
  function mostrarInterfaz() { 
    container.style.display = 'flex'
@@ -5366,15 +5366,16 @@ function clearAllIntervals() {
       }
     }
 }
+
 function changeColorToGreen() { 
   let index = 0;  
   let paternStreet = document.getElementById('equalizer')
   let paternLittles = document.getElementById('padre')
   paternStreet.style.display = 'flex'
-    clearInterval(INTERVALOS.intervaloXLI);  
+  clearInterval(INTERVALOS.intervaloXLI);  
   const lines = document.querySelectorAll('#column_1 .lineas');
   lines.forEach(line => {
-    line.style.backgroundColor = '';
+  line.style.backgroundColor = '';
   });
   changeColorToGreenII();
   changeColorToNumbres();
@@ -5387,10 +5388,12 @@ function changeColorToGreen() {
       } else if (index < 13) {
         lines[index].style.backgroundColor = 'rgb(255, 115, 0)'; // Naranja
       } else if(index < 14) {
+        stopPatern = false
         lines[index].style.backgroundColor = 'rgb(255, 0, 0)'; // Rojo
         paternLittles.style.display = 'flex'
         document.getElementById('patern').style.display = 'grid';
-        startFlashing()
+        /* startFlashing() */
+        changeColors()
       }      
       index++;
     } else {
@@ -5559,32 +5562,30 @@ const eltos = [
   { id: 'barra_IV', tope: 100 },
   { id: 'barra_V', tope: 100 },
   { id: 'barra_VI', tope: 100 },
-  { id: 'barra_VII', tope: 150 },
-  { id: 'barra_VIII', tope: 150 },
-  { id: 'barra_IX', tope: 150 },
-  { id: 'barra_X', tope: 150 },
-  { id: 'barra_XI', tope: 150 },
-  { id: 'barra_XII', tope: 150 },
-  { id: 'barra_XIII', tope: 150 },
-  { id: 'barra_XIV', tope: 150 },
-  { id: 'barra_XV', tope: 150 },
-  { id: 'barra_XVI', tope: 150 },
-  { id: 'barra_XVII', tope: 150 },
-  { id: 'barra_XVIII', tope: 150 },
-  { id: 'barra_XIX', tope: 150 },
-  { id: 'barra_XX', tope: 150 },
-  { id: 'barra_XXI', tope: 150 },
-  { id: 'barra_XXII', tope: 150 }
+  { id: 'barra_VII', tope: 127 },
+  { id: 'barra_VIII', tope: 127 },
+  { id: 'barra_IX', tope: 127 },
+  { id: 'barra_X', tope: 127 },
+  { id: 'barra_XI', tope: 127 },
+  { id: 'barra_XII', tope: 127 },
+  { id: 'barra_XIII', tope: 127 },
+  { id: 'barra_XIV', tope: 127 },
+  { id: 'barra_XV', tope: 127 },
+  { id: 'barra_XVI', tope: 127 },
+  { id: 'barra_XVII', tope: 127 },
+  { id: 'barra_XVIII', tope: 127 },
+  { id: 'barra_XIX', tope: 127 },
+  { id: 'barra_XX', tope: 127 },
+  { id: 'barra_XXI', tope: 127 },
+  { id: 'barra_XXII', tope: 127 }
 ];
 eltos.forEach((elemento, index) => {
   setTimeout(() => {
     incremento(elemento.id, elemento.tope);
   }, index * 250);
 });
-function desactivarClicsPorUnTiempoII() {
-                                                                                                
-  document.addEventListener('click', bloquearClic, true);
-  
+function desactivarClicsPorUnTiempoII() {                                                                                                
+  document.addEventListener('click', bloquearClic, true);  
   setTimeout(function() {
     document.removeEventListener('click', bloquearClic, true);
   }, 1500);
@@ -5594,9 +5595,10 @@ function bloquearClic(event) {
   event.preventDefault();
 }
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-const elementsB = document.querySelectorAll("#patern .irisado");
+let counterI = 0; // Variable global para el contador
+const elementsB = document.querySelectorAll('#patern .irisado');
 const originalColors = Array.from(elementsB).map(el => el.style.backgroundColor);
-function getRandomInt(max) {
+/*function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 function flashElements() {
@@ -5614,11 +5616,67 @@ function flashElements() {
     element.style.backgroundColor = "black";
     setTimeout(() => {
       element.style.backgroundColor = originalColor;
-    }, 7);
+    }, 500);
   });
 }
 function startFlashing() {
   flashElements();
-  setInterval(flashElements, 7);
-}
+  setInterval(flashElements, 7);  
+  setTimeout(() => {
+    clearInterval(interval);
+  }, 5000);
+} */
+
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+// EL MIO
+
+const elementsC = ['elem1', 'elem2', 'elem3', 'elem4', 'elem5', 'elem6', 'elem7', 'elem8', 'elem9', 'elem10', 'elem11', 'elem12', 'elem13', 'elem14', 'elem15', 'elem16', 'elem17', 'elem18', 'elem19', 'elem20', 'elem21', 'elem22', 'elem23', 'elem24']; // Lista de IDs de los elementos
+let index = 0
+let lista = 0
+let intervaloColors = null
+let intervaloColorsI = null
+
+function changeColors() {
+  setTimeout(() => {
+    intervaloColors = setInterval(() => {
+      if (index < elementsC.length) {
+        const element = document.getElementById(elementsC[index]);
+        if (element) {
+          element.style.backgroundColor = 'black';
+        }
+        index++;
+      } else {
+        clearInterval(intervaloColors);
+        applyColors()
+        index=0
+      }
+    }, 55);    
+  }, 500);
+}
+function applyColors() {
+  intervaloColorsI = setInterval(() => {
+    if (lista < elementsC.length) {
+      const element = document.getElementById(elementsC[lista]);
+      if (element) {
+        element.style.backgroundColor = ''; // Restablece al valor predeterminado del CSS
+      }
+      lista++;
+    } else {
+      clearInterval(intervaloColorsI);
+      detenerCicodelia()
+      changeColors()
+      lista=0
+    }
+  }, 55);
+}
+
+function detenerCicodelia() {
+  if (intervaloColors !== null) {
+    clearInterval(intervaloColors);
+    intervaloColors = null; // Resetea la variable para evitar problemas
+  }
+  if (intervaloColorsI !== null) {
+    clearInterval(intervaloColorsI);
+    intervaloColorsI = null; // Resetea la variable para evitar problemas
+  }
+}
