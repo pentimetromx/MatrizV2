@@ -4951,7 +4951,7 @@ function incrementoWidth() {   // PRIMERA CORTINA Y LLAMADO A SEGUNDA MITAD
   INTERVALOS.intervaloXXXII = setInterval(() => {
     let currentWidth = parseInt(window.getComputedStyle(imgWallStreetI).width);
     imgWallStreetI.style.width = (currentWidth + 5) + 'px'
-    if(parseInt(currentWidth) >= 390){
+    if(parseInt(currentWidth) >= 393){
       clearInterval(INTERVALOS.intervaloXXXII);      
       
       let parentElement = document.getElementById('second_half');
