@@ -213,7 +213,7 @@ function resetearBarras(){
   // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
   function Geometria() {
     console.clear();
-    var contiBoton = document.getElementById('column_4')   
+    var contiBoton = document.getElementById('second_half')   
     var rect = contiBoton.getBoundingClientRect();
     var topPosition = rect.top
     var leftPosition = rect.left
@@ -4955,11 +4955,11 @@ function incrementoWidth() {   // PRIMERA CORTINA Y LLAMADO A SEGUNDA MITAD
       clearInterval(INTERVALOS.intervaloXXXII);      
       
       let parentElement = document.getElementById('second_half');
-      parentElement.style.display = 'block'; 
+      parentElement.style.display = 'grid'; 
       parentElement.style.visibility = 'visible';
       let childElements = parentElement.children;
       for (let i = 0; i < childElements.length; i++) {
-        childElements[i].style.display = 'block';
+        childElements[i].style.display = 'inline-block';
         childElements[i].style.visibility = 'visible';
       }
       incrementoHeight(barraI, pantallaI,'intervaloI',1);
