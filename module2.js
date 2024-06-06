@@ -213,7 +213,7 @@ function resetearBarras(){
   // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
   function Geometria() {
     console.clear();
-    var contiBoton = document.getElementById('second_half')   
+    var contiBoton = document.getElementById('padre')   
     var rect = contiBoton.getBoundingClientRect();
     var topPosition = rect.top
     var leftPosition = rect.left
@@ -4949,14 +4949,15 @@ function incrementoWidth() {   // PRIMERA CORTINA Y LLAMADO A SEGUNDA MITAD
   imgWallStreetI.style.display = 'flex'
   stopWidth === true
   INTERVALOS.intervaloXXXII = setInterval(() => {
-    let currentWidth = parseInt(window.getComputedStyle(imgWallStreetI).width);
-    imgWallStreetI.style.width = (currentWidth + 5) + 'px'
-    if(parseInt(currentWidth) >= 393){
+    /* let currentWidth = parseInt(window.getComputedStyle(imgWallStreetI).width); */
+    let currentWidth = parseFloat(window.getComputedStyle(imgWallStreetI).width) / parseFloat(window.getComputedStyle(imgWallStreetI.parentElement).width) * 100;
+    /* imgWallStreetI.style.width = (currentWidth + 5) + 'px' */
+    imgWallStreetI.style.width = (currentWidth + 1) + '%';
+    if(currentWidth >= 99){
       clearInterval(INTERVALOS.intervaloXXXII);      
       
       let parentElement = document.getElementById('second_half');
-      parentElement.style.display = 'grid'; 
-      parentElement.style.visibility = 'visible';
+      parentElement.style.display = 'grid';   
       let childElements = parentElement.children;
       for (let i = 0; i < childElements.length; i++) {
         childElements[i].style.display = 'inline-block';
@@ -5266,9 +5267,9 @@ function reduccionHeightX() {
 }
 function incrementoWidthI() {
   INTERVALOS.intervaloXXXIII = setInterval(() => {
-    let currentWidth = parseInt(window.getComputedStyle(imgWallStreet).height);
-    imgWallStreet.style.height = (currentWidth + 1) + 'px'
-    if(parseInt(currentWidth) >= 103){
+    let currentHeight = parseInt(window.getComputedStyle(imgWallStreet).height);
+    imgWallStreet.style.height = (currentHeight + 1) + 'px'
+    if(parseInt(currentHeight) >= 103){
       clearInterval(INTERVALOS.intervaloXXXIII);
     }
   }, 9); 
@@ -5629,13 +5630,11 @@ function startFlashing() {
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 // EL MIO
-
 const elementsC = ['elem1', 'elem2', 'elem3', 'elem4', 'elem5', 'elem6', 'elem7', 'elem8', 'elem9', 'elem10', 'elem11', 'elem12', 'elem13', 'elem14', 'elem15', 'elem16', 'elem17', 'elem18', 'elem19', 'elem20', 'elem21', 'elem22', 'elem23', 'elem24']; // Lista de IDs de los elementos
 let index = 0
 let lista = 0
 let intervaloColors = null
 let intervaloColorsI = null
-
 function changeColors() {
   setTimeout(() => {
     intervaloColors = setInterval(() => {
@@ -5669,7 +5668,6 @@ function applyColors() {
     }
   }, 55);
 }
-
 function detenerCicodelia() {
   if (intervaloColors !== null) {
     clearInterval(intervaloColors);
