@@ -37,12 +37,6 @@ function deslizaContenedor(identificador, idButton) {
   container1.style.left = '50%'
   switch(identificador){
     case 'troubleshooting' :
-
-      /* let visor1 = document.getElementById('pantalla')
-      visor1.style.visibility = 'hidden'
-      let visor2 = document.getElementById('pantalla_II')
-      visor2.style.visibility = 'hidden' */
-
       var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
@@ -4410,9 +4404,8 @@ function updateAna() {
    var contOblicuosXI = document.getElementById('agrupaOblicuos-XI');
    contOblicuosXI.classList.add('move-oblicuos');
    console.log('se AGREGO la clase')
-   /* contOblicuosXI.style.top = '10%' */
  }
- function desactivarClicsPorUnTiempoIII() {
+/* function desactivarClicsPorUnTiempoIII() {
    // Desactivar los clics
    document.addEventListener('click', bloquearClic, true);
    // Volver a habilitar los clics después de 1 segundo
@@ -4440,7 +4433,7 @@ function updateAna() {
 function bloquearClic(event) {
   event.stopPropagation();
   event.preventDefault();
-}
+} */
  function aumentoGradualVideo() {
    var video = document.getElementById('video-background');
    var currentScale = 1; // Escala inicial del video
@@ -4723,7 +4716,7 @@ let parentElements = document.getElementById('nicho_spans');
 let wallSt = document.getElementById('wall_street')
 let wallStI = document.getElementById('wall_street_II')
 
-let alturaBarras = 177 
+let alturaBarras = 77 
 let topBarra = 320
 let topBarraI = 300
 let topBarraII = 270
@@ -4781,7 +4774,7 @@ const INTERVALOS = {
 };
 
 function barraInteligente() {
-  var elementosExcluidos = ['first_half','second_half','cortina','wall_street_II','nicho_spans','buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
+  var elementosExcluidos = ['first_half','buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -4967,15 +4960,15 @@ function incrementoWidth() {   // PRIMERA CORTINA Y LLAMADO A SEGUNDA MITAD
       incrementoHeight(barraII, pantallaII,'intervaloII',15);
       incrementoHeight(barraIII, pantallaIII,'intervaloIII',25);
       incrementoHeight(barraIV, pantallaIV,'intervaloIV',35);
-      incrementoWidthI();
       incrementoHeight(barraV, pantallaV,'intervaloV',45)  
+      incrementoWidthI();
       
     }
   }, 1);
 }
 /* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
 function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {   // BARRAS SEGUNDA MITAD
-  parentElements.style.display = 'flex'
+  parentElements.style.display = 'grid'
   INTERVALOS[intervaloVariable] = setInterval(() => {
     let currentValue = parseInt(pantalla.textContent);
     let newValue = currentValue + 5773;
@@ -4991,7 +4984,7 @@ function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {
       clearInterval(INTERVALOS[intervaloVariable]);
       if(barra.id === 'iniciador_1'){
         reduccionHeight(barraI, pantallaI,'intervaloI', 30);
-        pantallaI.style.display = 'flex'
+        /* pantallaI.style.display = 'flex' */
       }
       if(barra.id === 'iniciador_2'){
         reduccionHeight(barraII, pantallaII,'intervaloII',30);
@@ -5055,6 +5048,7 @@ function incrementoHeightVI() {
   let r = 0;
   let g = 255;
   let b = 0;
+  wallStI.style.display = 'flex'
   let horizontalBars = document.getElementById('column_2')
   horizontalBars.style.display = 'flex'
 
@@ -5234,14 +5228,14 @@ function incrementoHeightX() {
   let g = 50; 
   let b = 255; 
   INTERVALOS.intervaloXX = setInterval(() => {
-    let alturaAct = parseInt(barraX.style.width) || 0;
-    barraX.style.width = (alturaAct + 1) + 'px';
-    let alturaAcumuladaBarraI = alturaAct + 1;
-    if (alturaAcumuladaBarraI <= alturaBarras) {
+    let anchoAct = parseFloat(barraX.style.width) || 0;    
+    barraX.style.width = (anchoAct + 1) + '%'; 
+    let alturaAcumuladaBarraI = anchoAct + 1;    
+      if (alturaAcumuladaBarraI <= alturaBarras) {
       let progreso = alturaAcumuladaBarraI / alturaBarras;
       b = alturaAcumuladaBarraI + 1.4 
       g = alturaAcumuladaBarraI + 1.4
-    }
+    }         
     barraX.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
     barraIX.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
     if (parseInt(alturaAcumuladaBarraI) >=alturaBarras) {
@@ -5255,8 +5249,8 @@ function reduccionHeightX() {
   if (isAnimatingX) return;
   isAnimatingX = true;
   INTERVALOS.intervaloXXV = setInterval(() => {
-    let altura = parseInt(barraX.style.width) || 0;
-    barraX.style.width = (altura - 1) + 'px';
+    let altura = parseFloat(barraX.style.width) || 0;
+    barraX.style.width = (altura - 1) + '%';
     let alturaAcumuladaBarraIII = altura - 1;
     if (parseInt(alturaAcumuladaBarraIII) <= 0) {             
       clearInterval(INTERVALOS.intervaloXXV);
@@ -5267,6 +5261,7 @@ function reduccionHeightX() {
 }
 function incrementoWidthI() {
   INTERVALOS.intervaloXXXIII = setInterval(() => {
+    imgWallStreet.style.display = 'flex'
     let currentHeight = parseInt(window.getComputedStyle(imgWallStreet).height);
     imgWallStreet.style.height = (currentHeight + 1) + 'px'
     if(parseInt(currentHeight) >= 103){
@@ -5504,7 +5499,7 @@ const INTERVALOSA = {
   intervaloB: null,
 };
 function incremento(element, tope) {
-  desactivarClicsPorUnTiempoII();
+  /* desactivarClicsPorUnTiempoII(); */
   detenerIntervalos(element);
   let barra = document.getElementById(element);
   barra.style.height = 0;
@@ -5591,10 +5586,10 @@ function desactivarClicsPorUnTiempoII() {
     document.removeEventListener('click', bloquearClic, true);
   }, 1500);
 }
-function bloquearClic(event) {
+/* function bloquearClic(event) {
   event.stopPropagation();
   event.preventDefault();
-}
+} */
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 let counterI = 0; // Variable global para el contador
 const elementsB = document.querySelectorAll('#patern .irisado');
