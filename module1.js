@@ -2102,6 +2102,7 @@ var padre = document.getElementById('nicho_spans');
     } 
   } 
   function abrirSeccionContinua(elementId) {
+  
     var botonesIniciales = document.querySelectorAll('.btn-bloque')
     var botonesC = document.querySelectorAll('.boton-c') 
     document.getElementById('linkList').style.display = 'none'
@@ -2110,12 +2111,10 @@ var padre = document.getElementById('nicho_spans');
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]);  
       if (elemento) {
-        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
       }
     }  
     var bloqueTintero = document.getElementById('tinter-o');
-    // Restablecer estilos por defecto
     bloqueTintero.style.position = '';
     bloqueTintero.style.display = '';
     bloqueTintero.style.left = '';
@@ -2153,14 +2152,11 @@ var padre = document.getElementById('nicho_spans');
     });
     let imgBackgound = document.getElementById('image-background').style.display = 'none'
   
-    // 4. Verificar si el elemento está definido y si ya existe en arrayIds desde ahi es que se llevan las demas                 
     if (typeof elementId !== 'undefined') {
       const index = idsArray.indexOf(elementId);
       if (index !== -1) {
-        // 4. Si el elemento ya existe, moverlo a la última posición
         idsArray.splice(index, 1); // Elimina el elemento en la posición actual
       }
-      // 5. Agregar el elemento al final de arrayIds   
       idsArray.push(elementId);
       console.log(idsArray);
     }
@@ -2550,11 +2546,12 @@ var padre = document.getElementById('nicho_spans');
     }, 77);
   }
   function abrirSeccionVariable(elementId){
+    clearAllIntervals()
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    var elementosExcluidos = ['buscador','container01','cont-variable','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','links-inicialesI','links-iniciales'];  
+    var elementosExcluidos = ['buscador','container01','cont-variable','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','links-inicialesI','links-iniciales'];
     document.getElementById('linkList').style.display = 'none'
     for (var i = 0; i < allContenedores.length; i++) { 
-      var elemento = document.getElementById(allContenedores[i]);  
+      var elemento = document.getElementById(allContenedores[i]);
       if (elemento) {
         // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
@@ -2604,6 +2601,7 @@ var padre = document.getElementById('nicho_spans');
     }
   } 
   function abrirSeccionPlanas(elementId){
+    clearAllIntervals()
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     var elementosExcluidos = ['buscador','container01','conti-video-background','video-background-planas','cont-plana','conti-videos-planas','video-planas-I','video-planas-II','video-infoprint-III','conti-img-planas','links-inicialesI','links-iniciales'];
     document.getElementById('linkList').style.display = 'none'

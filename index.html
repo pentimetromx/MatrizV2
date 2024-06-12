@@ -618,6 +618,7 @@
       </div> 
     </div>
     <div class="contene-2" id="container01" style="display: none;">
+      <button onclick="clearAllIntervals()" style="height: 50px; width: 100px;"></button>
       <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
       <button class="boton-a" id="bot-inicial" style="text-align: center;;position: relative;color: white;" onclick="VolveraInicio()">PANEL INICIO</button>
       <button class="boton-a" id="iniciar" style="position: relative;">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
@@ -862,7 +863,6 @@
       </div>      
     </div>
     <div id="conteneMantaut" class="mantAuto">
-
       <div class="conti-boton" id="conti-boton">
         <button class="butt-mautonomo image-trainings button-deployed mobile-button" id="troubleshoot" onclick="deslizaContenedor('troubleshooting','troubleshoot')">TROUBLESHOOTING</button>
         <button class="butt-mautonomo image-trainings button-deployed" id="def1" onclick="deslizaContenedor('canvasContainer2','def1')">DEFECTOS TIPO 1</button>
@@ -873,10 +873,9 @@
         <button class="butt-mautonomo image-trainings button-deployed" id="kaizen" onclick="deslizaContenedor('conti-boton-kaizen','kaizen')">KAIZEN</button>
         <button class="butt-mautonomo image-trainings button-deployed" id="reset" onclick="resetBotns('troubleshoot')" style="background-color: red;color: white;">Reset</button>
         <button class="butt-mautonomo image-trainings button-deployed" id="auto" onclick="deslizAutomatic('troubleshooting','troubleshoot')" style="background-color: red;color: white;">Show everything</button>
-        <!-- <button class="butt-mautonomo image-trainings button-deployed" id="resultados" onclick="resultadosMA()">TRACKING DASHBOARD</button> -->               
-        <button class="butt-mautonomo image-trainings button-deployed" id="resultados"onclick="barraInteligente()">TRACKING DASHBOARD</button>
+        <!-- <button class="butt-mautonomo image-trainings button-deployed" id="auto" onclick="barraInteligente()" style="background-color: red;color: white;">Show everything</button> -->
+        <button class="butt-mautonomo image-trainings button-deployed" id="resultados" onclick="resultadosMA()">TRACKING DASHBOARD</button>               
       </div> 
-
       <div id="troubleshooting" style="display: none;">
         <label class="labl-class" id="lbl1" for="archivo">Largo de impresion:</label>
         <button class="inpt-class botnClass" id="archivo" onclick="listaEntrenamientosII('archivo')">Seleccionar archivo</button>
@@ -893,20 +892,16 @@
         <label class="labl-class" id="lbl7" for="archivo">Problemas de teñido:</label>
         <button class="inpt-class botnClass" id="btt7" onclick="listaEntrenamientosII('btt7')">Seleccionar archivo</button>       
       </div>
-
       <div id="canvasContainer2" style="display: none;">
         <canvas id="MiGrafica"></canvas>
       </div> 
-
-      <canvas id="ctx"></canvas>
-             
+      <canvas id="ctx"></canvas>             
       <div id="canvasContainer3" style="display: none;">
         <canvas id="MiSegundaGrafica"></canvas><br>
         <canvas id="MiTerceraGrafica"></canvas><br>
         <canvas id="MiCuartaGrafica"></canvas>  
         <canvas id="MiQuintaGrafica"></canvas>              
       </div>
-
       <div id="contChecks">
         <input id="nombre" type="checkbox"class="input-class"> 
         <input id="nombre-I" type="checkbox" class="input-class">
@@ -917,7 +912,6 @@
         <input id="nombre-VI" type="checkbox" class="input-class">
         <input id="nombre-VII" type="checkbox" class="input-class">
       </div> 
-
       <div id="contImagNeg">
         <img id="imagPixelate" src="./assets/pixelate.jpg" alt="Gráfico de Excel 6">
       </div>
@@ -2290,8 +2284,7 @@
       <div id="animatedDivIII" class="first_table"></div> 
       <div id="animatedDivIV" class="first_table"></div>   
     </div>
-    <div id="cortina"></div>
-    
+    <div id="cortina"></div>    
     <div id="second_half">
       <div id="iniciador_1" class="iniciadores first_table"></div>
       <div id="iniciador_2" class="iniciadores first_table"></div>
@@ -2299,15 +2292,13 @@
       <div id="iniciador_4" class="iniciadores first_table"></div>
       <div id="iniciador_5" class="iniciadores first_table"></div>
     </div>  
-
-    <div id="nicho_spans">
-      <span id="pantalla" class="spans first_table">5890</span>
-      <span id="pantalla_II" class="spans first_table">9832</span>
-      <span id="pantalla_III" class="spans first_table">7819</span>
-      <span id="pantalla_IV" class="spans first_table">4987</span>
-      <span id="pantalla_V" class="spans first_table">0123</span>
+    <div id="nicho_spans" class="estilos">
+      <span id="pantalla" class="spans first_table estilos">5890</span>
+      <span id="pantalla_II" class="spans first_table estilos">9832</span>
+      <span id="pantalla_III" class="spans first_table estilos">7819</span>
+      <span id="pantalla_IV" class="spans first_table estilos">4987</span>
+      <span id="pantalla_V" class="spans first_table estilos">0123</span>
     </div>
-
     <div id="wall_street_II">
       <div id="iniciador_6" class="horizontales"></div>
       <div id="iniciador_7" class="horizontales"></div>
@@ -2316,7 +2307,6 @@
       <div id="iniciador_10" class="horizontales"></div>
       <div id="iniciador_11" class="horizontales"></div>
     </div>
-    
     <div id="equalizer">
       <div id="column_1" class="column">
         <div id="line_1" class="lineas"></div>
@@ -2408,8 +2398,6 @@
       <div class="irisado" id="elem22"></div>
       <div class="irisado" id="elem23"></div>
       <div class="irisado" id="elem24"></div>
-      <!-- <button id="stopButton" onclick="detenerCicodelia()">Detener Flasheo</button>
-      <button id="startButton" onclick="applyColors()">Iniciar Flasheo</button> -->
     </div>
     
     <script src="./Matriz-II.js"></script> 
