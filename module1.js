@@ -1271,7 +1271,11 @@ function cierraContenedores(elementId,buttonID){
           }, 1077) 
               setTimeout(function() {
                 desencadenar('kaizenCont')
-              }, 1477)  
+              }, 1477)            
+                  setTimeout(function() {
+                    document.body.style.zoom = "100%";  
+                    showMetrics()
+                  }, 3577) 
   }
   function desencadenar(idElemento) {
     var vidkaizen = document.getElementById('vidElem')
@@ -1873,6 +1877,16 @@ var padre = document.getElementById('nicho_spans');
     }
   }) 
   }
+function showMetrics(){
+
+  const ELEMENTOS = ['troubleshooting','MiGrafica','contChecks','MiTerceraGrafica','MiSegundaGrafica','MiCuartaGrafica','MiQuintaGrafica','kaizenCont','vidElem']   
+  ELEMENTOS.forEach(element => {
+    let ocultar = document.getElementById(element)
+    ocultar.style.display = 'none'
+  });
+  barraInteligente()
+}  
+
   function muestraTorres(seleccion) {
     seccionTintero.style.display = 'none'
     for (var i = 0; i < pantallas.length; i++) {

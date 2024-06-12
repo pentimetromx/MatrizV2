@@ -209,7 +209,7 @@ function resetearBarras(){
   // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
   function Geometria() {
     console.clear();
-    var contiBoton = document.getElementById('padre')   
+    var contiBoton = document.getElementById('animatedDiv')   
     var rect = contiBoton.getBoundingClientRect();
     var topPosition = rect.top
     var leftPosition = rect.left
@@ -4789,22 +4789,16 @@ function barraInteligente() {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
-  function removeInlineStyles(element) {
-    element.removeAttribute('style');
-    const children = element.querySelectorAll('*');
-    children.forEach(child => {
-      child.removeAttribute('style');
-    });
-  }  
+
   removeInlineStyles(parentElements);   
   removeInlineStyles(imgWallStreet);
-  removeInlineStyles(imgWallStreetI);
+  removeInlineStyles(imgWallStreetI);         
   removeInlineStyles(secondMid);
   removeInlineStyles(wallStI);
   removeInlineStyles(paternLittles);
   removeInlineStyles(paternStreet);
   clearAllIntervals()
-
+  
   const elementos = document.querySelectorAll('nicho_spans .estilos'); 
   elementos.forEach(elemento => {
     elemento.removeAttribute('style');
@@ -4819,6 +4813,14 @@ function barraInteligente() {
   incrementoHeightXV()
   incrementoHeightXVI()
 }
+function removeInlineStyles(element) {
+  element.removeAttribute('style');
+  const children = element.querySelectorAll('*');
+  children.forEach(child => {
+    child.removeAttribute('style');
+  });
+}
+
 /* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
 function incrementoHeightXI() {
   INTERVALOS.intervaloXXVI = setInterval(() => {  
@@ -5426,6 +5428,7 @@ function changeColorToGreen() {    // MUESTRA EQUALIZADOR, PADRE Y PATERN
   });
   changeColorToGreenII();
   changeColorToNumbres();
+
   INTERVALOS.intervaloXLI = setInterval(() => {
     if (index < lines.length) {
       if (index < 8) {
@@ -5435,16 +5438,15 @@ function changeColorToGreen() {    // MUESTRA EQUALIZADOR, PADRE Y PATERN
       } else if (index < 13) {
         lines[index].style.backgroundColor = 'rgb(255, 115, 0)'; // Naranja
       } else if(index < 14) {
-        stopPatern = false
-        lines[index].style.backgroundColor = 'rgb(255, 0, 0)'; // Rojo
 
         paternLittles.style.display = 'flex'
-        const delay = 122; // Retraso de 100ms entre cada llamada
-        for (let i = 0; i < barras.length; i++) {
-          setTimeout(() => {
-            controlHeight(i);
-          }, i * delay);
+        
+        if (!trackerStarted) { // Verificar si inicioTracker ya ha sido ejecutado
+          inicioTracker(); // Llamar a inicioTracker solo si no ha sido ejecutado
         }
+
+        stopPatern = false
+        lines[index].style.backgroundColor = 'rgb(255, 0, 0)'; // Rojo
         document.getElementById('patern').style.display = 'grid';
         changeColors()
       }      
@@ -5551,17 +5553,27 @@ function changeColorTransparent() {
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
 const INTERVAL = {
-  intervalo1:null,
-  intervalo2:null,
+  intervalo1: null,
+  intervalo2: null,
 }
 const barras = document.querySelectorAll('.barras');
-let interval = null;
+let timeoutHandles = []; // Almacenará los identificadores de los setTimeout
+let trackerStarted = false; 
 const screenHeight = window.innerHeight;
+  
+function removeInlineStyles(element) {
+  element.removeAttribute('style');
+}
+
+// Función para controlar la altura
 function controlHeight(index) {
   if (index >= 0 && index < barras.length) {
     changeHeight(barras[index], 7, screenHeight * 0.17, incrementaAlto);
   }
 }
+
+
+// Función para cambiar la altura
 function changeHeight(barra, step, limit, onComplete) {
   if (barra.interval) {
     clearInterval(barra.interval);
@@ -5579,25 +5591,65 @@ function changeHeight(barra, step, limit, onComplete) {
     }
   }, 27);
 }
-  function incrementaAlto(barra) {
+// Función para incrementar la altura
+function incrementaAlto(barra) {
   changeHeight(barra, -7, 0, reduccionAlto);
 }
+// Función para reducir la altura
 function reduccionAlto(barra) {
   changeHeight(barra, 7, screenHeight * 0.17, incrementaAlto);
 }
 function detenerAllInterval() {
   barras.forEach(barra => {
+    if (barra.interval) {
+      clearInterval(barra.interval);
+    }
+  });
+}  
+function resetStylesAndIntervals() {
+  // Limpiar intervalos
+  if (INTERVAL.intervalo1) {
+      clearInterval(INTERVAL.intervalo1);
+      INTERVAL.intervalo1 = null;
+  }
+  if (INTERVAL.intervalo2) {
+      clearInterval(INTERVAL.intervalo2);
+      INTERVAL.intervalo2 = null;
+  }
+
+  // Limpiar timeouts pendientes
+  timeoutHandles.forEach(handle => clearTimeout(handle));
+  timeoutHandles = []; // Vaciar la lista de identificadores de setTimeout
+
+  // Resetear estilos de las barras
+  barras.forEach(barra => {
+      removeInlineStyles(barra);
       if (barra.interval) {
           clearInterval(barra.interval);
+          barra.interval = null; // Asegurarse de que el intervalo se restablezca
       }
+      barra.style.height = '0'; // Asegurarse de que la altura se restablezca
   });
+
+  trackerStarted = false; // Reiniciar la bandera
 }
-/* const delay = 122; // Retraso de 100ms entre cada llamada
-for (let i = 0; i < barras.length; i++) {
-  setTimeout(() => {
-    controlHeight(i);
-  }, i * delay);
-} */
+
+function inicioTracker() {
+  resetStylesAndIntervals();
+
+  // Iniciar nuevos timeouts
+  const delay = 122; // Retraso de 122ms entre cada llamada
+  for (let i = 0; i < barras.length; i++) {
+      let handle = setTimeout(() => {
+          controlHeight(i);
+      }, i * delay);
+      timeoutHandles.push(handle); // Almacenar el identificador del setTimeout
+  }
+
+  trackerStarted = true; // Marcar que inicioTracker ha sido ejecutado
+}
+
+
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 let counterI = 0; // Variable global para el contador
 const elementsB = document.querySelectorAll('#patern .irisado');
@@ -5653,4 +5705,5 @@ function detenerCicodelia() {
     intervaloColorsI = null; // Resetea la variable para evitar problemas
   }
 }
-
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+ 
