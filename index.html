@@ -863,16 +863,26 @@
     </div>
     <div id="conteneMantaut" class="mantAuto">
       <div class="conti-boton" id="conti-boton">
-        <button class="butt-mautonomo image-trainings button-deployed mobile-button" id="troubleshoot" onclick="deslizaContenedor('troubleshooting','troubleshoot')">TROUBLESHOOTING</button>
-        <button class="butt-mautonomo image-trainings button-deployed" id="def1" onclick="deslizaContenedor('canvasContainer2','def1')">DEFECTOS TIPO 1</button>
-        <button class="butt-mautonomo image-trainings button-deployed" id="def2" onclick="deslizaContenedor('contChecks','def2')">DEFECTOS TIPO 2</button>
-        <button class="butt-mautonomo image-trainings button-deployed" id="adtBut" onclick="deslizaContenedor('canvasContainer3','adtBut')">ADT</button>
-        <button class="butt-mautonomo image-trainings button-deployed" id="fua1" onclick="deslizaContenedor('contImagNeg','fua1')">FUA</button>          
-        <button class="butt-mautonomo image-trainings button-deployed" id="lup" onclick="deslizaContenedor('contImagGraf','lup')">LUP</button>
+        <!-- <button class="butt-mautonomo image-trainings button-deployed mobile-button" id="troubleshoot" onclick="deslizaContenedor('troubleshooting','troubleshoot')">TROUBLESHOOTING</button> -->
+        <button class="butt-mautonomo image-trainings button-deployed mobile-button" id="troubleshoot" onclick="firstMovement()">TROUBLESHOOTING</button>
+
+        <!-- <button class="butt-mautonomo image-trainings button-deployed" id="def1" onclick="deslizaContenedor('canvasContainer2','def1')">DEFECTOS TIPO 1</button> -->
+        <button class="butt-mautonomo image-trainings button-deployed" id="def1" onclick="secondMovement()">DEFECTOS TIPO 1</button>
+
+        <!-- <button class="butt-mautonomo image-trainings button-deployed" id="def2" onclick="deslizaContenedor('contChecks','def2')">DEFECTOS TIPO 2</button> -->
+        <button class="butt-mautonomo image-trainings button-deployed" id="def2" onclick="thirdMovement()">DEFECTOS TIPO 2</button>  
+
+        <button class="butt-mautonomo image-trainings button-deployed" id="adtBut" onclick="fourthMovement()">ADT</button>
+        <!-- <button class="butt-mautonomo image-trainings button-deployed" id="adtBut" onclick="deslizaContenedor('canvasContainer3','adtBut')">ADT</button> -->
+        
+        <button class="butt-mautonomo image-trainings button-deployed" id="fua1" onclick="fifthMovement()">FUA</button>
+        <!-- <button class="butt-mautonomo image-trainings button-deployed" id="fua1" onclick="deslizaContenedor('contImagNeg','fua1')">FUA</button> -->          
+       
+        <button class="butt-mautonomo image-trainings button-deployed" id="lup" onclick="sixthMovement()">LUP</button>
+        <!-- <button class="butt-mautonomo image-trainings button-deployed" id="lup" onclick="deslizaContenedor('contImagGraf','lup')">LUP</button> -->
         <button class="butt-mautonomo image-trainings button-deployed" id="kaizen" onclick="deslizaContenedor('conti-boton-kaizen','kaizen')">KAIZEN</button>
         <button class="butt-mautonomo image-trainings button-deployed" id="reset" onclick="resetBotns('troubleshoot')" style="background-color: red;color: white;">Reset</button>
         <button class="butt-mautonomo image-trainings button-deployed" id="auto" onclick="deslizAutomatic('troubleshooting','troubleshoot')" style="background-color: red;color: white;">Show everything</button>
-        <!-- <button class="butt-mautonomo image-trainings button-deployed" id="auto" onclick="barraInteligente()" style="background-color: red;color: white;">Show everything</button> -->
         <button class="butt-mautonomo image-trainings button-deployed" id="resultados" onclick="resultadosMA()">TRACKING DASHBOARD</button>               
       </div> 
       <div id="troubleshooting" style="display: none;">
@@ -2300,7 +2310,6 @@
         <span id="pantalla_V" class="spans first_table estilos">0123</span>
       </div>
       <div id="wall_street_II" class="manejo">
-        <div id="iniciador_6" class="horizontales"></div>
         <div id="iniciador_7" class="horizontales"></div>
         <div id="iniciador_8" class="horizontales"></div>
         <div id="iniciador_9" class="horizontales"></div>
@@ -2373,7 +2382,7 @@
         <div id="barra_XXI" class="barras"></div>
         <div id="barra_XXII" class="barras"></div> 
       </div>
-      <div id="patern" class="manejo">
+      <!-- <div id="patern" class="manejo">
         <div class="irisado" id="elem1"></div>
         <div class="irisado" id="elem2"></div>
         <div class="irisado" id="elem3"></div>
@@ -2398,7 +2407,34 @@
         <div class="irisado" id="elem22"></div>
         <div class="irisado" id="elem23"></div>
         <div class="irisado" id="elem24"></div>
-      </div>
+      </div> -->
+    </div>
+
+    <div id="patern" class="manejo">
+      <div class="irisado" id="elem1"></div>
+      <div class="irisado" id="elem2"></div>
+      <div class="irisado" id="elem3"></div>
+      <div class="irisado" id="elem4"></div>
+      <div class="irisado" id="elem5"></div>
+      <div class="irisado" id="elem6"></div>
+      <div class="irisado" id="elem7"></div>
+      <div class="irisado" id="elem8"></div>
+      <div class="irisado" id="elem9"></div>
+      <div class="irisado" id="elem10"></div>
+      <div class="irisado" id="elem11"></div>
+      <div class="irisado" id="elem12"></div>
+      <div class="irisado" id="elem13"></div>
+      <div class="irisado" id="elem14"></div>
+      <div class="irisado" id="elem15"></div>
+      <div class="irisado" id="elem16"></div>
+      <div class="irisado" id="elem17"></div>
+      <div class="irisado" id="elem18"></div>
+      <div class="irisado" id="elem19"></div>
+      <div class="irisado" id="elem20"></div>
+      <div class="irisado" id="elem21"></div>
+      <div class="irisado" id="elem22"></div>
+      <div class="irisado" id="elem23"></div>
+      <div class="irisado" id="elem24"></div>
     </div>
     <script src="./Matriz-II.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>   <!-- LIBRERIA DE GRAFICOS -->

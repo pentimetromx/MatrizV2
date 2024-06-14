@@ -1226,7 +1226,6 @@ function deslizAutomatic(){
         elemento.style.backgroundColor = ''
       }
     } 
-
     var padre = document.getElementById('canvasContainer3');    
     if (padre) {
       padre.style.display = 'flex';
@@ -1237,7 +1236,6 @@ function deslizAutomatic(){
         hijos[i].style.visibility = 'visible';
       }
     }
-
     clearAllIntervals()
     let visor = document.getElementById('nicho_spans')
     let visor1 = document.getElementById('pantalla')
@@ -1256,22 +1254,22 @@ function deslizAutomatic(){
       contBoton.style.top = '-44px' 
     }
   
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  idsMA.forEach(function (elto) {                                                                                                            /// OCULTA TODO M.A
+   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   idsMA.forEach(function (elto) {                                                                                                            /// OCULTA TODO M.A
     var elemento = document.getElementById(elto)    
     if (elemento) {
       elemento.style.display = 'none'
     }})
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  arrayIdButtsMA.forEach(function (elto) {                                                                                            /// RESTAURA GRIS A BOTONES
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    arrayIdButtsMA.forEach(function (elto) {                                                                                            /// RESTAURA GRIS A BOTONES
     var elemento = document.getElementById(elto)    
     if (elemento) {
       elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'
       elemento.style.color = ''
     }}) 
-  document.body.style.zoom = "67%";  
-  container1.style.left = '33%'
-  desencadenar('troubleshooting')
+    document.body.style.zoom = "67%";  
+    container1.style.left = '33%'
+    desencadenar('troubleshooting')
     setTimeout(function() {
       desencadenar('canvasContainer2') 
     }, 277) 
@@ -1287,6 +1285,7 @@ function deslizAutomatic(){
                 setTimeout(function() {
                   document.body.style.zoom = "100%";  
                   showMetrics()
+                
                 }, 3577) 
 }
 function desencadenar(idElemento) {
@@ -1890,14 +1889,15 @@ function modificarPosicion() {
 }) 
 }
 function showMetrics(){
-  const ELEMENTOS = ['troubleshooting','MiGrafica','contChecks','canvasContainer3','MiTerceraGrafica','MiSegundaGrafica','MiCuartaGrafica','MiQuintaGrafica','kaizenCont','vidElem']   
-  ELEMENTOS.forEach(element => {
-    let ocultar = document.getElementById(element)   
-    ocultar.style.display = 'none'
-  });
-  let generalStore = document.getElementById('general')
-  generalStore.style.display = 'block'
-  barraInteligente()
+  setTimeout(() => {
+    firstMovement()
+  }, 7);
+  setTimeout(() => {
+    secondMovement()
+  }, 1007);
+  /* setTimeout(() => {
+    thirdMovement()
+  }, 2007); */
 }  
 function muestraTorres(seleccion) {
   seccionTintero.style.display = 'none'

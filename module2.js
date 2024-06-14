@@ -209,7 +209,7 @@ function resetearBarras(){
   // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
   function Geometria() {
     console.clear();
-    var contiBoton = document.getElementById('canvasContainer3'); 
+    var contiBoton = document.getElementById('patern'); 
     var rect = contiBoton.getBoundingClientRect();
     var topPosition = rect.top;
     var leftPosition = rect.left;
@@ -4802,12 +4802,13 @@ function barraInteligente() {
 
   removeInlineStyles(parentElements);   
   removeInlineStyles(imgWallStreet);
-  removeInlineStyles(imgWallStreetI);         
+  removeInlineStyles(imgWallStreetI); 
+  removeInlineStyles(firstMid)        
   removeInlineStyles(secondMid);
   removeInlineStyles(wallStI);
   removeInlineStyles(paternLittles);
   removeInlineStyles(paternStreet);
-  clearAllIntervals()  
+  clearAllIntervals(firstMid)  
 
   stopWidth = false
   resetearBarras()
@@ -4816,7 +4817,7 @@ function barraInteligente() {
   incrementoHeightXIII()
   incrementoHeightXIV()
   incrementoHeightXV()
-  incrementoHeightXVI()
+  /* incrementoHeightXVI() */
 }
 function removeInlineStyles(element) {
   element.removeAttribute('style');
@@ -4972,10 +4973,11 @@ function incrementoWidth() {   // PRIMERA CORTINA Y LLAMADO A SEGUNDA MITAD
   INTERVALOS.intervaloXXXII = setInterval(() => {
     let currentWidth = parseFloat(window.getComputedStyle(imgWallStreetI).width) / parseFloat(window.getComputedStyle(imgWallStreetI.parentElement).width) * 100;
     imgWallStreetI.style.width = (currentWidth + 1) + '%';
-    if(currentWidth >= 99){
+
+     if(currentWidth >= 99){
       clearInterval(INTERVALOS.intervaloXXXII);      
       
-      let parentElement = document.getElementById('second_half');
+      /*let parentElement = document.getElementById('second_half');
       parentElement.style.display = 'grid'; 
       let childElements = parentElement.children;
       for (let i = 0; i < childElements.length; i++) {
@@ -4987,7 +4989,7 @@ function incrementoWidth() {   // PRIMERA CORTINA Y LLAMADO A SEGUNDA MITAD
       incrementoHeight(barraIII, pantallaIII,'intervaloIII',25);
       incrementoHeight(barraIV, pantallaIV,'intervaloIV',35);
       incrementoHeight(barraV, pantallaV,'intervaloV',45)  
-      incrementoWidthI();
+      incrementoWidthI();*/
       
     }
   }, 1);
@@ -5010,7 +5012,7 @@ function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {
       clearInterval(INTERVALOS[intervaloVariable]);
       if(barra.id === 'iniciador_1'){
         reduccionHeight(barraI, pantallaI,'intervaloI', 30);
-        pantallaI.style.visibility = 'visible' 
+        /* pantallaI.style.visibility = 'visible' */ 
       }
       if(barra.id === 'iniciador_2'){
         reduccionHeight(barraII, pantallaII,'intervaloII',30);
@@ -5025,9 +5027,9 @@ function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {
         reduccionHeight(barraV, pantallaV,'intervaloV',30);
     }
     } 
-    if (contador >= iniciador) {
+    /* if (contador >= iniciador) {
       incrementoHeightVI(); // BARRAS HORIZONTALES (1)
-    }
+    } */
   }, intervaloTiempo);
 }
 /* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
@@ -5068,17 +5070,16 @@ let isAnimatingIX = false;
 let isAnimatingX = false;
 let isAnimatingXI = false;
 
-function incrementoHeightVI() {         // BARRAS HORIZONTALES (1)
+function incrementoHeightVI() {   // BARRAS HORIZONTALES (1)
   if (isAnimatingVI) return;
   isAnimatingVI = true;
   let r = 0;
   let g = 255;
   let b = 0;
-  wallStI.style.display = 'block' 
   INTERVALOS.intervaloXVI = setInterval(() => {
     contadorII++
     if (contadorII >= 100 && !isAnimatingXI) {
-      isAnimatingXI = true; // Asegurarse de que esta línea se ejecuta una sola vez
+      isAnimatingXI = true;
       changeColorToGreen();
     }
     let alturaAct = parseFloat(barraVI.style.width) || 0;
@@ -5089,9 +5090,9 @@ function incrementoHeightVI() {         // BARRAS HORIZONTALES (1)
       b = alturaAcumuladaBarraI + 1.4;
     }
     barraVI.style.backgroundColor = `rgb(${r}, ${g}, ${b})`; 
-    if (alturaAcumuladaBarraI >= 20 && !isAnimatingVII) {
+    if (alturaAcumuladaBarraI >= 20) {
       isAnimatingVII = false
-      incrementoHeightVII();
+      /* incrementoHeightVII(); */
     }
     if (alturaAcumuladaBarraI >= alturaBarras) {
       isAnimatingVI = false
@@ -5110,7 +5111,7 @@ function reduccionHeightVI() {
       if (alturaAcumuladaBarraIII <= 0) {
         clearInterval(INTERVALOS.intervaloXXI);
         isAnimatingVI = false;
-        incrementoHeightVI
+        incrementoHeightVI()
       }
   }, 5);
 }
@@ -5130,7 +5131,7 @@ function incrementoHeightVII() {       // BARRAS HORIZONTALES (2)
           let progreso = alturaAcumuladaBarraI / alturaBarras;
           g = alturaAcumuladaBarraI + 1.4;
       }
-      barraVI.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+      /* barraVI.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;*/
       barraVII.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
       if (alturaAcumuladaBarraI >= 20 && !isAnimatingVIII) {
         isAnimatingVIII = false
@@ -5157,7 +5158,7 @@ function reduccionHeightVII() {
     }
     /* if (alturaAcumuladaBarraIII <= 10 && !isAnimatingVII) {             
       incrementoHeightVIII();
-    } */    
+    }  */   
   }, 5); 
 }
 function incrementoHeightVIII() {       // BARRAS HORIZONTALES (3)  
@@ -5184,7 +5185,7 @@ function incrementoHeightVIII() {       // BARRAS HORIZONTALES (3)
       clearInterval(INTERVALOS.intervaloXVIII);
       isAnimatingVIII = false;
       reduccionHeightVIII();
-}
+    }
   }, 7);
 }
 function reduccionHeightVIII() {
@@ -5319,7 +5320,8 @@ function reduccionHeightXVII() {
       incrementoHeightXVI();
     }    
   }, 5); 
-}  
+}
+/* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
 function incrementoWidthI() {  // ALTURA SEGUNDA CORTINA 
   INTERVALOS.intervaloXXXIII = setInterval(() => {
     imgWallStreet.style.display = 'flex'
@@ -5433,7 +5435,6 @@ function changeColorToGreen() {    // MUESTRA EQUALIZADOR, PADRE Y PATERN
   });
   changeColorToGreenII();
   changeColorToNumbres();
-
   INTERVALOS.intervaloXLI = setInterval(() => {
     if (index < lines.length) {
       if (index < 8) {
@@ -5443,17 +5444,7 @@ function changeColorToGreen() {    // MUESTRA EQUALIZADOR, PADRE Y PATERN
       } else if (index < 13) {
         lines[index].style.backgroundColor = 'rgb(255, 115, 0)'; // Naranja
       } else if(index < 14) {
-
-        paternLittles.style.display = 'flex'
-        
-        if (!trackerStarted) { // Verificar si inicioTracker ya ha sido ejecutado
-          inicioTracker(); // Llamar a inicioTracker solo si no ha sido ejecutado
-        }
-
-        stopPatern = false
         lines[index].style.backgroundColor = 'rgb(255, 0, 0)'; // Rojo
-        document.getElementById('patern').style.display = 'grid';
-        changeColors()
       }      
       index++;
     } else {
@@ -5466,7 +5457,6 @@ function changeColorToGreenII() {
   let index = 0;  
   const lines = document.querySelectorAll('#column_3 .lineas');
   clearInterval(INTERVALOS.intervaloXLII);
-
   INTERVALOS.intervaloXLII = setInterval(() => {
     if (index < lines.length) {
       if (index < 8) {
@@ -5493,7 +5483,6 @@ function changeColorToNumbres() {
     line.style.backgroundColor = '';
   });
   INTERVALOS.intervaloXLV = setInterval(() => {
-
     if (index < numbers.length) {
       if (index < 8) {
         numbers[index].style.display = 'flex'
@@ -5637,7 +5626,6 @@ function resetStylesAndIntervals() {
 }
 function inicioTracker() {
   resetStylesAndIntervals();
-
   // Iniciar nuevos timeouts
   const delay = 122; // Retraso de 122ms entre cada llamada
   for (let i = 0; i < barras.length; i++) {
@@ -5646,7 +5634,6 @@ function inicioTracker() {
       }, i * delay);
       timeoutHandles.push(handle); // Almacenar el identificador del setTimeout
   }
-
   trackerStarted = true; // Marcar que inicioTracker ha sido ejecutado
 }
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
@@ -5705,4 +5692,107 @@ function detenerCicodelia() {
   }
 }
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
- 
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+ function firstMovement(){
+  stopWidth = false
+  var elementosExcluidos = ['def2','general','first_half','buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }
+  clearAllIntervals(firstMid) 
+  removeInlineStyles(imgWallStreetI); 
+  incrementoHeightXI()
+  incrementoHeightXII()
+  incrementoHeightXIII()
+  incrementoHeightXIV()
+  incrementoHeightXV()
+ }
+ function secondMovement(){
+  var padre = document.getElementById('nicho_spans');    
+  if (padre) {
+    padre.style.display = 'none';
+      var hijos = padre.children;
+    for (var i = 0; i < hijos.length; i++) {
+      hijos[i].style.display = 'none';
+    }
+  }
+  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }
+  clearInterval(INTERVALOS.intervaloI);
+  clearInterval(INTERVALOS.intervaloII);
+  clearInterval(INTERVALOS.intervaloIII);
+  clearInterval(INTERVALOS.intervaloIV);
+  clearInterval(INTERVALOS.intervaloV);
+  clearInterval(INTERVALOS.intervaloXXXIII);
+  removeInlineStyles(imgWallStreet); 
+  let parentElement = document.getElementById('second_half');
+  parentElement.style.display = 'grid'; 
+  let childElements = parentElement.children;
+  for (let i = 0; i < childElements.length; i++) {
+    childElements[i].style.display = 'inline-block';
+    childElements[i].style.visibility = 'visible';
+  }
+  incrementoHeight(barraI, pantallaI,'intervaloI',1);
+  incrementoHeight(barraII, pantallaII,'intervaloII',15);
+  incrementoHeight(barraIII, pantallaIII,'intervaloIII',25);
+  incrementoHeight(barraIV, pantallaIV,'intervaloIV',35);
+  incrementoHeight(barraV, pantallaV,'intervaloV',45)  
+  incrementoWidthI()
+ }
+ function thirdMovement(){
+  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }
+  incrementoHeightVII()
+ }
+ function fourthMovement(){
+  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }
+  changeColorToGreen()
+ }
+ function fifthMovement(){
+  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','padre','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }
+  inicioTracker()
+}
+function sixthMovement(){
+  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','padre','patern','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }
+  document.getElementById('patern').style.display = 'grid'
+  changeColors()
+}
+
+
