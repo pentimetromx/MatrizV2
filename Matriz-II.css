@@ -4987,7 +4987,6 @@ input.numero:focus {
   border-radius: 6px;
   display: none;
 }
-/* #padre .barras{ */
   #padre > div {
   display: block;
   width: 100%;
@@ -4995,6 +4994,9 @@ input.numero:focus {
   border-radius: 0 0 5px 5px;
   background-color: rgb(0, 255, 0); /* Color verde */
   box-shadow: 0 0 15px rgba(0, 255, 0, 1), 0 0 30px rgba(0, 255, 0, 0.7);
+}
+#general{
+  display:block;
 }
  @media screen and (max-width: 420px) {
   #cont-titulo-comercial,  
@@ -7733,7 +7735,7 @@ input.numero:focus {
     height: 19px;
     margin-bottom: 7px;
     color: rgb(255, 255, 177);
-  }    
+  }   
   @keyframes parpadeo {
     0% {
       opacity: 0;

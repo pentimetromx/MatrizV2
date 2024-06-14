@@ -209,21 +209,26 @@ function resetearBarras(){
   // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
   function Geometria() {
     console.clear();
-    var contiBoton = document.getElementById('animatedDiv')   
+    var contiBoton = document.getElementById('canvasContainer3'); 
     var rect = contiBoton.getBoundingClientRect();
-    var topPosition = rect.top
-    var leftPosition = rect.left
-    var widthValue = rect.width
-    var heightValue = rect.height 
-    var positionType = window.getComputedStyle(buttRepuest).position
-    var displayType = window.getComputedStyle(buttRepuest).display    
-    console.log(contiBoton.id);
+    var topPosition = rect.top;
+    var leftPosition = rect.left;
+    var widthValue = rect.width;
+    var heightValue = rect.height;
+    var style = window.getComputedStyle(contiBoton);
+    var positionType = style.position;
+    var displayType = style.display;
+    var visibilityType = style.visibility;
+    var isVisible = rect.width > 0 && rect.height > 0 && displayType !== 'none' && visibilityType !== 'hidden';
+    console.log('ID:', contiBoton.id);
     console.log('Top:', topPosition);
     console.log('Left:', leftPosition);
     console.log('Height:', heightValue);
     console.log('Width:', widthValue);
-    console.log('Position:', positionType); 
+    console.log('Position:', positionType);
     console.log('Display:', displayType);
+    console.log('Visibility:', visibilityType);
+    console.log('Is Visible:', isVisible);
   }
  
 function updateAna() {
@@ -4333,7 +4338,7 @@ function updateAna() {
    input.setSelectionRange(textLength, textLength); 
  } 
  function abrirInterfaz() {
-   var elementosExcluidos = ['videoBackgroundII','video-background','padre-interfaz','cont-titulo','franja-Blanca','subtitulo-I','descripcion-I','butt-Institucional','padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V','titulo-ancho','logo-grande'];
+   var elementosExcluidos = ['videoBackgroundII','video-background','padre-interfaz','cont-titulo','franja-Blanca','subtitulo-I','descripcion-I','butt-Institucional','padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V','titulo-ancho','logo-grande','image-background'];
    for (var i = 0; i < allContenedores.length; i++) { 
      var elemento = document.getElementById(allContenedores[i]);
      if (elemento) {
@@ -4790,6 +4795,11 @@ function barraInteligente() {
     }
   }
 
+  const elementos = document.querySelectorAll('nicho_spans .estilos'); 
+  elementos.forEach(elemento => {
+    elemento.removeAttribute('style');
+  });
+
   removeInlineStyles(parentElements);   
   removeInlineStyles(imgWallStreet);
   removeInlineStyles(imgWallStreetI);         
@@ -4797,12 +4807,7 @@ function barraInteligente() {
   removeInlineStyles(wallStI);
   removeInlineStyles(paternLittles);
   removeInlineStyles(paternStreet);
-  clearAllIntervals()
-  
-  const elementos = document.querySelectorAll('nicho_spans .estilos'); 
-  elementos.forEach(elemento => {
-    elemento.removeAttribute('style');
-  });
+  clearAllIntervals()  
 
   stopWidth = false
   resetearBarras()
@@ -5005,7 +5010,7 @@ function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {
       clearInterval(INTERVALOS[intervaloVariable]);
       if(barra.id === 'iniciador_1'){
         reduccionHeight(barraI, pantallaI,'intervaloI', 30);
-        /* pantallaI.style.display = 'flex' */
+        pantallaI.style.visibility = 'visible' 
       }
       if(barra.id === 'iniciador_2'){
         reduccionHeight(barraII, pantallaII,'intervaloII',30);
@@ -5564,15 +5569,12 @@ const screenHeight = window.innerHeight;
 function removeInlineStyles(element) {
   element.removeAttribute('style');
 }
-
 // Función para controlar la altura
 function controlHeight(index) {
   if (index >= 0 && index < barras.length) {
     changeHeight(barras[index], 7, screenHeight * 0.17, incrementaAlto);
   }
 }
-
-
 // Función para cambiar la altura
 function changeHeight(barra, step, limit, onComplete) {
   if (barra.interval) {
@@ -5633,7 +5635,6 @@ function resetStylesAndIntervals() {
 
   trackerStarted = false; // Reiniciar la bandera
 }
-
 function inicioTracker() {
   resetStylesAndIntervals();
 
@@ -5648,15 +5649,13 @@ function inicioTracker() {
 
   trackerStarted = true; // Marcar que inicioTracker ha sido ejecutado
 }
-
-
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 let counterI = 0; // Variable global para el contador
 const elementsB = document.querySelectorAll('#patern .irisado');
 const originalColors = Array.from(elementsB).map(el => el.style.backgroundColor);
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-// EL MIO PATERN SOLAMENTE
+//PATERN ONLY
 const elementsC = ['elem1', 'elem2', 'elem3', 'elem4', 'elem5', 'elem6', 'elem7', 'elem8', 'elem9', 'elem10', 'elem11', 'elem12', 'elem13', 'elem14', 'elem15', 'elem16', 'elem17', 'elem18', 'elem19', 'elem20', 'elem21', 'elem22', 'elem23', 'elem24'];
 let index = 0
 let lista = 0
