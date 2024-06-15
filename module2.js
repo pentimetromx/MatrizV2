@@ -4751,16 +4751,7 @@ const INTERVALOS = {
   intervaloXIII: null,
   intervaloXIV: null,
   intervaloXV: null,
-  intervaloXVI: null,
-  intervaloXVII: null,
-  intervaloXVIII: null,
-  intervaloXIX: null,
-  intervaloXX: null,
   intervaloXXI: null,
-  intervaloXXII: null,
-  intervaloXXIII: null,
-  intervaloXXIV: null,
-  intervaloXXV: null,
   intervaloXXVI: null,
   intervaloXXVII: null,
   intervaloXXVIII: null,
@@ -4782,9 +4773,20 @@ const INTERVALOS = {
   intervaloXLIV: null,// column_1 .lineas
   intervaloXLV: null, //column_2 .column_spans
   intervaloXLVI: null,  // numeros equalizaer
-  intervaloXLVII: null, // iniciador_11
-  intervaloXLVIII: null // iniciador_11
 };
+const INTERVALOSHORIZONTALES = {
+  intervaloXVI: null,
+  intervaloXVII: null,
+  intervaloXVIII: null,
+  intervaloXIX: null,
+  intervaloXX: null,
+  intervaloXLVII: null, // iniciador_11
+  intervaloXXII: null,
+  intervaloXXIII: null,
+  intervaloXXIV: null,
+  intervaloXXV: null,
+  intervaloXLVIII: null,
+}
 
 function barraInteligente() {
   var elementosExcluidos = ['first_half','buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
@@ -5070,13 +5072,13 @@ let isAnimatingIX = false;
 let isAnimatingX = false;
 let isAnimatingXI = false;
 
-function incrementoHeightVI() {   // BARRAS HORIZONTALES (1)
+/* function incrementoHeightVI() {   // BARRAS HORIZONTALES (1)
   if (isAnimatingVI) return;
   isAnimatingVI = true;
   let r = 0;
   let g = 255;
   let b = 0;
-  INTERVALOS.intervaloXVI = setInterval(() => {
+  INTERVALOSHORIZONTALES.intervaloXVI = setInterval(() => {
     contadorII++
     if (contadorII >= 100 && !isAnimatingXI) {
       isAnimatingXI = true;
@@ -5092,11 +5094,11 @@ function incrementoHeightVI() {   // BARRAS HORIZONTALES (1)
     barraVI.style.backgroundColor = `rgb(${r}, ${g}, ${b})`; 
     if (alturaAcumuladaBarraI >= 20) {
       isAnimatingVII = false
-      /* incrementoHeightVII(); */
+      incrementoHeightVII();
     }
     if (alturaAcumuladaBarraI >= alturaBarras) {
       isAnimatingVI = false
-      clearInterval(INTERVALOS.intervaloXVI);
+      clearInterval(INTERVALOSHORIZONTALES.intervaloXVI);
       reduccionHeightVI();
     }
   }, 1);
@@ -5114,7 +5116,7 @@ function reduccionHeightVI() {
         incrementoHeightVI()
       }
   }, 5);
-}
+} */
 function incrementoHeightVII() {       // BARRAS HORIZONTALES (2)  
   if (isAnimatingVII) return;
   isAnimatingVII = true;
@@ -5123,7 +5125,7 @@ function incrementoHeightVII() {       // BARRAS HORIZONTALES (2)
   let g = 255;
   let b = 255;
   barraVII.style.display = 'flex';
-  INTERVALOS.intervaloXVII = setInterval(() => {
+  INTERVALOSHORIZONTALES.intervaloXVII = setInterval(() => {
       let alturaAct = parseFloat(barraVII.style.width) || 0;
       barraVII.style.width = (alturaAct + 1) + '%';
       let alturaAcumuladaBarraI = alturaAct + 1;
@@ -5131,14 +5133,13 @@ function incrementoHeightVII() {       // BARRAS HORIZONTALES (2)
           let progreso = alturaAcumuladaBarraI / alturaBarras;
           g = alturaAcumuladaBarraI + 1.4;
       }
-      /* barraVI.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;*/
       barraVII.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-      if (alturaAcumuladaBarraI >= 20 && !isAnimatingVIII) {
+      /* if (alturaAcumuladaBarraI >= 20 && !isAnimatingVIII) {
         isAnimatingVIII = false
         incrementoHeightVIII();
-      } 
+      } */
       if (alturaAcumuladaBarraI >= alturaBarras) {
-          clearInterval(INTERVALOS.intervaloXVII);
+          clearInterval(INTERVALOSHORIZONTALES.intervaloXVII);
           isAnimatingVII = false;
           reduccionHeightVII();
       }
@@ -5147,18 +5148,18 @@ function incrementoHeightVII() {       // BARRAS HORIZONTALES (2)
 function reduccionHeightVII() {
   if (isAnimatingVII) return;
   isAnimatingVII = true;
-  INTERVALOS.intervaloXXII = setInterval(() => {
+  INTERVALOSHORIZONTALES.intervaloXXII = setInterval(() => {
     let altura = parseFloat(barraVII.style.width) || 0;
     barraVII.style.width = (altura - 1) + '%';
     let alturaAcumuladaBarraIII = altura - 1;
     if (parseInt(alturaAcumuladaBarraIII) <= 0) {             
-      clearInterval(INTERVALOS.intervaloXXII);
+      clearInterval(INTERVALOSHORIZONTALES.intervaloXXII);
       isAnimatingVII = false
       incrementoHeightVII();
     }
-    /* if (alturaAcumuladaBarraIII <= 10 && !isAnimatingVII) {             
+    if (alturaAcumuladaBarraIII <= 10 && !isAnimatingVIII) {             
       incrementoHeightVIII();
-    }  */   
+    }    
   }, 5); 
 }
 function incrementoHeightVIII() {       // BARRAS HORIZONTALES (3)  
@@ -5167,7 +5168,7 @@ function incrementoHeightVIII() {       // BARRAS HORIZONTALES (3)
   let r = 255; 
   let g = 0; 
   let b = 0; 
-  INTERVALOS.intervaloXVIII = setInterval(() => {
+  INTERVALOSHORIZONTALES.intervaloXVIII = setInterval(() => {
     let alturaAct = parseFloat(barraVIII.style.width) || 0;
     barraVIII.style.width = (alturaAct + 1) + '%';
     let alturaAcumuladaBarraI = alturaAct + 1;
@@ -5182,7 +5183,7 @@ function incrementoHeightVIII() {       // BARRAS HORIZONTALES (3)
       incrementoHeightIX();
     }
     if (alturaAcumuladaBarraI >=alturaBarras) {
-      clearInterval(INTERVALOS.intervaloXVIII);
+      clearInterval(INTERVALOSHORIZONTALES.intervaloXVIII);
       isAnimatingVIII = false;
       reduccionHeightVIII();
     }
@@ -5191,12 +5192,12 @@ function incrementoHeightVIII() {       // BARRAS HORIZONTALES (3)
 function reduccionHeightVIII() {
   if (isAnimatingVIII) return;
   isAnimatingVIII = true;
-  INTERVALOS.intervaloXXIII = setInterval(() => {
+  INTERVALOSHORIZONTALES.intervaloXXIII = setInterval(() => {
     let altura = parseFloat(barraVIII.style.width) || 0;
     barraVIII.style.width = (altura - 1) + '%';
     let alturaAcumuladaBarraIII = altura - 1;
     if (parseInt(alturaAcumuladaBarraIII) <= 0) {             
-      clearInterval(INTERVALOS.intervaloXXIII);
+      clearInterval(INTERVALOSHORIZONTALES.intervaloXXIII);
       isAnimatingVIII = false
       incrementoHeightVIII();
     }    
@@ -5208,7 +5209,7 @@ function incrementoHeightIX() {         // BARRAS HORIZONTALES (4)
   let r = 100; 
   let g = 50; 
   let b = 255; 
-  INTERVALOS.intervaloXIX = setInterval(() => {
+  INTERVALOSHORIZONTALES.intervaloXIX = setInterval(() => {
     let alturaAct = parseFloat(barraIX.style.width) || 0;
     barraIX.style.width = (alturaAct + 1) + '%';
     let alturaAcumuladaBarraI = alturaAct + 1;
@@ -5223,7 +5224,7 @@ function incrementoHeightIX() {         // BARRAS HORIZONTALES (4)
       incrementoHeightX();
     }
    if (parseInt(alturaAcumuladaBarraI) >=alturaBarras) {
-      clearInterval(INTERVALOS.intervaloXIX);
+      clearInterval(INTERVALOSHORIZONTALES.intervaloXIX);
       isAnimatingIX = false
       reduccionHeightIX();
     }
@@ -5232,12 +5233,12 @@ function incrementoHeightIX() {         // BARRAS HORIZONTALES (4)
 function reduccionHeightIX() {  
   if (isAnimatingIX) return;
   isAnimatingIX = true
-  INTERVALOS.intervaloXXIV = setInterval(() => {
+  INTERVALOSHORIZONTALES.intervaloXXIV = setInterval(() => {
     let altura = parseFloat(barraIX.style.width) || 0;
     barraIX.style.width = (altura - 1) + '%';
     let alturaAcumuladaBarraIII = altura - 1;
     if (parseInt(alturaAcumuladaBarraIII) <= 0) {             
-      clearInterval(INTERVALOS.intervaloXXIV);
+      clearInterval(INTERVALOSHORIZONTALES.intervaloXXIV);
       isAnimatingIX = false;
       incrementoHeightIX();
     }    
@@ -5249,7 +5250,7 @@ function incrementoHeightX() {          // BARRAS HORIZONTALES (5)
   let r = 170;
   let g = 50; 
   let b = 255; 
-  INTERVALOS.intervaloXX = setInterval(() => {
+  INTERVALOSHORIZONTALES.intervaloXX = setInterval(() => {
     let anchoAct = parseFloat(barraX.style.width) || 0;    
     barraX.style.width = (anchoAct + 1) + '%'; 
     let alturaAcumuladaBarraI = anchoAct + 1;    
@@ -5265,7 +5266,7 @@ function incrementoHeightX() {          // BARRAS HORIZONTALES (5)
       incrementoHeightXVI();
     }
     if (parseInt(alturaAcumuladaBarraI) >=alturaBarras) {
-      clearInterval(INTERVALOS.intervaloXX);
+      clearInterval(INTERVALOSHORIZONTALES.intervaloXX);
       isAnimatingX = false;
       reduccionHeightX();
     }
@@ -5274,12 +5275,12 @@ function incrementoHeightX() {          // BARRAS HORIZONTALES (5)
 function reduccionHeightX() {  
   if (isAnimatingX) return;
   isAnimatingX = true;
-  INTERVALOS.intervaloXXV = setInterval(() => {
+  INTERVALOSHORIZONTALES.intervaloXXV = setInterval(() => {
     let altura = parseFloat(barraX.style.width) || 0;
     barraX.style.width = (altura - 1) + '%';
     let alturaAcumuladaBarraIII = altura - 1;
     if (parseInt(alturaAcumuladaBarraIII) <= 0) {             
-      clearInterval(INTERVALOS.intervaloXXV);
+      clearInterval(INTERVALOSHORIZONTALES.intervaloXXV);
       isAnimatingX = false
       incrementoHeightX()
     }    
@@ -5291,7 +5292,7 @@ function incrementoHeightXVI() {
   let r = 0;
   let g = 255;
   let b = 0;
-  INTERVALOS.intervaloXLVII = setInterval(() => {
+  INTERVALOSHORIZONTALES.intervaloXLVII = setInterval(() => {
     let anchoAct = parseFloat(barra.style.width) || 0;    
     barra.style.width = (anchoAct + 1) + '%'; 
     let alturaAcumuladaBarraI = anchoAct + 1;    
@@ -5301,7 +5302,7 @@ function incrementoHeightXVI() {
     }         
     barra.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
     if (parseInt(alturaAcumuladaBarraI) >= alturaBarras) {
-      clearInterval(INTERVALOS.intervaloXLVII);
+      clearInterval(INTERVALOSHORIZONTALES.intervaloXLVII);
       isAnimatingXVI = false;
       reduccionHeightXVII();
     }
@@ -5310,12 +5311,12 @@ function incrementoHeightXVI() {
 function reduccionHeightXVII() {  
   if (isAnimatingXVI) return;
   isAnimatingXVI = true;
-  INTERVALOS.intervaloXLVIII = setInterval(() => {
+  INTERVALOSHORIZONTALES.intervaloXLVIII = setInterval(() => {
     let anchoAct = parseFloat(barra.style.width) || 0;
     barra.style.width = (anchoAct - 1) + '%';
     let alturaAcumuladaBarraIII = anchoAct - 1;
     if (parseInt(alturaAcumuladaBarraIII) <= 0) {             
-      clearInterval(INTERVALOS.intervaloXLVIII);
+      clearInterval(INTERVALOSHORIZONTALES.intervaloXLVIII);
       isAnimatingXVI = false;
       incrementoHeightXVI();
     }    
@@ -5555,9 +5556,9 @@ let timeoutHandles = []; // Almacenará los identificadores de los setTimeout
 let trackerStarted = false; 
 const screenHeight = window.innerHeight;
   
-function removeInlineStyles(element) {
+/* function removeInlineStyles(element) {
   element.removeAttribute('style');
-}
+} */
 // Función para controlar la altura
 function controlHeight(index) {
   if (index >= 0 && index < barras.length) {
@@ -5765,6 +5766,21 @@ function detenerCicodelia() {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
+  isAnimatingVII = false;
+  document.getElementById('iniciador_7').style.width = '1px'
+  for (let key in INTERVALOSHORIZONTALES) {
+    if (INTERVALOSHORIZONTALES[key]) {
+      clearInterval(INTERVALOSHORIZONTALES[key]);
+      INTERVALOSHORIZONTALES[key] = null;
+    }
+  }    
+    contadorII = 0;
+    isAnimatingVII = false;
+    isAnimatingVIII = false;
+    isAnimatingIX = false;
+    isAnimatingX = false;
+    isAnimatingXVI = false;
+
   incrementoHeightVII()
  }
  function fourthMovement(){ // EQUALIZER
