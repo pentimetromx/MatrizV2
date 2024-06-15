@@ -5561,7 +5561,7 @@ function removeInlineStyles(element) {
 // Función para controlar la altura
 function controlHeight(index) {
   if (index >= 0 && index < barras.length) {
-    changeHeight(barras[index], 7, screenHeight * 0.17, incrementaAlto);
+    changeHeight(barras[index], 7, screenHeight * 0.12, incrementaAlto);
   }
 }
 // Función para cambiar la altura
@@ -5571,7 +5571,7 @@ function changeHeight(barra, step, limit, onComplete) {
   }
   barra.interval = setInterval(() => {
     let alturaActual = parseInt(barra.style.height) || 0;
-    barra.style.height = (alturaActual + step) + 'px';
+    barra.style.height = (alturaActual + step) + '%';
     barra.style.transition = 'height 0.03s linear';
 
     if ((step > 0 && alturaActual >= limit) || (step < 0 && alturaActual <= 0)) {
@@ -5588,7 +5588,11 @@ function incrementaAlto(barra) {
 }
 // Función para reducir la altura
 function reduccionAlto(barra) {
-  changeHeight(barra, 7, screenHeight * 0.17, incrementaAlto);
+  changeHeight(barra, 7, screenHeight * 0.12, incrementaAlto);
+  /* if(screenWidth <= 420){
+    changeHeight(barra, 7, screenHeight * 0.1, incrementaAlto);
+  } */
+
 }
 function detenerAllInterval() {
   barras.forEach(barra => {
@@ -5699,7 +5703,7 @@ function detenerCicodelia() {
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
- function firstMovement(){
+ function firstMovement(){ // FIRST
   stopWidth = false
   var elementosExcluidos = ['def2','general','first_half','buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) { 
@@ -5716,7 +5720,7 @@ function detenerCicodelia() {
   incrementoHeightXIV()
   incrementoHeightXV()
  }
- function secondMovement(){
+ function secondMovement(){ // SECOND
   var padre = document.getElementById('nicho_spans');    
   if (padre) {
     padre.style.display = 'none';
@@ -5753,7 +5757,7 @@ function detenerCicodelia() {
   incrementoHeight(barraV, pantallaV,'intervaloV',45)  
   incrementoWidthI()
  }
- function thirdMovement(){
+ function thirdMovement(){ // HORIZONTALES
   var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -5763,7 +5767,7 @@ function detenerCicodelia() {
   }
   incrementoHeightVII()
  }
- function fourthMovement(){
+ function fourthMovement(){ // EQUALIZER
   var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -5773,7 +5777,7 @@ function detenerCicodelia() {
   }
   changeColorToGreen()
  }
- function fifthMovement(){
+ function fifthMovement(){ // PADRE
   var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','padre','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -5783,7 +5787,7 @@ function detenerCicodelia() {
   }
   inicioTracker()
 }
-function sixthMovement(){
+function sixthMovement(){ // PATERN
   var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','padre','patern','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  

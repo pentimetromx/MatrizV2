@@ -1895,9 +1895,9 @@ function showMetrics(){
   setTimeout(() => {
     secondMovement()
   }, 1007);
-  /* setTimeout(() => {
+  setTimeout(() => {
     thirdMovement()
-  }, 2007); */
+  }, 2007);
 }  
 function muestraTorres(seleccion) {
   seccionTintero.style.display = 'none'
