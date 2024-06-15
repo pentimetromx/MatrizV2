@@ -4638,7 +4638,8 @@ input.numero:focus {
   display: flex;
   top: -7.5%;
   width:0.1px;
-  height: 178px;
+  /* height: 178px; */
+  height: 107.5%;
   opacity: 0.7;
   background-image: url('./assets/grafico\ lineasIII.png');
   background-size: cover;
@@ -5000,7 +5001,7 @@ input.numero:focus {
   display:block;
 }
 
- @media screen and (max-width: 420px) {
+ @media screen and (max-width: 480px) {
   #cont-titulo-comercial,  
   #cont-titulo-admin,
   #cont-titulo-calidad,
