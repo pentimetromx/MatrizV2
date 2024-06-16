@@ -4805,11 +4805,19 @@ input.numero:focus {
 #column_2{
   position:relative;
   display: flex;
-  margin-top:0.5%;
+  margin-top:-2%;
   flex-direction: column;
   font-family: "Oswald", sans-serif;
   text-align: center;
   padding: 10px;
+  height: 100%;
+}
+.column_spans{
+  font-size: 11px;
+  margin-top: 57%;
+  color:'';
+  font: bolder;
+  display: none;
 }
 #column_4{
   position: absolute;
@@ -4833,13 +4841,6 @@ input.numero:focus {
   margin-left: 1px;
   background-color: #000;
   border-radius: 2px 2px 0 0;
-}
-.column_spans{
-  margin-top:3px;
-  font-size: 11px;
-  color:'';
-  font: bolder;
-  display: none;
 }
 #desencadenante_II{
   width: 77px;
@@ -7974,7 +7975,7 @@ input.numero:focus {
   }
   #equalizer{
     width: 20vw;
-    height:38vh; 
+    height:31.5vh; 
     top: 18vh;
     left: 67vw;
   }

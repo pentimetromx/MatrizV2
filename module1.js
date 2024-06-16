@@ -1284,8 +1284,7 @@ function deslizAutomatic(){
             }, 1477)            
                 setTimeout(function() {
                   document.body.style.zoom = "100%";  
-                  showMetrics()
-                
+                  showMetrics()                
                 }, 3577) 
 }
 function desencadenar(idElemento) {
@@ -1453,6 +1452,7 @@ function deslizaContenedorII(idElement, idButton) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }
     }
+    
   }
   // Verificar si el elemento ya está en el array
   if (!arrayPosicionnador.includes(idElement)) {
@@ -1887,18 +1887,7 @@ function modificarPosicion() {
     console.error("Elemento con ID '" + id + "' no encontrado.")
   }
 }) 
-}
-function showMetrics(){
-  setTimeout(() => {
-    firstMovement()
-  }, 7);
-  setTimeout(() => {
-    secondMovement()
-  }, 1007);
-  setTimeout(() => {
-    thirdMovement()
-  }, 2007);
-}  
+} 
 function muestraTorres(seleccion) {
   seccionTintero.style.display = 'none'
   for (var i = 0; i < pantallas.length; i++) {
