@@ -7425,7 +7425,7 @@ input.numero:focus {
     flex-direction: column; 
     margin-left: 33%;
     margin-top: 54%;
-    height: 400px;
+    height: 56vh;
     gap: 7px;
     width: auto;
     display: none;
