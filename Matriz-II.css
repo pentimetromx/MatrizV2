@@ -6214,12 +6214,14 @@ input.numero:focus {
     left:-2%;
     top: -7%;
     height: 33vh;
+    width: 94vw;
+    display: none;
   }
   #conte-botDensitoII{  
     position: relative;
     display: flex;
     flex-direction: column; 
-    left:21%;
+    left:30%;
     margin-top: 34%;
     height: 400px;
     width: auto;
