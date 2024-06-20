@@ -5001,7 +5001,7 @@ input.numero:focus {
   display:block;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
   #cont-titulo-comercial,  
   #cont-titulo-admin,
   #cont-titulo-calidad,
@@ -6173,22 +6173,6 @@ input.numero:focus {
     top: 37%;
     border-radius: 19px;
   }  
-  /* #cuartoContDensito,
-  #tercerContDensito,
-  #segundoContDensito,
-  #contDensito{
-    display: flex;
-    flex-direction: row;
-    margin: 3px;
-  }
-  #segundoContDensito img,
-  #cuartoContDensito img,
-  #tercerContDensito img,
-  #contDensito img{
-    height: 43px;
-    width: 60px;
-    object-fit: cover;   
-  } */
   #pre-prensa{
     position: relative;
     left: 5%;
@@ -6213,15 +6197,6 @@ input.numero:focus {
     width: auto;
     display: none;
   } 
-  /* #vidCicodeliaII{
-    position: absolute;
-    display: flex;
-    height: 87%;
-    width: 89%;
-    object-fit: fill;
-    display: none;
-    z-index: -1; 
-  } */
   #prisma-vid{
     position: fixed;
     left: 12%;
@@ -7646,13 +7621,6 @@ input.numero:focus {
     width: 99%;
     z-index: -1;
   }
-  /* #imgs-densito{
-    position: absolute;
-    height: 497px; 
-    object-fit: fill;
-    width: 975px;
-    z-index: -1;
-  } */
   .Bot-inicio7{
     position: absolute;
     background-color: rgba(0, 0, 0, 0.423);
@@ -7922,9 +7890,6 @@ input.numero:focus {
     display: none;
     transition: all 0.2s ease; /* Transición suave para el efecto */
   }
-
-
-
   #padre{
     top: 71vh;
     left: 54vw;
