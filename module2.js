@@ -262,7 +262,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('first_half'); 
+  var contiBoton = document.getElementById('imgs-prepress'); 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;

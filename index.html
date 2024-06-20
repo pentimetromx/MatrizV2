@@ -1491,8 +1491,6 @@
 
     </div>
     <div id="pre-prensa">
-      <video id="vidCicodelia" class="vidTeoria video-training" src="./assets/cicodelia.mp4" autoplay loop></video>
-
       <div id="ventana-lateral" onmouseup="cerrarVentana()">  
         <div id="icono1">
           <img class="iconos-laterales" src="./assets/icono arroba.png">  
@@ -1534,7 +1532,10 @@
         <button class="butt-prepre" id="fua2" onclick="mantAutonomo('fua')">DOBLADOR</button>           
         <button class="butt-prepre" id="lup" onclick="mantAutonomo('lup')">CALIBRES</button>
       </div>
-      <div id="imgs-prepress">
+
+
+      <!-- <div id="imgs-prepress">
+        <video id="vidCicodelia" class="vidTeoria video-training" src="./assets/cicodelia.mp4" autoplay loop></video>
         <div id="primerCont" class="contColor">
           <img class='imgTeoria' src="./assets/preprensa13.png" alt="pre13"> 
           <img class='imgTeoria' src="./assets/preprensa.jpg" alt="pre1">
@@ -1567,7 +1568,49 @@
           <img class='imgTeoria' src="./assets/luz5.jfif" alt="pre18">
           <img class='imgTeoria' src="./assets/preprensa5.jpg" alt="pre5">
         </div>
+      </div> -->
+
+
+
+      <div id="imgs-prepress">
+        <video id="vidCicodelia" class="vidTeoria video-training" src="./assets/cicodelia.mp4" autoplay loop></video>
+        <div id="primerCont" class="contColor">
+          <div class='imgTeoria1'><img class='img-special' src="./assets/preprensa13.png" alt="pre13"></div>
+          <div class='imgTeoria1'><img class='img-special' src="./assets/preprensa.jpg" alt="pre1"></div>
+          <div class='imgTeoria1'><img class='img-special' src="./assets/preprensa2.jpg" alt="pre2"></div>
+          <div class='imgTeoria1'><img class='img-special' style="cursor: pointer;" onclick="muestraVidPrisma('prisma-vid-II')" src="./assets/preprensa17.jpg" alt="pre3"></div>
+          <div class='imgTeoria1'><img class='img-special' src="./assets/preprensa4.jpg" alt="pre4"></div>
+          <div class='imgTeoria1'><img class='img-special' src="./assets/preprensa12.png" alt="pre12"></div>
+        </div>
+        <div id="segundoCont" class="contColor">
+          <div class='imgTeoria1'><img class='img-special' src="./assets/luz6.jfif" alt="pre18"></div>
+          <div class='imgTeoria1'><img class='img-special' src="./assets/preprensa7.jpg" alt="pre7"></div>
+          <div class='imgTeoria1'><video class='vidTeoria img-special' id="vid01" onclick="muestraVidPrisma('vid04')" src="./assets/luz.mp4" autoplay loop></video></div>
+          <div class='imgTeoria1'><img class='img-special' src="./assets/preprensa8.jpg" alt="pre8"></div>
+          <div class='imgTeoria1'><img class='img-special' onclick="muestraVidColor('vidColor-II')" src="./assets/preprensa10.jpg" alt="pre10"></div>
+          <div class='imgTeoria1'><video class='vidTeoria img-special' id="vid02" onclick="muestraVidPrisma('vid05')" src="./assets/luz2.mp4" autoplay loop></video></div>
+        </div>
+        <div id="tercerCont" class="contColor">
+          <div class='imgTeoria1'><img class='img-special' src="./assets/preprensa6.jpg" alt="pre6"></div>
+          <div class='imgTeoria1'><img class='img-special' src="./assets/preprensa1.jpg" alt="pre19"></div>
+          <div class='imgTeoria1'><img class='img-special' src="./assets/preprensa14.jpg" alt="pre14"></div>
+          <div class='imgTeoria1'><img class='img-special' src="./assets/preprensa15.jpg" alt="pre15"></div>
+          <div class='imgTeoria1'><img class='img-special' src="./assets/preprensa16.jpg" alt="pre16"></div>
+          <div class='imgTeoria1'><img class='img-special' src="./assets/preprensa10.png" alt="pre18"></div>
+        </div>
+        <div id="cuartoCont" class="contColor"> 
+          <div class='imgTeoria1'><img class='img-special' src="./assets/preprensa11.png" alt="pre17"></div>
+          <div class='imgTeoria1'><img class='img-special' src="./assets/preprensa9.jpg" alt="pre9"></div>
+          <div class='imgTeoria1'><video class='vidTeoria img-special' id="vid03" onclick="muestraVidPrisma('vid06')" src="./assets/luz3.mp4" autoplay loop></video></div>
+          <div class='imgTeoria1'><img class='img-special' src="./assets/luz4.jfif" alt="pre18"></div>
+          <div class='imgTeoria1'><img class='img-special' src="./assets/luz5.jfif" alt="pre18"></div>
+          <div class='imgTeoria1'><img class='img-special' src="./assets/preprensa5.jpg" alt="pre5"></div>
+        </div>
       </div>
+      
+
+
+
     </div> 
     <div id="nicho-videos">
       <video class='vidTeoria vid-prepress' id="vid04" onclick="abrirPrepress('pre-prensa')" src="./assets/luz.mp4" autoplay loop></video>
@@ -1631,24 +1674,21 @@
       </div> 
     </div>
     <div id="largoImpresion">
-
-
-      <div id="contImgEntrenos" class="imgs-entrenos" style="display: flex;">
-        
-      </div>
-
-      <div id="linksMA">
-        <div style="position: absolute;top: 0%;left: 0%;">
-          <h2 style="margin-left: 20px;width: 517px;color: orange;">Largo de impresión ajustes preliminares</h2>  
-          <ol class="linksTraining" id="linkLis">
-            <li><a href="#" id="link1" class="colorClick"data-imagen="imag11" onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')">Asegurar PSI neumática</a></li><br>
-            <li><a href="#" id="link2" class="colorClick"data-imagen="imag22" onclick="imagenesPasoApaso('contImgEntrenos','padre-neumat','pneumatico','imag2','link2','vid-pneumatic')">Optimización al freno de bobina</a></li><br> 
-            <li><a href="#" id="link3" class="colorClick"data-imagen="imag33" onclick="imagenesPasoApaso('contImgEntrenos','bailarina','vid-basculante','imag3','link3','contImaginario')">Ajuste parámetros en basculante</a></li><br>  
-            <li><a href="#" id="link4" class="colorClick"data-imagen="imag44" onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag4','link4','rodillo-infeed')">Calibración / Limpieza / Rugosidad en INFEED</a></li><br>
-            <li><a href="#" id="link5" class="colorClick"data-imagen="imag55" onclick="imagenesPasoApaso('','','contBotInfeed','','link5','puesta-punto',)">Paso a paso puesta a punto</a></li><br>
-          </ol> 
-        </div>        
-      </div>  
+    <div id="contImgEntrenos" class="imgs-entrenos" style="display: flex;">
+      
+    </div>
+    <div id="linksMA">
+      <div style="position: absolute;top: 0%;left: 0%;">
+        <h2 style="margin-left: 20px;width: 517px;color: orange;">Largo de impresión ajustes preliminares</h2>  
+        <ol class="linksTraining" id="linkLis">
+          <li><a href="#" id="link1" class="colorClick"data-imagen="imag11" onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')">Asegurar PSI neumática</a></li><br>
+          <li><a href="#" id="link2" class="colorClick"data-imagen="imag22" onclick="imagenesPasoApaso('contImgEntrenos','padre-neumat','pneumatico','imag2','link2','vid-pneumatic')">Optimización al freno de bobina</a></li><br> 
+          <li><a href="#" id="link3" class="colorClick"data-imagen="imag33" onclick="imagenesPasoApaso('contImgEntrenos','bailarina','vid-basculante','imag3','link3','contImaginario')">Ajuste parámetros en basculante</a></li><br>  
+          <li><a href="#" id="link4" class="colorClick"data-imagen="imag44" onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag4','link4','rodillo-infeed')">Calibración / Limpieza / Rugosidad en INFEED</a></li><br>
+          <li><a href="#" id="link5" class="colorClick"data-imagen="imag55" onclick="imagenesPasoApaso('','','contBotInfeed','','link5','puesta-punto',)">Paso a paso puesta a punto</a></li><br>
+        </ol> 
+      </div>        
+    </div>  
     </div> 
     <div id="contImaginario">
       <div id="imag3" >
