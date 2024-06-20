@@ -4,10 +4,12 @@ function deslizaContenedor(identificador, idButton) {
   let visor3 = document.getElementById('nicho_spans')
   visor3.style.display = 'none'
   visor3.style.visibility = 'hidden'  
+
   var contBotKaizen = document.getElementById('conti-boton-kaizen')
   contBotKaizen.removeAttribute('style')
   linkIni1.style.left = ''
   linkIni2.style.left = ''  
+
   arrayIdButtsMA.forEach(element => {                                                                                                        
     var elemento = document.getElementById(element)
     if (elemento) {
@@ -20,25 +22,30 @@ function deslizaContenedor(identificador, idButton) {
       }
     }
   })
+
   contiBtt.forEach(element => {                                                                                                                                                   
     var elemento = document.getElementById(element)
     if (elemento) {
       elemento.style.backgroundColor = ''
     }
   })  
+
    contenedoresMA.forEach(element => {
     var elementos = document.getElementById(element)
     if(elementos){
       elementos.removeAttribute('style');
     }
   })  
-  if (document.body.style.zoom !== "100%") {                                                                                         
+
+  if (document.body.style.zoom !== "100%") {                                                                                          
     document.body.style.zoom = "100%";
   }
+
   container1.style.left = '50%'
+
   switch(identificador){
     case 'troubleshooting' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut']  
+      var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -62,7 +69,7 @@ function deslizaContenedor(identificador, idButton) {
       mostrarTroublesshIntervalo()
     break;
     case 'canvasContainer2' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer2','MiGrafica','wall_street_II','general']  
+      var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer2','MiGrafica','wall_street_II','general']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -74,15 +81,27 @@ function deslizaContenedor(identificador, idButton) {
       document.getElementById('wall_street_II').style.left = '29.5%'
     break;
     case 'contChecks' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','contChecks','general','first_half']  
+      var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','contChecks','general','first_half']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      document.getElementById('first_half').style.height ='38.5vh'
-      firstMovement()
+      stopWidth = false
+
+      let mitad1 = document.getElementById('first_half')
+      let general = document.getElementById('general')
+      general.style.display = 'block'
+      mitad1.style.display = 'grid'
+
+      setTimeout(() => {
+        firstMovement()
+      }, 7);
+      setTimeout(() => {
+        secondMovement()
+      }, 117);
+
       if(screenWidth < 500){
         var contChecks = document.getElementById(identificador);
         if (contChecks !== null) {
@@ -91,7 +110,7 @@ function deslizaContenedor(identificador, idButton) {
       }
       break;
     case 'canvasContainer3' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','canvasContainer3','general','padre']  
+      var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer3','general','padre']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -112,8 +131,8 @@ function deslizaContenedor(identificador, idButton) {
         }
       }
     break;
-    case 'contImagNeg' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagNeg','general','equalizer']  
+    case 'contImagNeg' :  
+      var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagNeg','general','equalizer']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -140,13 +159,23 @@ function deslizaContenedor(identificador, idButton) {
       }
     break;
     case 'contImagGraf' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagGraf']  
+      var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagGraf','general','patern']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
+      detenerCicodelia()
+
+      let padre = document.getElementById('patern')
+      padre.style.display = 'grid'
+      padre.style.marginTop = '-42.5vh'
+      padre.style.left = '30vw'
+      padre.style.height = '68vh'
+      padre.style.width = '50vw'
+      changeColors()
+
       if(screenWidth < 500){
         var imagGraf = document.getElementById(identificador);
         if (imagGraf !== null) {
@@ -155,7 +184,7 @@ function deslizaContenedor(identificador, idButton) {
       }
     break;
     case 'conti-boton-kaizen' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen']  
+      var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -196,740 +225,740 @@ function resetearBarras(){
   isAnimatingXVI = false
 }
 // COMBINACION TECLAS EJECUTA FUNCION
-  document.addEventListener('keydown', function(event) {             
-    if (event.ctrlKey && event.shiftKey) {
-      switch (event.key) {
-        case 'Z':
-            /* smartBars() */
-          abrirSeccionOperativa('cont-titulo-operacion')       
-          setTimeout(function() {
-            abrirSeccionContinua('pantalla-inicial')        
-          },577)
-          setTimeout(function() {
-            ElementosMaII('conteneMantaut')
-          },977) 
-          setTimeout(function() {
-            barraInteligente()        
-          },1177) 
-          /*setTimeout(function() {
-            listaEntrenamientosII('archivo')       
-          },1377) 
-          setTimeout(function() {
-            imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')                                 
-          },1677) 
-          setTimeout(function() {
-            //changeButtonStyles('pantalla-tintero')       
-          },1977) */        
-        break;
-        case 'H': 
-        changeColorRedAndBack()      
-        break;
-        case 'X':
-          Geometria()
-        break;                  
-      }
+document.addEventListener('keydown', function(event) {             
+  if (event.ctrlKey && event.shiftKey) {
+    switch (event.key) {
+      case 'Z':
+          /* smartBars() */
+        abrirSeccionOperativa('cont-titulo-operacion')       
+        setTimeout(function() {
+          abrirSeccionContinua('pantalla-inicial')        
+        },577)
+        setTimeout(function() {
+          ElementosMaII('conteneMantaut')
+        },977) 
+        setTimeout(function() {
+          barraInteligente()        
+        },1177) 
+        /*setTimeout(function() {
+          listaEntrenamientosII('archivo')       
+        },1377) 
+        setTimeout(function() {
+          imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')                                 
+        },1677) 
+        setTimeout(function() {
+          //changeButtonStyles('pantalla-tintero')       
+        },1977) */        
+      break;
+      case 'H': 
+      changeColorRedAndBack()      
+      break;
+      case 'X':
+        Geometria()
+      break;                  
     }
-  });
-  // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
-  function Geometria() {
-    console.clear();
-    var contiBoton = document.getElementById('patern'); 
-    var rect = contiBoton.getBoundingClientRect();
-    var topPosition = rect.top;
-    var leftPosition = rect.left;
-    var widthValue = rect.width;
-    var heightValue = rect.height;
-    var style = window.getComputedStyle(contiBoton);
-    var positionType = style.position;
-    var displayType = style.display;
-    var visibilityType = style.visibility;
-    var isVisible = rect.width > 0 && rect.height > 0 && displayType !== 'none' && visibilityType !== 'hidden';
-    console.log('ID:', contiBoton.id);
-    console.log('Top:', topPosition);
-    console.log('Left:', leftPosition);
-    console.log('Height:', heightValue);
-    console.log('Width:', widthValue);
-    console.log('Position:', positionType);
-    console.log('Display:', displayType);
-    console.log('Visibility:', visibilityType);
-    console.log('Is Visible:', isVisible);
   }
- 
+});
+// SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
+function Geometria() {
+  console.clear();
+  var contiBoton = document.getElementById('first_half'); 
+  var rect = contiBoton.getBoundingClientRect();
+  var topPosition = rect.top;
+  var leftPosition = rect.left;
+  var widthValue = rect.width;
+  var heightValue = rect.height;
+  var style = window.getComputedStyle(contiBoton);
+  var positionType = style.position;
+  var displayType = style.display;
+  var visibilityType = style.visibility;
+  var isVisible = rect.width > 0 && rect.height > 0 && displayType !== 'none' && visibilityType !== 'hidden';
+  console.log('ID:', contiBoton.id);
+  console.log('Top:', topPosition);
+  console.log('Left:', leftPosition);
+  console.log('Height:', heightValue);
+  console.log('Width:', widthValue);
+  console.log('Position:', positionType);
+  console.log('Display:', displayType);
+  console.log('Visibility:', visibilityType);
+  console.log('Is Visible:', isVisible);
+}
+
 function updateAna() {
-    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
-    setTimeout(function() {
-     graficosAutomaticos('canvasContainer4')
-   },500) // 0.3 segundos
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer7')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer5')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer6')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer8')
-   }, 700) // 0.3 segundos (300 ms + 300 ms) 
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer9')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
- 
-   var nuevosDatos = [/* Nuevos valores de datos */ 0,70,30,70,50,90]
-   // Actualiza los datos del gráfico
-   chart7.data.datasets[0].data = nuevosDatos;
-   // Actualiza el gráfico
-   chart7.update()
-   ///////////////////////////////////////////////////////////////////
-   var nuevosDatosI = [/* Nuevos valores de datos */ 55,5,95,30,10,10]
-   // Actualiza los datos del gráfico
-   chart8.data.datasets[0].data = nuevosDatosI;
-   // Actualiza el gráfico
-   chart8.update()
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosII = [/* Nuevos valores de datos */ 30,50,60,77,20,8]
-   // Actualiza los datos del gráfico
-   chart9.data.datasets[0].data = nuevosDatosII;
-   // Actualiza el gráfico
-   chart9.update() 
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosIII = [/* Nuevos valores de datos */ 5,17,8,30,44,10]
-   // Actualiza los datos del gráfico
-   chart10.data.datasets[0].data = nuevosDatosIII;
-   // Actualiza el gráfico
-   chart10.update()
-     //////////////////////////////////////////////////////////////////
-   var nuevosDatosIIII = [/* Nuevos valores de datos */ 11,50,20,80,10,100]
-   // Actualiza los datos del gráfico
-   chart11.data.datasets[0].data = nuevosDatosIIII;
-   // Actualiza el gráfico
-   chart11.update() 
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosV = [/* Nuevos valores de datos */ 5,17,33,45,51,57,67,99]           
-   // Actualiza los datos del gráfico
-   chart12.data.datasets[0].data = nuevosDatosV;
-   // Actualiza el gráfico
-   chart12.update() 
- 
- }
- function updateAnaII() {
-   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos    
-   setTimeout(function() {
-    graficosAutomaticos('canvasContainer4-II')
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer4')
   },500) // 0.3 segundos
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer7-II')
+    graficosAutomaticos('canvasContainer7')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer5-II')
+    graficosAutomaticos('canvasContainer5')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer6-II')
+    graficosAutomaticos('canvasContainer6')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
-  /*setTimeout(function() {
-    graficosAutomaticos('canvasContainer8-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms) */
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer9-II')  
+    graficosAutomaticos('canvasContainer8')
+  }, 700) // 0.3 segundos (300 ms + 300 ms) 
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer9')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
- 
+
   var nuevosDatos = [/* Nuevos valores de datos */ 0,70,30,70,50,90]
   // Actualiza los datos del gráfico
-  chart7II.data.datasets[0].data = nuevosDatos;
+  chart7.data.datasets[0].data = nuevosDatos;
   // Actualiza el gráfico
-  chart7II.update()
+  chart7.update()
   ///////////////////////////////////////////////////////////////////
-  var nuevosDatosI = [/* Nuevos valores de datos */ 55,5,95,30,10,10]            
+  var nuevosDatosI = [/* Nuevos valores de datos */ 55,5,95,30,10,10]
   // Actualiza los datos del gráfico
-  chart8II.data.datasets[0].data = nuevosDatosI;
+  chart8.data.datasets[0].data = nuevosDatosI;
   // Actualiza el gráfico
-  chart8II.update()
+  chart8.update()
   //////////////////////////////////////////////////////////////////
-  var nuevosDatosII = [/* Nuevos valores de datos */ 30,50,60,77,20,8]        
+  var nuevosDatosII = [/* Nuevos valores de datos */ 30,50,60,77,20,8]
   // Actualiza los datos del gráfico
-  chart9II.data.datasets[0].data = nuevosDatosII;
+  chart9.data.datasets[0].data = nuevosDatosII;
   // Actualiza el gráfico
-  chart9II.update() 
+  chart9.update() 
   //////////////////////////////////////////////////////////////////
   var nuevosDatosIII = [/* Nuevos valores de datos */ 5,17,8,30,44,10]
   // Actualiza los datos del gráfico
+  chart10.data.datasets[0].data = nuevosDatosIII;
+  // Actualiza el gráfico
+  chart10.update()
+    //////////////////////////////////////////////////////////////////
+  var nuevosDatosIIII = [/* Nuevos valores de datos */ 11,50,20,80,10,100]
+  // Actualiza los datos del gráfico
+  chart11.data.datasets[0].data = nuevosDatosIIII;
+  // Actualiza el gráfico
+  chart11.update() 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosV = [/* Nuevos valores de datos */ 5,17,33,45,51,57,67,99]           
+  // Actualiza los datos del gráfico
+  chart12.data.datasets[0].data = nuevosDatosV;
+  // Actualiza el gráfico
+  chart12.update() 
+
+}
+function updateAnaII() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos    
+  setTimeout(function() {
+  graficosAutomaticos('canvasContainer4-II')
+},500) // 0.3 segundos
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer7-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer5-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer6-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+/*setTimeout(function() {
+  graficosAutomaticos('canvasContainer8-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms) */
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer9-II')  
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+
+var nuevosDatos = [/* Nuevos valores de datos */ 0,70,30,70,50,90]
+// Actualiza los datos del gráfico
+chart7II.data.datasets[0].data = nuevosDatos;
+// Actualiza el gráfico
+chart7II.update()
+///////////////////////////////////////////////////////////////////
+var nuevosDatosI = [/* Nuevos valores de datos */ 55,5,95,30,10,10]            
+// Actualiza los datos del gráfico
+chart8II.data.datasets[0].data = nuevosDatosI;
+// Actualiza el gráfico
+chart8II.update()
+//////////////////////////////////////////////////////////////////
+var nuevosDatosII = [/* Nuevos valores de datos */ 30,50,60,77,20,8]        
+// Actualiza los datos del gráfico
+chart9II.data.datasets[0].data = nuevosDatosII;
+// Actualiza el gráfico
+chart9II.update() 
+//////////////////////////////////////////////////////////////////
+var nuevosDatosIII = [/* Nuevos valores de datos */ 5,17,8,30,44,10]
+// Actualiza los datos del gráfico
+chart10II.data.datasets[0].data = nuevosDatosIII;
+// Actualiza el gráfico
+chart10II.update()
+  //////////////////////////////////////////////////////////////////
+var nuevosDatosIIII = [/* Nuevos valores de datos */ 11,50,20,80,10,100]
+// Actualiza los datos del gráfico
+chart11II.data.datasets[0].data = nuevosDatosIIII;
+// Actualiza el gráfico
+chart11II.update() 
+//////////////////////////////////////////////////////////////////
+var nuevosDatosV = [/* Nuevos valores de datos */ 5,17,33,45,51,57,67,99]
+// Actualiza los datos del gráfico
+chart12II.data.datasets[0].data = nuevosDatosV;
+// Actualiza el gráfico
+chart12II.update() 
+
+}
+function updateMario() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer4')
+  },500) // 0.3 segundos
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer7')
+  }, 700) // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer5')
+  }, 700) // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer6')
+  }, 700) // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer8')
+  }, 700) // 0.3 segundos (300 ms + 300 ms) 
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer9')
+  }, 700) // 0.3 segundos (300 ms + 300 ms)
+  var nuevosDatos = [/* Nuevos valores de datos */ 100,20,70,10,80,90]
+  // Actualiza los datos del gráfico
+  chart7.data.datasets[0].data = nuevosDatos;
+  // Actualiza el gráfico
+  chart7.update()
+  ///////////////////////////////////////////////////////////////////
+  var nuevosDatosI = [/* Nuevos valores de datos */ 30,25,90,110,50,77]
+  // Actualiza los datos del gráfico
+  chart8.data.datasets[0].data = nuevosDatosI;
+  // Actualiza el gráfico
+  chart8.update()
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosII = [/* Nuevos valores de datos */ 100,90,10,30,70,10]
+  // Actualiza los datos del gráfico
+  chart9.data.datasets[0].data = nuevosDatosII;
+  // Actualiza el gráfico
+  chart9.update() 
+    //////////////////////////////////////////////////////////////////
+    var nuevosDatosIII = [/* Nuevos valores de datos */ 99,11,70,47,17,80]
+    // Actualiza los datos del gráfico
+    chart10.data.datasets[0].data = nuevosDatosIII;
+    // Actualiza el gráfico
+    chart10.update()
+      //////////////////////////////////////////////////////////////////
+  var nuevosDatosIIII = [/* Nuevos valores de datos */ 10,80,50,20,90,40]
+  // Actualiza los datos del gráfico
+  chart11.data.datasets[0].data = nuevosDatosIIII;
+  // Actualiza el gráfico
+  chart11.update() 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosV = [/* Nuevos valores de datos */ 55,67,73,70,65,80,80,91]
+  // Actualiza los datos del gráfico
+  chart12.data.datasets[0].data = nuevosDatosV;
+  // Actualiza el gráfico
+  chart12.update() 
+}
+function updateMarioII() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+  graficosAutomaticos('canvasContainer4-II')
+},500) // 0.3 segundos
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer7-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer5-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer6-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+/*setTimeout(function() {
+  graficosAutomaticos('canvasContainer8')
+}, 700) // 0.3 segundos (300 ms + 300 ms)*/ 
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer9-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+var nuevosDatos = [/* Nuevos valores de datos */ 100,20,70,10,80,90]
+// Actualiza los datos del gráfico
+chart7II.data.datasets[0].data = nuevosDatos;
+// Actualiza el gráfico
+chart7II.update()
+///////////////////////////////////////////////////////////////////
+var nuevosDatosI = [/* Nuevos valores de datos */ 30,25,90,110,50,77]
+// Actualiza los datos del gráfico
+chart8II.data.datasets[0].data = nuevosDatosI;
+// Actualiza el gráfico
+chart8II.update()
+//////////////////////////////////////////////////////////////////
+var nuevosDatosII = [/* Nuevos valores de datos */ 100,90,10,30,70,10]
+// Actualiza los datos del gráfico
+chart9II.data.datasets[0].data = nuevosDatosII;
+// Actualiza el gráfico
+chart9II.update() 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosIII = [/* Nuevos valores de datos */ 99,11,70,47,17,80]
+  // Actualiza los datos del gráfico
   chart10II.data.datasets[0].data = nuevosDatosIII;
   // Actualiza el gráfico
   chart10II.update()
     //////////////////////////////////////////////////////////////////
-  var nuevosDatosIIII = [/* Nuevos valores de datos */ 11,50,20,80,10,100]
-  // Actualiza los datos del gráfico
-  chart11II.data.datasets[0].data = nuevosDatosIIII;
-  // Actualiza el gráfico
-  chart11II.update() 
-  //////////////////////////////////////////////////////////////////
-  var nuevosDatosV = [/* Nuevos valores de datos */ 5,17,33,45,51,57,67,99]
-  // Actualiza los datos del gráfico
-  chart12II.data.datasets[0].data = nuevosDatosV;
-  // Actualiza el gráfico
-  chart12II.update() 
- 
- }
- function updateMario() {
-    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
-    setTimeout(function() {
-     graficosAutomaticos('canvasContainer4')
-   },500) // 0.3 segundos
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer7')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer5')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer6')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer8')
-   }, 700) // 0.3 segundos (300 ms + 300 ms) 
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer9')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   var nuevosDatos = [/* Nuevos valores de datos */ 100,20,70,10,80,90]
-   // Actualiza los datos del gráfico
-   chart7.data.datasets[0].data = nuevosDatos;
-   // Actualiza el gráfico
-   chart7.update()
-   ///////////////////////////////////////////////////////////////////
-   var nuevosDatosI = [/* Nuevos valores de datos */ 30,25,90,110,50,77]
-   // Actualiza los datos del gráfico
-   chart8.data.datasets[0].data = nuevosDatosI;
-   // Actualiza el gráfico
-   chart8.update()
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosII = [/* Nuevos valores de datos */ 100,90,10,30,70,10]
-   // Actualiza los datos del gráfico
-   chart9.data.datasets[0].data = nuevosDatosII;
-   // Actualiza el gráfico
-   chart9.update() 
-     //////////////////////////////////////////////////////////////////
-     var nuevosDatosIII = [/* Nuevos valores de datos */ 99,11,70,47,17,80]
-     // Actualiza los datos del gráfico
-     chart10.data.datasets[0].data = nuevosDatosIII;
-     // Actualiza el gráfico
-     chart10.update()
-       //////////////////////////////////////////////////////////////////
-   var nuevosDatosIIII = [/* Nuevos valores de datos */ 10,80,50,20,90,40]
-   // Actualiza los datos del gráfico
-   chart11.data.datasets[0].data = nuevosDatosIIII;
-   // Actualiza el gráfico
-   chart11.update() 
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosV = [/* Nuevos valores de datos */ 55,67,73,70,65,80,80,91]
-   // Actualiza los datos del gráfico
-   chart12.data.datasets[0].data = nuevosDatosV;
-   // Actualiza el gráfico
-   chart12.update() 
- }
- function updateMarioII() {
-   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
-   setTimeout(function() {
-    graficosAutomaticos('canvasContainer4-II')
+var nuevosDatosIIII = [/* Nuevos valores de datos */ 10,80,50,20,90,40]
+// Actualiza los datos del gráfico
+chart11II.data.datasets[0].data = nuevosDatosIIII;
+// Actualiza el gráfico
+chart11II.update() 
+//////////////////////////////////////////////////////////////////
+var nuevosDatosV = [/* Nuevos valores de datos */ 55,67,73,70,65,80,80,91]
+// Actualiza los datos del gráfico
+chart12II.data.datasets[0].data = nuevosDatosV;
+// Actualiza el gráfico
+chart12II.update() 
+}
+function updateSandra() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer4')
   },500) // 0.3 segundos
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer7-II')
+    graficosAutomaticos('canvasContainer7')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer5-II')
+    graficosAutomaticos('canvasContainer5')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer6-II')
+    graficosAutomaticos('canvasContainer6')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
-  /*setTimeout(function() {
+  setTimeout(function() {
     graficosAutomaticos('canvasContainer8')
-  }, 700) // 0.3 segundos (300 ms + 300 ms)*/ 
+  }, 700) // 0.3 segundos (300 ms + 300 ms) 
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer9-II')
+    graficosAutomaticos('canvasContainer9')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
-  var nuevosDatos = [/* Nuevos valores de datos */ 100,20,70,10,80,90]
+var nuevosDatos = [/* Nuevos valores de datos */ 33,20,100,50,80,10]
+// Actualiza los datos del gráfico
+chart7.data.datasets[0].data = nuevosDatos;
+// Actualiza el gráfico
+chart7.update()
+///////////////////////////////////////////////////////////////////
+var nuevosDatosI = [/* Nuevos valores de datos */ 30,75,20,100,50,17]
+// Actualiza los datos del gráfico
+chart8.data.datasets[0].data = nuevosDatosI;
+// Actualiza el gráfico
+chart8.update()
+//////////////////////////////////////////////////////////////////
+var nuevosDatosII = [/* Nuevos valores de datos */ 33,50,30,90,100,5]
+// Actualiza los datos del gráfico
+chart9.data.datasets[0].data = nuevosDatosII;
+// Actualiza el gráfico
+chart9.update() 
+//////////////////////////////////////////////////////////////////
+  var nuevosDatosIII = [/* Nuevos valores de datos */ 9,5,70,97,37,60]
+  // Actualiza los datos del gráfico
+  chart10.data.datasets[0].data = nuevosDatosIII;
+  // Actualiza el gráfico
+  chart10.update()
+  //////////////////////////////////////////////////////////////////
+var nuevosDatosIIII = [/* Nuevos valores de datos */ 30,40,250,600,45,800]
+// Actualiza los datos del gráfico
+chart11.data.datasets[0].data = nuevosDatosIIII;
+// Actualiza el gráfico
+chart11.update() 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosV = [/* Nuevos valores de datos */ 50,37,33,17,51,77,67,70]
+  // Actualiza los datos del gráfico
+  chart12.data.datasets[0].data = nuevosDatosV;
+  // Actualiza el gráfico
+  chart12.update()  
+}
+function updateSandraII() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+  graficosAutomaticos('canvasContainer4-II')
+},500) // 0.3 segundos
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer7-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer5-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer6-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+/*  setTimeout(function() {
+  graficosAutomaticos('canvasContainer8-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms) */ 
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer9-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+var nuevosDatos = [/* Nuevos valores de datos */ 33,20,100,50,80,10]
+// Actualiza los datos del gráfico
+chart7II.data.datasets[0].data = nuevosDatos;
+// Actualiza el gráfico
+chart7II.update()
+///////////////////////////////////////////////////////////////////
+var nuevosDatosI = [/* Nuevos valores de datos */ 30,75,20,100,50,17]
+// Actualiza los datos del gráfico
+chart8II.data.datasets[0].data = nuevosDatosI;
+// Actualiza el gráfico
+chart8II.update()
+//////////////////////////////////////////////////////////////////
+var nuevosDatosII = [/* Nuevos valores de datos */ 33,50,30,90,100,5]
+// Actualiza los datos del gráfico
+chart9II.data.datasets[0].data = nuevosDatosII;
+// Actualiza el gráfico
+chart9II.update() 
+//////////////////////////////////////////////////////////////////
+var nuevosDatosIII = [/* Nuevos valores de datos */ 9,5,70,97,37,60]
+// Actualiza los datos del gráfico
+chart10II.data.datasets[0].data = nuevosDatosIII;
+// Actualiza el gráfico
+chart10II.update()
+//////////////////////////////////////////////////////////////////
+var nuevosDatosIIII = [/* Nuevos valores de datos */ 30,40,250,600,45,800]
+// Actualiza los datos del gráfico
+chart11II.data.datasets[0].data = nuevosDatosIIII;
+// Actualiza el gráfico
+chart11II.update() 
+//////////////////////////////////////////////////////////////////
+var nuevosDatosV = [/* Nuevos valores de datos */ 50,37,33,17,51,77,67,70]
+// Actualiza los datos del gráfico
+chart12II.data.datasets[0].data = nuevosDatosV;
+// Actualiza el gráfico
+chart12II.update()  
+}
+function updateJesus() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer4')
+  },500) // 0.3 segundos
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer7')
+  }, 700) // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer5')
+  }, 700) // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer6')
+  }, 700) // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer8')
+  }, 700) // 0.3 segundos (300 ms + 300 ms) 
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer9')
+  }, 700) // 0.3 segundos (300 ms + 300 ms)
+  var nuevosDatos = [/* Nuevos valores de datos */ 10,100,10,20,50,90]
+  // Actualiza los datos del gráfico
+  chart7.data.datasets[0].data = nuevosDatos;
+  // Actualiza el gráfico
+  chart7.update()  
+  ///////////////////////////////////////////////////////////////////
+var nuevosDatosI = [/* Nuevos valores de datos */ 100,50,10,100,50,17]
+// Actualiza los datos del gráfico
+chart8.data.datasets[0].data = nuevosDatosI;
+// Actualiza el gráfico
+chart8.update()
+//////////////////////////////////////////////////////////////////
+var nuevosDatosII = [/* Nuevos valores de datos */ 10,100,50,30,10,90]
+// Actualiza los datos del gráfico
+chart9.data.datasets[0].data = nuevosDatosII;
+// Actualiza el gráfico
+chart9.update() 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosIII = [/* Nuevos valores de datos */ 9,90,70,47,87,10]
+  // Actualiza los datos del gráfico
+  chart10.data.datasets[0].data = nuevosDatosIII;
+  // Actualiza el gráfico
+  chart10.update()
+    //////////////////////////////////////////////////////////////////
+var nuevosDatosIIII = [/* Nuevos valores de datos */ 100,8,50,70,30,10]
+// Actualiza los datos del gráfico
+chart11.data.datasets[0].data = nuevosDatosIIII;
+// Actualiza el gráfico
+chart11.update()
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosV = [/* Nuevos valores de datos */ 33,37,33,77,45,77,80,87]
+  // Actualiza los datos del gráfico
+  chart12.data.datasets[0].data = nuevosDatosV;
+  // Actualiza el gráfico
+  chart12.update()   
+}
+function updateJesusII() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+  graficosAutomaticos('canvasContainer4-II')
+},500) // 0.3 segundos
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer7-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer5-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer6-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+/*setTimeout(function() {
+    graficosAutomaticos('canvasContainer8-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms) */ 
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer9-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+var nuevosDatos = [/* Nuevos valores de datos */ 10,100,10,20,50,90]
+// Actualiza los datos del gráfico
+chart7II.data.datasets[0].data = nuevosDatos;
+// Actualiza el gráfico
+chart7II.update()  
+///////////////////////////////////////////////////////////////////
+var nuevosDatosI = [/* Nuevos valores de datos */ 100,50,10,100,50,17]
+// Actualiza los datos del gráfico
+chart8II.data.datasets[0].data = nuevosDatosI;
+// Actualiza el gráfico
+chart8II.update()
+//////////////////////////////////////////////////////////////////
+var nuevosDatosII = [/* Nuevos valores de datos */ 10,100,50,30,10,90]
+// Actualiza los datos del gráfico
+chart9II.data.datasets[0].data = nuevosDatosII;
+// Actualiza el gráfico
+chart9II.update() 
+//////////////////////////////////////////////////////////////////
+var nuevosDatosIII = [/* Nuevos valores de datos */ 9,90,70,47,87,10]
+// Actualiza los datos del gráfico
+chart10II.data.datasets[0].data = nuevosDatosIII;
+// Actualiza el gráfico
+chart10II.update()
+  //////////////////////////////////////////////////////////////////
+var nuevosDatosIIII = [/* Nuevos valores de datos */ 100,8,50,70,30,10]
+// Actualiza los datos del gráfico
+chart11II.data.datasets[0].data = nuevosDatosIIII;
+// Actualiza el gráfico
+chart11II.update()
+//////////////////////////////////////////////////////////////////
+var nuevosDatosV = [/* Nuevos valores de datos */ 33,37,33,77,45,77,80,87]
+// Actualiza los datos del gráfico
+chart12II.data.datasets[0].data = nuevosDatosV;
+// Actualiza el gráfico
+chart12II.update()   
+}
+function updateJorge() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer4')
+  },500) // 0.3 segundos
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer7')
+  }, 700) // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer5')
+  }, 700) // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer6')
+  }, 700) // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer8')
+  }, 700) // 0.3 segundos (300 ms + 300 ms) 
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer9')
+  }, 700) // 0.3 segundos (300 ms + 300 ms)
+  var nuevosDatos = [/* Nuevos valores de datos */ 10,20,50,10,10,5]
+// Actualiza los datos del gráfico
+chart7.data.datasets[0].data = nuevosDatos;
+// Actualiza el gráfico
+chart7.update()
+///////////////////////////////////////////////////////////////////
+var nuevosDatosI = [/* Nuevos valores de datos */ 77,33,44,66,55,17]
+// Actualiza los datos del gráfico
+chart8.data.datasets[0].data = nuevosDatosI;
+// Actualiza el gráfico
+chart8.update()
+//////////////////////////////////////////////////////////////////
+var nuevosDatosII = [/* Nuevos valores de datos */ 50,5,5,10,100,77]
+// Actualiza los datos del gráfico
+chart9.data.datasets[0].data = nuevosDatosII;
+// Actualiza el gráfico
+chart9.update() 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosIII = [/* Nuevos valores de datos */ 55,17,77,100,47,7]
+  // Actualiza los datos del gráfico
+  chart10.data.datasets[0].data = nuevosDatosIII;
+  // Actualiza el gráfico
+  chart10.update()
+    //////////////////////////////////////////////////////////////////
+var nuevosDatosIIII = [/* Nuevos valores de datos */ 44,99,17,77,10,5]
+// Actualiza los datos del gráfico
+chart11.data.datasets[0].data = nuevosDatosIIII;
+// Actualiza el gráfico
+chart11.update() 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosV = [/* Nuevos valores de datos */ 100,37,55,77,77,77,81,99]
+  // Actualiza los datos del gráfico
+  chart12.data.datasets[0].data = nuevosDatosV;
+  // Actualiza el gráfico
+  chart12.update()  
+}
+function updateJorgeII() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+  graficosAutomaticos('canvasContainer4-II')
+},500) // 0.3 segundos
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer7-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer5-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer6-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+/*  setTimeout(function() {
+  graficosAutomaticos('canvasContainer8-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)  */
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer9-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+var nuevosDatos = [/* Nuevos valores de datos */ 10,20,50,10,10,5]
   // Actualiza los datos del gráfico
   chart7II.data.datasets[0].data = nuevosDatos;
   // Actualiza el gráfico
   chart7II.update()
   ///////////////////////////////////////////////////////////////////
-  var nuevosDatosI = [/* Nuevos valores de datos */ 30,25,90,110,50,77]
+  var nuevosDatosI = [/* Nuevos valores de datos */ 77,33,44,66,55,17]
   // Actualiza los datos del gráfico
   chart8II.data.datasets[0].data = nuevosDatosI;
   // Actualiza el gráfico
   chart8II.update()
   //////////////////////////////////////////////////////////////////
-  var nuevosDatosII = [/* Nuevos valores de datos */ 100,90,10,30,70,10]
+  var nuevosDatosII = [/* Nuevos valores de datos */ 50,5,5,10,100,77]
   // Actualiza los datos del gráfico
   chart9II.data.datasets[0].data = nuevosDatosII;
   // Actualiza el gráfico
   chart9II.update() 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosIII = [/* Nuevos valores de datos */ 55,17,77,100,47,7]
+  // Actualiza los datos del gráfico
+  chart10II.data.datasets[0].data = nuevosDatosIII;
+  // Actualiza el gráfico
+  chart10II.update()
     //////////////////////////////////////////////////////////////////
-    var nuevosDatosIII = [/* Nuevos valores de datos */ 99,11,70,47,17,80]
-    // Actualiza los datos del gráfico
-    chart10II.data.datasets[0].data = nuevosDatosIII;
-    // Actualiza el gráfico
-    chart10II.update()
-      //////////////////////////////////////////////////////////////////
-  var nuevosDatosIIII = [/* Nuevos valores de datos */ 10,80,50,20,90,40]
+  var nuevosDatosIIII = [/* Nuevos valores de datos */ 44,99,17,77,10,5]
   // Actualiza los datos del gráfico
   chart11II.data.datasets[0].data = nuevosDatosIIII;
   // Actualiza el gráfico
   chart11II.update() 
-  //////////////////////////////////////////////////////////////////
-  var nuevosDatosV = [/* Nuevos valores de datos */ 55,67,73,70,65,80,80,91]
-  // Actualiza los datos del gráfico
-  chart12II.data.datasets[0].data = nuevosDatosV;
-  // Actualiza el gráfico
-  chart12II.update() 
- }
- function updateSandra() {
-    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
-    setTimeout(function() {
-     graficosAutomaticos('canvasContainer4')
-   },500) // 0.3 segundos
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer7')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer5')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer6')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer8')
-   }, 700) // 0.3 segundos (300 ms + 300 ms) 
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer9')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-  var nuevosDatos = [/* Nuevos valores de datos */ 33,20,100,50,80,10]
-  // Actualiza los datos del gráfico
-  chart7.data.datasets[0].data = nuevosDatos;
-  // Actualiza el gráfico
-  chart7.update()
-  ///////////////////////////////////////////////////////////////////
-  var nuevosDatosI = [/* Nuevos valores de datos */ 30,75,20,100,50,17]
-  // Actualiza los datos del gráfico
-  chart8.data.datasets[0].data = nuevosDatosI;
-  // Actualiza el gráfico
-  chart8.update()
-  //////////////////////////////////////////////////////////////////
-  var nuevosDatosII = [/* Nuevos valores de datos */ 33,50,30,90,100,5]
-  // Actualiza los datos del gráfico
-  chart9.data.datasets[0].data = nuevosDatosII;
-  // Actualiza el gráfico
-  chart9.update() 
-  //////////////////////////////////////////////////////////////////
-   var nuevosDatosIII = [/* Nuevos valores de datos */ 9,5,70,97,37,60]
-   // Actualiza los datos del gráfico
-   chart10.data.datasets[0].data = nuevosDatosIII;
-   // Actualiza el gráfico
-   chart10.update()
-   //////////////////////////////////////////////////////////////////
-  var nuevosDatosIIII = [/* Nuevos valores de datos */ 30,40,250,600,45,800]
-  // Actualiza los datos del gráfico
-  chart11.data.datasets[0].data = nuevosDatosIIII;
-  // Actualiza el gráfico
-  chart11.update() 
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosV = [/* Nuevos valores de datos */ 50,37,33,17,51,77,67,70]
-   // Actualiza los datos del gráfico
-   chart12.data.datasets[0].data = nuevosDatosV;
-   // Actualiza el gráfico
-   chart12.update()  
- }
- function updateSandraII() {
-   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
-   setTimeout(function() {
-    graficosAutomaticos('canvasContainer4-II')
+//////////////////////////////////////////////////////////////////
+var nuevosDatosV = [/* Nuevos valores de datos */ 100,37,55,77,77,77,81,99]
+// Actualiza los datos del gráfico
+chart12II.data.datasets[0].data = nuevosDatosV;
+// Actualiza el gráfico
+chart12II.update()  
+}
+function updateAndres() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer4')
   },500) // 0.3 segundos
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer7-II')
+    graficosAutomaticos('canvasContainer7')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer5-II')
+    graficosAutomaticos('canvasContainer5')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer6-II')
+    graficosAutomaticos('canvasContainer6')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
- /*  setTimeout(function() {
-    graficosAutomaticos('canvasContainer8-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms) */ 
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer9-II')
+    graficosAutomaticos('canvasContainer8')
+  }, 700) // 0.3 segundos (300 ms + 300 ms) 
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer9')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
- var nuevosDatos = [/* Nuevos valores de datos */ 33,20,100,50,80,10]
- // Actualiza los datos del gráfico
- chart7II.data.datasets[0].data = nuevosDatos;
- // Actualiza el gráfico
- chart7II.update()
- ///////////////////////////////////////////////////////////////////
- var nuevosDatosI = [/* Nuevos valores de datos */ 30,75,20,100,50,17]
- // Actualiza los datos del gráfico
- chart8II.data.datasets[0].data = nuevosDatosI;
- // Actualiza el gráfico
- chart8II.update()
- //////////////////////////////////////////////////////////////////
- var nuevosDatosII = [/* Nuevos valores de datos */ 33,50,30,90,100,5]
- // Actualiza los datos del gráfico
- chart9II.data.datasets[0].data = nuevosDatosII;
- // Actualiza el gráfico
- chart9II.update() 
- //////////////////////////////////////////////////////////////////
-  var nuevosDatosIII = [/* Nuevos valores de datos */ 9,5,70,97,37,60]
-  // Actualiza los datos del gráfico
-  chart10II.data.datasets[0].data = nuevosDatosIII;
-  // Actualiza el gráfico
-  chart10II.update()
+  var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
+// Actualiza los datos del gráfico
+chart7.data.datasets[0].data = nuevosDatos;
+// Actualiza el gráfico
+chart7.update()
+///////////////////////////////////////////////////////////////////
+var nuevosDatosI = [/* Nuevos valores de datos */ 7,3,4,6,5,7]
+// Actualiza los datos del gráfico
+chart8.data.datasets[0].data = nuevosDatosI;
+// Actualiza el gráfico
+chart8.update()
+//////////////////////////////////////////////////////////////////
+var nuevosDatosII = [/* Nuevos valores de datos */ 5,15,55,10,100,77]
+// Actualiza los datos del gráfico
+chart9.data.datasets[0].data = nuevosDatosII;
+// Actualiza el gráfico
+chart9.update() 
   //////////////////////////////////////////////////////////////////
- var nuevosDatosIIII = [/* Nuevos valores de datos */ 30,40,250,600,45,800]
- // Actualiza los datos del gráfico
- chart11II.data.datasets[0].data = nuevosDatosIIII;
- // Actualiza el gráfico
- chart11II.update() 
+  var nuevosDatosIII = [/* Nuevos valores de datos */ 0,17,37,50,97,27]
+  // Actualiza los datos del gráfico
+  chart10.data.datasets[0].data = nuevosDatosIII;
+  // Actualiza el gráfico
+  chart10.update()
+    //////////////////////////////////////////////////////////////////
+var nuevosDatosIIII = [/* Nuevos valores de datos */ 5,29,17,47,3,19]
+// Actualiza los datos del gráfico
+chart11.data.datasets[0].data = nuevosDatosIIII;
+// Actualiza el gráfico
+chart11.update()
   //////////////////////////////////////////////////////////////////
-  var nuevosDatosV = [/* Nuevos valores de datos */ 50,37,33,17,51,77,67,70]
+  var nuevosDatosV = [/* Nuevos valores de datos */ 77,37,55,41,33,77,50,60]
   // Actualiza los datos del gráfico
-  chart12II.data.datasets[0].data = nuevosDatosV;
+  chart12.data.datasets[0].data = nuevosDatosV;
   // Actualiza el gráfico
-  chart12II.update()  
- }
- function updateJesus() {
-    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
-    setTimeout(function() {
-     graficosAutomaticos('canvasContainer4')
-   },500) // 0.3 segundos
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer7')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer5')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer6')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer8')
-   }, 700) // 0.3 segundos (300 ms + 300 ms) 
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer9')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   var nuevosDatos = [/* Nuevos valores de datos */ 10,100,10,20,50,90]
-   // Actualiza los datos del gráfico
-   chart7.data.datasets[0].data = nuevosDatos;
-   // Actualiza el gráfico
-   chart7.update()  
-   ///////////////////////////////////////////////////////////////////
-  var nuevosDatosI = [/* Nuevos valores de datos */ 100,50,10,100,50,17]
-  // Actualiza los datos del gráfico
-  chart8.data.datasets[0].data = nuevosDatosI;
-  // Actualiza el gráfico
-  chart8.update()
-  //////////////////////////////////////////////////////////////////
-  var nuevosDatosII = [/* Nuevos valores de datos */ 10,100,50,30,10,90]
-  // Actualiza los datos del gráfico
-  chart9.data.datasets[0].data = nuevosDatosII;
-  // Actualiza el gráfico
-  chart9.update() 
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosIII = [/* Nuevos valores de datos */ 9,90,70,47,87,10]
-   // Actualiza los datos del gráfico
-   chart10.data.datasets[0].data = nuevosDatosIII;
-   // Actualiza el gráfico
-   chart10.update()
-     //////////////////////////////////////////////////////////////////
-  var nuevosDatosIIII = [/* Nuevos valores de datos */ 100,8,50,70,30,10]
-  // Actualiza los datos del gráfico
-  chart11.data.datasets[0].data = nuevosDatosIIII;
-  // Actualiza el gráfico
-  chart11.update()
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosV = [/* Nuevos valores de datos */ 33,37,33,77,45,77,80,87]
-   // Actualiza los datos del gráfico
-   chart12.data.datasets[0].data = nuevosDatosV;
-   // Actualiza el gráfico
-   chart12.update()   
- }
- function updateJesusII() {
-   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
-   setTimeout(function() {
-    graficosAutomaticos('canvasContainer4-II')
-  },500) // 0.3 segundos
+  chart12.update()  
+}
+function updateAndresII() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer7-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms)
-  setTimeout(function() {
-    graficosAutomaticos('canvasContainer5-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms)
-  setTimeout(function() {
-    graficosAutomaticos('canvasContainer6-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms)
-  /*setTimeout(function() {
-     graficosAutomaticos('canvasContainer8-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms) */ 
-  setTimeout(function() {
-    graficosAutomaticos('canvasContainer9-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms)
-  var nuevosDatos = [/* Nuevos valores de datos */ 10,100,10,20,50,90]
+  graficosAutomaticos('canvasContainer4-II')
+},500) // 0.3 segundos
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer7-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer5-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer6-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+/*  setTimeout(function() {
+  graficosAutomaticos('canvasContainer8-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms) */ 
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer9-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
   // Actualiza los datos del gráfico
   chart7II.data.datasets[0].data = nuevosDatos;
   // Actualiza el gráfico
-  chart7II.update()  
+  chart7II.update()
   ///////////////////////////////////////////////////////////////////
- var nuevosDatosI = [/* Nuevos valores de datos */ 100,50,10,100,50,17]
- // Actualiza los datos del gráfico
- chart8II.data.datasets[0].data = nuevosDatosI;
- // Actualiza el gráfico
- chart8II.update()
- //////////////////////////////////////////////////////////////////
- var nuevosDatosII = [/* Nuevos valores de datos */ 10,100,50,30,10,90]
- // Actualiza los datos del gráfico
- chart9II.data.datasets[0].data = nuevosDatosII;
- // Actualiza el gráfico
- chart9II.update() 
+  var nuevosDatosI = [/* Nuevos valores de datos */ 7,3,4,6,5,7]
+  // Actualiza los datos del gráfico
+  chart8II.data.datasets[0].data = nuevosDatosI;
+  // Actualiza el gráfico
+  chart8II.update()
   //////////////////////////////////////////////////////////////////
-  var nuevosDatosIII = [/* Nuevos valores de datos */ 9,90,70,47,87,10]
+  var nuevosDatosII = [/* Nuevos valores de datos */ 5,15,55,10,100,77]
+  // Actualiza los datos del gráfico
+  chart9II.data.datasets[0].data = nuevosDatosII;
+  // Actualiza el gráfico
+  chart9II.update() 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosIII = [/* Nuevos valores de datos */ 0,17,37,50,97,27]
   // Actualiza los datos del gráfico
   chart10II.data.datasets[0].data = nuevosDatosIII;
   // Actualiza el gráfico
   chart10II.update()
     //////////////////////////////////////////////////////////////////
- var nuevosDatosIIII = [/* Nuevos valores de datos */ 100,8,50,70,30,10]
- // Actualiza los datos del gráfico
- chart11II.data.datasets[0].data = nuevosDatosIIII;
- // Actualiza el gráfico
- chart11II.update()
+  var nuevosDatosIIII = [/* Nuevos valores de datos */ 5,29,17,47,3,19]
+  // Actualiza los datos del gráfico
+  chart11II.data.datasets[0].data = nuevosDatosIIII;
+  // Actualiza el gráfico
+  chart11II.update()
   //////////////////////////////////////////////////////////////////
-  var nuevosDatosV = [/* Nuevos valores de datos */ 33,37,33,77,45,77,80,87]
-  // Actualiza los datos del gráfico
-  chart12II.data.datasets[0].data = nuevosDatosV;
-  // Actualiza el gráfico
-  chart12II.update()   
- }
- function updateJorge() {
-    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
-    setTimeout(function() {
-     graficosAutomaticos('canvasContainer4')
-   },500) // 0.3 segundos
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer7')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer5')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer6')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer8')
-   }, 700) // 0.3 segundos (300 ms + 300 ms) 
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer9')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   var nuevosDatos = [/* Nuevos valores de datos */ 10,20,50,10,10,5]
-  // Actualiza los datos del gráfico
-  chart7.data.datasets[0].data = nuevosDatos;
-  // Actualiza el gráfico
-  chart7.update()
-  ///////////////////////////////////////////////////////////////////
-  var nuevosDatosI = [/* Nuevos valores de datos */ 77,33,44,66,55,17]
-  // Actualiza los datos del gráfico
-  chart8.data.datasets[0].data = nuevosDatosI;
-  // Actualiza el gráfico
-  chart8.update()
-  //////////////////////////////////////////////////////////////////
-  var nuevosDatosII = [/* Nuevos valores de datos */ 50,5,5,10,100,77]
-  // Actualiza los datos del gráfico
-  chart9.data.datasets[0].data = nuevosDatosII;
-  // Actualiza el gráfico
-  chart9.update() 
-    //////////////////////////////////////////////////////////////////
-    var nuevosDatosIII = [/* Nuevos valores de datos */ 55,17,77,100,47,7]
-    // Actualiza los datos del gráfico
-    chart10.data.datasets[0].data = nuevosDatosIII;
-    // Actualiza el gráfico
-    chart10.update()
-      //////////////////////////////////////////////////////////////////
-  var nuevosDatosIIII = [/* Nuevos valores de datos */ 44,99,17,77,10,5]
-  // Actualiza los datos del gráfico
-  chart11.data.datasets[0].data = nuevosDatosIIII;
-  // Actualiza el gráfico
-  chart11.update() 
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosV = [/* Nuevos valores de datos */ 100,37,55,77,77,77,81,99]
-   // Actualiza los datos del gráfico
-   chart12.data.datasets[0].data = nuevosDatosV;
-   // Actualiza el gráfico
-   chart12.update()  
- }
- function updateJorgeII() {
-   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
-   setTimeout(function() {
-    graficosAutomaticos('canvasContainer4-II')
-  },500) // 0.3 segundos
-  setTimeout(function() {
-    graficosAutomaticos('canvasContainer7-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms)
-  setTimeout(function() {
-    graficosAutomaticos('canvasContainer5-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms)
-  setTimeout(function() {
-    graficosAutomaticos('canvasContainer6-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms)
- /*  setTimeout(function() {
-    graficosAutomaticos('canvasContainer8-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms)  */
-  setTimeout(function() {
-    graficosAutomaticos('canvasContainer9-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms)
-  var nuevosDatos = [/* Nuevos valores de datos */ 10,20,50,10,10,5]
-   // Actualiza los datos del gráfico
-   chart7II.data.datasets[0].data = nuevosDatos;
-   // Actualiza el gráfico
-   chart7II.update()
-   ///////////////////////////////////////////////////////////////////
-   var nuevosDatosI = [/* Nuevos valores de datos */ 77,33,44,66,55,17]
-   // Actualiza los datos del gráfico
-   chart8II.data.datasets[0].data = nuevosDatosI;
-   // Actualiza el gráfico
-   chart8II.update()
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosII = [/* Nuevos valores de datos */ 50,5,5,10,100,77]
-   // Actualiza los datos del gráfico
-   chart9II.data.datasets[0].data = nuevosDatosII;
-   // Actualiza el gráfico
-   chart9II.update() 
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosIII = [/* Nuevos valores de datos */ 55,17,77,100,47,7]
-   // Actualiza los datos del gráfico
-   chart10II.data.datasets[0].data = nuevosDatosIII;
-   // Actualiza el gráfico
-   chart10II.update()
-     //////////////////////////////////////////////////////////////////
-   var nuevosDatosIIII = [/* Nuevos valores de datos */ 44,99,17,77,10,5]
-   // Actualiza los datos del gráfico
-   chart11II.data.datasets[0].data = nuevosDatosIIII;
-   // Actualiza el gráfico
-   chart11II.update() 
-  //////////////////////////////////////////////////////////////////
-  var nuevosDatosV = [/* Nuevos valores de datos */ 100,37,55,77,77,77,81,99]
+  var nuevosDatosV = [/* Nuevos valores de datos */ 77,37,55,41,33,77,50,60]
   // Actualiza los datos del gráfico
   chart12II.data.datasets[0].data = nuevosDatosV;
   // Actualiza el gráfico
   chart12II.update()  
- }
- function updateAndres() {
-    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
-    setTimeout(function() {
-     graficosAutomaticos('canvasContainer4')
-   },500) // 0.3 segundos
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer7')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer5')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer6')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer8')
-   }, 700) // 0.3 segundos (300 ms + 300 ms) 
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer9')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
-  // Actualiza los datos del gráfico
-  chart7.data.datasets[0].data = nuevosDatos;
-  // Actualiza el gráfico
-  chart7.update()
-  ///////////////////////////////////////////////////////////////////
-  var nuevosDatosI = [/* Nuevos valores de datos */ 7,3,4,6,5,7]
-  // Actualiza los datos del gráfico
-  chart8.data.datasets[0].data = nuevosDatosI;
-  // Actualiza el gráfico
-  chart8.update()
-  //////////////////////////////////////////////////////////////////
-  var nuevosDatosII = [/* Nuevos valores de datos */ 5,15,55,10,100,77]
-  // Actualiza los datos del gráfico
-  chart9.data.datasets[0].data = nuevosDatosII;
-  // Actualiza el gráfico
-  chart9.update() 
-    //////////////////////////////////////////////////////////////////
-    var nuevosDatosIII = [/* Nuevos valores de datos */ 0,17,37,50,97,27]
-    // Actualiza los datos del gráfico
-    chart10.data.datasets[0].data = nuevosDatosIII;
-    // Actualiza el gráfico
-    chart10.update()
-      //////////////////////////////////////////////////////////////////
-  var nuevosDatosIIII = [/* Nuevos valores de datos */ 5,29,17,47,3,19]
-  // Actualiza los datos del gráfico
-  chart11.data.datasets[0].data = nuevosDatosIIII;
-  // Actualiza el gráfico
-  chart11.update()
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosV = [/* Nuevos valores de datos */ 77,37,55,41,33,77,50,60]
-   // Actualiza los datos del gráfico
-   chart12.data.datasets[0].data = nuevosDatosV;
-   // Actualiza el gráfico
-   chart12.update()  
- }
- function updateAndresII() {
-   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
-   setTimeout(function() {
-    graficosAutomaticos('canvasContainer4-II')
-  },500) // 0.3 segundos
-  setTimeout(function() {
-    graficosAutomaticos('canvasContainer7-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms)
-  setTimeout(function() {
-    graficosAutomaticos('canvasContainer5-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms)
-  setTimeout(function() {
-    graficosAutomaticos('canvasContainer6-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms)
- /*  setTimeout(function() {
-    graficosAutomaticos('canvasContainer8-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms) */ 
-  setTimeout(function() {
-    graficosAutomaticos('canvasContainer9-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms)
-  var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
-   // Actualiza los datos del gráfico
-   chart7II.data.datasets[0].data = nuevosDatos;
-   // Actualiza el gráfico
-   chart7II.update()
-   ///////////////////////////////////////////////////////////////////
-   var nuevosDatosI = [/* Nuevos valores de datos */ 7,3,4,6,5,7]
-   // Actualiza los datos del gráfico
-   chart8II.data.datasets[0].data = nuevosDatosI;
-   // Actualiza el gráfico
-   chart8II.update()
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosII = [/* Nuevos valores de datos */ 5,15,55,10,100,77]
-   // Actualiza los datos del gráfico
-   chart9II.data.datasets[0].data = nuevosDatosII;
-   // Actualiza el gráfico
-   chart9II.update() 
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosIII = [/* Nuevos valores de datos */ 0,17,37,50,97,27]
-   // Actualiza los datos del gráfico
-   chart10II.data.datasets[0].data = nuevosDatosIII;
-   // Actualiza el gráfico
-   chart10II.update()
-     //////////////////////////////////////////////////////////////////
-   var nuevosDatosIIII = [/* Nuevos valores de datos */ 5,29,17,47,3,19]
-   // Actualiza los datos del gráfico
-   chart11II.data.datasets[0].data = nuevosDatosIIII;
-   // Actualiza el gráfico
-   chart11II.update()
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosV = [/* Nuevos valores de datos */ 77,37,55,41,33,77,50,60]
-   // Actualiza los datos del gráfico
-   chart12II.data.datasets[0].data = nuevosDatosV;
-   // Actualiza el gráfico
-   chart12II.update()  
  }
  function updateCarlos() {
     // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
@@ -3239,1486 +3268,1487 @@ function updateAna() {
    // Finaliza el trazado y dibuja la línea
    ctx.stroke();
  }
- function drawGrid(horizontalLines, verticalLines) {
-   // Configura el color y el grosor de las líneas de la cuadrícula
-   ctx.strokeStyle = "rgb(150, 150, 150)"; // Gris
-   ctx.lineWidth = 1;
-   // Dibuja líneas horizontales
-   for (var i = 1; i < horizontalLines; i++) {
-   var y = (i / horizontalLines) * canvas.height;
-   ctx.beginPath();
-   ctx.moveTo(0, y);
-   ctx.lineTo(canvas.width, y);
-   ctx.stroke();
-   }
-   // Dibuja líneas verticales
-   for (var j = 1; j < verticalLines; j++) {
-   var x = (j / verticalLines) * canvas.width;
-   ctx.beginPath();
-   ctx.moveTo(x, 0);
-   ctx.lineTo(x, canvas.height);
-   ctx.stroke();
-   }
- }
- var intervalId; // Declara la variable en un ámbito accesible                                   /// BOTONERA CICODELICA  PARE/SIGA
- function iniciarEventos() {
-   var contSinusoidales = document.getElementById('contMetrics')
-   var contCicodelicos = document.getElementById('botonesContainer')   
-   var colores = ['verde', 'rojo', 'amarillo', 'azul', 'violeta','magenta','gris','verdesat','cyan','purpura','anaranjado'] 
-   // Inicia cada botón con un índice de inicio diferente
-   var botones = document.querySelectorAll('#botonesContainer .botoneras')
-   botones.forEach(function (boton, index) {
-     boton.dataset.indiceInicio = index;
-   });
-   function cambiarColor() {
-     botones.forEach(function (boton) {
-       var indiceInicio = parseInt(boton.dataset.indiceInicio)
-       var indiceColor = (indiceInicio + 1) % colores.length
- 
-       // Cambia la clase de color del botón
-       boton.classList.remove(...colores);
-       boton.classList.add(colores[indiceColor])
- 
-       // Actualiza el índice de inicio para el próximo color
-       boton.dataset.indiceInicio = indiceColor
-     });
-   }
-   // Llama a la función cambiarColor cada 77 MS y guarda el ID del intervalo
-   intervalId = setInterval(cambiarColor, 77)
-   contSinusoidales.style.display = 'flex'
-   contCicodelicos.style.display = 'grid'
- 
- }
- function detenerEventos() {
-   clearInterval(intervalId);
-   var contCicodelicos = document.getElementById('botonesContainer')  
-   contCicodelicos.style.left = '555px'
- }
- function iniciarTransito() {                                                                                            /// BOTON BAILARIN ALREDEDOR DE PANTALLA
-   var boton = document.getElementById("buttSolitario");
-   var stopFlag = false;
-   var anchoPantalla = window.innerWidth;
-   var altoPantalla = window.innerHeight - 37;
-   var duracion = 1000;
- 
-   // 1. Array de colores
-   var colores = ['verde', 'rojo', 'amarillo', 'azul', 'violeta', 'magenta', 'gris', 'verdesat', 'cyan', 'purpura', 'anaranjado'];
-   // 2. Elemento del botón
-   var boton = document.getElementById("buttSolitario");
-   // 3. Función para cambiar el color del botón con un intervalo
-   function cambiarColorConIntervalo() {
-     var i = 0;
-     setInterval(function () {
-       // Cambiar el color del botón
-       boton.style.backgroundColor = colores[i];      
-       // Incrementar el índice para el próximo color
-       i = (i + 1) % colores.length;
-     }, 77); // Intervalo de 0.1 segundos (100 milisegundos)
-   }
-   // Llamar a la función para iniciar el cambio de colores
-   cambiarColorConIntervalo();
- 
-   // Función para mover el botón y reiniciar el ciclo
-   function mover(distanciaX, distanciaY, transitionProperty, nextMove) {
-     if (stopFlag) return;
-     // Aplicar la transición
-     boton.style.transition = transitionProperty;
-     boton.style.left = distanciaX + "px";
-     boton.style.top = distanciaY + "px";
-     // Esperar y luego realizar el siguiente movimiento
-     setTimeout(function () {
-       if (nextMove) {
-         nextMove();
-       } 
-     }, duracion);
-   }
-   // Primer movimiento: Derecha a izquierda
-   function moverDerechaIzquierda() {
-     boton.style.backgroundColor = 'rgb(0,255,0)'
-     mover(anchoPantalla - boton.offsetWidth, 0, 'left ' + duracion / 1000 + 's', moverArribaAbajo);
-   }
-   // Segundo movimiento: Arriba a abajo
-   function moverArribaAbajo() {
-     boton.style.backgroundColor = 'rgb(255,0,0)'
-     mover(anchoPantalla - boton.offsetWidth, altoPantalla - boton.offsetHeight, 'top ' + duracion / 1000 + 's', moverIzquierdaDerecha);
-   }
-   // Tercer movimiento: Izquierda a derecha
-   function moverIzquierdaDerecha() {
-     boton.style.backgroundColor = 'rgb(255,255,0)'
-     mover(0, altoPantalla - boton.offsetHeight, 'left ' + duracion / 1000 + 's', moverAbajoArriba);
-   }
-   // Cuarto movimiento: Abajo a arriba
-   function moverAbajoArriba() {
-     boton.style.backgroundColor = 'rgb(0,0,255)'
-     mover(0, 0, 'top ' + duracion / 1000 + 's', moverDiagonal);
-   }
-   // Quinto movimiento: Diagonal
-   function moverDiagonal() {
-     boton.style.backgroundColor = 'rgb(255,0,255)'
-     mover(anchoPantalla - boton.offsetWidth, altoPantalla - boton.offsetHeight, 'left ' + duracion / 1000 + 's, top ' + duracion / 1000 + 's', moverAbajoArribaII);
-   }
-   // Sexto movimiento: Abajo a arriba
-   function moverAbajoArribaII() {
-     boton.style.backgroundColor = 'orangered'
-     mover(anchoPantalla - boton.offsetWidth, 0, 'top ' + duracion / 1000 + 's',moverDiagonalI);
-   } 
-   // séptimo movimiento: Diagonal inversa
-   function moverDiagonalI() {
-     boton.style.backgroundColor = 'white'
-     mover(0, altoPantalla - boton.offsetHeight, 'left ' + duracion / 1000 + 's, top ' + duracion / 1000 + 's', moverAbajoArribaI);
-   }
-   // Cuarto movimiento: Abajo a arriba
-   function moverAbajoArribaI() {
-     boton.style.backgroundColor = 'purple'
-     mover(0, 0, 'top ' + duracion / 1000 + 's', moverDerechaIzquierda);
-   }  
-   // Iniciar el ciclo de movimientos
-   moverDerechaIzquierda();
-   iniciarEventos()
- }
- function detenerMovimiento() {
-   stopFlag = true;
-   clearTimeout(timeoutId);
- }
- var botonSolitario = document.getElementById('buttSolitario');
- var botonSeguidor = document.getElementById('boton2');
- function moverDerecha() {
-   botonSeguidor.style.top = botonSolitario.style.top
-   var posicionInicialX = 0
-   var posicionFinalX = window.innerWidth - botonSolitario.offsetWidth
- 
-   var intervalo = setInterval(function() {
-     if (posicionInicialX >= posicionFinalX) {
-       clearInterval(intervalo)
-       moverAbajo()
-     } else {
-       // Movimiento hacia la derecha
-       posicionInicialX += 7
-       botonSolitario.style.left = posicionInicialX + 'px'
-       botonSeguidor.style.left = (posicionInicialX - 85) + 'px'
- 
-     }
-   }, 17);  
- }
- function moverAbajo() {
-   botonSeguidor.style.left = botonSolitario.style.left
-   var posicionInicialY = 0;
-   var posicionFinalY =(window.innerHeight - 33) - botonSolitario.offsetHeight;
- 
-   var intervalo = setInterval(function() {
-     if (posicionInicialY >= posicionFinalY) {
-       moverIzquierda()      
-       clearInterval(intervalo);
-     } else {
-       // Movimiento hacia abajo
-       posicionInicialY += 7;
-       botonSolitario.style.top = posicionInicialY + 'px';
-       botonSeguidor.style.top = (posicionInicialY - 35) + 'px';
-     }
-   }, 17);
- }
- function moverIzquierda() {
-   botonSeguidor.style.top = botonSolitario.style.top
-   var posicionInicialX = (window.innerWidth - 33) - botonSolitario.offsetWidth;
-   var posicionFinalX = 0
- 
-   var intervalo = setInterval(function() {
-     if (posicionInicialX <= posicionFinalX) {
-       moverArriba()      
-       clearInterval(intervalo);
-     } else {
-       // Movimiento hacia la izquierda
-       posicionInicialX -= 7;
-       botonSolitario.style.left = posicionInicialX + 'px';
-       botonSeguidor.style.left = posicionInicialX + 95 + 'px'
-     }
-   }, 17);
- } 
- function moverArriba() {
-   botonSeguidor.style.left = botonSolitario.style.left;
-   var posicionInicialY = (window.innerHeight - 33) - botonSolitario.offsetHeight;
-   var posicionFinalY = 0;
- 
-   var intervalo = setInterval(function() {
-     if (posicionInicialY <= posicionFinalY) {
-       moverDerecha()      
-       clearInterval(intervalo);
-     } else {
-       // Movimiento hacia arriba
-       posicionInicialY -= 7;
-       botonSolitario.style.top = posicionInicialY + 'px';
-       botonSeguidor.style.top = (posicionInicialY + 35) + 'px';
-     }
-   }, 17);
- }
- const buttons = document.querySelectorAll('.buttons')  
- var contButtsAround = document.getElementById('button-container')
- function moverBoton(boton, index) {
-   const valoresLeft = ['-52px', '-104px', '-156px', '-208px', '-260px', '-312px', '-364px', '-416px', '-468px', '-520px', '-572px', '-624px', '-676px', '-728px', '-780px', '-832px', '-884px', '-936px', '-988px', '-1040px', '-1092px', '-1144px', '-1196px', '-1248px', '-1300px', '-1352px', '-1404px', '-1456px', '-1508px', '-1560px', '-1612px', '-1664px', '-1716px', '-1768px', '-1820px', '-1872px', '-1924px', '-1976px', '-2028px', '-2080px', '-2132px', '-2184px', '-2236px', '-2288px', '-2340px', '-2392px', '-2444px', '-2496px', '-2548px', '-2600px', '-2652px', '-2704px', '-2756px', '-2808px', '-2860px', '-2912px', '-2964px', '-3016px', '-3068px', '-3120px', '-3172px', '-3224px', '-3276px', '-3328px', '-3380px', '-3432px', '-3484px', '-3536px', '-3588px']
- 
-   // Calcular la distancia total de los cuatro lados de la pantalla
-   const screenWidth = window.innerWidth;
-   const screenHeight = window.innerHeight;
-   const totalDistance = screenWidth + screenHeight + screenWidth + screenHeight;
-   // Obtener la cantidad de botones
-   const cantidadBotones = valoresLeft.length;
-   // Calcular el espacio entre botones (considerando 2px de separación)
-   const espacioEntreBotones = 2;
-   const espacioTotalEntreBotones = (cantidadBotones - 1) * espacioEntreBotones;
-   // Calcular la distancia disponible para posicionar los botones
-   const distanciaDisponible = totalDistance - espacioTotalEntreBotones;
-   // Calcular la distancia entre cada botón
-   const distanciaEntreBotones = distanciaDisponible / cantidadBotones;
-   // Posicionar los botones en el lado izquierdo de la pantalla
-   const nuevosValoresLeft = Array.from({ length: cantidadBotones }, (_, index) => `-${index * (distanciaEntreBotones + espacioEntreBotones)}px`);
-   // Asignar las nuevas posiciones a los botones
-   nuevosValoresLeft.forEach((valor, index) => {
-   const boton = document.getElementById(`buttons${index + 2}`)
-   if (boton) {
-     boton.style.left = valor
-   } 
-  });
-   boton.style.left = nuevosValoresLeft[index]
-   const velocidad = 26
-   let x = parseFloat(boton.style.left) || 0
-   let y = 0
-   let moviendoDerecha = true
-   let moviendoAbajo = false
-   let moviendoIzquierda = false
-   let moviendoArriba = false
-   let contador = 0
-   let nuevoContador = 0
- 
-   function mover() {
-     contador++;  // Incrementa el primer contador cuando moviendoDerecha es true
-     contButtsAround.style.display = 'flex'
-     /////////////////////////////////////////////////////////////////////////////////////////////
-     if (contador ===20) {
-       contador = 0;  // Reinicia el primer contador cuando llega a 80 unidades
-       nuevoContador++;  // Incrementa el nuevo contador cada vez que contador llega a 80 unidades
-       console.log("Nuevo Contador:", nuevoContador)          
-     }    
-     //////////////////////////////////////////////////////////////////////////////////////////////
-     if (moviendoDerecha) {
-       if (x < window.innerWidth - boton.offsetWidth) {
-         x += velocidad
-         boton.style.background = 'rgb(0,255,0)'
-         const colores = {
-           1: 'rgb(255, 0, 0)',
-           2: 'rgb(255, 255, 0)',
-           3: 'rgb(0, 0, 255)',
-           4: 'rgb(255, 145, 0)',
-           5: 'rgb(125, 125, 125)',
-           6: 'rgb(233, 2, 25)',
-           7: 'rgb(222, 53, 230)'
-         };        
-         if (nuevoContador >= 1 && nuevoContador <= 7) {
-           boton.style.background = colores[nuevoContador];
-         }
-       } else {
-         x = window.innerWidth - boton.offsetWidth
-         moviendoDerecha = false
-         moviendoAbajo = true        
-       }
-     }  
-     else if (moviendoAbajo) {
-       if (y < (window.innerHeight) - boton.offsetHeight) {
-         y += velocidad;
-         boton.style.background = 'rgb(255,255,0)'
-         const colores = {
- 
-           3: 'rgb(0, 255, 0)',
-           4: 'rgb(0, 255, 255)',
-           5: 'rgb(222, 53, 230)',
-           6: 'rgb(100, 255, 100)',
-           7: 'rgb(255, 255, 0)',
-           8: 'rgb(77, 0, 255)',
-           9: 'rgb(255, 145, 0)'
-         };
-         
-         if (nuevoContador >= 3 && nuevoContador <= 9) {
-           boton.style.background = colores[nuevoContador];
-         }
-       } else {
-         y = (window.innerHeight) - boton.offsetHeight
-         moviendoAbajo = false;
-         moviendoIzquierda = true
-       }
-     } else if (moviendoIzquierda) {
-       if (x > 0) {
-         x -= velocidad
-         boton.style.background = 'rgb(255,0,255)'
-         const colores = {
-           4: 'rgb(255, 0, 0)',
-           5: 'rgb(255, 255, 0)',
-           6: 'rgb(0, 0, 255)',
-           7: 'rgb(255, 145, 0)',
-           8: 'rgb(125, 125, 125)',
-           9: 'rgb(233, 2, 25)',
-           10: 'rgb(222, 53, 230)'
-         }        
-         if (nuevoContador >= 4 && nuevoContador <= 11) {
-           boton.style.background = colores[nuevoContador];
-         }
-       } else {
-         x = 0
-         moviendoIzquierda = false
-         moviendoArriba = true
-       }
-     } else if (moviendoArriba) {
-       if (y > 0) {
-         y -= velocidad
-         boton.style.background = 'rgb(0,255,255)'
-         const colores = {
-         7: 'rgb(0, 255, 0)',
-         8: 'rgb(0, 255, 255)',
-         9: 'rgb(222, 53, 230)',
-         10: 'rgb(100, 255, 100)',
-         11: 'rgb(255, 255, 0)',
-         12: 'rgb(77, 0, 255)',
-         13: 'rgb(255, 145, 0)'
-       };      
-       if (nuevoContador >= 7 && nuevoContador <= 13) {
-         boton.style.background = colores[nuevoContador];
-       }
-       if(nuevoContador >= 9){
-         nuevoContador = 0
-       }
- 
-       } else {
-       y = 0
-       moviendoArriba = false
-       // Inicia el movimiento hacia la derecha para reiniciar el ciclo
-       moviendoDerecha = true
-   }
-     }
-     boton.style.left = x + 'px'
-     boton.style.top = y + 'px'
-     requestAnimationFrame(mover);
-   }
-   // Inicia el movimiento hacia la derecha
-   mover();
- } 
- function iniciaMove() {
-   var contiVideoJuegos = document.getElementById('cont-videojuegos')
-   contiVideoJuegos.style.display = 'block'
-   buttons.forEach((button, index) => {
-     moverBoton(button, index);
-   });
-   iniciarTransito()
- }
- function palpitarBotonDesbob() {
-     document.getElementById('boton1').classList.add('parpadea');
-     setTimeout(function () {
-       document.getElementById('boton1').classList.remove('parpadea');
-     }, 277);
- }
- function palpitarBotonTeñido() {
-   document.getElementById('boton7').classList.add('parpadea');
-   setTimeout(function() {
-     document.getElementById('boton7').classList.remove('parpadea');
-   }, 277);  
- }
- function palpitarBotonAlimenta() {
-   document.getElementById('boton13').classList.add('parpadea');
-   setTimeout(function() {
-     document.getElementById('boton13').classList.remove('parpadea');
-   }, 277);  
- }
- function palpitarBotonUProceso() {
-   document.getElementById('boton19').classList.add('parpadea');
-   setTimeout(function() {
-     document.getElementById('boton19').classList.remove('parpadea');
-   }, 277);  
- }
- function palpitarBotonRebobina() {
-   document.getElementById('boton25').classList.add('parpadea');
-   setTimeout(function() {
-     document.getElementById('boton25').classList.remove('parpadea');
-   }, 277);  
- }
- function palpitarBotonTintero() {
-   document.getElementById('tinteroButton').classList.add('parpadea');
-   setTimeout(function() {
-     document.getElementById('tinteroButton').classList.remove('parpadea');
-   }, 277);  
- }
- function palpitarBotonBateria() {
-   document.getElementById('bateriaButton').classList.add('parpadea');
-   setTimeout(function() {
-     document.getElementById('bateriaButton').classList.remove('parpadea');
-   }, 277);  
- }
- function palpitarBotonTorre() {
-   document.getElementById('bancadaButton').classList.add('parpadea');
-   setTimeout(function() {
-     document.getElementById('bancadaButton').classList.remove('parpadea');
-   }, 277);  
- }
- function palpitarBotonHumedad() {
-   document.getElementById('humedadButton').classList.add('parpadea');
-   setTimeout(function() {
-     document.getElementById('humedadButton').classList.remove('parpadea');
-   }, 277);  
- }
- function aumentarIconos() {
-   const iconosLateral = document.getElementsByClassName('iconos-laterales');
-   let currentIndex = 0;
-   function applyEffect() {
-     if (currentIndex < iconosLateral.length) {
-       const currentImage = iconosLateral[currentIndex]
-       currentImage.style.transition = 'transform 0.1s'
-       currentImage.style.transform = 'scale(3.0)'
-       setTimeout(() => {
-         currentImage.style.transition = 'transform 0.7s'
-         currentImage.style.transform = 'scale(1)'
-         currentIndex++;
-         applyEffect()
-       }, 17)
-      }}
-       applyEffect()
- }
- function moverIconos(){  
-   for (let i = 1; i <= 8; i++) {
-     // Generar el ID del elemento actual
-     const elementoId = 'icono' + i;
-     // Eliminar la clase 'icon1-up' del elemento actual
-     document.getElementById(elementoId).classList.remove('icon1-up');
-   }  
-   setTimeout(() => {
-     document.getElementById('icono5').classList.add('icon1-up');
-   }, 77)
-   setTimeout(() => {
-     document.getElementById('icono6').classList.add('icon1-up');
-   }, 157)
-   setTimeout(() => {
-     document.getElementById('icono7').classList.add('icon1-up');
-   }, 237)
-   setTimeout(() => {
-     document.getElementById('icono8').classList.add('icon1-up');
-   }, 317)
- }
- document.getElementById('icono1').addEventListener('click', function(event) {
-   event.stopPropagation(); // Detener la propagación del evento
-   moverIconos() // Ejecutar la función asociada al child
- });
- document.getElementById('icono2').addEventListener('click', function(event) {
-   event.stopPropagation(); // Detener la propagación del evento
-   moverIconos() // Ejecutar la función asociada al child
- });
- document.getElementById('iniciar').addEventListener('click', function() {
-   contibotsDistri.classList.toggle('move-down')
-   contVideo.classList.toggle('move-down-I')
- });
- function transicionElementos() {
-   contibotsDistri.classList.add('move-up')
-   contVideo.classList.add('move-up-left')
- }
- var contOblicuosInicio = document.getElementById('cont-titulo')
- function transitoInicio(){
-   contOblicuosInicio.style.animation = "giro-y 1s linear";
-   contOblicuosInicio.classList.add('move-images-IV');
- }
- function transicionElementosII() {
-   contibotsDistriII.classList.add('move-butts')
-   contImgsDistribuidor.classList.add('move-images')
-   buttRepuest.classList.add('move-repuest')
-   contiVidDistribuidor.classList.add('move-video')    
- }
- function transicionElementosIII() {
-   contibotsDistriIII.classList.add('move-butts-II')
-   contImgsEntintador.classList.add('move-images-II') 
-   buttRepuestI.classList.add('move-repuest-II')
-   contiVidEntintador.classList.add('move-vid-entintador') 
- } 
- function transicionElementosIV(){
-   contibotsDistriV.classList.add('move-butts-III')
-   contImgsSmed.classList.add('move-images-III') 
-   buttRepuestIII.classList.add('move-repuest-III')
-   contiVidSmed.classList.add('move-vid-smed') 
- }
- function transicionElementosV(){
-   contibotsDistriVI.classList.add('move-butts-IV')
-   contVideoSmed.classList.add('move-vid-smed-II')
-   contImageneSmed.classList.add('move-images-IV')
-   buttRepuestV.classList.add('move-repuest-IV')
- }
- function restablecerEstilos(elemento) {
-   // Eliminar estilos en línea
-   elemento.removeAttribute('style');
- 
-   // Asegurarse de que no haya clases que apliquen estilos no deseados
-   elemento.className = '';
- 
-   // Agregar la clase que define el lugar desde CSS
-   elemento.classList.add('clase-contenedor-7');  // Ajusta el nombre de la clase según tu caso
- }
- function volverApre(){
-   var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pre-prensa','imgs-prepress','primerCont','vidCicodelia']  
-   for (var i = 0; i < allContenedores.length; i++) { 
-     var elemento = document.getElementById(allContenedores[i])  
-     if (elemento) {
-       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-     }
-   }  
- }
- const applyFilters = () => {
-   videoStore.forEach(videoElement => {
-     videoElement.style.filter = `blur(${blurAmount}px)`;
-   });   
- };
- const applyFiltersII = () => {
-   videoStore.forEach(videoElement => {
-     videoElement.style.transform = `scale(${zoomAmount}%) rotate(${degreesAmount}deg)`
-   })
- };
- const applyFiltersV = () => {
-   videoStore.forEach(videoElement => {
-     videoElement.style.transform = `scale(${zoomAmount}%) rotate(${degreesAmount}deg)`;
-   });
- };
- const applyFiltersIII = () => {
-   videoStore.forEach(videoElement => {
-     videoElement.style.transform = `scale(${zoomAmount}%) rotate(${degreesAmount}deg)`;
-   });
- 
-   
- };
- const applyFiltersIV = () => {
-   videoPrisma.style.filter = `blur(${blurAmount}px)`;
- }
- const makeFilters = () => { // Resetear filtros
-   blurAmount = 1
-   videoStore.forEach(videoElement => {
-     videoElement.style.filter = `blur(${1}px)`;
-   });
-   button.style.left = '0'
-   slider1.style.width = '0'
-   slider2.style.width = '0'
-   slider3.style.width = '0'
-   display.style.color = 'rgb(0,255,0)'
-   posicionPantalla.style.borderColor = 'rgb(0,255,0)'
-   posicionPantalla.style.color = 'rgb(0,255,0)'
-   positionDisplay.textContent = `${'0'} - µpm`
-   applyFiltersII()
-   applyFiltersIII()
- };
- const makeFiltersII = () => { // Resetear filtros 
-   currentRotation = 0
-   degreesAmount = 0
-   videoStore.forEach(videoElement => {
-     videoElement.style.transform = `rotate(${0}deg)`;
-   });
-   spanGuide.style.left = '0'
-   slider5.style.width = '0'
-   positionDisplayII.textContent = `${'0'}°`
-   applyFilters()
-   applyFiltersII()
-   applyFiltersIII()
-   applyFiltersIV()
- };
- const makeFiltersIII = () => { // Resetear filtros
-   currentZoom = 0
-   zoomAmount = 100
-   videoPrisma.style.transform = `scale(100%)`
-   spanGuideI.style.left = '0'
-   slider4.style.width = '0'
-   positionDisplayIII.textContent = `${'100'} %`
-   applyFilters()
-   applyFiltersII()
-   applyFiltersIII()
-   applyFiltersIV()
- };
- const makeFiltersIV = () => { // Resetear filtros
-   positionDisplay.textContent = `${'400'} - µpm`
- };
- let degreesAmount = 0
- let zoomAmount = 100
- let blurAmount = 0
- let brightnessAmount = 1   
- var intervalId = null
- let intervalId2 = null
- let intervalId3 = null
- let intervalId4 = null
- let intervalId5 = null
- let intervalId6 = null
- let intervalId7 = null
- buttonLeft.addEventListener('touchstart', () => {
-   intervalId = setInterval(() => {
-     var tituloElement = document.getElementById("titulo");
-     let currentLeft = parseFloat(window.getComputedStyle(button).left)
-     let newLeft = currentLeft + 2
-     if(newLeft <= 2){
-       makeFilters()
-       blurAmount = 0;
-       brightnessAmount = 1;      
-     }
-     if (newLeft <= 150) {
-       posicionPantalla.style.color = 'rgb(0,255,0)'
-       posicionPantalla.style.borderColor = 'rgb(0,255,0)'
-       button.style.left = `${newLeft}px`;
-       slider1.style.width = `${newLeft}px`;
-       blurAmount += 0.01
-       applyFilters(); // Aplicar los filtros actualizados
-     }    
-     if(newLeft === 150){
-       clearInterval(intervalId)
-       interfaz.style.display = 'flex'
-       tituloElement.textContent = "BAJA DEFINICION DE VIDEO"; 
-       tituloElement.style.backgroundColor = 'orange'
-       tituloElement.style.color = 'black'           
-     }
-     if(newLeft >= 150){
-       posicionPantalla.style.color = 'orange'
-       posicionPantalla.style.borderColor = 'orange'
-       slider2.style.width = `${newLeft-150}px`
-       button.style.left = `${newLeft}px`
-       blurAmount += 0.01
-       applyFilters(); // Aplicar los filtros actualizados      
-     } 
-     if(newLeft === 330){
-       clearInterval(intervalId)
-       interfaz.style.display = 'flex'
-       container.style.visibility = 'hidden'
-       verButtsInterfaz.style.visibility = 'hidden'
-       button.style.visibility = 'hidden'
-       posicionPantalla.style.visibility = 'hidden'
-       tituloElement.textContent = "PERDIDA TOTAL DE DEFINICION";  
-       tituloElement.style.backgroundColor = 'rgb(255,0,0)'
-       tituloElement.style.color = 'white'
-       verButtsInterfaz.style.pointerEvents = "none";
-     }
-     if(newLeft >= 330){
-       posicionPantalla.style.color = 'rgb(255,0,0)'
-       posicionPantalla.style.borderColor = 'rgb(255,0,0)'
-       slider3.style.width = `${newLeft-327}px`
-       button.style.left = `${newLeft}px`
-       blurAmount += 0.1
-       applyFilters(); // Aplicar los filtros actualizados      
-     }
-     if (newLeft >= 400) {
-       setTimeout(() => {
-       positionDisplay.textContent = `${'400'} - µpm`     
-       clearInterval(intervalId)        
-       }, 17);
-       makeFiltersIV()
-     }
-     positionDisplay.textContent = `${newLeft} - µpm`
-   }, 7);
- });
- 
- buttonLeft.addEventListener('mousedown', () => {
-   if (!clickHabilitado) return; 
-   intervalId = setInterval(() => {
-     var tituloElement = document.getElementById("titulo");
-     let currentLeft = parseFloat(window.getComputedStyle(button).left)        
-     let newLeft = currentLeft + 2
-     if(newLeft <= 2){
-       makeFilters()
-       blurAmount = 0;
-       brightnessAmount = 1;      
-     }
-     if (newLeft <= 150) {
-       posicionPantalla.style.color = 'rgb(0,255,0)'
-       posicionPantalla.style.borderColor = 'rgb(0,255,0)'
-       button.style.left = `${newLeft}px`;
-       slider1.style.width = `${newLeft}px`;
-       blurAmount += 0.01
-       applyFilters();
-       console.log(videoStore)
-     }    
-     if(newLeft === 150){
-       clearInterval(intervalId)
-       verButtsInterfaz.style.pointerEvents = "none";    
-       interfaz.style.display = 'flex'
-       tituloElement.textContent = "BAJA DEFINICION DE VIDEO"; 
-       tituloElement.style.backgroundColor = 'orange'
-       tituloElement.style.color = 'black'           
-     }
-     if(newLeft >= 150){
-       posicionPantalla.style.color = 'orange'
-       posicionPantalla.style.borderColor = 'orange'
-       slider2.style.width = `${newLeft-150}px`
-       button.style.left = `${newLeft}px`
-       blurAmount += 0.01
-       applyFilters();
-     } 
-     if(newLeft === 330){
-       clearInterval(intervalId)
-       interfaz.style.display = 'flex'
-       tituloElement.textContent = "PERDIDA TOTAL DE DEFINICION";  
-       tituloElement.style.backgroundColor = 'rgb(255,0,0)'
-       tituloElement.style.color = 'white'
-       verButtsInterfaz.style.pointerEvents = "none";
-     }
-     if(newLeft >= 330){
-       posicionPantalla.style.color = 'rgb(255,0,0)'
-       posicionPantalla.style.borderColor = 'rgb(255,0,0)'
-       slider3.style.width = `${newLeft-327}px`
-       button.style.left = `${newLeft}px`
-       blurAmount += 0.1
-       applyFilters();
-     }
-     if (newLeft >= 400) {
-       positionDisplay.textContent = `400 - µpm`
-       clearInterval(intervalId);
-       clickHabilitado = false;
-     }    
-     positionDisplay.textContent = `${newLeft} - µpm`
-   }, 7);
- });
- buttonLeft.addEventListener('mouseup', () => {
-   clearInterval(intervalId)
- }); 
- buttonLeft.addEventListener('mouseleave', () => {
-   clearInterval(intervalId)
- });
- buttonRight.addEventListener('mousedown', () => {
-   /* clickHabilitado = true; */
-   intervalId2 = setInterval(() => {
-     const currentLeft = parseFloat(window.getComputedStyle(button).left)
-     const barraWidth = parseFloat(window.getComputedStyle(slider3).width)
-     const barraWidth1 = parseFloat(window.getComputedStyle(slider2).width) 
-     const barraWidth2 = parseFloat(window.getComputedStyle(slider1).width)
-     const newLeft = currentLeft - 2
-     const newWidth = barraWidth -2 
-     const withNew1 = barraWidth1 - 2
-     const withNew2 = barraWidth2 - 2
-     if (newLeft >=330) {
-       button.style.left = `${newLeft}px`
-       slider3.style.width = `${newWidth}px`
-       blurAmount -= 0.025;
-       applyFilters(); // Aplicar los filtros actualizados
-       posicionPantalla.style.borderColor = 'rgb(255,0,0)'
-       display.style.color = 'rgb(255,0,0)'
-     }
-     if (newLeft >= 130 && newLeft <= 330) {
-       button.style.left = `${newLeft}px`
-       slider2.style.width = `${withNew1}px`
-       blurAmount -= 0.025;
-       applyFilters(); // Aplicar los filtros actualizados
-       posicionPantalla.style.color = 'orange'
-       posicionPantalla.style.borderColor = 'orange'      
-       display.style.color = 'rgb(255,100,0)'
-     }
-     if (newLeft >= 0 && newLeft <= 150) {
-       button.style.left = `${newLeft}px`
-       slider1.style.width = `${withNew2}px`
-       blurAmount -= 0.025;
-       applyFilters(); // Aplicar los filtros actualizados
-       posicionPantalla.style.color = 'rgb(0,255,0)'
-       posicionPantalla.style.borderColor = 'rgb(0,255,0)'    
-       display.style.color = 'rgb(0,255,0)'
-     }
-     if (newLeft <= 0) {
-       setTimeout(() => {
-       positionDisplay.textContent = `${'0'} - µpm`     
-       clearInterval(intervalId2)        
-       }, 17);
-       makeFilters()
-       blurAmount = 0;
-     }
-     positionDisplay.textContent = `${newLeft} - µpm`
-   }, 7)
- })
- buttonRight.addEventListener('mouseup', () => {
-   clearInterval(intervalId2)
- })
- buttonRight.addEventListener('mouseleave', () => {
-   clearInterval(intervalId2)
- })
- buttReset.addEventListener('mousedown', () => {
-   makeFilters()
-     clickHabilitado = true;
- })
- /* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
- buttonLeft2.addEventListener('mousedown', () => {
-   intervalId5 = setInterval(() => {    
-     if (currentRotation < 360) {
-       currentRotation++
-       console.log(currentZoom)
-       posicionPantalla.style.color = 'rgb(0,255,0)'
-       posicionPantalla.style.borderColor = 'rgb(0,255,0)'
-       spanGuide.style.left = `${currentRotation}px`
-       slider5.style.width = `${currentRotation}px`
-       degreesAmount += 1
-       applyFiltersV();  
-       positionDisplayII.textContent = `${currentRotation}°` 
-     }
-     if(currentRotation >= 360){
-       clearInterval(intervalId5)
-     }
-   }, 77);
- 
- });
- buttonLeft2.addEventListener('mouseup', () => {
-   clearInterval(intervalId5)
- })
- buttonLeft2.addEventListener('mouseleave', () => {
-   clearInterval(intervalId5)
- })
- buttonRight2.addEventListener('mousedown', () => {
-   clearInterval(intervalId4); // Limpiar intervalo anterior si existe
-   intervalId4 = setInterval(() => {    
-     if (currentRotation > 0) {
-       currentRotation--;
-       posicionPantalla.style.color = 'rgb(0,255,0)';
-       posicionPantalla.style.borderColor = 'rgb(0,255,0)';
-       spanGuide.style.left = `${currentRotation}px`;
-       slider5.style.width = `${currentRotation}px`;
-       degreesAmount -= 1;
-       applyFiltersII(); // Aplicar los filtros actualizados
-       positionDisplayII.textContent = `${currentRotation}°`;
-     }
-   }, 77);
- }); 
- buttonRight2.addEventListener('mouseup', () => {
-   clearInterval(intervalId4);
- })
- buttonRight2.addEventListener('mouseleave', () => {
-   clearInterval(intervalId4);
- })
- buttReset2.addEventListener('mousedown', () => {
-   makeFiltersII()
- })
- /* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
- buttonLeft3.addEventListener('mousedown', () => {
-   intervalId6 = setInterval(() => {        
-     if (currentZoom + 101 <= 300) {
-       currentZoom++;
-       positionDisplayIII.style.color = 'rgb(0,255,255)';
-       positionDisplayIII.style.borderColor = 'rgb(0,255,255)';
-       spanGuideI.style.left = `${(currentZoom)*1.7}px`;
-       slider4.style.width = `${(currentZoom)*1.7}px`;
-       zoomAmount += 1;
-       applyFiltersIII(videoStore); // Aplicar los filtros actualizados
-       positionDisplayIII.textContent = `${currentZoom + 100} %`;
-       console.log(currentZoom)
-     }
-     if(currentZoom + 100 === 300){
-       clearInterval(intervalId6);
-       console.log(currentZoom)
-     }
-   }, 77);
- });
- buttonLeft3.addEventListener('mouseup', () => {
-   clearInterval(intervalId6);
- })
- buttonLeft3.addEventListener('mouseleave', () => {
-   clearInterval(intervalId6);
- })
- buttonRight3.addEventListener('mousedown', () => {
-   intervalId7 = setInterval(() => {     
-     if (currentZoom + 100 <= 300 && currentZoom + 99 >= 100) {
-       currentZoom--;
-       positionDisplayIII.style.color = 'rgb(0,255,255)';
-       positionDisplayIII.style.borderColor = 'rgb(0,255,255)';
-       spanGuideI.style.left = `${(currentZoom)*1.7}px`;
-       slider4.style.width = `${(currentZoom)*1.7}px`;
-       zoomAmount -= 1;
-       applyFiltersIII(); // Aplicar los filtros actualizados
-       /* applyFilters() */
-       positionDisplayIII.textContent = `${currentZoom + 100} %`;
-       console.log(currentZoom)
- 
-     }
-   }, 77);
- });
- buttonRight3.addEventListener('mouseup', () => {
-   clearInterval(intervalId7);
- })
- buttonRight3.addEventListener('mouseleave', () => {
-   clearInterval(intervalId7);
- })
- buttReset3.addEventListener('mousedown', () => {
-   makeFiltersIII()
- })
- /* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
- botVerde.addEventListener('mousedown', () => {
-   verButtsInterfaz.style.pointerEvents = "auto"
-   interfaz.style.display = 'none'
-   container.style.visibility = 'visible'
-   verButtsInterfaz.style.visibility = 'visible'
-   button.style.visibility = 'visible'
-   posicionPantalla.style.visibility = 'visible'
- })
- botNaran.addEventListener('mousedown', () => {
-   verButtsInterfaz.style.pointerEvents = "auto"
-   interfaz.style.display = 'none'
-   container.style.visibility = 'visible'
-   verButtsInterfaz.style.visibility = 'visible'
-   button.style.visibility = 'visible'
-   posicionPantalla.style.visibility = 'visible'
-   slider1.style.width = '0'
-   slider2.style.width = '0'
-   slider3.style.width = '0'
-   positionDisplay.textContent = `${'0'} - µpm`
-   positionDisplay.style.borderColor = 'rgb(0,255,0)'  
-   positionDisplay.style.color = 'rgb(0,255,0)'  
-   button.style.left = '0'
-   makeFilters()
- })
- /* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
- botRed.addEventListener('mousedown', resetButtons);
- botClose.addEventListener('mousedown', resetButtons); 
- function resetButtons() {
-   clickHabilitado = true; 
-   makeFilters()
-   desactivarClicsPorUnTiempoIII()
-   if(containerII.style.display === 'flex'){
-     verButtsInterfaz.style.pointerEvents = "auto";
-     slider1.style.width = '0';
-     slider2.style.width = '0';
-     slider3.style.width = '0';
-     posicionPantalla.textContent = `${'0'} - µpm`;
-     posicionPantalla.style.borderColor = 'rgb(0,255,0)';
-     posicionPantalla.style.color = 'rgb(0,255,0)';
-     button.style.left = '0';
-     container.style.display = 'none';
-     verButtsInterfaz.style.display = 'none';
-     display.style.display = 'none';
-     button.style.display = 'none';
-     posicionPantalla.style.display = 'none';
-     interfaz.style.display = 'none';
-     newLeft = 0;
-     padreTres.classList.add('move_containerI')
-   }else{
-     verButtsInterfaz.style.pointerEvents = "auto";
-     slider1.style.width = '0';
-     slider2.style.width = '0';
-     slider3.style.width = '0';
-     posicionPantalla.textContent = `${'0'} - µpm`;
-     posicionPantalla.style.borderColor = 'rgb(0,255,0)';
-     posicionPantalla.style.color = 'rgb(0,255,0)';
-     button.style.left = '0';
-     container.style.display = 'none';
-     verButtsInterfaz.style.display = 'none';
-     display.style.display = 'none';
-     button.style.display = 'none';
-     posicionPantalla.style.display = 'none';
-     interfaz.style.display = 'none';
-     newLeft = 0;
-     padreTres.classList.add('move_containerII')
+function drawGrid(horizontalLines, verticalLines) {
+  // Configura el color y el grosor de las líneas de la cuadrícula
+  ctx.strokeStyle = "rgb(150, 150, 150)"; // Gris
+  ctx.lineWidth = 1;
+  // Dibuja líneas horizontales
+  for (var i = 1; i < horizontalLines; i++) {
+  var y = (i / horizontalLines) * canvas.height;
+  ctx.beginPath();
+  ctx.moveTo(0, y);
+  ctx.lineTo(canvas.width, y);
+  ctx.stroke();
+  }
+  // Dibuja líneas verticales
+  for (var j = 1; j < verticalLines; j++) {
+  var x = (j / verticalLines) * canvas.width;
+  ctx.beginPath();
+  ctx.moveTo(x, 0);
+  ctx.lineTo(x, canvas.height);
+  ctx.stroke();
   }
 }
- botCloseII.addEventListener('mouseup', resetButtonsII);   // PRIMER BOTON CIERRE TOTAL 
- function resetButtonsII() {
-   makeFiltersII()
-   desactivarClicsPorUnTiempoIII()
-   if(container.style.display === 'none'){
-     displayII.style.display = 'none';
-     positionDisplayII.textContent = `${'0'}°`;
-     containerII.style.display = 'none';
-     spanGuide.style.display = 'none';
-     slider5.style.width = '0';
-     verButtsInterfazII.style.display = 'none';
-     positionDisplayII.style.display = 'none';
-     padreTres.classList.add('move_containerII')    
-   }else{
-     displayII.style.display = 'none';
-     positionDisplayII.textContent = `${'0'}°`;
-     containerII.style.display = 'none';
-     spanGuide.style.display = 'none';
-     slider5.style.width = '0';
-     verButtsInterfazII.style.display = 'none';
-     positionDisplayII.style.display = 'none';
-     setTimeout(() => {
-       padreUno.classList.add('move_container')    
-     },177);
-     setTimeout(() => {
-       padreTres.classList.add('move_container')    
-     },400);
-   }
- }
- botCloseIII.addEventListener('mousedown', resetButtonsIII);
- function resetButtonsIII() {
-   makeFiltersIII()
-   desactivarClicsPorUnTiempoIII()
-   positionDisplayIII.style.display = 'none';
-   positionDisplayIII.textContent = `${'100'}%`;
-   containerIII.style.display = 'none';
-   spanGuideI.style.display = 'none';
-   slider4.style.width = '0';
-   verButtsInterfazIII.style.display = 'none';
-   positionDisplayIII.style.display = 'none';
-   aplique.style.display = 'none'
+var intervalId; // Declara la variable en un ámbito accesible                                   /// BOTONERA CICODELICA  PARE/SIGA
+function iniciarEventos() {
+  var contSinusoidales = document.getElementById('contMetrics')
+  var contCicodelicos = document.getElementById('botonesContainer')   
+  var colores = ['verde', 'rojo', 'amarillo', 'azul', 'violeta','magenta','gris','verdesat','cyan','purpura','anaranjado'] 
+  // Inicia cada botón con un índice de inicio diferente
+  var botones = document.querySelectorAll('#botonesContainer .botoneras')
+  botones.forEach(function (boton, index) {
+    boton.dataset.indiceInicio = index;
+  });
+  function cambiarColor() {
+    botones.forEach(function (boton) {
+      var indiceInicio = parseInt(boton.dataset.indiceInicio)
+      var indiceColor = (indiceInicio + 1) % colores.length
+
+      // Cambia la clase de color del botón
+      boton.classList.remove(...colores);
+      boton.classList.add(colores[indiceColor])
+
+      // Actualiza el índice de inicio para el próximo color
+      boton.dataset.indiceInicio = indiceColor
+    });
+  }
+  // Llama a la función cambiarColor cada 77 MS y guarda el ID del intervalo
+  intervalId = setInterval(cambiarColor, 77)
+  contSinusoidales.style.display = 'flex'
+  contCicodelicos.style.display = 'grid'
+
 }
- /* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
- function mostrarInterfaz() { 
-   container.style.display = 'flex'
-   verButtsInterfaz.style.display = 'flex'
-   display.style.display = 'flex'
-   button.style.display = 'flex'
-   posicionPantalla.style.display = 'flex'
-   slider1.style.width = '0'
-   slider2.style.width = '0'
-   slider3.style.width = '0'
-   posicionPantalla.textContent = `${'0'} - µpm`
-   posicionPantalla.style.borderColor = 'rgb(0,255,0)'  
-   posicionPantalla.style.color = 'rgb(0,255,0)'  
-   button.style.left = '0'
-   container.style.zIndex = '3'
-   verButtsInterfaz.style.zIndex = '3'
-   button.style.zIndex = '3'
-   posicionPantalla.style.zIndex = '3'
-   display.style.zIndex = '3'
- }
- function interfazAvance() {
-   let verInterfaz = document.getElementById('container_interfaz')
-   let verInterfazII = document.getElementById('container_interfaz_2')
-   let verInterfazIII = document.getElementById('container_interfaz_3')              
-   let verDisplay = document.getElementById('display')
-   let verDisplayII = document.getElementById('display_2')
-   let verDisplayIII = document.getElementById('display_3') 
-   botIzquierda.style.display = 'none'
-   botDerecha.style.display = 'none'
-   clickHabilitado = true  
-   if (botIzquierda && botDerecha && padreUno && padreDos && padreTres) {
-     botIzquierda.style.display = 'none';
-     botDerecha.style.display = 'none';
-     [padreUno, padreDos, padreTres].forEach(padre => {
-       padre.style.display = 'block';
-       padre.classList.remove('move_container', 'move_containerI', 'move_containerII');
-     });
-   }
-   makeFilters()
-   makeFiltersII()
-   makeFiltersIII()
-   desactivarClicsPorUnTiempoIII()
-   padreVideos.classList.remove('move_video');
-   setTimeout(() => {
-   padreVideos.classList.add('move_video');
- }, 500);
-   ocultarElementos('contenedorElementos');
-   [container, verButtsInterfaz, display, button, posicionPantalla].forEach(elemento => {
-     eliminarEstilosInline(elemento);
-   });
-   const elementosFlex = [
-     verInterfaz, verButtsInterfaz, verDisplay, verInterfazII, verButtsInterfazII,
-     verDisplayII, positionDisplayIII, positionDisplayII, verInterfazIII,
-     verButtsInterfazIII, verDisplayIII, aplique, apliqueII
-   ];  
-   const elementosVisible = [
-     verInterfaz, verButtsInterfaz, verDisplay, verInterfazII, verButtsInterfazII,
-     verDisplayII, positionDisplayIII, positionDisplayII, verInterfazIII,
-     verButtsInterfazIII, verDisplayIII, aplique, apliqueII
-   ];
-   for (let i = 0; i < elementosFlex.length; i++) {
-     elementosFlex[i].style.display = 'flex';
-   }  
-   for (let i = 0; i < elementosVisible.length; i++) {
-     elementosVisible[i].style.visibility = 'visible';
-   }
- } 
- function eliminarEstilosInline(elemento) {
-   var estilosAplicados = window.getComputedStyle(elemento)
-   for (var i = 0; i < estilosAplicados.length; i++) {
-     var propiedad = estilosAplicados[i];
-     elemento.style[propiedad] = ""
-   }
- }
- /* 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
- let contFriends = []
- function animateVideoWidth(eltoHtml) {
-   const videoElement = document.getElementById(eltoHtml); // Obtén el elemento de video
-   const initialWidth = 60; // Ancho inicial en píxeles
-   const targetWidth = 400; // Ancho final en píxeles
-   const duration = 500; // Duración de la animación en milisegundos (0.5 segundos)
-   let startTime;
-   function step(timestamp) {
-     if (!startTime) startTime = timestamp;
-     const elapsed = timestamp - startTime;
-     const progress = Math.min(elapsed / duration, 1); // Asegúrate de no exceder el 100% de progreso
-     const newWidth = initialWidth + (targetWidth - initialWidth) * progress;
-     videoElement.style.width = `${newWidth}px`; // Aplica el nuevo ancho al elemento de video
-     if (progress < 1) {
-       requestAnimationFrame(step); // Sigue animando hasta que se complete el tiempo
-     }
-   }
-   requestAnimationFrame(step); // Comienza la animación
- }
- function animateVideoWidthII(eltoHtml) {
-   const videoElement = document.getElementById(eltoHtml); // Obtén el elemento de video
-   const initialWidth = 60; // Ancho inicial en píxeles
-   const targetWidth = 800; // Ancho final en píxeles
-   const duration = 500; // Duración de la animación en milisegundos (0.5 segundos)
-   let startTime;
-   function step(timestamp) {
-     if (!startTime) startTime = timestamp;
-     const elapsed = timestamp - startTime;
-     const progress = Math.min(elapsed / duration, 1); // Asegúrate de no exceder el 100% de progreso
-     const newWidth = initialWidth + (targetWidth - initialWidth) * progress;
-     videoElement.style.width = `${newWidth}px`; // Aplica el nuevo ancho al elemento de video
-     if (progress < 1) {
-       requestAnimationFrame(step); // Sigue animando hasta que se complete el tiempo
-     }
-   }
-   requestAnimationFrame(step); // Comienza la animación
- }
- function moveCursorToEnd(input) {
-   // Obtener la longitud del texto en el input
-   var textLength = input.value.length;
-   // Mover el cursor al final del input
-   input.setSelectionRange(textLength, textLength); 
- } 
- function abrirInterfaz() {
-   var elementosExcluidos = ['videoBackgroundII','video-background','padre-interfaz','cont-titulo','franja-Blanca','subtitulo-I','descripcion-I','butt-Institucional','padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V','titulo-ancho','logo-grande','image-background'];
-   for (var i = 0; i < allContenedores.length; i++) { 
-     var elemento = document.getElementById(allContenedores[i]);
-     if (elemento) {
-       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
-     }
-   }
-   if(screenWidth < 500){
-     var titulo = document.getElementById('subtitulo-I')
-     // Paso 1: Capturar el elemento padre por su ID
-     var elementoPadre = document.getElementById('cont-titulo');
-     elementoPadre.classList.remove('move-oblicuos');
-     setTimeout(function () {
-     elementoPadre.classList.add('move-oblicuos');
-     desactivarClicsPorUnTiempo()
-     }, 177);
-     setTimeout(() => {
-       var contenedor = document.getElementById('video-background');  
-       contenedor.style.filter = 'none';
-       reduccionGradualVideo()
-     }, 1800);
-     setTimeout(() => {
-       titulo.classList.add('move-title')    
-     }, 1977);
-     setTimeout(() => {
-       alternarColorVerde() 
-     }, 2500);
-     setTimeout(() => {
-       alternarColorVerdeInverso() 
-       applyImageEffects5()      
-     }, 2800); 
-     setTimeout(() => {
-       alternarColorVerde() 
-     }, 3100);
-     setTimeout(() => {
-       alternarColorVerdeInverso() 
-     }, 3400); 
-   }else{
-     var titulo = document.getElementById('subtitulo-I')
-     var elementoPadre = document.getElementById('cont-titulo');
-     elementoPadre.classList.remove('move-oblicuosII');
-     setTimeout(function () {
-     elementoPadre.classList.add('move-oblicuosII');
-     desactivarClicsPorUnTiempo()
-     }, 177);
-     setTimeout(() => {
-       var contenedor = document.getElementById('video-background');  
-       contenedor.style.filter = 'none';
-       reduccionGradualVideo()
-     }, 500);
-     setTimeout(() => {
-       titulo.classList.add('move-title')    
-     }, 1722);
-     setTimeout(() => {
-       alternarColorVerde() 
-     }, 300);  
-     setTimeout(() => {
-       alternarColorVerdeInverso() 
-       applyImageEffects5()            
-     }, 3300);  
-     setTimeout(() => {
-       alternarColorVerde() 
-     }, 3600);
-     setTimeout(() => {
-       alternarColorVerdeInverso() 
-     }, 3900);      
-   }
- }
- function trasladarOblicuos(){
-   var contOblicuosXI = document.getElementById('agrupaOblicuos-XI');
-   contOblicuosXI.classList.add('move-oblicuos');
-   console.log('se AGREGO la clase')
- }
+function detenerEventos() {
+  clearInterval(intervalId);
+  var contCicodelicos = document.getElementById('botonesContainer')  
+  contCicodelicos.style.left = '555px'
+}
+function iniciarTransito() {                                                                                            /// BOTON BAILARIN ALREDEDOR DE PANTALLA
+  var boton = document.getElementById("buttSolitario");
+  var stopFlag = false;
+  var anchoPantalla = window.innerWidth;
+  var altoPantalla = window.innerHeight - 37;
+  var duracion = 1000;
+
+  // 1. Array de colores
+  var colores = ['verde', 'rojo', 'amarillo', 'azul', 'violeta', 'magenta', 'gris', 'verdesat', 'cyan', 'purpura', 'anaranjado'];
+  // 2. Elemento del botón
+  var boton = document.getElementById("buttSolitario");
+  // 3. Función para cambiar el color del botón con un intervalo
+  function cambiarColorConIntervalo() {
+    var i = 0;
+    setInterval(function () {
+      // Cambiar el color del botón
+      boton.style.backgroundColor = colores[i];      
+      // Incrementar el índice para el próximo color
+      i = (i + 1) % colores.length;
+    }, 77); // Intervalo de 0.1 segundos (100 milisegundos)
+  }
+  // Llamar a la función para iniciar el cambio de colores
+  cambiarColorConIntervalo();
+
+  // Función para mover el botón y reiniciar el ciclo
+  function mover(distanciaX, distanciaY, transitionProperty, nextMove) {
+    if (stopFlag) return;
+    // Aplicar la transición
+    boton.style.transition = transitionProperty;
+    boton.style.left = distanciaX + "px";
+    boton.style.top = distanciaY + "px";
+    // Esperar y luego realizar el siguiente movimiento
+    setTimeout(function () {
+      if (nextMove) {
+        nextMove();
+      } 
+    }, duracion);
+  }
+  // Primer movimiento: Derecha a izquierda
+  function moverDerechaIzquierda() {
+    boton.style.backgroundColor = 'rgb(0,255,0)'
+    mover(anchoPantalla - boton.offsetWidth, 0, 'left ' + duracion / 1000 + 's', moverArribaAbajo);
+  }
+  // Segundo movimiento: Arriba a abajo
+  function moverArribaAbajo() {
+    boton.style.backgroundColor = 'rgb(255,0,0)'
+    mover(anchoPantalla - boton.offsetWidth, altoPantalla - boton.offsetHeight, 'top ' + duracion / 1000 + 's', moverIzquierdaDerecha);
+  }
+  // Tercer movimiento: Izquierda a derecha
+  function moverIzquierdaDerecha() {
+    boton.style.backgroundColor = 'rgb(255,255,0)'
+    mover(0, altoPantalla - boton.offsetHeight, 'left ' + duracion / 1000 + 's', moverAbajoArriba);
+  }
+  // Cuarto movimiento: Abajo a arriba
+  function moverAbajoArriba() {
+    boton.style.backgroundColor = 'rgb(0,0,255)'
+    mover(0, 0, 'top ' + duracion / 1000 + 's', moverDiagonal);
+  }
+  // Quinto movimiento: Diagonal
+  function moverDiagonal() {
+    boton.style.backgroundColor = 'rgb(255,0,255)'
+    mover(anchoPantalla - boton.offsetWidth, altoPantalla - boton.offsetHeight, 'left ' + duracion / 1000 + 's, top ' + duracion / 1000 + 's', moverAbajoArribaII);
+  }
+  // Sexto movimiento: Abajo a arriba
+  function moverAbajoArribaII() {
+    boton.style.backgroundColor = 'orangered'
+    mover(anchoPantalla - boton.offsetWidth, 0, 'top ' + duracion / 1000 + 's',moverDiagonalI);
+  } 
+  // séptimo movimiento: Diagonal inversa
+  function moverDiagonalI() {
+    boton.style.backgroundColor = 'white'
+    mover(0, altoPantalla - boton.offsetHeight, 'left ' + duracion / 1000 + 's, top ' + duracion / 1000 + 's', moverAbajoArribaI);
+  }
+  // Cuarto movimiento: Abajo a arriba
+  function moverAbajoArribaI() {
+    boton.style.backgroundColor = 'purple'
+    mover(0, 0, 'top ' + duracion / 1000 + 's', moverDerechaIzquierda);
+  }  
+  // Iniciar el ciclo de movimientos
+  moverDerechaIzquierda();
+  iniciarEventos()
+}
+function detenerMovimiento() {
+  stopFlag = true;
+  clearTimeout(timeoutId);
+}
+var botonSolitario = document.getElementById('buttSolitario');
+var botonSeguidor = document.getElementById('boton2');
+
+function moverDerecha() {
+  botonSeguidor.style.top = botonSolitario.style.top
+  var posicionInicialX = 0
+  var posicionFinalX = window.innerWidth - botonSolitario.offsetWidth
+
+  var intervalo = setInterval(function() {
+    if (posicionInicialX >= posicionFinalX) {
+      clearInterval(intervalo)
+      moverAbajo()
+    } else {
+      // Movimiento hacia la derecha
+      posicionInicialX += 7
+      botonSolitario.style.left = posicionInicialX + 'px'
+      botonSeguidor.style.left = (posicionInicialX - 85) + 'px'
+
+    }
+  }, 17);  
+}
+function moverAbajo() {
+  botonSeguidor.style.left = botonSolitario.style.left
+  var posicionInicialY = 0;
+  var posicionFinalY =(window.innerHeight - 33) - botonSolitario.offsetHeight;
+
+  var intervalo = setInterval(function() {
+    if (posicionInicialY >= posicionFinalY) {
+      moverIzquierda()      
+      clearInterval(intervalo);
+    } else {
+      // Movimiento hacia abajo
+      posicionInicialY += 7;
+      botonSolitario.style.top = posicionInicialY + 'px';
+      botonSeguidor.style.top = (posicionInicialY - 35) + 'px';
+    }
+  }, 17);
+}
+function moverIzquierda() {
+  botonSeguidor.style.top = botonSolitario.style.top
+  var posicionInicialX = (window.innerWidth - 33) - botonSolitario.offsetWidth;
+  var posicionFinalX = 0
+
+  var intervalo = setInterval(function() {
+    if (posicionInicialX <= posicionFinalX) {
+      moverArriba()      
+      clearInterval(intervalo);
+    } else {
+      // Movimiento hacia la izquierda
+      posicionInicialX -= 7;
+      botonSolitario.style.left = posicionInicialX + 'px';
+      botonSeguidor.style.left = posicionInicialX + 95 + 'px'
+    }
+  }, 17);
+} 
+function moverArriba() {
+  botonSeguidor.style.left = botonSolitario.style.left;
+  var posicionInicialY = (window.innerHeight - 33) - botonSolitario.offsetHeight;
+  var posicionFinalY = 0;
+
+  var intervalo = setInterval(function() {
+    if (posicionInicialY <= posicionFinalY) {
+      moverDerecha()      
+      clearInterval(intervalo);
+    } else {
+      // Movimiento hacia arriba
+      posicionInicialY -= 7;
+      botonSolitario.style.top = posicionInicialY + 'px';
+      botonSeguidor.style.top = (posicionInicialY + 35) + 'px';
+    }
+  }, 17);
+}
+const buttons = document.querySelectorAll('.buttons')  
+var contButtsAround = document.getElementById('button-container')
+function moverBoton(boton, index) {
+  const valoresLeft = ['-52px', '-104px', '-156px', '-208px', '-260px', '-312px', '-364px', '-416px', '-468px', '-520px', '-572px', '-624px', '-676px', '-728px', '-780px', '-832px', '-884px', '-936px', '-988px', '-1040px', '-1092px', '-1144px', '-1196px', '-1248px', '-1300px', '-1352px', '-1404px', '-1456px', '-1508px', '-1560px', '-1612px', '-1664px', '-1716px', '-1768px', '-1820px', '-1872px', '-1924px', '-1976px', '-2028px', '-2080px', '-2132px', '-2184px', '-2236px', '-2288px', '-2340px', '-2392px', '-2444px', '-2496px', '-2548px', '-2600px', '-2652px', '-2704px', '-2756px', '-2808px', '-2860px', '-2912px', '-2964px', '-3016px', '-3068px', '-3120px', '-3172px', '-3224px', '-3276px', '-3328px', '-3380px', '-3432px', '-3484px', '-3536px', '-3588px']
+
+  // Calcular la distancia total de los cuatro lados de la pantalla
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+  const totalDistance = screenWidth + screenHeight + screenWidth + screenHeight;
+  // Obtener la cantidad de botones
+  const cantidadBotones = valoresLeft.length;
+  // Calcular el espacio entre botones (considerando 2px de separación)
+  const espacioEntreBotones = 2;
+  const espacioTotalEntreBotones = (cantidadBotones - 1) * espacioEntreBotones;
+  // Calcular la distancia disponible para posicionar los botones
+  const distanciaDisponible = totalDistance - espacioTotalEntreBotones;
+  // Calcular la distancia entre cada botón
+  const distanciaEntreBotones = distanciaDisponible / cantidadBotones;
+  // Posicionar los botones en el lado izquierdo de la pantalla
+  const nuevosValoresLeft = Array.from({ length: cantidadBotones }, (_, index) => `-${index * (distanciaEntreBotones + espacioEntreBotones)}px`);
+  // Asignar las nuevas posiciones a los botones
+  nuevosValoresLeft.forEach((valor, index) => {
+  const boton = document.getElementById(`buttons${index + 2}`)
+  if (boton) {
+    boton.style.left = valor
+  } 
+});
+  boton.style.left = nuevosValoresLeft[index]
+  const velocidad = 26
+  let x = parseFloat(boton.style.left) || 0
+  let y = 0
+  let moviendoDerecha = true
+  let moviendoAbajo = false
+  let moviendoIzquierda = false
+  let moviendoArriba = false
+  let contador = 0
+  let nuevoContador = 0
+
+  function mover() {
+    contador++;  // Incrementa el primer contador cuando moviendoDerecha es true
+    contButtsAround.style.display = 'flex'
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    if (contador ===20) {
+      contador = 0;  // Reinicia el primer contador cuando llega a 80 unidades
+      nuevoContador++;  // Incrementa el nuevo contador cada vez que contador llega a 80 unidades
+      console.log("Nuevo Contador:", nuevoContador)          
+    }    
+    //////////////////////////////////////////////////////////////////////////////////////////////
+    if (moviendoDerecha) {
+      if (x < window.innerWidth - boton.offsetWidth) {
+        x += velocidad
+        boton.style.background = 'rgb(0,255,0)'
+        const colores = {
+          1: 'rgb(255, 0, 0)',
+          2: 'rgb(255, 255, 0)',
+          3: 'rgb(0, 0, 255)',
+          4: 'rgb(255, 145, 0)',
+          5: 'rgb(125, 125, 125)',
+          6: 'rgb(233, 2, 25)',
+          7: 'rgb(222, 53, 230)'
+        };        
+        if (nuevoContador >= 1 && nuevoContador <= 7) {
+          boton.style.background = colores[nuevoContador];
+        }
+      } else {
+        x = window.innerWidth - boton.offsetWidth
+        moviendoDerecha = false
+        moviendoAbajo = true        
+      }
+    }  
+    else if (moviendoAbajo) {
+      if (y < (window.innerHeight) - boton.offsetHeight) {
+        y += velocidad;
+        boton.style.background = 'rgb(255,255,0)'
+        const colores = {
+
+          3: 'rgb(0, 255, 0)',
+          4: 'rgb(0, 255, 255)',
+          5: 'rgb(222, 53, 230)',
+          6: 'rgb(100, 255, 100)',
+          7: 'rgb(255, 255, 0)',
+          8: 'rgb(77, 0, 255)',
+          9: 'rgb(255, 145, 0)'
+        };
+        
+        if (nuevoContador >= 3 && nuevoContador <= 9) {
+          boton.style.background = colores[nuevoContador];
+        }
+      } else {
+        y = (window.innerHeight) - boton.offsetHeight
+        moviendoAbajo = false;
+        moviendoIzquierda = true
+      }
+    } else if (moviendoIzquierda) {
+      if (x > 0) {
+        x -= velocidad
+        boton.style.background = 'rgb(255,0,255)'
+        const colores = {
+          4: 'rgb(255, 0, 0)',
+          5: 'rgb(255, 255, 0)',
+          6: 'rgb(0, 0, 255)',
+          7: 'rgb(255, 145, 0)',
+          8: 'rgb(125, 125, 125)',
+          9: 'rgb(233, 2, 25)',
+          10: 'rgb(222, 53, 230)'
+        }        
+        if (nuevoContador >= 4 && nuevoContador <= 11) {
+          boton.style.background = colores[nuevoContador];
+        }
+      } else {
+        x = 0
+        moviendoIzquierda = false
+        moviendoArriba = true
+      }
+    } else if (moviendoArriba) {
+      if (y > 0) {
+        y -= velocidad
+        boton.style.background = 'rgb(0,255,255)'
+        const colores = {
+        7: 'rgb(0, 255, 0)',
+        8: 'rgb(0, 255, 255)',
+        9: 'rgb(222, 53, 230)',
+        10: 'rgb(100, 255, 100)',
+        11: 'rgb(255, 255, 0)',
+        12: 'rgb(77, 0, 255)',
+        13: 'rgb(255, 145, 0)'
+      };      
+      if (nuevoContador >= 7 && nuevoContador <= 13) {
+        boton.style.background = colores[nuevoContador];
+      }
+      if(nuevoContador >= 9){
+        nuevoContador = 0
+      }
+
+      } else {
+      y = 0
+      moviendoArriba = false
+      // Inicia el movimiento hacia la derecha para reiniciar el ciclo
+      moviendoDerecha = true
+  }
+    }
+    boton.style.left = x + 'px'
+    boton.style.top = y + 'px'
+    requestAnimationFrame(mover);
+  }
+  // Inicia el movimiento hacia la derecha
+  mover();
+} 
+function iniciaMove() {
+  var contiVideoJuegos = document.getElementById('cont-videojuegos')
+  contiVideoJuegos.style.display = 'block'
+  buttons.forEach((button, index) => {
+    moverBoton(button, index);
+  });
+  iniciarTransito()
+}
+function palpitarBotonDesbob() {
+    document.getElementById('boton1').classList.add('parpadea');
+    setTimeout(function () {
+      document.getElementById('boton1').classList.remove('parpadea');
+    }, 277);
+}
+function palpitarBotonTeñido() {
+  document.getElementById('boton7').classList.add('parpadea');
+  setTimeout(function() {
+    document.getElementById('boton7').classList.remove('parpadea');
+  }, 277);  
+}
+function palpitarBotonAlimenta() {
+  document.getElementById('boton13').classList.add('parpadea');
+  setTimeout(function() {
+    document.getElementById('boton13').classList.remove('parpadea');
+  }, 277);  
+}
+function palpitarBotonUProceso() {
+  document.getElementById('boton19').classList.add('parpadea');
+  setTimeout(function() {
+    document.getElementById('boton19').classList.remove('parpadea');
+  }, 277);  
+}
+function palpitarBotonRebobina() {
+  document.getElementById('boton25').classList.add('parpadea');
+  setTimeout(function() {
+    document.getElementById('boton25').classList.remove('parpadea');
+  }, 277);  
+}
+function palpitarBotonTintero() {
+  document.getElementById('tinteroButton').classList.add('parpadea');
+  setTimeout(function() {
+    document.getElementById('tinteroButton').classList.remove('parpadea');
+  }, 277);  
+}
+function palpitarBotonBateria() {
+  document.getElementById('bateriaButton').classList.add('parpadea');
+  setTimeout(function() {
+    document.getElementById('bateriaButton').classList.remove('parpadea');
+  }, 277);  
+}
+function palpitarBotonTorre() {
+  document.getElementById('bancadaButton').classList.add('parpadea');
+  setTimeout(function() {
+    document.getElementById('bancadaButton').classList.remove('parpadea');
+  }, 277);  
+}
+function palpitarBotonHumedad() {
+  document.getElementById('humedadButton').classList.add('parpadea');
+  setTimeout(function() {
+    document.getElementById('humedadButton').classList.remove('parpadea');
+  }, 277);  
+}
+function aumentarIconos() {
+  const iconosLateral = document.getElementsByClassName('iconos-laterales');
+  let currentIndex = 0;
+  function applyEffect() {
+    if (currentIndex < iconosLateral.length) {
+      const currentImage = iconosLateral[currentIndex]
+      currentImage.style.transition = 'transform 0.1s'
+      currentImage.style.transform = 'scale(3.0)'
+      setTimeout(() => {
+        currentImage.style.transition = 'transform 0.7s'
+        currentImage.style.transform = 'scale(1)'
+        currentIndex++;
+        applyEffect()
+      }, 17)
+    }}
+      applyEffect()
+}
+function moverIconos(){  
+  for (let i = 1; i <= 8; i++) {
+    // Generar el ID del elemento actual
+    const elementoId = 'icono' + i;
+    // Eliminar la clase 'icon1-up' del elemento actual
+    document.getElementById(elementoId).classList.remove('icon1-up');
+  }  
+  setTimeout(() => {
+    document.getElementById('icono5').classList.add('icon1-up');
+  }, 77)
+  setTimeout(() => {
+    document.getElementById('icono6').classList.add('icon1-up');
+  }, 157)
+  setTimeout(() => {
+    document.getElementById('icono7').classList.add('icon1-up');
+  }, 237)
+  setTimeout(() => {
+    document.getElementById('icono8').classList.add('icon1-up');
+  }, 317)
+}
+document.getElementById('icono1').addEventListener('click', function(event) {
+  event.stopPropagation(); // Detener la propagación del evento
+  moverIconos() // Ejecutar la función asociada al child
+});
+document.getElementById('icono2').addEventListener('click', function(event) {
+  event.stopPropagation(); // Detener la propagación del evento
+  moverIconos() // Ejecutar la función asociada al child
+});
+document.getElementById('iniciar').addEventListener('click', function() {
+  contibotsDistri.classList.toggle('move-down')
+  contVideo.classList.toggle('move-down-I')
+});
+function transicionElementos() {
+  contibotsDistri.classList.add('move-up')
+  contVideo.classList.add('move-up-left')
+}
+var contOblicuosInicio = document.getElementById('cont-titulo')
+function transitoInicio(){
+  contOblicuosInicio.style.animation = "giro-y 1s linear";
+  contOblicuosInicio.classList.add('move-images-IV');
+}
+function transicionElementosII() {
+  contibotsDistriII.classList.add('move-butts')
+  contImgsDistribuidor.classList.add('move-images')
+  buttRepuest.classList.add('move-repuest')
+  contiVidDistribuidor.classList.add('move-video')    
+}
+function transicionElementosIII() {
+  contibotsDistriIII.classList.add('move-butts-II')
+  contImgsEntintador.classList.add('move-images-II') 
+  buttRepuestI.classList.add('move-repuest-II')
+  contiVidEntintador.classList.add('move-vid-entintador') 
+} 
+function transicionElementosIV(){
+  contibotsDistriV.classList.add('move-butts-III')
+  contImgsSmed.classList.add('move-images-III') 
+  buttRepuestIII.classList.add('move-repuest-III')
+  contiVidSmed.classList.add('move-vid-smed') 
+}
+function transicionElementosV(){
+  contibotsDistriVI.classList.add('move-butts-IV')
+  contVideoSmed.classList.add('move-vid-smed-II')
+  contImageneSmed.classList.add('move-images-IV')
+  buttRepuestV.classList.add('move-repuest-IV')
+}
+function restablecerEstilos(elemento) {
+  // Eliminar estilos en línea
+  elemento.removeAttribute('style');
+
+  // Asegurarse de que no haya clases que apliquen estilos no deseados
+  elemento.className = '';
+
+  // Agregar la clase que define el lugar desde CSS
+  elemento.classList.add('clase-contenedor-7');  // Ajusta el nombre de la clase según tu caso
+}
+function volverApre(){
+  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pre-prensa','imgs-prepress','primerCont','vidCicodelia']  
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }  
+}
+const applyFilters = () => {
+  videoStore.forEach(videoElement => {
+    videoElement.style.filter = `blur(${blurAmount}px)`;
+  });   
+};
+const applyFiltersII = () => {
+  videoStore.forEach(videoElement => {
+    videoElement.style.transform = `scale(${zoomAmount}%) rotate(${degreesAmount}deg)`
+  })
+};
+const applyFiltersV = () => {
+  videoStore.forEach(videoElement => {
+    videoElement.style.transform = `scale(${zoomAmount}%) rotate(${degreesAmount}deg)`;
+  });
+};
+const applyFiltersIII = () => {
+  videoStore.forEach(videoElement => {
+    videoElement.style.transform = `scale(${zoomAmount}%) rotate(${degreesAmount}deg)`;
+  });
+
+  
+};
+const applyFiltersIV = () => {
+  videoPrisma.style.filter = `blur(${blurAmount}px)`;
+}
+const makeFilters = () => { // Resetear filtros
+  blurAmount = 1
+  videoStore.forEach(videoElement => {
+    videoElement.style.filter = `blur(${1}px)`;
+  });
+  button.style.left = '0'
+  slider1.style.width = '0'
+  slider2.style.width = '0'
+  slider3.style.width = '0'
+  display.style.color = 'rgb(0,255,0)'
+  posicionPantalla.style.borderColor = 'rgb(0,255,0)'
+  posicionPantalla.style.color = 'rgb(0,255,0)'
+  positionDisplay.textContent = `${'0'} - µpm`
+  applyFiltersII()
+  applyFiltersIII()
+};
+const makeFiltersII = () => { // Resetear filtros 
+  currentRotation = 0
+  degreesAmount = 0
+  videoStore.forEach(videoElement => {
+    videoElement.style.transform = `rotate(${0}deg)`;
+  });
+  spanGuide.style.left = '0'
+  slider5.style.width = '0'
+  positionDisplayII.textContent = `${'0'}°`
+  applyFilters()
+  applyFiltersII()
+  applyFiltersIII()
+  applyFiltersIV()
+};
+const makeFiltersIII = () => { // Resetear filtros
+  currentZoom = 0
+  zoomAmount = 100
+  videoPrisma.style.transform = `scale(100%)`
+  spanGuideI.style.left = '0'
+  slider4.style.width = '0'
+  positionDisplayIII.textContent = `${'100'} %`
+  applyFilters()
+  applyFiltersII()
+  applyFiltersIII()
+  applyFiltersIV()
+};
+const makeFiltersIV = () => { // Resetear filtros
+  positionDisplay.textContent = `${'400'} - µpm`
+};
+let degreesAmount = 0
+let zoomAmount = 100
+let blurAmount = 0
+let brightnessAmount = 1   
+var intervalId = null
+let intervalId2 = null
+let intervalId3 = null
+let intervalId4 = null
+let intervalId5 = null
+let intervalId6 = null
+let intervalId7 = null
+buttonLeft.addEventListener('touchstart', () => {
+  intervalId = setInterval(() => {
+    var tituloElement = document.getElementById("titulo");
+    let currentLeft = parseFloat(window.getComputedStyle(button).left)
+    let newLeft = currentLeft + 2
+  if(newLeft <= 2){
+    makeFilters()
+    blurAmount = 0;
+    brightnessAmount = 1;      
+  }
+  if (newLeft <= 150) {
+    posicionPantalla.style.color = 'rgb(0,255,0)'
+    posicionPantalla.style.borderColor = 'rgb(0,255,0)'
+    button.style.left = `${newLeft}px`;
+    slider1.style.width = `${newLeft}px`;
+    blurAmount += 0.01
+    applyFilters(); // Aplicar los filtros actualizados
+  }    
+  if(newLeft === 150){
+    clearInterval(intervalId)
+    interfaz.style.display = 'flex'
+    tituloElement.textContent = "BAJA DEFINICION DE VIDEO"; 
+    tituloElement.style.backgroundColor = 'orange'
+    tituloElement.style.color = 'black'           
+  }
+  if(newLeft >= 150){
+    posicionPantalla.style.color = 'orange'
+    posicionPantalla.style.borderColor = 'orange'
+    slider2.style.width = `${newLeft-150}px`
+    button.style.left = `${newLeft}px`
+    blurAmount += 0.01
+    applyFilters(); // Aplicar los filtros actualizados      
+  } 
+  if(newLeft === 330){
+    clearInterval(intervalId)
+    interfaz.style.display = 'flex'
+    container.style.visibility = 'hidden'
+    verButtsInterfaz.style.visibility = 'hidden'
+    button.style.visibility = 'hidden'
+    posicionPantalla.style.visibility = 'hidden'
+    tituloElement.textContent = "PERDIDA TOTAL DE DEFINICION";  
+    tituloElement.style.backgroundColor = 'rgb(255,0,0)'
+    tituloElement.style.color = 'white'
+    verButtsInterfaz.style.pointerEvents = "none";
+  }
+  if(newLeft >= 330){
+    posicionPantalla.style.color = 'rgb(255,0,0)'
+    posicionPantalla.style.borderColor = 'rgb(255,0,0)'
+    slider3.style.width = `${newLeft-327}px`
+    button.style.left = `${newLeft}px`
+    blurAmount += 0.1
+    applyFilters(); // Aplicar los filtros actualizados      
+  }
+  if (newLeft >= 400) {
+    setTimeout(() => {
+    positionDisplay.textContent = `${'400'} - µpm`     
+    clearInterval(intervalId)        
+    }, 17);
+    makeFiltersIV()
+  }
+  positionDisplay.textContent = `${newLeft} - µpm`
+  }, 7);
+});
+
+buttonLeft.addEventListener('mousedown', () => {
+  if (!clickHabilitado) return; 
+  intervalId = setInterval(() => {
+    var tituloElement = document.getElementById("titulo");
+    let currentLeft = parseFloat(window.getComputedStyle(button).left)        
+    let newLeft = currentLeft + 2
+    if(newLeft <= 2){
+      makeFilters()
+      blurAmount = 0;
+      brightnessAmount = 1;      
+    }
+    if (newLeft <= 150) {
+      posicionPantalla.style.color = 'rgb(0,255,0)'
+      posicionPantalla.style.borderColor = 'rgb(0,255,0)'
+      button.style.left = `${newLeft}px`;
+      slider1.style.width = `${newLeft}px`;
+      blurAmount += 0.01
+      applyFilters();
+      console.log(videoStore)
+    }    
+    if(newLeft === 150){
+      clearInterval(intervalId)
+      verButtsInterfaz.style.pointerEvents = "none";    
+      interfaz.style.display = 'flex'
+      tituloElement.textContent = "BAJA DEFINICION DE VIDEO"; 
+      tituloElement.style.backgroundColor = 'orange'
+      tituloElement.style.color = 'black'           
+    }
+    if(newLeft >= 150){
+      posicionPantalla.style.color = 'orange'
+      posicionPantalla.style.borderColor = 'orange'
+      slider2.style.width = `${newLeft-150}px`
+      button.style.left = `${newLeft}px`
+      blurAmount += 0.01
+      applyFilters();
+    } 
+    if(newLeft === 330){
+      clearInterval(intervalId)
+      interfaz.style.display = 'flex'
+      tituloElement.textContent = "PERDIDA TOTAL DE DEFINICION";  
+      tituloElement.style.backgroundColor = 'rgb(255,0,0)'
+      tituloElement.style.color = 'white'
+      verButtsInterfaz.style.pointerEvents = "none";
+    }
+    if(newLeft >= 330){
+      posicionPantalla.style.color = 'rgb(255,0,0)'
+      posicionPantalla.style.borderColor = 'rgb(255,0,0)'
+      slider3.style.width = `${newLeft-327}px`
+      button.style.left = `${newLeft}px`
+      blurAmount += 0.1
+      applyFilters();
+    }
+    if (newLeft >= 400) {
+      positionDisplay.textContent = `400 - µpm`
+      clearInterval(intervalId);
+      clickHabilitado = false;
+    }    
+    positionDisplay.textContent = `${newLeft} - µpm`
+  }, 7);
+});
+buttonLeft.addEventListener('mouseup', () => {
+  clearInterval(intervalId)
+}); 
+buttonLeft.addEventListener('mouseleave', () => {
+  clearInterval(intervalId)
+});
+buttonRight.addEventListener('mousedown', () => {
+  /* clickHabilitado = true; */
+  intervalId2 = setInterval(() => {
+    const currentLeft = parseFloat(window.getComputedStyle(button).left)
+    const barraWidth = parseFloat(window.getComputedStyle(slider3).width)
+    const barraWidth1 = parseFloat(window.getComputedStyle(slider2).width) 
+    const barraWidth2 = parseFloat(window.getComputedStyle(slider1).width)
+    const newLeft = currentLeft - 2
+    const newWidth = barraWidth -2 
+    const withNew1 = barraWidth1 - 2
+    const withNew2 = barraWidth2 - 2
+    if (newLeft >=330) {
+      button.style.left = `${newLeft}px`
+      slider3.style.width = `${newWidth}px`
+      blurAmount -= 0.025;
+      applyFilters(); // Aplicar los filtros actualizados
+      posicionPantalla.style.borderColor = 'rgb(255,0,0)'
+      display.style.color = 'rgb(255,0,0)'
+    }
+    if (newLeft >= 130 && newLeft <= 330) {
+      button.style.left = `${newLeft}px`
+      slider2.style.width = `${withNew1}px`
+      blurAmount -= 0.025;
+      applyFilters(); // Aplicar los filtros actualizados
+      posicionPantalla.style.color = 'orange'
+      posicionPantalla.style.borderColor = 'orange'      
+      display.style.color = 'rgb(255,100,0)'
+    }
+    if (newLeft >= 0 && newLeft <= 150) {
+      button.style.left = `${newLeft}px`
+      slider1.style.width = `${withNew2}px`
+      blurAmount -= 0.025;
+      applyFilters(); // Aplicar los filtros actualizados
+      posicionPantalla.style.color = 'rgb(0,255,0)'
+      posicionPantalla.style.borderColor = 'rgb(0,255,0)'    
+      display.style.color = 'rgb(0,255,0)'
+    }
+    if (newLeft <= 0) {
+      setTimeout(() => {
+      positionDisplay.textContent = `${'0'} - µpm`     
+      clearInterval(intervalId2)        
+      }, 17);
+      makeFilters()
+      blurAmount = 0;
+    }
+    positionDisplay.textContent = `${newLeft} - µpm`
+  }, 7)
+})
+buttonRight.addEventListener('mouseup', () => {
+  clearInterval(intervalId2)
+})
+buttonRight.addEventListener('mouseleave', () => {
+  clearInterval(intervalId2)
+})
+buttReset.addEventListener('mousedown', () => {
+  makeFilters()
+    clickHabilitado = true;
+})
+/* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
+buttonLeft2.addEventListener('mousedown', () => {
+  intervalId5 = setInterval(() => {    
+    if (currentRotation < 360) {
+      currentRotation++
+      console.log(currentZoom)
+      posicionPantalla.style.color = 'rgb(0,255,0)'
+      posicionPantalla.style.borderColor = 'rgb(0,255,0)'
+      spanGuide.style.left = `${currentRotation}px`
+      slider5.style.width = `${currentRotation}px`
+      degreesAmount += 1
+      applyFiltersV();  
+      positionDisplayII.textContent = `${currentRotation}°` 
+    }
+    if(currentRotation >= 360){
+      clearInterval(intervalId5)
+    }
+  }, 77);
+
+});
+buttonLeft2.addEventListener('mouseup', () => {
+  clearInterval(intervalId5)
+})
+buttonLeft2.addEventListener('mouseleave', () => {
+  clearInterval(intervalId5)
+})
+buttonRight2.addEventListener('mousedown', () => {
+  clearInterval(intervalId4); // Limpiar intervalo anterior si existe
+  intervalId4 = setInterval(() => {    
+    if (currentRotation > 0) {
+      currentRotation--;
+      posicionPantalla.style.color = 'rgb(0,255,0)';
+      posicionPantalla.style.borderColor = 'rgb(0,255,0)';
+      spanGuide.style.left = `${currentRotation}px`;
+      slider5.style.width = `${currentRotation}px`;
+      degreesAmount -= 1;
+      applyFiltersII(); // Aplicar los filtros actualizados
+      positionDisplayII.textContent = `${currentRotation}°`;
+    }
+  }, 77);
+}); 
+buttonRight2.addEventListener('mouseup', () => {
+  clearInterval(intervalId4);
+})
+buttonRight2.addEventListener('mouseleave', () => {
+  clearInterval(intervalId4);
+})
+buttReset2.addEventListener('mousedown', () => {
+  makeFiltersII()
+})
+/* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
+buttonLeft3.addEventListener('mousedown', () => {
+  intervalId6 = setInterval(() => {        
+    if (currentZoom + 101 <= 300) {
+      currentZoom++;
+      positionDisplayIII.style.color = 'rgb(0,255,255)';
+      positionDisplayIII.style.borderColor = 'rgb(0,255,255)';
+      spanGuideI.style.left = `${(currentZoom)*1.7}px`;
+      slider4.style.width = `${(currentZoom)*1.7}px`;
+      zoomAmount += 1;
+      applyFiltersIII(videoStore); // Aplicar los filtros actualizados
+      positionDisplayIII.textContent = `${currentZoom + 100} %`;
+      console.log(currentZoom)
+    }
+    if(currentZoom + 100 === 300){
+      clearInterval(intervalId6);
+      console.log(currentZoom)
+    }
+  }, 77);
+});
+buttonLeft3.addEventListener('mouseup', () => {
+  clearInterval(intervalId6);
+})
+buttonLeft3.addEventListener('mouseleave', () => {
+  clearInterval(intervalId6);
+})
+buttonRight3.addEventListener('mousedown', () => {
+  intervalId7 = setInterval(() => {     
+    if (currentZoom + 100 <= 300 && currentZoom + 99 >= 100) {
+      currentZoom--;
+      positionDisplayIII.style.color = 'rgb(0,255,255)';
+      positionDisplayIII.style.borderColor = 'rgb(0,255,255)';
+      spanGuideI.style.left = `${(currentZoom)*1.7}px`;
+      slider4.style.width = `${(currentZoom)*1.7}px`;
+      zoomAmount -= 1;
+      applyFiltersIII(); // Aplicar los filtros actualizados
+      /* applyFilters() */
+      positionDisplayIII.textContent = `${currentZoom + 100} %`;
+      console.log(currentZoom)
+
+    }
+  }, 77);
+});
+buttonRight3.addEventListener('mouseup', () => {
+  clearInterval(intervalId7);
+})
+buttonRight3.addEventListener('mouseleave', () => {
+  clearInterval(intervalId7);
+})
+buttReset3.addEventListener('mousedown', () => {
+  makeFiltersIII()
+})
+/* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
+botVerde.addEventListener('mousedown', () => {
+  verButtsInterfaz.style.pointerEvents = "auto"
+  interfaz.style.display = 'none'
+  container.style.visibility = 'visible'
+  verButtsInterfaz.style.visibility = 'visible'
+  button.style.visibility = 'visible'
+  posicionPantalla.style.visibility = 'visible'
+})
+botNaran.addEventListener('mousedown', () => {
+  verButtsInterfaz.style.pointerEvents = "auto"
+  interfaz.style.display = 'none'
+  container.style.visibility = 'visible'
+  verButtsInterfaz.style.visibility = 'visible'
+  button.style.visibility = 'visible'
+  posicionPantalla.style.visibility = 'visible'
+  slider1.style.width = '0'
+  slider2.style.width = '0'
+  slider3.style.width = '0'
+  positionDisplay.textContent = `${'0'} - µpm`
+  positionDisplay.style.borderColor = 'rgb(0,255,0)'  
+  positionDisplay.style.color = 'rgb(0,255,0)'  
+  button.style.left = '0'
+  makeFilters()
+})
+/* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
+botRed.addEventListener('mousedown', resetButtons);
+botClose.addEventListener('mousedown', resetButtons); 
+function resetButtons() {
+  clickHabilitado = true; 
+  makeFilters()
+  desactivarClicsPorUnTiempoIII()
+  if(containerII.style.display === 'flex'){
+    verButtsInterfaz.style.pointerEvents = "auto";
+    slider1.style.width = '0';
+    slider2.style.width = '0';
+    slider3.style.width = '0';
+    posicionPantalla.textContent = `${'0'} - µpm`;
+    posicionPantalla.style.borderColor = 'rgb(0,255,0)';
+    posicionPantalla.style.color = 'rgb(0,255,0)';
+    button.style.left = '0';
+    container.style.display = 'none';
+    verButtsInterfaz.style.display = 'none';
+    display.style.display = 'none';
+    button.style.display = 'none';
+    posicionPantalla.style.display = 'none';
+    interfaz.style.display = 'none';
+    newLeft = 0;
+    padreTres.classList.add('move_containerI')
+  }else{
+    verButtsInterfaz.style.pointerEvents = "auto";
+    slider1.style.width = '0';
+    slider2.style.width = '0';
+    slider3.style.width = '0';
+    posicionPantalla.textContent = `${'0'} - µpm`;
+    posicionPantalla.style.borderColor = 'rgb(0,255,0)';
+    posicionPantalla.style.color = 'rgb(0,255,0)';
+    button.style.left = '0';
+    container.style.display = 'none';
+    verButtsInterfaz.style.display = 'none';
+    display.style.display = 'none';
+    button.style.display = 'none';
+    posicionPantalla.style.display = 'none';
+    interfaz.style.display = 'none';
+    newLeft = 0;
+    padreTres.classList.add('move_containerII')
+}
+}
+botCloseII.addEventListener('mouseup', resetButtonsII);   // PRIMER BOTON CIERRE TOTAL 
+function resetButtonsII() {
+  makeFiltersII()
+  desactivarClicsPorUnTiempoIII()
+  if(container.style.display === 'none'){
+    displayII.style.display = 'none';
+    positionDisplayII.textContent = `${'0'}°`;
+    containerII.style.display = 'none';
+    spanGuide.style.display = 'none';
+    slider5.style.width = '0';
+    verButtsInterfazII.style.display = 'none';
+    positionDisplayII.style.display = 'none';
+    padreTres.classList.add('move_containerII')    
+  }else{
+    displayII.style.display = 'none';
+    positionDisplayII.textContent = `${'0'}°`;
+    containerII.style.display = 'none';
+    spanGuide.style.display = 'none';
+    slider5.style.width = '0';
+    verButtsInterfazII.style.display = 'none';
+    positionDisplayII.style.display = 'none';
+    setTimeout(() => {
+      padreUno.classList.add('move_container')    
+    },177);
+    setTimeout(() => {
+      padreTres.classList.add('move_container')    
+    },400);
+  }
+}
+botCloseIII.addEventListener('mousedown', resetButtonsIII);
+function resetButtonsIII() {
+  makeFiltersIII()
+  desactivarClicsPorUnTiempoIII()
+  positionDisplayIII.style.display = 'none';
+  positionDisplayIII.textContent = `${'100'}%`;
+  containerIII.style.display = 'none';
+  spanGuideI.style.display = 'none';
+  slider4.style.width = '0';
+  verButtsInterfazIII.style.display = 'none';
+  positionDisplayIII.style.display = 'none';
+  aplique.style.display = 'none'
+}
+/* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
+function mostrarInterfaz() { 
+  container.style.display = 'flex'
+  verButtsInterfaz.style.display = 'flex'
+  display.style.display = 'flex'
+  button.style.display = 'flex'
+  posicionPantalla.style.display = 'flex'
+  slider1.style.width = '0'
+  slider2.style.width = '0'
+  slider3.style.width = '0'
+  posicionPantalla.textContent = `${'0'} - µpm`
+  posicionPantalla.style.borderColor = 'rgb(0,255,0)'  
+  posicionPantalla.style.color = 'rgb(0,255,0)'  
+  button.style.left = '0'
+  container.style.zIndex = '3'
+  verButtsInterfaz.style.zIndex = '3'
+  button.style.zIndex = '3'
+  posicionPantalla.style.zIndex = '3'
+  display.style.zIndex = '3'
+}
+function interfazAvance() {
+  let verInterfaz = document.getElementById('container_interfaz')
+  let verInterfazII = document.getElementById('container_interfaz_2')
+  let verInterfazIII = document.getElementById('container_interfaz_3')              
+  let verDisplay = document.getElementById('display')
+  let verDisplayII = document.getElementById('display_2')
+  let verDisplayIII = document.getElementById('display_3') 
+  botIzquierda.style.display = 'none'
+  botDerecha.style.display = 'none'
+  clickHabilitado = true  
+  if (botIzquierda && botDerecha && padreUno && padreDos && padreTres) {
+    botIzquierda.style.display = 'none';
+    botDerecha.style.display = 'none';
+    [padreUno, padreDos, padreTres].forEach(padre => {
+      padre.style.display = 'block';
+      padre.classList.remove('move_container', 'move_containerI', 'move_containerII');
+    });
+  }
+  makeFilters()
+  makeFiltersII()
+  makeFiltersIII()
+  desactivarClicsPorUnTiempoIII()
+  padreVideos.classList.remove('move_video');
+  setTimeout(() => {
+  padreVideos.classList.add('move_video');
+}, 500);
+  ocultarElementos('contenedorElementos');
+  [container, verButtsInterfaz, display, button, posicionPantalla].forEach(elemento => {
+    eliminarEstilosInline(elemento);
+  });
+  const elementosFlex = [
+    verInterfaz, verButtsInterfaz, verDisplay, verInterfazII, verButtsInterfazII,
+    verDisplayII, positionDisplayIII, positionDisplayII, verInterfazIII,
+    verButtsInterfazIII, verDisplayIII, aplique, apliqueII
+  ];  
+  const elementosVisible = [
+    verInterfaz, verButtsInterfaz, verDisplay, verInterfazII, verButtsInterfazII,
+    verDisplayII, positionDisplayIII, positionDisplayII, verInterfazIII,
+    verButtsInterfazIII, verDisplayIII, aplique, apliqueII
+  ];
+  for (let i = 0; i < elementosFlex.length; i++) {
+    elementosFlex[i].style.display = 'flex';
+  }  
+  for (let i = 0; i < elementosVisible.length; i++) {
+    elementosVisible[i].style.visibility = 'visible';
+  }
+} 
+function eliminarEstilosInline(elemento) {
+  var estilosAplicados = window.getComputedStyle(elemento)
+  for (var i = 0; i < estilosAplicados.length; i++) {
+    var propiedad = estilosAplicados[i];
+    elemento.style[propiedad] = ""
+  }
+}
+/* 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
+let contFriends = []
+function animateVideoWidth(eltoHtml) {
+  const videoElement = document.getElementById(eltoHtml); // Obtén el elemento de video
+  const initialWidth = 60; // Ancho inicial en píxeles
+  const targetWidth = 400; // Ancho final en píxeles
+  const duration = 500; // Duración de la animación en milisegundos (0.5 segundos)
+  let startTime;
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1); // Asegúrate de no exceder el 100% de progreso
+    const newWidth = initialWidth + (targetWidth - initialWidth) * progress;
+    videoElement.style.width = `${newWidth}px`; // Aplica el nuevo ancho al elemento de video
+    if (progress < 1) {
+      requestAnimationFrame(step); // Sigue animando hasta que se complete el tiempo
+    }
+  }
+  requestAnimationFrame(step); // Comienza la animación
+}
+function animateVideoWidthII(eltoHtml) {
+  const videoElement = document.getElementById(eltoHtml); // Obtén el elemento de video
+  const initialWidth = 60; // Ancho inicial en píxeles
+  const targetWidth = 800; // Ancho final en píxeles
+  const duration = 500; // Duración de la animación en milisegundos (0.5 segundos)
+  let startTime;
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1); // Asegúrate de no exceder el 100% de progreso
+    const newWidth = initialWidth + (targetWidth - initialWidth) * progress;
+    videoElement.style.width = `${newWidth}px`; // Aplica el nuevo ancho al elemento de video
+    if (progress < 1) {
+      requestAnimationFrame(step); // Sigue animando hasta que se complete el tiempo
+    }
+  }
+  requestAnimationFrame(step); // Comienza la animación
+}
+function moveCursorToEnd(input) {
+  // Obtener la longitud del texto en el input
+  var textLength = input.value.length;
+  // Mover el cursor al final del input
+  input.setSelectionRange(textLength, textLength); 
+} 
+function abrirInterfaz() {
+  var elementosExcluidos = ['videoBackgroundII','video-background','padre-interfaz','cont-titulo','franja-Blanca','subtitulo-I','descripcion-I','butt-Institucional','padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V','titulo-ancho','logo-grande','image-background'];
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+    }
+  }
+  if(screenWidth < 500){
+    var titulo = document.getElementById('subtitulo-I')
+    // Paso 1: Capturar el elemento padre por su ID
+    var elementoPadre = document.getElementById('cont-titulo');
+    elementoPadre.classList.remove('move-oblicuos');
+    setTimeout(function () {
+    elementoPadre.classList.add('move-oblicuos');
+    desactivarClicsPorUnTiempo()
+    }, 177);
+    setTimeout(() => {
+      var contenedor = document.getElementById('video-background');  
+      contenedor.style.filter = 'none';
+      reduccionGradualVideo()
+    }, 1800);
+    setTimeout(() => {
+      titulo.classList.add('move-title')    
+    }, 1977);
+    setTimeout(() => {
+      alternarColorVerde() 
+    }, 2500);
+    setTimeout(() => {
+      alternarColorVerdeInverso() 
+      applyImageEffects5()      
+    }, 2800); 
+    setTimeout(() => {
+      alternarColorVerde() 
+    }, 3100);
+    setTimeout(() => {
+      alternarColorVerdeInverso() 
+    }, 3400); 
+  }else{
+    var titulo = document.getElementById('subtitulo-I')
+    var elementoPadre = document.getElementById('cont-titulo');
+    elementoPadre.classList.remove('move-oblicuosII');
+    setTimeout(function () {
+    elementoPadre.classList.add('move-oblicuosII');
+    desactivarClicsPorUnTiempo()
+    }, 177);
+    setTimeout(() => {
+      var contenedor = document.getElementById('video-background');  
+      contenedor.style.filter = 'none';
+      reduccionGradualVideo()
+    }, 500);
+    setTimeout(() => {
+      titulo.classList.add('move-title')    
+    }, 1722);
+    setTimeout(() => {
+      alternarColorVerde() 
+    }, 300);  
+    setTimeout(() => {
+      alternarColorVerdeInverso() 
+      applyImageEffects5()            
+    }, 3300);  
+    setTimeout(() => {
+      alternarColorVerde() 
+    }, 3600);
+    setTimeout(() => {
+      alternarColorVerdeInverso() 
+    }, 3900);      
+  }
+}
+function trasladarOblicuos(){
+  var contOblicuosXI = document.getElementById('agrupaOblicuos-XI');
+  contOblicuosXI.classList.add('move-oblicuos');
+  console.log('se AGREGO la clase')
+}
 function desactivarClicsPorUnTiempoIII() {
-   // Desactivar los clics
-   document.addEventListener('click', bloquearClic, true);
-   // Volver a habilitar los clics después de 1 segundo
-   setTimeout(function() {
-       document.removeEventListener('click', bloquearClic, true);
-   }, 1000);
- }
- function desactivarClicsPorUnTiempoII() {
-   // Desactivar los clics
-   document.addEventListener('click', bloquearClic, true);
-   // Volver a habilitar los clics después de 1 segundo
-   setTimeout(function() {
-       document.removeEventListener('click', bloquearClic, true);
-   }, 3000);
- }
- function desactivarClicsPorUnTiempo() {
-   // Desactivar los clics
-   document.addEventListener('click', bloquearClic, true);
-   // Volver a habilitar los clics después de 1 segundo
-   setTimeout(function() {
-       document.removeEventListener('click', bloquearClic, true);
-   }, 4000);
- }
+  // Desactivar los clics
+  document.addEventListener('click', bloquearClic, true);
+  // Volver a habilitar los clics después de 1 segundo
+  setTimeout(function() {
+      document.removeEventListener('click', bloquearClic, true);
+  }, 1000);
+}
+function desactivarClicsPorUnTiempoII() {
+  // Desactivar los clics
+  document.addEventListener('click', bloquearClic, true);
+  // Volver a habilitar los clics después de 1 segundo
+  setTimeout(function() {
+      document.removeEventListener('click', bloquearClic, true);
+  }, 3000);
+}
+function desactivarClicsPorUnTiempo() {
+  // Desactivar los clics
+  document.addEventListener('click', bloquearClic, true);
+  // Volver a habilitar los clics después de 1 segundo
+  setTimeout(function() {
+      document.removeEventListener('click', bloquearClic, true);
+  }, 4000);
+}
 // Función para bloquear los clics
 function bloquearClic(event) {
-  event.stopPropagation();
-  event.preventDefault();
+event.stopPropagation();
+event.preventDefault();
 }
- function aumentoGradualVideo() {
-   var video = document.getElementById('video-background');
-   var currentScale = 1; // Escala inicial del video
-   var targetScale = 10; // Escala objetivo del video
-   var increment = 0.1; // Incremento de escala en cada paso
-   var interval = 1; // Intervalo de tiempo entre cada paso (en milisegundos)
-   var scaleUp = setInterval(function() {
-     currentScale += increment; // Aumentar la escala actual
-     video.style.transform = 'scale(' + currentScale + ')'; // Aplicar la escala al video
-     // Verificar si se alcanzó la escala objetivo
-     if (currentScale >= targetScale) {
-         clearInterval(scaleUp); // Detener el aumento progresivo
-     }
-   }, interval);
- }
- function reduccionGradualVideo() {
-   var video = document.getElementById('video-background');
-   var currentScale = 10; // Escala inicial del video (10x)
-   var targetScale = 1.1; // Escala objetivo del video (1x)
-   var decrement = 0.1; // Decremento de escala en cada paso
-   var interval = 1; // Intervalo de tiempo entre cada paso (en milisegundos)
-   var scaleDown = setInterval(function() {
-     currentScale -= decrement; // Reducir la escala actual
-     video.style.transform = 'scale(' + currentScale + ')'; // Aplicar la escala al video
-     // Verificar si se alcanzó la escala objetivo
-     if (currentScale <= targetScale) {
-         clearInterval(scaleDown); // Detener la reducción progresiva
-     }
-   }, interval);
- }
- const boton = document.getElementById('butt-Institucional');
- const elementos = document.querySelectorAll('.accion-secuencial');
- function animarBoton() {
-   if(screenWidth < 500){  
-     boton.classList.add('big-button'); // Agregar clase para aumentar tamaño
-     setTimeout(() => {
-       boton.classList.remove('big-button'); 
-     }, 400);
-   }else{
-     boton.classList.add('big-buttonII'); // Agregar clase para aumentar tamaño
-     setTimeout(() => {
-       boton.classList.remove('big-buttonII'); 
-     }, 400);
-   }  
- }
- const elements = document.querySelectorAll('.Bot-inicio7');
- function changeColorToRedAndBack() {
-   elements.forEach((element, index) => {
-   setTimeout(() => {
-     element.style.backgroundColor = 'rgb(255,160,0)';
-     // Verificar si es el último elemento
-     if (index === elements.length - 1) {
-       // Después de cambiar todos los elementos a rojo, programar el retorno del color original
-       setTimeout(() => {
-         elements.forEach((elem, idx) => {
-           setTimeout(() => {
-             elem.style.backgroundColor = '';
-           }, idx * 25);
-         });
-       },25); // Retraso inicial de 100 milisegundos
-     }
-     }, index * 25);
-   });
-   changeColorRedAndBack() 
- }
- function changeColorRedAndBack() {
-   elementos.forEach((element, index) => {
-   setTimeout(() => {
-     element.style.backgroundColor = 'rgb(255,160,0)';
-     // Verificar si es el último elemento
-     if (index === elementos.length - 1) {
-       // Después de cambiar todos los elementos a rojo, programar el retorno del color original
-       setTimeout(() => {
-         elementos.forEach((elem, idx) => {
-           setTimeout(() => {
-             elem.style.backgroundColor = '';
-           }, idx * 25);
-         });
-       },25); // Retraso inicial de 100 milisegundos
-     }
-     }, index * 25);
-   });
- }
- function dañarLogo() {
-   var imagenAyudas = document.getElementById('imagen-ayudas')
-   var imagenAyudasII = document.getElementById('imagen-ayudasII')
- 
-   imagenAyudas.style.display = 'none'
-   setTimeout(() => {  
-     imagenAyudasII.style.display = 'flex'      
-   }, 77);
-   setTimeout(() => {  
-     imagenAyudasII.style.display = 'none' 
-     imagenAyudas.style.display = 'flex'
-   }, 350);  
- 
- }
- let ejecutando = false; // Bandera para evitar ejecuciones simultáneas
- function alternarAyudas() {
-   var imagenAyudas = document.getElementById('imagen-ayudas')
-   var contenedorElementos = document.getElementById('contenedorElementos')
-   imagenAyudas.classList.remove('pressed');
- 
-   if (ejecutando) {
-     // Si la función ya está ejecutándose, salimos para no ejecutarla de nuevo
-     return;
-   }
-   ejecutando = true;
-   setTimeout(() => {
-     imagenAyudas.classList.add('pressed');
-   }, 17);
-   setTimeout(() => {
-     contenedorElementos.style.display = 'block';
-   }, 77);
-   setTimeout(() => {
-     imagenAyudas.classList.remove('pressed');
-     ejecutando = false;
-   },277);
- }
- // Variable para almacenar el temporizador
- let ocultarTimer = null; 
- function mostrarElementos() {
-   const contenedorElementos = document.getElementById('contenedorElementos');
-   contenedorElementos.style.display = 'block';
- }
- let isMouseOver = false;
- var conteElementos = document.getElementById('contenedorElementos');
- conteElementos.addEventListener('mouseover', () => {
-   isMouseOver = true;
- });
- conteElementos.addEventListener('mouseout', () => {
-   isMouseOver = false;
- });
- function ocultarElementos(eltoID) {
-   const contenedorElementos = document.getElementById('contenedorElementos');
-   const segundoListado = document.getElementById('segundaLista');
-   segundoListado.style.display = 'none'
-   switch(eltoID){
-     case 'miBoton':
-       if (segundoListado.style.display === 'block') {
-         return;
-       }      
-       ocultarTimer = setTimeout(() => {
-         // Verifica si el ratón todavía está sobre el contenedor
-         if (!contenedorElementos.matches(':hover')) {
-           contenedorElementos.style.display = 'none';
-         }
-       }, 100)
-     break;
-     case 'contenedorElementos':
-       if (segundoListado.style.display === 'none') {   
-         ocultarTimer = setTimeout(() => {
-           // Verifica si el ratón todavía está sobre el contenedor
-           if (!contenedorElementos.matches(':hover')) {
-             contenedorElementos.style.display = 'none';
-           }
-         }, 200)        
-       }else{
-         contenedorElementos.style.display = 'block';
-         segundoListado.style.display = 'block';
-       }
-     break;
-     case 'imagen-ayudas':
-       const imagenAyudas = document.getElementById('imagen-ayudas');
-       const imagenAyudasII = document.getElementById('imagen-ayudasII');
-       imagenAyudas.style.display = 'flex'
-       imagenAyudasII.style.display = 'none' 
-       if (conteElementos.style.display === 'block') { // Asegúrate de usar `===` para comparación
-         // Espera 500 ms antes de ocultar el elemento
-         setTimeout(() => {
-           // Solo oculta el elemento si el ratón no está sobre él
-           if (!isMouseOver) {
-             conteElementos.style.display = 'none';
-           }
-         }, 200);
-       }
-     break;
-     case 'imagen-ayudasII':
-       const imageAyudas = document.getElementById('imagen-ayudas');
-       const imageAyudasII = document.getElementById('imagen-ayudasII');
-       imageAyudas.style.display = 'flex'
-       imageAyudasII.style.display = 'none' 
-       if (conteElementos.style.display === 'block') { // Asegúrate de usar `===` para comparación
-         // Espera 500 ms antes de ocultar el elemento
-         setTimeout(() => {
-           // Solo oculta el elemento si el ratón no está sobre él
-           if (!isMouseOver) {
-             conteElementos.style.display = 'none';
-           }
-         }, 200);
-       }
-     break;
-   }
- } 
- function cambiarColor(elemento, encendido) {
-   const segundoListado = document.getElementById('segundaLista')
-   switch(elemento.className){
-     case 'conte-listado':
-       if(screenWidth < 500){
-         if (encendido) {
-           elemento.style.backgroundColor = 'rgb(0,255,0)'
-           elemento.style.color = 'rgb(0,0,77)';
-           elemento.style.fontSize = '16px'
-           elemento.style.fontWeight = 'bold';       
-         } else {
-           elemento.style.backgroundColor = '';
-           elemento.style.color = 'rgb(255, 255, 177)';
-           elemento.style.fontSize = '16px'
-           elemento.style.fontWeight = 'normal'
-         }
-         if(encendido && elemento.id === 'ultimoElemento'){
-           segundoListado.style.display = 'block'
-           var lineas = document.getElementsByClassName('listado');
-           for(var i = 0; i < lineas.length; i ++){
-             lineas[i].style.fontWeight = 'normal';
-             lineas[i].style.fontSize = '14px'
-           }
-         }
-        }else {
-         if (encendido) {
-           elemento.style.backgroundColor = 'rgb(0,255,0)'
-           elemento.style.color = 'rgb(0,0,77)'
-           elemento.style.fontSize = '19px'
-           elemento.style.fontWeight = 'bold'
-         } else {
-           elemento.style.backgroundColor = ''
-           elemento.style.color = 'rgb(255, 255, 177)'
-           elemento.style.fontSize = ''
-           elemento.style.fontWeight = 'normal'
-         }
-         if(encendido && elemento.id === 'ultimoElemento'){
-           segundoListado.style.display = 'block'
-           var lineas = document.getElementsByClassName('listado')  
-           for(var i = 0; i < lineas.length; i ++){
-             lineas[i].style.fontWeight = 'normal'
-             lineas[i].style.fontSize = '16px'
-           }
-         }
-       }  
-     break;
-     case 'listado':
-       if (encendido) {
-         elemento.style.backgroundColor = 'rgb(0,255,0)'
-         elemento.style.color = 'rgb(0,0,77)';
-         elemento.style.fontSize = '16px'
-         elemento.style.fontWeight = 'bold';             
-       } else {
-         elemento.style.backgroundColor = '';
-         elemento.style.color = 'rgb(255, 255, 177)';
-         elemento.style.fontSize = '19px'
-         elemento.style.fontWeight = 'normal'
-       }     
-     break;
-   }
- }
+function aumentoGradualVideo() {
+  var video = document.getElementById('video-background');
+  var currentScale = 1; // Escala inicial del video
+  var targetScale = 10; // Escala objetivo del video
+  var increment = 0.1; // Incremento de escala en cada paso
+  var interval = 1; // Intervalo de tiempo entre cada paso (en milisegundos)
+  var scaleUp = setInterval(function() {
+    currentScale += increment; // Aumentar la escala actual
+    video.style.transform = 'scale(' + currentScale + ')'; // Aplicar la escala al video
+    // Verificar si se alcanzó la escala objetivo
+    if (currentScale >= targetScale) {
+        clearInterval(scaleUp); // Detener el aumento progresivo
+    }
+  }, interval);
+}
+function reduccionGradualVideo() {
+  var video = document.getElementById('video-background');
+  var currentScale = 10; // Escala inicial del video (10x)
+  var targetScale = 1.1; // Escala objetivo del video (1x)
+  var decrement = 0.1; // Decremento de escala en cada paso
+  var interval = 1; // Intervalo de tiempo entre cada paso (en milisegundos)
+  var scaleDown = setInterval(function() {
+    currentScale -= decrement; // Reducir la escala actual
+    video.style.transform = 'scale(' + currentScale + ')'; // Aplicar la escala al video
+    // Verificar si se alcanzó la escala objetivo
+    if (currentScale <= targetScale) {
+        clearInterval(scaleDown); // Detener la reducción progresiva
+    }
+  }, interval);
+}
+const boton = document.getElementById('butt-Institucional');
+const elementos = document.querySelectorAll('.accion-secuencial');
+function animarBoton() {
+  if(screenWidth < 500){  
+    boton.classList.add('big-button'); // Agregar clase para aumentar tamaño
+    setTimeout(() => {
+      boton.classList.remove('big-button'); 
+    }, 400);
+  }else{
+    boton.classList.add('big-buttonII'); // Agregar clase para aumentar tamaño
+    setTimeout(() => {
+      boton.classList.remove('big-buttonII'); 
+    }, 400);
+  }  
+}
+const elements = document.querySelectorAll('.Bot-inicio7');
+function changeColorToRedAndBack() {
+  elements.forEach((element, index) => {
+  setTimeout(() => {
+    element.style.backgroundColor = 'rgb(255,160,0)';
+    // Verificar si es el último elemento
+    if (index === elements.length - 1) {
+      // Después de cambiar todos los elementos a rojo, programar el retorno del color original
+      setTimeout(() => {
+        elements.forEach((elem, idx) => {
+          setTimeout(() => {
+            elem.style.backgroundColor = '';
+          }, idx * 25);
+        });
+      },25); // Retraso inicial de 100 milisegundos
+    }
+    }, index * 25);
+  });
+  changeColorRedAndBack() 
+}
+function changeColorRedAndBack() {
+  elementos.forEach((element, index) => {
+  setTimeout(() => {
+    element.style.backgroundColor = 'rgb(255,160,0)';
+    // Verificar si es el último elemento
+    if (index === elementos.length - 1) {
+      // Después de cambiar todos los elementos a rojo, programar el retorno del color original
+      setTimeout(() => {
+        elementos.forEach((elem, idx) => {
+          setTimeout(() => {
+            elem.style.backgroundColor = '';
+          }, idx * 25);
+        });
+      },25); // Retraso inicial de 100 milisegundos
+    }
+    }, index * 25);
+  });
+}
+function dañarLogo() {
+  var imagenAyudas = document.getElementById('imagen-ayudas')
+  var imagenAyudasII = document.getElementById('imagen-ayudasII')
+
+  imagenAyudas.style.display = 'none'
+  setTimeout(() => {  
+    imagenAyudasII.style.display = 'flex'      
+  }, 77);
+  setTimeout(() => {  
+    imagenAyudasII.style.display = 'none' 
+    imagenAyudas.style.display = 'flex'
+  }, 350);  
+
+}
+let ejecutando = false; // Bandera para evitar ejecuciones simultáneas
+function alternarAyudas() {
+  var imagenAyudas = document.getElementById('imagen-ayudas')
+  var contenedorElementos = document.getElementById('contenedorElementos')
+  imagenAyudas.classList.remove('pressed');
+
+  if (ejecutando) {
+    // Si la función ya está ejecutándose, salimos para no ejecutarla de nuevo
+    return;
+  }
+  ejecutando = true;
+  setTimeout(() => {
+    imagenAyudas.classList.add('pressed');
+  }, 17);
+  setTimeout(() => {
+    contenedorElementos.style.display = 'block';
+  }, 77);
+  setTimeout(() => {
+    imagenAyudas.classList.remove('pressed');
+    ejecutando = false;
+  },277);
+}
+// Variable para almacenar el temporizador
+let ocultarTimer = null; 
+function mostrarElementos() {
+  const contenedorElementos = document.getElementById('contenedorElementos');
+  contenedorElementos.style.display = 'block';
+}
+let isMouseOver = false;
+var conteElementos = document.getElementById('contenedorElementos');
+conteElementos.addEventListener('mouseover', () => {
+  isMouseOver = true;
+});
+conteElementos.addEventListener('mouseout', () => {
+  isMouseOver = false;
+});
+function ocultarElementos(eltoID) {
+  const contenedorElementos = document.getElementById('contenedorElementos');
+  const segundoListado = document.getElementById('segundaLista');
+  segundoListado.style.display = 'none'
+  switch(eltoID){
+    case 'miBoton':
+      if (segundoListado.style.display === 'block') {
+        return;
+      }      
+      ocultarTimer = setTimeout(() => {
+        // Verifica si el ratón todavía está sobre el contenedor
+        if (!contenedorElementos.matches(':hover')) {
+          contenedorElementos.style.display = 'none';
+        }
+      }, 100)
+    break;
+    case 'contenedorElementos':
+      if (segundoListado.style.display === 'none') {   
+        ocultarTimer = setTimeout(() => {
+          // Verifica si el ratón todavía está sobre el contenedor
+          if (!contenedorElementos.matches(':hover')) {
+            contenedorElementos.style.display = 'none';
+          }
+        }, 200)        
+      }else{
+        contenedorElementos.style.display = 'block';
+        segundoListado.style.display = 'block';
+      }
+    break;
+    case 'imagen-ayudas':
+      const imagenAyudas = document.getElementById('imagen-ayudas');
+      const imagenAyudasII = document.getElementById('imagen-ayudasII');
+      imagenAyudas.style.display = 'flex'
+      imagenAyudasII.style.display = 'none' 
+      if (conteElementos.style.display === 'block') { // Asegúrate de usar `===` para comparación
+        // Espera 500 ms antes de ocultar el elemento
+        setTimeout(() => {
+          // Solo oculta el elemento si el ratón no está sobre él
+          if (!isMouseOver) {
+            conteElementos.style.display = 'none';
+          }
+        }, 200);
+      }
+    break;
+    case 'imagen-ayudasII':
+      const imageAyudas = document.getElementById('imagen-ayudas');
+      const imageAyudasII = document.getElementById('imagen-ayudasII');
+      imageAyudas.style.display = 'flex'
+      imageAyudasII.style.display = 'none' 
+      if (conteElementos.style.display === 'block') { // Asegúrate de usar `===` para comparación
+        // Espera 500 ms antes de ocultar el elemento
+        setTimeout(() => {
+          // Solo oculta el elemento si el ratón no está sobre él
+          if (!isMouseOver) {
+            conteElementos.style.display = 'none';
+          }
+        }, 200);
+      }
+    break;
+  }
+} 
+function cambiarColor(elemento, encendido) {
+  const segundoListado = document.getElementById('segundaLista')
+  switch(elemento.className){
+    case 'conte-listado':
+      if(screenWidth < 500){
+        if (encendido) {
+          elemento.style.backgroundColor = 'rgb(0,255,0)'
+          elemento.style.color = 'rgb(0,0,77)';
+          elemento.style.fontSize = '16px'
+          elemento.style.fontWeight = 'bold';       
+        } else {
+          elemento.style.backgroundColor = '';
+          elemento.style.color = 'rgb(255, 255, 177)';
+          elemento.style.fontSize = '16px'
+          elemento.style.fontWeight = 'normal'
+        }
+        if(encendido && elemento.id === 'ultimoElemento'){
+          segundoListado.style.display = 'block'
+          var lineas = document.getElementsByClassName('listado');
+          for(var i = 0; i < lineas.length; i ++){
+            lineas[i].style.fontWeight = 'normal';
+            lineas[i].style.fontSize = '14px'
+          }
+        }
+      }else {
+        if (encendido) {
+          elemento.style.backgroundColor = 'rgb(0,255,0)'
+          elemento.style.color = 'rgb(0,0,77)'
+          elemento.style.fontSize = '19px'
+          elemento.style.fontWeight = 'bold'
+        } else {
+          elemento.style.backgroundColor = ''
+          elemento.style.color = 'rgb(255, 255, 177)'
+          elemento.style.fontSize = ''
+          elemento.style.fontWeight = 'normal'
+        }
+        if(encendido && elemento.id === 'ultimoElemento'){
+          segundoListado.style.display = 'block'
+          var lineas = document.getElementsByClassName('listado')  
+          for(var i = 0; i < lineas.length; i ++){
+            lineas[i].style.fontWeight = 'normal'
+            lineas[i].style.fontSize = '16px'
+          }
+        }
+      }  
+    break;
+    case 'listado':
+      if (encendido) {
+        elemento.style.backgroundColor = 'rgb(0,255,0)'
+        elemento.style.color = 'rgb(0,0,77)';
+        elemento.style.fontSize = '16px'
+        elemento.style.fontWeight = 'bold';             
+      } else {
+        elemento.style.backgroundColor = '';
+        elemento.style.color = 'rgb(255, 255, 177)';
+        elemento.style.fontSize = '19px'
+        elemento.style.fontWeight = 'normal'
+      }     
+    break;
+  }
+}
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
 let barraI = document.getElementById('iniciador_1')
@@ -4811,7 +4841,6 @@ const INTERVALOSHORIZONTALES = {
   intervaloXXV: null,
   intervaloXLVIII: null,
 }
-
 function barraInteligente() {
   var elementosExcluidos = ['first_half','buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) { 
@@ -4852,7 +4881,6 @@ function removeInlineStyles(element) {
     child.removeAttribute('style');
   });
 }
-
 /* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
 function incrementoHeightXI() {
   INTERVALOS.intervaloXXVI = setInterval(() => {  
@@ -5579,10 +5607,6 @@ const barras = document.querySelectorAll('.barras');
 let timeoutHandles = []; // Almacenará los identificadores de los setTimeout
 let trackerStarted = false; 
 const screenHeight = window.innerHeight;
-  
-/* function removeInlineStyles(element) {
-  element.removeAttribute('style');
-} */
 // Función para controlar la altura
 function controlHeight(index) {
   if (index >= 0 && index < barras.length) {
@@ -5671,7 +5695,7 @@ const elementsB = document.querySelectorAll('#patern .irisado');
 const originalColors = Array.from(elementsB).map(el => el.style.backgroundColor);
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-//PATERN ONLY
+// LOGICA PARA PATERN ONLY
 const elementsC = ['elem1', 'elem2', 'elem3', 'elem4', 'elem5', 'elem6', 'elem7', 'elem8', 'elem9', 'elem10', 'elem11', 'elem12', 'elem13', 'elem14', 'elem15', 'elem16', 'elem17', 'elem18', 'elem19', 'elem20', 'elem21', 'elem22', 'elem23', 'elem24'];
 let index = 0
 let lista = 0
@@ -5735,7 +5759,7 @@ function showMetrics(){
   setTimeout(() => {
     secondMovement()
   }, 907);
-  setTimeout(() => {
+  /* setTimeout(() => {
     thirdMovement()
   }, 1607);
   setTimeout(() => {
@@ -5745,33 +5769,39 @@ function showMetrics(){
     fifthMovement()
   }, 3507);
   setTimeout(() => {
+    index = 0
+    lista = 0
+    clearInterval(intervaloColors);
+    clearInterval(intervaloColorsI);
     sixthMovement()
-  }, 4107);
+  }, 4107); */
 }   
 function firstMovement(){ // FIRST
   stopWidth = false
-  /* var elementosExcluidos = ['def2','general','first_half','buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
+/*   var elementosExcluidos = ['def2','general','first_half','buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   } */
+
   var slider1 = document.getElementById('first_half')
   var estilosAplicados = window.getComputedStyle(slider1)
   for (var i = 0; i < estilosAplicados.length; i++) {
     var propiedad = estilosAplicados[i];
     slider1.style[propiedad] = ""; // Establecer el estilo en una cadena vacía
   }
+
   clearAllIntervals(firstMid) 
   removeInlineStyles(imgWallStreetI); 
-  incrementoHeightXI()
+  incrementoHeightXI()  
   incrementoHeightXII()
   incrementoHeightXIII()
-  incrementoHeightXIV()
+  incrementoHeightXIV() 
   incrementoHeightXV()
- }
- function secondMovement(){ // SECOND
+}
+function secondMovement(){ // SECOND
   var padre = document.getElementById('nicho_spans');    
   if (padre) {
     padre.style.display = 'none';
@@ -5794,70 +5824,96 @@ function firstMovement(){ // FIRST
   clearInterval(INTERVALOS.intervaloV);
   clearInterval(INTERVALOS.intervaloXXXIII);
   removeInlineStyles(imgWallStreet); 
-  let parentElement = document.getElementById('second_half');
-  parentElement.style.display = 'grid'; 
-  let childElements = parentElement.children;
-  for (let i = 0; i < childElements.length; i++) {
-    childElements[i].style.display = 'inline-block';
-    childElements[i].style.visibility = 'visible';
+
+  function makeElementsVisibleSimultaneously(parentId1, parentId2) {
+    let parentElement1 = document.getElementById(parentId1);
+    let parentElement2 = document.getElementById(parentId2);
+
+    parentElement1.style.display = 'grid';
+    parentElement2.style.display = 'grid';
+
+    let childElements1 = parentElement1.children;
+    let childElements2 = parentElement2.children;
+
+    let maxLength = Math.max(childElements1.length, childElements2.length);
+
+    let intervaloNichos = null
+
+    for (let i = 0; i < maxLength; i++) {
+       intervaloNichos = setInterval(() => {
+        if (i < childElements1.length) {
+          childElements1[i].style.display = 'inline-block';
+          childElements1[i].style.visibility = 'visible';
+      }
+      if (i < childElements2.length) {
+          childElements2[i].style.display = 'inline-block';
+          childElements2[i].style.visibility = 'visible';
+      }        
+      }, 100);
+    }
   }
+
+  // Hacer visibles los hijos de 'second_half' y 'nicho_spans' simultáneamente
+  makeElementsVisibleSimultaneously('second_half', 'nicho_spans');
+
   incrementoHeight(barraI, pantallaI,'intervaloI',1);
   incrementoHeight(barraII, pantallaII,'intervaloII',15);
   incrementoHeight(barraIII, pantallaIII,'intervaloIII',25);
   incrementoHeight(barraIV, pantallaIV,'intervaloIV',35);
   incrementoHeight(barraV, pantallaV,'intervaloV',45)  
   incrementoWidthI()
- }
- function thirdMovement(){ // HORIZONTALES
-  /* var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i])  
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-    }
-  } */
-  var slider1 = document.getElementById('wall_street_II')
-  var estilosAplicados = window.getComputedStyle(slider1)
-  for (var i = 0; i < estilosAplicados.length; i++) {
-    var propiedad = estilosAplicados[i];
-    slider1.style[propiedad] = ""; // Establecer el estilo en una cadena vacía
+}
+function thirdMovement(){ // HORIZONTALES
+/* var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
+for (var i = 0; i < allContenedores.length; i++) { 
+  var elemento = document.getElementById(allContenedores[i])  
+  if (elemento) {
+    elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
   }
+} */
+var slider1 = document.getElementById('wall_street_II')
+var estilosAplicados = window.getComputedStyle(slider1)
+for (var i = 0; i < estilosAplicados.length; i++) {
+  var propiedad = estilosAplicados[i];
+  slider1.style[propiedad] = ""; // Establecer el estilo en una cadena vacía
+}
 
+isAnimatingVII = false;
+document.getElementById('iniciador_7').style.width = '1px'
+for (let key in INTERVALOSHORIZONTALES) {
+  if (INTERVALOSHORIZONTALES[key]) {
+    clearInterval(INTERVALOSHORIZONTALES[key]);
+    INTERVALOSHORIZONTALES[key] = null;
+  }
+}    
+  contadorII = 0;
   isAnimatingVII = false;
-  document.getElementById('iniciador_7').style.width = '1px'
-  for (let key in INTERVALOSHORIZONTALES) {
-    if (INTERVALOSHORIZONTALES[key]) {
-      clearInterval(INTERVALOSHORIZONTALES[key]);
-      INTERVALOSHORIZONTALES[key] = null;
-    }
-  }    
-    contadorII = 0;
-    isAnimatingVII = false;
-    isAnimatingVIII = false;
-    isAnimatingIX = false;
-    isAnimatingX = false;
-    isAnimatingXVI = false;
+  isAnimatingVIII = false;
+  isAnimatingIX = false;
+  isAnimatingX = false;
+  isAnimatingXVI = false;
 
-  incrementoHeightVII()
- }
- function fourthMovement(){ // EQUALIZER
-  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i])  
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-    }
+incrementoHeightVII()
+}
+function fourthMovement(){ // EQUALIZER
+var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
+for (var i = 0; i < allContenedores.length; i++) { 
+  var elemento = document.getElementById(allContenedores[i])  
+  if (elemento) {
+    elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
   }
-  var slider1 = document.getElementById('equalizer')
-  var estilosAplicados = window.getComputedStyle(slider1)
-  for (var i = 0; i < estilosAplicados.length; i++) {
-    var propiedad = estilosAplicados[i];
-    slider1.style[propiedad] = ""; // Establecer el estilo en una cadena vacía
+}
+var padre = document.getElementById('equalizer');    
+if (padre) {
+  padre.style = ''
+    var hijos = padre.children;
+  for (var i = 0; i < hijos.length; i++) {
+    hijos[i].style = ''
   }
-
-  changeColorToGreen()
- }
- function fifthMovement(){ // PADRE
+}
+changeColorToGreen()
+}
+function fifthMovement(){ // PADRE
   var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','padre','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -5879,6 +5935,15 @@ function sixthMovement(){ // PATERN
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }
+
+  var padre = document.getElementById('patern');    
+  if (padre) {
+    padre.style = ''
+      var hijos = padre.children;
+    for (var i = 0; i < hijos.length; i++) {
+      hijos[i].style = ''
     }
   }
   document.getElementById('patern').style.display = 'grid'

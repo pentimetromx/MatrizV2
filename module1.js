@@ -1564,9 +1564,9 @@ if (padre) {
   // Restaurar el color original de los botones
   var miBoton1 = document.getElementById("troubleshoot")
   function handleClickEvent(event) {
-  deslizaContenedor('troubleshooting', 'troubleshoot')
+     ('troubleshooting', 'troubleshoot')
   }
-  miBoton1.addEventListener("click", handleClickEvent)
+/*   miBoton1.addEventListener("click", handleClickEvent)
   var miBoton2 = document.getElementById("def1")
   function handleClickEvent2(event) {
   deslizaContenedor('canvasContainer2','def1')
@@ -1596,7 +1596,7 @@ if (padre) {
   function handleClickEvent7(event) {
   deslizaContenedor('conti-boton-kaizen','kaizen')
   }
-  miBoton7.addEventListener("click", handleClickEvent7)
+  miBoton7.addEventListener("click", handleClickEvent7) */
   // Restaura color gris a los botones
   arrayIdButtsMA.forEach(function (buttonId) {
   var button = document.getElementById(buttonId)
