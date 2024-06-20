@@ -3491,37 +3491,11 @@ h4{
   top: 10%;
   display: none;
 }
-/*#imgs-densito{
-  position: absolute;
-  height: 497px; 
-  object-fit: fill;
-  width: 975px;
-  z-index: -1;
-  display: none;
-}
-#cuartoContDensito,
-#tercerContDensito,
-#segundoContDensito,
-#contDensito{
-  display: flex;
-  flex-direction: row;
-  margin: 3px;
-} 
-#segundoContDensito img,
-#cuartoContDensito img,
-#tercerContDensito img,
-#contDensito img{
-  height: 120px;
-  width: 158.3px;
-  object-fit: cover;   
-}
-.imgDensito{
-  margin-right: 3px;
-}*/
 #imgs-densito,
 #imgs-prepress{      /* PADRE */
   position: relative;
   display: flex;
+  top: 1vh;
   flex-direction: column;
   width: 76vw;
   height: 57vh;
@@ -4728,27 +4702,6 @@ input.numero:focus {
   height: 2%;
   z-index: 3;
 }
-/* #patern{
-  position: relative;
-  top: 1vh;
-  left: 62.3vw;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  background-color: RGB(0,0,10);
-  border-radius: 7px;
-  height: 18.5vh;
-  width: 25vw; 
-  gap: 1px;
-  display: none;
-  overflow: hidden; 
-}
-#patern .irisado{
-  display: block;
-  width: 100%;
-  height: 100%;
-} */
-
 #butts_wallstreeet{
   position: absolute;
   place-items: center;
@@ -5001,7 +4954,7 @@ input.numero:focus {
   display:block;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 480px) {
   #cont-titulo-comercial,  
   #cont-titulo-admin,
   #cont-titulo-calidad,
@@ -6175,14 +6128,14 @@ input.numero:focus {
   }  
   #pre-prensa{
     position: relative;
-    left: 5%;
-    top: 22%;
+    left: 3%;
+    top: 14%;
   }
   #imgs-densito,
   #imgs-prepress{
     position:absolute;
-    left:-2%;
-    top: -7%;
+    left:1vw;
+    top: 1vh;
     height: 33vh;
     width: 94vw;
     display: none;
@@ -6191,9 +6144,9 @@ input.numero:focus {
     position: relative;
     display: flex;
     flex-direction: column; 
-    left:30%;
-    margin-top: 34%;
-    height: 400px;
+    left:29%;
+    margin-top: 54%;
+    height: 56vh;
     width: auto;
     display: none;
   } 
@@ -7471,7 +7424,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column; 
     margin-left: 33%;
-    margin-top: 40%;
+    margin-top: 54%;
     height: 400px;
     gap: 7px;
     width: auto;
@@ -7606,8 +7559,8 @@ input.numero:focus {
   }
   #densitometria{
     position: relative;
-    left:5%;
-    top: 25.2%;
+    left:3%;
+    top: 14%;
     height:24.7%;
     display: none;
   }
