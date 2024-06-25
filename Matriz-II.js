@@ -1,5 +1,5 @@
 var anchoPantalla = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-var acumuladorVideos = []
+var acumuladorVideos = [] 
 
 var intervaloColor;
 let arrayVideos = ['vid06','prisma-vid-II','vid04','vid05']

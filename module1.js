@@ -6436,7 +6436,7 @@ function graficosAutomaticos(idGrafico){
     var elemento = document.getElementById(elto)
     
     if (elto === idGrafico) {
-      elemento.style.display = 'flex'      
+      elemento.style.display = 'block'      
     }
   }
 }

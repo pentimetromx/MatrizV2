@@ -240,13 +240,13 @@ document.addEventListener('keydown', function(event) {
         setTimeout(function() {
           barraInteligente()        
         },1177) 
-        /*setTimeout(function() {
-          listaEntrenamientosII('archivo')       
+        setTimeout(function() {
+          resultadosMA()
         },1377) 
         setTimeout(function() {
-          imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')                                 
+          resultadosEmpleado('icon-sandra','updateSandra','img5')                                 
         },1677) 
-        setTimeout(function() {
+        /*setTimeout(function() {
           //changeButtonStyles('pantalla-tintero')       
         },1977) */        
       break;
@@ -3873,7 +3873,7 @@ let intervalId4 = null
 let intervalId5 = null
 let intervalId6 = null
 let intervalId7 = null
-buttonLeft.addEventListener('touchstart', () => {
+/* buttonLeft.addEventListener('touchstart', () => {
   intervalId = setInterval(() => {
     var tituloElement = document.getElementById("titulo");
     let currentLeft = parseFloat(window.getComputedStyle(button).left)
@@ -3935,7 +3935,7 @@ buttonLeft.addEventListener('touchstart', () => {
   }
   positionDisplay.textContent = `${newLeft} - µpm`
   }, 7);
-});
+}); */
 
 buttonLeft.addEventListener('mousedown', () => {
   if (!clickHabilitado) return; 
