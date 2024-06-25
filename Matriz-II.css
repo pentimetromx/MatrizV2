@@ -7201,10 +7201,10 @@ input.numero:focus {
   #contLineas-II{
     position: relative;
     left: 37%;
-    top: 1%;
+    top: 0;
     width: 61vw;
     height: 73vh;
-    border: 2px solid white;
+    gap: 2px;
     border-radius: 21px;
     display: none;
     display: flex;
@@ -7212,10 +7212,9 @@ input.numero:focus {
   }
   .graphs-employee {
     flex: 1;
-    border-bottom: 1px solid white;
+    border: 1px solid white;
+    border-radius: 21px;
     display: flex;
-/*     align-items: center;
-    justify-content: center; */
     overflow: hidden;
   }
   .canva-graphs {
@@ -7223,8 +7222,7 @@ input.numero:focus {
     height: 100%;
     display: block;
     object-fit: fill; /* Elimina la relación de aspecto */
-
-}
+  }
 
 
   .contenedor-vertical img{
