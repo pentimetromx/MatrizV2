@@ -7214,8 +7214,8 @@ input.numero:focus {
     flex: 1;
     border-bottom: 1px solid white;
     display: flex;
-    align-items: center;
-    justify-content: center;
+/*     align-items: center;
+    justify-content: center; */
     overflow: hidden;
   }
   .canva-graphs {
