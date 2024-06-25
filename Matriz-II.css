@@ -6134,11 +6134,11 @@ input.numero:focus {
   }
   #conte-botDensito,
   #conte-botDensitoII{  
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column; 
-    left:29%;
-    margin-top: 54%;
+    left:29vw;
+    top: 36vh;
     height: 56vh;
     width: auto;
     display: none;
