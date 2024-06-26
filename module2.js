@@ -234,9 +234,9 @@ document.addEventListener('keydown', function(event) {
         setTimeout(function() {
           deslizaContenedor('conti-boton-kaizen','kaizen')
         },1377)
-        /* setTimeout(function() {
-          resultadosEmpleado('icon-sandra','updateSandra','img5')                                 
-        },1677) */ 
+        setTimeout(function() {
+          rodillosKaizen('btn17','')                                 
+        },1677) 
         /*setTimeout(function() {
           //changeButtonStyles('pantalla-tintero')       
         },1977) */        
