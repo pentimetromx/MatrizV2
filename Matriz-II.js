@@ -205,7 +205,6 @@ let miCanvas11 = document.getElementById('MiGrafica9').getContext('2d');
 let miCanvas11II = document.getElementById('MiGrafica9-II').getContext('2d')
 var botones = document.querySelectorAll('.butt-mautonomo')
 var arrayButtsIniciales = ['bot-atras','bot-inicial','iniciar','bot-atras12']
-/* let paternStreet = document.getElementById('equalizer') */
 let currentIndex = 0;
 let actualtIndex = 0;
 let nowIndex = 0;

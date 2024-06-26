@@ -6911,8 +6911,8 @@ input.numero:focus {
     position: relative;
     display: flex;
     flex-direction: column;
-    left:37%;
-    top:16vh;
+    left:47%;
+    top:13vh;
     width: 37vw;
     height: 55vh;
     gap:3px ;
@@ -6930,18 +6930,26 @@ input.numero:focus {
     position: absolute;
     display: flex;
     flex-direction: column;
-    left:41%;
+    left:34%;
     top:34%;  
     display: none; 
     border-radius: 20px; 
   }
   #contImagGraf{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     position: absolute;
     left:41%;
     top:49%;  
-    display: none;
+    display: none; */
+
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left:34%;
+    top:34%;  
+    display: none; 
+    border-radius: 20px; 
   }
   #conti-boton-kaizen{
     position: relative;  
@@ -7739,24 +7747,26 @@ input.numero:focus {
   }
   #padre{
     position:absolute;
-    top:21vh;
+    top:17vh;
     left:5vw;
     width:90vw; 
     height:18vh;
     border-radius: 5px;
   }
   #patern{
-    top: 57.5vh;
-    left: 54vw;
-    height: 14vh;
-    width: 45vw; 
+    position:absolute;
+    display:grid;
+    top:28vh;
+    left: 60vw;
+    height:69vh;
+    width: 38vw; 
     border-radius: 5px;
   }
   #wall_street_II{
     position:absolute;  
     margin-left: 9%;
     margin-top:11%;
-    height: 80vh;
+    height:107vh;
     width: 50vh;
   }
   #wall_street_II .horizontales{
@@ -7779,10 +7789,10 @@ input.numero:focus {
     font-size: 14px;
   }
   #equalizer{
-    width: 20vw;
-    height:31.5vh; 
-    top: 18vh;
-    left: 67vw;
+    width: 25vw;
+    height:61vh; 
+    top: 28%;
+    left:60%;
   }
   #first_half {
     position: absolute;

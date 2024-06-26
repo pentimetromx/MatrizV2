@@ -118,7 +118,7 @@ function deslizaContenedor(identificador, idButton) {
         }
       }
       let botoneraMA = document.getElementById('conti-boton')
-        botoneraMA.style.top = '27%'
+        botoneraMA.style.top = '23%'
       inicioTracker()
       if(screenWidth < 500){
         var canvas3 = document.getElementById(identificador);
@@ -136,13 +136,8 @@ function deslizaContenedor(identificador, idButton) {
         }
       }
       changeColorToGreen()
-      let equalizador = document.getElementById('equalizer')
       const numeros = document.querySelectorAll('.column_spans')
       document.getElementById('column_2').style.marginTop = '-6%'
-
-      equalizador.style.left = '33vw'
-      equalizador.style.height = '60vh'
-      equalizador.style.top = '17.5vh'      
       numeros.forEach((numero) => {
         numero.style.marginTop = '260%'
       });
@@ -166,10 +161,10 @@ function deslizaContenedor(identificador, idButton) {
 
       let padre = document.getElementById('patern')
       padre.style.display = 'grid'
-      padre.style.marginTop = '-42.5vh'
+/*       padre.style.marginTop = '-42.5vh'
       padre.style.left = '30vw'
       padre.style.height = '68vh'
-      padre.style.width = '50vw'
+      padre.style.width = '50vw' */
       changeColors()
 
       if(screenWidth < 500){
@@ -258,7 +253,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('wall_street_II'); 
+  var contiBoton = document.getElementById('patern'); 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
