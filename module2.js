@@ -108,7 +108,7 @@ function deslizaContenedor(identificador, idButton) {
           contChecks.style.marginTop = '12%';
         }
       }
-      break;
+    break;
     case 'canvasContainer3' :
       var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer3','general','padre']  
       for (var i = 0; i < allContenedores.length; i++) { 
@@ -117,12 +117,8 @@ function deslizaContenedor(identificador, idButton) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      let cascada = document.getElementById('padre')
-      cascada.style.display = 'flex'
-      cascada.style.left = '37vw'
-      cascada.style.top = '19.6vh'
-      cascada.style.height = '30vh'
-      cascada.style.width = '40vw'
+      let botoneraMA = document.getElementById('conti-boton')
+        botoneraMA.style.top = '27%'
       inicioTracker()
       if(screenWidth < 500){
         var canvas3 = document.getElementById(identificador);
@@ -241,11 +237,11 @@ document.addEventListener('keydown', function(event) {
           barraInteligente()        
         },1177) 
         setTimeout(function() {
-          resultadosMA()
-        },1377) 
-        setTimeout(function() {
+          deslizaContenedor('contChecks','def2')
+        },1377)
+        /* setTimeout(function() {
           resultadosEmpleado('icon-sandra','updateSandra','img5')                                 
-        },1677) 
+        },1677) */ 
         /*setTimeout(function() {
           //changeButtonStyles('pantalla-tintero')       
         },1977) */        
@@ -262,7 +258,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('imgs-prepress'); 
+  var contiBoton = document.getElementById('wall_street_II'); 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -5029,22 +5025,7 @@ function incrementoWidth() {   // PRIMERA CORTINA Y LLAMADO A SEGUNDA MITAD
     imgWallStreetI.style.width = (currentWidth + 1) + '%';
 
      if(currentWidth >= 99){
-      clearInterval(INTERVALOS.intervaloXXXII);      
-      
-      /*let parentElement = document.getElementById('second_half');
-      parentElement.style.display = 'grid'; 
-      let childElements = parentElement.children;
-      for (let i = 0; i < childElements.length; i++) {
-        childElements[i].style.display = 'inline-block';
-        childElements[i].style.visibility = 'visible';
-      }
-      incrementoHeight(barraI, pantallaI,'intervaloI',1);
-      incrementoHeight(barraII, pantallaII,'intervaloII',15);
-      incrementoHeight(barraIII, pantallaIII,'intervaloIII',25);
-      incrementoHeight(barraIV, pantallaIV,'intervaloIV',35);
-      incrementoHeight(barraV, pantallaV,'intervaloV',45)  
-      incrementoWidthI();*/
-      
+      clearInterval(INTERVALOS.intervaloXXXII);            
     }
   }, 1);
 }
@@ -5314,8 +5295,8 @@ function incrementoHeightX() {          // BARRAS HORIZONTALES (5)
     barraX.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
     barraIX.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
     if (alturaAcumuladaBarraI >= 20 && !isAnimatingXVI) {
-      isAnimatingXVI = false
-      incrementoHeightXVI();
+      /* isAnimatingXVI = false */
+      /* incrementoHeightXVI(); */
     }
     if (parseInt(alturaAcumuladaBarraI) >=alturaBarras) {
       clearInterval(INTERVALOSHORIZONTALES.intervaloXX);
@@ -5338,7 +5319,7 @@ function reduccionHeightX() {
     }    
   }, 5); 
 }
-function incrementoHeightXVI() {                
+/* function incrementoHeightXVI() {                
   if (isAnimatingXVI) return;
   isAnimatingXVI = true;
   let r = 0;
@@ -5359,8 +5340,8 @@ function incrementoHeightXVI() {
       reduccionHeightXVII();
     }
   }, 9);
-} 
-function reduccionHeightXVII() {  
+} */ 
+/* function reduccionHeightXVII() {  
   if (isAnimatingXVI) return;
   isAnimatingXVI = true;
   INTERVALOSHORIZONTALES.intervaloXLVIII = setInterval(() => {
@@ -5373,7 +5354,7 @@ function reduccionHeightXVII() {
       incrementoHeightXVI();
     }    
   }, 5); 
-}
+} */
 /* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
 function incrementoWidthI() {  // ALTURA SEGUNDA CORTINA 
   INTERVALOS.intervaloXXXIII = setInterval(() => {
@@ -5864,36 +5845,29 @@ function secondMovement(){ // SECOND
   incrementoWidthI()
 }
 function thirdMovement(){ // HORIZONTALES
-/* var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
-for (var i = 0; i < allContenedores.length; i++) { 
-  var elemento = document.getElementById(allContenedores[i])  
-  if (elemento) {
-    elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+  var slider1 = document.getElementById('wall_street_II')
+  var estilosAplicados = window.getComputedStyle(slider1)
+  for (var i = 0; i < estilosAplicados.length; i++) {
+    var propiedad = estilosAplicados[i];
+    slider1.style[propiedad] = ""; // Establecer el estilo en una cadena vacía
   }
-} */
-var slider1 = document.getElementById('wall_street_II')
-var estilosAplicados = window.getComputedStyle(slider1)
-for (var i = 0; i < estilosAplicados.length; i++) {
-  var propiedad = estilosAplicados[i];
-  slider1.style[propiedad] = ""; // Establecer el estilo en una cadena vacía
-}
 
-isAnimatingVII = false;
-document.getElementById('iniciador_7').style.width = '1px'
-for (let key in INTERVALOSHORIZONTALES) {
-  if (INTERVALOSHORIZONTALES[key]) {
-    clearInterval(INTERVALOSHORIZONTALES[key]);
-    INTERVALOSHORIZONTALES[key] = null;
-  }
-}    
+  isAnimatingVII = false;
+  document.getElementById('iniciador_7').style.width = '1px'
+  for (let key in INTERVALOSHORIZONTALES) {
+    if (INTERVALOSHORIZONTALES[key]) {
+      clearInterval(INTERVALOSHORIZONTALES[key]);
+      INTERVALOSHORIZONTALES[key] = null;
+    }
+  }    
   contadorII = 0;
   isAnimatingVII = false;
   isAnimatingVIII = false;
   isAnimatingIX = false;
   isAnimatingX = false;
-  isAnimatingXVI = false;
+  /* isAnimatingXVI = false; */
 
-incrementoHeightVII()
+  incrementoHeightVII()
 }
 function fourthMovement(){ // EQUALIZER
 var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
