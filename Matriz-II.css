@@ -6912,7 +6912,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     left:47%;
-    top:11vh;
+    top:11.5vh;
     width: 37vw;
     height: 55vh;
     gap:3px ;
@@ -6931,7 +6931,7 @@ input.numero:focus {
     display: flex;  
     left:37vw;
     top:5vh;
-    display: none;
+    /* display: none; */
   }
   #contImagNeg img{
     width:20vw;
@@ -7755,7 +7755,7 @@ input.numero:focus {
   #patern{
     position:absolute;
     display:grid;
-    top:27vh;
+    top:23vh;
     left: 60vw;
     height:68vh;
     width: 38vw; 
