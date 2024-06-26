@@ -142,12 +142,12 @@ function deslizaContenedor(identificador, idButton) {
         numero.style.marginTop = '260%'
       });
 
-      if(screenWidth < 500){
+      /* if(screenWidth < 500){
         var imagNeg = document.getElementById(identificador);
         if (imagNeg !== null) {
           imagNeg.style.marginTop = '12%';
         }
-      }
+      } */
     break;
     case 'contImagGraf' :
       var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagGraf','general','patern']  

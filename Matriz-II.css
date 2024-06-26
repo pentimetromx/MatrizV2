@@ -1018,7 +1018,7 @@ width:447px ;
   display: flex;
   flex-direction: column;
   left: 20%;
-  margin-top:3%;
+  margin-top:4%;
   width: 200px;
   height: 490px;
   border-radius: 20px;
@@ -6074,7 +6074,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     z-index: 2;
-    top: -1px;
+    top: -4px;
     left:1px;
   }
   #resultados{
@@ -6912,7 +6912,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     left:47%;
-    top:13vh;
+    top:10vh;
     width: 37vw;
     height: 55vh;
     gap:3px ;
@@ -6928,21 +6928,36 @@ input.numero:focus {
   }
   #contImagNeg{
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    left:34%;
-    top:34%;  
-    display: none; 
-    border-radius: 20px; 
+    display: flex;  
+    left:37vw;
+    top:5vh;
   }
+  #contImagNeg img{
+    width:20vw;
+    height:68vh;
+    border-radius: 17px;
+  }
+
+
   #contImagGraf{
-    position: absolute;
+    /* position: absolute;
     display: flex;
     flex-direction: column;
     left:34%;
-    top:34%;  
-    display: none; 
-    border-radius: 20px; 
+    top:34%; */  
+    position: absolute;
+    display: flex;  
+    left:37vw;
+    top:0;
+    display:none;
+  }
+  #contImagGraf img{
+    /* width:117px;
+    height:489px;
+    border-radius: 17px; */
+    width:20vw;
+    height:68vh;
+    border-radius: 17px;
   }
   #conti-boton-kaizen{
     position: relative;  

@@ -1136,12 +1136,12 @@ function mantAutonomo (idElement) {
       document.getElementById('contImgEntrenos').style.display = 'none'
       }
         /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
-      var contGrafColor = document.getElementById('contImagNeg')
+      /* var contGrafColor = document.getElementById('contImagNeg')
       if (contGrafColor.style.display === 'block') {
       contGrafColor.style.display = 'none' 
       } else {
       contGrafColor.style.display = 'block'
-      }
+      } */
         /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
       if (index !== -1) {
         // Si se encontró el ID en el array, eliminarlo
@@ -1422,7 +1422,7 @@ function deslizaContenedorII(idElement, idButton) {
     canvas2.style.top = '347%'
     checks.style.top = '347%'
     kaizen.style.top = '347%'
-    imgNeg.style.top = '347%'
+    /* imgNeg.style.top = '347%' */
   } 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     if (idElement === 'kaizenCont') {
@@ -1786,15 +1786,12 @@ function deslizarContImagNeg(idElement) {
   }
   console.log(arrayPosicionnador)
   /*//////////////////////////////////////////////////////////////////////////////////////////////*/
-  var contenedor1 = document.getElementById('contImagNeg')
+  /* var contenedor1 = document.getElementById('contImagNeg') */
   var contenedor2 = document.getElementById('canvasContainer3')
 
-  if (contenedor1) {
-    // 1. Hacer visible el contenedor
+  /* if (contenedor1) {
     contenedor1.style.display = 'block'
-    // 2. Iniciar en la posición left=1200px
     contenedor1.style.left = '1200px'
-    // 3. Calcular el destino como la suma de left y width de troubleshooting
     var destino = parseInt(contenedor2.style.left) + contenedor2.clientWidth;
     // 4. Animación para desplazarse hacia la izquierda
     var inicio = 1200;
@@ -1816,9 +1813,9 @@ function deslizarContImagNeg(idElement) {
       }
     }
     requestAnimationFrame(animar)
-    } else {
+  } else {
     console.error("Los contenedores 'troubleshooting' o 'canvasContainer2' no se encontraron.")
-    }
+  } */
 }
 function deslizarContImagGraf(idElement) {
   var index = arrayPosicionnador.indexOf(idElement) // Buscar el índice del ID en el array
@@ -1832,20 +1829,15 @@ function deslizarContImagGraf(idElement) {
   console.log(arrayPosicionnador)
   /*//////////////////////////////////////////////////////////////////////////////////////////////*/
   var contenedor1 = document.getElementById('contImagGraf')
-  var contenedor2 = document.getElementById('contImagNeg')
+  /* var contenedor2 = document.getElementById('contImagNeg') */
 
-  if (contenedor1) {
-    // 1. Hacer visible el contenedor
+  /* if (contenedor1) {
     contenedor1.style.display = 'block'
-    // 2. Iniciar en la posición left=1200px
     contenedor1.style.left = '1200px'
-    // 3. Calcular el destino como la suma de left y width de troubleshooting
-    var destino = parseInt(contenedor2.style.left) + contenedor2.clientWidth;
-    // 4. Animación para desplazarse hacia la izquierda
+    var destino = parseInt(contenedor2.style.left) + contenedor2.clientWidth; 
     var inicio = 1200;
     var velocidad = 300; // 100px por 0.1s
     var duracion = Math.abs(destino - inicio) / velocidad * 100; // en milisegundos
-    // Usar requestAnimationFrame para la animación suave
     var inicioTiempo = null;
 
     function animar(tiempo) {
@@ -1863,7 +1855,7 @@ function deslizarContImagGraf(idElement) {
     requestAnimationFrame(animar)
     } else {
     console.error("Los contenedores 'troubleshooting' o 'canvasContainer2' no se encontraron.")
-    }
+    } */
 }
 function modificarPosicion() {  
   // Valor fijo para el primer elemento
