@@ -6912,7 +6912,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     left:47%;
-    top:10vh;
+    top:11vh;
     width: 37vw;
     height: 55vh;
     gap:3px ;
@@ -6931,20 +6931,14 @@ input.numero:focus {
     display: flex;  
     left:37vw;
     top:5vh;
+    display: none;
   }
   #contImagNeg img{
     width:20vw;
     height:68vh;
     border-radius: 17px;
   }
-
-
   #contImagGraf{
-    /* position: absolute;
-    display: flex;
-    flex-direction: column;
-    left:34%;
-    top:34%; */  
     position: absolute;
     display: flex;  
     left:37vw;
@@ -6952,11 +6946,8 @@ input.numero:focus {
     display:none;
   }
   #contImagGraf img{
-    /* width:117px;
-    height:489px;
-    border-radius: 17px; */
     width:20vw;
-    height:68vh;
+    height:67vh;
     border-radius: 17px;
   }
   #conti-boton-kaizen{
@@ -7764,9 +7755,9 @@ input.numero:focus {
   #patern{
     position:absolute;
     display:grid;
-    top:28vh;
+    top:27vh;
     left: 60vw;
-    height:69vh;
+    height:68vh;
     width: 38vw; 
     border-radius: 5px;
     display:none;
