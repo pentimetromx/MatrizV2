@@ -232,7 +232,7 @@ document.addEventListener('keydown', function(event) {
           barraInteligente()        
         },1177) 
         setTimeout(function() {
-          deslizaContenedor('contChecks','def2')
+          deslizaContenedor('conti-boton-kaizen','kaizen')
         },1377)
         /* setTimeout(function() {
           resultadosEmpleado('icon-sandra','updateSandra','img5')                                 
@@ -253,7 +253,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('patern'); 
+  var contiBoton = document.getElementById('conti-boton-kaizen'); 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -5838,7 +5838,7 @@ function secondMovement(){ // SECOND
   incrementoHeight(barraIV, pantallaIV,'intervaloIV',35);
   incrementoHeight(barraV, pantallaV,'intervaloV',45)  
   incrementoWidthI()
-}
+}  
 function thirdMovement(){ // HORIZONTALES
   var slider1 = document.getElementById('wall_street_II')
   var estilosAplicados = window.getComputedStyle(slider1)

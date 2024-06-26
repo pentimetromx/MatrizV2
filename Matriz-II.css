@@ -964,15 +964,15 @@ width:447px ;
   align-items: left;
   font-family: "GothamRounded", sans-serif;
   color: white;
-  height: 27px;
-  width: 157px;
+  height:4vh;
+  width:12vw;
   border-radius: 9px;
   background-color: rgba(83, 82, 82, 0.678);
   position: relative;
   overflow: hidden;
-  margin-bottom: 17px;
+  margin-bottom:2vh;
   cursor: pointer;
-  padding-left: 27px;
+  padding-left:2vw;
 }
 .butt-mautonomo-planos::before,
 .butt-mautonomo-kaizen::before{
@@ -5108,14 +5108,6 @@ input.numero:focus {
   #conti-boton-desb button{
     margin-bottom: 8%;
   }
-  .butt-mautonomo{
-    height: 27px;
-    width: 130px;
-    font-size: 9px;
-    text-align: right;
-    align-items:start; 
-    margin-bottom: 0;
-  }
   .butt-mautonomo-freno{
     align-items: start;
     font-size: 10px;
@@ -6072,10 +6064,18 @@ input.numero:focus {
   #conti-boton{
     position: absolute;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     z-index: 2;
-    top: -4px;
-    left:1px;
+    top:-1vh;
+    left:0;
+  }
+  .butt-mautonomo{
+    height:5vh;
+    width:27vw;
+    font-size: 9px;
+    text-align:center;
+    align-items:start; 
+    margin-bottom: 0;
   }
   #resultados{
     font-size: 8px;
@@ -6951,15 +6951,23 @@ input.numero:focus {
     border-radius: 17px;
   }
   #conti-boton-kaizen{
-    position: relative;  
+    position:relative;  
     display: flex;
     flex-direction: column;
     left:50%;
-    top: 22%;
+    top: 21%;
+    width:37vh;
+    height:30vw;
   } 
   #conti-boton-kaizen button{
-    margin-bottom: 9px;
+    position:relative;
+    display: none;
     font-size: 10px;
+    height:27vh;
+    width:30vw;
+    border-radius: 9px;
+    margin-bottom:2vh;
+    padding-left:2vw;
   }
   #contChecks{
     position: absolute;
@@ -7755,7 +7763,7 @@ input.numero:focus {
   #patern{
     position:absolute;
     display:grid;
-    top:24vh;
+    top:25vh;
     left: 60vw;
     height:68vh;
     width: 38vw; 
@@ -7797,9 +7805,9 @@ input.numero:focus {
   }
   #first_half {
     position: absolute;
-    gap:1px;
+    gap:1px;           
     left:38vw;
-    top:29vh;
+    top:26vh;
     height:22vh;
     width:55%;
   }  
@@ -7807,7 +7815,7 @@ input.numero:focus {
     position:absolute;
     gap: 1px;
     left:38vw;
-    top:51vh;
+    top:48vh;
     height:22vh;
     width:55%;
   }
@@ -7815,7 +7823,7 @@ input.numero:focus {
     position: absolute;
     display: flex;
     left: 37.6vw;
-    top:50.8vh;
+    top:47.8vh;
     width:56%;
     height: 1vh;
     display:none;
