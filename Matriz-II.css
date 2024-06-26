@@ -7046,10 +7046,11 @@ input.numero:focus {
     font-size: 8px;
   }
   #toyota-kaizen{
-    position: relative;
+    position: absolute;
     display: flex;
     display: none;
-    top: 24%;
+    top:52.5vh;
+    left:37vw;
   }
   #casos-kaizen{
     position: relative;
@@ -7082,7 +7083,6 @@ input.numero:focus {
     position:absolute;
     display: flex;
     margin-bottom: 10px;
-    flex-wrap: wrap;
     justify-content: space-evenly;
     background-color: #000;
     border-radius: 7px;
@@ -7093,6 +7093,7 @@ input.numero:focus {
     display: none;
   }
   .imgs-Antes {
+    position:relative;
     width: calc(33.333% - 10px); /* Calcula el ancho, considerando el margen de 10px entre las imágenes */
     margin: 5px;
     height:45%;
