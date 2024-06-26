@@ -6070,12 +6070,21 @@ input.numero:focus {
     left:0;
   }
   .butt-mautonomo{
-    height:5vh;
-    width:27vw;
+    height:4vh;
+    width:29vw;
     font-size: 9px;
     text-align:center;
     align-items:start; 
     margin-bottom: 0;
+  }
+  .butt-mautonomo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 17px;
+    height:100%;
+    background-color: rgb(0, 255, 0);
   }
   #resultados{
     font-size: 8px;
