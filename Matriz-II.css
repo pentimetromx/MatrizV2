@@ -6071,7 +6071,7 @@ input.numero:focus {
   }
   .butt-mautonomo{
     height:4vh;
-    width:29vw;
+    width:31vw;
     font-size: 9px;
     text-align:center;
     align-items:start; 
@@ -6966,7 +6966,7 @@ input.numero:focus {
     left:50%;
     top: 21%;
     width:37vh;
-    height:30vw;
+    height:35vw;
   } 
   #conti-boton-kaizen button{
     position:relative;
