@@ -7086,10 +7086,10 @@ input.numero:focus {
     justify-content: space-evenly;
     background-color: #000;
     border-radius: 7px;
-    width:35vh;
-    height:27vh;
-    left:27vh;
-    top:73vh;
+    width:53vw;
+    height:25vh;
+    left:24vh;
+    top:77vh;
     display: none;
   }
   .imgs-Antes {
@@ -7144,8 +7144,8 @@ input.numero:focus {
     overflow: hidden;
     display: flex;
     display: none;
-    height: 177px;
-    width: 257px;
+    height:24vh;
+    width:53%;
     left: 36%;
     margin-top: 6%;
     z-index: 999;
