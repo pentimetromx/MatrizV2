@@ -5597,7 +5597,7 @@ input.numero:focus {
     align-items: center;
     left: 50%;
     top: 6%;
-    width: 400px; 
+    width:83%; 
     z-index: 3;
   } 
   #imgsRepuestos{
@@ -7106,14 +7106,13 @@ input.numero:focus {
   #toyota-kaizen-antes{
     position:absolute;
     display: flex;
-    margin-bottom: 10px;
     justify-content: space-evenly;
     background-color: #000;
     border-radius: 7px;
     width:53vw;
     height:25vh;
     left:40%;
-    top:67%;
+    top:70%;
     display: none;
   }
   .imgs-Antes {
@@ -7165,14 +7164,14 @@ input.numero:focus {
     border: 1px solid orange;  
     flex-direction: column;
     border-radius: 20px;
-    position: relative;
+    position: absolute;
     overflow: hidden;
     display: flex;
     display: none;
     height:24vh;
     width:53%;
     left: 39%;
-    margin-top:3%;
+    top:55%;
     z-index: 999;
   }
   #vidElem{
