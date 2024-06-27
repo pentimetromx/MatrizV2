@@ -7044,8 +7044,8 @@ input.numero:focus {
     position: absolute;
     display: flex;
     display: none;
-    top:34vh;
-    left:18vw;
+    top:50vh;
+    left:37vw;
     width:55vw;
     height:22vh;
   }
@@ -7058,8 +7058,8 @@ input.numero:focus {
   #toyota7,
   #toyota8{
     position: absolute;
-    top: 41%;
-    left: 38%;
+    top:0;
+    left:0;
     border: orange solid 1px;
     border-radius: 9px;
     width:100%;

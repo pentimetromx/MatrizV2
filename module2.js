@@ -253,7 +253,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('toyota-kaizen'); 
+  var contiBoton = document.getElementById('toyota1'); 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -1203,7 +1203,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
          }
        } 
        if(screenWidth < 500){
-         for (var i = 0; i < buttsToyota.length; i++) {                                          /// OBTENER 'window.getcomputedStyle' DE LAS (8 IMAGENES EN UNA)
+         for (var i = 0; i < buttsToyota.length; i++) { /// OBTENER 'window.getcomputedStyle' DE LAS (8 IMAGENES EN UNA)
            var elemento = document.getElementById(buttsToyota[i])      
            // Accede a la propiedad 'display' utilizando window.getComputedStyle
            var estiloDisplay = window.getComputedStyle(elemento).getPropertyValue('display')
