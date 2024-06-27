@@ -7665,10 +7665,10 @@ input.numero:focus {
     transform: translateY(-180px)
   }
   .move-label{
-    transform: translateX(322px)
+    transform: translateX(107vw)
   }
   .move-casos{
-    transform: translateX(415px)
+    transform: translateX(102vw)
   }
   .move-title{
     transform: translateX(-413px);
