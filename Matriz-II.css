@@ -7002,7 +7002,7 @@ input.numero:focus {
     width:63vw;
     height:33vh;
     left: 34%;
-    top: 25%;
+    top: 20%;
     display: none;
   }
   #segundo-hijo{
@@ -7044,7 +7044,7 @@ input.numero:focus {
     position: absolute;
     display: flex;
     display: none;
-    top:50vh;
+    top:47vh;
     left:37vw;
     width:55vw;
     height:22vh;
@@ -7113,7 +7113,7 @@ input.numero:focus {
     width:53vw;
     height:25vh;
     left:40%;
-    top:70%;
+    top:67%;
     display: none;
   }
   .imgs-Antes {
@@ -7172,7 +7172,7 @@ input.numero:focus {
     height:24vh;
     width:53%;
     left: 39%;
-    margin-top: 6%;
+    margin-top:3%;
     z-index: 999;
   }
   #vidElem{
