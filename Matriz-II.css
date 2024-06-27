@@ -7002,7 +7002,7 @@ input.numero:focus {
     width:63vw;
     height:29vh;
     left: 34%;
-    top: 20%;
+    top: 22%;
     display: none;
   }
   #primer-hijo{
@@ -7043,7 +7043,7 @@ input.numero:focus {
     position: absolute;
     display: flex;
     display: none;
-    top:51vh;
+    top:49vh;
     left:37vw;
     width:55vw;
     height:22vh;
@@ -7084,7 +7084,7 @@ input.numero:focus {
     /* max-width: 257px;
     max-height:200px ; */
     left: -77%;
-    top: 77%;
+    top: 79%;
     display: none;
     font-family: GothamRounded , sans-serif;
     font-size: 20px;
