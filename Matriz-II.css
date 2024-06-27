@@ -7000,24 +7000,23 @@ input.numero:focus {
     background-color: #000;
     border-radius: 11px;
     width:63vw;
-    height:33vh;
+    height:29vh;
     left: 34%;
     top: 20%;
     display: none;
   }
-  #segundo-hijo{
-    width: calc(100% - 15px);
-    top: 50%;
-    display: flex;
-    justify-content: space-around;
-    margin: 0 auto; /* Centrado en X */   
-  }
   #primer-hijo{
     width: calc(100% - 15px);
     top: 4%;
-    display: flex;
-    justify-content: space-around;
-    margin: 0 auto; /* Centrado en X*/
+    height:40%;
+    margin: 0 auto;
+  }
+
+  #segundo-hijo{
+    width: calc(100% - 15px);
+    top: 54%;
+    height:40%;
+    margin: 0 auto; /* Centrado en X */   
   }
   .kaizen-propuestos-child-I,
   .kaizen-propuestos-child-II{
@@ -7034,7 +7033,7 @@ input.numero:focus {
     border: 1px solid orange; 
     border-radius: 11px;
     width:25%;
-    height: 103px; 
+    height:100%; 
   }
   .kaizen-propuestos-nieto-I h1,
   .kaizen-propuestos-nieto-II h1{
@@ -7071,9 +7070,8 @@ input.numero:focus {
     position: relative;
     border-radius: inherit;
     width:100%;
-    height:70%;
+    height:100%;
     cursor: pointer;
-    bottom: 0;
     object-fit: fill;
   }
   #casos-kaizen{
