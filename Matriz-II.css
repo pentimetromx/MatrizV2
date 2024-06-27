@@ -6999,10 +6999,10 @@ input.numero:focus {
     flex-direction: column;
     background-color: #000;
     border-radius: 11px;
-    width:60vw;
+    width:63vw;
     height:33vh;
     left: 34%;
-    top: 22%;
+    top: 25%;
     display: none;
   }
   #segundo-hijo{
@@ -7044,10 +7044,10 @@ input.numero:focus {
     position: absolute;
     display: flex;
     display: none;
-    top:42vh;
+    top:34vh;
     left:18vw;
-    width:52vw;
-    height:25vh;
+    width:55vw;
+    height:22vh;
   }
   #toyota1,
   #toyota2,
@@ -7112,8 +7112,8 @@ input.numero:focus {
     border-radius: 7px;
     width:53vw;
     height:25vh;
-    left:21vh;
-    top:60vh;
+    left:40%;
+    top:70%;
     display: none;
   }
   .imgs-Antes {
@@ -7222,7 +7222,7 @@ input.numero:focus {
     display: flex;
     margin-top:20%;
     left: 4.7%;
-    width:400px ;
+    width:83%;
     font-family: "GothamRounded", sans-serif;
     text-align: left;
     color: rgb(255, 204, 0); 
