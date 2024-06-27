@@ -3642,11 +3642,21 @@ h4{
 .aumentar{ 
   cursor: pointer;
 }
+#vidElemen{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
 .imagen-kaizen,
 .imagen-colectora{
-  width: 284px;
-  height: 197px; 
-  border-radius: 7px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 } 
 .columna {
   position: relative;
@@ -3943,8 +3953,6 @@ input.numero:focus {
 .numero{
   width: calc(10% - 2px); /* Divide el espacio en 10 elementos y resta el margen */
   margin: 0 12px; /* Espacio de margen entre los elementos */
-
-
   text-align: center;
   font-family: "Courier New", Courier, monospace;
   font-size: 10px;
@@ -7100,6 +7108,7 @@ input.numero:focus {
     border: 1px solid rgb(255, 0, 255);    
     border-radius: 7px;
   }
+  
   #conti-boton-planos{
     position: relative; 
     display: flex;
