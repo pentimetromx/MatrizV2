@@ -6968,8 +6968,8 @@ input.numero:focus {
     flex-direction: column;
     left:50%;
     top: 21%;
-    width:37vh;
-    height:35vw;
+    width:37vw;
+    height:24vh;
   } 
   #conti-boton-kaizen button{
     position:relative;
@@ -7104,14 +7104,14 @@ input.numero:focus {
   #toyota-kaizen-antes{
     position:absolute;
     display: flex;
+    display: none;
+    top:70%;
+    left:40%;
+    width:53vw;
+    height:25vh;
     justify-content: space-evenly;
     background-color: #000;
     border-radius: 7px;
-    width:53vw;
-    height:25vh;
-    left:40%;
-    top:70%;
-    display: none;
   }
   .imgs-Antes {
     position:relative;
@@ -7158,18 +7158,18 @@ input.numero:focus {
     cursor: pointer;
   }
   #kaizenCont{
+    position: absolute;
+    display: flex;
+    display: none;
+    top:55%;
+    left: 39%;
+    width:53%;
+    height:24vh;
     transition: left 1.007s ease; /* Usa la propiedad left para la transición */
     border: 1px solid orange;  
     flex-direction: column;
     border-radius: 20px;
-    position: absolute;
     overflow: hidden;
-    display: flex;
-    display: none;
-    height:24vh;
-    width:53%;
-    left: 39%;
-    top:55%;
     z-index: 999;
   }
   #vidElem{
