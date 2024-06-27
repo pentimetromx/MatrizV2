@@ -7036,14 +7036,6 @@ input.numero:focus {
     width:25%;
     height: 103px; 
   }
-  /* .kaizen-propuestos-nieto-II img,  
-  .kaizen-propuestos-nieto-I img {
-    top: 22%;
-    width:100%;
-    height:70%;
-    border-radius: inherit;
-    cursor: pointer;
-  } */
   .kaizen-propuestos-nieto-I h1,
   .kaizen-propuestos-nieto-II h1{
     font-size: 8px;
@@ -7052,20 +7044,35 @@ input.numero:focus {
     position: absolute;
     display: flex;
     display: none;
-    top:52.5vh;
-    left:37vw;
+    top:42vh;
+    left:18vw;
+    width:52vw;
+    height:25vh;
+  }
+  #toyota1,
+  #toyota2,
+  #toyota3,
+  #toyota4,
+  #toyota5,
+  #toyota6,
+  #toyota7,
+  #toyota8{
+    position: absolute;
+    top: 41%;
+    left: 38%;
+    border: orange solid 1px;
+    border-radius: 9px;
+    width:100%;
+    height:100%;
+    object-fit: fill;
   }
   .imagen-kaizen,
   .imagen-colectora{
     position: relative;
     border-radius: inherit;
-    /* top: 22%; */
     width:100%;
     height:70%;
     cursor: pointer;
-    /* width: 284px;
-    height: 197px;
-    border-radius: 7px;*/
     bottom: 0;
     object-fit: fill;
   }
@@ -7105,8 +7112,8 @@ input.numero:focus {
     border-radius: 7px;
     width:53vw;
     height:25vh;
-    left:24vh;
-    top:77vh;
+    left:21vh;
+    top:60vh;
     display: none;
   }
   .imgs-Antes {
@@ -7164,24 +7171,14 @@ input.numero:focus {
     display: none;
     height:24vh;
     width:53%;
-    left: 36%;
+    left: 39%;
     margin-top: 6%;
     z-index: 999;
   }
-  #toyota1,
-  #toyota2,
-  #toyota3,
-  #toyota4,
-  #toyota5,
-  #toyota6,
-  #toyota7,
-  #toyota8{
-    position: absolute;
-    top: 41%;
-    left: 38%;
-    border: orange solid 1px;
-    border-radius: 9px;
-    width: 247px;
+  #vidElem{
+    object-fit: fill;
+    width:100%;
+    height:100%;
   }
   #sector-distribuidor{
   display: none;  
