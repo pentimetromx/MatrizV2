@@ -7838,8 +7838,8 @@ input.numero:focus {
   #nicho_spans{
     position:absolute;
     left:38vw;
-    top:62.5vh;
-    gap:3px;
+    top:60vh;
+    gap:7px;
     height:5vh;
     width:55%;
   }
