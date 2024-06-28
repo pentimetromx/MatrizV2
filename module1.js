@@ -3781,7 +3781,7 @@ function listaEntrenamientosII(btnList) {
         }
       }
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      for (var i = 0; i < contiBtt.length; i++) {                                                                                            /// NARANJA A BOTON
+      for (var i = 0; i < contiBtt.length; i++) { /// NARANJA A BOTON
         var botonId = contiBtt[i];
         var boton = document.getElementById(botonId);
         // Restablecer el color de fondo para todos los botones

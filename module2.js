@@ -232,14 +232,14 @@ document.addEventListener('keydown', function(event) {
           barraInteligente()        
         },1177) 
         setTimeout(function() {
-          deslizaContenedor('conti-boton-kaizen','kaizen')
+          deslizaContenedor('troubleshooting','troubleshoot')                                 
         },1377)
         setTimeout(function() {
-          rodillosKaizen('btn17','')                                 
+          listaEntrenamientosII('archivo')                                
         },1677) 
-        /*setTimeout(function() {
-          //changeButtonStyles('pantalla-tintero')       
-        },1977) */        
+        setTimeout(function() {
+          /* imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico') */      
+        },1977)       
       break;
       case 'H': 
       changeColorRedAndBack()      

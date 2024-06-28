@@ -1937,12 +1937,22 @@ margin-right: 7px;
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 222px;
-  width: 450px;
+  /* height: 222px; */
+  height:31vh;
+  /* width: 450px; */
+  width:35vw;
   left:104%;
   margin-top:11%;
   display: none;
 }
+#conte-links{
+  position: absolute;
+  display:flex;
+  top: 0%;
+  left: 0%;
+  height:100%;
+  width:100%;
+} 
 #linkLis{
   position: absolute;
   display:flex; 
@@ -6664,15 +6674,33 @@ input.numero:focus {
     position: absolute;
     display: flex;
     flex-direction: column;
-    height:31%;
-    width:57%;
-    left:57%;
-    margin-top:74%;
+    height:31vh;
+    width:57vw;      
+    left:37vw;
+    top:22vh;
     z-index: 3;
     display: none;
-  }   
+  }
+  #conte-links{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width:100%;
+    height:100%;
+  }  
+  #linkLis{
+    position:relative;
+    display:flex; 
+    flex-direction: column;
+    background-color:#333333;
+    width:100%;
+    height:100%;
+    left: 57%;
+    top:-17%;
+  } 
   .colorClick {
     color: blue;
+    width:100%;
   }
   .colorClick:hover {
     color: orange;
@@ -6688,17 +6716,7 @@ input.numero:focus {
     width: 249px;
     height: 333px;
     display: none;
-  } 
-  #linkLis{
-    position: absolute;
-    display:flex; 
-    flex-direction: column;
-    background-color:#333333;
-    width: 277px;
-    height: 357px;
-    left: 0%;
-    top:0%;
-  } 
+  }  
   #contImgEntrenos{
     position: absolute;
     display: flex;
