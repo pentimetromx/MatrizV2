@@ -6661,11 +6661,11 @@ input.numero:focus {
     transition: background-color 0.3s, color 0.3s;
   }
   #linksMA{
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
-    height: 222px;
-    width: 277px;
+    height:31%;
+    width:57%;
     left:57%;
     margin-top:74%;
     z-index: 3;
@@ -7216,22 +7216,25 @@ input.numero:focus {
   }
   #conte-secundario {
     position: absolute;
-    display: inline-block; 
-    justify-content: space-between;
-    flex-wrap: wrap;
-    left: 2%;
-    max-width: 410px;
-    max-height: 1200px;
-    /* overflow: auto; */
-  }    
-  .cont-user{
-    flex: 1;
-    box-sizing: border-box;
-    text-align:left;
-  }   
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap:1%;
+    flex-wrap:wrap;
+    width:95%;
+    left:2%;
+    height:auto;
+  }
+  .cont-user {
+    width:32%;
+    height:20vh;
+    margin-bottom:33px;
+  }
   .cont-user img{
-    height:90px ;   
-    width: 120px;
+    position:relative;
+    display:block;
+    height:100%;
+    width:100%;
     margin-bottom: 7px;
   }  
   .cont-user label{
@@ -7835,7 +7838,7 @@ input.numero:focus {
   #nicho_spans{
     position:absolute;
     left:38vw;
-    top:66vh;
+    top:62.5vh;
     gap:3px;
     height:5vh;
     width:55%;

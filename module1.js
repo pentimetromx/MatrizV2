@@ -6082,9 +6082,10 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
         contSecundario.style.display = 'flex'
         element.style.position = 'fixed'
         element.style.display = 'flex'
-        element.style.height = '15%'
+        element.style.height = '17%'
+        element.style.width = '30%'
         element.style.top = '21.5%'
-        element.style.left = '5%' 
+        element.style.left = '3%' 
 
       var label = element.querySelector('label')
       if (label) {

@@ -1212,6 +1212,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
          imgsEstudio.classList.remove('move-casos')        
          casoEstudio.classList.remove('move-label') 
          casoEstudio.removeAttribute('style')
+         casoEstudio.style.left = '-77%';
          casoEstudio.style.display = 'none' 
          imgsEstudio.style.display = 'none'       
          const imagenes = document.querySelectorAll('.imgs-toyota');
