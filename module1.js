@@ -4131,7 +4131,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         }
       }   
       /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-      linkOrange.style.color = 'orange'                                                                                                       ///  LINK NARANJA
+      linkOrange.style.color = 'orange' ///  LINK NARANJA
       // Cambiar otros enlaces a azul
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {
