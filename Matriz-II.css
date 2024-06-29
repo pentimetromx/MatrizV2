@@ -6889,10 +6889,10 @@ input.numero:focus {
   }
   #rodillo-infeed{
     position: absolute;
-    top: 1%;
-    left:25%;
-    width: 284px;
-    height: 345px;    
+    top: 1vh;
+    left:25vw;
+    width:59vw;
+    height:48vh;
     display: flex;
     flex-direction: column;
     border: 1px solid orange;
@@ -6906,10 +6906,10 @@ input.numero:focus {
     position: absolute;
     display: flex;
     flex-direction: column;
-    height: auto;
-    width: auto;
-    top: 1%;
-    left:2%;
+    height:48vh;
+    width:17vw;
+    top: 1vh;
+    left:2vw;
     gap: 7px;
     display: none;
     z-index: 3;
@@ -6917,8 +6917,8 @@ input.numero:focus {
   #imag4 img{
     border: solid 1px orange;
     border-radius: 11px;
-    width: 79px;
-    height: 79px;    
+    width:17vw;
+    height:11vh;    
   }
   #puesta-punto{
     position:absolute;
