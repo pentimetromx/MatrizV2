@@ -6677,7 +6677,7 @@ input.numero:focus {
     height:50vh;
     width:57vw;      
     left:37vw;
-    top:26vh;
+    top:24vh;
     z-index: 3;
     display: none;
   }
@@ -6730,18 +6730,18 @@ input.numero:focus {
     border-radius: 13px;
   }
   #contImaginario{
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column; 
     align-items: flex-start;
-    height: 407px;
-    width: 397px;
+    height:57vh;
+    width:83vw;
     display: none; 
     border-radius: 21px; 
     background-color:black;
     border: solid 1px orange;
-    top: -19%;
-    left:1%;
+    top:32vh;
+    left:1vw;
     z-index: 3;
   }
   #imag3{
@@ -6749,11 +6749,11 @@ input.numero:focus {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    top: 7px;
-    left: 7px;
+    margin-top:-0.8vh;
+    margin-left:1vw;
     gap: 14px;
     height: auto;
-    width: auto;   
+    width:80vw;
   }
   .img-1{
     height: 85px;
@@ -6844,7 +6844,9 @@ input.numero:focus {
     width:100%;
   }
   #image-1,
-  #image-2{
+  #image-2,
+  #image-3,
+  #image-4{
     position: relative;
     display: block;
     width:100%;
