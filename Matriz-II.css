@@ -6735,7 +6735,7 @@ input.numero:focus {
     flex-direction: column; 
     align-items: flex-start;
     height:57vh;
-    width:83vw;
+    width:97vw;
     display: none; 
     border-radius: 21px; 
     background-color:black;
@@ -6792,8 +6792,8 @@ input.numero:focus {
     display: flex;
     flex-direction: row;
     align-items: center;
-    height:56vh;
-    width:95vw;
+    height:52vh;
+    width:97vw;
     top: -9%;
     left:1%;
     display: none;
@@ -6808,7 +6808,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     width:62vw;
-    height: 361px;
+    height:50vh;
     border: 1px solid orange;
     border-radius: 20px;
     background-color: #000;
@@ -6818,6 +6818,7 @@ input.numero:focus {
     margin-left:29vw;
     display: none;
     z-index: 3;
+    overflow:hidden;
   }
   h6{
     color: white;
@@ -6878,7 +6879,7 @@ input.numero:focus {
     flex-direction: column; 
     align-items: flex-start;
     height:50vh;
-    width:83vw;
+    width:97vw;
     display: none; 
     border-radius: 21px; 
     background-color:black;
@@ -6891,7 +6892,7 @@ input.numero:focus {
     position: absolute;
     top: 1vh;
     left:25vw;
-    width:59vw;
+    width:66vw;
     height:48vh;
     display: flex;
     flex-direction: column;
@@ -6901,6 +6902,7 @@ input.numero:focus {
     overflow: auto;
     background-color: #000;
     z-index: 3;
+    overflow: hidden;
   }
   #imag4{
     position: absolute;
@@ -6925,7 +6927,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     height:46vh;
-    width:83vw;
+    width:97vw;
     top:32vh;
     left:1vw;
     border: 1px solid orange;
@@ -6934,6 +6936,7 @@ input.numero:focus {
     overflow: auto; 
     background-color: #000;
     z-index: 3;
+    overflow:hidden;
   }
   #conteneMantaut{
     position: relative;
