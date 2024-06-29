@@ -238,7 +238,7 @@ document.addEventListener('keydown', function(event) {
           listaEntrenamientosII('archivo')                                
         },1677) 
         setTimeout(function() {
-          /* imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico') */      
+          imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')     
         },1977)       
       break;
       case 'H': 
