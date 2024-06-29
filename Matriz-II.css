@@ -6816,7 +6816,7 @@ input.numero:focus {
     top: 1%;
     left: 2%;
     margin-left:29vw;
-    display: none;
+    display: none;  
     z-index: 3;
   }
   .guia-neumatica{
