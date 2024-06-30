@@ -2927,7 +2927,42 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
  }
  function iniciarMovimiento(instrucId) {
    var container = document.getElementById(instrucId);
-   container.scrollTop = container.scrollHeight;  
+   container.scrollTop = container.scrollHeight;
+
+
+
+   setTimeout(function() {
+    if(instrucId === 'control-neumatico') {
+      const contenedor = document.getElementById('control-neumatico');
+      // Función para animar el scroll hacia arriba
+      function scrollToTopSmoothly() {
+        const currentPosition = contenedor.scrollTop;
+        const targetPosition = 0;
+        const duration = 500; // Duración de la animación en     
+        const startTime = performance.now();    
+        function animateScroll(timestamp) {
+          const elapsed = timestamp - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easedProgress = easeInOutCubic(progress);    
+          contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+          if (progress < 1) {
+            requestAnimationFrame(animateScroll);
+          }
+        }    
+        requestAnimationFrame(animateScroll);
+      }    
+      // Función para aplicar una función de easing (interpolación suave)
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      }    
+      // Llama a la función para animar el scroll hacia arriba
+      scrollToTopSmoothly();
+    }}, 277
+  );
+
+
+
+     
    setTimeout(function() {
      if(instrucId === 'rodillo-infeed') {
        const contenedor = document.getElementById('rodillo-infeed');

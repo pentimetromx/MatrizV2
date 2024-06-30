@@ -4028,8 +4028,9 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           if (elemento) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
-        }   
-      }       
+        } 
+      }
+      iniciarMovimiento('control-neumatico')
     break;
     case 'link2':
       var elementosExcluidos = ['buscador','troubleshooting','container01','links-inicialesI','links-iniciales','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-2','imag2','pneumatico','contImaginario-III','contBotInfeed']  
