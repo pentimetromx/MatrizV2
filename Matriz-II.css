@@ -6750,7 +6750,7 @@ input.numero:focus {
     flex-direction: row;
     align-items: flex-start;
     margin-top:1vh;
-    margin-left:1vw;
+    margin-left:9vw;
     gap: 14px;
     height: auto;
     width:80vw;
@@ -6764,7 +6764,7 @@ input.numero:focus {
   #bailarina{
     display: flex;
     position: relative;
-    left:3vw;
+    left:10vw;
     display: none;
     height:35vh;
     width:77vw;
@@ -6814,8 +6814,8 @@ input.numero:focus {
     background-color: #000;
     overflow: auto;
     top: 1%;
-    left: 2%;
-    margin-left:29vw;
+    left:33%;
+    /* margin-left:29vw; */
     display: none;  
     z-index: 3;
   }
