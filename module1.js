@@ -1,143 +1,162 @@
 function cierraContenedores(elementId,buttonID){
-var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80','btn600','btn700','btn800']
-var arrayButtsRojos = ['boton2','boton3','boton4','boton5','boton6','boton8','boton9','boton10','boton11','boton12']
-for (var i = 0; i < arrayButtsRojos.length; i++) {                                                                                  /// QUITAR ESTILOS A BOTONES
-var button = arrayButtsRojos[i]
-if (button) {
-  document.getElementById(button).style.backgroundColor = ''
-}
-}   
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-if (firstClick) {                                                                                                                       /// LOGICA PRIMER CLICK
-var uTeñido = document.getElementById('uTeñidos');
-
-if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
-  idsArray.push(elementId);
-  console.log(idsArray);
-}     
-switch (elementId) {
-  case 'desbobinadorId':        
-    // Obtén el elemento padre 'pantalla-inicial'
-    var pantallaInicial = document.getElementById('pantalla-inicial');
-    if (pantallaInicial) {
-      // Oculta todos los hijos directos de 'pantalla-inicial'
-      for (var i = 0; i < pantallaInicial.children.length; i++) {
-        var hijo = pantallaInicial.children[i];
-        if (i === 0) {
-          // Deja visible el primer hijo
-          hijo.style.display = 'block'; // O el valor deseado ('block', 'inline', etc.)
-          hijo.style.marginLeft = '1%'
-        } else {
-          // Oculta el resto de los hijos
-          hijo.style.display = 'none';
-        }
-      }
-    }      
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
-    video.style.display = 'none'
-    aumentarTamanosDeBotones()          
-
-  break;
-  case 'uTeñido':
-    // Obtén el elemento padre 'pantalla-inicial'
-    var pantallaInicial = document.getElementById('pantalla-inicial');
-    if (pantallaInicial) {
-      // Oculta todos los hijos directos de 'pantalla-inicial'
-      for (var i = 0; i < pantallaInicial.children.length; i++) {
-        var hijo = pantallaInicial.children[i];
-        if (i !== 1) {
-          // Deja visible el primer hijo
-          hijo.style.display = 'none'; // O el valor deseado ('block', 'inline', etc.)
-        } else {
-          // Oculta el resto de los hijos
-          hijo.style.marginLeft = '1%';
-          hijo.style.display = 'block';
-        }
-      }
-    }      
-    video.style.display = 'none'        
-    aumentarTamanosDeBotonesII()
-  break;
-  case 'alimentadorId':
-    // Obtén el elemento padre 'pantalla-inicial'
-    var pantallaInicial = document.getElementById('pantalla-inicial');
-    if (pantallaInicial) {
-      // Oculta todos los hijos directos de 'pantalla-inicial'
-      for (var i = 0; i < pantallaInicial.children.length; i++) {
-        var hijo = pantallaInicial.children[i];
-        if (i === 2) {
-          // Deja visible el primer hijo
-          hijo.style.display = 'block'; // O el valor deseado ('block', 'inline', etc.)
-          hijo.style.marginLeft = '1%'
-        } else {
-          // Oculta el resto de los hijos
-          hijo.style.display = 'none';
-        }
-      }
-    }      
-    aumentarTamanosDeBotonesIII()
-  break;
-  case 'unidProceso':
-    // Obtén el elemento padre 'pantalla-inicial'
-    var pantallaInicial = document.getElementById('pantalla-inicial');
-    if (pantallaInicial) {
-      // Oculta todos los hijos directos de 'pantalla-inicial'
-      for (var i = 0; i < pantallaInicial.children.length; i++) {
-        var hijo = pantallaInicial.children[i];
-        if (i === 3) {
-          // Deja visible el primer hijo
-          hijo.style.display = 'block'; // O el valor deseado ('block', 'inline', etc.)
-          hijo.style.marginLeft = '1%'
-        } else {
-          // Oculta el resto de los hijos
-          hijo.style.display = 'none';
-        }
-      }
-    }      
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
-    aumentarTamanosDeBotonesIV()        
-  break;
-  case 'rebobinador':
-    // Obtén el elemento padre 'pantalla-inicial'
-    var pantallaInicial = document.getElementById('pantalla-inicial');
-    if (pantallaInicial) {
-      // Oculta todos los hijos directos de 'pantalla-inicial'
-      for (var i = 0; i < pantallaInicial.children.length; i++) {
-        var hijo = pantallaInicial.children[i];
-        if (i !== 4) {
-          // Deja visible el primer hijo
-          hijo.style.display = 'none'; // O el valor deseado ('block', 'inline', etc.)
-        } else {
-          // Oculta el resto de los hijos
-          hijo.style.marginLeft = '1%';
-          hijo.style.display = 'block';
-          console.log(hijo.id)
-        }
-      }
-    }      
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
-    aumentarTamanosDeBotonesV()
-  break;
-  default:
-}    
-firstClick = false;
-} else {
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-arrayGeneral.forEach(element => {                                                                   /// SEGUNDO CLICK OCULTA BOTONES / CARGA SECCION CONINUA
-  var elemento = document.getElementById(element)
-  if (elemento) {
-      elemento.style.display = 'none'
-  } 
-}) 
-// En el segundo clic, carga la seccion
-btnsIniciales.forEach(elemento =>{
-  if (elemento){
-    elemento.style.background = ''
-    elemento.style.color = ''
+  var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80','btn600','btn700','btn800']
+  var arrayButtsRojos = ['boton2','boton3','boton4','boton5','boton6','boton8','boton9','boton10','boton11','boton12']
+  for (var i = 0; i < arrayButtsRojos.length; i++) {                                                                                  /// QUITAR ESTILOS A BOTONES
+  var button = arrayButtsRojos[i]
+  if (button) {
+    document.getElementById(button).style.backgroundColor = ''
   }
-})    
-abrirSeccionContinua() 
-}
+  }   
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  if (firstClick) {                                                                                                                       /// LOGICA PRIMER CLICK
+  /* var uTeñido = document.getElementById('uTeñidos'); */
+
+  if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+    console.log(idsArray);
+  }     
+  switch (elementId) {
+    case 'desbobinadorId':        
+      // Obtén el elemento padre 'pantalla-inicial'
+      var pantallaInicial = document.getElementById('pantalla-inicial');
+      if (pantallaInicial) {
+        // Oculta todos los hijos directos de 'pantalla-inicial'
+        for (var i = 0; i < pantallaInicial.children.length; i++) {
+          var hijo = pantallaInicial.children[i];
+          if (i === 0) {
+            // Deja visible el primer hijo
+            hijo.style.display = 'block'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.marginLeft = '0'
+            hijo.style.marginTop = '-12.7vh'
+          } else {
+            // Oculta el resto de los hijos
+            hijo.style.display = 'none';
+          }
+        }
+      } 
+      botonClick.style.top = '33vh'
+      botonClick.style.left = '2vw'     
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
+      video.style.display = 'none'
+      aumentarTamanosDeBotones()          
+
+    break;
+    case 'uTeñido':
+      // Obtén el elemento padre 'pantalla-inicial'
+      var pantallaInicial = document.getElementById('pantalla-inicial');
+      if (pantallaInicial) {
+        // Oculta todos los hijos directos de 'pantalla-inicial'
+        for (var i = 0; i < pantallaInicial.children.length; i++) {
+          var hijo = pantallaInicial.children[i];
+          if (i !== 1) {
+            // Deja visible el primer hijo
+            hijo.style.display = 'none'; // O el valor deseado ('block', 'inline', etc.)
+          } else {
+            // Oculta el resto de los hijos
+            hijo.style.display = 'block'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.marginLeft = '0'
+            hijo.style.marginTop = '-12.7vh'
+          }
+        }
+      }  
+      botonClickII.style.display = 'block'
+      botonClickII.style.top = '33vh'
+      botonClickII.style.left = '2vw'           
+      video.style.display = 'none'        
+      aumentarTamanosDeBotonesII()
+    break;
+    case 'alimentadorId':
+      // Obtén el elemento padre 'pantalla-inicial'
+      var pantallaInicial = document.getElementById('pantalla-inicial');
+      if (pantallaInicial) {
+        // Oculta todos los hijos directos de 'pantalla-inicial'
+        for (var i = 0; i < pantallaInicial.children.length; i++) {
+          var hijo = pantallaInicial.children[i];
+          if (i === 2) {
+            // Deja visible el primer hijo
+            hijo.style.display = 'block'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.marginLeft = '0'
+            hijo.style.marginTop = '-12.7vh'
+          } else {
+            // Oculta el resto de los hijos
+            hijo.style.display = 'none'
+          }
+        }
+      } 
+      botonClickIII.style.display = 'block'
+      botonClickIII.style.top = '33vh'
+      botonClickIII.style.left = '2vw'                
+      aumentarTamanosDeBotonesIII()
+    break;
+    case 'unidProceso':
+      // Obtén el elemento padre 'pantalla-inicial'
+      var pantallaInicial = document.getElementById('pantalla-inicial');
+      if (pantallaInicial) {
+        // Oculta todos los hijos directos de 'pantalla-inicial'
+        for (var i = 0; i < pantallaInicial.children.length; i++) {
+          var hijo = pantallaInicial.children[i];
+          if (i === 3) {
+            // Deja visible el primer hijo
+            hijo.style.display = 'block'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.marginLeft = '0'
+            hijo.style.marginTop = '-12.7vh'
+          } else {
+            // Oculta el resto de los hijos
+            hijo.style.display = 'none';
+          }
+        }
+      }  
+      botonClickIV.style.display = 'block'
+      botonClickIV.style.top = '33vh'
+      botonClickIV.style.left = '2vw'    
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
+      aumentarTamanosDeBotonesIV()         
+    break;
+    case 'rebobinador':
+      // Obtén el elemento padre 'pantalla-inicial'
+      var pantallaInicial = document.getElementById('pantalla-inicial');
+      if (pantallaInicial) {
+        // Oculta todos los hijos directos de 'pantalla-inicial'
+        for (var i = 0; i < pantallaInicial.children.length; i++) {
+          var hijo = pantallaInicial.children[i];
+          if (i !== 4) {
+            // Deja visible el primer hijo
+            hijo.style.display = 'none'; // O el valor deseado ('block', 'inline', etc.)
+          } else {
+            // Oculta el resto de los hijos
+            hijo.style.display = 'block'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.marginLeft = '0'
+            hijo.style.marginTop = '-12.7vh'
+            console.log(hijo.id)
+          }
+        }
+      }
+      botonClickV.style.display = 'block'
+      botonClickV.style.top = '33vh'
+      botonClickV.style.left = '2vw'
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
+      aumentarTamanosDeBotonesV()
+    break;
+    default:
+  }    
+  firstClick = false;
+  } else {
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  arrayGeneral.forEach(element => {                                                                   /// SEGUNDO CLICK OCULTA BOTONES / CARGA SECCION CONINUA
+    var elemento = document.getElementById(element)
+    if (elemento) {
+        elemento.style.display = 'none'
+    } 
+  }) 
+  // En el segundo clic, carga la seccion
+  btnsIniciales.forEach(elemento =>{
+    if (elemento){
+      elemento.style.background = ''
+      elemento.style.color = ''
+    }
+  })    
+  abrirSeccionContinua() 
+  }
 
 }
 function muestraRodillo (vidElem, imgCont){

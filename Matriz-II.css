@@ -78,15 +78,15 @@ h1, h2, h3 {
   font-family: "GothamRounded";
 }
 .boton-a{
-  height: 47px;
-  width: 200px;
+  height:6.5vh;
+  width:41.6vw;
   text-align: center;
   background-color: rgba(255, 24, 55);
   color: white;
   cursor: pointer;
   border-radius: 7px;
   position: absolute;
-  top: 5px;
+  top:0.7vh;
 }
 .maq-seccion{
   border: 6px solid gray; 
@@ -358,7 +358,7 @@ color: white;
   display: flex;
   flex-direction: row;
   position: absolute;
-  top: 7px;
+  top:1vh;
 }
 #container01,
 #container02{
@@ -1908,6 +1908,7 @@ margin-right: 7px;
   color: white;
   transition: color 0.2s;
   cursor: pointer;
+  width:100%;
 }
 #titleContainerI::after,
 #titleContainer::after {
@@ -5023,7 +5024,7 @@ input.numero:focus {
     transition: transform 0.1s; 
   }
   #boton1{
-    position: absolute;
+    position:absolute;
     margin-top: -37%;
     left: 10%;
   }
@@ -5054,7 +5055,7 @@ input.numero:focus {
     align-items: center;
     cursor: pointer;
     top:34%;
-    left: 25%;  
+    left:25%;  
     height:3.7vh;
     width:44vw;
     font-size: 10px;     
@@ -5101,10 +5102,10 @@ input.numero:focus {
   .boton-d{
     position: absolute;
     display: flex;
-    margin-left: 12%;
-    margin-top: 13%;
-    height: 27px;
-    width: 60px;
+    margin-left:12%;
+    margin-top:13%;
+    height:3.7vh;
+    width:15vw;
     background: linear-gradient(45deg, rgba(0,250,0) 15%,  rgb(0,255,0,0.077) 85%);                       
     color: rgb(0,0,0);
     border-radius: 5px;
@@ -5789,14 +5790,20 @@ input.numero:focus {
     left: 5%;
     top: 14%;
     width: 0;
-    height: 7px;
+    height:1vh;
     transition: 0.1s;
+  }
+  .iridescent-element{
+    width:42vw;
+    height:28vh;
+    animation: iridescent 4s infinite;
   }
   #titleContainerI{
     position: fixed;
     display: flex;
     left: 5%;  
-    top: 13%;  
+    top: 13%;
+    width:23vw;  
     align-items: center;
   }
   #linkListI{
@@ -5813,16 +5820,20 @@ input.numero:focus {
   }
   /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #links-iniciales{  /* PADRE LINKS INICIALES-II  */
-    position: relative;
+    position: absolute;
     top: 17%;
-    left: 7%;
+    left:57vw;
+    height:57vh;
+    /* width:44vw; */
     z-index: 33;
   }
   #links-inicialesI{  /* PADRE LINKS PILARES  */
-    position: relative;
+    position: absolute;
     top: 17%;
     left: 7%;
-    z-index: 33;
+    height:57vh;
+    /* width:44vw; */
+    z-index: 33;    
   }
   #line {
     position: fixed;
@@ -5836,7 +5847,8 @@ input.numero:focus {
     position: fixed;
     display: flex;
     left: 47%;  
-    top: 13%;  
+    top: 13%; 
+    width:39vw; 
     align-items: center;
   }
   #linkList {
