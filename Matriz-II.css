@@ -365,6 +365,7 @@ color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  width:35%; 
   left: 50%;
   transform: translate(-50%);  
   display: none;
@@ -396,10 +397,10 @@ color: white;
 .alimentadorId,
 .uTeñido,
 .desbobinador{
-  position: absolute;
+  position: relative;
   flex-direction: column;
   display: flex;
-  margin-right: 177px;
+  /* margin-right:13.6vw; */
 }
 #desbobinadorId,
 #uTeñidos,
@@ -4971,7 +4972,7 @@ input.numero:focus {
     height:auto;
     top: 7%;
   }
-  #pantalla-inicial{
+  /* #pantalla-inicial{
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -4980,16 +4981,36 @@ input.numero:focus {
     top: 24vh;
     left:-1vw;
     display: none;
+  } */
+  #pantalla-inicial{
+    position: relative;
+    display: flex;
+    height:100vh;
+    width: 100vw; 
+    top: 24vh;
+    left:-1vw;
+    display: none;
   }
-  #desbobinadorId,
+  #desbobinadorId
   #uTeñidos,
   #alimentadorId,
   #unidProceso,
   #rebobinador{
-  position: relative;
-  padding-right:14vw;
-  width:100%;
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    align-items: center;  
   }
+  .rebobinador,
+  .unidProceso,
+  .alimentadorId,
+  .uTeñido,
+  .desbobinador{
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  height:34vh;
+ }
   #cont-Verticales1,
   #cont-Verticales2,
   #cont-Verticales33,
@@ -5023,30 +5044,14 @@ input.numero:focus {
     text-align: center;
     transition: transform 0.1s; 
   }
+  #boton7,
+  #boton13,
+  #boton19,
+  #boton25,
   #boton1{
-    position:absolute;
-    margin-top: -37%;
-    left: 10%;
-  }
-  #boton7{
-    position: absolute;
-    margin-top: -37%;
-    left: 10%;
-  }
-  #boton13{
-    position: absolute;
-    margin-top: -37%;
-    left: 11%;
-  }
-  #boton19{
-    position: absolute;
-    margin-top: -37%;
-    left: 11%;
-  }
-  #boton25{
-    position: absolute;
-    margin-top: -37%;
-    left:13%;
+    position:relative;
+    left: 12%;
+    top:-7%;
   }
  /*//////////////////////////////////////////////////////////////////////////////////////////*/
   #toggleVideoButton{

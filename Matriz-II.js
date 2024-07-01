@@ -754,8 +754,8 @@ padreManometro.addEventListener('dblclick', () => {
 })
 botonClick.addEventListener('mouseup', () => {                   
   cierraContenedores('desbobinadorId','boton1')
-}) 
-botonClickII.addEventListener('mouseup', () => {                
+})
+botonClickII.addEventListener('mouseup', () => {
   cierraContenedores('uTeñido')
 })   
 botonClickIII.addEventListener('mouseup', () => {                

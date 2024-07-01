@@ -5,7 +5,7 @@ function deslizaContenedor(identificador, idButton) {
   visor3.style.display = 'none'
   visor3.style.visibility = 'hidden'  
 
-  var contBotKaizen = document.getElementById('conti-boton-kaizen')
+  var contBotKaizen = document.getElementById('conti-boton-kaizen')  
   contBotKaizen.removeAttribute('style')
   linkIni1.style.left = ''
   linkIni2.style.left = ''  
@@ -238,7 +238,7 @@ document.addEventListener('keydown', function(event) {
           listaEntrenamientosII('archivo')                                
         },1677) 
         setTimeout(function() {
-          imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')     
+          abrirSeccionContinua()              
         },1977)       
       break;
       case 'H': 
@@ -5790,7 +5790,7 @@ function showMetrics(){
 }   
 function firstMovement(){ // FIRST
   stopWidth = false
-/*   var elementosExcluidos = ['def2','general','first_half','buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
+  /*   var elementosExcluidos = ['def2','general','first_half','buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
