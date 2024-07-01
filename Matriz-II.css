@@ -4972,16 +4972,6 @@ input.numero:focus {
     height:auto;
     top: 7%;
   }
-  /* #pantalla-inicial{
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    height:100vh;
-    width: 100vw; 
-    top: 24vh;
-    left:-1vw;
-    display: none;
-  } */
   #pantalla-inicial{
     position: relative;
     display: flex;
@@ -5001,16 +4991,34 @@ input.numero:focus {
     display: flex;
     align-items: center;  
   }
-  .rebobinador,
-  .unidProceso,
-  .alimentadorId,
-  .uTeñido,
-  .desbobinador{
-  position: relative;
-  flex-direction: column;
+  #toggleVideoButton{
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    top:34%;
+    left:25%;  
+    height:3.7vh;
+    width:44vw;
+    font-size: 10px;     
+    justify-content: center;
+    background-color: rgb(255, 24, 55);
+    color: white;
+    transition: transform 0.1s;
+  }
+  .torre{
   display: flex;
+  top:-1%;
   height:34vh;
  }
+ .torre-imp{
+  position: absolute;  
+  display: flex;
+  height: 57vh;
+  width: 100%;
+  top:36%;
+  left: 3%;
+}
   #cont-Verticales1,
   #cont-Verticales2,
   #cont-Verticales33,
@@ -5054,22 +5062,6 @@ input.numero:focus {
     top:-7%;
   }
  /*//////////////////////////////////////////////////////////////////////////////////////////*/
-  #toggleVideoButton{
-    position: absolute;
-    text-align: center;
-    align-items: center;
-    cursor: pointer;
-    top:34%;
-    left:25%;  
-    height:3.7vh;
-    width:44vw;
-    font-size: 10px;     
-    justify-content: center;
-    background-color: rgb(255, 24, 55);
-    color: white;
-    transition: transform 0.1s;
-  
-  }
   #sis-humedad,
   #bancada-torre,
   #bateria-entintado,
@@ -5080,14 +5072,6 @@ input.numero:focus {
     top: 6%;
     margin-right: 25%;
  }
-  .torre-imp{
-    position: absolute;  
-    display: flex;
-    height: 57%;
-    width: 100%;
-    top:36%;
-    left: 3%;
-  }
   #rotatek-1{
     position: relative;
     display: flex;
@@ -5119,12 +5103,21 @@ input.numero:focus {
     cursor: pointer; 
     transition: transform 0.1s;
   } 
-  #conti-boton-desb{
+  #lubricacion{
     position: absolute;
+    top:31vh;
+    left:25vw;
+    height:30vh;
+    width:80vw;
+  }
+  #conti-boton-desb{
+    position: relative;
     display: flex;
     flex-direction: column;
-    left: 25%; 
-    top: 31%;
+    left:0; 
+    top:0;
+    width:41%;
+    height:100%;
   } 
   #conti-boton-desb button{
     margin-bottom: 8%;
@@ -5139,8 +5132,9 @@ input.numero:focus {
   }  
   #frec-lubrica{
     position: absolute;
-    left:61%;
-    top: 53%;
+    width:33vw;
+    left:53%;
+    top:20vh;
   } 
   #lubri-I{
     position: relative;

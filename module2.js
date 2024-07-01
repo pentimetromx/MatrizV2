@@ -232,14 +232,24 @@ document.addEventListener('keydown', function(event) {
           barraInteligente()        
         },1177) 
         setTimeout(function() {
-          deslizaContenedor('troubleshooting','troubleshoot')                                 
+          deslizaContenedor('troubleshooting','troubleshoot')           
         },1377)
         setTimeout(function() {
           listaEntrenamientosII('archivo')                                
         },1677) 
         setTimeout(function() {
           abrirSeccionContinua()              
-        },1977)       
+        },1977)
+        setTimeout(function() {
+          cierraContenedores('desbobinadorId')          
+        },2177)
+        setTimeout(function() {
+          lubricacion('boton2','boton1')              
+        },3077) 
+        setTimeout(function() {
+          LubricaDesbobinador('btn1')              
+        },3377) 
+      
       break;
       case 'H': 
       changeColorRedAndBack()      
@@ -253,7 +263,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('boton2'); 
+  var contiBoton = document.getElementById('lubricacion'); 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;

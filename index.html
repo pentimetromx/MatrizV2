@@ -504,9 +504,9 @@
       <button class="boton-a" id="bot-atras32" style="text-align: center;width: 47px;position: relative;left: 685px;top: 5px;;display: none" onclick="irContenedorSiguiente('rotatek-1')"></button>
     </div><br>
 
-    <div id="pantalla-inicial"> 
+    <div id="pantalla-inicial">
 
-      <div class="desbobinador" id="desbobinadorId">
+      <div class="torre" id="desbobinadorId">
         <button class="boton-b btn-bloque" id="boton1">DESBOBINADOR</button><br> <!-- ADDEVENT LISTENER - 'Matriz-II (linea 755)' -->
         <div class="contene-7" id="cont-Verticales1">
           <div class="linea-vertical-33"></div>
@@ -517,8 +517,7 @@
           <button id="boton6" class="boton-c" onclick="lubricacion('boton6')">Regulación neumática<div class="linea-horizontal"></div></button>
         </div>         
       </div>
-
-      <div class="uTeñido" id="uTeñidos">  
+      <div class="torre" id="uTeñidos">  
         <button class="boton-b btn-bloque" id="boton7">UNIDAD TEÑIDO</button><br>       
         <div class="contene-7" id="cont-Verticales2">
           <div class="linea-vertical-33"></div>
@@ -529,8 +528,7 @@
           <button class="boton-c" id="boton12" onclick="UnidadTeñido('boton12','boton7')">Depositos de anilina<div class="linea-horizontal"></div></button>
         </div>
       </div>
-
-      <div class="alimentadorId" id="alimentadorId">
+      <div class="torre" id="alimentadorId">
         <button class="boton-b btn-bloque" id="boton13">ALIMENTADOR</button><br> 
         <div class="contene-7" id="cont-Verticales33">
           <div class="linea-vertical-33"></div>
@@ -541,8 +539,7 @@
           <button class="boton-c" id="boton18"  onclick="UnidadAlimenta('boton18','boton13')">Ajuste neumatico<div class="linea-horizontal"></div></button>
         </div>          
       </div>
-
-      <div class="unidProceso" id="unidProceso">  
+      <div class="torre" id="unidProceso">  
         <button class="boton-b btn-bloque" id="boton19">UNIDAD DE PROCESO</button><br>  
         <div class="contene-7" id="cont-Verticales7">
           <div class="linea-vertical-33"></div>
@@ -553,8 +550,7 @@
           <button class="boton-c" id="boton24" onclick="UnidadProceso('boton24','boton19')">Remaliner<div class="linea-horizontal"></div></button>
         </div>          
       </div>
-
-      <div class="rebobinador" id="rebobinador">
+      <div class="torre" id="rebobinador">
         <button class="boton-b btn-bloque" id="boton25">REBOBINADOR</button><br>                     
         <div class="contene-7"  id="cont-Verticales8">
           <div class="linea-vertical-33"></div>
@@ -564,8 +560,7 @@
           <button class="boton-c" id="boton29" onclick="UnidadRebonina('boton29','boton25')">Transmision<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton30" onclick="UnidadRebonina('boton30','boton25')">Ajuste neumatico<div class="linea-horizontal"></div></button>
         </div>          
-      </div>         
-
+      </div>       
       <button id="toggleVideoButton">TORRE DE IMPRESIÓN</button>  
              
       <div class="torre-imp" id="torre-imp">
@@ -998,7 +993,7 @@
       </div>
     </div>
 
-    <div id="lubricacion" style="display: none;">
+    <div id="lubricacion">
 
       <div class="conti-boton" id="conti-boton-desb">
         <button class="butt-mautonomo butt-mautonomo-desb image-trainings" id="btn1" onclick="LubricaDesbobinador('btn1')">REMALINER</button>
@@ -1022,7 +1017,8 @@
           <button id="lub-mensual" class="butt-lub labl-lub" onclick="lubricaDiario('lub-mensual','labl3')"></button>
           <label id="labl3" class="labl-class labl-lub" style="display: none;" for="lub-mensual">Frecuencia mensual</label>
         </div>
-      </div>     
+      </div>   
+        
     </div>
     <div id="lubri-I">
 
