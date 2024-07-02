@@ -5132,6 +5132,7 @@ input.numero:focus {
   }  
   #frec-lubrica{
     position: absolute;
+    display: flex;
     width:32vw;
     height: 16vh;
     left:53%;
@@ -5166,11 +5167,17 @@ input.numero:focus {
   }
   #vidLub{
     position: absolute;
-    top:57.1%;
+    top:57%;
     left:4%; 
-    height:17vh;
+    height:11vh;
     width: 21vw;
   }
+  #lubri-vid{
+    width: 100%; /* Asegura que el video ocupe todo el espacio disponible */
+    height: 100%; /* Asegura que el video ocupe todo el espacio disponible */
+    object-fit: fill; 
+    border-radius: 17px;
+  } 
   #aceitera{
     position: absolute;
     display: flex;
@@ -5186,7 +5193,7 @@ input.numero:focus {
     align-items: center;
     transform: translate(-50%, -50%);
     top: 127%;
-    left: 62%;
+    left: 63%;
     height: 37vh;
     width: 40%;
     gap: 1%;
@@ -5229,10 +5236,6 @@ input.numero:focus {
     width:49vw;
     display: none;
   }  
-  #lubri-vid{
-    height:11vh;
-    border-radius: 17px;
-  } 
   #aceitera-II{
     position: absolute;
     display: flex;
