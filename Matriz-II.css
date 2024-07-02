@@ -5154,6 +5154,7 @@ input.numero:focus {
     width:0.16vw;
     height:36vh;
   }
+  #grasa,
   #aceite{
     position: absolute;
     left:10%;
@@ -5166,11 +5167,11 @@ input.numero:focus {
   }
   #vidLub{
     position: absolute;
-    top:63%;
-    left:2%; 
+    top:57%;
+    left:4%; 
     height:17vh;
     width: 22vw;
-  } 
+  }
   #aceitera{
     position: absolute;
     display: flex;
@@ -5186,16 +5187,18 @@ input.numero:focus {
   }
   .linea-vertical-II{
     position: absolute;
-    left: 44%;
-    top: 1%px;
-    bottom: 0;
-    height: 257px;
+    left:1%;
+    top:7%;
+    width:0.16vw;
+    height:36vh;
   }
   #lubri-II{
-    position: relative;
+    position:absolute;
     display: flex;
-    left:33%;
-    top:-24%;
+    left:50vw;
+    top:59vh;
+    height:40vh;
+    width:49vw;
     display: none;
   }  
   #lubri-vid{
@@ -5206,15 +5209,15 @@ input.numero:focus {
     position: absolute;
     display: flex;
     flex-direction: column;
-    margin-top: -31%;
-    left: 25%;
-    display: none; 
+    display: none;
+    top:12%;
+    left:4%;
   }
   #aceitera-II img{
     height: 77px;
     width: 104px;
     border-radius: 17px; 
-    margin-bottom: 20px;
+    margin-bottom: 9px;
   }   
   #aceitera img{
     height:10vh;
@@ -5225,18 +5228,6 @@ input.numero:focus {
   #indicaciones label{
     margin-top: 77px;
     font-size: 10px;
-  }
-  #grasa{
-    position: absolute;
-    left:24%;
-    margin-top: -24.5%;
-    font-size: 17px;
-    text-align: center;
-    align-items: center;
-    width: 177px;
-    height: 27px;
-    border-radius: 7px;
-    display: none;
   }
   #lubri-III{
     position: absolute;
@@ -5308,9 +5299,8 @@ input.numero:focus {
   }  
   #indicaciones-II{
     position: absolute;
-    margin-top: -36%;
-    left: 48%;
-  }
+    top:49%;
+    left:50%;  }
   #indicaciones-II label{
     margin-top: 31%;
     font-size: 10px;
