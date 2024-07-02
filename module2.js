@@ -244,11 +244,14 @@ document.addEventListener('keydown', function(event) {
           cierraContenedores('desbobinadorId')          
         },2177)
         setTimeout(function() {
-          lubricacion('boton2','boton1')              
+          lubricacion('boton2','boton1')               
         },3077) 
         setTimeout(function() {
           LubricaDesbobinador('btn1')              
-        },3377) 
+        },3377)
+        setTimeout(function() {
+          lubricaDiario('lub-diario','labl1')             
+        },3677)
       
       break;
       case 'H': 
@@ -263,7 +266,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('lubricacion'); 
+  var contiBoton = document.getElementById('vidLub'); 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -2514,7 +2517,6 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
      }
    }
  });
- /* //////////////////////////////////AUMENTO Y MOVIMIENTO IMAGENES ///////////////////////////////////////////// */
  const zoomableImages = document.querySelectorAll('.image-trainings')
  const sensitivity = 5; 
  zoomableImages.forEach((zoomableImage) => {
@@ -3910,70 +3912,6 @@ let intervalId4 = null
 let intervalId5 = null
 let intervalId6 = null
 let intervalId7 = null
-/* buttonLeft.addEventListener('touchstart', () => {
-  intervalId = setInterval(() => {
-    var tituloElement = document.getElementById("titulo");
-    let currentLeft = parseFloat(window.getComputedStyle(button).left)
-    let newLeft = currentLeft + 2
-  if(newLeft <= 2){
-    makeFilters()
-    blurAmount = 0;
-    brightnessAmount = 1;      
-  }
-  if (newLeft <= 150) {
-    posicionPantalla.style.color = 'rgb(0,255,0)'
-    posicionPantalla.style.borderColor = 'rgb(0,255,0)'
-    button.style.left = `${newLeft}px`;
-    slider1.style.width = `${newLeft}px`;
-    blurAmount += 0.01
-    applyFilters(); // Aplicar los filtros actualizados
-  }    
-  if(newLeft === 150){
-    clearInterval(intervalId)
-    interfaz.style.display = 'flex'
-    tituloElement.textContent = "BAJA DEFINICION DE VIDEO"; 
-    tituloElement.style.backgroundColor = 'orange'
-    tituloElement.style.color = 'black'           
-  }
-  if(newLeft >= 150){
-    posicionPantalla.style.color = 'orange'
-    posicionPantalla.style.borderColor = 'orange'
-    slider2.style.width = `${newLeft-150}px`
-    button.style.left = `${newLeft}px`
-    blurAmount += 0.01
-    applyFilters(); // Aplicar los filtros actualizados      
-  } 
-  if(newLeft === 330){
-    clearInterval(intervalId)
-    interfaz.style.display = 'flex'
-    container.style.visibility = 'hidden'
-    verButtsInterfaz.style.visibility = 'hidden'
-    button.style.visibility = 'hidden'
-    posicionPantalla.style.visibility = 'hidden'
-    tituloElement.textContent = "PERDIDA TOTAL DE DEFINICION";  
-    tituloElement.style.backgroundColor = 'rgb(255,0,0)'
-    tituloElement.style.color = 'white'
-    verButtsInterfaz.style.pointerEvents = "none";
-  }
-  if(newLeft >= 330){
-    posicionPantalla.style.color = 'rgb(255,0,0)'
-    posicionPantalla.style.borderColor = 'rgb(255,0,0)'
-    slider3.style.width = `${newLeft-327}px`
-    button.style.left = `${newLeft}px`
-    blurAmount += 0.1
-    applyFilters(); // Aplicar los filtros actualizados      
-  }
-  if (newLeft >= 400) {
-    setTimeout(() => {
-    positionDisplay.textContent = `${'400'} - µpm`     
-    clearInterval(intervalId)        
-    }, 17);
-    makeFiltersIV()
-  }
-  positionDisplay.textContent = `${newLeft} - µpm`
-  }, 7);
-}); */
-
 buttonLeft.addEventListener('mousedown', () => {
   if (!clickHabilitado) return; 
   intervalId = setInterval(() => {
@@ -4098,7 +4036,6 @@ buttReset.addEventListener('mousedown', () => {
   makeFilters()
     clickHabilitado = true;
 })
-/* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 buttonLeft2.addEventListener('mousedown', () => {
   intervalId5 = setInterval(() => {    
     if (currentRotation < 360) {
@@ -4148,7 +4085,6 @@ buttonRight2.addEventListener('mouseleave', () => {
 buttReset2.addEventListener('mousedown', () => {
   makeFiltersII()
 })
-/* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 buttonLeft3.addEventListener('mousedown', () => {
   intervalId6 = setInterval(() => {        
     if (currentZoom + 101 <= 300) {
@@ -4200,7 +4136,7 @@ buttonRight3.addEventListener('mouseleave', () => {
 buttReset3.addEventListener('mousedown', () => {
   makeFiltersIII()
 })
-/* 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
+
 botVerde.addEventListener('mousedown', () => {
   verButtsInterfaz.style.pointerEvents = "auto"
   interfaz.style.display = 'none'
@@ -4225,7 +4161,6 @@ botNaran.addEventListener('mousedown', () => {
   button.style.left = '0'
   makeFilters()
 })
-/* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 botRed.addEventListener('mousedown', resetButtons);
 botClose.addEventListener('mousedown', resetButtons); 
 function resetButtons() {
@@ -4384,7 +4319,6 @@ function eliminarEstilosInline(elemento) {
     elemento.style[propiedad] = ""
   }
 }
-/* 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 let contFriends = []
 function animateVideoWidth(eltoHtml) {
   const videoElement = document.getElementById(eltoHtml); // Obtén el elemento de video
@@ -4786,8 +4720,6 @@ function cambiarColor(elemento, encendido) {
     break;
   }
 }
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-
 let barraI = document.getElementById('iniciador_1')
 let barraII = document.getElementById('iniciador_2')
 let barraIII = document.getElementById('iniciador_3')
@@ -5146,51 +5078,6 @@ let isAnimatingIX = false;
 let isAnimatingX = false;
 let isAnimatingXI = false;
 
-/* function incrementoHeightVI() {   // BARRAS HORIZONTALES (1)
-  if (isAnimatingVI) return;
-  isAnimatingVI = true;
-  let r = 0;
-  let g = 255;
-  let b = 0;
-  INTERVALOSHORIZONTALES.intervaloXVI = setInterval(() => {
-    contadorII++
-    if (contadorII >= 100 && !isAnimatingXI) {
-      isAnimatingXI = true;
-      changeColorToGreen();
-    }
-    let alturaAct = parseFloat(barraVI.style.width) || 0;
-    barraVI.style.width = (alturaAct + 1) + '%';
-    let alturaAcumuladaBarraI = alturaAct + 1;
-    if (alturaAcumuladaBarraI <= alturaBarras) {
-      let progreso = alturaAcumuladaBarraI / alturaBarras;
-      b = alturaAcumuladaBarraI + 1.4;
-    }
-    barraVI.style.backgroundColor = `rgb(${r}, ${g}, ${b})`; 
-    if (alturaAcumuladaBarraI >= 20) {
-      isAnimatingVII = false
-      incrementoHeightVII();
-    }
-    if (alturaAcumuladaBarraI >= alturaBarras) {
-      isAnimatingVI = false
-      clearInterval(INTERVALOSHORIZONTALES.intervaloXVI);
-      reduccionHeightVI();
-    }
-  }, 1);
-}
-function reduccionHeightVI() {
-  if (isAnimatingVI) return;
-  isAnimatingVI = true;
-  INTERVALOS.intervaloXXI = setInterval(() => {
-      let altura = parseFloat(barraVI.style.width) || 0;
-      barraVI.style.width = (altura - 1) + '%';
-      let alturaAcumuladaBarraIII = altura - 1;
-      if (alturaAcumuladaBarraIII <= 0) {
-        clearInterval(INTERVALOS.intervaloXXI);
-        isAnimatingVI = false;
-        incrementoHeightVI()
-      }
-  }, 5);
-} */
 function incrementoHeightVII() {       // BARRAS HORIZONTALES (2)  
   if (isAnimatingVII) return;
   isAnimatingVII = true;
@@ -5360,43 +5247,6 @@ function reduccionHeightX() {
     }    
   }, 5); 
 }
-/* function incrementoHeightXVI() {                
-  if (isAnimatingXVI) return;
-  isAnimatingXVI = true;
-  let r = 0;
-  let g = 255;
-  let b = 0;
-  INTERVALOSHORIZONTALES.intervaloXLVII = setInterval(() => {
-    let anchoAct = parseFloat(barra.style.width) || 0;    
-    barra.style.width = (anchoAct + 1) + '%'; 
-    let alturaAcumuladaBarraI = anchoAct + 1;    
-    if (alturaAcumuladaBarraI <= 33) {
-      b = alturaAcumuladaBarraI + 1.4; 
-      g = alturaAcumuladaBarraI + 1.4;
-    }         
-    barra.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-    if (parseInt(alturaAcumuladaBarraI) >= alturaBarras) {
-      clearInterval(INTERVALOSHORIZONTALES.intervaloXLVII);
-      isAnimatingXVI = false;
-      reduccionHeightXVII();
-    }
-  }, 9);
-} */ 
-/* function reduccionHeightXVII() {  
-  if (isAnimatingXVI) return;
-  isAnimatingXVI = true;
-  INTERVALOSHORIZONTALES.intervaloXLVIII = setInterval(() => {
-    let anchoAct = parseFloat(barra.style.width) || 0;
-    barra.style.width = (anchoAct - 1) + '%';
-    let alturaAcumuladaBarraIII = anchoAct - 1;
-    if (parseInt(alturaAcumuladaBarraIII) <= 0) {             
-      clearInterval(INTERVALOSHORIZONTALES.intervaloXLVIII);
-      isAnimatingXVI = false;
-      incrementoHeightXVI();
-    }    
-  }, 5); 
-} */
-/* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
 function incrementoWidthI() {  // ALTURA SEGUNDA CORTINA 
   INTERVALOS.intervaloXXXIII = setInterval(() => {
     imgWallStreet.style.display = 'flex'
@@ -5766,14 +5616,6 @@ function detenerCicodelia() {
     intervaloColorsI = null; // Resetea la variable para evitar problemas
   }
 }
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 function showMetrics(){
   setTimeout(() => {
     firstMovement()

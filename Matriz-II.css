@@ -5133,16 +5133,64 @@ input.numero:focus {
   #frec-lubrica{
     position: absolute;
     width:33vw;
+    height: 16vh;
     left:53%;
-    top:70%;
+    top:62%;
   } 
+  /* 7777777777777777 */
   #lubri-I{
-    position: relative;
+    position:absolute;
     display: flex;
-    left:10%;
-    top:-24%;
+    left:1vw;
+    top:59vh;
+    height:40vh;
+    width:49vw;
     display: none;
   } 
+  #vertical-lineI{
+    position: absolute;
+    left:1%;
+    top:7%;
+    width:0.16vw;
+    height:36vh;
+  }
+  #aceite{
+    position: absolute;
+    left:10%;
+    top:0;
+    font-size:17px;
+    width:80%;
+    height:3.7vh;
+    border-radius: 7px;
+    display: none;
+  }
+  #vidLub{
+    position: absolute;
+    top:63%;
+    left:2%; 
+    height:17vh;
+    width: 22vw;
+  } 
+  #aceitera{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    top:37%;
+    left:4%; 
+  } 
+  #indicaciones{
+    position: absolute;
+    top:90%;
+    left:50%;
+  }
+  .linea-vertical-II{
+    position: absolute;
+    left: 44%;
+    top: 1%px;
+    bottom: 0;
+    height: 257px;
+  }
   #lubri-II{
     position: relative;
     display: flex;
@@ -5150,25 +5198,9 @@ input.numero:focus {
     top:-24%;
     display: none;
   }  
-  #vidLub{
-    position: absolute;
-    display: flex;
-    margin-top:-130px;
-    left: -3%; 
-    border-radius: 17px;
-    height: 77px;
-    display: none;
-  } 
   #lubri-vid{
-    height: 77px;
-  } 
-  #aceitera{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    display: none;
-    margin-top: -8%;
-    left: -3%; 
+    height:11vh;
+    border-radius: 17px;
   } 
   #aceitera-II{
     position: absolute;
@@ -5185,33 +5217,14 @@ input.numero:focus {
     margin-bottom: 20px;
   }   
   #aceitera img{
-  height: 77px;
-  width: 104px;
-  border-radius: 17px; 
-  margin-bottom: 17px;
-  }
-  #indicaciones{
-    position: absolute;
-    margin-top: -47%;
-    left: 20%;
+    height:10vh;
+    width:21vw;
+    border-radius: 17px; 
+    margin-bottom: 7px;
   }
   #indicaciones label{
     margin-top: 77px;
     font-size: 10px;
-  }
-  .linea-vertical-II{
-    position: absolute;
-    left: 44%;
-    top: 1%px;
-    bottom: 0;
-    height: 257px;
-  }
-  #vertical-lineI{
-    position: absolute;
-    left: -30px;
-    top: -126px;
-    width: 2px;
-    height: 257px;
   }
   #grasa{
     position: absolute;
@@ -5220,16 +5233,6 @@ input.numero:focus {
     font-size: 17px;
     text-align: center;
     align-items: center;
-    width: 177px;
-    height: 27px;
-    border-radius: 7px;
-    display: none;
-  }
-  #aceite{
-    position: absolute;
-    left:-5% ;
-    margin-top: 5%;
-    font-size: 17px;
     width: 177px;
     height: 27px;
     border-radius: 7px;
