@@ -5169,8 +5169,9 @@ input.numero:focus {
     position: absolute;
     top:57%;
     left:4%; 
-    height:11vh;
+    height:10vh;
     width: 21vw;
+    margin-bottom: 5px;
   }
   #lubri-vid{
     width: 100%; /* Asegura que el video ocupe todo el espacio disponible */
