@@ -2369,7 +2369,7 @@ h6{
   display: flex;
   flex-direction: column;
   left: 27%;
-  margin-top: -38%;
+  margin-top: -40%;
   z-index: 3;
 }  
 #frec-lubrica button{
@@ -5167,7 +5167,7 @@ input.numero:focus {
   }
   #vidLub{
     position: absolute;
-    top:57%;
+    top:57.1%;
     left:4%; 
     height:17vh;
     width: 21vw;
@@ -5202,7 +5202,7 @@ input.numero:focus {
     flex-direction: column;
     /* align-items: center; */
     transform: translate(-50%, -50%);
-    top: 83%;
+    top: 84%;
     left: 75%;
     height: 37vh;
     width: 60%;
@@ -5318,28 +5318,7 @@ input.numero:focus {
     width: 80px;
     border-radius: 17px; 
     margin-bottom: 10px;
-  }
-/*   #indicaciones-II {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    top: 1%;
-    left: 20vw;
-    height: 33vh;
-    width: 45%;  
-  }
-  
-  #indicaciones-II label {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    border: 1px solid #ccc;
-    color: yellow;
-  } */
-  
+  }  
   #uniTeñido{
     position: relative;
     top: 1%;

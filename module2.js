@@ -266,7 +266,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('vidLub'); 
+  var contiBoton = document.getElementById('indicaciones-II') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -277,17 +277,37 @@ function Geometria() {
   var displayType = style.display;
   var visibilityType = style.visibility;
   var isVisible = rect.width > 0 && rect.height > 0 && displayType !== 'none' && visibilityType !== 'hidden';
-  console.log('ID:', contiBoton.id);
-  console.log('Top:', topPosition);
-  console.log('Left:', leftPosition);
-  console.log('Height:', heightValue);
-  console.log('Width:', widthValue);
-  console.log('Position:', positionType);
-  console.log('Display:', displayType);
-  console.log('Visibility:', visibilityType);
-  console.log('Is Visible:', isVisible);
+  console.log('1 :','ID:', contiBoton.id);
+  console.log('1 :','Top:', topPosition);
+  console.log('1 :','Left:', leftPosition);
+  console.log('1 :','Height:', heightValue);
+  console.log('1 :','Width:', widthValue);
+  console.log('1 :','Position:', positionType);
+  console.log('1 :','Display:', displayType);
+  console.log('1 :','Visibility:', visibilityType);
+  console.log('1 :','Is Visible:', isVisible);
+  
+  var contiBotonI = document.getElementById('indicaciones') 
+  var rect = contiBotonI.getBoundingClientRect();
+  var topPosition = rect.top;
+  var leftPosition = rect.left;
+  var widthValue = rect.width;
+  var heightValue = rect.height;
+  var style = window.getComputedStyle(contiBotonI);
+  var positionType = style.position;
+  var displayType = style.display;
+  var visibilityType = style.visibility;
+  var isVisible = rect.width > 0 && rect.height > 0 && displayType !== 'none' && visibilityType !== 'hidden';
+  console.log('2 :','ID:', contiBotonI.id);
+  console.log('2 :','Top:', topPosition);
+  console.log('2 :','Left:', leftPosition);
+  console.log('2 :','Height:', heightValue);
+  console.log('2 :','Width:', widthValue);
+  console.log('2 :','Position:', positionType);
+  console.log('2 :','Display:', displayType);
+  console.log('2 :','Visibility:', visibilityType);
+  console.log('2 :','Is Visible:', isVisible);
 }
-
 function updateAna() {
   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
   setTimeout(function() {
