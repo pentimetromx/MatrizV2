@@ -5170,7 +5170,7 @@ input.numero:focus {
     top:57%;
     left:4%; 
     height:17vh;
-    width: 22vw;
+    width: 21vw;
   }
   #aceitera{
     position: absolute;
@@ -5179,11 +5179,41 @@ input.numero:focus {
     display: none;
     top:37%;
     left:4%; 
-  } 
+  }
   #indicaciones{
     position: absolute;
-    top:90%;
-    left:50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    top: 127%;
+    left: 60%;
+    height: 37vh;
+    width: 40%;
+    gap: 1%;
+  }
+  #indicaciones label{
+    margin-top: 10vh;
+    font-size: 10px;
+  }
+  #indicaciones-II{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    transform: translate(-50%, -50%);
+    top: 83%;
+    left: 75%;
+    height: 37vh;
+    width: 60%;
+    gap: 1%;
+  }
+  #indicaciones-II label{
+    margin-top: 4vh;
+    font-size: 10px;
+  }
+  .butt-lub{
+    width: 100%;
   }
   .linea-vertical-II{
     position: absolute;
@@ -5214,8 +5244,8 @@ input.numero:focus {
     left:4%;
   }
   #aceitera-II img{
-    height: 77px;
-    width: 104px;
+    height:10vh;
+    width:21vw;
     border-radius: 17px; 
     margin-bottom: 9px;
   }   
@@ -5225,10 +5255,7 @@ input.numero:focus {
     border-radius: 17px; 
     margin-bottom: 7px;
   }
-  #indicaciones label{
-    margin-top: 77px;
-    font-size: 10px;
-  }
+  
   #lubri-III{
     position: absolute;
     display: flex;
@@ -5279,11 +5306,6 @@ input.numero:focus {
   .labl-lub{
     font-size: 11px;
   }
-  #aceitera-II{
-    display: flex;
-    flex-direction: column;
-    display: none;
-  }
   #balineras-II{
     position: absolute;
     top: -7.3%;
@@ -5296,15 +5318,28 @@ input.numero:focus {
     width: 80px;
     border-radius: 17px; 
     margin-bottom: 10px;
-  }  
-  #indicaciones-II{
+  }
+/*   #indicaciones-II {
     position: absolute;
-    top:49%;
-    left:50%;  }
-  #indicaciones-II label{
-    margin-top: 31%;
-    font-size: 10px;
-  } 
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    top: 1%;
+    left: 20vw;
+    height: 33vh;
+    width: 45%;  
+  }
+  
+  #indicaciones-II label {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #ccc;
+    color: yellow;
+  } */
+  
   #uniTeñido{
     position: relative;
     top: 1%;
