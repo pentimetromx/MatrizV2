@@ -5132,12 +5132,11 @@ input.numero:focus {
   }  
   #frec-lubrica{
     position: absolute;
-    width:33vw;
+    width:32vw;
     height: 16vh;
     left:53%;
     top:62%;
   } 
-  /* 7777777777777777 */
   #lubri-I{
     position:absolute;
     display: flex;
@@ -5202,9 +5201,9 @@ input.numero:focus {
     flex-direction: column;
     transform: translate(-50%, -50%);
     top: 84%;
-    left: 75%;
+    left: 69%;
     height: 37vh;
-    width: 60%;
+    width: 45%;
     gap: 1%;
   }
   #indicaciones-II label{
@@ -7858,7 +7857,7 @@ input.numero:focus {
   }
   #padre{
     position:absolute;
-    top:17vh;
+    top:18vh;
     left:5vw;
     width:90vw; 
     height:18vh;
