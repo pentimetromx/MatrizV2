@@ -1142,7 +1142,7 @@ width:447px ;
   display: flex;
   flex-direction: column;
   left: 12%; 
-  top: 38%;
+  top: 31%;
 } 
 #vidTintero,
 #imgTorre-s,
@@ -2369,7 +2369,7 @@ h6{
   display: flex;
   flex-direction: column;
   left: 27%;
-  margin-top: -40%;
+  margin-top: -41.5%;
   z-index: 3;
 }  
 #frec-lubrica button{
@@ -4963,7 +4963,7 @@ input.numero:focus {
   display:block;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 420px) {
   #cont-titulo-comercial,  
   #cont-titulo-admin,
   #cont-titulo-calidad,
@@ -5142,7 +5142,7 @@ input.numero:focus {
     position:absolute;
     display: flex;
     left:1vw;
-    top:59vh;
+    top:56vh;
     height:40vh;
     width:49vw;
     display: none;
@@ -5187,7 +5187,7 @@ input.numero:focus {
     align-items: center;
     transform: translate(-50%, -50%);
     top: 127%;
-    left: 60%;
+    left: 62%;
     height: 37vh;
     width: 40%;
     gap: 1%;
@@ -5200,7 +5200,6 @@ input.numero:focus {
     position: absolute;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     transform: translate(-50%, -50%);
     top: 84%;
     left: 75%;
@@ -5226,7 +5225,7 @@ input.numero:focus {
     position:absolute;
     display: flex;
     left:50vw;
-    top:59vh;
+    top:56vh;
     height:40vh;
     width:49vw;
     display: none;
@@ -5240,7 +5239,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     display: none;
-    top:12%;
+    top:14.3%;
     left:4%;
   }
   #aceitera-II img{
