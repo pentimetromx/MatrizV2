@@ -4462,6 +4462,8 @@ function LubricaDesbobinador(idButt) {
       showLablsLubricacion()
       break;
     case 'btn2':
+      let contenedorAbuelo = document.querySelector('.grand-father');
+      contenedorAbuelo.style.display = 'flex'
       for (var i = 0; i < contVidLub.length; i++) {
         var eltoId = contVidLub[i]
         var eltoLubrica = document.getElementById(eltoId)    

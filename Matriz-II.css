@@ -5303,12 +5303,23 @@ input.numero:focus {
     border-radius: 17px; 
     margin-bottom: 7px;
   }
+  .grand-father{
+    position: relative;
+    display: flex;
+    background-color: rgb(0,0,17);
+    border-radius: 11px;
+    left:8%;
+    top: -47%;
+    width: 90vw;
+    height:37vh;
+    display: none;
+  }
 
-  .contenedor-padre {
+  .contenedor-padre{  /* PADRE CUADRICULA */
     position: absolute;
     display: grid;
-    left:15%;
-    top: 59%;
+    top:1vh;
+    left:1vw;
     width: 90vw;
     height:35vh;
     display: grid;
@@ -5317,29 +5328,31 @@ input.numero:focus {
     gap: 10px;
     box-sizing: border-box;
     border-radius: 11px;
-    display: none;
   }
-.item {
+.item{  /* DIVS HIJOS */
     display: flex;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:'transparent';
-    /* border: 1px solid #000; */
     box-sizing: border-box;
     overflow: hidden;
   }
-  .item-child {
+  .item-child{ /* CLASE PARA IMAGENES DENTRO DE HIJOS */
     width: 100%;
     height: 100%;
     object-fit: fill;
     border-radius: 11px;
   }
-  .labl-lub{
+  .labl-lub{ /* CLASES PARA ETIQUETAS DENTRO DE HIJOS */
     font-size: 11px;
     object-fit: fill;
     width: 100%;
     height: auto;
+  }
+  .contenedor-padre label{ 
+    position:relative;
+    display: grid;
+    margin-top: -3vh;
   }
 
   #vertcal-line-II{
