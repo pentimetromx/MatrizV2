@@ -5307,12 +5307,12 @@ input.numero:focus {
   .contenedor-padre {
     position: absolute;
     display: grid;
-    left:0.5%;
-    top: 58%;
+    left:15%;
+    top: 59%;
     width: 90vw;
     height:35vh;
     display: grid;
-    grid-template-columns: 20% 30% 20% 30%;
+    grid-template-columns: 17% 20% 17% 20%;
     grid-template-rows: repeat(4, 1fr);
     gap: 10px;
     box-sizing: border-box;
