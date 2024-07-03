@@ -5272,6 +5272,8 @@ input.numero:focus {
     grid-template-rows: repeat(4, 1fr);
     gap: 10px;
     box-sizing: border-box;
+    border-radius: 11px;
+
     display: none;
   }
 .item {
@@ -5290,18 +5292,13 @@ input.numero:focus {
     object-fit: fill;
     border-radius: 11px;
   }
+  .labl-lub{
+    font-size: 11px;
+    object-fit: fill;
+    width: 100%;
+    height: auto;
+  }
 
-
-  
-  /* #lubri-III{
-    position: absolute;
-    display: flex;
-    left:0.5%;
-    top: 55%;
-    width: 99vw;
-    height:44vh;
-    display: none;
-  }  */
   #vertcal-line-II{
     position: absolute;
     left: 1%;
@@ -5340,9 +5337,6 @@ input.numero:focus {
   }
   #indicaciones-VI label{
     margin-bottom: 64px;
-  }
-  .labl-lub{
-    font-size: 11px;
   }
   #balineras-II{
     position: absolute;
