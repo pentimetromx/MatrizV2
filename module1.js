@@ -4136,13 +4136,13 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
 }
 function lubricacion(buttId,btnIniId){ 
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80',]
-  var contVidLub = ['lubri-I', 'lubri-II','lubri-III', 'frec-lubrica','freno','uniTeñido'] 
+  var contVidLub = ['lubri-I', 'lubri-II','padre-lubrica', 'frec-lubrica','freno','uniTeñido'] 
   var elementos = [
     document.getElementById('frec-lubrica'),
     document.getElementById('lubri-I'),
     document.getElementById('lubri-II')
   ]
-  var padreLubriIII = document.getElementById('lubri-III')
+  var padreLubriIII = document.getElementById('padre-lubrica')
   var contLubrica = document.getElementById('lubricacion')
   var arrayIdButtsLubII = ['btn60', 'btn70', 'btn80']
   var botones = document.querySelectorAll('.btn-bloque')
@@ -4180,7 +4180,7 @@ function lubricacion(buttId,btnIniId){
           var eltoId = contVidLub[i]
           var eltoLubrica = document.getElementById(eltoId)         
 
-          if (eltoId === 'lubri-III') {
+          if (eltoId === 'padre-lubrica') {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
             eltoLubrica.style.display = 'flex'
           } else {
@@ -4380,7 +4380,7 @@ function lubricacion(buttId,btnIniId){
       default:
     }
   }
-}  
+} 
 function showButtonsMAconRetrasoDesb() {
   var botones = document.querySelectorAll('.butt-mautonomo-desb') // Selecciona todos los botones
   function mostrarBotonConRetrasoFreno(i) {
@@ -4396,8 +4396,8 @@ function showButtonsMAconRetrasoDesb() {
 }
 function LubricaDesbobinador(idButt) {
   var arrayIdButtsLub = ['btn1', 'btn2', 'btn3', 'btn4', 'btn5', 'btn60', 'btn70', 'btn80']
-  var contVidLub = ['lubri-I', 'lubri-II','lubri-III', 'frec-lubrica'] 
-  var padreLubriIII = document.getElementById('lubri-III')
+  var contVidLub = ['lubri-I', 'lubri-II','padre-lubrica', 'frec-lubrica'] 
+  var padreLubriIII = document.getElementById('padre-lubrica')
   var arrayIdButtsLubII = ['btn60', 'btn70', 'btn80']
   var arrayLabels = ['labl1', 'labl2', 'labl3']
   var arrayLabels = ['labl1', 'labl2', 'labl3']
@@ -4466,9 +4466,9 @@ function LubricaDesbobinador(idButt) {
         var eltoId = contVidLub[i]
         var eltoLubrica = document.getElementById(eltoId)    
 
-        if (eltoId === 'lubri-III') {
+        if (eltoId === 'padre-lubrica') {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'flex'
+            eltoLubrica.style.display = 'grid'
         } else {
             // Si no es 'lubri-III', ocultar el elemento
             eltoLubrica.style.display = 'none'
@@ -4485,7 +4485,7 @@ function LubricaDesbobinador(idButt) {
           // Verificar si el valor actual es 'none'
           if (displayValue === 'none') {
               // Cambiar la propiedad display a 'flex'
-              hijo.style.display = 'flex'
+              hijo.style.display = 'grid'
           }
       }
     }
@@ -4495,9 +4495,9 @@ function LubricaDesbobinador(idButt) {
         var eltoId = contVidLub[i]
         var eltoLubrica = document.getElementById(eltoId)    
 
-        if (eltoId === 'lubri-III') {
+        if (eltoId === 'padre-lubrica') {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'flex'
+            eltoLubrica.style.display = 'grid'
         } else {
             // Si no es 'lubri-III', ocultar el elemento
             eltoLubrica.style.display = 'none'
@@ -4512,7 +4512,7 @@ function LubricaDesbobinador(idButt) {
           var displayValue = window.getComputedStyle(hijo).getPropertyValue('display')
     
           // Verificar si el valor actual es 'none'
-          if (displayValue === 'flex') {
+          if (displayValue === 'grid') {
               // Cambiar la propiedad display a 'flex'
               hijo.style.display = 'none'
           }
@@ -4524,9 +4524,9 @@ function LubricaDesbobinador(idButt) {
         var eltoId = contVidLub[i]
         var eltoLubrica = document.getElementById(eltoId)    
 
-        if (eltoId === 'lubri-III') {
+        if (eltoId === 'padre-lubrica') {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'flex'
+            eltoLubrica.style.display = 'grid'
         } else {
             // Si no es 'lubri-III', ocultar el elemento
             eltoLubrica.style.display = 'none'
@@ -4541,7 +4541,7 @@ function LubricaDesbobinador(idButt) {
           var displayValue = window.getComputedStyle(hijo).getPropertyValue('display')
   
           // Verificar si el valor actual es 'none'
-          if (displayValue === 'flex') {
+          if (displayValue === 'grid') {
               // Cambiar la propiedad display a 'flex'
               hijo.style.display = 'none'
           }
@@ -4553,9 +4553,9 @@ function LubricaDesbobinador(idButt) {
         var eltoId = contVidLub[i]
         var eltoLubrica = document.getElementById(eltoId)    
 
-        if (eltoId === 'lubri-III') {
+        if (eltoId === 'padre-lubrica') {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'flex'
+            eltoLubrica.style.display = 'grid'
         } else {
             // Si no es 'lubri-III', ocultar el elemento
             eltoLubrica.style.display = 'none'
@@ -4570,7 +4570,7 @@ function LubricaDesbobinador(idButt) {
           var displayValue = window.getComputedStyle(hijo).getPropertyValue('display')
   
           // Verificar si el valor actual es 'none'
-          if (displayValue === 'flex') {
+          if (displayValue === 'grid') {
               // Cambiar la propiedad display a 'flex'
               hijo.style.display = 'none'
           }
@@ -4583,9 +4583,9 @@ function LubricaDesbobinador(idButt) {
         var eltoId = contVidLub[i]
         var eltoLubrica = document.getElementById(eltoId)    
 
-        if (eltoId === 'lubri-III') {
+        if (eltoId === 'padre-lubrica') {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'flex'
+            eltoLubrica.style.display = 'grid'
         } else {
             // Si no es 'lubri-III', ocultar el elemento
             eltoLubrica.style.display = 'none'
@@ -4600,7 +4600,7 @@ function LubricaDesbobinador(idButt) {
             var displayValue = window.getComputedStyle(hijo).getPropertyValue('display')
 
             // Verificar si el valor actual es 'flex'
-            if (displayValue === 'flex') {
+            if (displayValue === 'grid') {
                 // Cambiar la propiedad display a 'none'
                 hijo.style.display = 'none'
             }

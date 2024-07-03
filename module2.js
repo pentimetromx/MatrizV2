@@ -247,11 +247,11 @@ document.addEventListener('keydown', function(event) {
           lubricacion('boton2','boton1')               
         },3077) 
         setTimeout(function() {
-          LubricaDesbobinador('btn1')              
+          LubricaDesbobinador('btn2')              
         },3377)
-        setTimeout(function() {
+        /* setTimeout(function() {
           lubricaDiario('lub-diario','labl1')             
-        },3677)
+        },3677) */
       
       break;
       case 'H': 
