@@ -5831,7 +5831,7 @@ function sixthMovement(){ // PATERN
 const child = document.getElementById('child-div');
 const parent = document.getElementById('inicio');
 let pos = 0;
-let step = 1;
+let step = 3;
 const speed = 1;
 const intervals = {
   derecha: null,
