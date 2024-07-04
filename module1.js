@@ -4464,10 +4464,12 @@ function LubricaDesbobinador(idButt) {
     case 'btn2':
       let contenedorAbuelo = document.querySelector('.grand-father');
       contenedorAbuelo.style.display = 'flex'
+
+      moveElement()
+
       for (var i = 0; i < contVidLub.length; i++) {
         var eltoId = contVidLub[i]
-        var eltoLubrica = document.getElementById(eltoId)    
-
+        var eltoLubrica = document.getElementById(eltoId) 
         if (eltoId === 'padre-lubrica') {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
             eltoLubrica.style.display = 'grid'
