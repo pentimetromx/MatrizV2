@@ -5828,8 +5828,6 @@ function sixthMovement(){ // PATERN
 }
 /* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 
-const child = document.getElementById('child-div');
-const parent = document.getElementById('inicio');
 let pos = 0;
 let step = 3;
 const speed = 1;
@@ -5847,47 +5845,50 @@ function stopAllIntervals() {
     }
   }
 }
-function moveElement() {
-  stopAllIntervals();
-  let positionParent = parent.clientWidth - child.clientWidth;
-  intervals.derecha = setInterval(() => {
-    pos += step;
-    child.style.left = pos + 'px';
-    if (pos >= parent.clientWidth - child.clientWidth) {
-      clearInterval(intervals.derecha);
-      pos = 0;
 
-      intervals.baja = setInterval(() => {
-        pos += step;
-        child.style.top = pos + 'px';
-        if (pos >= parent.clientHeight - child.clientHeight) {
-          clearInterval(intervals.baja);
+function moveElement(element, parent) {
+  stopAllIntervals();
+  let positionParent = parent.clientWidth - element.clientWidth;
+  intervals.derecha = setInterval(() => {
+      pos += step;
+      element.style.left = pos + 'px';
+      if (pos >= parent.clientWidth - element.clientWidth) {
+          clearInterval(intervals.derecha);
           pos = 0;
 
-          intervals.izquierda = setInterval(() => {
-            positionParent -= step * 2;
-            child.style.left = positionParent + 'px';
-            if (positionParent <= 0) {
-              clearInterval(intervals.izquierda);
-              positionParent = parent.clientHeight - child.clientHeight;
-              pos = parent.clientHeight - child.clientHeight;
-
-              intervals.arriba = setInterval(() => {
-                pos -= step;
-                child.style.top = pos + 'px';
-                if (pos <= 0) {
-                  clearInterval(intervals.arriba);
+          intervals.baja = setInterval(() => {
+              pos += step;
+              element.style.top = pos + 'px';
+              if (pos >= parent.clientHeight - element.clientHeight) {
+                  clearInterval(intervals.baja);
                   pos = 0;
-                  moveElement();
-                }
-              }, speed * 2);
-            }
+
+                  intervals.izquierda = setInterval(() => {
+                      positionParent -= step * 2;
+                      element.style.left = positionParent + 'px';
+                      if (positionParent <= 0) {
+                          clearInterval(intervals.izquierda);
+                          positionParent = parent.clientHeight - element.clientHeight;
+                          pos = parent.clientHeight - element.clientHeight;
+
+                          intervals.arriba = setInterval(() => {
+                              pos -= step;
+                              element.style.top = pos + 'px';
+                              if (pos <= 0) {
+                                  clearInterval(intervals.arriba);
+                                  pos = 0;
+                                  moveElement(element, parent); // Llama de nuevo a la función para crear un bucle
+                              }
+                          }, speed * 2);
+                      }
+                  }, speed * 2);
+              }
           }, speed * 2);
-        }
-      }, speed * 2);
-    }
+      }
   }, speed * 2);
 }
+
+
 
 
 

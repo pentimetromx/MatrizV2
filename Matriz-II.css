@@ -5303,9 +5303,11 @@ input.numero:focus {
     border-radius: 17px; 
     margin-bottom: 7px;
   }
+  #lubricantes,
   #inicio{
     display:none;
   }
+  .conte-lubrica,
   .genesis{
     position: relative;
     top: -55%;
@@ -5314,6 +5316,17 @@ input.numero:focus {
     height: 39vh;
     background-color: black;
     border-radius: 20px;
+  }
+  #child-move{
+    width: 60px;
+    height: 60px;
+    background-color: rgb(255, 165, 0);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 1), 0 0 30px rgba(255, 165,0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+
   }
   #child-div {
     width: 60px;
@@ -5324,7 +5337,7 @@ input.numero:focus {
     top: 0;
     left: 0;
   }
-  
+  .abuelo-lub,
   .grand-father{
     position: absolute;
     display: flex;
@@ -5339,6 +5352,7 @@ input.numero:focus {
     height:37vh;
     /* display: none; */
   }
+  .contenedor-lubri,
   .contenedor-padre{  /* PADRE CUADRICULA */
     position: absolute;
     display: grid;
@@ -5353,7 +5367,8 @@ input.numero:focus {
     box-sizing: border-box;
     border-radius: 11px;
   }
-.item{  /* DIVS HIJOS */
+  .lubricante,
+  .item{  /* DIVS HIJOS */
     display: flex;
     display: flex;
     justify-content: center;
