@@ -5303,6 +5303,9 @@ input.numero:focus {
     border-radius: 17px; 
     margin-bottom: 7px;
   }
+  #inicio{
+    display: none;
+  }
   .genesis{
     position: relative;
     top: -52%;
@@ -5311,7 +5314,6 @@ input.numero:focus {
     height: 39vh;
     background-color: black;
     border-radius: 20px;
-    /* border: 1px solid rgb(0,255,0); */
   }
   #child-div {
     width: 60px;

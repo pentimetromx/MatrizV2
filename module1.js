@@ -4462,8 +4462,10 @@ function LubricaDesbobinador(idButt) {
       showLablsLubricacion()
       break;
     case 'btn2':
-      let contenedorAbuelo = document.querySelector('.grand-father');
+      let contenedorAbuelo = document.querySelector('.genesis');
+      let contenedorHijo = document.querySelector('.grand-father')
       contenedorAbuelo.style.display = 'flex'
+      contenedorHijo.style.display = 'flex'
 
       moveElement()
 
