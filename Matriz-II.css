@@ -5096,6 +5096,8 @@ input.numero:focus {
   font-size: 11px;
   text-align: left;
   object-fit: fill;
+  font-family: "GothamRounded", sans-serif;
+  color: yellow;
   width: 100%;
   height: auto;
 }
@@ -5416,7 +5418,7 @@ input.numero:focus {
   }
   .genesis{
     position: relative;
-    top: -55%;
+    top: -58%;
     left: 5%;
     width: 93vw;
     height: 42vh;
