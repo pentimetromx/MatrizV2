@@ -5839,7 +5839,6 @@ const intervals = {
   izquierda: null,
   arriba: null
 };
-
 function stopAllIntervals() {
   for (let key in intervals) {
     if (intervals[key] !== null) {

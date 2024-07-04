@@ -5304,7 +5304,7 @@ input.numero:focus {
     margin-bottom: 7px;
   }
   #inicio{
-    display: none;
+    display:none;
   }
   .genesis{
     position: relative;

@@ -4448,8 +4448,14 @@ function LubricaDesbobinador(idButt) {
   }  
   switch (idButt) {
     case 'btn1':
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      for (var i = 0; i < contVidLub.length; i++) {                                                              /// OCULTA TODOS ELEMENTOS LUBRICACION MENOS UNO
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','lubricacion','padre-lubrica','pantalla-inicial']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }
+      for (var i = 0; i < contVidLub.length; i++) {  /// OCULTA TODOS ELEMENTOS LUBRICACION MENOS UNO
         var eltoId = contVidLub[i]
         var eltoLubrica = document.getElementById(eltoId)
     
@@ -4462,10 +4468,13 @@ function LubricaDesbobinador(idButt) {
       showLablsLubricacion()
       break;
     case 'btn2':
-      let contenedorAbuelo = document.querySelector('.genesis');
-      let contenedorHijo = document.querySelector('.grand-father')
-      contenedorAbuelo.style.display = 'flex'
-      contenedorHijo.style.display = 'flex'
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','inicio','bis-abuelo','lubricacion','pantalla-inicial']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }
 
       moveElement()
 
@@ -4497,90 +4506,33 @@ function LubricaDesbobinador(idButt) {
     }
     break; 
     case 'btn3':
-      for (var i = 0; i < contVidLub.length; i++) {
-        var eltoId = contVidLub[i]
-        var eltoLubrica = document.getElementById(eltoId)    
-
-        if (eltoId === 'padre-lubrica') {
-            // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'grid'
-        } else {
-            // Si no es 'lubri-III', ocultar el elemento
-            eltoLubrica.style.display = 'none'
+    var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','lubricacion','padre-lubrica','pantalla-inicial']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-    if (padreLubriIII) {
-      // Recorrer los elementos hijos del padre
-      for (var i = 0; i < padreLubriIII.children.length; i++) {
-          var hijo = padreLubriIII.children[i]
-          
-          // Obtener el valor actual de la propiedad display
-          var displayValue = window.getComputedStyle(hijo).getPropertyValue('display')
-    
-          // Verificar si el valor actual es 'none'
-          if (displayValue === 'grid') {
-              // Cambiar la propiedad display a 'flex'
-              hijo.style.display = 'none'
-          }
-      }
-    }
+
     break;
     case 'btn4':
-      for (var i = 0; i < contVidLub.length; i++) {
-        var eltoId = contVidLub[i]
-        var eltoLubrica = document.getElementById(eltoId)    
-
-        if (eltoId === 'padre-lubrica') {
-            // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'grid'
-        } else {
-            // Si no es 'lubri-III', ocultar el elemento
-            eltoLubrica.style.display = 'none'
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','lubricacion','padre-lubrica','pantalla-inicial']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-    }
-    if (padreLubriIII) {
-      // Recorrer los elementos hijos del padre
-      for (var i = 0; i < padreLubriIII.children.length; i++) {
-          var hijo = padreLubriIII.children[i]
-          
-          // Obtener el valor actual de la propiedad display
-          var displayValue = window.getComputedStyle(hijo).getPropertyValue('display')
-  
-          // Verificar si el valor actual es 'none'
-          if (displayValue === 'grid') {
-              // Cambiar la propiedad display a 'flex'
-              hijo.style.display = 'none'
-          }
       }
-    }
+
+
     break; 
     case 'btn5':
-      for (var i = 0; i < contVidLub.length; i++) {
-        var eltoId = contVidLub[i]
-        var eltoLubrica = document.getElementById(eltoId)    
-
-        if (eltoId === 'padre-lubrica') {
-            // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'grid'
-        } else {
-            // Si no es 'lubri-III', ocultar el elemento
-            eltoLubrica.style.display = 'none'
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','lubricacion','padre-lubrica','pantalla-inicial']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }
-      if (padreLubriIII) {
-      // Recorrer los elementos hijos del padre
-      for (var i = 0; i < padreLubriIII.children.length; i++) {
-          var hijo = padreLubriIII.children[i]
-          
-          // Obtener el valor actual de la propiedad display
-          var displayValue = window.getComputedStyle(hijo).getPropertyValue('display')
-  
-          // Verificar si el valor actual es 'none'
-          if (displayValue === 'grid') {
-              // Cambiar la propiedad display a 'flex'
-              hijo.style.display = 'none'
-          }
-      }
       }
     break;
     case 'btn60': 
