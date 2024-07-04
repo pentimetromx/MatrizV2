@@ -5883,11 +5883,11 @@ function moveElement() {
                 }
               }, speed * 2);
             }
-          }, speed);
+          }, speed * 2);
         }
-      }, speed);
+      }, speed * 2);
     }
-  }, speed);
+  }, speed * 2);
 }
 
 
