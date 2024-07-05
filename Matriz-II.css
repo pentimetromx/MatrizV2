@@ -5297,6 +5297,7 @@ input.numero:focus {
     height: 16vh;
     left:53%;
     top:60%;
+    display: none;
   } 
   #lubri-I{
     position:absolute;

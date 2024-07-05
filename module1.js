@@ -4479,7 +4479,7 @@ function LubricaDesbobinador(idButt) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-
+      document.getElementById('frec-lubrica').style.display = 'none'
     break;
     case 'btn4':
       var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','lubricacion','padre-lubrica','pantalla-inicial']  
@@ -4489,8 +4489,7 @@ function LubricaDesbobinador(idButt) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-
-
+      document.getElementById('frec-lubrica').style.display = 'none'
     break; 
     case 'btn5':
       var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','lubricacion','padre-lubrica','pantalla-inicial']  
@@ -4500,6 +4499,7 @@ function LubricaDesbobinador(idButt) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
+      document.getElementById('frec-lubrica').style.display = 'none'
     break;
     case 'btn60': 
       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -5017,11 +5017,6 @@ function UnidadAlimenta(buttId,btnIniId){
 }
 function UnidadProceso(buttId,btnIniId){
   var alimenta = document.getElementById('uTeñidos')
-  var botsTorre = ['boton1','boton7','boton13','boton19','boton25',]
-  var botsUnidadT = ['boton20','boton21','boton22','boton23','boton24']
-  /* var botsDesplegables = ['btn600','btn700','btn800','btn06','btn07','btn08'] */
-  /* arrayPadres = ['uniTeñido',`rodilleria`] */
-  /* var contenedorPadre = document.getElementById('uniTeñido') */
   var contiDesbobina = document.getElementById('desbobinadorId')
   ///////////////////////////////////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////    
 
