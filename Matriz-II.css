@@ -2323,7 +2323,7 @@ h6{
   display: flex;
   flex-direction: column;
   left: 2%;
-  top: 20%;
+  top: 13%;
   display: none;
 }
 #conti-boton-planos{
@@ -2374,6 +2374,7 @@ h6{
   left: 27.3%;
   margin-top: -41.5%;
   z-index: 3;
+  display: none;
 }
 .hijo1{
   position: relative;
@@ -2502,17 +2503,24 @@ h6{
 }
 #aceite{
   position: absolute;
-  display: none;
   top:-192px;
   justify-content: center;
-  background: linear-gradient(45deg, blue 15%,  black 85%);
   font-size: 33px;
   width: 287px;
+  background: linear-gradient(45deg, blue 15%,  black 85%);
   border-radius: 7px;
+}
+.aceite-lub{
+  background: linear-gradient(45deg, blue 15%,  black 85%);
+  border-radius: 10px;
+}
+.aceite-lub label{
+  font-size: 20px;
+  border-radius: 5px;
+  margin-left: 2%;
 }
 #grasa{
   position: absolute;
-  display: none;
   top: -69px; 
   background: linear-gradient(45deg, black 15%, blue 85%);
   font-size: 33px; 
@@ -5033,15 +5041,23 @@ input.numero:focus {
   width: 99.8%;
   height: 99.6%;
 }
-.contenedor-lubri{
+#titulo-lubrica{
   position: absolute;
   display: grid;
   top:1%;
   left:1%;
-  width: 99%;
-  height:98%;
+  width: 96%;
+  grid-template-columns:50% 50%;
+}
+.contenedor-lubri{
+  position: absolute;
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  top:11%;
+  left:1%;
+  width:97%;
+  height:87%;
+  display: grid;
+  grid-template-columns:24% 23% 24% 23%;
   grid-template-rows: repeat(3, 1fr);
   gap: 10px;
   box-sizing: border-box;
@@ -5452,8 +5468,17 @@ input.numero:focus {
     border-radius: 20px;
     left:1px;
     top:1px;
-    width:99.7%;
+    width:99.9%;
     height:99.5%;
+  }
+  .aceite-lub{
+    background: linear-gradient(45deg, blue 15%,  black 85%);
+    border-radius: 10px;
+  }
+  .aceite-lub label{
+    font-size: 20px;
+    border-radius: 5px;
+    margin-left: 2%;
   }
   .grand-father{
     position: absolute;
@@ -5465,13 +5490,21 @@ input.numero:focus {
     width:99.7%;
     height:99.2%;
   }
-  .contenedor-lubri{
+  #titulo-lubrica{
     position: absolute;
     display: grid;
     top:1%;
     left:1%;
+    width: 96%;
+    grid-template-columns:50% 50%;
+  }
+  .contenedor-lubri{
+    position: absolute;
+    display: grid;
+    top:11%;
+    left:1%;
     width:97%;
-    height:97%;
+    height:87%;
     display: grid;
     grid-template-columns:24% 23% 24% 23%;
     grid-template-rows: repeat(3, 1fr);
@@ -5778,7 +5811,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     left: 8%; 
-    top: 13%;
+    top: 9%;
   }
   #conti-boton-freno button{
     margin-bottom: 9px;
