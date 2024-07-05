@@ -4359,7 +4359,7 @@ function showButtonsMAconRetrasoDesb() {
 }
 function LubricaDesbobinador(idButt) {
   var arrayIdButtsLub = ['btn1', 'btn2', 'btn3', 'btn4', 'btn5', 'btn60', 'btn70', 'btn80']
-  var contVidLub = ['lubri-I', 'lubri-II','padre-lubrica', 'frec-lubrica'] 
+  var contVidLub = ['lubri-I', 'lubri-II','padre-lubrica','frec-lubrica'] 
   var padreLubriIII = document.getElementById('padre-lubrica')
   var arrayIdButtsLubII = ['btn60', 'btn70', 'btn80']
   var arrayLabels = ['labl1', 'labl2', 'labl3']
@@ -4501,53 +4501,15 @@ function LubricaDesbobinador(idButt) {
       }
       document.getElementById('frec-lubrica').style.display = 'none'
     break;
-    case 'btn60': 
-      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      for (var i = 0; i < contVidLub.length; i++) {                                         ///  MUESTRA EL CONTENEDOR PADRE DE LUBRICANTES Y OCULTA LOS HIJOS
-        var eltoId = contVidLub[i]
-        var eltoLubrica = document.getElementById(eltoId)    
-
-        if (eltoId === 'padre-lubrica') {
-            // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'grid'
-        } else {
-            // Si no es 'lubri-III', ocultar el elemento
-            eltoLubrica.style.display = 'none'
+    case 'btn60':
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','freno','cont-arriba-freno','conti-boton-freno','desbobinadorId','lubricacion','padre-lubrica','pantalla-inicial']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      if (padreLubriIII) {
-        // Recorrer los elementos hijos del padre
-        for (var i = 0; i < padreLubriIII.children.length; i++) {
-            var hijo = padreLubriIII.children[i]
-            
-            // Obtener el valor actual de la propiedad display
-            var displayValue = window.getComputedStyle(hijo).getPropertyValue('display')
-
-            // Verificar si el valor actual es 'flex'
-            if (displayValue === 'grid') {
-                // Cambiar la propiedad display a 'none'
-                hijo.style.display = 'none'
-            }
-        }
-      }
-      padreLubriIII.style.display = 'none' 
-      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      for (var i = 0; i < contFreno.children.length; i++) {                                                         /// RECORRE HIJOS DE FRENO Y LOS VISIBILIZA
-        var hijo = contFreno.children[i]
-        // Obtener el valor actual de la propiedad display
-        var displayValue = window.getComputedStyle(hijo).getPropertyValue('display')
-        // Verificar si el valor actual es 'none'
-        if (displayValue === 'none') {
-          // Cambiar la propiedad display a 'flex'
-          hijo.style.display = 'flex'
-        }
-      }
-      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      var vidFreno = document.getElementById('freno-vid')                                                                                 /// REPRODUCE VIDEO    
-      // Establecer el tiempo de reproducción en cero (inicio)
-      vidFreno.currentTime = 0;  
-      // Reproducir el video
-      vidFreno.play()     
+      document.getElementById('freno-II').style.display='grid'
     break;
     case 'btn70': 
       var contFreno = document.getElementById('freno')

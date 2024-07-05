@@ -244,12 +244,12 @@ document.addEventListener('keydown', function(event) {
           cierraContenedores('desbobinadorId')          
         },2177)
         setTimeout(function() {
-          lubricacion('boton2','boton1')               
+          lubricacion('boton3','boton1')              
         },3077) 
-        setTimeout(function() {
+        /*setTimeout(function() {
           LubricaDesbobinador('btn2')              
         },3377)
-        /* setTimeout(function() {
+        setTimeout(function() {
           lubricaDiario('lub-diario','labl1')             
         },3677) */
       
@@ -266,7 +266,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('bis-abuelo') 
+  var contiBoton = document.getElementById('vidFreno') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
