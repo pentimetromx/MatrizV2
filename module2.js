@@ -241,10 +241,10 @@ document.addEventListener('keydown', function(event) {
           abrirSeccionContinua()              
         },1977)
         setTimeout(function() {
-          cierraContenedores('desbobinadorId')          
+          cierraContenedores('uTeñido')         
         },2177)
         setTimeout(function() {
-          lubricacion('boton3','boton1')              
+          UnidadTeñido('boton8','boton7')
         },3077) 
         /*setTimeout(function() {
           LubricaDesbobinador('btn2')              
@@ -266,7 +266,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('vidFreno') 
+  var contiBoton = document.getElementById('cont-arriba') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;

@@ -1548,38 +1548,6 @@ if (padre) {
   function handleClickEvent(event) {
      ('troubleshooting', 'troubleshoot')
   }
-/*   miBoton1.addEventListener("click", handleClickEvent)
-  var miBoton2 = document.getElementById("def1")
-  function handleClickEvent2(event) {
-  deslizaContenedor('canvasContainer2','def1')
-  }
-  miBoton2.addEventListener("click", handleClickEvent2)
-  var miBoton3 = document.getElementById("def2")
-  function handleClickEvent3(event) {
-  deslizaContenedor('contChecks','def2')
-  }
-  miBoton3.addEventListener("click", handleClickEvent3)
-  var miBoton4 = document.getElementById("adtBut")
-  function handleClickEvent4(event) {
-  deslizaContenedor('canvasContainer3','adtBut')
-  }
-  miBoton4.addEventListener("click", handleClickEvent4)
-  var miBoton5 = document.getElementById("fua1")
-  function handleClickEvent5(event) {
-  deslizaContenedor('contImagNeg','fua1')
-  }
-  miBoton5.addEventListener("click", handleClickEvent5)
-  var miBoton6 = document.getElementById("lup")
-  function handleClickEvent6(event) {
-  deslizaContenedor('contImagGraf','lup')
-  }
-  miBoton6.addEventListener("click", handleClickEvent6)
-  var miBoton7 = document.getElementById("kaizen")
-  function handleClickEvent7(event) {
-  deslizaContenedor('conti-boton-kaizen','kaizen')
-  }
-  miBoton7.addEventListener("click", handleClickEvent7) */
-  // Restaura color gris a los botones
   arrayIdButtsMA.forEach(function (buttonId) {
   var button = document.getElementById(buttonId)
   button.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'
@@ -4502,7 +4470,7 @@ function LubricaDesbobinador(idButt) {
       document.getElementById('frec-lubrica').style.display = 'none'
     break;
     case 'btn60':
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','freno','cont-arriba-freno','conti-boton-freno','desbobinadorId','lubricacion','padre-lubrica','pantalla-inicial']  
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','abuelo-grilla','freno','cont-arriba-freno','conti-boton-freno','desbobinadorId','padre-lubrica','pantalla-inicial']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -4510,6 +4478,9 @@ function LubricaDesbobinador(idButt) {
         }
       }
       document.getElementById('freno-II').style.display='grid'
+      const movil = document.getElementById('child-move-II')
+      const currentZone = document.getElementById('freno-II')
+      moveElement(movil,currentZone)
     break;
     case 'btn70': 
       var contFreno = document.getElementById('freno')
@@ -4571,6 +4542,15 @@ function UnidadTeñido(buttId,btnIniId){
   if(alimenta.style.display === 'none'){                                                                                         /// SI "ALIMENTA" ESTÁ OCULTA
     switch (buttId) {
       case 'boton8' :
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','conti-boton-teñido']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }
+            
+
         var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
         if (computedStyleUteñido.display === 'flex') {
           palpitarBotonTeñido();
@@ -4741,15 +4721,32 @@ function UnidadTeñido(buttId,btnIniId){
       }
       break; 
       case 'btn600' :
+        /* var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniTeñido','conti-boton-teñido','cont-arriba','teñido-I','teñido-II','vidTeñido','teñido-vid']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        } */
+  
+
         palpitarBotonTeñido()
         showButtonsUTeñidoconRetraso()
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < contenedorPadre.children.length; i++) {                                                           /// MUESTRA TODOS LOS HIJOS DEL PADRE
+        for (var i = 0; i < contenedorPadre.children.length; i++) { // MUESTRA TODOS LOS HIJOS DEL PADRE
           var hijo = contenedorPadre.children[i]
           hijo.style.display = 'flex' // O el valor que prefieras
         }
+        let conteVidTeñido = document.getElementById('cont-arriba')
+        for (var i = 0; i < conteVidTeñido.children.length; i++) {
+          var hijo = conteVidTeñido.children[i]
+          hijo.style.display = 'flex' // O el valor que prefieras
+        }
+        document.getElementById('vidTeñido').style.display = 'flex'
+
+
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < botsDesplegables.length; i++) {                                                                         /// ROJO MISMO BOTON IZQUIERDO
+        for (var i = 0; i < botsDesplegables.length; i++) { // ROJO MISMO BOTON IZQUIERDO
         var currentId = botsDesplegables[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === buttId) {
@@ -4760,7 +4757,7 @@ function UnidadTeñido(buttId,btnIniId){
         }
       } 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        var vidFreno = document.getElementById('teñido-vid')                                                                                 /// REPRODUCE VIDEO    
+        var vidFreno = document.getElementById('teñido-vid')/// REPRODUCE VIDEO    
         // Establecer el tiempo de reproducción en cero (inicio)
         vidFreno.currentTime = 0;  
         // Reproducir el video
