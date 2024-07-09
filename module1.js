@@ -1487,19 +1487,19 @@ function deslizaContenedorII(idElement, idButton) {
 function resetBotns() {  
   clearAllIntervals()
 
-var elementosExcluidos = ['nicho_spans','pantalla','conti-boton','conteneMantaut','buscador','container01','links-inicialesI','links-iniciales'];          
-for (var i = 0; i < allContenedores.length; i++) { 
-  var elemento = document.getElementById(allContenedores[i]);
-  if (elemento) {
-    // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-    if (elementosExcluidos.includes(allContenedores[i])) {
-      elemento.style.display = 'flex';
-    } else {
-      elemento.style.display = 'none';
+  var elementosExcluidos = ['nicho_spans','pantalla','conti-boton','conteneMantaut','buscador','container01','links-inicialesI','links-iniciales'];          
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+      if (elementosExcluidos.includes(allContenedores[i])) {
+        elemento.style.display = 'flex';
+      } else {
+        elemento.style.display = 'none';
+      }
     }
-  }
-} 
-var padre = document.getElementById('nicho_spans');    
+  } 
+  var padre = document.getElementById('nicho_spans');    
 if (padre) {
   padre.style.display = 'none';
   padre.style.visibility = 'hidden';
@@ -4520,25 +4520,10 @@ function UnidadTeñido(buttId,btnIniId){
   arrayPadres = ['uniTeñido',`rodilleria`]
   var contenedorPadre = document.getElementById('uniTeñido')
   var contiDesbobina = document.getElementById('desbobinadorId')
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-  botsDesplegables.forEach(boton => {                                                                                           ///OCULTA BOTONES INICIALMENTE
-    botDesplegable = document.getElementById(boton)
-    if(botDesplegable){
-      botDesplegable.style.display = 'none'
-    }
-  })
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////    
-  arrayPadres.forEach(unidad => {                                                                                                ///OCULTA PADRES INICIALMENTE
-    padre = document.getElementById(unidad)
-    if(padre){
-      padre.style.display = 'none'
-    }
-  })  
   var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
   if (computedStyleUteñido.display === 'flex') {
     palpitarBotonTeñido();
   }
-
   if(alimenta.style.display === 'none'){                                                                                         /// SI "ALIMENTA" ESTÁ OCULTA
     switch (buttId) {
       case 'boton8' :
@@ -4721,31 +4706,14 @@ function UnidadTeñido(buttId,btnIniId){
       }
       break; 
       case 'btn600' :
-        /* var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniTeñido','conti-boton-teñido','cont-arriba','teñido-I','teñido-II','vidTeñido','teñido-vid']  
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniTeñido','conti-boton-teñido','cont-arriba','padre-grilla','teñido-I','vidTeñido','teñido-vid']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
-        } */
-  
-
-        palpitarBotonTeñido()
-        showButtonsUTeñidoconRetraso()
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < contenedorPadre.children.length; i++) { // MUESTRA TODOS LOS HIJOS DEL PADRE
-          var hijo = contenedorPadre.children[i]
-          hijo.style.display = 'flex' // O el valor que prefieras
         }
-        let conteVidTeñido = document.getElementById('cont-arriba')
-        for (var i = 0; i < conteVidTeñido.children.length; i++) {
-          var hijo = conteVidTeñido.children[i]
-          hijo.style.display = 'flex' // O el valor que prefieras
-        }
-        document.getElementById('vidTeñido').style.display = 'flex'
-
-
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
+        
         for (var i = 0; i < botsDesplegables.length; i++) { // ROJO MISMO BOTON IZQUIERDO
         var currentId = botsDesplegables[i]
         var currentElement = document.getElementById(currentId)
@@ -4756,41 +4724,19 @@ function UnidadTeñido(buttId,btnIniId){
 
         }
       } 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        var vidFreno = document.getElementById('teñido-vid')/// REPRODUCE VIDEO    
-        // Establecer el tiempo de reproducción en cero (inicio)
-        vidFreno.currentTime = 0;  
-        // Reproducir el video
-        vidFreno.play()        
+      const child = document.getElementById('pieza-movil');
+      const parent = document.getElementById('padre-grilla');
+      moveElement(child,parent)
       break; 
       case 'btn700' :
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniTeñido','conti-boton-teñido']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }
         palpitarBotonTeñido()
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < contenedorPadre.children.length; i++) {                                                                    /// OOCULTAR HIJOS MENOS BOTONES
-          var hijo = contenedorPadre.children[i]
-          hijo.style.display = 'none'
-        }
-
-        var contiBotonTeñido = document.getElementById('conti-boton-teñido')
-        if (contiBotonTeñido) {
-            contiBotonTeñido.style.display = 'flex' // O el valor que prefieras
-        }
-
-        var contiPadreTeñido = document.getElementById('uniTeñido')
-        if (contiPadreTeñido) {
-          contiPadreTeñido.style.display = 'flex' // O el valor que prefieras
-        }
-
-        // Recorre los hijos del contenedor padre
-        for (var i = 0; i < contiBotonTeñido.children.length; i++) {
-            var hijo = contiBotonTeñido.children[i]
-    
-            // Verifica si el hijo es un botón y lo muestra
-            if (hijo.tagName.toLowerCase() === 'button') {
-                hijo.style.display = 'none' // O el valor que prefieras
-            }
-        }
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
         for (var i = 0; i < botsDesplegables.length; i++) {                                                                              /// ROJO MISMO BOTON IZQUIERDO
           var currentId = botsDesplegables[i]
           var currentElement = document.getElementById(currentId)
@@ -4803,29 +4749,15 @@ function UnidadTeñido(buttId,btnIniId){
         showButtonsUTeñidoconRetraso()        
       break; 
       case 'btn800' :
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniTeñido','conti-boton-teñido']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }
         palpitarBotonTeñido()
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < contenedorPadre.children.length; i++) {                                                               /// OOCULTAR HIJOS MENOS BOTONES
-          var hijo = contenedorPadre.children[i]
-          hijo.style.display = 'none'
-        }
-
-        var contiBotonTeñido = document.getElementById('conti-boton-teñido')
-        if (contiBotonTeñido) {
-            contiBotonTeñido.style.display = 'flex' // O el valor que prefieras
-        }
-
-        // Recorre los hijos del contenedor padre
-        for (var i = 0; i < contiBotonTeñido.children.length; i++) {
-            var hijo = contiBotonTeñido.children[i]
-    
-            // Verifica si el hijo es un botón y lo muestra
-            if (hijo.tagName.toLowerCase() === 'button') {
-                hijo.style.display = 'flex' // O el valor que prefieras
-            }
-        }
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < botsDesplegables.length; i++) {                                                                         /// ROJO MISMO BOTON IZQUIERDO
+        for (var i = 0; i < botsDesplegables.length; i++) {
           var currentId = botsDesplegables[i]
           var currentElement = document.getElementById(currentId)
           if (currentId === buttId) {
@@ -4843,8 +4775,6 @@ function UnidadTeñido(buttId,btnIniId){
 } 
 function UnidadAlimenta(buttId,btnIniId){
   var alimenta = document.getElementById('uTeñidos')
-  var botsTorre = ['boton1','boton7','boton13','boton19','boton25',]
-  var botsUnidadT = ['boton14','boton15','boton16','boton17','boton18']
   var contiDesbobina = document.getElementById('desbobinadorId')
   ///////////////////////////////////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////    
   var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
@@ -4870,7 +4800,7 @@ function UnidadAlimenta(buttId,btnIniId){
       case 'boton18' :
         palpitarBotonAlimenta()
       break; 
-      case 'btn600' :
+      /* case 'btn600' :
         palpitarBotonAlimenta()
         showButtonsUTeñidoconRetraso()
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
@@ -4969,7 +4899,7 @@ function UnidadAlimenta(buttId,btnIniId){
           }
         }
         showButtonsUTeñidoconRetraso()        
-      break;                               
+      break; */                               
       default:
     }
   }
@@ -5040,9 +4970,6 @@ function UnidadTintero(buttId,btnIniId){
   var alimenta = document.getElementById('uTeñidos')
   var botsTorre = ['boton1','boton7','boton13','boton19','boton25',]
   var botsUnidadT = ['boton31','boton32','boton33','boton34','boton35','boton36']
-  /* var botsDesplegables = ['btn600','btn700','btn800','btn06','btn07','btn08'] */
-  /* arrayPadres = ['uniTeñido',`rodilleria`] */
-  /* var contenedorPadre = document.getElementById('uniTeñido') */
   var contiDesbobina = document.getElementById('desbobinadorId')
   ///////////////////////////////////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////    
 
@@ -5174,9 +5101,6 @@ function UnidadBateria(buttId,btnIniId){
   var alimenta = document.getElementById('uTeñidos')
   var botsTorre = ['boton1','boton7','boton13','boton19','boton25',]
   var botsUnidadT = ['boton37','boton38','boton39','boton40','boton41']
-  /* var botsDesplegables = ['btn600','btn700','btn800','btn06','btn07','btn08'] */
-  /* arrayPadres = ['uniTeñido',`rodilleria`] */
-  /* var contenedorPadre = document.getElementById('uniTeñido') */
   var contiDesbobina = document.getElementById('desbobinadorId')
   ///////////////////////////////////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////    
 
@@ -5308,9 +5232,6 @@ function UnidadTorre(buttId,btnIniId){
   var alimenta = document.getElementById('uTeñidos')
   var botsTorre = ['boton1','boton7','boton13','boton19','boton25',]
   var botsUnidadT = ['boton42','boton43']
-  /* var botsDesplegables = ['btn600','btn700','btn800','btn06','btn07','btn08'] */
-  /* arrayPadres = ['uniTeñido',`rodilleria`] */
-  /* var contenedorPadre = document.getElementById('uniTeñido') */
   var contiDesbobina = document.getElementById('desbobinadorId')
   ///////////////////////////////////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////    
   var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
@@ -5439,9 +5360,6 @@ function UnidadSisHumedad(buttId,btnIniId){
   var alimenta = document.getElementById('uTeñidos')
   var botsTorre = ['boton1','boton7','boton13','boton19','boton25',]
   var botsUnidadT = ['boton44','boton45','boton4']
-  /* var botsDesplegables = ['btn600','btn700','btn800','btn06','btn07','btn08'] */
-  /* arrayPadres = ['uniTeñido',`rodilleria`] */
-  /* var contenedorPadre = document.getElementById('uniTeñido') */
   var contiDesbobina = document.getElementById('desbobinadorId')
   ///////////////////////////////////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////    
   var computedStyleUteñido = window.getComputedStyle(contiDesbobina);

@@ -390,7 +390,7 @@ color: white;
   display: flex;
   margin-top:63%;
   width: 55%;
-  padding-left: 20px;
+  padding-left:1.5vw;
 }
 .rebobinador,
 .unidProceso,
@@ -408,7 +408,7 @@ color: white;
 #unidProceso,
 #rebobinador{
 position: relative;
-margin-right: 5px;
+margin-right:0.4vh;
 }
 #videosTraining{
   display: flex;
@@ -661,13 +661,13 @@ margin-right: 5px;
   position: relative;
   display: flex;
   align-items: center;
-  height: 43px;
-  width: 87px;
+  height:6vh;
+  width:6.7vw;
   background: linear-gradient(45deg, rgba(250, 250, 1) 15%,  rgb(27, 27, 28, 0.777) 85%);                       
   color: rgb(0, 0, 0);
   border-radius: 5px;
-  margin-right: 21px;
-  margin-bottom: 17px;
+  margin-right:1.6vw;
+  margin-bottom:2.3vh;
   text-align: left;
   cursor: pointer;
   transition: transform 0.9s; 
@@ -792,14 +792,6 @@ width:447px ;
   left: 1017px;
   top: 77px;
 }
-#conti-boton{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  margin-top: 44px;
-  margin-left:20px;
-  z-index: 2;
-}
 #lubri-I{
   position: relative;
   display: flex;
@@ -906,15 +898,15 @@ width:447px ;
   align-items: left;
   font-family: "GothamRounded", sans-serif;
   color: white;
-  height: 27px;
-  width: 177px;
+  height:3.7vh;
+  width:13.6vw;
   border-radius: 9px;
   background-color: rgba(83, 82, 82, 0.678);
   position: relative;
   overflow: hidden;
-  margin-bottom: 17px;
+  margin-bottom:2.3vh;
   cursor: pointer;
-  padding-left: 27px;
+  padding-left:2vw;
 }
 .butt-mautonomo-planos{
   display: none;
@@ -987,10 +979,6 @@ width:447px ;
   width: 17px;
   height: 27px;
   background-color: rgb(255, 174, 0);
-}
-.labl-class{
-  font-family: "GothamRounded", sans-serif;
-  color: yellow;
 }
 #contLineas{
   position: relative;
@@ -2302,14 +2290,6 @@ h6{
   left: 31%;
   margin-top: -13%;
 }
-#conti-boton-teñido{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  left: 12%;
-  margin-top: -42%;
-  display: none;
-}
 #conti-boton-rodilleria{
   position: absolute;
   flex-direction: column;
@@ -2397,62 +2377,62 @@ h6{
   flex-direction: column;
   display: none;
  }
-  #vidFreno{
-    position: relative;
-    flex-direction: column;
-    display: flex;
-    top: 29px;
-    left: -37px;
-    margin-bottom: 17px;
-    width: 363px;  
-  }
-  #freno-vid{
-    width:100%;
-    height: 100%;
-    border: 7px solid rgba(255,255,0,15);
-    border-radius: 17px;  
-  }
-  #lubri-III{
-    position: relative;
-    display: flex;
-    left:46%;
-    top: -88%;
-    display: none;
-  }
-  #vertcal-line-II{
-    position: absolute;
-    left: -237px;
-    top: 17px;
-    bottom: 0;
-    width: 2px;
-    height: 497px;
-    background-color: rgb(0,255,0);
-    content: "";
-    display: none;
-  } 
-  #indicaciones-III{
-    display: flex;
-    flex-direction: column;
-    display: none;
-    margin-top: 2.8vh;
-    margin-left: 2.6vw;
-  }
-  #indicaciones-III label{
-    margin-bottom: 117px;
-  }
-  #balineras-II,
-  #aceitera-II{
-    display: flex;
-    flex-direction: column;        
-    display: none;
-  }
-  .item-child {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    border-radius: 11px;
-  }
-
+#vidFreno{
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  top: 29px;
+  left: -37px;
+  margin-bottom: 17px;
+  width: 363px;  
+}
+#freno-vid{
+  width:100%;
+  height: 100%;
+  border: 7px solid rgba(255,255,0,15);
+  border-radius: 17px;  
+}
+#lubri-III{
+  position: relative;
+  display: flex;
+  left:46%;
+  top: -88%;
+  display: none;
+}
+#vertcal-line-II{
+  position: absolute;
+  left: -237px;
+  top: 17px;
+  bottom: 0;
+  width: 2px;
+  height: 497px;
+  background-color: rgb(0,255,0);
+  content: "";
+  display: none;
+} 
+#indicaciones-III{
+  display: flex;
+  flex-direction: column;
+  display: none;
+  margin-top: 2.8vh;
+  margin-left: 2.6vw;
+}
+#indicaciones-III label{
+  margin-bottom: 117px;
+}
+#balineras-II,
+#aceitera-II{
+  display: flex;
+  flex-direction: column;        
+  display: none;
+}
+.item-grilla,
+.item-child {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  border-radius: 11px;
+}
 #balineras{
   display: flex;
   flex-direction: column;        
@@ -2764,39 +2744,6 @@ elemento.visible {
   z-index: 3;
   border-radius: 14px;
 }
-.img-teñido{
-  margin-right: 10px;
-  border-radius: 7px;
-  border: 1px solid rgba(255,0,0);
-}
-#primeras-imgs{
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  top: -1px;
-}
-#segunda-imgs{
-  position: absolute;
-  display: flex;
-  flex-direction: row; 
-  top: 160px;
-}
-#tercera-imgs{
- position: absolute; 
- display: flex;
- flex-direction: row; 
- top: 325px;
-}
-#cont-arriba{
-  position: absolute;
-  display: flex;
-  width: 30%;
-  height: 50%;
-  margin-top: -40%;
-  left: 377px;
-  margin-bottom: 20px; /* Añade un margen inferior de 20px al contenedor padre */
-  display: none;
-}
 #cont-arriba-rodillos{
   position: absolute;
   margin-top: -48%;
@@ -2840,16 +2787,7 @@ elemento.visible {
   justify-content: center;
   align-items: center;
 }
-#vidTeñido{
-  position: relative;
-  display: flex;
-  top: 37px;
-  left: -37px;
-  margin-bottom: 17px;
-  height: 207px;
-  width: 300px;
-  display: none;
-}
+
 #vidRodillos{
   position: relative;
   display: flex;
@@ -2857,12 +2795,6 @@ elemento.visible {
   left: -39px;
   margin-bottom: 17px;
   height: 247px;
-}
-#teñido-vid {
-  width:100%;
-  height: 100%;
-  border: 1px solid red;
-  border-radius: 17px;
 }
 #rodilleria-vid {
   width:100%;
@@ -2876,10 +2808,103 @@ elemento.visible {
   display: none;  
 }
 #uniTeñido{
+  position: absolute;
+  display: flex;
+  top: 31%;
+  left: 11%;
+  width: 77vw;
+  height: 75vh;
+}
+#cont-arriba{
+  position: absolute;
+  width:50%;
+  height:80%;
+  top:0;
+  left:4%;
+  display: none;
+  z-index: -1;
+}
+#teñido-I{
+  position: absolute;
+  top:0;
+  left:33%;
+  width:67%;
+  height:11%;
+  border-radius: 11px;
+  justify-content: center;
+  align-items: center;
+}
+.labl-class{
+  font-family: "GothamRounded", sans-serif;
+  color: yellow;
+  font-size: 20px;
+  border-radius: 11px;
+}
+#vidTeñido{
   position: relative;
-  top: 1%;
+  display: flex;
+  top:21%;
+  left:33%;
+  height:37vh;
+  width:27vw;
+}
+#teñido-vid {
+  position: absolute;
+  display: flex;
+  width:100%;
+  height:auto;
+  border: 1px solid red;
+  border-radius: 17px;
+  object-fit:cover; 
+}
+#teñido-II{
+  position: absolute;
+  display: flex;
+  top:0;
+  left: 60%;
+  width: 100%;
+  height: 100%;
   display: none;
 }
+#primeras-imgs{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: -1px;
+}
+.img-teñido{
+  margin-right: 10px;
+  border-radius: 7px;
+  border: 1px solid rgba(255,0,0);
+}
+#segunda-imgs{
+  position: absolute;
+  display: flex;
+  flex-direction: row; 
+  top: 160px;
+}
+#tercera-imgs{
+  position: absolute; 
+  display: flex;
+  flex-direction: row; 
+  top: 325px;
+ }
+ #conti-boton{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+#conti-boton-teñido{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left:0;
+  top: 0;
+  width:13.6vw;
+  height:30vh;
+  display: none;
+}  
 #imgs-superiores{
   position: absolute;
   display: flex;
@@ -2960,11 +2985,6 @@ elemento.visible {
   display: flex;
   flex-direction: row; 
   top: 325px;
-}
-#teñido-II{
-  position: absolute;
-  margin-top:-47%;
-  left:58%;
 }
 .img-rodillo{
   margin-right: 10px;
@@ -5022,10 +5042,12 @@ input.numero:focus {
   width: 100vw;
   display:block;
 }
+#padre-grilla,
 #lubricantes,
 #inicio{
   display:none;
 }
+
 .conte-lubrica{
   position: relative;
   top: -75%;
@@ -5063,6 +5085,15 @@ input.numero:focus {
   background-color: black;
   border-radius: 20px;
 }
+.grilla-teñido{
+  position: relative;
+  top:0;
+  left:57%;
+  width:57%;
+  height:90%;
+  background-color: black;
+  border-radius: 20px;
+}
 #child-move{
   width: 60px;
   height: 60px;
@@ -5076,13 +5107,32 @@ input.numero:focus {
   width: 60px;
   height: 60px;
   background-color: rgb(0, 255, 0);
-  box-shadow: 0 0 15px rgba(0, 255, 0, 1), 0 0 30px rgba(0, 255, 0, 0.7);
+  box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 60px rgba(0, 255, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#pieza-movil{
+  width: 60px;
+  height: 60px;
+  background-color: rgb(255, 0, 255);
+  box-shadow: 0 0 30px rgba(255, 0, 255, 1), 0 0 60px rgba(255, 0, 255, 0.7);
   position: absolute;
   top: 0;
   left: 0;
 }
 .abuelo-lub,
 .grand-father{
+  position: absolute;
+  display: flex;
+  background-color: rgb(0,0,17);
+  border-radius: 20px;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+}
+.grand-father-I{
   position: absolute;
   display: flex;
   background-color: rgb(0,0,17);
@@ -5128,8 +5178,30 @@ input.numero:focus {
   box-sizing: border-box;
   border-radius: 11px;
 }
+.grilla-teñido-hijo{
+  position: absolute;
+  display: grid;
+  top:1%;
+  left:1%;
+  width: 98%;
+  height:98%;
+  display: grid;
+  grid-template-columns:32% 32% 32%;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  box-sizing: border-box;
+  border-radius: 11px;
+}
 .lubricante,
 .item{  /* DIVS HIJOS */
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.imagen{
   display: flex;
   width: 100%;
   justify-content: center;
@@ -5152,12 +5224,6 @@ input.numero:focus {
   width: 100%;
   font-family: "GothamRounded", sans-serif;
   color: yellow;
-}
-.item-child{ /* CLASE PARA IMAGENES DENTRO DE HIJOS */
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-  border-radius: 11px;
 }
 .labl-lub{ /* CLASES PARA ETIQUETAS DENTRO DE HIJOS */
   font-size: 11px;
@@ -5200,7 +5266,8 @@ input.numero:focus {
     position: relative;
     flex-direction: column;
     display: flex;
-    align-items: center;  
+    align-items: center; 
+    z-index: 3; 
   }
   #toggleVideoButton{
     position: absolute;
@@ -5604,9 +5671,6 @@ input.numero:focus {
     display:flex;
     width: 100%;
   }
-
-
-
   #vertcal-line-II{
     position: absolute;
     left: 1%;
@@ -5660,26 +5724,94 @@ input.numero:focus {
     margin-bottom: 10px;
   }  
   #uniTeñido{
-    position: relative;
-    top: 1%;
-    left: 1%;
-    height: 100vh;
-    
-  }  
+    position: absolute;
+    top: 23%;
+    left:16%;
+    height:76%;
+    width:85%;
+    z-index:1;
+  } 
   #conti-boton-teñido{   
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: 25%;
-    margin-top: -133%;
-
+    left:25%;
+    top: 7%;
+    width:31vw;
+    height:13vh;
   }
   #conti-boton-teñido button{
-    height: 27px;
-    width: 130px;
+    height:3.7vh;
+    width:31vw;
     font-size: 10px;
-    margin-bottom: 5px;
+    margin-bottom:0.7vh;
   } 
+  #cont-arriba{
+    position: absolute;
+    width:50%;
+    height:55%;
+    top:0;
+    left:22%;
+    display: none;
+    z-index: -1;
+  }
+  #teñido-I{
+    position: absolute;
+    display: flex;
+    top:47%;
+    left:2%;
+    font-size: 10px;
+    width:35vw;
+    height:2.7vh;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+  }
+  #vidTeñido {
+    position: absolute;
+    display: flex;
+    top:56%;
+    left:0;
+    margin-bottom:2.3vh;
+    width:85%;
+  }
+  
+  .grilla-teñido{
+    position: relative;
+    top:50%;
+    /* left:1%; */
+    margin-left: -61%;
+    width:96%;
+    height:40%;
+    background-color: black;
+    border-radius: 20px;
+  }
+  .grand-father-I{
+    position: absolute;
+    display: flex;
+    background-color: rgb(0,0,17);
+    border-radius: 20px;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+  }
+  .grilla-teñido-hijo{
+    position: absolute;
+    display: grid;
+    top:1%;
+    left:1%;
+    width: 98.5%;
+    height:98%;
+    display: grid;
+    grid-template-columns:31% 31% 31%;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  
   #conti-boton-rodilleria button{
     height: 27px;
     width: 130px;
@@ -5694,25 +5826,6 @@ input.numero:focus {
     top: 44%;
     display: none;
   }  
-  #teñido-I{
-    display: flex;
-    position: fixed;
-    top: 46%;
-    left: 38%;
-    font-size: 10px;
-    width: 147px;
-    height: 20px;
-    border-radius: 6px;
-    justify-content: center;
-    align-items: center;
-  }
-  #vidTeñido {
-    position: fixed;
-    top: 51%;
-    left: 38%;
-    margin-bottom: 17px;
-    height: 77px;
-  }
   .img-teñido{
     margin-right: 10px;
     border-radius: 7px;

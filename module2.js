@@ -246,10 +246,10 @@ document.addEventListener('keydown', function(event) {
         setTimeout(function() {
           UnidadTeñido('boton8','boton7')
         },3077) 
-        /*setTimeout(function() {
-          LubricaDesbobinador('btn2')              
-        },3377)
         setTimeout(function() {
+          UnidadTeñido('btn600')              
+        },3377)
+        /*setTimeout(function() {
           lubricaDiario('lub-diario','labl1')             
         },3677) */
       
@@ -266,7 +266,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('cont-arriba') 
+  var contiBoton = document.getElementById('uniTeñido') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -287,7 +287,7 @@ function Geometria() {
   console.log('1 :','Visibility:', visibilityType);
   console.log('1 :','Is Visible:', isVisible);
   
-  var contiBotonI = document.getElementById('indicaciones') 
+  var contiBotonI = document.getElementById('conti-boton-teñido') 
   var rect = contiBotonI.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
