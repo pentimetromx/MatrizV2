@@ -266,7 +266,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('uniTeñido') 
+  var contiBoton = document.getElementById('rodilleria') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -287,7 +287,7 @@ function Geometria() {
   console.log('1 :','Visibility:', visibilityType);
   console.log('1 :','Is Visible:', isVisible);
   
-  var contiBotonI = document.getElementById('conti-boton-teñido') 
+  var contiBotonI = document.getElementById('conti-boton-rodilleria') 
   var rect = contiBotonI.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;

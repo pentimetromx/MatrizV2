@@ -4582,6 +4582,14 @@ function UnidadTeñido(buttId,btnIniId){
       showButtonsUTeñidoconRetraso()
       break;
       case 'boton9' :
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','rodilleria','conti-boton-rodilleria']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }
+
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
         botsDesplegables.forEach(boton => {                                                                                           ///GRIS A BOTONES DERECHOS
         botDesplegable = document.getElementById(boton)

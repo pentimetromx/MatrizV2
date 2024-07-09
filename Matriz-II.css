@@ -5725,7 +5725,7 @@ input.numero:focus {
   }  
   #uniTeñido{
     position: absolute;
-    top: 23%;
+    top: 22%;
     left:16%;
     height:76%;
     width:85%;
@@ -5810,22 +5810,21 @@ input.numero:focus {
     box-sizing: border-box;
     border-radius: 20px;
   }
-
-  
+  #conti-boton-rodilleria{
+    position: absolute;
+    flex-direction: column;
+    display: flex;
+    left:20%;
+    top: 38.7%;
+    display: none;
+  }
   #conti-boton-rodilleria button{
     height: 27px;
     width: 130px;
     font-size: 10px;
     margin-bottom: 7px;
   }
-  #conti-boton-rodilleria{
-    position: absolute;
-    flex-direction: column;
-    display: flex;
-    left: 8%;
-    top: 44%;
-    display: none;
-  }  
+
   .img-teñido{
     margin-right: 10px;
     border-radius: 7px;
