@@ -5570,8 +5570,6 @@ function showButtonsRodilleria() {
 function rodillosTeñido(botId) {
   var rodilleria = document.getElementById('rodilleria')
   var contVideoTeñido = document.getElementById('rodilleria-vid')
-  var pantaInicial = document.getElementById('pantalla-inicial')
-  var padreDurezas = document.getElementById('durezas')
   var contenedoresHijos = rodilleria.children;
   for (var i = 0; i < contenedoresHijos.length; i++) {
     var hijo = contenedoresHijos[i]
@@ -5583,45 +5581,31 @@ function rodillosTeñido(botId) {
 
   switch(botId) {
     case 'btn06':
-      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-      var childContainers = rodilleria.children;                                                                              /// OCULTA HIJOS MENOS LOS BOTONES
-      for (var i = 0; i < childContainers.length; i++) {
-        var container = childContainers[i]
-        if (container) {
-          container.style.display = 'flex'
-        } else {
-          container.style.display = 'none'
+      var elementosExcluidos = ['buscador','buscador','cont-links','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','rodilleria','cont-arriba-rodillos','vidRodillos','rodilleria-vid','conti-boton-rodilleria','cont-arriba-rodillos','abuelo-cuadricula']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }
-      padreDurezas.style.display = 'none'                                                                                             /// MUESTRA IMAGENES DUREZA
-      for (var i = 0; i < arrayImgsRodilleria.length; i++) {                                                                           
-        var imagen = arrayImgsRodilleria[i];
-        imagen.style.display = 'none';
-      }
-
+      } 
       contVideoTeñido.style.display = 'flex'
       contVideoTeñido.currentTime = '0'
       contVideoTeñido.play()
+      const child = document.getElementById('child-div-I');
+      const parent = document.getElementById('abuelo-cuadricula');
+      moveElement(child,parent)
     break;
     case 'btn07':
-      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-      var childContainers = rodilleria.children;                                                                              /// OCULTA HIJOS MENOS LOS BOTONES
-      for (var i = 0; i < childContainers.length; i++) {
-        var container = childContainers[i]
-        if (container.id !== 'conti-boton-rodilleria') {
-          container.style.display = 'none'
-        } else {
-          container.style.display = 'flex'
+      var elementosExcluidos = ['buscador','buscador','cont-links','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','rodilleria','conti-boton-rodilleria','grilla-durezas','abuelo-grilla-dureza']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }
-
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      padreDurezas.style.display = 'flex'                                                                                             /// MUESTRA IMAGENES DUREZA
-      padreDurezas.style.top = '-80vh'      
-      for (var i = 0; i < arrayImgsRodilleria.length; i++) {                                                                           
-        var imagen = arrayImgsRodilleria[i];
-        imagen.style.display = 'flex';
-      }
+      } 
+      const childI = document.getElementById('item-movil');
+      const parentI = document.getElementById('grilla-durezas');
+      moveElement(childI,parentI)      
     break;
     case 'btn08':
       /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 

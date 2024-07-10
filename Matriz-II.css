@@ -2294,9 +2294,9 @@ h6{
   position: absolute;
   flex-direction: column;
   display: flex;
-  left: 12%;
-  margin-top: -45.3%;
-  /* display: none; */
+  left: 11%;
+  margin-top:-49%;
+
 }
 #conti-boton-freno{
   position: absolute;
@@ -2345,7 +2345,7 @@ h6{
 #conti-boton-teñido button,
 #conti-boton-desb button,
 #conti-boton-freno button{
-  margin-bottom: 38px;
+  margin-bottom: 5.3vh;
 }
 #frec-lubrica{
   position: relative;
@@ -2511,13 +2511,52 @@ h6{
   border-radius: 17px; 
   margin-bottom: 17px;
 }
-#rodillos-II{
+#abuelo-cuadricula{
   position: absolute;
   display: flex;
-  flex-direction: column;
+}
+#padre-cuadricula{
+  position: absolute;
+  display: flex;
+}
+.marco-3{
+  position: absolute;
+  display: flex;
+  background-color: rgb(0,0,17);
+  border-radius: 20px;
   margin-top: -50%;
   left: 57%;
+  width: 42vw;
+  height: 58vh;
 }
+.marco-2{
+  background-color: rgb(0,0,17);
+  border-radius: 20px;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+.marco-1{
+  position: absolute;
+  display: grid;
+  top:1%;
+  left:1%;
+  width:100%;
+  height:95.5%;
+  grid-template-columns:48% 48%;
+  grid-template-rows: 50% 50%;
+  gap: 10px;
+  border-radius: 11px;
+}
+.rodillo{
+  width: 100%;
+  height: 100%;
+  object-fit: fill; 
+  border-radius: 20px;
+  /* overflow: hidden; */
+}
+
 #rodillos-II img{
   height: 195px;
   width: 260px;
@@ -2746,11 +2785,34 @@ elemento.visible {
 }
 #cont-arriba-rodillos{
   position: absolute;
-  margin-top: -48%;
-  left: 377px;
-  margin-bottom: 20px; /* Añade un margen inferior de 20px al contenedor padre */
+  margin-top: -49%;
+  left: 26vw;
+  width:30vw;
+  height:45vh;
+  margin-bottom:2.7vh; /* Añade un margen inferior de 20px al contenedor padre */
   display: none;  
 }
+#rodillos-I{
+  display: flex;
+  position: absolute;
+  top:0;
+  left:15%;
+  background: linear-gradient(45deg, black 33%, gray 67%);
+  font-size: 33px;
+  width: 70%;
+  border-radius: 7px;
+  justify-content: center;
+  align-items: center;
+}
+#vidRodillos{
+  position: absolute;
+  display: flex;
+  top: 17%;
+  left:0;
+  margin-bottom:2.3vh;
+  height: 80%;
+}
+
 #freno-I{
   display: flex;
   position: absolute;
@@ -2775,31 +2837,11 @@ elemento.visible {
   justify-content: center;
   align-items: center;
 }
-#rodillos-I{
-  display: flex;
-  position: absolute;
-  top: -21px;
-  left: 10px;
-  background: linear-gradient(45deg, black 33%, gray 67%);
-  font-size: 33px;
-  width: 287px;
-  border-radius: 7px;
-  justify-content: center;
-  align-items: center;
-}
-
-#vidRodillos{
-  position: relative;
-  display: flex;
-  top: 37px;
-  left: -39px;
-  margin-bottom: 17px;
-  height: 247px;
-}
 #rodilleria-vid {
   width:100%;
   height: 100%;
-  border: 7px solid rgba(255,0,255,1);
+  object-fit: cover;
+  border: 1px solid rgba(255,0,255,1);
   border-radius: 17px;
 }
 #rodilleria{
@@ -2905,18 +2947,6 @@ elemento.visible {
   height:30vh;
   display: none;
 }  
-#imgs-superiores{
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  top: -1px;
-}
-#imgs-inferiores{
-  position: absolute;
-  display: flex;
-  flex-direction: row; 
-  top: 220px;
-}
 #freno{
   position: relative;
   left: 9vw;
@@ -2961,6 +2991,7 @@ elemento.visible {
   height: 60px;
   background-color: rgb(255, 0, 0);
   box-shadow: 0 0 30px rgba(255, 0, 0, 1), 0 0 60px rgba(255, 0, 0, 0.7);
+  border-radius:50%;
 }
 .unidad-freno {
   display:block;
@@ -5042,6 +5073,12 @@ input.numero:focus {
   width: 100vw;
   display:block;
 }
+#grilla-durezas{
+  position: absolute;
+  display: flex;
+  left: 35%;
+  margin-top:-48.9%;
+}
 #padre-grilla,
 #lubricantes,
 #inicio{
@@ -5085,6 +5122,12 @@ input.numero:focus {
   background-color: black;
   border-radius: 20px;
 }
+.dureza{
+  width:44vw;
+  height:55vh;
+  background-color: black;
+  border-radius: 20px;
+}
 .grilla-teñido{
   position: relative;
   top:0;
@@ -5100,6 +5143,7 @@ input.numero:focus {
   background-color: rgb(255, 165, 0);
   box-shadow: 0 0 30px rgba(255, 165, 0, 1), 0 0 60px rgba(255, 165,0, 0.7);
   position: absolute;
+  border-radius:50%;
   top: 0;
   left: 0;
 }
@@ -5109,8 +5153,29 @@ input.numero:focus {
   background-color: rgb(0, 255, 0);
   box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 60px rgba(0, 255, 0, 0.7);
   position: absolute;
+  border-radius:50%;
   top: 0;
   left: 0;
+}
+#child-div-I{
+  width: 60px;
+  height: 60px;
+  background-color: rgb(255,255,0);
+  box-shadow: 0 0 30px rgba(255,255,0,1), 0 0 60px rgba(255,255,0, 0.7);
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+}
+#item-movil{
+  width: 60px;
+  height: 60px;
+  background-color: rgb(255, 0, 255);
+  box-shadow: 0 0 30px rgba(255,0,255, 1), 0 0 60px rgba(255,0,255, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius:50%;
 }
 #pieza-movil{
   width: 60px;
@@ -5120,9 +5185,20 @@ input.numero:focus {
   position: absolute;
   top: 0;
   left: 0;
+  border-radius:50%;
 }
 .abuelo-lub,
 .grand-father{
+  position: absolute;
+  display: flex;
+  background-color: rgb(0,0,17);
+  border-radius: 20px;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+}
+.grand-father-dureza{
   position: absolute;
   display: flex;
   background-color: rgb(0,0,17);
@@ -5178,6 +5254,33 @@ input.numero:focus {
   box-sizing: border-box;
   border-radius: 11px;
 }
+.grilla-dureza-hijo{
+  position: absolute;
+  display: grid;
+  top:1%;
+  left:1.5%;
+  width: 96.2%;
+  height:96.5%;
+  display: grid;
+  grid-template-columns:50% 50%;
+  grid-template-rows:50% 50%;
+  gap: 5px;
+  box-sizing: border-box;
+  border-radius: 11px;
+}
+.duros{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.rodillo-durezas{
+  border-radius:20px;
+}
 .grilla-teñido-hijo{
   position: absolute;
   display: grid;
@@ -5201,6 +5304,7 @@ input.numero:focus {
   box-sizing: border-box;
   overflow: hidden;
 }
+.duros,
 .imagen{
   display: flex;
   width: 100%;
@@ -5566,6 +5670,7 @@ input.numero:focus {
     background-color: rgb(255, 165, 0);
     box-shadow: 0 0 30px rgba(255, 165, 0, 1), 0 0 60px rgba(255, 165,0, 0.7);
     position: absolute;
+    border-radius:50%;
     top: 0;
     left: 0;
   }
@@ -5575,6 +5680,7 @@ input.numero:focus {
     background-color: rgb(0, 255, 0);
     box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 60px rgba(0, 255, 0, 0.7);
     position: absolute;
+    border-radius: 50%;
     top: 0;
     left: 0;
   }
@@ -5815,14 +5921,16 @@ input.numero:focus {
     flex-direction: column;
     display: flex;
     left:20%;
-    top: 38.7%;
+    top: 41%;
+    width: 30vw;
+    height: 14vh;
     display: none;
   }
   #conti-boton-rodilleria button{
-    height: 27px;
-    width: 130px;
+    height: 8vh;
+    width: 100%;
     font-size: 10px;
-    margin-bottom: 7px;
+    margin-bottom: 1vh;
   }
 
   .img-teñido{
@@ -5885,54 +5993,85 @@ input.numero:focus {
   }
   #cont-arriba-rodillos{
     position: absolute;
-    display: flex;
-    top: 7%;
-    left: 77%;
-    align-items: center;
-    height: auto;
-    margin-bottom: 20px;
-    align-items: center;
+    margin-top: 47%;
+    left: 14%;
+    width:41vw;
+    height:21vh;
+    margin-bottom:2.7vh; /* Añade un margen inferior de 20px al contenedor padre */
+    display: none;  
+  
   }
   #rodillos-I{
-    position: fixed;
     display: flex;
-    top: 45%;
-    left: 35%;
-    font-size: 20px;
-    width: 177px;
+    position: absolute;
+    top:0;
+    left:15%;
+    background: linear-gradient(45deg, black 33%, gray 67%);
+    font-size: 33px;
+    width: 70%;
     border-radius: 7px;
+    justify-content: center;
+    align-items: center;
   }
   #vidRodillos{
-    position: fixed;
-    display: flex;
-    top: 49%;
-    left: 35%;
-    height: 107px;
-  }
-  #rodillos-II{
     position: absolute;
     display: flex;
-    flex-direction: column;
-    height: 655px;
-    gap: 10px;
-    top: 75%;
-    left: 3%;
+    top: 17%;
+    left:0;
+    margin-bottom:2.3vh;
+    height: 80%;
+  
   }
+  #abuelo-cuadricula{
+    position: absolute;
+    display: flex;
+  }
+  #padre-cuadricula{
+    position: absolute;
+    display: flex;
+  }
+  .marco-3{
+    position: absolute;
+    display: flex;
+    background-color: rgb(0,0,17);
+    border-radius: 20px;
+    margin-top: -50%;
+    left: 57%;
+    width: 42vw;
+    height: 58vh;
+  }
+  .marco-2{
+    background-color: rgb(0,0,17);
+    border-radius: 20px;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+  .marco-1{
+    position: absolute;
+    display: grid;
+    top:1%;
+    left:1%;
+    width:100%;
+    height:95.5%;
+    grid-template-columns:48% 48%;
+    grid-template-rows: 50% 50%;
+    gap: 10px;
+    border-radius: 11px;
+  }
+  .rodillo{
+    width: 100%;
+    height: 100%;
+    object-fit: fill; 
+    border-radius: 20px;
+  }
+  
+  
+  
   #rodillos-II img{
     height: 100px;
     width: 150px;
-  }
-  #imgs-superiores{
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    top: 7%;
-  }
-  #imgs-inferiores{
-    position: absolute;
-    display: flex;
-    flex-direction: row; 
-    top: 24%;
   }
   #durezas{
   position: absolute;

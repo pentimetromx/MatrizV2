@@ -244,10 +244,10 @@ document.addEventListener('keydown', function(event) {
           cierraContenedores('uTeñido')         
         },2177)
         setTimeout(function() {
-          UnidadTeñido('boton8','boton7')
+          UnidadTeñido('boton9')
         },3077) 
         setTimeout(function() {
-          UnidadTeñido('btn600')              
+          rodillosTeñido('btn06')
         },3377)
         /*setTimeout(function() {
           lubricaDiario('lub-diario','labl1')             
@@ -266,7 +266,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('rodilleria') 
+  var contiBoton = document.getElementById('cont-arriba-rodillos') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
