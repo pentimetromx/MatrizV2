@@ -4477,9 +4477,9 @@ function LubricaDesbobinador(idButt) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      document.getElementById('freno-II').style.display='grid'
+      /* document.getElementById('freno-II').style.display='grid' */
       const movil = document.getElementById('child-move-II')
-      const currentZone = document.getElementById('freno-II')
+      const currentZone = document.getElementById('abuelo-grilla')
       moveElement(movil,currentZone)
     break;
     case 'btn70': 
