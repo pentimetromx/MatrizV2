@@ -2346,6 +2346,7 @@ h6{
 #conti-boton-desb button,
 #conti-boton-freno button{
   margin-bottom: 5.3vh;
+  font-size:1vw;
 }
 #frec-lubrica{
   position: relative;
@@ -3791,13 +3792,12 @@ input.numero {
     height: 70px;
     color: rgb(0,255,0);
     background-color: rgb(0,0,0);
-    border-color: goldenrod; /* Cambia el color del borde al azul cuando el input está enfocado */
+    border-color: goldenrod; /* Cambia el color del borde cuando el input está enfocado */
     border-radius: 11px;
     font-size: 40px;
     text-align: center;
     font-family: Arial, sans-serif;
-    border: 2px solid transparent; /* Establece un borde transparente por defecto */
-
+    border: 2px solid transparent;
   }
 input.numero:focus {
   border-color: blue; /* Cambia el color del borde al azul cuando el input está enfocado */
@@ -5936,7 +5936,7 @@ input.numero:focus {
   #conti-boton-rodilleria button{
     height: 8vh;
     width: 100%;
-    font-size: 10px;
+    /* font-size: 10px; */
     margin-bottom: 1vh;
   }
 
@@ -8180,12 +8180,12 @@ input.numero:focus {
     align-items: flex-end;
     gap: 7px; 
     top: 33%;
-    /* left: 17%; */
     margin: 0 auto;  
     width: 287px;
     height: 87px;
     border-radius: 10px;
     background-color: transparent;
+    z-index: 37;
   }
   input.numero {
     position: relative;
