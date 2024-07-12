@@ -80,7 +80,7 @@ h1, h2, h3 {
 .boton-a{
   height:6.5vh;
   width:41.6vw;
-  font-size: 3vw;
+  font-size: 1vw;
   text-align: center;
   background-color: rgba(255, 24, 55);
   color: white;
@@ -138,12 +138,11 @@ color: white;
 }
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
 #links-inicialesI{  /* PADRE LINKS INICIALES  */
-  position: relative;
-  top: 7%;
-  left: 7%;
   position: absolute;
-  left: 187px;
-  top: 0.1px; 
+  top: 2%;
+  left: 27%;
+  width:30vw;
+  height: 50vh;
   font-family: 'GothamRounded', sans-serif;
   display: none;
 }
@@ -248,19 +247,6 @@ color: white;
   width: 100%;
   height: 77px;
   background-color: #333333;
-  display: none;
-}
-#subtitulo-I{
-  position: absolute;
-  display: flex;
-  margin-top: -40%;
-  left: 99%;
-  width: 100%;
-  font-family: 'Candara', sans-serif; 
-  font-size: 51px;
-  font-weight: bold; color: white;
-  margin-bottom: 10px;
-  transition: transform 1.6s ease;
   display: none;
 }
 #descripcion-I{
@@ -2350,7 +2336,6 @@ h6{
 #conti-boton-desb button,
 #conti-boton-freno button{
   margin-bottom: 5.3vh;
-  /* font-size:1.5vw; */
 }
 #frec-lubrica{
   position: relative;
@@ -2691,7 +2676,19 @@ elemento.visible {
   position: absolute;
   left: 0.5%;
 }
-
+#subtitulo-I{
+  position: absolute;
+  display: flex;
+  top:10%;
+  left: 99%;
+  width: 100%;
+  font-family: 'Candara', sans-serif; 
+  font-size: 51px;
+  font-weight: bold; color: white;
+  margin-bottom: 10px;
+  transition: transform 1.6s ease;
+  display: none;
+}
 #cont-titulo{
   position: absolute;
   top: -95%;
@@ -5411,8 +5408,6 @@ input.numero:focus {
     border-radius: 11px;
     background-color: #000;  
   }
-
-
   #pantalla-inicial{
     position: relative;
     display: flex;
@@ -5444,7 +5439,7 @@ input.numero:focus {
     left:25%;  
     height:3.7vh;
     width:44vw;
-    font-size: 10px;     
+    font-size:2vw;     
     justify-content: center;
     background-color: rgb(255, 24, 55);
     color: white;
@@ -5481,7 +5476,7 @@ input.numero:focus {
     display: flex;
     height:3.6vh;
     width:11vw;
-    font-size: 8px;
+    font-size: 1.7vw;
   }
   /*//////////////////////////////////////////////////////////////////////////////////////  BOTONES ROJOS  ////*/
   .boton-b{
@@ -5544,7 +5539,7 @@ input.numero:focus {
     color: rgb(0,0,0);
     border-radius: 5px;
     text-align: center; 
-    font-size: 7px;   
+    font-size:2vw;   
     cursor: pointer; 
     transition: transform 0.1s;
   } 
@@ -6499,11 +6494,6 @@ input.numero:focus {
     height:1vh;
     transition: 0.1s;
   }
-  .iridescent-element{
-    width:42vw;
-    height:28vh;
-    animation: iridescent 4s infinite;
-  }
   #titleContainerI{
     position: fixed;
     display: flex;
@@ -6530,11 +6520,38 @@ input.numero:focus {
   /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #links-iniciales{  /* PADRE LINKS INICIALES-II  */
     position: absolute;
-    top: 17%;
-    left:57vw;
+    display: flex;
+    top: 14.5%;
+    left:47vw;
     height:57vh;
+    width:60vw;
     z-index: 34;
   }
+  #line{
+    position:absolute;
+    display: flex;
+    top:4%;
+    left:0;
+    width:20vw;
+    height:28vh;
+    animation: iridescent 4s infinite;
+  }
+  .iridescent-element{
+    position:absolute;
+    display: flex;
+    top:4%;
+    left:0;
+    width:42vw;
+    height:28vh;
+    animation: iridescent 4s infinite;
+  }
+  #linkList{
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: 10;
+  }
+  
   #links-inicialesI{  /* PADRE LINKS PILARES  */
     position: absolute;
     top: 17%;
@@ -6560,18 +6577,6 @@ input.numero:focus {
   }
   #titleContainer p{
     font-size: 3vw;
-  }
-  #linkList {
-    position: fixed;
-    left: 37%;  
-    top: 15.5%;    
-    width: 257px;
-    height:auto;
-    list-style: none;
-    padding: 0;
-    background-color: blue;
-    display: none;
-    z-index: 777;
   }
   .main-text {
     position: relative;
@@ -6701,7 +6706,19 @@ input.numero:focus {
   #agrupaOblicuos-XVII{
     display: none; 
   }
-  /*///////////////////////////////////////////////////////////////////// FINAL ////////////////////////////////////////////////////////////////////////////// */
+  .boton-a{
+    height:6.5vh;
+    width:41.6vw;
+    font-size: 3vw;
+    text-align: center;
+    background-color: rgba(255, 24, 55);
+    color: white;
+    cursor: pointer;
+    border-radius: 7px;
+    position: absolute;
+    top:0.7vh;
+  }
+  
   .sinusoidales{
     margin-left: auto;
     margin-right: auto;
@@ -7577,6 +7594,29 @@ input.numero:focus {
     left:1vw;
     z-index: 3;
   }
+  #iconos{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 10%;
+    left:0;
+    width:99%;
+    height: 100%;
+    display: none;
+  }
+  #title-interfaz{
+    position: absolute;
+    display: flex;
+    margin-top:20%;
+    left:2%;
+    width:100%;
+    font-family: "GothamRounded", sans-serif;
+    text-align: left;
+    color: rgb(255, 204, 0); 
+    font-size:4vw; 
+  }
+
   #rodillo-infeed{
     position: absolute;
     top: 1vh;
@@ -7962,18 +8002,6 @@ input.numero:focus {
     font-size: 9px;
     text-align: left;
   }
-  #title-interfaz{
-    position: absolute;
-    display: flex;
-    margin-top:20%;
-    left: 4.7%;
-    width:83%;
-    font-family: "GothamRounded", sans-serif;
-    text-align: left;
-    color: rgb(255, 204, 0); 
-    font-size: 16px; 
-  }
-  /* 8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888 */
   .contenedor-vertical{  
     position: fixed;
     top: 42%;
@@ -8041,12 +8069,24 @@ input.numero:focus {
   #cont-titulo{
     position: relative;
     display: flex;
-    top: -85%;
+    top: -99%;
     left: 0;
     width: 100vw;
     height: 70vh;
     transition: transform 1.6s ease;
   }  
+  #cont-titulo h4{
+    position: absolute;
+    display: flex;
+    font-size: 7vw;
+    text-align: center;
+    top: -1%;
+    left: 99%;
+    height: 67px;
+    width:100vw;
+    transition: transform 0.7s ease;
+
+  }
   #agrupaOblicuos-XI{
     position: absolute;
     display: flex;
@@ -8070,29 +8110,18 @@ input.numero:focus {
     box-sizing: border-box;
     float: left;
   }
-  #subtitulo-I{
-    position: absolute;
-    display: flex;
-    font-size: 7vw;
-    text-align: center;
-    top: 27%;
-    left: 99%;
-    height: 67px;
-    width:100vw;
-    transition: transform 0.7s ease;
-  }
   #descripcion-I{
     position: absolute;
     display: flex;
     font-size: 17px;
-    top: 35%;
+    top: 37%;
     width: 100%;
     height:23%;
   } 
   #butt-Institucional{
     position: absolute;
     display: block;
-    margin-top: 22%; 
+    top:50%; 
     height: 19px;
     width: 147px;
     background: linear-gradient(45deg,#ff1837 15%, #333333 85%);
@@ -8403,7 +8432,7 @@ input.numero:focus {
     transform: translateX(200px);
   }
   .move-oblicuos{
-    transform: translateY(143%);
+    transform: translateY(166%);
   }
   .move-window{
     transform: translateX(414px);
@@ -8615,8 +8644,7 @@ input.numero:focus {
     top: -7.5%;
     width:0.1px;
     height: 107.5%;
-  }
-  
+  }  
 
 }
 
