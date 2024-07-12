@@ -80,6 +80,7 @@ h1, h2, h3 {
 .boton-a{
   height:6.5vh;
   width:41.6vw;
+  font-size: 3vw;
   text-align: center;
   background-color: rgba(255, 24, 55);
   color: white;
@@ -5357,10 +5358,61 @@ input.numero:focus {
   #cont-titulo-admin,
   #cont-titulo-calidad,
   #cont-titulo-operacion{
-    position: absolute;
-    height:auto;
-    top: 7%;
+    position: relative;
+    display: flex;
+    height:90vh;
+    width:99vw;
+    top: 13vh;
+    left: 0;
   }
+  #cont-titulo-operacion h4{
+    position: absolute;
+    display: flex;
+    text-align: center;
+    font-size: 5vw;
+    top: 2%;
+    left:2%;
+    width: 100%;
+  }
+  #descripcion-II{
+    position: absolute; 
+    display: flex;
+    top:7%;
+    left:0;
+    text-align: center;
+    font-size: 4vw;    
+  }
+  #agrupaOblicuos-XII{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:-5%;
+    overflow: auto;
+    gap: 9%;
+    left: 53%;
+    width: 45%;
+    height: 400px;
+    border-radius: 11px;
+    background-color: #000;  
+  }
+  #agrupaOblicuos-XVIII{
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -5%;
+    left: 2%;
+    width: 48%;
+    height: 400px;
+    overflow-y: auto; /* Controla el desbordamiento vertical */
+    overflow-x: hidden;
+    gap: 17%;
+    border-radius: 11px;
+    background-color: #000;  
+  }
+
+
   #pantalla-inicial{
     position: relative;
     display: flex;
@@ -6460,6 +6512,9 @@ input.numero:focus {
     width:23vw;  
     align-items: center;
   }
+  #titleContainerI p{
+    font-size: 3vw;
+  }
   #linkListI{
     position: fixed;
     left: 3%;  
@@ -6478,7 +6533,6 @@ input.numero:focus {
     top: 17%;
     left:57vw;
     height:57vh;
-    /* width:44vw; */
     z-index: 34;
   }
   #links-inicialesI{  /* PADRE LINKS PILARES  */
@@ -6503,6 +6557,9 @@ input.numero:focus {
     top: 13%; 
     width:39vw; 
     align-items: center;
+  }
+  #titleContainer p{
+    font-size: 3vw;
   }
   #linkList {
     position: fixed;
@@ -6589,18 +6646,6 @@ input.numero:focus {
     margin-left: auto; /* Establece el margen izquierdo automático */
     margin-right: auto; /* Establece el margen derecho automático */
   }
-  #subtitulo-operacion{
-    position: absolute;
-    text-align: center;
-    font-size: 22px;
-    margin-top: 13%;
-  }
-  #descripcion-II{
-    position: absolute; 
-    text-align: center;
-    font-size: 18px;
-    margin-top: 20%;
-  }
   #butt-operacion{
     position: absolute;
     left: 50%;
@@ -6648,35 +6693,6 @@ input.numero:focus {
     margin-top:47%;
     left: 60%;
   } 
-  #agrupaOblicuos-XII{
-    position: absolute;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    margin-top:49%;
-    overflow: auto;
-    gap: 9%;
-    left: 55%;
-    width: 45%;
-    height: 400px;
-    border-radius: 11px;
-    background-color: #000;  
-  }
-  #agrupaOblicuos-XVIII{
-    position:absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 49%;
-    left: 4%;
-    width: 48%;
-    height: 400px;
-    overflow-y: auto; /* Controla el desbordamiento vertical */
-    overflow-x: hidden;
-    gap: 17%;
-    border-radius: 11px;
-    background-color: #000;  
-  }
   #agrupaOblicuos-XII > * {
     margin-bottom: 1px;
  }
@@ -8025,7 +8041,7 @@ input.numero:focus {
   #cont-titulo{
     position: relative;
     display: flex;
-    top: -79%;
+    top: -85%;
     left: 0;
     width: 100vw;
     height: 70vh;
