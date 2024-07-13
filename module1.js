@@ -456,21 +456,28 @@ function showRepuesto(elementId) {
 var imgsContra = document.getElementById('impresorImg')
 switch (elementId) {
 case 'contImgDistribuidor': 
-  var elementosExcluidos = ['buscador','buscador','contImgDistribuidor','container01','links-iniciales','links-inicialesI'];         
+  var elementosExcluidos = ['buscador','buscador','container01','links-iniciales','frame-rollers','links-inicialesI'];   
+  var elementosGrid = document.getElementById('contImgDistribuidor')        
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]) 
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+      elementosGrid.style.display = 'grid'
     }
   }
   if (screenWidth < 500) {
-    var elementosExcluidos = ['buscador','buscador','contImgDistribuidor','container01','links-iniciales','links-inicialesI'];         
+    var elementosExcluidos = ['buscador','buscador','container01','links-iniciales','links-inicialesI','frame-rollers',];  
+    var elementosGrid = document.getElementById('contImgDistribuidor')        
     for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]) 
       if (elemento) {
       // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+      elementosGrid.style.display = 'grid'
     }}
+    const movil = document.getElementById('child-move-III')
+    const currentZone = document.getElementById('frame-rollers')
+    moveElement(movil,currentZone)
   }  
     
 
@@ -2209,7 +2216,6 @@ function abrirSeccionOperativa(elementId){
     }, 177);
 
   }
-  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {
@@ -4477,7 +4483,6 @@ function LubricaDesbobinador(idButt) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      /* document.getElementById('freno-II').style.display='grid' */
       const movil = document.getElementById('child-move-II')
       const currentZone = document.getElementById('abuelo-grilla')
       moveElement(movil,currentZone)

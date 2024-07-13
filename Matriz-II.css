@@ -177,6 +177,8 @@ color: white;
   position: absolute;
   left: 270px;
   top: 0.1px;
+  width:30vw;
+  height: 50vh;
   font-family: 'GothamRounded', sans-serif;
   display: none;
 }
@@ -1820,7 +1822,7 @@ width:447px ;
   left: 22.5%;
   display: none;
 }
-.imgRow {
+/* .imgRow {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -1830,7 +1832,7 @@ width:447px ;
   width: 154px;
   margin: 0 10px;
   border-radius: 7px;
-}
+} */
 #imgsRepuestos{
   display: flex;
   flex-direction: column;
@@ -2821,6 +2823,7 @@ elemento.visible {
 }
 #rodilleria{
   position: relative;
+  display: flex;
   top: 13%;
   display: none;  
 }
@@ -5127,6 +5130,7 @@ input.numero:focus {
   background-color: black;
   border-radius: 20px;
 }
+#child-move-III,
 #child-move{
   width: 60px;
   height: 60px;
@@ -5559,7 +5563,7 @@ input.numero:focus {
     top:0;
     width:41%;
     height:100%;
-    z-index: 33;
+    /* z-index: 33; */
   } 
   #conti-boton-desb button{
     margin-bottom: 8%;
@@ -6525,7 +6529,8 @@ input.numero:focus {
     left:47vw;
     height:57vh;
     width:60vw;
-    z-index: 34;
+    /* z-index: 34; */
+    display: none;
   }
   #line{
     position:absolute;
@@ -6549,15 +6554,19 @@ input.numero:focus {
     position: absolute;
     left:0;
     top:0;
-    z-index: 10;
-  }
-  
+    z-index: 777;
+    display: none;
+  }  
   #links-inicialesI{  /* PADRE LINKS PILARES  */
     position: absolute;
+    display: flex;
     top: 17%;
     left: 7%;
     height:57vh;
-    z-index: 34;    
+    width:60vw;
+    /* height:7vh; */
+    /* z-index: 34; */
+    display:none;   
   }
   #line {
     position: fixed;
@@ -7126,9 +7135,9 @@ input.numero:focus {
   }
   #sitema-humedad{
     position: relative;
-    top: 8%;
-    height: 100%;
-    width: 100%;
+    top:13vh;
+    height: 85vh;
+    width: 99%vw;
     display: none;
   } 
   #contenedor-9{
@@ -7204,20 +7213,48 @@ input.numero:focus {
     display: none;
     border-radius: 11px;
   }
-  #contImgEntintador,
-  #contImgDistribuidor{
+  #contImgEntintador{
     position: relative;
     flex-direction: column;
     display: flex;
     justify-content: center;
     width: 100vh;
     height: 100vh;
-    top: 8%;
+    top: 13%;
     left: 2.5%;
     display: none;
   }
-  #contImgEntintador img,
-  #contImgDistribuidor img{
+  #contImgDistribuidor{
+    position: relative;
+    display: grid;
+    left: 0;
+    top: 0;
+    grid-template-columns:25% 25% 25% 25%;
+    grid-template-rows:24% 24% 24% 24%;
+    gap: 5px;
+    height: 100%;
+    width: 100%;
+    background-color: RGB(0,0,10);
+    padding: 2% 4% 2% 4%;
+    border-radius: 15px;
+  }
+  #frame-rollers{
+    position: relative;
+    display:flex;
+    left: 2vw;
+    top: 18vh;
+    height:52vh;
+    width: 88vw;
+    border-radius: 15px;
+    background-color: RGB(0,0,10);
+  }
+  .aumentar{ 
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  #contImgEntintador img{
     height: 57px;
     width: 77px;
     border-radius: 7px;
@@ -8170,12 +8207,20 @@ input.numero:focus {
   #padre-circle{
     position: relative;
     display: flex;
-    top: -55%;
+    top: -60%;
     left: 4%; 
     width: 300px;
     height:50px ;
     display: none;
   }
+  #conte-ayudas{
+    position: absolute;
+    display: flex;
+    top: 14%;
+    left: 41%;
+    width: 77px;
+    height: 77px;
+    }
   #circle{
     position: absolute;
     display: flex;
@@ -8532,14 +8577,6 @@ input.numero:focus {
   #img-logo{
     width: 0; /* Inicia con ancho de 0 para el efecto de desenrollar */
     transition: width 0.7s ease; /* Transición para el efecto de desenrollar */
-  }
- #conte-ayudas{
-  position: absolute;
-  display: flex;
-  top: 18.5%;
-  left: 41%;
-  width: 77px;
-  height: 77px;
   }
   #imagen-ayudas{
     position: absolute;
