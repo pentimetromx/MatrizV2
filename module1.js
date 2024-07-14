@@ -494,7 +494,7 @@ case 'contImgEntintador':
     }
   }
   if (screenWidth < 500) {
-    var elementosExcluidos = ['buscador','buscador','contImgEntintador','container01','links-iniciales','links-inicialesI'];         
+    var elementosExcluidos = ['buscador','buscador','abuelo-entintadores','container01','links-iniciales','links-inicialesI'];         
     for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]) 
     if (elemento) {

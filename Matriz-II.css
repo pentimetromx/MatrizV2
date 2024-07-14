@@ -1820,27 +1820,6 @@ width:447px ;
 #contPortaManta video{  
   height: 477px;
 }
-#contImgEntintador,
-#contImgDistribuidor{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  top: 15%;
-  left: 22.5%;
-  display: none;
-}
-/* .imgRow {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.imgRow img{
-  height: 115px;
-  width: 154px;
-  margin: 0 10px;
-  border-radius: 7px;
-} */
 #imgsRepuestos{
   display: flex;
   flex-direction: column;
@@ -5137,6 +5116,7 @@ input.numero:focus {
   background-color: black;
   border-radius: 20px;
 }
+#child-move-IV,
 #child-move-III,
 #child-move{
   width: 60px;
@@ -5297,7 +5277,6 @@ input.numero:focus {
   box-sizing: border-box;
   border-radius: 11px;
 }
-
 .grilla-teñido-hijo{
   position: absolute;
   display: grid;
@@ -7227,20 +7206,7 @@ input.numero:focus {
     left: 2.5%;
     display: none;
   }
-  #contImgDistribuidor{
-    position: relative;
-    display: grid;
-    left: 0;
-    top: 0;
-    grid-template-columns:25% 25% 25% 25%;
-    grid-template-rows:24% 24% 24% 24%;
-    gap: 5px;
-    height: 100%;
-    width: 100%;
-    background-color: RGB(0,0,10);
-    padding: 2% 4% 2% 4%;
-    border-radius: 15px;
-  }
+  #abuelo-entintadores,
   #frame-rollers{
     position: relative;
     display:flex;
@@ -7251,17 +7217,48 @@ input.numero:focus {
     border-radius: 15px;
     background-color: RGB(0,0,10);
   }
+  #contImgDistribuidor{
+    position: absolute;
+    display: grid;
+    left:0;
+    top:0;
+    grid-template-columns:25% 25% 25% 25%;
+    grid-template-rows:25% 25% 25% 25%;
+    height:100%;
+    width:100%;
+    background-color: RGB(0,0,10);
+    border-radius: 15px;
+  }
+  #contImgDistribuidor img{
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height:100%;
+    object-fit: fill;  
+  }
+
+
+  #padre-entintadores{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 15%;
+    left: 22.5%;
+    display: none;
+  }
+
   .aumentar{ 
     cursor: pointer;
     display: block;
     width: 100%;
     height: 100%;
   }
-  #contImgEntintador img{
+  /* #contImgEntintador img{
     height: 57px;
     width: 77px;
     border-radius: 7px;
-  }
+  } */
   #contPortPlaca,
   #contPortManta,
   #contImpresor{
