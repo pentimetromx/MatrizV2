@@ -476,11 +476,10 @@ case 'contImgDistribuidor':
       elementosGrid.style.display = 'grid'
     }}
     const movil = document.getElementById('child-move-III')
+    movil.style.display='flex'
     const currentZone = document.getElementById('frame-rollers')
     moveElement(movil,currentZone)
   }  
-    
-
   if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray);
