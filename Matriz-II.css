@@ -544,7 +544,6 @@ margin-right:0.4vh;
   background-color: white;
   content: "";
 }
-
 .linea-vertical-II{
   position: absolute;
   left: 340px;
@@ -654,6 +653,50 @@ margin-right:0.4vh;
   content: "";
   background-color: rgb(255,0,0);
 }
+#abuelo-entintadores,
+#frame-rollers{
+  position: relative;
+  display:flex;
+  left: 25vw;
+  top: 18vh;
+  height:66vh;
+  width:50vw;
+  border-radius: 15px;
+  background-color: RGB(0,0,10);
+}
+#padre-entintadores,
+#contImgDistribuidor{
+  position: absolute;
+  display:flex;
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  background-color: RGB(0,0,10);
+  border-radius: 15px;
+}
+#grilla-corta-entintado,
+#grilla-entintado{
+  position: absolute;
+  display:grid;
+  left:1%;
+  top:1%;
+  grid-template-columns:25% 25% 25% 25%;
+  grid-template-rows:25% 25% 25% 25%;
+  height:97.4%;
+  width:97.5%;
+  gap:1px;
+  background-color: RGB(0,0,10);
+  border-radius: 15px;
+}
+.imgs-row img{
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height:100%;
+  object-fit: fill;      
+}
+
 .boton-c {
   position: relative;
   display: flex;
@@ -7217,48 +7260,44 @@ input.numero:focus {
     border-radius: 15px;
     background-color: RGB(0,0,10);
   }
+  #padre-entintadores,
   #contImgDistribuidor{
     position: absolute;
-    display: grid;
+    display:flex;
     left:0;
     top:0;
-    grid-template-columns:25% 25% 25% 25%;
-    grid-template-rows:25% 25% 25% 25%;
     height:100%;
     width:100%;
     background-color: RGB(0,0,10);
     border-radius: 15px;
   }
-  #contImgDistribuidor img{
+  #grilla-corta-entintado,
+  #grilla-entintado{
+    position: absolute;
+    display:grid;
+    left:1%;
+    top:1%;
+    grid-template-columns:25% 25% 25% 25%;
+    grid-template-rows:25% 25% 25% 25%;
+    height:97.2%;
+    width:97.2%;
+    gap:1px;
+    background-color: RGB(0,0,10);
+    border-radius: 15px;
+  }
+  .imgs-row img{
     cursor: pointer;
     display: block;
     width: 100%;
     height:100%;
-    object-fit: fill;  
+    object-fit: fill;      
   }
-
-
-  #padre-entintadores{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    top: 15%;
-    left: 22.5%;
-    display: none;
-  }
-
   .aumentar{ 
     cursor: pointer;
     display: block;
     width: 100%;
     height: 100%;
   }
-  /* #contImgEntintador img{
-    height: 57px;
-    width: 77px;
-    border-radius: 7px;
-  } */
   #contPortPlaca,
   #contPortManta,
   #contImpresor{

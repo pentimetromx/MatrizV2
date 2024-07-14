@@ -464,6 +464,11 @@ case 'contImgDistribuidor':
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
       elementosGrid.style.display = 'grid'
     }
+    const movil = document.getElementById('child-move-III')
+    movil.style.display='flex'
+    const currentZone = document.getElementById('frame-rollers')
+    moveElement(movil,currentZone)
+
   }
   if (screenWidth < 500) {
     var elementosExcluidos = ['buscador','buscador','container01','links-iniciales','links-inicialesI','frame-rollers',];  
@@ -486,23 +491,36 @@ case 'contImgDistribuidor':
   }
 break;
 case 'contImgEntintador':
-  var elementosExcluidos = ['buscador','buscador','contImgEntintador','container01','links-iniciales','links-inicialesI'];         
+  var elementosExcluidos = ['buscador','buscador','abuelo-entintadores','padre-entintadores','container01','links-iniciales','links-inicialesI']; 
+  var elementosGrid = document.getElementById('grilla-corta-entintado')                
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]) 
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+      elementosGrid.style.display = 'grid'
     }
+    const movil = document.getElementById('child-move-IV')
+    movil.style.display='flex'
+    const currentZone = document.getElementById('abuelo-entintadores')
+    moveElement(movil,currentZone)
+
   }
   if (screenWidth < 500) {
-    var elementosExcluidos = ['buscador','buscador','abuelo-entintadores','container01','links-iniciales','links-inicialesI'];         
+    var elementosExcluidos = ['buscador','buscador','abuelo-entintadores','padre-entintadores','container01','links-iniciales','links-inicialesI']; 
+    var elementosGrid = document.getElementById('grilla-corta-entintado')                        
     for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]) 
     if (elemento) {
       // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+      elementosGrid.style.display = 'grid'
+
     }}
   } 
-
+    const movil = document.getElementById('child-move-IV')
+    movil.style.display='flex'
+    const currentZone = document.getElementById('abuelo-entintadores')
+    moveElement(movil,currentZone)
   if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray);
