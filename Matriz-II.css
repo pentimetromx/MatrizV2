@@ -98,13 +98,15 @@ h1, h2, h3 {
 }
 #toggleVideoButton{
   position: absolute;
+  display: flex;
+  top: 0;
+  left:60%;
+  width:39.7vw;
+  height:6.5vh;
   text-align: center;
   align-items: center;
   cursor: pointer;
   justify-content: center;
-  left: 59%;
-  width:39.7vw;
-  height:6.5vh;
   background-color: rgb(255, 24, 55);
   font-size:1vw;
   color: white;
@@ -310,10 +312,17 @@ color: white;
   position: absolute;
   display: flex;
   flex-direction: row;
-  top: 8%;
+  top: 12%;
   left:59%;
   height: 66%;
   width: 42%;
+}
+.torre-imp .unidad-torre{
+  flex: 1;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  box-sizing: border-box;
 }
 #sis-humedad,
 #bancada-torre,
@@ -5467,20 +5476,20 @@ input.numero:focus {
     left:1vw;
     height: 57vh;
     width: 100%;
-    }
-    .torre-imp .unidad-torre{
-      flex: 1;
-      top: 0;
-      width: 25%; /* Esto asegura que cada hijo ocupe el 20% del ancho del padre */
-      height: 100%; /* Esto asegura que los hijos tengan la misma altura que el contenedor padre */
-      box-sizing: border-box; /* Esto asegura que el padding y border se incluyan en el ancho y alto */
-    }
+  }
+  .torre-imp .unidad-torre{
+    flex: 1;
+    top: 0;
+    width: 25%; /* Esto asegura que cada hijo ocupe el 20% del ancho del padre */
+    height: 100%; /* Esto asegura que los hijos tengan la misma altura que el contenedor padre */
+    box-sizing: border-box; /* Esto asegura que el padding y border se incluyan en el ancho y alto */
+  }
   #toggleVideoButton{
     position:absolute;
     display: flex;
     cursor: pointer;
     text-align: center;
-    top:0;
+    top:48%;
     left:24%;
     height:3.7vh;
     width:46vw;
@@ -5490,7 +5499,6 @@ input.numero:focus {
     font-size: 1.5vw;
     transition: transform 0.1s;
   }
-
   #cont-Verticales1,
   #cont-Verticales2,
   #cont-Verticales33,
@@ -7657,7 +7665,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    top: 10%;
+    top: 17%;
     left:0;
     width:99%;
     height: 100%;
@@ -7666,7 +7674,7 @@ input.numero:focus {
   #title-interfaz{
     position: absolute;
     display: flex;
-    margin-top:20%;
+    top: 0;
     left:2%;
     width:100%;
     font-family: "GothamRounded", sans-serif;
@@ -7909,8 +7917,6 @@ input.numero:focus {
     flex-wrap: wrap;
     justify-content: space-evenly;
     border-radius: 7px;
-    /* max-width: 257px;
-    max-height:200px ; */
     left: -77%;
     top: 79%;
     display: none;
@@ -7943,7 +7949,7 @@ input.numero:focus {
   }
   .imgs-Antes {
     position:relative;
-    width: calc(33.333% - 10px); /* Calcula el ancho, considerando el margen de 10px entre las imágenes */
+    width: calc(33.333% - 10px);
     margin: 5px;
     height:45%;
     border: 1px solid rgb(255, 0, 255);    
@@ -8037,8 +8043,9 @@ input.numero:focus {
     grid-template-rows: repeat(3, 1fr);
     grid-gap:1%;
     flex-wrap:wrap;
-    width:95%;
+    top: 7%;
     left:2%;
+    width:95%;
     height:auto;
   }
   .cont-user {
@@ -8431,14 +8438,12 @@ input.numero:focus {
       opacity: 1;
     }
   }
-  /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left{
     transform: translateY(457px); 
   }
   .move-up{
     transform: translateY(-677px);  
   }
-  /* segundo evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-butts{
     transform: translateY(577px); 
   }
@@ -8451,7 +8456,6 @@ input.numero:focus {
   .move-images{
     transform: translateY(870px) translateX(-107px); 
   }  
-  /* tercer evento //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-repuest-II{
     transform: translateY(555px) translateX(-111px); 
   }
@@ -8477,7 +8481,6 @@ input.numero:focus {
   .move-vid-smed{
     transform: translateX(-187%);
   }
-  /* quinto evento //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-repuest-IV{
     transform: translateY(-1377%); 
   }
