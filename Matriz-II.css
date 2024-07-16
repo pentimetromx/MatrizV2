@@ -374,13 +374,12 @@ color: white;
 #alimentadorId,
 #unidProceso,
 #rebobinador{
-position: relative;
-display: flex;
-width: 11%;
-height: 100%;
-margin-right:0.4vh;
+  width: 11%;
+  height: 100%;
+  margin-right:0.4vh;
 }
 .boton-b{
+  left: 0;
   height:6.5vh;
   width:9.2vw;
   background: linear-gradient(45deg,  rgb(255, 24, 55) 55%,  rgba(255, 24, 55, 0.33) 99%);                       
@@ -400,8 +399,8 @@ margin-right:0.4vh;
   position: absolute;
   flex-direction: column;
   display: flex;
-  margin-top:63%;
-  width: 70%;
+  top:13vh;
+  width:60%;
   padding-left:1.5vw;
 }
 
@@ -695,7 +694,6 @@ margin-right:0.4vh;
   height:100%;
   object-fit: fill;      
 }
-
 .boton-c {
   position: relative;
   display: flex;
@@ -5448,53 +5446,51 @@ input.numero:focus {
     position: relative;
     display: flex;
     flex-direction: row;
-    top: 22%;
+    top: 15%;
     left: 1%;
     display: none;
-    width: 98%;
+    width:98vw;
     height: 80%;
   }
-  #desbobinadorId
-  #uTeñidos,
-  #alimentadorId,
-  #unidProceso,
-  #rebobinador{
-    /* position: relative;
-    flex-direction: column;
-    display: flex;
-    align-items: center; 
-    z-index: 3; */ 
-
-    position: relative;
-    flex-direction: column;
-    display: flex;
+  #pantalla-inicial .torre{
+    flex: 1;
+    top: 0;
     width: 20%;
     height: 100%;
-    margin-right:0.4vh;
+    box-sizing: border-box;
   }
-  #toggleVideoButton{
+  .torre-imp{
     position: absolute;
-    text-align: center;
-    align-items: center;
+    display: flex;
+    flex-direction: row;
+    top:49%;
+    left:1vw;
+    height: 57vh;
+    width: 100%;
+    }
+    .torre-imp .unidad-torre{
+      flex: 1;
+      top: 0;
+      width: 25%; /* Esto asegura que cada hijo ocupe el 20% del ancho del padre */
+      height: 100%; /* Esto asegura que los hijos tengan la misma altura que el contenedor padre */
+      box-sizing: border-box; /* Esto asegura que el padding y border se incluyan en el ancho y alto */
+    }
+  #toggleVideoButton{
+    position:absolute;
+    display: flex;
     cursor: pointer;
-    top:34%;
-    left:25%;  
+    text-align: center;
+    top:0;
+    left:24%;
     height:3.7vh;
-    width:44vw;
-    font-size:2vw;     
-    justify-content: center;
-    background-color: rgb(255, 24, 55);
+    width:46vw;
+    background: linear-gradient(45deg,  rgb(255, 24, 55) 55%,  rgba(255, 24, 55, 0.33) 99%);                       
     color: white;
+    border-radius: 7px;
+    font-size: 1.5vw;
     transition: transform 0.1s;
   }
- .torre-imp{
-  position: absolute;  
-  display: flex;
-  height: 57vh;
-  width: 100%;
-  top:36%;
-  left: 3%;
-}
+
   #cont-Verticales1,
   #cont-Verticales2,
   #cont-Verticales33,
@@ -5503,9 +5499,18 @@ input.numero:focus {
     position: absolute;
     flex-direction: column;
     display: flex;
-    margin-top:19%;
-    width: 55%;
-    padding-left:4vw;
+    top:3vh;
+    width:60%;
+    padding-left:1.5vw;
+  }
+  .linea-vertical-33 {
+    position: absolute;
+    left:-1vw;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: white;
+    content: "";
   }
   .boton-e,
   .boton-c {
@@ -5515,49 +5520,21 @@ input.numero:focus {
     width:11vw;
     font-size: 1.7vw;
   }
-  /*//////////////////////////////////////////////////////////////////////////////////////  BOTONES ROJOS  ////*/
   .boton-b{
-    /* height:3vh;
-    width:15vw;
-    background: linear-gradient(45deg,  rgb(255, 24, 55) 55%,  rgba(255, 24, 55, 0.33) 99%);                       
-    color: white;
-    border-radius: 6px;
-    margin-right:5vw;
-    font-size:1.5vw;
-    cursor: pointer; 
-    text-align: center;
-    transition: transform 0.1s; */ 
-    height:6.5vh;
-    width:9.2vw;
+    position:absolute;
+    display: flex;
+    top:0;
+    left:2%;
+    height:4vh;
+    width:17vw;
     background: linear-gradient(45deg,  rgb(255, 24, 55) 55%,  rgba(255, 24, 55, 0.33) 99%);                       
     color: white;
     border-radius: 7px;
-    margin-right:1.9vw;
-    font-size: 1vw;
+    font-size: 1.5vw;
     cursor: pointer;
     text-align: center;
     transition: transform 0.1s;
   }
-  #boton7,
-  #boton13,
-  #boton19,
-  #boton25,
-  #boton1{
-    position:relative;
-    left: 12%;
-    top:-7%;
-  }
- /*//////////////////////////////////////////////////////////////////////////////////////////*/
-  #sis-humedad,
-  #bancada-torre,
-  #bateria-entintado,
-  #tinter-o{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    top: 6%;
-    margin-right: 25%;
- }
   #rotatek-1{
     position: relative;
     display: flex;
@@ -5572,15 +5549,25 @@ input.numero:focus {
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 9%;
+    top: 16%;
+    left:0;
+  }
+  .linea-vertical {
+    position: absolute;
+    left:-1.5vw;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: white;
+    content: "";
   }
   .boton-d{
     position: absolute;
     display: flex;
-    margin-left:12%;
-    margin-top:13%;
+    top: 7%;
+    left: 2%;
     height:3.7vh;
-    width:15vw;
+    width:17vw;
     background: linear-gradient(45deg, rgba(0,250,0) 15%,  rgb(0,255,0,0.077) 85%);                       
     color: rgb(0,0,0);
     border-radius: 5px;

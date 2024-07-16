@@ -24,6 +24,9 @@ function cierraContenedores(elementId,buttonID){
           if (i === 0) {
             // Deja visible el primer hijo
             hijo.style.display = 'flex';
+            hijo.style.position='relative'
+            /* hijo.style.top='-10vh' */
+            /* document.getElementById('cont-Verticales1').style.top='-10vh' */
           } else {
             hijo.style.display = 'none';
           }

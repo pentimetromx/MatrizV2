@@ -497,9 +497,10 @@
       <button class="boton-a" id="bot-atras32" style="text-align: center;width: 47px;position: relative;left: 685px;top: 5px;;display: none" onclick="irContenedorSiguiente('rotatek-1')"></button>
     </div><br>
     <div id="pantalla-inicial">
+      
       <div class="torre" id="desbobinadorId">
-        <button class="boton-b btn-bloque" id="boton1">DESBOBINADOR</button><br>
         <div  id="cont-Verticales1">
+          <button class="boton-b btn-bloque" id="boton1">DESBOBINADOR</button><br><br>
           <div class="linea-vertical-33"></div>
           <button id="boton2" class="boton-c" onclick="lubricacion('boton2','boton1')">Lubricacion<div class="linea-horizontal"></div></button>
           <button id="boton3" class="boton-c" onclick="lubricacion('boton3','boton1')">Freno<div class="linea-horizontal"></div></button>
@@ -509,8 +510,8 @@
         </div>         
       </div>
       <div class="torre" id="uTeñidos">  
-        <button class="boton-b btn-bloque" id="boton7">UNIDAD TEÑIDO</button><br>       
         <div  id="cont-Verticales2">
+          <button class="boton-b btn-bloque" id="boton7">UNIDAD TEÑIDO</button><br><br>
           <div class="linea-vertical-33"></div>
           <button class="boton-c" id="boton8" onclick="UnidadTeñido('boton8','boton7')">Sistema neumático<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton9" onclick="UnidadTeñido('boton9','boton7')">Rodillería<div class="linea-horizontal"></div></button>
@@ -520,8 +521,8 @@
         </div>
       </div>
       <div class="torre" id="alimentadorId">
-        <button class="boton-b btn-bloque" id="boton13">ALIMENTADOR</button><br> 
         <div  id="cont-Verticales33">
+          <button class="boton-b btn-bloque" id="boton13">ALIMENTADOR</button><br><br>
           <div class="linea-vertical-33"></div>
           <button class="boton-c" id="boton14" onclick="UnidadAlimenta('boton14','boton13')">Estructura<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton15"  onclick="UnidadAlimenta('boton15','boton13')">Sistema planetario<div class="linea-horizontal"></div></button>
@@ -531,8 +532,8 @@
         </div>          
       </div>
       <div class="torre" id="unidProceso">  
-        <button class="boton-b btn-bloque" id="boton19">UNIDAD DE PROCESO</button><br>  
         <div  id="cont-Verticales7">
+          <button class="boton-b btn-bloque" id="boton19">UNIDAD DE PROCESO</button><br><br>
           <div class="linea-vertical-33"></div>
           <button class="boton-c" id="boton20" onclick="UnidadProceso('boton20','boton19')">Rodillos de transporte<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton21" onclick="UnidadProceso('boton21','boton19')">Función y ensamble<div class="linea-horizontal"></div></button>
@@ -542,8 +543,8 @@
         </div>          
       </div>
       <div class="torre" id="rebobinador">
-        <button class="boton-b btn-bloque" id="boton25">REBOBINADOR</button><br>                     
         <div   id="cont-Verticales8">
+          <button class="boton-b btn-bloque" id="boton25">REBOBINADOR</button><br><br>
           <div class="linea-vertical-33"></div>
           <button class="boton-c" id="boton26" onclick="UnidadRebonina('boton26','boton25')">Estructura<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton27" onclick="UnidadRebonina('boton27','boton25')">Sistema planetario<div class="linea-horizontal"></div></button>
@@ -552,11 +553,12 @@
           <button class="boton-c" id="boton30" onclick="UnidadRebonina('boton30','boton25')">Ajuste neumatico<div class="linea-horizontal"></div></button>
         </div>          
       </div>       
-      <button id="toggleVideoButton">TORRE DE IMPRESIÓN</button>
+      <!-- <button id="toggleVideoButton">TORRE DE IMPRESIÓN</button> -->
                 
       <div class="torre-imp" id="torre-imp">
+        <button id="toggleVideoButton">TORRE DE IMPRESIÓN</button>
 
-        <div id="tinter-o">
+        <div id="tinter-o" class="unidad-torre">
           <button class="boton-d" id="tinteroButton" onclick="changeButtonStyles('pantalla-tintero')">TINTERO</button>
           <div id="cont-Verticales22">
             <div class="linea-vertical"></div>
@@ -569,7 +571,7 @@
           </div>
         </div>
 
-        <div id="bateria-entintado">  
+        <div id="bateria-entintado" class="unidad-torre">  
           <button class="boton-d" id="bateriaButton" onclick="changeButtonStyles('bateria-entintado-II', 'contene-7')">BATERIA DE ENTINTADO</button>               
           <div id="cont-Verticales3">
             <div class="linea-vertical"></div>
@@ -581,7 +583,7 @@
           </div>              
         </div>
 
-        <div id="bancada-torre">
+        <div id="bancada-torre" class="unidad-torre">
           <button class="boton-d" id="bancadaButton" onclick="changeButtonStyles('bancada-torre-II')">BANCADA DE TORRE</button>
           <div id="cont-Verticales4">
             <div class="linea-vertical"></div>
@@ -590,7 +592,7 @@
           </div>         
         </div> 
 
-        <div id="sis-humedad">  
+        <div id="sis-humedad" class="unidad-torre">  
           <button class="boton-d" id="humedadButton" onclick="changeButtonStyles('sitema-humedad')">SISTEMA HUMEDAD</button>
           <div id="cont-Verticales6">
             <div class="linea-vertical"></div>
