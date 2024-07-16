@@ -5698,6 +5698,7 @@ function lubricaDiario(butId,labelId){
       }
       const child = document.getElementById('child-move');
       const parent = document.getElementById('lubricantes');
+      child.style.display='flex'
       moveElement(child,parent)
     break;
     case 'lub-semanal':

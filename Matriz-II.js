@@ -211,7 +211,6 @@ let nowIndex = 0;
 idsArray.push("cont-titulo") 
 idsArrayEliminados.push('cont-titulo')
 const IDSARRAYCICODELIA = ['first_half','cortina','second_half','nicho_spans','wall_street_II','equalizer','padre','patern']
-
 const masterKey = [4];
 function manejarLogica() {
   const inputs = document.querySelectorAll('.numero');
@@ -468,7 +467,8 @@ function changeButtonStyles(elementId){
 
         videoElements.forEach(video => {
         if (video.id === 'vidTintero') {
-          video.style.top = '17px'
+          video.style.top = '1.5vh'
+          video.style.left='21vw'
           video.style.display = 'block'
           video.play();
       

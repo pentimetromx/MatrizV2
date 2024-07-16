@@ -96,17 +96,6 @@ h1, h2, h3 {
   height:77px;
   width: 102px;
 }
-.boton-b{
-  height: 47px;
-  width: 120px;
-  background: linear-gradient(45deg,  rgb(255, 24, 55) 55%,  rgba(255, 24, 55, 0.33) 99%);                       
-  color: white;
-  border-radius: 7px;
-  margin-right: 24px;
-  cursor: pointer;
-  text-align: center;
-  transition: transform 0.1s; 
-}
 #toggleVideoButton{
   position: absolute;
   text-align: center;
@@ -114,12 +103,12 @@ h1, h2, h3 {
   cursor: pointer;
   justify-content: center;
   left: 59%;
-  width: 500px;
-  height: 47px;
+  width:39.7vw;
+  height:6.5vh;
   background-color: rgb(255, 24, 55);
+  font-size:1vw;
   color: white;
   border-radius: 7px;
-  margin-right: 24px;
   transition: transform 0.1s;
 }
 .boton-a:hover,
@@ -136,7 +125,6 @@ color: white;
 .boton-d:hover {
   transform: scale(1.1);
 }
-/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
 #links-inicialesI{  /* PADRE LINKS INICIALES  */
   position: absolute;
   display: flex;
@@ -156,12 +144,22 @@ color: white;
   height: 7px;
   transition: 0.1s;
 }
+#titleContainer,
 #titleContainerI{
   position: absolute;
   display: flex;
   left:0;
   top:3%;
   align-items: center;
+}
+#titleContainer p,
+#titleContainerI p{
+  position: relative;
+  color: white;
+  transition: color 0.2s;
+  cursor: pointer;
+  width:100%;
+  font-size: 1.3vw;
 }
 #linkListI{
   position: absolute;
@@ -176,7 +174,6 @@ color: white;
   display: none;
   z-index: 777;
 }
-/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
 #links-iniciales{  /* PADRE LINKS INICIALES-II  */
   position: absolute;
   display: flex;
@@ -196,13 +193,6 @@ color: white;
   height: 7px;
   transition: 0.1s;
 }
-#titleContainer {
-  position: absolute;
-  display: flex;
-  left:0;
-  top: 3%;
-  align-items: center;
-}
 #linkList{
   position: absolute;
   display:flex;
@@ -215,16 +205,6 @@ color: white;
   background-color: blue;
   display: none;
   z-index:777;
-}
-.main-text {
-  position: relative;
-  left: 31px;
-}
-.arrow {
-  position: relative;
-  color: greenyellow;
-  top: -17px;
-  left: 120px;
 }
 #container2,
 #container3,
@@ -330,18 +310,20 @@ color: white;
   position: absolute;
   display: flex;
   flex-direction: row;
-  position: absolute;
-  top: 7%;
+  top: 8%;
   left:59%;
+  height: 66%;
+  width: 42%;
 }
 #sis-humedad,
 #bancada-torre,
 #bateria-entintado,
 #tinter-o{
-  position: relative;
+  position:relative;
   display: flex;
   flex-direction: column;
-  top: 22%;
+  top:0;
+  width: 15vw;
 }
 .contene-1,
 .contene-3,
@@ -367,28 +349,6 @@ color: white;
   transform: translate(-50%);  
   display: none;
 }
-#pantalla-inicial{
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  top: 16%;
-  left: 1%;
-  display: none;
-  width: 100%;
-  height: 100%;
-}
-#cont-Verticales1,
-#cont-Verticales2,
-#cont-Verticales33,
-#cont-Verticales8,
-#cont-Verticales7{
-  position: absolute;
-  flex-direction: column;
-  display: flex;
-  margin-top:63%;
-  width: 55%;
-  padding-left:1.5vw;
-}
 .rebobinador,
 .unidProceso,
 .alimentadorId,
@@ -399,14 +359,52 @@ color: white;
   display: flex;
   /* margin-right:13.6vw; */
 }
+#pantalla-inicial{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  top: 16%;
+  left: 1%;
+  display: none;
+  width: 98%;
+  height: 80%;
+}
 #desbobinadorId,
 #uTeñidos,
 #alimentadorId,
 #unidProceso,
 #rebobinador{
 position: relative;
+display: flex;
+width: 11%;
+height: 100%;
 margin-right:0.4vh;
 }
+.boton-b{
+  height:6.5vh;
+  width:9.2vw;
+  background: linear-gradient(45deg,  rgb(255, 24, 55) 55%,  rgba(255, 24, 55, 0.33) 99%);                       
+  color: white;
+  border-radius: 7px;
+  margin-right:1.9vw;
+  font-size: 1vw;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.1s; 
+}
+#cont-Verticales1,
+#cont-Verticales2,
+#cont-Verticales33,
+#cont-Verticales8,
+#cont-Verticales7{
+  position: absolute;
+  flex-direction: column;
+  display: flex;
+  margin-top:63%;
+  width: 70%;
+  padding-left:1.5vw;
+}
+
 #videosTraining{
   display: flex;
   flex-direction: row;
@@ -453,8 +451,9 @@ margin-right:0.4vh;
   position: absolute;
   display: flex;
   flex-direction: column;
-  padding-left: 10px;
-  top: 133%;
+  padding-left:1vw;
+  top:16%;
+  width: 100%;
 }
 .infraestruc-torre{
   position: relative;
@@ -703,7 +702,8 @@ margin-right:0.4vh;
   align-items: center;
   height:6vh;
   width:6.7vw;
-  background: linear-gradient(45deg, rgba(250, 250, 1) 15%,  rgb(27, 27, 28, 0.777) 85%);                       
+  background: linear-gradient(45deg, rgba(250, 250, 1) 15%,  rgb(27, 27, 28, 0.777) 85%);  
+  font-size:0.9vw;                     
   color: rgb(0, 0, 0);
   border-radius: 5px;
   margin-right:1.6vw;
@@ -713,13 +713,16 @@ margin-right:0.4vh;
   transition: transform 0.9s; 
 }
 .boton-d{
-  height: 47px;
-  width: 107px;
-  background: linear-gradient(45deg, rgba(0,250,0) 15%,  rgb(0,255,0,0.077) 85%);                       
+  position: relative;
+  display: flex;
+  height:6.5vh;
+  width:8.2vw;
+  background: linear-gradient(45deg, rgba(0,250,0) 15%,  rgb(0,255,0,0.077) 85%);  
+  font-size:0.9vw;                  
   color: rgb(0,0,0);
   border-radius: 7px;
-  margin-right: 27px;
-  margin-top: 7px;
+  left: 0;
+  top: 1vh;
   text-align: center;    
   cursor: pointer; 
   transition: transform 0.1s;
@@ -728,14 +731,14 @@ margin-right:0.4vh;
   position: relative;
   display: flex;
   align-items: center;
-  height: 43px;
-  width: 87px;
+  height:6vh;
+  width:6.7vw;
   background: linear-gradient(45deg, rgba(250, 250, 1) 15%,  rgb(27, 27, 28, 0.777) 85%);                       
   color: black;
   border-radius: 5px;
-  margin-right: 21px;
-  margin-bottom: 10px;
-  font-size: 12px;
+  margin-right:1.6vw;
+  margin-bottom:1.4vh;
+  font-size:0.9vw;
   text-align: left;    
   cursor: pointer; 
   transition: transform 0.1s; 
@@ -1143,17 +1146,38 @@ width:447px ;
 #contLinksTorre,  
 #pantalla-tintero{
   position: absolute;
-  display: flex; /* Usar flexbox para centrar la imagen */
+  display: flex;
   flex-direction: row;
   justify-content: center; 
-  top: 90px;
+  top:14vh;
+  left:0;
+  height: 80vh;
+  width: 99vw;
   display: none;
 }
-#cont-links{
+#cont-links {
   position: absolute;
-  top: -13px;
-  left: 27px;
+  display: flex;
+  flex-direction: column;
+  top: 7%;
+  left:44%;
+  width: 27%;
+  height: 67%;  
+  z-index: 9;
 }
+.custom-link {
+  width: 100%;
+  text-decoration: none;
+  font-size: 1.2vw;
+  padding: 10px;
+  font-family: "GothamRounded", sans-serif;
+  text-decoration-line: underline;
+}
+#linkDistribuidor { margin-bottom:2.5vh;color: whitesmoke; }
+#linkForma { margin-bottom: 7vh;color: whitesmoke; }
+#linkPlate { margin-bottom: 7vh; }
+#linkManta { margin-bottom: 7vh; }
+#linkImpresor { margin-bottom:2vh; }
 #contImaginario{
   position: relative;
   display: flex;
@@ -1182,50 +1206,22 @@ width:447px ;
 #imgTorre-s,
 #imgTorre-m{
   position: absolute;
-  left: 305px;
-  margin-top: -15px;  
-  /* top: 1px; */
-  height: 477px;
-  width: 707px;  
+  left: 23%;
+  top:0;  
+  height: 66%;
+  width: 54%;  
 }
 #imgTorre-a,
 #imgTorre-f,
 #imgTorre{
   position: absolute;
-  left: 341px;
-  top: 1px;
-  height: 477px;
-  width: 637px;
+  left:24%;
+  top:0;
+  height:82%;
+  width:50%;
   border-radius: 11px;
 }
-.custom-link {
-  position: absolute;
-  left: 597px;
-  width: 177px;
-  z-index: 999;
-  text-decoration: none;
-  font-family: "GothamRounded", sans-serif; /* Aplica la fuente deseada */
-  text-decoration-line: underline;
-}
-#linkDistribuidor{
-  top: 73px;
-  color: white;
-}
-#linkForma{
-  top: 120px;
-  color: white;
-}
-#linkPlate{
-  top:167px;
-}
-#linkManta{
-  top: 250px;
-}
-#linkImpresor{
-  left: 597px;
-  top: 336px;
-}
-#butt-001{
+/* #butt-001{
   position: relative;
   left: 7px;
   top: -40px;
@@ -1264,7 +1260,7 @@ width:447px ;
   position: relative;
   left: 12px;
   top: -80px;
-}
+} */
 #butt-011{
   position: relative;
   left: 7px;
@@ -1341,46 +1337,6 @@ width:447px ;
   top: -40px;
 }
 #butt-080{
-  position: relative;
-  left: 12px;
-  top: -80px;
-}
-#butt-01{
-  position: relative;
-  left: 7px;
-  top: -40px;
-}
-#butt-02{
-  position: relative;
-  left: 12px;
-  top: -80px;
-}
-#butt-03{
-  position: relative;
-  left: 7px;
-  top: -40px;
-}
-#butt-04{
-  position: relative;
-  left: 12px;
-  top: -80px;
-}
-#butt-05{
-  position: relative;
-  left: 7px;
-  top: -40px;
-}
-#butt-06{
-  position: relative;
-  left: 12px;
-  top: -80px;
-}
-#butt-07{
-  position: relative;
-  left: 7px;
-  top: -40px;
-}
-#butt-08{
   position: relative;
   left: 12px;
   top: -80px;
@@ -1726,32 +1682,6 @@ width:447px ;
   z-index: 0;
   margin-top:6px;
 }
-.Bot-inicio2,
-.Bot-inicio{
-  background-color: #302928;
-  color: white;
-  border-radius: 7px;
-  width: 77px;
-  height: 47px;
-  font-size: 14px;
-  text-align: center;
-  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
-  transform: skewX(-30deg);
-  cursor: pointer;
-  z-index: 1;
-}
-.Bot-inicio2-fondo,
-.Bot-inicio-fondo{
-  background-color: rgb(0,255,0);
-  border-radius: 7px;
-  width: 81px;
-  height: 51px;
-  font-size: 14px;
-  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
-  transform: skewX(-30deg);
-  cursor: pointer;
-  z-index: 0;
-}
 #agrupaOblicuos-I,
 #agrupaOblicuos-VII,
 #agrupaOblicuos-X{
@@ -1770,9 +1700,84 @@ width:447px ;
   position: absolute;
   display: flex;
   flex-direction: column;
-  left: 1077px;
-  top: 57px;
+  left:78%;
+  top:0;
+  width:10%;
+  height:100%;
 } 
+.Bot-inicio2,
+.Bot-inicio{
+  background-color: #302928;
+  color: white;
+  border-radius: 7px;
+  width: 6vw;
+  height: 6.5vh;
+  font-size: 1.1vw;
+  text-align: center;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  transform: skewX(-30deg);
+  cursor: pointer;
+  z-index: 1;
+}
+.Bot-inicio2-fondo,
+.Bot-inicio-fondo{
+  background-color: rgb(0,255,0);
+  border-radius: 7px;
+  width: 6.2vw;
+  height: 7vh;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
+  transform: skewX(-30deg);
+  cursor: pointer;
+  z-index: 0;
+}
+#butt-001,
+#butt-01{
+  position: absolute;
+  left: 7px;
+  top:0;
+}
+#butt-002,
+#butt-02{
+  position: absolute;
+  left: 12px;
+  top:1vh;
+}
+#butt-003,
+#butt-03{
+  position: absolute;
+  left: 7px;
+  top:13vh;
+}
+#butt-004,
+#butt-04{
+  position: absolute;
+  left: 12px;
+  top:14vh;
+}
+#butt-005,
+#butt-05{
+  position: absolute;
+  left: 7px;
+  top:26vh;
+}
+#butt-006,
+#butt-06{
+  position: absolute;
+  left: 12px;
+  top:27vh;
+}
+#butt-007,
+#butt-07{
+  position: absolute;
+  left: 7px;
+  top:39vh;
+}
+#butt-008,
+#butt-08{
+  position: absolute;
+  left: 12px;
+  top:40vh;
+}
 .imagesTorre{
   height: 377px;
   width: 503px;
@@ -1787,19 +1792,18 @@ width:447px ;
 #imgsRepuestos-IV,
 #imgsRepuestos-III,
 #imgsRepuestos-II{
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: column;
-  left: 67px;
-  top: -13PX;
+  left:5%;
+  top:0;
 }
 #imgsRepuestos-V img,
 #imgsRepuestos-IV img,
 #imgsRepuestos-III img,
-#imgsRepuestos-II img,
 #imgsRepuestos-II img{
-  height: 112px;
-  width: 150px;
+  height:15.5vh;
+  width:11.5vw;
   border-radius: 20px;
   padding: 7px;
 }
@@ -1810,7 +1814,6 @@ width:447px ;
   left: -0.1%;
   display: none;
 }
-/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 #contPortPlaca,
 #contPortManta,
 #contImpresor{
@@ -1818,17 +1821,10 @@ width:447px ;
   justify-content: center;
   display: flex;
   flex-direction: row;
-  top: 90px;
-  height: 100%;
-  width: 100%;
+  top: 12.5vh;
+  height: 87%;
+  width: 99%;
   display: none;
-}
-#contPortManta img,
-#contImpresor img,
-#contPortPlaca img{
-  width: 240px; 
-  height: 160px;
-  border-radius: 11px;  
 }
 #impresorImg,
 #manta,
@@ -1836,8 +1832,10 @@ width:447px ;
   position: absolute;
   display: flex;
   flex-direction: column; 
-  left: 17px;
-  top: 1px;  
+  left: 2vw;
+  top:0;
+  width: 18%;
+  height: 84%;
 }
 #contPortManta video,
 #contImpresor video,
@@ -1877,6 +1875,7 @@ width:447px ;
 }
 .image-trainings1,
 .image-trainings{
+  cursor: pointer;
   transition: transform 0.1s ease, filter 0.1s ease;
   border-radius: 11px;
   transform: translateZ(0);
@@ -1917,12 +1916,19 @@ margin-right: 7px;
   flex-direction: row;
   left: 2.5%;
 }
-#textToColorI,
 #textToColor {
+  position: relative;
   color: white;
   transition: color 0.2s;
   cursor: pointer;
   width:100%;
+}
+#textToColorI span,
+#textToColor span{
+  color:greenyellow;
+  position: relative;
+  top: -1px;
+  left: 10px;
 }
 #titleContainerI::after,
 #titleContainer::after {
@@ -1933,13 +1939,11 @@ margin-right: 7px;
 #linkList li {
   margin: 5px 0;
 }
-/* Estilo para los enlaces cuando se muestran */
 #linkListI a,
 #linkList a {
   color: black;
   text-decoration: none;
 }
-/* Estilo para la línea debajo de los enlaces cuando el puntero está sobre ellos */
 #linkListI li:hover,
 #linkList li:hover {
   background-color:yellow;          
@@ -2642,7 +2646,6 @@ h6{
 }
 .cont-user img{
   height:100%;
-  /* width: 25%; */
   border-radius: 11px;
 }
 .cont-user label {
@@ -2653,9 +2656,8 @@ h6{
   font-family: "GothamRounded", sans-serif;
   font-size: 13px;
   width: 70%;
-  text-align: center; /* Centrar el texto */
+  text-align: center;
 }
-/* Para hacerlos visibles nuevamente */
 elemento.visible {
   opacity: 1;
 }
@@ -5445,24 +5447,30 @@ input.numero:focus {
   #pantalla-inicial{
     position: relative;
     display: flex;
-    height:100vh;
-    width: 100vw; 
-    top: 24vh;
-    left:-1vw;
+    flex-direction: row;
+    top: 22%;
+    left: 1%;
     display: none;
-    z-index: 3; 
-
+    width: 98%;
+    height: 80%;
   }
   #desbobinadorId
   #uTeñidos,
   #alimentadorId,
   #unidProceso,
   #rebobinador{
-    position: relative;
+    /* position: relative;
     flex-direction: column;
     display: flex;
     align-items: center; 
-    z-index: 3; 
+    z-index: 3; */ 
+
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    width: 20%;
+    height: 100%;
+    margin-right:0.4vh;
   }
   #toggleVideoButton{
     position: absolute;
@@ -5479,11 +5487,6 @@ input.numero:focus {
     color: white;
     transition: transform 0.1s;
   }
-  .torre{
-  display: flex;
-  top:-1%;
-  height:34vh;
- }
  .torre-imp{
   position: absolute;  
   display: flex;
@@ -5514,17 +5517,26 @@ input.numero:focus {
   }
   /*//////////////////////////////////////////////////////////////////////////////////////  BOTONES ROJOS  ////*/
   .boton-b{
-    height:3vh;
+    /* height:3vh;
     width:15vw;
     background: linear-gradient(45deg,  rgb(255, 24, 55) 55%,  rgba(255, 24, 55, 0.33) 99%);                       
     color: white;
     border-radius: 6px;
     margin-right:5vw;
-    /* font-size: 7px; */
     font-size:1.5vw;
     cursor: pointer; 
     text-align: center;
-    transition: transform 0.1s; 
+    transition: transform 0.1s; */ 
+    height:6.5vh;
+    width:9.2vw;
+    background: linear-gradient(45deg,  rgb(255, 24, 55) 55%,  rgba(255, 24, 55, 0.33) 99%);                       
+    color: white;
+    border-radius: 7px;
+    margin-right:1.9vw;
+    font-size: 1vw;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.1s;
   }
   #boton7,
   #boton13,
@@ -6381,15 +6393,6 @@ input.numero:focus {
    width: 96px;
    margin-right: 12px; 
   } 
-  #imgTorre{
-    position: absolute;
-    display: flex;
-    left: 2%;
-    margin-top: 3%;
-    height: 223px;
-    width: 301px;
-    border-radius: 8px;
-  }
   #imgTorre-a,
   #imgTorre-f{
     position: absolute;
@@ -6443,15 +6446,16 @@ input.numero:focus {
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: 63.8%;
-    margin-top: -5.3%;
+    left:78%;
+    top:7%;
+    width:20%;
+    height:100%;
   }
   .Bot-inicio2{
     position: relative;
-    left: 7px;
-    top: -40px;
+    left:1%;
     background-color: #302928;
-    color: rgb(0,255,0);;
+    color: rgb(0,255,0);
     border-radius: 7px;
     width: 58px;
     height: 35px;
@@ -6465,7 +6469,6 @@ input.numero:focus {
   .Bot-inicio2-fondo{
     position: relative;
     margin-left: -1.2px;
-    margin-top: 6px;
     background-color: rgb(0,255,0);
     border-radius: 7px;
     width: 60px;
@@ -6476,47 +6479,6 @@ input.numero:focus {
     cursor: pointer;
     z-index: 0;
   }
-   #cont-links{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    height: 222px;
-    width: 222px;
-    top:-10%;
-    left:-91%;
-    z-index: 1;
-  }
-  .custom-link{
-    position: absolute;
-    display: flex;
-    left: 597px;
-    width: 177px;
-    font-size: 10px;
-    z-index: 9;
-    text-decoration: none;
-    font-family: "GothamRounded", sans-serif;
-    text-decoration-line: underline;
-  }
-  #linkDistribuidor{
-    display: flex;
-    z-index: 99;
-    top: 73px;
-    color: white;
-  }
-  #linkForma{
-    top: 97px;
-    color: white;
-  }
-  #linkPlate{
-    top:117px;
-  }
-  #linkManta{
-    top: 159px;
-  }
-  #linkImpresor{
-    top: 200px;
-  }
-  /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #lineI {
     position: fixed;
     left: 5%;
@@ -7420,11 +7382,44 @@ input.numero:focus {
     display: flex; /* Usar flexbox para centrar la imagen */
     flex-direction: row;
     justify-content: center;
-    width: 507px;
-    height: 300px;
-    top: 190px;
+    width:98vw;
+    height:41vh;
+    top:26vh;
+    left: 1vw;
     display: none;
   }
+  #cont-links{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 6.5%;
+    left:28%;    
+    height: 67%;  
+    width: 27%;    
+  }
+  #cont-links a{
+    position: absolute;
+    display: flex;
+    text-decoration: none;
+    font-size: 2.3vw;
+    font-family: "GothamRounded", sans-serif;
+    text-decoration-line: underline;  
+  }
+  #linkDistribuidor { margin-bottom:1vh;color: whitesmoke; }
+  #linkForma {margin-top:3vh;color: whitesmoke; }
+  #linkPlate {margin-top:9vh;}
+  #linkManta {margin-top:15vh;}
+  #linkImpresor {margin-top:21vh;}
+  #imgTorre{
+    position: absolute;
+    display: flex;
+    left: 0;
+    top:0;
+    height:80%;
+    width: 75%;
+    border-radius: 8px;
+  }
+
   .linksTraining li a {
     color: white; /*Cambiar el color del texto a blanco*/
     cursor: pointer; /*Cambiar el cursor a una mano */

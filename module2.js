@@ -225,8 +225,8 @@ document.addEventListener('keydown', function(event) {
         setTimeout(function() {
           abrirSeccionContinua('pantalla-inicial')        
         },577)
-        setTimeout(function() {
-          ElementosMaII('conteneMantaut')
+        /*setTimeout(function() {
+          changeButtonStyles('pantalla-tintero')
         },977) 
         setTimeout(function() {
           barraInteligente()        
@@ -249,7 +249,7 @@ document.addEventListener('keydown', function(event) {
         setTimeout(function() {
           rodillosTeñido('btn06')
         },3377)
-        /*setTimeout(function() {
+        setTimeout(function() {
           lubricaDiario('lub-diario','labl1')             
         },3677) */
       
@@ -266,7 +266,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('links-inicialesI') 
+  var contiBoton = document.getElementById('butt-03') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;

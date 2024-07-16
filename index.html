@@ -71,7 +71,6 @@
         <canvas id="dualSinusoidalCanvas" width="300" height="177"></canvas>
         <canvas id="tripleSinusoidalCanvas" width="300" height="177"></canvas>
       </div>
-
       <div id="botonesContainer" class="contCicodelicos">
         <button class="botoneras" id="bttn1"></button>
         <button class="botoneras" id="bttn2"></button>
@@ -125,12 +124,10 @@
         <button class="botoneras" id="bttn50"></button>
         <button class="botoneras" id="bttn51"></button>
         <button class="botoneras" id="bttn52"></button>
-      </div>
-      
+      </div>      
       <div id="contButtsMovement">
         <button id="buttSolitario" class="botonTransito" style="position: absolute;left: 0px;top:7px;border-radius:7px;height: 200px;width: 200px;border-radius: 177px;"></button>
       </div>
-
       <div id="button-container" style="display: none;">
         <button class="buttons" id="button2"></button>
         <button class="buttons" id="button3"></button>
@@ -213,7 +210,6 @@
         <button class="buttons" id="button80"></button>
         <button class="buttons" id="button81"></button>                
       </div>
-
     </div>     
     <div id="cont-titulo-operacion" style="display: none;">
       <h4 id="subtitulo-operacion">Aplicamos la transformación tecnológica</h4>
@@ -465,7 +461,7 @@
 
       <div class="iridescent-element" id="lineI"></div>
       <div id="titleContainerI">
-        <p id="textToColorI" style="position: relative;">Pilares<span style="color:greenyellow; position: relative; top: -1px;left: 10px;">&#9660;</span></p>
+        <p id="textToColorI">Pilares<span>&#9660;</span></p>
       </div>
       
       <ul class="iridescent-element" id="linkListI">
@@ -481,7 +477,7 @@
     <div class="links-iniciales" id="links-iniciales">
       <div id="line"></div>
       <div id="titleContainer">
-        <p id="textToColor" class="main-text">Entrenamientos <span class="arrow">&#9660;</span></p>
+        <p id="textToColor">Entrenamientos <span>&#9660;</span></p>
       </div>
       
       <ul class="iridescent-element" id="linkList">
@@ -501,10 +497,9 @@
       <button class="boton-a" id="bot-atras32" style="text-align: center;width: 47px;position: relative;left: 685px;top: 5px;;display: none" onclick="irContenedorSiguiente('rotatek-1')"></button>
     </div><br>
     <div id="pantalla-inicial">
-
       <div class="torre" id="desbobinadorId">
-        <button class="boton-b btn-bloque" id="boton1">DESBOBINADOR</button><br> <!-- ADDEVENT LISTENER - 'Matriz-II (linea 755)' -->
-        <div class="contene-7" id="cont-Verticales1">
+        <button class="boton-b btn-bloque" id="boton1">DESBOBINADOR</button><br>
+        <div  id="cont-Verticales1">
           <div class="linea-vertical-33"></div>
           <button id="boton2" class="boton-c" onclick="lubricacion('boton2','boton1')">Lubricacion<div class="linea-horizontal"></div></button>
           <button id="boton3" class="boton-c" onclick="lubricacion('boton3','boton1')">Freno<div class="linea-horizontal"></div></button>
@@ -515,7 +510,7 @@
       </div>
       <div class="torre" id="uTeñidos">  
         <button class="boton-b btn-bloque" id="boton7">UNIDAD TEÑIDO</button><br>       
-        <div class="contene-7" id="cont-Verticales2">
+        <div  id="cont-Verticales2">
           <div class="linea-vertical-33"></div>
           <button class="boton-c" id="boton8" onclick="UnidadTeñido('boton8','boton7')">Sistema neumático<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton9" onclick="UnidadTeñido('boton9','boton7')">Rodillería<div class="linea-horizontal"></div></button>
@@ -526,7 +521,7 @@
       </div>
       <div class="torre" id="alimentadorId">
         <button class="boton-b btn-bloque" id="boton13">ALIMENTADOR</button><br> 
-        <div class="contene-7" id="cont-Verticales33">
+        <div  id="cont-Verticales33">
           <div class="linea-vertical-33"></div>
           <button class="boton-c" id="boton14" onclick="UnidadAlimenta('boton14','boton13')">Estructura<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton15"  onclick="UnidadAlimenta('boton15','boton13')">Sistema planetario<div class="linea-horizontal"></div></button>
@@ -537,7 +532,7 @@
       </div>
       <div class="torre" id="unidProceso">  
         <button class="boton-b btn-bloque" id="boton19">UNIDAD DE PROCESO</button><br>  
-        <div class="contene-7" id="cont-Verticales7">
+        <div  id="cont-Verticales7">
           <div class="linea-vertical-33"></div>
           <button class="boton-c" id="boton20" onclick="UnidadProceso('boton20','boton19')">Rodillos de transporte<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton21" onclick="UnidadProceso('boton21','boton19')">Función y ensamble<div class="linea-horizontal"></div></button>
@@ -548,7 +543,7 @@
       </div>
       <div class="torre" id="rebobinador">
         <button class="boton-b btn-bloque" id="boton25">REBOBINADOR</button><br>                     
-        <div class="contene-7"  id="cont-Verticales8">
+        <div   id="cont-Verticales8">
           <div class="linea-vertical-33"></div>
           <button class="boton-c" id="boton26" onclick="UnidadRebonina('boton26','boton25')">Estructura<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton27" onclick="UnidadRebonina('boton27','boton25')">Sistema planetario<div class="linea-horizontal"></div></button>
@@ -557,8 +552,8 @@
           <button class="boton-c" id="boton30" onclick="UnidadRebonina('boton30','boton25')">Ajuste neumatico<div class="linea-horizontal"></div></button>
         </div>          
       </div>       
-      <button id="toggleVideoButton">TORRE DE IMPRESIÓN</button>  
-             
+      <button id="toggleVideoButton">TORRE DE IMPRESIÓN</button>
+                
       <div class="torre-imp" id="torre-imp">
 
         <div id="tinter-o">
@@ -613,7 +608,7 @@
       <button class="boton-a" id="iniciar" style="position: relative;">ESTRUCTURA EN ROTATIVA  RK 200</button>
       <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="irContenedorSiguiente()"></button>
 
-     </div><br>
+    </div><br>
     <div id="pantalla-tintero">
   
       <div id="cont-links">
@@ -635,13 +630,13 @@
         <img class="image-trainings" id="reductor-II" onclick="ampliaIndicaciones(3)" src="./assets/reductorII.png" alt="reductorII">
       </div>
       <div id="agrupaOblicuos-II">
-        <button class="Bot-inicio2 bot-responsive" id="butt-01" onclick="muestraTorresI('pantalla-frente')">Frente</button>
+        <button class="Bot-inicio2" id="butt-01" onclick="muestraTorresI('pantalla-frente')">Frente</button>
         <button class="Bot-inicio2-fondo" id="butt-02"></button>
-        <button class="Bot-inicio2 bot-responsive" id="butt-03" onclick="muestraTorresI('pantalla-mandos')">Mandos</button>
+        <button class="Bot-inicio2" id="butt-03" onclick="muestraTorresI('pantalla-mandos')">Mandos</button>
         <button class="Bot-inicio2-fondo" id="butt-04"></button>
-        <button class="Bot-inicio2 bot-responsive" id="butt-05" onclick="muestraTorresI('pantalla-servicio')">Servicio</button>
+        <button class="Bot-inicio2" id="butt-05" onclick="muestraTorresI('pantalla-servicio')">Servicio</button>
         <button class="Bot-inicio2-fondo" id="butt-06"></button>
-        <button class="Bot-inicio2 bot-responsive" id="butt-07" onclick="muestraTorresI('pantalla-atras')">Atras</button>
+        <button class="Bot-inicio2" id="butt-07" onclick="muestraTorresI('pantalla-atras')">Atras</button>
         <button class="Bot-inicio2-fondo" id="butt-08"></button>
       </div>
       <div id="indicaciones-eje">
@@ -1220,9 +1215,9 @@
       </div>
 
       <div id="placa">
-        <img class="image-trainings aumentar" src="./assets/comparador caratula.png"><br> 
-        <img class="image-trainings aumentar" src="./assets/anodizado.jpg" alt="placa"><br>
-        <img class="image-trainings aumentar" src="./assets/plancha.jfif" alt="placa">
+        <img class="image-trainings" src="./assets/comparador caratula.png"><br> 
+        <img class="image-trainings" src="./assets/anodizado.jpg" alt="placa"><br>
+        <img class="image-trainings" src="./assets/plancha.jfif" alt="placa">
       </div>
     </div>
     <div id="contPerfilesPlancha" style="display: none;">
@@ -1455,7 +1450,7 @@
       </div>
     </div>
     <div id="sitema-humedad">
-      <div id="contenedor-9" class="contene-7">
+      <div id="contenedor-9" >
         <button class="boton-f bot-entre" id="btt1" onclick="muestraHumedad()">Estacion cassets<div class="linea-horizontal"></div></button>
         <button class="boton-f bot-entre" id="btt2" onclick="muestraRodillo()">Puente guía <div class="linea-horizontal"></div></button>
         <button class="boton-f bot-entre" id="btt3" onclick="muestraRodillo()">Alojamiento del casset <div class="linea-horizontal"></div></button>
@@ -1700,7 +1695,6 @@
       <button class="Bot-inicio33-fondo" id="butt-18"></button>  
     </div>
     <div id="padre-2">
-
       <div id="imag2" class="img1">
         <img id="image-3" src="./assets/freno.jpg" alt="neuma3">
         <h6>LIMPIEZA ZAPATAS.<br>
@@ -1708,12 +1702,10 @@
           REVISION CAUCHOS. <br>
           JUEGO EN EL EJE.</h6>
         <img id="image-4" src="./assets/freno2.jpg" alt="neuma4">
-      </div>
-      
+      </div>      
       <div id="pneumatico">
         <video id="vid-pneumatic" src="./assets/pneumatic video.mp4" loop muted autoplay></video> 
       </div>
-
     </div>
     <div id="puesta-punto" class="guia-neumatica">
       <h1 class="casos-h1" >1. Inspección de la Máquina</h1>
