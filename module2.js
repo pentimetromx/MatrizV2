@@ -265,7 +265,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('conti-boton-rodilleria') 
+  var contiBoton = document.getElementById('frec-lubrica') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -3687,35 +3687,24 @@ function iniciaMove() {
   });
   iniciarTransito()
 }
-function palpitarBotonDesbob() {
-    document.getElementById('boton1').classList.add('parpadea');
+function palpitarBoton(elemento){
+  switch (elemento){
+
+    case 'desbobinadorId':
+      document.getElementById('boton1').classList.add('parpadea');
     setTimeout(function () {
       document.getElementById('boton1').classList.remove('parpadea');
     }, 277);
-}
-function palpitarBotonTeñido() {
-  document.getElementById('boton7').classList.add('parpadea');
-  setTimeout(function() {
-    document.getElementById('boton7').classList.remove('parpadea');
-  }, 277);  
-}
-function palpitarBotonAlimenta() {
-  document.getElementById('boton13').classList.add('parpadea');
-  setTimeout(function() {
-    document.getElementById('boton13').classList.remove('parpadea');
-  }, 277);  
-}
-function palpitarBotonUProceso() {
-  document.getElementById('boton19').classList.add('parpadea');
-  setTimeout(function() {
-    document.getElementById('boton19').classList.remove('parpadea');
-  }, 277);  
-}
-function palpitarBotonRebobina() {
-  document.getElementById('boton25').classList.add('parpadea');
-  setTimeout(function() {
-    document.getElementById('boton25').classList.remove('parpadea');
-  }, 277);  
+    break;
+    case 'uTeñidos':
+      document.getElementById('boton7').classList.add('parpadea');
+    setTimeout(function () {
+      document.getElementById('boton7').classList.remove('parpadea');
+    }, 577);
+    break;
+    default:
+  }
+
 }
 function palpitarBotonTintero() {
   document.getElementById('tinteroButton').classList.add('parpadea');
