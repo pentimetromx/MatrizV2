@@ -4128,75 +4128,23 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
     default: 
   }        
 }
-function lubricacion(buttId,btnIniId){ 
-  var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80',]
-  var contVidLub = ['lubri-I', 'lubri-II','padre-lubrica', 'frec-lubrica','freno','uniTeñido'] 
-  let contBotLubrica = document.getElementById('frec-lubrica')
-  var contLubrica = document.getElementById('lubricacion')
-  var arrayIdButtsLubII = ['btn60', 'btn70', 'btn80']
-  var botones = document.querySelectorAll('.btn-bloque')
-  var contenedor = document.getElementById('torre-imp')
+function lubricacion(buttId,btnIniId){
 
   var computedStyleUteñido = window.getComputedStyle(uTeñido);
   if (computedStyleUteñido.display === 'flex') {
     palpitarBotonDesbob();
   }
-  if (contenedor.style.display === 'none' || contenedor.style.display === '') {
-     contLubrica.style.display = 'flex' 
-
-    arrayGeneral.forEach(element => {
-      var elemento = document.getElementById(element)
-      if (elemento) {
-          elemento.style.display = 'none'
-      } 
-    })
     switch (buttId) {
       case 'boton2':  
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','lubricacion','conti-boton-desb','desbobinadorId']  
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','lubricacion','conti-boton-desb']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      contBotLubrica.style.display = 'none'
-        var computedStyleUteñido = window.getComputedStyle(uTeñido);
-        if (computedStyleUteñido.display === 'flex') {
-          palpitarBotonDesbob();
-        }
-      
-        var contVidLub = ['btn1','btn2','btn3','btn4','btn5']                                                                          /// MUESTRA LOS BOTONES  
-        for (var i = 0; i < contVidLub.length; i++) {
-          var elementId = contVidLub[i]
-          var element = document.getElementById(elementId)      
-          if (element) { // Verifica si el elemento existe
-            element.style.color = "white";
-            element.style.background = '#333333'            
-          }
-        }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        for (var i = 0; i < arrayIdButtsCheck.length; i++) {                                                                            /// PONE VERDE EL BOTON
-          var button = arrayIdButtsCheck[i]
-          if (button === buttId) {
-            // Cambia el color del botón seleccionado a rojo
-            document.getElementById(button).style.backgroundColor = 'rgb(0,255,0)'
-          } else {
-            // Restablece el color de los otros botones
-            document.getElementById(button).style.backgroundColor = '' // Esto elimina cualquier estilo en línea
-          }
-        } 
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        botones.forEach(function(boton) {                                                                                            /// VERDE AL BOTON INICIAL
-          var idBoton = boton.id;
-          if (idBoton === btnIniId) {
-              boton.style.backgroundColor = 'rgb(0,255,0)'
-          }
-        })
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        if (contenedor.style.display === 'none'){                                                                   /// SI ESTA OCULTO EL PADRE EJECUTA FUNCION 
-          showButtonsMAconRetrasoDesb()
-        }
-        ///////////////////////////////////////////////////////////////////////////////////////////////////  
+      mostrarBotones('conti-boton-desb', 'butt-mautonomo-desbobina');
+
       break;
       case 'boton3':
         var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','conti-boton-freno']  
@@ -4336,21 +4284,8 @@ function lubricacion(buttId,btnIniId){
       break;
       default:
     }
-  }
 } 
-function showButtonsMAconRetrasoDesb() {
-  var botones = document.querySelectorAll('.butt-mautonomo-desb') // Selecciona todos los botones
-  function mostrarBotonConRetrasoFreno(i) {
-    if (i < botones.length) {
-      var boton = botones[i]
-      boton.style.display = 'inline-block'
-      setTimeout(function() {
-        mostrarBotonConRetrasoFreno(i + 1)
-      }, 150) // 150 milisegundos de retraso entre botones
-    }
-  }
-  mostrarBotonConRetrasoFreno(0) // Comienza desde el primer botón
-}
+
 function LubricaDesbobinador(idButt) {
   var arrayIdButtsLub = ['btn1', 'btn2', 'btn3', 'btn4', 'btn5', 'btn60', 'btn70', 'btn80']
   var contVidLub = ['lubri-I', 'lubri-II','padre-lubrica','frec-lubrica'] 
@@ -4538,29 +4473,19 @@ function LubricaDesbobinador(idButt) {
   }   
 } 
 function UnidadTeñido(buttId,btnIniId){
-  var alimenta = document.getElementById('alimentadorId')
-  var botsTorre = ['boton1','boton7','boton13','boton19','boton25',]
-  var botsUnidadT = ['boton8','boton9','boton10','boton11','boton12',]
-  var botsDesplegables = ['btn600','btn700','btn800','btn06','btn07','btn08']
-  arrayPadres = ['uniTeñido',`rodilleria`]
-  var contenedorPadre = document.getElementById('uniTeñido')
-  var contiDesbobina = document.getElementById('desbobinadorId')
-  var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
-  if (computedStyleUteñido.display === 'flex') {
+/*   if (computedStyleUteñido.display === 'flex') {
     palpitarBotonTeñido();
   }
-  if(alimenta.style.display === 'none'){                                                                                         /// SI "ALIMENTA" ESTÁ OCULTA
+ */                                                                                          /// SI "ALIMENTA" ESTÁ OCULTA
     switch (buttId) {
       case 'boton8' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','conti-boton-teñido']  
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniteñido','conti-boton-teñido']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
         }
-            
-
         var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
         if (computedStyleUteñido.display === 'flex') {
           palpitarBotonTeñido();
@@ -4604,8 +4529,7 @@ function UnidadTeñido(buttId,btnIniId){
           botDesplegable.style.backgroundColor = '#333333'
           }
         })     
-      showButtonsUTeñidoconRetraso()
-      break;
+        break;
       case 'boton9' :
         var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','rodilleria','conti-boton-rodilleria']  
         for (var i = 0; i < allContenedores.length; i++) { 
@@ -4614,36 +4538,9 @@ function UnidadTeñido(buttId,btnIniId){
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
         }
+        document.getElementById('contenedorElementos').style.display='none'
 
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-        botsDesplegables.forEach(boton => {                                                                                           ///GRIS A BOTONES DERECHOS
-        botDesplegable = document.getElementById(boton)
-        if(botDesplegable){
-          botDesplegable.style.backgroundColor = '#333333'
-          }
-        })
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      for (var i = 0; i < botsTorre.length; i++) {                                                                                  /// MAGENTA BOTON * PARAMETRO
-        var currentId = botsTorre[i]
-        var currentElement = document.getElementById(currentId)
-        if (currentId === btnIniId && currentElement) {
-          currentElement.style.backgroundColor = 'rgba(255,0,255, 1)'                         
-          currentElement.style.color = 'white'
-          break;
-        }
-      }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      for (var i = 0; i < botsUnidadT.length; i++) {                                                                            /// MAGENTA MISMO BOTON IZQUIERDO
-        var currentId = botsUnidadT[i]
-        var currentElement = document.getElementById(currentId)
-        if (currentId === buttId && currentElement) {
-          currentElement.style.backgroundColor = 'rgba(255,0,255, 1)'                              
-        }else{
-          currentElement.style.backgroundColor = ''
-
-        }
-      }
-      showButtonsRodilleria()      
+        showButtonsWithInterval('butt-mautonomo-rodilleria');    
       break; 
       case 'boton10' :
         palpitarBotonTeñido()
@@ -4804,8 +4701,17 @@ function UnidadTeñido(buttId,btnIniId){
       break;                               
       default:
     }
-  }
+  
 } 
+function showButtonsWithInterval(className) {
+  const buttons = document.querySelectorAll(`.${className}`);
+  buttons.forEach((button, index) => {
+      setTimeout(() => {
+          button.style.visibility = 'visible';
+      }, index * 100);
+  });
+}
+
 function UnidadAlimenta(buttId,btnIniId){
   var alimenta = document.getElementById('uTeñidos')
   var contiDesbobina = document.getElementById('desbobinadorId')
@@ -4833,106 +4739,6 @@ function UnidadAlimenta(buttId,btnIniId){
       case 'boton18' :
         palpitarBotonAlimenta()
       break; 
-      /* case 'btn600' :
-        palpitarBotonAlimenta()
-        showButtonsUTeñidoconRetraso()
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < contenedorPadre.children.length; i++) {                                                           /// MUESTRA TODOS LOS HIJOS DEL PADRE
-          var hijo = contenedorPadre.children[i]
-          hijo.style.display = 'flex' // O el valor que prefieras
-        }
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < botsDesplegables.length; i++) {                                                                         /// ROJO MISMO BOTON IZQUIERDO
-        var currentId = botsDesplegables[i]
-        var currentElement = document.getElementById(currentId)
-        if (currentId === buttId) {
-          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)'                              
-        }else{
-          currentElement.style.backgroundColor = '#333333'
-
-        }
-      } 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        var vidFreno = document.getElementById('teñido-vid')                                                                                 /// REPRODUCE VIDEO    
-        // Establecer el tiempo de reproducción en cero (inicio)
-        vidFreno.currentTime = 0;  
-        // Reproducir el video
-        vidFreno.play()        
-      break; 
-      case 'btn700' :
-        palpitarBotonAlimenta()
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < contenedorPadre.children.length; i++) {                                                                    /// OOCULTAR HIJOS MENOS BOTONES
-          var hijo = contenedorPadre.children[i]
-          hijo.style.display = 'none'
-        }
-
-        var contiBotonTeñido = document.getElementById('conti-boton-teñido')
-        if (contiBotonTeñido) {
-            contiBotonTeñido.style.display = 'flex' // O el valor que prefieras
-        }
-
-        var contiPadreTeñido = document.getElementById('uniTeñido')
-        if (contiPadreTeñido) {
-          contiPadreTeñido.style.display = 'flex' // O el valor que prefieras
-        }
-
-        // Recorre los hijos del contenedor padre
-        for (var i = 0; i < contiBotonTeñido.children.length; i++) {
-            var hijo = contiBotonTeñido.children[i]
-    
-            // Verifica si el hijo es un botón y lo muestra
-            if (hijo.tagName.toLowerCase() === 'button') {
-                hijo.style.display = 'none' // O el valor que prefieras
-            }
-        }
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < botsDesplegables.length; i++) {                                                                              /// ROJO MISMO BOTON IZQUIERDO
-          var currentId = botsDesplegables[i]
-          var currentElement = document.getElementById(currentId)
-          if (currentId === buttId) {
-            currentElement.style.backgroundColor = 'rgba(255,0,0, 1)'                              
-          }else{
-            currentElement.style.backgroundColor = '#333333'  
-          }
-        } 
-        showButtonsUTeñidoconRetraso()        
-      break; 
-      case 'btn800' :
-        palpitarBotonAlimenta()
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < contenedorPadre.children.length; i++) {                                                               /// OOCULTAR HIJOS MENOS BOTONES
-          var hijo = contenedorPadre.children[i]
-          hijo.style.display = 'none'
-        }
-
-        var contiBotonTeñido = document.getElementById('conti-boton-teñido')
-        if (contiBotonTeñido) {
-            contiBotonTeñido.style.display = 'flex' // O el valor que prefieras
-        }
-
-        // Recorre los hijos del contenedor padre
-        for (var i = 0; i < contiBotonTeñido.children.length; i++) {
-            var hijo = contiBotonTeñido.children[i]
-    
-            // Verifica si el hijo es un botón y lo muestra
-            if (hijo.tagName.toLowerCase() === 'button') {
-                hijo.style.display = 'flex' // O el valor que prefieras
-            }
-        }
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < botsDesplegables.length; i++) {                                                                         /// ROJO MISMO BOTON IZQUIERDO
-          var currentId = botsDesplegables[i]
-          var currentElement = document.getElementById(currentId)
-          if (currentId === buttId) {
-            currentElement.style.backgroundColor = 'rgba(255,0,0, 1)'                              
-          }else{
-            currentElement.style.backgroundColor = '#333333'
-  
-          }
-        }
-        showButtonsUTeñidoconRetraso()        
-      break; */                               
       default:
     }
   }
@@ -5516,81 +5322,6 @@ function UnidadSisHumedad(buttId,btnIniId){
       default:
     }
   }
-}
-function showButtonsUTeñidoconRetraso() {
-  var botones = document.querySelectorAll('.butt-mautonomo-teñido') // Selecciona los botones
-  var contPadre = document.getElementById('conti-boton-teñido')
-  var parentContainer = document.getElementById('uniTeñido')
-  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  parentContainer.style.display='flex'                                                                                                /// OCULTA HIJOS MENOS LOS BOTONES
-  contPadre.style.display='flex'
-
-  var childContainers = parentContainer.children;
-  for (var i = 0; i < childContainers.length; i++) {
-    var container = childContainers[i]
-    if (container.id === 'conti-boton-teñido') {
-      container.style.display = 'flex'
-    } else {
-      container.style.display = 'none'
-    }
-  }
-
-  function mostrarBotonConRetrasoTeñido (i) {
-    if (i < botones.length) {
-      var boton = botones[i]
-      boton.style.display = 'inline-block'
-      setTimeout(function() {
-      mostrarBotonConRetrasoTeñido(i + 1)
-      }, 150) // 150 milisegundos de retraso entre botones
-    }
-  } 
-  mostrarBotonConRetrasoTeñido(0)
-}
-function showButtonsFrenoconRetrasoDesb() {
-  var botones = document.querySelectorAll('.butt-mautonomo-freno') // Selecciona todos los botones
-  var contBotonesFreno = document.getElementById('freno')
-
-  contBotonesFreno.style.display = 'flex'
-  contPadre.style.display = 'flex'
-  function mostrarBotonConRetrasoFrenoI (i) {
-    if (i < botones.length) {
-      var boton = botones[i]
-      boton.style.display = 'inline-block'
-      setTimeout(function() {
-        mostrarBotonConRetrasoFrenoI(i + 1)
-      }, 150) // 150 milisegundos de retraso entre botones
-    }
-  }  
-  mostrarBotonConRetrasoFrenoI(0)
-}
-function showButtonsRodilleria() {
-  var botones = document.querySelectorAll('.butt-mautonomo-rodilleria') // Selecciona los botones
-  var contPadre = document.getElementById('conti-boton-rodilleria')
-  var parentContainer = document.getElementById('rodilleria')
-
-  parentContainer.style.display='flex'
-  contPadre.style.display='flex'
-
-  var childContainers = parentContainer.children;
-  for (var i = 0; i < childContainers.length; i++) {
-    var container = childContainers[i]
-    if (container.id === 'conti-boton-rodilleria') {
-      container.style.display = 'flex'
-    } else {
-      container.style.display = 'none'
-    }
-  }
-
-  function mostrarBotonRodilleria (i) {
-    if (i < botones.length) {
-      var boton = botones[i]
-      boton.style.display = 'inline-block'
-      setTimeout(function() {
-        mostrarBotonRodilleria(i + 1)
-      }, 150) // 150 milisegundos de retraso entre botones
-    }
-  } 
-  mostrarBotonRodilleria(0)
 }
 function rodillosTeñido(botId) {
   var rodilleria = document.getElementById('rodilleria')

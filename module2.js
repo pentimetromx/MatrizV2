@@ -1,4 +1,3 @@
-
 function deslizaContenedor(identificador, idButton) {
   clearAllIntervals() 
   let visor3 = document.getElementById('nicho_spans')
@@ -225,13 +224,13 @@ document.addEventListener('keydown', function(event) {
         setTimeout(function() {
           abrirSeccionContinua('pantalla-inicial')        
         },577)
-        /*setTimeout(function() {
-          changeButtonStyles('pantalla-tintero')
+        setTimeout(function() {
+          cierraContenedores('uTeñido')
         },977) 
         setTimeout(function() {
-          barraInteligente()        
+          UnidadTeñido('boton9','boton7')      
         },1177) 
-        setTimeout(function() {
+        /*setTimeout(function() {
           deslizaContenedor('troubleshooting','troubleshoot')           
         },1377)
         setTimeout(function() {
@@ -250,7 +249,7 @@ document.addEventListener('keydown', function(event) {
           rodillosTeñido('btn06')
         },3377)
         setTimeout(function() {
-          lubricaDiario('lub-diario','labl1')             
+          lubricaDiario('lub-diario','labl1')
         },3677) */
       
       break;
@@ -266,7 +265,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('desbobinadorId') 
+  var contiBoton = document.getElementById('conti-boton-rodilleria') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -287,7 +286,7 @@ function Geometria() {
   console.log('1 :','Visibility:', visibilityType);
   console.log('1 :','Is Visible:', isVisible);
   
-  var contiBotonI = document.getElementById('conti-boton-rodilleria') 
+  var contiBotonI = document.getElementById('btn08') 
   var rect = contiBotonI.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -1586,9 +1585,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
    linkIni2.style.left = ''  
    container1.style.left=''
  }
- // Obtén todas las imágenes con la clase "aumentar"
  const imagenesAumentar = document.querySelectorAll('img.aumentar')
- // Agrega un evento click a cada imagen con la clase "aumentar"
  imagenesAumentar.forEach(image => {
    image.addEventListener('click', () => {
      if (!document.fullscreenElement) {
@@ -1614,8 +1611,6 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
      }
    })
  })
- //////////////////////////////////////////////////////////////////////////
- // Recorrer todos los botones y hacerlos visibles
  botones.forEach(function(boton) {
  var id = boton.getAttribute('id')
  alternarVisibilidad(id)
@@ -1625,7 +1620,6 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
      video.pause()
    })
  })
- // LOGICA PARA FULL SCREEN A IMAGENES
  images.forEach(image => {
    let isFullscreen = false;
    image.addEventListener('click', () => {
@@ -1653,7 +1647,6 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
      isFullscreen = !isFullscreen;
    })
  })
- // Iterar a través de las imágenes y agregar eventos de mouse
  images.forEach((image, index) => {
    // Añadir el evento de aumento de tamaño al hacer clic
    image.addEventListener('click', () => {
@@ -1878,7 +1871,6 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
          }
      }
  })
- // BARRAS
  var chart7 = new Chart(miCanvas6, { 
    type: 'bar',
    data: {
@@ -1996,7 +1988,6 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
      }
    }
  });
- // BARRAS VERTICALES
  var chart8 = new Chart(miCanvas7, {
    type: 'bar',
    data: {

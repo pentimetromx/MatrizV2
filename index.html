@@ -552,11 +552,8 @@
           <button class="boton-c" id="boton29" onclick="UnidadRebonina('boton29','boton25')">Transmision<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton30" onclick="UnidadRebonina('boton30','boton25')">Ajuste neumatico<div class="linea-horizontal"></div></button>
         </div>          
-      </div>
-      
-      <button id="toggleVideoButton">TORRE DE IMPRESIÓN</button>
-
-                
+      </div>      
+      <button id="toggleVideoButton">TORRE DE IMPRESIÓN</button>                
       <div class="torre-imp" id="torre-imp">
         <div id="tinter-o" class="unidad-torre">
           <button class="boton-d" id="tinteroButton" onclick="changeButtonStyles('pantalla-tintero')">TINTERO</button>
@@ -570,7 +567,6 @@
             <button class="boton-e" id="boton36" onclick="UnidadTintero('boton36','tinteroButton')">Ajuste mecánico<div class="linea-horizontal"></div></button>
           </div>
         </div>
-
         <div id="bateria-entintado" class="unidad-torre">  
           <button class="boton-d" id="bateriaButton" onclick="changeButtonStyles('bateria-entintado-II', 'contene-7')">BATERIA DE ENTINTADO</button>               
           <div id="cont-Verticales3">
@@ -582,7 +578,6 @@
             <button class="boton-e" id="boton41" onclick="UnidadBateria('boton41','bateriaButton')">Ajuste rodillos de forma<div class="linea-horizontal"></div></button>                  
           </div>              
         </div>
-
         <div id="bancada-torre" class="unidad-torre">
           <button class="boton-d" id="bancadaButton" onclick="changeButtonStyles('bancada-torre-II')">BANCADA DE TORRE</button>
           <div id="cont-Verticales4">
@@ -591,7 +586,6 @@
             <button class="boton-e" id="boton43" onclick="UnidadTorre('boton43','bancadaButton')">Ajuste<div class="linea-horizontal"></div></button>                  
           </div>         
         </div> 
-
         <div id="sis-humedad" class="unidad-torre">  
           <button class="boton-d" id="humedadButton" onclick="changeButtonStyles('sitema-humedad')">SISTEMA HUMEDAD</button>
           <div id="cont-Verticales6">
@@ -601,7 +595,6 @@
             <button class="boton-e" id="boton46" onclick="UnidadSisHumedad('boton46','humedadButton')">Ajustes<div class="linea-horizontal"></div></button>                   
           </div>
         </div>
-
       </div> 
     </div>
     <div class="contene-2" id="container01" style="display: none;">
@@ -985,12 +978,12 @@
       </div>
     </div>
     <div id="lubricacion">
-      <div class="conti-boton" id="conti-boton-desb">
-        <button class="butt-mautonomo butt-mautonomo-desb image-trainings" id="btn1" onclick="LubricaDesbobinador('btn1')">REMALINER</button>
-        <button class="butt-mautonomo butt-mautonomo-desb image-trainings" id="btn2" onclick="LubricaDesbobinador('btn2')">RODAMIENTOS</button>
-        <button class="butt-mautonomo butt-mautonomo-desb image-trainings" id="btn3" onclick="LubricaDesbobinador('btn3')">EJES</button>
-        <button class="butt-mautonomo butt-mautonomo-desb image-trainings" id="btn4" onclick="LubricaDesbobinador('btn4')">ZONA TROQUELADO</button>
-        <button class="butt-mautonomo butt-mautonomo-desb image-trainings" id="btn5" onclick="LubricaDesbobinador('btn5')">ENTREGA</button>          
+      <div class="conti-boton" id="conti-boton-desb"> 
+        <button class="butt-mautonomo-desbobina image-trainings hidden" id="btn1" onclick="LubricaDesbobinador('btn1')">REMALINER</button>
+        <button class="butt-mautonomo-desbobina image-trainings hidden" id="btn2" onclick="LubricaDesbobinador('btn2')">RODAMIENTOS</button>
+        <button class="butt-mautonomo-desbobina image-trainings hidden" id="btn3" onclick="LubricaDesbobinador('btn3')">EJES</button>
+        <button class="butt-mautonomo-desbobina image-trainings hidden" id="btn4" onclick="LubricaDesbobinador('btn4')">ZONA TROQUELADO</button>
+        <button class="butt-mautonomo-desbobina image-trainings hidden" id="btn5" onclick="LubricaDesbobinador('btn5')">ENTREGA</button>          
       </div>
       <div id="frec-lubrica">
         <div class="hijo1">
@@ -1009,7 +1002,6 @@
     </div>
     <div id="lubricantes" class="conte-lubrica">
       <div id="child-move"></div>
-
       <div id="abuelo-lubrica" class="abuelo-lub">
         <div id="titulo-lubrica">
           <div class="aceite-lub"><label class="labl-class" for="lubrica">ACEITE</label></div>
@@ -1097,7 +1089,6 @@
         <button class="butt-mautonomo-freno image-trainings" id="btn70" onclick="LubricaDesbobinador('btn70')">ESTRUCTURA</button>
         <button class="butt-mautonomo-freno image-trainings" id="btn80" onclick="LubricaDesbobinador('btn80')">PARAMETROS</button>
       </div>
-
       <div id="cont-arriba-freno">
         <div id="freno-I">
           <label class="labl-class" for="freno">FRENO</label>
@@ -1107,7 +1098,6 @@
           <video id="freno-vid" src="./assets/freno disco.mp4" autoplay loop muted></video>
         </div>      
       </div>
-
       <div id="abuelo-grilla" class="grilla-freno">
         <div id="child-move-II"></div>
         <div id="abuelo-grilla-freno" class="grand-father-III">
@@ -1128,9 +1118,8 @@
           </div>
         </div>
       </div>
-
     </div>
-    <div id="uniTeñido">
+    <div id="uniteñido">
       <div class="conti-boton" id="conti-boton-teñido">
         <button class="butt-mautonomo-teñido image-trainings" id="btn600" onclick="UnidadTeñido('btn600')">ACTUADORES</button>
         <button class="butt-mautonomo-teñido image-trainings" id="btn700" onclick="UnidadTeñido('btn700')">NEUMATICA</button>
@@ -1164,12 +1153,15 @@
         </div>
       </div>
     </div>
+
     <div id="rodilleria">
+      
       <div class="conti-boton" id="conti-boton-rodilleria">
         <button class="butt-mautonomo-rodilleria image-trainings" id="btn06" onclick="rodillosTeñido('btn06')">TIPOLOGIA</button>
         <button class="butt-mautonomo-rodilleria image-trainings" id="btn07" onclick="rodillosTeñido('btn07')">DUREZAS</button>
         <button class="butt-mautonomo-rodilleria image-trainings" id="btn08" onclick="rodillosTeñido('btn08')">MONTAJE</button>
       </div>
+
       <div id="cont-arriba-rodillos">
         <div id="rodillos-I">
           <label class="labl-class" for="teñido">GP TINTER</label>
@@ -1190,7 +1182,6 @@
           </div>
         </div>
       </div>
-
       <div id="grilla-durezas" class="dureza">
         <div id="item-movil"></div>
         <div id="abuelo-grilla-dureza" class="grand-father-dureza">
@@ -1202,7 +1193,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>    
     <div id="contPortPlaca">
       <video class="video-training" id="video-placa" src="./assets/video-plancha-v2.mp4" loop autoplay></video>
       <div id="agrupaOblicuos-placa">
@@ -1215,7 +1206,6 @@
         <button class="Bot-inicio2" id="butt-07" onclick="ladosPlancha('imagen4')">Atras</button>
         <button class="Bot-inicio2-fondo" id="butt-080"></button>  
       </div>
-
       <div id="placa">
         <img class="image-trainings" src="./assets/comparador caratula.png"><br> 
         <img class="image-trainings" src="./assets/anodizado.jpg" alt="placa"><br>

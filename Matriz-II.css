@@ -408,7 +408,7 @@ color: white;
   position: absolute;
   flex-direction: column;
   display: flex;
-  top:13vh;
+  top:0;
   width:60%;
   padding-left:1.5vw;
 }
@@ -920,43 +920,34 @@ width:447px ;
   align-items: left;
   font-family: "GothamRounded", sans-serif;
   color: white;
-  height: 27px;
-  width: 177px;
-  border-radius: 9px;
+  height:15%;
+  width:100%;
+  border-radius:10%;
   background-color: rgba(83, 82, 82, 0.678); 
   position: relative;
   overflow: hidden;
-  margin-bottom: 17px;
+  margin-bottom:1vh;
   cursor: pointer;
-  padding-left: 27px;
+  padding-left:3vw;
 }
-.butt-mautonomo::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 17px;
-  height: 27px;
-  background-color: rgb(0, 255, 0);
-}
+.butt-mautonomo-desbobina,
 .butt-mautonomo-rodilleria,
-.butt-mautonomo-teñido,
-.butt-mautonomo-freno{
+.butt-mautonomo-teñido{
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: left;
   font-family: "GothamRounded", sans-serif;
   color: white;
-  height:3.7vh;
-  width:13.6vw;
-  border-radius: 9px;
-  background-color: rgba(83, 82, 82, 0.678);
+  height:15%;
+  width:100%;
+  border-radius:10%;
+  background-color: rgba(83, 82, 82, 0.678); 
   position: relative;
   overflow: hidden;
-  margin-bottom:2.3vh;
+  margin-bottom:1vh;
   cursor: pointer;
-  padding-left:2vw;
+  padding-left:3vw;
 }
 .butt-mautonomo-planos{
   display: none;
@@ -975,14 +966,32 @@ width:447px ;
   cursor: pointer;
   padding-left: 27px;
 }
+.butt-mautonomo::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width:10%;
+  height:100%;
+  background-color: rgb(0, 255, 0);
+}
 .butt-mautonomo-freno::before {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
-  width: 17px;
-  height: 27px;
+  width:10%;
+  height:100%;
   background-color: rgba(217, 255, 0, 1);
+}
+.butt-mautonomo-desbobina::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width:10%;
+  height:100%;
+  background-color: rgb(0, 255, 0);
 }
 .butt-mautonomo-teñido::before{
   content: "";
@@ -1001,34 +1010,6 @@ width:447px ;
   width: 17px;
   height: 27px;
   background-color: rgba(255,0,255, 1);
-}
-
-.butt-mautonomo-kaizen{
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  font-family: "GothamRounded", sans-serif;
-  color: white;
-  height:4vh;
-  width:12vw;
-  border-radius: 9px;
-  background-color: rgba(83, 82, 82, 0.678);
-  position: relative;
-  overflow: hidden;
-  margin-bottom:2vh;
-  cursor: pointer;
-  padding-left:2vw;
-}
-.butt-mautonomo-planos::before,
-.butt-mautonomo-kaizen::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 17px;
-  height: 27px;
-  background-color: rgb(255, 174, 0);
 }
 #contLineas{
   position: relative;
@@ -1111,7 +1092,7 @@ width:447px ;
   top: 2%;  
   width: 357px;
   height: 255px;
-}
+}  
 #canvasContainer6{
   position: absolute;
   display: flex;
@@ -1199,16 +1180,36 @@ width:447px ;
   top: 6%;
   left:52%;
 }
-#lubricacion{
+#uniteñido{
+  position:absolute;
+  display: flex;
+  top:19vh;
+  left: 13vw;
+  width: 86vw;
+  height:77vh;
   display: none;
 }
-#conti-boton-desb{
+#freno,
+#lubricacion{
+  position:absolute;
+  display: flex;
+  left: 13vw;
+  top:19vh;
+  width: 86vw;
+  height:77vh;
+  display: none;
+}
+
+#frec-lubrica{
   position: absolute;
   display: flex;
   flex-direction: column;
-  left: 12%; 
-  top: 31%;
-} 
+  left:17%;
+  top: 0;
+  z-index: 3;
+  display: none;
+}
+
 #vidTintero,
 #imgTorre-s,
 #imgTorre-m{
@@ -1228,46 +1229,6 @@ width:447px ;
   width:50%;
   border-radius: 11px;
 }
-/* #butt-001{
-  position: relative;
-  left: 7px;
-  top: -40px;
-}
-#butt-002{
-  position: relative;
-  left: 12px;
-  top: -80px;
-}
-#butt-003{
-  position: relative;
-  left: 7px;
-  top: -40px;
-}
-#butt-004{
-  position: relative;
-  left: 12px;
-  top: -80px;
-}
-#butt-005{
-  position: relative;
-  left: 7px;
-  top: -40px;
-}
-#butt-006{
-  position: relative;
-  left: 12px;
-  top: -80px;
-}
-#butt-007{
-  position: relative;
-  left: 7px;
-  top: -40px;
-}
-#butt-008{
-  position: relative;
-  left: 12px;
-  top: -80px;
-} */
 #butt-011{
   position: relative;
   left: 7px;
@@ -1880,13 +1841,6 @@ width:447px ;
  margin-bottom: 15px; 
  cursor: pointer;
 }
-.image-trainings1,
-.image-trainings{
-  cursor: pointer;
-  transition: transform 0.1s ease, filter 0.1s ease;
-  border-radius: 11px;
-  transform: translateZ(0);
-}
 .contImPresor{
   display: flex;
   flex-direction: row;  
@@ -2323,21 +2277,6 @@ h6{
   left: 31%;
   margin-top: -13%;
 }
-#conti-boton-rodilleria{
-  position: absolute;
-  flex-direction: column;
-  display: flex;
-  left: 11%;
-  margin-top:-49%;
-}
-#conti-boton-freno{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  left: 2%;
-  top: 13%;
-  display: none;
-}
 #conti-boton-planos{
   position: absolute; 
   display: flex;
@@ -2373,22 +2312,70 @@ h6{
   top:13%;
   display: none;
 }
-#conti-boton-kaizen button,
-#conti-boton-rodilleria button,
-#conti-boton-teñido button,
-#conti-boton-desb button,
-#conti-boton-freno button{
-  margin-bottom: 5.3vh;
-}
-#frec-lubrica{
-  position: relative;
+#conti-boton-rodilleria,
+#conti-boton-teñido,
+#conti-boton-freno,
+#conti-boton-desb{
+  position: absolute;
   display: flex;
   flex-direction: column;
-  left: 27.3%;
-  margin-top: -41.5%;
-  z-index: 3;
+  top:0;
+  left:0; 
+  width:13%;
+  height:33%;
+}
+#conti-boton-kaizen button,
+#conti-boton-teñido button,
+#conti-boton-freno button{
+  position: relative;
+  justify-content: center;
+  font-family: "GothamRounded", sans-serif;
+  width:100%;
+  height:20%;
+  font-size:0.9vw;
+  color: white;
+  border-radius: 9px;
+  background-color: rgba(83, 82, 82, 0.678); 
+  margin-bottom:1vh;
+  padding-left:2vw;
+  cursor: pointer;
   display: none;
 }
+.butt-mautonomo-kaizen{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  font-family: "GothamRounded", sans-serif;
+  color: white;
+  height:4vh;
+  width:12vw;
+  border-radius: 9px;
+  background-color: rgba(83, 82, 82, 0.678);
+  position: relative;
+  overflow: hidden;
+  margin-bottom:2vh;
+  cursor: pointer;
+  padding-left:2vw;
+}
+.butt-mautonomo-planos::before,
+.butt-mautonomo-kaizen::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 17px;
+  height: 27px;
+  background-color: rgb(255, 174, 0);
+}
+.image-trainings1,
+.image-trainings{
+  cursor: pointer;
+  transition: transform 0.1s ease, filter 0.1s ease;
+  border-radius: 11px;
+  transform: translateZ(0);
+}
+
 .hijo1{
   position: relative;
   display: flex;
@@ -2528,24 +2515,6 @@ h6{
   width: 168.7px;
   border-radius: 17px; 
   margin-bottom: 17px;
-}
-#abuelo-cuadricula{
-  position: absolute;
-  display: flex;
-}
-#padre-cuadricula{
-  position: absolute;
-  display: flex;
-}
-.marco-3{
-  position: absolute;
-  display: flex;
-  background-color: rgb(0,0,17);
-  border-radius: 20px;
-  margin-top: -50%;
-  left: 57%;
-  width: 42vw;
-  height: 58vh;
 }
 .marco-2{
   background-color: rgb(0,0,17);
@@ -2811,15 +2780,6 @@ elemento.visible {
   z-index: 3;
   border-radius: 14px;
 }
-#cont-arriba-rodillos{
-  position: absolute;
-  margin-top: -49%;
-  left: 26vw;
-  width:30vw;
-  height:45vh;
-  margin-bottom:2.7vh; /* Añade un margen inferior de 20px al contenedor padre */
-  display: none;  
-}
 #rodillos-I{
   display: flex;
   position: absolute;
@@ -2860,50 +2820,62 @@ elemento.visible {
   border-radius: 17px;
 }
 #rodilleria{
-  position: relative;
-  display: flex;
-  top: 13%;
-  display: none;  
-}
-#uniTeñido{
   position: absolute;
   display: flex;
-  top: 31%;
-  left: 11%;
-  width: 77vw;
-  height: 75vh;
-  display: none;
+  top: 19vh;
+  left: 13vw;
+  width:86vw;
+  height: 80vh;
+  display: none;  
+}
+#cont-arriba-rodillos{
+  position: absolute;
+  display: flex;
+  top:0;
+  left:15vw;
+  width:28vw;
+  height:45vh;
+  margin-bottom:2.7vh; /* Añade un margen inferior de 20px al contenedor padre */
+  display: none;  
+}
+.marco-3{
+  position: absolute;
+  display: flex;
+  background-color: rgb(0,0,17);
+  border-radius: 20px;
+  top:0;
+  left:53%;
+  width:39vw;
+  height:58vh;
+}
+#padre-cuadricula{
+  position: absolute;
+  display: flex;
 }
 #cont-arriba{
   position: absolute;
-  width:50%;
+  width:30%;
   height:80%;
   top:0;
-  left:4%;
+  left:24%;
   display: none;
   z-index: -1;
 }
 #teñido-I{
-  position: absolute;
+  position: absolute; 
   top:0;
-  left:33%;
-  width:67%;
+  left:0;
+  width:100%;
   height:11%;
   border-radius: 11px;
   justify-content: center;
   align-items: center;
 }
-.labl-class{
-  font-family: "GothamRounded", sans-serif;
-  color: yellow;
-  font-size: 20px;
-  border-radius: 11px;
-}
 #vidTeñido{
   position: relative;
   display: flex;
   top:21%;
-  left:33%;
+  left:0;
   height:37vh;
   width:27vw;
 }
@@ -2915,6 +2887,12 @@ elemento.visible {
   border: 1px solid red;
   border-radius: 17px;
   object-fit:cover; 
+}
+.labl-class{
+  font-family: "GothamRounded", sans-serif;
+  color: yellow;
+  font-size:1.5vw;
+  border-radius: 11px;
 }
 #teñido-II{
   position: absolute;
@@ -2954,44 +2932,33 @@ elemento.visible {
   flex-direction: column;
   z-index: 2;
 }
-#conti-boton-teñido{
+#cont-arriba-freno {
   position: absolute;
   display: flex;
-  flex-direction: column;
-  left:0;
-  top: 0;
-  width:13.6vw;
-  height:30vh;
-  display: none;
-}  
-#freno{
-  position: relative;
-  left: 9vw;
-  top: -87vh;
-  width: 100vw;
-  height: 100vh;
-  display: none;
+  left: 22%;
+  top:0;
+  width: 27%;
+  height:50%;
+  margin-bottom: 20px;
 }
+
 #abuelo-grilla{          /* /////////////////////////////////////// */
-  position: relative;
+  position:absolute;
+  display: flex;
 }
 .grilla-freno{
-  top: 13vh;
-  left: 47vw;  
+  top: 0;
+  left:54%;
   width: 41%;
   height: 62%;
   background-color: rgb(0,0,17);
   border-radius: 20px;
 }
-
-#cont-arriba-freno {
+#grilla-durezas{
   position: absolute;
   display: flex;
-  left: 17%;
-  top: 13%;
-  width: 27%;
-  height:50%;
-  margin-bottom: 20px;
+  left: 32%;
+  top:0;
 }
 #freno-I{
   display: flex;
@@ -3062,15 +3029,15 @@ elemento.visible {
   flex-direction: row; 
   top: 220px;
 }
-#dureza{
+/* #dureza{
   position:absolute;
   left:27%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 707px;
+  width:50%;
   margin: 0 auto;
-}
+} */
 #materiales-kaizen,
 #planos-kaizen{
   position: absolute;
@@ -5104,24 +5071,18 @@ input.numero:focus {
   width: 100vw;
   display:block;
 }
-#grilla-durezas{
-  position: absolute;
-  display: flex;
-  left: 35%;
-  margin-top:-48.9%;
-}
 #padre-grilla,
 #lubricantes,
 #inicio{
   display:none;
 }
-
 .conte-lubrica{
-  position: relative;
-  top: -75%;
-  left:40%;
-  width: 50vw;
-  height: 50vh;
+  position: absolute;
+  display:grid;
+  top:19vh;
+  left:42%;
+  width:57vw;
+  height:50vh;
   background-color: black;
   border-radius: 20px;
 }
@@ -5145,9 +5106,10 @@ input.numero:focus {
   border-radius: 20px;
 }
 .genesis{
-  position: relative;
-  top: -75%;
-  left: 28%;
+  position:absolute;
+  display:flex;
+  top:19vh;
+  left: 33%;
   width: 50vw;
   height: 50vh;
   background-color: black;
@@ -5392,6 +5354,12 @@ input.numero:focus {
   display: grid;
   margin-top: -3vh;
 }
+.hidden{
+  display: none;
+}
+.visible {
+  display:flex;
+}
 
 @media only screen and (max-width: 420px) {
   #cont-titulo-comercial,  
@@ -5586,7 +5554,8 @@ input.numero:focus {
   } 
   #lubricacion{
     position: absolute;
-    top:23vh;
+    display: flex;
+    top:20vh;
     left:25vw;
     height:30vh;
     width:80vw;
@@ -5600,7 +5569,6 @@ input.numero:focus {
     top:0;
     width:41%;
     height:100%;
-    /* z-index: 33; */
   } 
   #conti-boton-desb button{
     margin-bottom: 8%;
@@ -5616,10 +5584,10 @@ input.numero:focus {
   #frec-lubrica{
     position: absolute;
     display: flex;
+    top:0;
+    left:53%;
     width:32vw;
     height: 17vh;
-    left:53%;
-    top:60%;
     display: none;
   } 
   #lubri-I{
@@ -5743,18 +5711,19 @@ input.numero:focus {
     display:none;
   }
   .genesis{
-    position: relative;
-    top: -62%;
-    left: 3%;
+    position:absolute;
+    display: flex;
+    top:39vh;
+    left:3vw;
     width: 93vw;
-    height: 42vh;
+    height:38vh;
     background-color: black;
     border-radius: 20px;
     z-index: 33;
   }
   .conte-lubrica{
-    position: relative;
-    top: -62%;
+    position:absolute;
+    top:39%;
     left: 3%;
     width: 93vw;
     height: 39vh;
@@ -5933,7 +5902,7 @@ input.numero:focus {
   }  
   #uniTeñido{
     position: absolute;
-    top: 18%;
+    top: 21%;
     left:16%;
     height:76%;
     width:85%;
@@ -5944,7 +5913,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     left:25%;
-    top: 7%;
+    top:0;
     width:31vw;
     height:13vh;
     z-index:77;
@@ -6019,23 +5988,6 @@ input.numero:focus {
     box-sizing: border-box;
     border-radius: 20px;
   }
-  #conti-boton-rodilleria{
-    position: absolute;
-    flex-direction: column;
-    display: flex;
-    left:34%;
-    margin-top:9%;
-    width: 30vw;
-    height: 14vh;
-    display: none;
-    z-index: 33;
-  }
-  #conti-boton-rodilleria button{
-    height: 8vh;
-    width: 100%;
-    font-size: 2vw;
-    margin-bottom: 1vh;
-  }
 
   .img-teñido{
     margin-right: 10px;
@@ -6088,22 +6040,48 @@ input.numero:focus {
     transform: translateY(-50%);
   }
   #rodilleria{
-    position: relative;
-    top: -88%;
-    left: 1%;
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    display: flex;
+    top:21vh;
+    left:19vw;
+    height:77vh;
+    width:77vw;
     display: none;
+  }
+  #conti-boton-rodilleria{
+    position: absolute;
+    flex-direction: column;
+    display: flex;
+    top:0;
+    left:23%;
+    width:41%;
+    height:40%
+  }
+  #conti-boton-rodilleria button{
+    position:relative;
+    display: flex;
+    height: 3.7vh;
+    width: 100%;
+    font-size: 2vw;
+    margin-bottom: 1vh;
   }
   #cont-arriba-rodillos{
     position: absolute;
     margin-top: 35%;
-    left: 28%;
+    left: 18%;
     width:41vw;
     height:21vh;
     margin-bottom:2.7vh; /* Añade un margen inferior de 20px al contenedor padre */
     display: none;  
-  
+  }
+  .marco-3{
+    background-color: rgb(0,0,17);
+    border-radius: 20px;
+    top:50%;
+    left:0%;
+    width:100%;
+    height:40%;
+    z-index:33;
   }
   #rodillos-I{
     display: flex;
@@ -6133,15 +6111,6 @@ input.numero:focus {
   #padre-cuadricula{
     position: absolute;
     display: flex;
-  }
-  .marco-3{
-    background-color: rgb(0,0,17);
-    border-radius: 20px;
-    top:71%;
-    left:0%;
-    width:94vw;
-    height:30vh;
-    z-index:33;
   }
   .marco-2{
     background-color: rgb(0,0,17);
@@ -6178,10 +6147,10 @@ input.numero:focus {
     display: flex;
   }
   .dureza{
-    width:77%;
+    margin-top:47%;
+    margin-left: -30%;
+    width:90%;
     height:40%;
-    margin-left:-20%;
-    top:57%;
     z-index:33;
   }
   .img-rodillo{
@@ -6213,17 +6182,6 @@ input.numero:focus {
     width: 350px;
     height: 2px;
   }
-  #conti-boton-freno{   
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    left: 20%; 
-    top: 5%;
-    z-index: 33;
-  }
-  #conti-boton-freno button{
-    margin-bottom: 9px;
-  }
   #freno-I{
     display: flex;
     position: absolute;
@@ -6237,21 +6195,33 @@ input.numero:focus {
     align-items: center;
   }
   #freno{
-    position: relative;
+    position: absolute;
     display:flex;
     left:12vw;
-    top: -87vh;
+    top:21vh;
     width: 100vw;
     height: 100vh;
     display: none;
     z-index: 33;
   }
+  #conti-boton-freno{   
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 20%; 
+    top:0;
+    z-index: 33;
+  }
+  #conti-boton-freno button{
+    margin-bottom: 9px;
+  }
+
   #abuelo-grilla{          /* /////////////////////////////////////// */
     position: absolute;
     display: flex;
   }
   .grilla-freno{
-    top: 44vh;
+    top: 40vh;
     left:-11vw;  
     width: 95%;
     height:29%;
@@ -6284,7 +6254,7 @@ input.numero:focus {
     position: absolute;
     display: flex;
     left:5%;
-    top: 20%;
+    top: 17%;
     width: 60%;
     height:22%;
     margin-bottom: 20px;
@@ -6406,7 +6376,6 @@ input.numero:focus {
     height: 224px;
     width: 308px;
   }
-  /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #bateria-entintado-II{
     position: fixed;
     left:3%;
@@ -6426,7 +6395,6 @@ input.numero:focus {
     height: 37%;
     transition: transform 1.6s ease;
   }
-  /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #agrupaOblicuos,
   #agrupaOblicuos-III,
   #agrupaOblicuos-IV,
