@@ -2505,30 +2505,7 @@ function abrirSeccionVariable(elementId){
   child.style.display='flex'
   moveElement(child,parent)
   document.body.style.zoom = "100%";
-  container1.style.left=''
-
-
-  if (screenWidth < 500) {   
-      var elementosExcluidos = ['buscador','container01','cont-variable','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','links-inicialesI','links-iniciales'];  
-      for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i]) 
-        if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
-        }
-      document.body.style.zoom = "100%";
-      container1.style.left=''    
-      videoElements.forEach(video => {
-        if (video.id === 'video-infoprint-I' || video.id === 'video-infoprint-II' || video.id === 'video-infoprint-III') {
-          video.style.width = '213px'
-          video.style.display = 'block'
-          video.play();
-        } else {
-          video.style.display = 'none'
-        }
-        }); 
-    }     
-  }
+  container1.style.left=''  
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {
@@ -2543,7 +2520,7 @@ function abrirSeccionVariable(elementId){
 function abrirSeccionPlanas(elementId){
   clearAllIntervals()
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  var elementosExcluidos = ['buscador','container01','conti-video-background','video-background-planas','cont-plana','conti-videos-planas','video-planas-I','video-planas-II','video-infoprint-III','conti-img-planas','links-inicialesI','links-iniciales'];
+  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','abuelo-plana','padre-plana'];
   document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
@@ -2552,38 +2529,14 @@ function abrirSeccionPlanas(elementId){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
+  document.getElementById('cont-plana').style.display='grid'
+  const child = document.getElementById('child-move-plana');
+  const parent = document.getElementById('padre-plana');
+  child.style.display='flex'
+  moveElement(child,parent)
+
   document.body.style.zoom = "100%"
   container1.style.left=''
-  videoElements.forEach(video => {
-    if (video.id === 'video-planas-I' || video.id === 'video-planas-II' || video.id === 'video-planas-III' || video.id === 'video-background-planas') {
-      video.style.width = '268px'
-      video.style.display = 'block'
-      video.play();
-    } else {
-      video.style.display = 'none'
-    }
-    });
-    if (screenWidth < 500) {   
-      var elementosExcluidos = ['buscador','container01','conti-video-background','video-background-planas','cont-plana','conti-videos-planas','video-planas-I','video-planas-II','video-infoprint-III','conti-img-planas','links-inicialesI','links-iniciales'];
-      for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i]) 
-        if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
-        }
-      document.body.style.zoom = "100%";
-      container1.style.left=''    
-      videoElements.forEach(video => {
-        if (video.id === 'video-planas-I' || video.id === 'video-planas-II' || video.id === 'video-planas-III' || video.id === 'video-background-planas') {
-          video.style.width = '213px'
-          video.style.display = 'block'
-          video.play();
-        } else {
-          video.style.display = 'none'
-        }
-        }); 
-    }     
-  }   
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {

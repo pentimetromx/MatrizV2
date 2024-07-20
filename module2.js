@@ -225,12 +225,12 @@ document.addEventListener('keydown', function(event) {
           abrirSeccionContinua('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          cierraContenedores('uTeñido')
+          abrirSeccionPlanas('cont-plana')
         },977) 
-        setTimeout(function() {
+        /*setTimeout(function() {
           UnidadTeñido('boton9','boton7')      
         },1177) 
-        /*setTimeout(function() {
+        setTimeout(function() {
           deslizaContenedor('troubleshooting','troubleshoot')           
         },1377)
         setTimeout(function() {
