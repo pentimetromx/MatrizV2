@@ -2490,7 +2490,7 @@ function devolverColoresConRetrasoIII() {
 function abrirSeccionVariable(elementId){
   clearAllIntervals()
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  var elementosExcluidos = ['buscador','container01','cont-variable','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','links-inicialesI','links-iniciales'];
+  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','abuelo-variable','padre-variable'];
   document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);
@@ -2499,18 +2499,16 @@ function abrirSeccionVariable(elementId){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
+  document.getElementById('cont-variable').style.display='grid'
+  const child = document.getElementById('child-move-variable');
+  const parent = document.getElementById('padre-variable');
+  child.style.display='flex'
+  moveElement(child,parent)
   document.body.style.zoom = "100%";
   container1.style.left=''
-  videoElements.forEach(video => {
-    if (video.id === 'video-infoprint-I' || video.id === 'video-infoprint-II' || video.id === 'video-infoprint-III') {
-      video.style.width = '268px'
-      video.style.display = 'block'
-      video.play();
-    } else {
-      video.style.display = 'none'
-    }
-    });
-    if (screenWidth < 500) {   
+
+
+  if (screenWidth < 500) {   
       var elementosExcluidos = ['buscador','container01','cont-variable','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','links-inicialesI','links-iniciales'];  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
@@ -4130,19 +4128,8 @@ function lubricacion(buttId){
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
         }
-        palpitarBoton('desbobinadorId')       
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        for (var i = 0; i < arrayIdButtsCheck.length; i++) {                                                                            /// PONE ROJO EL BOTON
-          var button = arrayIdButtsCheck[i]
-          if (button === buttId) {
-            // Cambia el color del botón seleccionado a rojo
-            document.getElementById(button).style.backgroundColor = ''
-          } else {
-            // Restablece el color de los otros botones
-            document.getElementById(button).style.backgroundColor = '' // Esto elimina cualquier estilo en línea
-          }
-        } 
-      break;
+        palpitarBoton('desbobinadorId')
+      break  
       case 'boton6':
         var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId']  
         for (var i = 0; i < allContenedores.length; i++) { 
@@ -4152,22 +4139,10 @@ function lubricacion(buttId){
           }
         }
         palpitarBoton('desbobinadorId')       
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        for (var i = 0; i < arrayIdButtsCheck.length; i++) {                                                                            /// PONE ROJO EL BOTON
-          var button = arrayIdButtsCheck[i]
-          if (button === buttId) {
-            // Cambia el color del botón seleccionado a rojo
-            document.getElementById(button).style.backgroundColor = ''
-          } else {
-            // Restablece el color de los otros botones
-            document.getElementById(button).style.backgroundColor = '' // Esto elimina cualquier estilo en línea
-          }
-        } 
       break;
       default:
     }
 } 
-
 function LubricaDesbobinador(idButt) {
   var arrayIdButtsLub = ['btn1', 'btn2', 'btn3', 'btn4', 'btn5', 'btn60', 'btn70', 'btn80']
   var arrayIdButtsLubII = ['btn60', 'btn70', 'btn80']
@@ -4350,12 +4325,33 @@ function UnidadTeñido(buttId){
       mostrartBotonesIntervalo('butt-mautonomo-rodilleria');    
     break; 
     case 'boton10' :
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }      
       palpitarBoton('uTeñidos')
     break; 
     case 'boton11' : 
+    var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos']  
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i])  
+      if (elemento) {
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      }
+    }    
     palpitarBoton('uTeñidos')
     break; 
     case 'boton12' :
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }
       palpitarBoton('uTeñidos')
     break; 
     case 'btn600' :
@@ -4406,97 +4402,169 @@ function mostrartBotonesIntervalo(className) {
       delay += 177; // Incrementa el delay en 100ms para cada botón
   });
 }
-function UnidadAlimenta(buttId,btnIniId){
-  var alimenta = document.getElementById('uTeñidos')
-  var contiDesbobina = document.getElementById('desbobinadorId')
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////    
-  var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
-  if (computedStyleUteñido.display === 'flex') {
-    palpitarBotonAlimenta()
-  }
-
-  if(alimenta.style.display === 'none'){                                                                                                  /// SI "ALIMENTA" ESTÁ OCULTA
-
+function UnidadAlimenta(buttId){
     switch (buttId) {
       case 'boton14' :
-        palpitarBotonAlimenta()
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }
+        palpitarBoton('alimentadorId')
       break;
       case 'boton15' :
-        palpitarBotonAlimenta()
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }
+        palpitarBoton('alimentadorId')
       break; 
       case 'boton16' :
-        palpitarBotonAlimenta()
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }
+        palpitarBoton('alimentadorId')
       break; 
       case 'boton17' : 
-      palpitarBotonAlimenta()
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }        
+      palpitarBoton('alimentadorId')
       break; 
       case 'boton18' :
-        palpitarBotonAlimenta()
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }        
+        palpitarBoton('alimentadorId')
       break; 
       default:
     }
-  }
 }
-function UnidadProceso(buttId,btnIniId){
-  var alimenta = document.getElementById('uTeñidos')
-  var contiDesbobina = document.getElementById('desbobinadorId')
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////    
-
-  var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
-  if (computedStyleUteñido.display === 'flex') {
-    palpitarBotonUProceso()
-  }
-  if(alimenta.style.display === 'none'){                                                                                                 /// SI "ALIMENTA" ESTÁ OCULTA
+function UnidadProceso(buttId){
     switch (buttId) {
       case 'boton20' :
-          palpitarBotonUProceso()
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }
+        palpitarBoton('unidProceso')
       break;
       case 'boton21' :
-        palpitarBotonUProceso()
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }
+        palpitarBoton('unidProceso')
       break; 
       case 'boton22' :
-        palpitarBotonUProceso()        
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }
+        palpitarBoton('unidProceso')
       break; 
       case 'boton23' : 
-      palpitarBotonUProceso()      
-      break; 
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }
+      palpitarBoton('unidProceso')
+    break; 
       case 'boton24' :
-        palpitarBotonUProceso()
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }
+        palpitarBoton('unidProceso')
       break; 
       default:
     }
-  }
 }
-function UnidadRebonina(buttId,btnIniId){
-  var alimenta = document.getElementById('uTeñidos')
-  var botsTorre = ['boton1','boton7','boton13','boton19','boton25',]
-  var botsUnidadT = ['boton26','boton27','boton28','boton29','boton30']
-  var contiDesbobina = document.getElementById('desbobinadorId')
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////    
-  var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
-  if (computedStyleUteñido.display === 'flex') {
-    palpitarBotonRebobina()
-  }
-  if(alimenta.style.display === 'none'){                                                                                                  /// SI "ALIMENTA" ESTÁ OCULTA
-
+function UnidadRebonina(buttId){
     switch (buttId) {
       case 'boton26' :
-          palpitarBotonRebobina()
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','rebobinador']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }
+        palpitarBoton('rebobinador')
       break;
       case 'boton27' :
-        palpitarBotonRebobina()
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','rebobinador']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }
+        palpitarBoton('rebobinador')
       break; 
       case 'boton28' :
-        palpitarBotonRebobina()
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','rebobinador']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }
+        palpitarBoton('rebobinador')
       break; 
       case 'boton29' : 
-      palpitarBotonRebobina()
-      break; 
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','rebobinador']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }
+      palpitarBoton('rebobinador')
+    break; 
       case 'boton30' :
-        palpitarBotonRebobina()
+        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','rebobinador']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }
+        palpitarBoton('rebobinador')
       break; 
       default:
-    }
   }
 }
 function UnidadTintero(buttId,btnIniId){

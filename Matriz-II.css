@@ -89,13 +89,6 @@ h1, h2, h3 {
   position: absolute;
   top:0.7vh;
 }
-.maq-seccion{
-  border: 6px solid gray; 
-  border-radius: 7px;
-  cursor: pointer;
-  height:77px;
-  width: 102px;
-}
 #toggleVideoButton{
   position: absolute;
   display: flex;
@@ -1182,7 +1175,14 @@ width:447px ;
   z-index: 3;
   display: none;
 }
-#vidTintero,
+#vidTintero{
+  position: absolute;
+  left: 10%;
+  top:-4%;  
+  height: 83%;
+  width: 62%;  
+
+}
 #imgTorre-s,
 #imgTorre-m{
   position: absolute;
@@ -1829,19 +1829,6 @@ margin-right: 7px;
   margin-left: 27px;
   margin-top: 127px;
   display: none;
-}
-.secciones{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  padding: 27px;
-  top: 20%;
-  left:1% ;
-}
-.secciones img{
-  margin-bottom: 7px;
-  height: 135px;
-  width: 180px;
 }
 .imagen-container{
   position: absolute;
@@ -3614,7 +3601,6 @@ h4{
     opacity: 0;
   }
 }
-/* Utilizamos CSS Grid para crear la grilla de imágenes */
 #vidColor{
   position: absolute;
   left: 17%;
@@ -3632,55 +3618,58 @@ h4{
   top: 17%;
   height: 437px;
 }
+#abuelo-variable{
+  position: relative;
+  display:flex;
+  left: 29vw;
+  top: 21vh;
+  width: 40vw;
+  height: 65vh;  
+  border-radius: 15px;
+  background-color: RGB(0,0,10);
+}
+#padre-variable{
+  position: absolute;
+  display:flex;
+  left:0;
+  top:0;
+  width: 40vw;
+  height: 65vh;  
+  border-radius: 15px;
+  background-color: RGB(0,0,10);
+
+}
 #cont-plana,
 #cont-variable{
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  left: 29.5%;  
+  position: absolute;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 33% 33% 33%;
+  border-radius: 20px;
+  gap: 1px;
+  top: 0;
+  left: 0;
+  width: 40vw;
+  height: 65vh;  
   display: none;
 }
-#conti-img-planas,
-#conti-img-info{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: -2%;
-  left: 10px;
+#cont-variable .child-section{
+  display: block;
+  object-fit: cover; 
+  border-radius: 11px;
+  width: 100%;
+  height: 100%;
 }
-#conti-img-planas img,
-#conti-img-info img{
-  position: relative;
-  display: flex;
-  width: 214px;
-  height: 140px;
-} 
-#conti-videos-planas,
-#conti-videos-infoprint{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  left: 19%;
-  margin-top: -2%; 
-  width: 100vh;
-  height:100vh;
-  gap: 9px;
-}
-#conti-videos-planas video,
-#conti-videos-infoprint video{
-  position: relative; 
-  display: flex;
-  border: 1px solid black;
-}
+
 #sitio-en-construccion{
   position: absolute;
   display: flex;
   top: 44%;
   left: 44%;
-  background-color: #fff; /* Fondo blanco */
-  color: #333; /* Texto color gris oscuro */
-  border: 3px solid #ccc; /* Borde 3px color gris */
-  border-radius: 5px; /* Radio en el borde de 5px */
+  background-color: #fff;
+  color: #333; 
+  border: 3px solid #ccc;
+  border-radius: 5px;
   text-align: center;
   font-family: 'GothamRounded', sans-serif;
   animation: aumentarTamano 1s infinite alternate; /* Animación cada 1 segundo */
@@ -3690,7 +3679,7 @@ h4{
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Cambiado de justify-content a align-items */
+  align-items: center;
   width: 1000px;
   height: 600px;
   margin: 10px;
@@ -5095,6 +5084,7 @@ input.numero:focus {
   background-color: black;
   border-radius: 20px;
 }
+#child-move-variable,
 #child-move-IV,
 #child-move-III,
 #child-move{
@@ -5520,18 +5510,6 @@ input.numero:focus {
     cursor: pointer; 
     transition: transform 0.1s;
   } 
-  #conti-boton-desb{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    left:0; 
-    top:0;
-    width:41%;
-    height:100%;
-  } 
-  #conti-boton-desb button{
-    margin-bottom: 8%;
-  }
   .butt-mautonomo-freno{
     align-items: start;
     font-size: 10px;
@@ -5544,7 +5522,7 @@ input.numero:focus {
     position: absolute;
     display: flex;
     top:0;
-    left:53%;
+    left:65%;
     width:32vw;
     height: 17vh;
     display: none;
@@ -5726,9 +5704,9 @@ input.numero:focus {
     border-radius: 10px;
   }
   .aceite-lub label{
-    font-size: 20px;
+    font-size:4vw;
     border-radius: 5px;
-    margin-left: 2%;
+    margin-left: 2%;  
   }
   .grand-father{
     position: absolute;
@@ -6114,12 +6092,18 @@ input.numero:focus {
     top: 1px;
     left:22%;
     background: linear-gradient(45deg, black 33%, gray 67%);
-    font-size: 13px;
     width:57%;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
   }
+  .labl-class{
+    font-family: "GothamRounded", sans-serif;
+    color: yellow;
+    font-size:2.5vw;
+    border-radius: 11px;
+  }  
+
   #uniteñido,
   #lubricacion,
   #freno{
@@ -6193,19 +6177,12 @@ input.numero:focus {
   #cont-arriba-freno {    
     position: absolute;
     display: flex;
-    left:5%;
+    left:8%;
     top: 17%;
     width: 60%;
     height:22%;
-    margin-bottom: 20px;
-  
+    margin-bottom: 20px;  
   }
-  .labl-class{
-    font-family: "GothamRounded", sans-serif;
-    color: yellow;
-    font-size: 15px;
-    border-radius: 11px;
-  }  
   #vidFreno{
     position: absolute;
     flex-direction: column;
@@ -6413,14 +6390,13 @@ input.numero:focus {
     z-index: 777;
   }
   /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
-  #links-iniciales{  /* PADRE LINKS INICIALES-II  */
+  #links-iniciales{
     position: absolute;
     display: flex;
     top: 14.5%;
     left:47vw;
     height:57vh;
-    width:60vw;
-    /* z-index: 34; */
+    width:52vw;
     display: none;
   }
   #line{
@@ -6701,14 +6677,6 @@ input.numero:focus {
     font-size: 8px;
     text-align: left;
   } 
-  .secciones{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    padding: 27px;
-    top: 20%;
-    left:1% ;
-  }
   #cont-secador{
     position: relative;
     display: flex;
@@ -7063,41 +7031,12 @@ input.numero:focus {
     height: 100vh;  
     display: none;
   }
-  #conti-videos-planas,
-  #conti-videos-infoprint{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    left: 25%;
-    margin-top: -5.5%; 
-    width: 100vh;
-    height:100vh;
-    gap: 9px;
-  }
   #video-planas-III,
   #video-planas-II,
-  #video-planas-I,
-  #video-infoprint-III,
-  #video-infoprint-II,
-  #video-infoprint-I{
+  #video-planas-I{
     position: relative;
     display: flex;
   }
-  #conti-img-planas,
-  #conti-img-info{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    left: 3%;
-    gap: 5px;
-  }
-  #conti-img-planas img,
-  #conti-img-info img{
-    position: relative;
-    display: flex;
-    width: 157px;
-    height: 106px;
-  } 
   .video-training{
     display: none;
     border-radius: 11px;
@@ -7321,7 +7260,9 @@ input.numero:focus {
     width: 75%;
     border-radius: 8px;
   }
-
+  .iridescent-element li a{
+    font-size:3vw;
+  }
   .linksTraining li a {
     color: white; /*Cambiar el color del texto a blanco*/
     cursor: pointer; /*Cambiar el cursor a una mano */
@@ -7339,7 +7280,6 @@ input.numero:focus {
   .inpt-class{
     width:100%;
     border-radius: 7px;
-    /* background-color: rgb(211, 255, 204); */
     margin-bottom: 11px;
     transition: background-color 0.3s, color 0.3s;
   }

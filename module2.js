@@ -265,7 +265,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('frec-lubrica') 
+  var contiBoton = document.getElementById('abuelo-variable') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -3700,8 +3700,25 @@ function palpitarBoton(elemento){
       document.getElementById('boton7').classList.add('parpadea');
     setTimeout(function () {
       document.getElementById('boton7').classList.remove('parpadea');
-    }, 577);
+    }, 277);
     break;
+    case 'alimentadorId':
+      document.getElementById('boton13').classList.add('parpadea');
+    setTimeout(function () {
+      document.getElementById('boton13').classList.remove('parpadea');
+    }, 277);
+    break;
+    case 'unidProceso':
+      document.getElementById('boton19').classList.add('parpadea');
+    setTimeout(function () {
+      document.getElementById('boton19').classList.remove('parpadea');
+    }, 277);
+    case 'rebobinador':
+      document.getElementById('boton25').classList.add('parpadea');
+    setTimeout(function () {
+      document.getElementById('boton25').classList.remove('parpadea');
+    }, 277);
+    break;       
     default:
   }
 
