@@ -2547,7 +2547,7 @@ function abrirSeccionPlanas(elementId){
   }
 }
 function abrirSeccionCurado(elementId){
-  var elementosExcluidos = ['buscador','cont-secador','container01','video-container','curado-uv','links-inicialesI','links-iniciales'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)  
+  var elementosExcluidos = ['buscador','cont-secador','container01','video-container','curado-uv','links-inicialesI','links-iniciales','planet-container','planetary'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)  
   document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
@@ -2558,22 +2558,6 @@ function abrirSeccionCurado(elementId){
   }
   document.body.style.zoom = "100%";
   container1.style.left=''
-  videoElements.forEach(video => {
-    try {
-      if (video.id !== 'curado-uv') {             
-        video.style.display = 'none'     
-      } else {
-        video.style.display = 'block'
-        video.pause()
-        video.currentTime = 0;
-        video.play()           
-      } 
-    } catch (error) {
-      // Manejar la excepción aquí si es necesario
-      console.error('Error al manipular videos:', error)
-    }
-  })  
-  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {

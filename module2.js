@@ -225,7 +225,7 @@ document.addEventListener('keydown', function(event) {
           abrirSeccionContinua('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          abrirSeccionPlanas('cont-plana')
+          abrirSeccionCurado('cont-secador')
         },977) 
         /*setTimeout(function() {
           UnidadTeñido('boton9','boton7')      
@@ -265,7 +265,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('abuelo-variable') 
+  var contiBoton = document.getElementById('planet-container') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
