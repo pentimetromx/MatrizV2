@@ -2547,7 +2547,7 @@ function abrirSeccionPlanas(elementId){
   }
 }
 function abrirSeccionCurado(elementId){
-  var elementosExcluidos = ['buscador','cont-secador','container01','video-container','curado-uv','links-inicialesI','links-iniciales','planet-container','planetary'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)  
+  var elementosExcluidos = ['buscador','cont-secador','container01','video-container','curado-uv','links-inicialesI','links-iniciales'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)  
   document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
@@ -2569,6 +2569,30 @@ function abrirSeccionCurado(elementId){
     console.log(idsArray);
   }  
 }
+function abrirSeccionDemo(elementId){
+  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','planetary','tendencia-naranja'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)  
+  document.getElementById('linkList').style.display = 'none'
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+    }
+  }
+
+  document.body.style.zoom = "100%";
+  container1.style.left=''
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
+    idsArray.push(elementId);
+    console.log(idsArray);
+  }  
+}
+
 function cerrarSecciones(){
   linkList.style.display = "none";
   linkListI.style.display = "none";

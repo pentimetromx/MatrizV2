@@ -225,7 +225,7 @@ document.addEventListener('keydown', function(event) {
           abrirSeccionContinua('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          abrirSeccionCurado('cont-secador')
+          abrirSeccionDemo('planetary')
         },977) 
         /*setTimeout(function() {
           UnidadTeñido('boton9','boton7')      
@@ -265,7 +265,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('planet-container') 
+  var contiBoton = document.getElementById('tendencia-naranja') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -5823,8 +5823,6 @@ function sixthMovement(){ // PATERN
   document.getElementById('patern').style.display = 'grid'
   changeColors()
 }
-/* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
-
 let pos = 0;
 let step = 3;
 const speed = 1;
@@ -5842,7 +5840,6 @@ function stopAllIntervals() {
     }
   }
 }
-
 function moveElement(element, parent) {
   stopAllIntervals();
   let positionParent = parent.clientWidth - element.clientWidth;
@@ -5884,7 +5881,6 @@ function moveElement(element, parent) {
       }
   }, speed * 2);
 }
-
 
 
 
