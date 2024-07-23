@@ -2592,7 +2592,65 @@ function abrirSeccionDemo(elementId){
     console.log(idsArray);
   }  
 }
+const resizableDivs = document.querySelectorAll('.item-orange');
+const shrinkButton = document.getElementById('shrinkButton'); 
+let shrinking;
+shrinkButton.addEventListener('click', () => {
+  if(screenWidth < 500){
+    if (shrinking) {
+      clearInterval(shrinking);
+    }
+    shrinking = setInterval(() => {
+      resizableDivs.forEach(div => {
+        let currentWidth = parseFloat(div.style.width);
+        if (isNaN(currentWidth)) {
+          currentWidth = parseFloat(window.getComputedStyle(div).width) / window.innerWidth * 100;
+        }
+        // Calcula la diferencia de reducción proporcional
+        let reductionFactor = 5 / Math.max(...Array.from(resizableDivs).map(d => parseFloat(window.getComputedStyle(d).width) / window.innerWidth * 100));
+        // Reducir el ancho del div basado en su ancho actual y la diferencia de reducción proporcional
+        if (currentWidth > 1) {
+          div.style.width = (currentWidth - reductionFactor * currentWidth) + '%';
+        } else {
+          clearInterval(shrinking);
+        }
+      });
+    }, 100);
+    setTimeout(() => {
+      const items = document.getElementsByClassName('item-orange');
+      for (let i = 0; i < items.length; i++) {
+        items[i].style.width = '';
+      }
+    }, 3000);
+  }else {
+    if (shrinking) {
+      clearInterval(shrinking);
+    }
+    shrinking = setInterval(() => {
+      resizableDivs.forEach(div => {
+        let currentWidth = parseFloat(div.style.width);
+        if (isNaN(currentWidth)) {
+          currentWidth = parseFloat(window.getComputedStyle(div).width) / window.innerWidth * 100;
+        }
+        // Calcula la diferencia de reducción proporcional
+        let reductionFactor = 1 / Math.max(...Array.from(resizableDivs).map(d => parseFloat(window.getComputedStyle(d).width) / window.innerWidth * 100));
+        // Reducir el ancho del div basado en su ancho actual y la diferencia de reducción proporcional
+        if (currentWidth > 1) {
+          div.style.width = (currentWidth - reductionFactor * currentWidth) + '%';
+        } else {
+          clearInterval(shrinking);
+        }
+      });
+    }, 100);
+    setTimeout(() => {
+      const items = document.getElementsByClassName('item-orange');
+      for (let i = 0; i < items.length; i++) {
+        items[i].style.width = '';
+      }
+    }, 3000);
+  }
 
+});
 function cerrarSecciones(){
   linkList.style.display = "none";
   linkListI.style.display = "none";

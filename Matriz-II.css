@@ -2372,6 +2372,20 @@ h6{
   background-color: rgb(255, 200, 0); 
   margin-bottom:1vh;
   border-radius:2px;
+  transition: width 2s;
+}
+.but-analitic{
+  position: absolute;
+  display:flex;
+  top: 7vh;
+  left:20%;
+  width: 10%;
+  height: 5vh;
+  background-color: rgb(255, 200, 0); 
+  color: rgb(0, 0, 17);
+  border-radius: 7px;
+  font-size: 1.3vw;
+  cursor: pointer;
 }
 .item-orange .first-lbl{
   position: absolute;
@@ -8840,6 +8854,22 @@ input.numero:focus {
     width:0.1px;
     height: 107.5%;
   }  
+  .but-analitic{
+    position: absolute;
+    display:flex;
+    top: 17vh;
+    left:77%;
+    width: 20%;
+    height: 4vh;
+    background-color: rgb(255, 200, 0); 
+    color: rgb(0, 0, 17);
+    border-radius: 7px;
+    font-size: 3.3vw;
+    text-align: center;
+    cursor: pointer;
+    z-index: 3;
+  }
+  
 
 }
 
