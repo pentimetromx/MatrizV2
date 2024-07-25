@@ -2569,88 +2569,56 @@ function abrirSeccionCurado(elementId){
     console.log(idsArray);
   }  
 }
-function abrirSeccionDemo(elementId){
-  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','planetary','tendencia-naranja'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)  
-  document.getElementById('linkList').style.display = 'none'
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i]);  
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+function abrirSeccionDemo(elementId) {
+  var elementosExcluidos = ['buscador', 'container01', 'links-inicialesI', 'links-iniciales', 'planetary', 'tendencia-naranja','padre-naranja'];
+  document.getElementById('linkList').style.display = 'none';
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
-
+  const movil = document.getElementById('child-move-naranja')
+  const currentZone = document.getElementById('tendencia-naranja')
+  moveElement(movil,currentZone)
+  
   document.body.style.zoom = "100%";
-  container1.style.left=''
+  container1.style.left = '';
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {
-      // 4. Si el elemento ya existe, moverlo a la última posición
-      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+      idsArray.splice(index, 1);
     }
-    // 5. Agregar el elemento al final de arrayIds
     idsArray.push(elementId);
     console.log(idsArray);
-  }  
-}
-const resizableDivs = document.querySelectorAll('.item-orange');
-const shrinkButton = document.getElementById('shrinkButton'); 
-let shrinking;
-shrinkButton.addEventListener('click', () => {
-  if(screenWidth < 500){
-    if (shrinking) {
-      clearInterval(shrinking);
-    }
-    shrinking = setInterval(() => {
-      resizableDivs.forEach(div => {
-        let currentWidth = parseFloat(div.style.width);
-        if (isNaN(currentWidth)) {
-          currentWidth = parseFloat(window.getComputedStyle(div).width) / window.innerWidth * 100;
-        }
-        // Calcula la diferencia de reducción proporcional
-        let reductionFactor = 5 / Math.max(...Array.from(resizableDivs).map(d => parseFloat(window.getComputedStyle(d).width) / window.innerWidth * 100));
-        // Reducir el ancho del div basado en su ancho actual y la diferencia de reducción proporcional
-        if (currentWidth > 1) {
-          div.style.width = (currentWidth - reductionFactor * currentWidth) + '%';
-        } else {
-          clearInterval(shrinking);
-        }
-      });
-    }, 100);
-    setTimeout(() => {
-      const items = document.getElementsByClassName('item-orange');
-      for (let i = 0; i < items.length; i++) {
-        items[i].style.width = '';
-      }
-    }, 3000);
-  }else {
-    if (shrinking) {
-      clearInterval(shrinking);
-    }
-    shrinking = setInterval(() => {
-      resizableDivs.forEach(div => {
-        let currentWidth = parseFloat(div.style.width);
-        if (isNaN(currentWidth)) {
-          currentWidth = parseFloat(window.getComputedStyle(div).width) / window.innerWidth * 100;
-        }
-        // Calcula la diferencia de reducción proporcional
-        let reductionFactor = 1 / Math.max(...Array.from(resizableDivs).map(d => parseFloat(window.getComputedStyle(d).width) / window.innerWidth * 100));
-        // Reducir el ancho del div basado en su ancho actual y la diferencia de reducción proporcional
-        if (currentWidth > 1) {
-          div.style.width = (currentWidth - reductionFactor * currentWidth) + '%';
-        } else {
-          clearInterval(shrinking);
-        }
-      });
-    }, 100);
-    setTimeout(() => {
-      const items = document.getElementsByClassName('item-orange');
-      for (let i = 0; i < items.length; i++) {
-        items[i].style.width = '';
-      }
-    }, 3000);
   }
+}
 
+document.getElementById('shrinkButton').addEventListener('click', function() {
+  var items = document.querySelectorAll('.item-orange');
+  items.forEach(function(item) {
+    var label = item.querySelector('.first-lbl');
+    var initialWidth = item.offsetWidth;
+    var width = initialWidth;
+    var decrement = width / 25;
+    var interval = setInterval(function() {
+      width -= decrement;
+      if (width <= 5) {
+        width = 5;
+        clearInterval(interval);
+        setTimeout(function() {
+          item.style.width = initialWidth + 'px';
+          label.textContent = initialWidth + 'px';
+        }, 500);
+      } else {
+        item.style.width = width + 'px';
+        label.textContent = Math.round(width) + 'px';
+      }
+    }, 16);
+  });
 });
+
 function cerrarSecciones(){
   linkList.style.display = "none";
   linkListI.style.display = "none";
