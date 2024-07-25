@@ -724,7 +724,8 @@ color: white;
   border-radius: 7px;
   left: 0;
   top: 1vh;
-  text-align: center;    
+  align-items: center;
+  justify-content: center; 
   cursor: pointer; 
   transition: transform 0.1s;
 }
@@ -1212,7 +1213,7 @@ width:447px ;
   width:50%;
   border-radius: 11px;
 }
-#butt-011{
+/* #butt-011{
   position: relative;
   left: 7px;
   top: -40px;
@@ -1251,8 +1252,12 @@ width:447px ;
   position: relative;
   left: 12px;
   top: -80px;
-}
-#butt-010{
+} */
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* #butt-010{
   position: relative;
   left: 7px;
   top: -40px;
@@ -1291,7 +1296,7 @@ width:447px ;
   position: relative;
   left: 12px;
   top: -80px;
-}
+} */
 #agrupaOblicuos-XXIV{ 
   position: relative;
   display: flex;
@@ -1681,58 +1686,69 @@ width:447px ;
   cursor: pointer;
   z-index: 0;
 }
+#butt-011,
+#butt-010,
 #butt-001,
 #butt-01{
   position: absolute;
   left: 7px;
   top:0;
 }
+#butt-022,
+#butt-020,
 #butt-002,
 #butt-02{
   position: absolute;
   left: 12px;
   top:1vh;
 }
+#butt-033,
+#butt-030,
 #butt-003,
 #butt-03{
   position: absolute;
   left: 7px;
   top:13vh;
 }
+#butt-044,
+#butt-040,
 #butt-004,
 #butt-04{
   position: absolute;
   left: 12px;
   top:14vh;
 }
+#butt-055,
+#butt-050,
 #butt-005,
 #butt-05{
   position: absolute;
   left: 7px;
   top:26vh;
 }
+#butt-066,
+#butt-060,
 #butt-006,
 #butt-06{
   position: absolute;
   left: 12px;
   top:27vh;
 }
+#butt-077,
+#butt-07,
 #butt-007,
 #butt-07{
   position: absolute;
   left: 7px;
   top:39vh;
 }
+#butt-088,
+#butt-080,
 #butt-008,
 #butt-08{
   position: absolute;
   left: 12px;
   top:40vh;
-}
-.imagesTorre{
-  height: 377px;
-  width: 503px;
-  border-radius: 10px;   
 }
 .imagesTorreP{
   height: 377px;
@@ -1824,23 +1840,35 @@ width:447px ;
  margin-bottom: 15px; 
  cursor: pointer;
 }
-.contImPresor{
-  display: flex;
-  flex-direction: row;  
-}
-.contImPresor img{
-margin-right: 7px; 
-}
 #imagenes-impresor,
 #imagenes-manta,
 #imagenes-plancha {
+  position:relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-left: 27px;
-  margin-top: 127px;
+  left:2vw;
+  top:8vh;
+  width:75vw;
+  height:87vh;
   display: none;
 }
+.contImPresor{
+  position: absolute;
+  display: flex;
+  flex-direction: row;  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:100%;
+}
+.imagesTorre{
+  height:60%;
+  width:49%;
+  border-radius: 10px; 
+  margin-right: 7px;  
+}
+
 .imagen-container{
   position: absolute;
   display: flex;
@@ -2396,7 +2424,7 @@ h6{
   color: rgb(0, 0, 17);
   border-radius: 7px;
   font-size: 1.3vw;
-  align-items: center; /* Centra verticalmente */
+  align-items: center;
   justify-content: center; 
   cursor: pointer;
 }
@@ -6481,9 +6509,9 @@ input.numero:focus {
   #vidTintero{
     position: relative;
     margin-left: -157%;
-    margin-top: -0.2%;
-    height: 224px;
-    width: 308px;
+    margin-top: -4%;
+    height:37vh;
+    width:75vw;
   }
   #bateria-entintado-II{
     position: fixed;
@@ -6518,8 +6546,8 @@ input.numero:focus {
     position: absolute;
     display: flex;
     flex-direction: column;
-    left:78%;
-    top:7%;
+    left:76.6%;
+    top:-3.4vh;
     width:20%;
     height:100%;
   }
@@ -7441,30 +7469,41 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     left: 79%;
-    top: 15%; 
+    top: 7%; 
   }
   #imagenes-impresor,
   #imagenes-manta,
-  #imagenes-plancha{ /*  */
-    position: relative;
+  #imagenes-plancha{
+    position:relative;
     display: flex;
     flex-direction: column;
-    left: 10%;
-    top: 27%;
+    left:2vw;
+    top:19vh;
+    width:74vw;
+    height: 80vh;
     display: none;
   }
+  .contImPresor{
+    /* position:absolute; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-end; */
+    /* left:0; */
+    width:100%;
+    height:100%;
+    gap:1.5vh;
+  }
+  .imagesTorre{
+    /* position: absolute; */
+    display: flex;
+    height:31vh;
+    width:100%;
+    border-radius: 10px;   
+  }
+
   .imagen-container{ /*  */
     position: absolute;
     left: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 11px;
-  }
-  .contImPresor{
-    position: absolute;
-    left: -17%;
-    top: 0.8%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -7491,7 +7530,7 @@ input.numero:focus {
     margin-top: 25%;
     left: -17%;
   }
-  #forward,
+  /* #forward,
   #comands,
   #service,
   #back{
@@ -7502,12 +7541,7 @@ input.numero:focus {
     height: 77%;
     margin-top: 25%;
     left: -17%;
-  }
-  .imagesTorre{
-    height: 190px;
-    width: 252px;
-    border-radius: 10px;   
-  }
+  } */
   #pantalla-tintero{
     position: absolute;
     display: flex; /* Usar flexbox para centrar la imagen */
@@ -7518,6 +7552,46 @@ input.numero:focus {
     top:26vh;
     left: 1vw;
     display: none;
+  }
+  #cont-links{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: -2.1vh;
+    left:28%;    
+    height: 67%;  
+    width: 27%;    
+  }
+  #imgTorre{
+    position: absolute;
+    display: flex;
+    left: 0;
+    top:-4.7vh;
+    height:80%;
+    width: 75%;
+    border-radius: 8px;
+  }
+
+  #cont-links a{
+    position: absolute;
+    display: flex;
+    text-decoration: none;
+    font-size: 2.3vw;
+    font-family: "GothamRounded", sans-serif;
+    text-decoration-line: underline;  
+  }
+  #linkDistribuidor { margin-bottom:1vh;color: whitesmoke; }
+  #linkForma {margin-top:3vh;color: whitesmoke; }
+  #linkPlate {margin-top:9vh;}
+  #linkManta {margin-top:15vh;}
+  #linkImpresor {margin-top:21vh;}
+  .iridescent-element li a{
+    font-size:3vw;
+  }
+  .linksTraining li a {
+    color: white; /*Cambiar el color del texto a blanco*/
+    cursor: pointer; /*Cambiar el cursor a una mano */
+    font-size: 14px;
   }
   #abuelo-plana,
   #abuelo-variable{
@@ -7550,45 +7624,7 @@ input.numero:focus {
     width: 100%;
     height: 100%;  
   }
-  #cont-links{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 6.5%;
-    left:28%;    
-    height: 67%;  
-    width: 27%;    
-  }
-  #cont-links a{
-    position: absolute;
-    display: flex;
-    text-decoration: none;
-    font-size: 2.3vw;
-    font-family: "GothamRounded", sans-serif;
-    text-decoration-line: underline;  
-  }
-  #linkDistribuidor { margin-bottom:1vh;color: whitesmoke; }
-  #linkForma {margin-top:3vh;color: whitesmoke; }
-  #linkPlate {margin-top:9vh;}
-  #linkManta {margin-top:15vh;}
-  #linkImpresor {margin-top:21vh;}
-  #imgTorre{
-    position: absolute;
-    display: flex;
-    left: 0;
-    top:0;
-    height:80%;
-    width: 75%;
-    border-radius: 8px;
-  }
-  .iridescent-element li a{
-    font-size:3vw;
-  }
-  .linksTraining li a {
-    color: white; /*Cambiar el color del texto a blanco*/
-    cursor: pointer; /*Cambiar el cursor a una mano */
-    font-size: 14px;
-  }
+
   #troubleshooting{
     position: absolute;
     display: flex;

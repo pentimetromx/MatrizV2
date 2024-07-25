@@ -225,7 +225,7 @@ document.addEventListener('keydown', function(event) {
           abrirSeccionContinua('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          abrirSeccionDemo('planetary')
+          changeButtonStyles('pantalla-tintero')
         },977) 
         /*setTimeout(function() {
           UnidadTeñido('boton9','boton7')      

@@ -861,7 +861,7 @@ elemento.style.display = 'flex'
 switch (elementId) {
 case 'forward':
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  var elementosExcluidos = ['buscador','contImpresor','contPerfilesImpresor','agrupaOblicuos-XXIII','container01'];                   /// OCULTA TODO MENOS (3 ELEMENTOS)          
+  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','contImpresor','agrupaOblicuos-XXIII','imagenes-impresor'];                   /// OCULTA TODO MENOS (3 ELEMENTOS)          
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -869,10 +869,10 @@ case 'forward':
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
-  videoElements.forEach(video => {
+  /* videoElements.forEach(video => {
   if (video.id == 'video-impresor') {
   video.style.display = 'none'   
-  }})       
+  }}) */       
   contChildImpresor.style.display='flex'      
   imgsImpresor.forEach(function (imagen) {
   if (imagen.id === 'impresor' || imagen.id === 'impresor1') {
@@ -881,17 +881,17 @@ case 'forward':
     imagen.style.display = 'none'
   }
   })
-  for (var i = 0; i < linksIniciales.length; i++) {
+  /* for (var i = 0; i < linksIniciales.length; i++) {
     var elemento = document.getElementById(linksIniciales[i]);
     elemento.style.display = 'flex'
-  }
+  } */
   if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray);
   }
   break;
 case 'comands':
-  var elementosExcluidos = ['buscador','contImpresor','contPerfilesImpresor','agrupaOblicuos-XXIII','container01'];                   /// OCULTA TODO MENOS (3 ELEMENTOS)          
+  var elementosExcluidos = ['buscador','contImpresor','agrupaOblicuos-XXIII','container01'];                   /// OCULTA TODO MENOS (3 ELEMENTOS)          
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -921,7 +921,7 @@ case 'comands':
   }
 break;     
 case 'service':
-  var elementosExcluidos = ['buscador','contImpresor','contPerfilesImpresor','agrupaOblicuos-XXIII','container01'];                   /// OCULTA TODO MENOS (3 ELEMENTOS)          
+  var elementosExcluidos = ['buscador','contImpresor','agrupaOblicuos-XXIII','container01'];                   /// OCULTA TODO MENOS (3 ELEMENTOS)          
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -951,7 +951,7 @@ case 'service':
   }
 break;
 case 'back':
-  var elementosExcluidos = ['buscador','contImpresor','contPerfilesImpresor','agrupaOblicuos-XXIII','container01'];                   /// OCULTA TODO MENOS (3 ELEMENTOS)          
+  var elementosExcluidos = ['buscador','contImpresor','agrupaOblicuos-XXIII','container01'];                   /// OCULTA TODO MENOS (3 ELEMENTOS)          
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
