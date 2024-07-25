@@ -531,22 +531,15 @@ case 'contImgEntintador':
 break;
 case 'contPortPlaca':  
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-  var elementosExcluidos = ['buscador','buscador','contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI'];                                                              /// OCULTA TODO MENOS (2 ELEMENTOS)          
+  var elementosExcluidos = ['buscador','buscador','container01','links-iniciales','links-inicialesI','contPortPlaca', 'agrupaOblicuos-placa','placa','video-placa'];                                                              /// OCULTA TODO MENOS (2 ELEMENTOS)          
   for (var i = 0; i < allContenedores.length; i++) { 
-  var elemento = document.getElementById(allContenedores[i]);  
-  if (elemento) {
-    // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-    elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+    var elemento = document.getElementById(allContenedores[i]);  
+    if (elemento) {
+      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+    }
   }
-  }
-  videoElements.forEach(video => {
-  if (video.id !== 'video-placa') {
-  video.style.display = 'none'   
-  } else {
-  video.style.display = 'block'
-  video.currentTime = 0;
-  video.play()   
-  }})
+
   if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
   idsArray.push(elementId);
   console.log(idsArray);
@@ -605,122 +598,63 @@ default:
 }  
 } 
 function ladosPlancha(elementId){ 
-var video = document.getElementById('video-placa')
-var imgPlancha = document.querySelectorAll('.imagesTorre') 
-var imagesPlancha = document.getElementById('contPerfilesPlancha')
-var imgsPlancha = document.getElementById('imagenes-plancha')
-var contImagen = document.getElementById('imagen1')
-var contImagen2 = document.getElementById('imagen2')
-var contImagen3 = document.getElementById('imagen3')
-var contImagen4 = document.getElementById('imagen4')
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var elementosExcluidos = ['buscador','buscador','contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
-for (var i = 0; i < allContenedores.length; i++) { 
-var elemento = document.getElementById(allContenedores[i]);  
-if (elemento) {
-  // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-  elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-}
-}
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 switch (elementId) {
 case 'imagen1':
-  // Detener el video
-  video.pause()
-  // Ocultar el video estableciendo su estilo de visualización en 'none'
-  video.style.display = 'none'
-  imagesPlancha.style.display='flex'
-  imgsPlancha.style.display='flex'
-  imgPlancha.forEach(function (imagen) {
-    if (imagen.id === 'portPlaca') {
-      imagen.style.display = 'block'
-    }else{
-      imagen.style.display = 'none'
+  var elementosExcluidos = ['buscador','buscador','contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI','imagenes-plancha','imagen1']          
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);  
+    if (elemento) {
+      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
-  })
-  contIMPlaca.style.display='none' 
-  if (screenWidth < 500) {  
-    contImagen.style.left = '-27%'
-    contImagen.style.top = '1%'
-  }  
+  }
   if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray);
   }      
 break;
 case 'imagen2':
-  // Detener el video
-  video.pause()
-  // Ocultar el video estableciendo su estilo de visualización en 'none'
-  video.style.display = 'none'
-  imagesPlancha.style.display='flex'
-  imgsPlancha.style.display='flex'
-  imgPlancha.forEach(function (imagen) {
-    if (imagen.id === 'portPlaca2') {
-      imagen.style.display = 'block'
-    }else{
-      imagen.style.display = 'none'
+  var elementosExcluidos = ['buscador','buscador','contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI','imagenes-plancha','imagen2']
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);  
+    if (elemento) {
+      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
-  })
-  contIMPlaca.style.display='none' 
-  if (screenWidth < 500) {  
-    contImagen2.style.left = '-27%'
-    contImagen2.style.top = '-8%'
-  }  
+  }
   if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray);
   }
-  break; 
+break; 
 case 'imagen3':
-  // Detener el video
-  video.pause()
-  // Ocultar el video estableciendo su estilo de visualización en 'none'
-  video.style.display = 'none'    
-  imagesPlancha.style.display='flex'
-  imgsPlancha.style.display='flex'
-  imgPlancha.forEach(function (imagen) {
-    if (imagen.id === 'portPlaca3') {
-      imagen.style.display = 'block'
-    }else{
-      imagen.style.display = 'none'
+  var elementosExcluidos = ['buscador','buscador','contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI','imagenes-plancha','imagen3']
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);  
+    if (elemento) {
+      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
-  })
-  contIMPlaca.style.display='none' 
-  if (screenWidth < 500) {  
-    contImagen3.style.left = '-27%'
-    contImagen3.style.top = '-17%'
   }
   if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray);
   }
-  break;
+break;
 case 'imagen4':
-  // Detener el video
-  video.pause()
-  // Ocultar el video estableciendo su estilo de visualización en 'none'
-  video.style.display = 'none'    
-  imagesPlancha.style.display='flex'
-  imgsPlancha.style.display='flex'
-  imgPlancha.forEach(function (imagen) {
-    if (imagen.id === 'portPlaca4') {
-      imagen.style.display = 'block'
-    }else{
-      imagen.style.display = 'none'
+  var elementosExcluidos = ['buscador','buscador','contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI','imagenes-plancha','imagen4']
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);  
+    if (elemento) {
+      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
-  })
-  contIMPlaca.style.display='none' 
-  if (screenWidth < 500) {  
-    contImagen4.style.left = '-27%'
-    contImagen4.style.top = '-26%'
   }
   if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray);
   }
-  break;
+break;
 default:
 }
 }
@@ -733,7 +667,7 @@ imgsMantasI.style.display = 'none'
 
 switch (elementId) {
 case 'mantilla1':
-  var elementosExcluidos = ['buscador','contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
+  var elementosExcluidos = ['buscador','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -750,7 +684,7 @@ case 'mantilla1':
   }
   })
   if (screenWidth < 500) {   
-    var elementosExcluidos = ['buscador','contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
+    var elementosExcluidos = ['buscador','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
       if (elemento) {
@@ -767,7 +701,7 @@ case 'mantilla1':
   }
   break;
 case 'mantilla2':
-  var elementosExcluidos = ['buscador','contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
+  var elementosExcluidos = ['buscador','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -784,7 +718,7 @@ case 'mantilla2':
     }
     })
     if (screenWidth < 500) {   
-      var elementosExcluidos = ['buscador','contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
+      var elementosExcluidos = ['buscador','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -801,7 +735,7 @@ case 'mantilla2':
 
 break;     
 case 'mantilla3':
-  var elementosExcluidos = ['buscador','contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
+  var elementosExcluidos = ['buscador','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -823,7 +757,7 @@ case 'mantilla3':
   } 
 break;
 case 'mantilla4':
-  var elementosExcluidos = ['buscador','contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
+  var elementosExcluidos = ['buscador','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {

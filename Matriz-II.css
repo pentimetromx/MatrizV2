@@ -1808,15 +1808,15 @@ width:447px ;
 #contImpresor video,
 #contPortPlaca video{
   position: absolute;
-  left: 333px;
-  height: 477px;
+  height:66vh;
+  width: 50vw;
 }
 #video-placa,
 #videoManta,
 #video-impresor{
   position: absolute;
-  left: 340px;
-  top:1px;
+  left:26vw;
+  top:0.5vh;
 }
 #contPortaManta{  
   display: flex;
@@ -1853,6 +1853,7 @@ width:447px ;
   height:87vh;
   display: none;
 }
+.imagen-container,
 .contImPresor{
   position: absolute;
   display: flex;
@@ -1867,13 +1868,6 @@ width:447px ;
   width:49%;
   border-radius: 10px; 
   margin-right: 7px;  
-}
-
-.imagen-container{
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  left: 2.5%;
 }
 #textToColor {
   position: relative;
@@ -2103,7 +2097,7 @@ header {
 }
 .video-training{
   display: none;
-  border-radius: 11px;  
+  border-radius: 19px;  
 }
 .vidTeoria{
   height: 120px;
@@ -7421,22 +7415,25 @@ input.numero:focus {
   }
   #contPortPlaca,
   #contPortManta,
-  #contImpresor{
+  #contImpresor{  
     position: absolute;
     justify-content: center;
     display: flex;
     flex-direction: row;
-    top: 17%;
-    height: 100%;
-    width: 100%;
+    top: 20vh;
+    height: 80%;
+    width: 99%;
     display: none;
   }
-  #contPortManta img,
-  #contImpresor img,
-  #contPortPlaca img{
-    width: 128px; 
-    height: 86px;
-    border-radius: 11px;  
+  #contPortManta video,
+  #contImpresor video,
+  #contPortPlaca video{
+    position: absolute;
+    left:2vw;
+    top:0;
+    width: 75vw;
+    height: 33vh;
+    object-fit:cover;
   }
   #impresorImg,
   #manta,
@@ -7444,24 +7441,19 @@ input.numero:focus {
     position: absolute;
     display: flex;
     flex-direction: column; 
-    left: 27%;
-    top: 42%;  
-  }  
-  #contPortManta video,
-  #contImpresor video,
-  #contPortPlaca video{
-    position: absolute;
-    left: 3%;
-    top: 10%;
-    height: 229px;
+    left: 20%;
+    top: 42%; 
+    width:37%; 
+    height: 50%;
   }
-  #video-placa,
-  #videoManta,
-  #video-impresor{
-    position: absolute;
-    left: 10%;
-    margin-top:-4%;
+  #impresorImg img,
+  #manta img,
+  #placa img{
+    width:100%;
+    height:27%;
+    border-radius: 11px;  
   }
+  
   #agrupaOblicuos-placa, 
   #agrupaOblicuos-XXIII, 
   #agrupaOblicuos-IX{
@@ -7469,7 +7461,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     left: 79%;
-    top: 7%; 
+    top:0; 
   }
   #imagenes-impresor,
   #imagenes-manta,
@@ -7484,24 +7476,19 @@ input.numero:focus {
     display: none;
   }
   .contImPresor{
-    /* position:absolute; */
     display: flex;
     flex-direction: column;
-    /* align-items: flex-end; */
-    /* left:0; */
     width:100%;
     height:100%;
     gap:1.5vh;
   }
   .imagesTorre{
-    /* position: absolute; */
     display: flex;
     height:31vh;
     width:100%;
     border-radius: 10px;   
   }
-
-  .imagen-container{ /*  */
+  .imagen-container{
     position: absolute;
     left: 5%;
     display: flex;
@@ -7512,36 +7499,12 @@ input.numero:focus {
   #imagen1,
   #imagen2,
   #imagen3,
-  #imagen4{       /*  */
+  #imagen4{
     position: relative;
     display: flex;
     margin-top: 20%;
     margin-left: 13%;
   }
-  #mantilla1,
-  #mantilla2,
-  #mantilla3,
-  #mantilla4{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    height: 77%;
-    margin-top: 25%;
-    left: -17%;
-  }
-  /* #forward,
-  #comands,
-  #service,
-  #back{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    height: 77%;
-    margin-top: 25%;
-    left: -17%;
-  } */
   #pantalla-tintero{
     position: absolute;
     display: flex; /* Usar flexbox para centrar la imagen */
