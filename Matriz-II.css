@@ -7470,7 +7470,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     left:2vw;
-    top:19vh;
+    top:15vh;
     width:74vw;
     height: 80vh;
     display: none;
@@ -7496,7 +7496,7 @@ input.numero:focus {
     align-items: flex-end;
     gap: 11px;
   }
-  #imagen1,
+  /* #imagen1,
   #imagen2,
   #imagen3,
   #imagen4{
@@ -7504,7 +7504,7 @@ input.numero:focus {
     display: flex;
     margin-top: 20%;
     margin-left: 13%;
-  }
+  } */
   #pantalla-tintero{
     position: absolute;
     display: flex; /* Usar flexbox para centrar la imagen */
