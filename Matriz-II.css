@@ -6846,6 +6846,8 @@ input.numero:focus {
     z-index: 2;
     top:2.7vh;
     left:0;
+    width: 33vw;
+    height:52vh;
   }
   .butt-mautonomo{
     height:4vh;
@@ -7121,6 +7123,7 @@ input.numero:focus {
     height: 100%;
     width: 100%;
     transition: transform 1.6s ease;
+    display: none;
   }
   #videoElement1-II{
     position:absolute;
@@ -8274,7 +8277,7 @@ input.numero:focus {
   #contLineas-II{
     position: relative;
     left: 37%;
-    top:-3.9vh;
+    top:-7vh;
     width: 61vw;
     height: 73vh;
     gap: 2px;

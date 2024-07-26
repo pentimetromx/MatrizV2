@@ -124,6 +124,7 @@ function deslizaContenedor(identificador, idButton) {
         if (canvas3 !== null) {
           canvas3.style.marginTop = '12%';
         }
+        document.getElementById('conti-boton').style.top='17vh'
       }
     break;
     case 'contImagNeg' :  
@@ -265,7 +266,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('video-entintado') 
+  var contiBoton = document.getElementById('links-iniciales') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;

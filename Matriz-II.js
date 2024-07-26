@@ -331,15 +331,29 @@ function VolveraInicio(){
   idsArrayEliminados = []
 }
 function ElementosMaII(elementId){
-  var elementosExcluidos = ['buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
+  /* var elementosExcluidos = ['buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
-  }
-  let generalStore = document.getElementById('general')
-  generalStore.style.display = 'none'
+  } */
+
+    var elementosExcluidos = ['buscador', 'conteneMantaut', 'conti-boton', 'container01', 'links-inicialesI', 'links-iniciales'];  
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i]);
+      if (elemento) {
+        if (elementosExcluidos.includes(allContenedores[i])) {
+          elemento.style.display = 'flex';
+          elemento.removeAttribute('style'); // Elimina estilos en línea
+        } else {
+          elemento.style.display = 'none';
+        }
+      }
+    }
+
+    document.getElementById('titleContainerI').style.display='flex'
+
 
   setTimeout(() => {
     document.body.style.zoom = "100%"    
