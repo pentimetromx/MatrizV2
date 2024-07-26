@@ -442,9 +442,6 @@ color: white;
 .image-isopropil:hover {
   transform: scale(2);
 }
-.bot-entre{
-  display: flex;
-}
 #cont-Verticales22,
 #cont-Verticales3,
 #cont-Verticales4,
@@ -741,22 +738,6 @@ color: white;
   margin-right:1.6vw;
   margin-bottom:1.4vh;
   font-size:0.9vw;
-  text-align: left;    
-  cursor: pointer; 
-  transition: transform 0.1s; 
-}
-.boton-h,
-.boton-g,
-.boton-f{
-  position: relative;
-  align-items: center;
-  height: 57px;
-  width: 95px;
-  background-color: #1897ff;
-  color: black;
-  border-radius: 5px;
-  margin-right: 21px;
-  margin-bottom: 10px;
   text-align: left;    
   cursor: pointer; 
   transition: transform 0.1s; 
@@ -1773,13 +1754,6 @@ width:447px ;
   width:11.5vw;
   border-radius: 20px;
   padding: 7px;
-}
-.contene-botones{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  left: -0.1%;
-  display: none;
 }
 #contPortPlaca,
 #contPortManta,
@@ -2840,23 +2814,47 @@ elemento.visible {
 }
 #bateria-entintado-II{
   position: relative;
-  left:0.6%;
-  top: 13.1%;
+  display: flex;
+  left:0.6vw;
+  top: 13.1vh;
+  width: 95vw;
+  height:81vh;
   display: none;
 }
 #bateria-entintado-II video{
-  border-radius: 10px;
-  height: 487px;
-}
-#video-entintado{
-  position: absolute; 
-  left: 357px;
-  top: 27px;
-}
-#contenedor-7{
   position: absolute;
-  left: 0.5%;
+  display:flex;
+  left:31%;
+  top: 2%;
+  height:67%;
+  width: 42%;
+  border-radius: 10px;
+  object-fit: fill; 
 }
+.contene-botones{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: -0.1%;
+  display: none;
+}
+.boton-h,
+.boton-g,
+.boton-f{
+  position: relative;
+  height:8vh;
+  width:8.2vw;
+  background-color: #1897ff;
+  color: black;
+  text-align: left;    
+  font-size: 1.1vw;
+  border-radius: 5px;
+  margin-right: 21px;
+  margin-bottom: 10px;
+  cursor: pointer; 
+  transition: transform 0.1s; 
+}
+
 #subtitulo-I{
   position: absolute;
   display: flex;
@@ -6318,7 +6316,6 @@ input.numero:focus {
     font-size:2.5vw;
     border-radius: 11px;
   }  
-
   #uniteñido,
   #lubricacion,
   #freno{
@@ -6344,8 +6341,8 @@ input.numero:focus {
     height:33%;
     z-index: 33;
   }
- #conti-boton-desb button,
- #conti-boton-teñido button,
+  #conti-boton-desb button,
+  #conti-boton-teñido button,
   #conti-boton-freno button,
   #conti-boton-rodilleria button{
     position:relative;
@@ -6415,7 +6412,6 @@ input.numero:focus {
     height: 100%;
     object-fit: fill;  
   }
-
   #second-floor{
     position: absolute;
     display: flex;
@@ -6506,26 +6502,7 @@ input.numero:focus {
     margin-top: -4%;
     height:37vh;
     width:75vw;
-  }
-  #bateria-entintado-II{
-    position: fixed;
-    left:3%;
-    top: 18%;
-    height: 100vh;
-    width: 100vh;
-  }
-  #bateria-entintado-II video{
-    border-radius: 10px;
-    height: 250px;
-  }
-  #video-entintado{
-    position: relative;
-    display: flex;
-    left:-0.5%;
-    top: -49%;
-    height: 37%;
-    transition: transform 1.6s ease;
-  }
+  }  
   #agrupaOblicuos,
   #agrupaOblicuos-III,
   #agrupaOblicuos-IV,
@@ -6703,10 +6680,9 @@ input.numero:focus {
     width: 262px;
   }
   #contenedor-7-IV button, 
-    #contenedor-7-III button, 
-    #contenedor-7-II button, 
-    #contenedor-7 button{
-      height: 50px;
+  #contenedor-7-III button, 
+  #contenedor-7-II button{
+    height: 50px;
   } 
   /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #subtitulo-calidad,
@@ -7034,8 +7010,7 @@ input.numero:focus {
     color: whitesmoke;
     text-align: right;
     transform: translateY(-50%);
-  }
-  
+  }  
   #pre-prensa{
     position: relative;
     left: 3%;
@@ -7111,15 +7086,68 @@ input.numero:focus {
     position: absolute;
     transition: transform 1.6s ease;
   }
+  #bateria-entintado-II{
+    position:absolute;
+    left:3%;
+    top: 18%;
+    height: 100vh;
+    width: 100vh;
+  }
+
+  #bateria-entintado-II video{
+    border-radius: 10px;
+    height: 250px;
+  }
   #contenedor-7{
     position: absolute;
     flex-direction: column;
     display: flex;
-    top:95%;
-    left: 42%;
+    top:105%;
+    left:44%;
     transition: transform 1.6s ease;
-  } 
-  .clase-contenedor-7{
+  }
+  .contene-botones{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: -0.1%;
+    display: none;
+  }
+  #video-entintado{
+    position:absolute;
+    display: flex;
+    left:-31%;
+    top: -54%;
+    height: 100%;
+    width: 100%;
+    transition: transform 1.6s ease;
+  }
+  #videoElement1-II{
+    position:absolute;
+    display:flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+  }
+  .boton-h,
+  .boton-g,
+  .boton-f{
+    position: relative;
+    height:8vh;
+    width:17vw;
+    background-color: #1897ff;
+    color: black;
+    text-align: left;   
+    font-size: 3vw;
+    border-radius: 5px;
+    margin-right: 21px;
+    margin-bottom: 10px;
+    cursor: pointer; 
+    transition: transform 0.1s; 
+  }
+    .clase-contenedor-7{
     position: absolute;
     margin-top: 87%;
     margin-left: 3%;
@@ -7442,7 +7470,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column; 
     left: 20%;
-    top: 42%; 
+    top: 47%; 
     width:37%; 
     height: 50%;
   }
@@ -7472,7 +7500,7 @@ input.numero:focus {
     left:2vw;
     top:15vh;
     width:74vw;
-    height: 80vh;
+    height: 70vh;
     display: none;
   }
   .contImPresor{
@@ -7496,15 +7524,6 @@ input.numero:focus {
     align-items: flex-end;
     gap: 11px;
   }
-  /* #imagen1,
-  #imagen2,
-  #imagen3,
-  #imagen4{
-    position: relative;
-    display: flex;
-    margin-top: 20%;
-    margin-left: 13%;
-  } */
   #pantalla-tintero{
     position: absolute;
     display: flex; /* Usar flexbox para centrar la imagen */

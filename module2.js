@@ -225,7 +225,7 @@ document.addEventListener('keydown', function(event) {
           abrirSeccionContinua('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          changeButtonStyles('pantalla-tintero')
+          changeButtonStyles('bateria-entintado-II', 'contene-7')
         },977) 
         /*setTimeout(function() {
           UnidadTeñido('boton9','boton7')      
@@ -265,7 +265,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('primera') 
+  var contiBoton = document.getElementById('video-entintado') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
