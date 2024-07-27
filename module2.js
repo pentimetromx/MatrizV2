@@ -1,14 +1,5 @@
 function deslizaContenedor(identificador, idButton) {
   clearAllIntervals() 
-  let visor3 = document.getElementById('nicho_spans')
-  visor3.style.display = 'none'
-  visor3.style.visibility = 'hidden'  
-
-  var contBotKaizen = document.getElementById('conti-boton-kaizen')  
-  contBotKaizen.removeAttribute('style')
-  linkIni1.style.left = ''
-  linkIni2.style.left = ''  
-
   arrayIdButtsMA.forEach(element => {                                                                                                        
     var elemento = document.getElementById(element)
     if (elemento) {
@@ -21,40 +12,28 @@ function deslizaContenedor(identificador, idButton) {
       }
     }
   })
-
   contiBtt.forEach(element => {                                                                                                                                                   
     var elemento = document.getElementById(element)
     if (elemento) {
       elemento.style.backgroundColor = ''
     }
   })  
-
-   contenedoresMA.forEach(element => {
-    var elementos = document.getElementById(element)
-    if(elementos){
-      elementos.removeAttribute('style');
-    }
-  })  
-
   if (document.body.style.zoom !== "100%") {                                                                                          
     document.body.style.zoom = "100%";
   }
-
-  container1.style.left = '50%'
-
   switch(identificador){
     case 'troubleshooting' :
-      var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut']  
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut']  
       for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i])  
+        var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
+      document.getElementById('conti-boton').removeAttribute('style');
       var contenedor = document.getElementById(identificador)                                                     
       if (identificador !== 'troubleshooting' && contenedor) {
         contenedor.style.display = 'flex'
-        contenedor.style.left = '257%'   
       } else{
         var contenedorPadre = document.getElementById(identificador)
         if (contenedorPadre) {
@@ -70,9 +49,9 @@ function deslizaContenedor(identificador, idButton) {
     case 'canvasContainer2' :
       var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer2','MiGrafica','wall_street_II','general']  
       for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i])  
+        var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
       incrementoHeightVII()
@@ -80,15 +59,14 @@ function deslizaContenedor(identificador, idButton) {
       document.getElementById('wall_street_II').style.left = '29.5%'
     break;
     case 'contChecks' :
-      var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','contChecks','general','first_half']  
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','contChecks','general','first_half']  
       for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i])  
+        var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
       stopWidth = false
-
       let mitad1 = document.getElementById('first_half')
       let general = document.getElementById('general')
       general.style.display = 'block'
@@ -109,15 +87,13 @@ function deslizaContenedor(identificador, idButton) {
       }
     break;
     case 'canvasContainer3' :
-      var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer3','general','padre']  
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer3','general','padre']  
       for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i])  
+        var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
-      let botoneraMA = document.getElementById('conti-boton')
-        botoneraMA.style.top = '23%'
       inicioTracker()
       if(screenWidth < 500){
         var canvas3 = document.getElementById(identificador);
@@ -128,11 +104,11 @@ function deslizaContenedor(identificador, idButton) {
       }
     break;
     case 'contImagNeg' :  
-      var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagNeg','general','equalizer']  
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagNeg','general','equalizer']  
       for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i])  
+        var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
       changeColorToGreen()
@@ -150,23 +126,17 @@ function deslizaContenedor(identificador, idButton) {
       } */
     break;
     case 'contImagGraf' :
-      var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagGraf','general','patern']  
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagGraf','general','patern']  
       for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i])  
+        var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
       detenerCicodelia()
-
       let padre = document.getElementById('patern')
       padre.style.display = 'grid'
-/*       padre.style.marginTop = '-42.5vh'
-      padre.style.left = '30vw'
-      padre.style.height = '68vh'
-      padre.style.width = '50vw' */
       changeColors()
-
       if(screenWidth < 500){
         var imagGraf = document.getElementById(identificador);
         if (imagGraf !== null) {
@@ -175,16 +145,14 @@ function deslizaContenedor(identificador, idButton) {
       }
     break;
     case 'conti-boton-kaizen' :
-      var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen']  
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen']  
       for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i])  
+        var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
       hideButtonsKaizenRetraso()
-
-
       setTimeout(function() {
         showButtonsKaizenRetraso();
       }, 500);
@@ -213,7 +181,7 @@ function resetearBarras(){
   isAnimatingVIII = false
   isAnimatingVII = false
   isAnimatingVI = false
-  isAnimatingXVI = false
+  /* isAnimatingXVI = false */
 }
 // COMBINACION TECLAS EJECUTA FUNCION
 document.addEventListener('keydown', function(event) {             
@@ -228,16 +196,16 @@ document.addEventListener('keydown', function(event) {
         setTimeout(function() {
           changeButtonStyles('bateria-entintado-II', 'contene-7')
         },977) 
-        /*setTimeout(function() {
-          UnidadTeñido('boton9','boton7')      
+        setTimeout(function() {
+          ElementosMaII('conteneMantaut')    
         },1177) 
         setTimeout(function() {
-          deslizaContenedor('troubleshooting','troubleshoot')           
+          deslizaContenedor('conti-boton-kaizen','kaizen')           
         },1377)
         setTimeout(function() {
-          listaEntrenamientosII('archivo')                                
+          rodillosKaizen('btn17','')                               
         },1677) 
-        setTimeout(function() {
+        /*setTimeout(function() {
           abrirSeccionContinua()              
         },1977)
         setTimeout(function() {
@@ -266,7 +234,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('links-iniciales') 
+  var contiBoton = document.getElementById('nicho_spans') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -5240,7 +5208,7 @@ function incrementoHeightX() {          // BARRAS HORIZONTALES (5)
     }         
     barraX.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
     barraIX.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-    if (alturaAcumuladaBarraI >= 20 && !isAnimatingXVI) {
+    if (alturaAcumuladaBarraI >= 20 /* && !isAnimatingXVI */) {
       /* isAnimatingXVI = false */
       /* incrementoHeightXVI(); */
     }
@@ -5641,33 +5609,9 @@ function showMetrics(){
   setTimeout(() => {
     secondMovement()
   }, 907);
-  /* setTimeout(() => {
-    thirdMovement()
-  }, 1607);
-  setTimeout(() => {
-    fourthMovement()
-  }, 2407);
-  setTimeout(() => {
-    fifthMovement()
-  }, 3507);
-  setTimeout(() => {
-    index = 0
-    lista = 0
-    clearInterval(intervaloColors);
-    clearInterval(intervaloColorsI);
-    sixthMovement()
-  }, 4107); */
 }   
 function firstMovement(){ // FIRST
   stopWidth = false
-  /*   var elementosExcluidos = ['def2','general','first_half','buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i])  
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-    }
-  } */
-
   var slider1 = document.getElementById('first_half')
   var estilosAplicados = window.getComputedStyle(slider1)
   for (var i = 0; i < estilosAplicados.length; i++) {
