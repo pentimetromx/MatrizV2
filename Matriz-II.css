@@ -146,6 +146,7 @@ color: white;
   left:0;
   top:3%;
   align-items: center;
+  z-index: 3;
 }
 #titleContainer p,
 #titleContainerI p{
@@ -2208,18 +2209,23 @@ h6{
   z-index: 2;
 }
 #kaizenCont{
-  transition: left 1.007s ease; /* Usa la propiedad left para la transición */
-  border: 5px solid orange;  
-  flex-direction: column;
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
+  position:absolute;
   display: flex;
-  display: none;
-  height: 497px;
-  width: 717px;
+  flex-direction: column;
   left: 31%;
-  margin-top: -13%;
+  top:13%;
+  transition: left 1.007s ease;
+  border: 3px solid orange;  
+  border-radius: 20px;
+  overflow: hidden;
+  display: none;
+  height:69vh;
+  width:55vw;
+}
+#vidElem{
+  width:100%;
+  height: 100%;
+  object-fit: cover;
 }
 #conti-boton-planos{
   position: absolute; 
@@ -2416,14 +2422,6 @@ h6{
 #tendencia-naranja .item-orange:nth-child(10) {
   width:6%;
 }
-#conti-boton-kaizen{
-  position: relative;  
-  display: flex;
-  flex-direction: column;
-  left: 16.7%;
-  top:13%;
-  display: none;
-}
 #conti-boton-rodilleria,
 #conti-boton-teñido,
 #conti-boton-freno,
@@ -2454,23 +2452,31 @@ h6{
   cursor: pointer;
   display: none;
 }
-
-.butt-mautonomo-kaizen{
-  display: none;
+#conti-boton-kaizen{
+  position: relative;  
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  font-family: "GothamRounded", sans-serif;
-  color: white;
-  height:4vh;
-  width:12vw;
-  border-radius: 9px;
-  background-color: rgba(83, 82, 82, 0.678);
+  left: 16.7vw;
+  top:13vh;
+  width: 11%;
+  height: 20vh;
+  gap: 4px;
+  display: none;
+}
+.butt-mautonomo-kaizen{
   position: relative;
+  flex: 1;
+  display: flex;
+  font-family: "GothamRounded", sans-serif;
+  font-size: 0.9vw;
+  color: white;
+  width:100%;
+  border-radius:0 9px 9px 0;
+  background-color: rgba(83, 82, 82, 0.678);
   overflow: hidden;
-  margin-bottom:2vh;
+  display: none;
   cursor: pointer;
-  padding-left:2vw;
+  padding-left:2vw;  
 }
 .butt-mautonomo-planos::before,
 .butt-mautonomo-kaizen::before{
@@ -2478,9 +2484,14 @@ h6{
   position: absolute;
   left: 0;
   top: 0;
-  width: 17px;
-  height: 27px;
+  width:10%;
+  height:100%;
   background-color: rgb(255, 174, 0);
+  transition: width 0.3s;
+}
+.butt-mautonomo-kaizen:hover {
+  transform: scale(1.2);
+  background-color: #0056b3;
 }
 .image-trainings1,
 .image-trainings{
@@ -3196,15 +3207,6 @@ elemento.visible {
   flex-direction: row; 
   top: 220px;
 }
-/* #dureza{
-  position:absolute;
-  left:27%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width:50%;
-  margin: 0 auto;
-} */
 #materiales-kaizen,
 #planos-kaizen{
   position: absolute;
@@ -3228,18 +3230,13 @@ elemento.visible {
   cursor: pointer;
 }
 #toyota-kaizen{
-  position: relative;
+  position:absolute;
   display: flex;
   display: none;
-  top: -34%;
-}
-.imgs-Antes {
-  margin: 5px;
-  box-sizing: border-box;
-  border: solid orange;
-  border-radius: 7px;
-  width: calc(33.3333% - 10px); /* 10px es el espacio entre las imágenes */
-  margin-bottom: 10px; /* Espacio entre las filas */
+  top:15vh;
+  left:31vw;
+  width:35vw;
+  height:45vh;
 }
 #toyota1,
 #toyota2,
@@ -3250,18 +3247,56 @@ elemento.visible {
 #toyota7,
 #toyota8{
   position: absolute;
-  top: 79px;
-  left: 400px;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
   border: orange solid 3px;
   border-radius: 9px;
-  width: 447px;
+}
+
+#casos-kaizen{
+  position:absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width:25vw;
+  margin: 0 auto;
+  left:64vw;
+  top:14.5vh;
+  font-size: 1.8vw;
+  font-family: GothamRounded , sans-serif;
+  color:rgba(255, 24, 55);
+  display: none;
+}
+#mejoras-kai{
+  position:absolute;
+  flex-direction:column;
+  display: flex;
+  left:73vw;
+  top:20vh;
+  width:10vw;
+  height:40vh;
+  gap: 2px;
+  display: none;
 }
 .caso-estudio{
+  flex: 1;
   display: flex;
-  width: 150px;
-  border: orange solid 2px;
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  border: orange solid 1px;
   border-radius: 7px;
   transition: transform 0.9s;
+}
+.imgs-Antes {
+  margin: 5px;
+  box-sizing: border-box;
+  border: solid orange;
+  border-radius: 7px;
+  width: calc(33.3333% - 10px); /* 10px es el espacio entre las imágenes */
+  margin-bottom: 10px; /* Espacio entre las filas */
 }
 .casos-h1{
   font-family: GothamRounded , sans-serif;
@@ -3273,19 +3308,6 @@ elemento.visible {
   font-size: 21px;
   color: whitesmoke;
 }
-#casos-kaizen{
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 751px;
-  margin: 0 auto;
-  left: 807px;
-  top: -177px;
-  font-family: GothamRounded , sans-serif;
-  color:rgba(255, 24, 55);
-  display: none;
-}
 #toyota-kaizen-antes{
   position: relative;
   display: flex;
@@ -3295,15 +3317,6 @@ elemento.visible {
   margin: 0 auto;
   left: 125px;
   margin-top: -100px;
-  display: none;
-}
-#mejoras-kai{
-  position: relative;
-  left: 957px;
-  top: -131px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
   display: none;
 }
 #butt-17{
@@ -3338,7 +3351,6 @@ elemento.visible {
   transition: transform 0.9s;
   z-index: 1;
 }
-
 #butt-18{
   margin-right: -1px;
   background: linear-gradient(15deg, rgb(0, 255, 0) 15%,  rgba(0, 0, 0, 0.423) 60%);
@@ -3892,58 +3904,55 @@ h4{
   animation: aumentarTamano 1s infinite alternate; /* Animación cada 1 segundo */
   display: none;
 }
-#kaizen-propuestos{    /* PADRE */
+#kaizen-propuestos{
+  display: none;
+}
+.grid-container{ 
   position: relative;
   display: flex;
   flex-direction: column;
-  width:69%;
-  height:70%;
-  left: 29%;
-  top: -14%;
-  gap: 1%;
-  display: none;
+  width:69vw;
+  height:70vh;
+  left: 29vw;
+  top: -14vh;
+  gap: 4px;
 }
-.kaizen-propuestos-child-I, /* CLASE 1 HIJO */
-.kaizen-propuestos-child-II{ /* CLASE 2 HIJO */
+.row {
+  flex: 1; 
   display: flex; 
-  flex-direction: row;
-  flex:1;
-  width: 100%;
-  /* left:4px; 
-  gap: 3px;  */  
+  gap: 4px;
 }
-.kaizen-propuestos-nieto-I,
-.kaizen-propuestos-nieto-II{
-  /* position: relative; */ 
-  flex:1;
+.cell {
+  flex: 1;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  left:4px; 
-  border: 2px solid orange; 
-  border-radius: 11px;
+  flex-direction: column; 
+  border-radius: 19px;
+  border: solid 2px orange;
+  position: relative;
 }
-.kaizen-propuestos-nieto-I h1,
-.kaizen-propuestos-nieto-II h1{
-  font-size: 1.5vw;
+.label {
   width: 100%;
-  height: 20%;
+  height: 20%; 
+  background-color:rgb(0, 0, 17);
+  font-family: 'GothamRounded', sans-serif;
+  font-size: 1.3vw;
+  color: whitesmoke; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:19px 19px 0 0;
+  position: relative; 
 }
-.kaizen-propuestos-nieto-I img,
-.kaizen-propuestos-nieto-II img{
-  width: 100%;
+.cell img {
+  width: 100%; 
   height: 80%;
+  border-radius:0 0 19px 19px;
+  object-fit: fill;
 }
+
 .aumentar{ 
   cursor: pointer;
 }
-/* .imagen-kaizen,
-.imagen-colectora{
-  width:100%;
-  height:80%; 
-  border-radius: 7px;
-  object-fit: fill;
-}  */
 .columna {
   position: relative;
   width: calc(55% - 20px);
@@ -6456,6 +6465,7 @@ input.numero:focus {
     top: 6%;
     width:83%; 
     z-index: 3;
+    display: none;
   } 
   #imgsRepuestos{
     position: fixed;
@@ -6573,6 +6583,7 @@ input.numero:focus {
     top: 13%;
     width:23vw;  
     align-items: center;
+    z-index: 3;
   }
   #titleContainerI p{
     font-size: 3vw;
@@ -6648,6 +6659,7 @@ input.numero:focus {
     top: 13%; 
     width:39vw; 
     align-items: center;
+    z-index: 3;
   }
   #titleContainer p{
     font-size: 3vw;
@@ -6860,7 +6872,7 @@ input.numero:focus {
   .butt-mautonomo{
     height:4vh;
     width:31vw;
-    font-size: 9px;
+    font-size:1.8vw;
     text-align:center;
     align-items:start; 
     margin-bottom: 0;
@@ -7879,7 +7891,6 @@ input.numero:focus {
     color: rgb(255, 204, 0); 
     font-size:4vw; 
   }
-
   #rodillo-infeed{
     position: absolute;
     top: 1vh;
@@ -7994,25 +8005,97 @@ input.numero:focus {
     height:67vh;
     border-radius: 17px;
   }
-  #conti-boton-kaizen{
-    position:relative;  
+  #kaizen-propuestos{
+    display: none;
+  }
+  .grid-container{ 
+    position: relative;
     display: flex;
     flex-direction: column;
-    left:50%;
-    top: 21%;
-    width:37vw;
-    height:24vh;
+    width:65vw;
+    height:32vh;
+    left: 33vw;
+    top:23vh;
+    gap: 2px;
+  }
+  .row {
+    flex: 1; 
+    display: flex; 
+    gap: 2px;
+  }
+  .cell {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    border-radius: 11px;
+    border: solid 1px orange;
+    position: relative;
+  }
+  .label {
+    width: 100%;
+    height: 20%; 
+    background-color:rgb(0, 0, 17);
+    font-family: 'GothamRounded', sans-serif;
+    font-size: 1.7vw;
+    color: whitesmoke; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius:11px 11px 0 0;
+    position: relative; 
+  }
+  .cell img {
+    width: 100%; 
+    height: 80%;
+    border-radius:0 0 11px 11px;
+    object-fit: fill;
+  }
+  #conti-boton-kaizen{
+    position: relative;  
+    display: flex;
+    flex-direction: column;
+    left: 50vw;
+    top:19vh;
+    width: 30vw;
+    height: 19vh;
+    gap: 4px;
     display: none;
-  } 
-  #conti-boton-kaizen button{
-    position:relative;
+  }
+  .butt-mautonomo-kaizen{
+    position: relative;
+    flex: 1;
+    display: flex;
+    font-family: "GothamRounded", sans-serif;
+    font-size: 1.8vw;
+    color: white;
+    width:100%;
+    border-radius:0 9px 9px 0;
+    background-color: rgba(83, 82, 82, 0.678);
+    overflow: hidden;
     display: none;
-    font-size: 10px;
-    height:27vh;
-    width:30vw;
-    border-radius: 9px;
-    margin-bottom:2vh;
-    padding-left:2vw;
+    cursor: pointer;
+    padding-left:2vw;  
+  }
+  .butt-mautonomo-planos::before,
+  .butt-mautonomo-kaizen::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:10%;
+    height:100%;
+    background-color: rgb(255, 174, 0);
+    transition: width 0.3s;
+  }
+  .butt-mautonomo-kaizen:hover {
+    transform: scale(1.2);
+    background-color: #0056b3;
+  }
+  .butt-mautonomo:hover {
+    transform: scale(1.2);
+    background-color:rgb(255,255,0);
+    color: black;
   }
   #contChecks{
     position: absolute;
@@ -8024,52 +8107,6 @@ input.numero:focus {
     border-radius: 20px;
     transition: left 1.007s ease; /* Usa la propiedad left para la transición */
     display: none;
-  }
-  #kaizen-propuestos{  
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background-color: #000;
-    border-radius: 11px;
-    width:63vw;
-    height:29vh;
-    left: 34%;
-    top: 22%;
-    display: none;
-  }
-  #primer-hijo{
-    width: calc(100% - 15px);
-    top: 4%;
-    height:40%;
-    margin: 0 auto;
-  }
-
-  #segundo-hijo{
-    width: calc(100% - 15px);
-    top: 54%;
-    height:40%;
-    margin: 0 auto; /* Centrado en X */   
-  }
-  .kaizen-propuestos-child-I,
-  .kaizen-propuestos-child-II{
-    position: absolute; 
-    display: flex;        
-    justify-content: space-evenly; /* o space-evenly para un espacio aún más uniforme */    
-    flex-direction: row;
-  }
-  .kaizen-propuestos-nieto-I,
-  .kaizen-propuestos-nieto-II{
-    position: relative; 
-    display: flex; 
-    flex-direction: column;
-    border: 1px solid orange; 
-    border-radius: 11px;
-    width:25%;
-    height:100%; 
-  }
-  .kaizen-propuestos-nieto-I h1,
-  .kaizen-propuestos-nieto-II h1{
-    font-size: 8px;
   }
   #toyota-kaizen{
     position: absolute;
@@ -8097,47 +8134,50 @@ input.numero:focus {
     height:100%;
     object-fit: fill;
   }
-  .imagen-kaizen,
-  .imagen-colectora{
-    position: relative;
-    border-radius: inherit;
-    width:100%;
-    height:100%;
-    cursor: pointer;
-    object-fit: fill;
-  }
   #casos-kaizen{
     position: absolute;
     display: flex;
-    margin-bottom: 10px;
-    flex-wrap: wrap;
+    margin-bottom: 10vh;
     justify-content: space-evenly;
     border-radius: 7px;
     left: -77%;
-    top: 79%;
+    top: 75%;
+    max-width: 40%;
     display: none;
     font-family: GothamRounded , sans-serif;
     font-size: 20px;
     color:rgba(255, 24, 55); 
     transition: transform 1.6s ease;
-  }
+  }  
   #mejoras-kai{
     position: absolute;
     flex-direction: row;
     display: flex;
-    top: 85%;
-    left: -91%;
-    gap: 6px;
+    top: 81%;
+    left: -97%;
+    width: 80vw;
+    height: 11vh;
     transition: transform 1.6s ease;
+    gap: 2x;
     display: none;
+  }
+  .caso-estudio{
+    flex: 1;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    border: orange solid 1px;
+    border-radius: 7px;
+    transition: transform 0.9s;
   }
   #toyota-kaizen-antes{
     position:absolute;
     display: flex;
     display: none;
-    top:76%;
-    left:40%;
-    width:53vw;
+    top:59%;
+    left:35%;
+    width:59vw;
     height:25vh;
     justify-content: space-evenly;
     background-color: #000;
@@ -8206,7 +8246,7 @@ input.numero:focus {
     position: absolute;
     display: flex;
     display: none;
-    top:61%;
+    top:45%;
     left: 39%;
     width:53%;
     height:24vh;
@@ -8225,13 +8265,6 @@ input.numero:focus {
   #sector-distribuidor{
   display: none;  
   }  
-  .caso-estudio{
-    display: flex;
-    width: 112px;
-    border: orange solid 2px;
-    border-radius: 7px;
-    transition: transform 0.9s;
-  }
   #conte-secundario {
     position: absolute;
     display: grid;
@@ -8664,7 +8697,6 @@ input.numero:focus {
   .move-vid-entintador{
     transform: translateX(-347px) translateY(30px);
   }
-  /* cuarto evento //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-repuest-III{
     transform: translateY(613px); 
   }

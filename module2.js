@@ -234,7 +234,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('nicho_spans') 
+  var contiBoton = document.getElementById('conti-boton-kaizen') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -255,7 +255,7 @@ function Geometria() {
   console.log('1 :','Visibility:', visibilityType);
   console.log('1 :','Is Visible:', isVisible);
   
-  var contiBotonI = document.getElementById('btn08') 
+  var contiBotonI = document.getElementById('kaizenCont') 
   var rect = contiBotonI.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -1188,7 +1188,6 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
    var conPlanos = document.getElementById('planos-kaizen')
    var bton12 = document.getElementById('btn12')
    var contiButts = document.getElementById('conti-boton-planos') 
-   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
    if (bton12 !== null) {                                                                                                             /// DEVUELVE ESTILO A BOTON
      bton12.style.backgroundColor = '' // Elimina el fondo
      bton12.style.color = '' // Restablece el color del texto
@@ -1284,9 +1283,9 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
            }
          } 
          if (screenWidth < 500){
-           /* contiButts.style.top = '7%' */
-           /* contiButts.removeAttribute('style') */
-           /* contBotKaizen.removeAttribute('style') */
+           /* contiButts.style.top = '7%'
+           contiButts.removeAttribute('style')
+           contBotKaizen.removeAttribute('style') */
          }
        } else if (contadorClicks === 2) {
            miBot.innerText = 'DESPUES';
@@ -1300,18 +1299,14 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
            } 
            videoKaizen.style.display = 'flex'
            videoKaizen.currentTime = 0
-           videoKaizen.play() 
- 
+           videoKaizen.play()  
            // Reiniciar la variable a cero después del segundo clic
            contadorClicks = 0;
            if (screenWidth < 500){
-             /* contiButts.style.top = '7%' */
-             /* contiButts.removeAttribute('style') */
              contBotKaizen.removeAttribute('style')
+             document.getElementById('conti-boton-kaizen').style.display='flex'
            }
-   
          }
- 
        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
        // Paso 2: Recorrer la colección y hacer visibles los botones con un intervalo de 0.3 segundos              /// BOTONES CON AUMENTO Y TRANSICION
        for (var i = 0; i < buttsTerceros.length; i++) {
@@ -2514,7 +2509,6 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
      zoomableImage.style.transform = 'translate(0, 0) scale(1)'
    })
  })
- /* /////////////////////////////////////////////VINCULOS INICIALES//////////////////////////////////////////// */
  textToColor.addEventListener("mouseover", () => {
      clearTimeout(hideTimeout)
      hoverTimeout = setTimeout(() => {
@@ -2573,7 +2567,6 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
  const searchForm = document.getElementById('search-form')
  const searchInput = document.getElementById('search-input')
  const suggestionsList = document.getElementById('suggestions') // Agrega el elemento datalist
- // Definir una lista de sugerencias (puedes cargarla desde una fuente externa si es necesario)
  const sugerencias = [
    'autonomo',
    'bateria',
@@ -2709,31 +2702,25 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
      console.error('No se encontró el elemento con ID "suggestions"');
    }
  })
- // Obtén los elementos canvas de canvasContainer2 y canvasContainer3
  const canvasElements2 = document.querySelectorAll('#canvasContainer2 canvas')
  const canvasElements3 = document.querySelectorAll('#canvasContainer3 canvas')
  const canvasElements4 = document.querySelectorAll('#contChecks input')
- // Agrega un evento click a cada elemento canvas en canvasContainer2
  canvasElements2.forEach(canvas => {
    canvas.addEventListener('click', () => {
      toggleFullScreen(canvas)
    })
  })
- // Agrega un evento click a cada elemento canvas en canvasContainer3  
  canvasElements3.forEach(canvas => {
    canvas.addEventListener('click', () => {
      toggleFullScreen(canvas)
    })
  })
- // Agrega un evento click a cada elemento checkbox  
  canvasElements4.forEach(input => {
    input.addEventListener('click', () => {
      toggleFullScreen(input)
    })
  })
- // Obten todos los elementos con la clase "colorClick"
  var colorClickLinks = document.querySelectorAll('.colorClick')
- // Recorre todos los elementos y agrega el evento a cada uno
    colorClickLinks.forEach(function (link) {
      link.addEventListener('click', function (event) {
        event.preventDefault()
@@ -2899,7 +2886,6 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
  
    aumentarBotonCasos(0);
  }
- // Función para mover el scroll
  function moveScroll(container) {
    // Mover el scroll 100px hacia abajo
    container.scrollTop += 100;
