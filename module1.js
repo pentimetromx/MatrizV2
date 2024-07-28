@@ -4229,7 +4229,6 @@ function UnidadTeñido(buttId){
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      document.getElementById('uniteñido').style.display='flex'
       mostrartBotonesIntervalo('butt-mautonomo-teñido');    
       break;
     case 'boton9' :
@@ -4273,16 +4272,18 @@ function UnidadTeñido(buttId){
       palpitarBoton('uTeñidos')
     break; 
     case 'btn600' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniTeñido','conti-boton-teñido','cont-arriba','padre-grilla','teñido-I','vidTeñido','teñido-vid']  
+      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniteñido','conti-boton-teñido','cont-arriba','padre-grilla','teñido-I','vidTeñido','teñido-vid']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-    const child = document.getElementById('pieza-movil');
-    const parent = document.getElementById('abuelo-grilla-teñido');
-    moveElement(child,parent)
+      /* document.getElementById('uniteñido').style.display='flex' */
+
+      const child = document.getElementById('pieza-movil');
+      const parent = document.getElementById('abuelo-grilla-teñido');
+      moveElement(child,parent)
     break; 
     case 'btn700' :
       var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniTeñido','conti-boton-teñido']  

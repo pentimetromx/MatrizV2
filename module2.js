@@ -54,6 +54,7 @@ function deslizaContenedor(identificador, idButton) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
+      document.getElementById('conti-boton').removeAttribute('style');
       incrementoHeightVII()
       document.getElementById('wall_street_II').style.top = '44%'
       document.getElementById('wall_street_II').style.left = '29.5%'
@@ -66,6 +67,7 @@ function deslizaContenedor(identificador, idButton) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
+      document.getElementById('conti-boton').removeAttribute('style');
       stopWidth = false
       let mitad1 = document.getElementById('first_half')
       let general = document.getElementById('general')
@@ -100,7 +102,7 @@ function deslizaContenedor(identificador, idButton) {
         if (canvas3 !== null) {
           canvas3.style.marginTop = '12%';
         }
-        document.getElementById('conti-boton').style.top='17vh'
+        document.getElementById('conti-boton').style.top='20vh'
       }
     break;
     case 'contImagNeg' :  
@@ -111,6 +113,7 @@ function deslizaContenedor(identificador, idButton) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
+      document.getElementById('conti-boton').removeAttribute('style');
       changeColorToGreen()
       const numeros = document.querySelectorAll('.column_spans')
       document.getElementById('column_2').style.marginTop = '-6%'
@@ -133,6 +136,7 @@ function deslizaContenedor(identificador, idButton) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
+      document.getElementById('conti-boton').removeAttribute('style');
       detenerCicodelia()
       let padre = document.getElementById('patern')
       padre.style.display = 'grid'
@@ -152,6 +156,7 @@ function deslizaContenedor(identificador, idButton) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
+      document.getElementById('conti-boton').removeAttribute('style');
       hideButtonsKaizenRetraso()
       setTimeout(function() {
         showButtonsKaizenRetraso();
@@ -188,24 +193,24 @@ document.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
       case 'Z':
-          /* smartBars() */
+        
         abrirSeccionOperativa('cont-titulo-operacion')       
         setTimeout(function() {
           abrirSeccionContinua('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          changeButtonStyles('bateria-entintado-II', 'contene-7')
+          UnidadTeñido('boton8','boton7')
         },977) 
         setTimeout(function() {
-          ElementosMaII('conteneMantaut')    
+          UnidadTeñido('btn600')  
         },1177) 
-        setTimeout(function() {
+        /*setTimeout(function() {
           deslizaContenedor('conti-boton-kaizen','kaizen')           
         },1377)
         setTimeout(function() {
           rodillosKaizen('btn17','')                               
         },1677) 
-        /*setTimeout(function() {
+        setTimeout(function() {
           abrirSeccionContinua()              
         },1977)
         setTimeout(function() {
@@ -234,7 +239,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();
-  var contiBoton = document.getElementById('conti-boton-kaizen') 
+  var contiBoton = document.getElementById('uniteñido') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
