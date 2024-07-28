@@ -1187,8 +1187,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
    var contBotKaizen = document.getElementById('conti-boton-kaizen')
    var conPlanos = document.getElementById('planos-kaizen')
    var bton12 = document.getElementById('btn12')
-   var contiButts = document.getElementById('conti-boton-planos') 
-   if (bton12 !== null) {                                                                                                             /// DEVUELVE ESTILO A BOTON
+   if (bton12 !== null) {
      bton12.style.backgroundColor = '' // Elimina el fondo
      bton12.style.color = '' // Restablece el color del texto
      bton12.innerText = 'IMPLEMENTADOS'
@@ -1232,8 +1231,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
            }, 1910);  
          });
        } else{               
-       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-       for (var i = 0; i < buttsToyota.length; i++) {                                            /// OBTENER 'window.getcomputedStyle' DE LAS (8 IMAGENES EN UNA)
+       for (var i = 0; i < buttsToyota.length; i++) {
          var elemento = document.getElementById(buttsToyota[i])      
          if (elemento) {
            // Accede a la propiedad 'display' utilizando window.getComputedStyle
@@ -1271,7 +1269,6 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
        var contBotKaizen = document.getElementById('conti-boton-kaizen')
        contadorClicks++;
        console.log(contadorClicks)
-       // Verificar si es el primer o segundo clic
        if (contadorClicks === 1) {
          miBot.innerText = 'ANTES';
          miBot.style.backgroundColor = 'red' 
@@ -1307,18 +1304,13 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
              document.getElementById('conti-boton-kaizen').style.display='flex'
            }
          }
-       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-       // Paso 2: Recorrer la colección y hacer visibles los botones con un intervalo de 0.3 segundos              /// BOTONES CON AUMENTO Y TRANSICION
        for (var i = 0; i < buttsTerceros.length; i++) {
          var boton = buttsTerceros[i]
-         // Mostrar el botón con un intervalo de 0.3 segundos
          setTimeout(function(currentBoton) { 
            return function() {
              currentBoton.style.display = 'block'
-             // Paso 3: Aumentar el tamaño al doble y luego volver al tamaño normal después de 0.3 segundos
              setTimeout(function() {
                currentBoton.style.transform = 'scale(4)'
-               // Después de 0.3 segundos, volver al tamaño normal
                setTimeout(function() {
                  currentBoton.style.transform = 'scale(1)'
                }, 100)

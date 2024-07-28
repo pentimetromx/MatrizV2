@@ -790,27 +790,10 @@ color: white;
 height: 270px;
 width:447px ;
 }
-.inpt-class{
-  width: 200px;
-  border-radius: 7px;
-  background-color: rgb(211, 255, 204);
-  margin-bottom: 11px;
-  transition: background-color 0.3s, color 0.3s;
-}
-.inpt-class,
-.botnClass:hover {
-  background-color: gray;
-  color: black;
-}
 .input-class{
   margin-bottom: 15px;
   width: 20px;
   height: 21px;
-}
-.botnClass{
-  height: 27px;
-  text-align: left;
-  cursor: pointer;
 }
 .contGrafito{
   display: flex;
@@ -899,23 +882,6 @@ width:447px ;
   width:10%;
   height:101%;
   background-color:rgb(252, 0, 255);
-}
-.butt-mautonomo-planos{
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  font-family: "GothamRounded", sans-serif;
-  color: white;
-  height: 27px;
-  width: 127px;
-  border-radius: 9px;
-  background-color: rgba(83, 82, 82, 0.678);
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 17px;
-  cursor: pointer;
-  padding-left: 27px;
 }
 .butt-mautonomo-freno::before {
   content: "";
@@ -2198,15 +2164,39 @@ h6{
   display: none;
 }
 #troubleshooting{
+  position: absolute;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  left: 19%;
-  margin-top: 3%;
-  width: 207px;
+  left: 19vw;
+  top:5.5vh;
+  width: 16vw;
   border-radius: 20px;
   transition: left 1.007s ease; /* Usa la propiedad left para la transición */
   z-index: 2;
+}
+.botnClass{
+  height:4vh;
+  width: 100%;
+  font-size: 1.3vw;
+  text-align: left;
+  cursor: pointer;
+}
+.botnClass:hover {
+  background-color: gray;
+  color: black;
+}
+.inpt-class{
+  border-radius: 7px;
+  background-color: rgb(211, 255, 204);
+  margin-bottom: 11px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.labl-class{
+  font-family: "GothamRounded", sans-serif;
+  color: yellow;
+  font-size:1.2vw;
+  border-radius: 11px;
 }
 #kaizenCont{
   position:absolute;
@@ -2231,13 +2221,29 @@ h6{
   position: absolute; 
   display: flex;
   flex-direction: column;
-  height: 150px;
-  width:150px;  
-  left:89.5%;
-  top: 35%;  
-  /* z-index: 7; */
+  height:13vh;
+  width:10vw;  
+  left:88vw;
+  top: 30.5vh; 
+  gap: 2px; 
   display: none;
 }
+.butt-mautonomo-planos{
+  display: flex;
+  flex: 1;
+  font-family: "GothamRounded", sans-serif;
+  font-size: 0.9vw;
+  color: white;
+  width: 100%;
+  border-radius:0 9px 9px 0;
+  background-color: rgba(83, 82, 82, 0.678);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  margin: 0;
+  padding: 0;
+}
+
 #cont-secador{
   position: relative;
   display: flex;
@@ -2456,6 +2462,7 @@ h6{
   position: relative;  
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease-in-out;
   left: 16.7vw;
   top:13vh;
   width: 11%;
@@ -2489,7 +2496,8 @@ h6{
   background-color: rgb(255, 174, 0);
   transition: width 0.3s;
 }
-.butt-mautonomo-kaizen:hover {
+.butt-mautonomo-planos:hover,
+.butt-mautonomo-kaizen:hover{
   transform: scale(1.2);
   background-color: #0056b3;
 }
@@ -3028,12 +3036,6 @@ elemento.visible {
   border-radius: 17px;
   object-fit:cover; 
 }
-.labl-class{
-  font-family: "GothamRounded", sans-serif;
-  color: yellow;
-  font-size:1.5vw;
-  border-radius: 11px;
-}
 #teñido-II{
   position: absolute;
   display: flex;
@@ -3090,6 +3092,7 @@ elemento.visible {
   flex: 1;
   justify-content: center;
   align-items: left;
+  font-size:0.9vw;
   font-family: "GothamRounded", sans-serif;
   color: white;
   width:100%;
@@ -3108,7 +3111,11 @@ elemento.visible {
   height: 100%; /* Ajusta para que coincida con la altura del contenedor */
   background-color: rgb(0, 255, 0);
 }
-
+.butt-mautonomo:hover {
+  transform: scale(1.2);
+  background-color:rgb(255,255,0);
+  color: black;
+}
 #cont-arriba-freno {
   position: absolute;
   display: flex;
@@ -3234,7 +3241,7 @@ elemento.visible {
   display: flex;
   display: none;
   top:15vh;
-  left:31vw;
+  left:32vw;
   width:35vw;
   height:45vh;
 }
@@ -3309,14 +3316,15 @@ elemento.visible {
   color: whitesmoke;
 }
 #toyota-kaizen-antes{
-  position: relative;
+  position:absolute;
   display: flex;
+  left:29vw;
+  top:13vh;
+  width: 58vw;
+  height: 70vh;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 751px;
   margin: 0 auto;
-  left: 125px;
-  margin-top: -100px;
   display: none;
 }
 #butt-17{
@@ -3914,7 +3922,7 @@ h4{
   width:69vw;
   height:70vh;
   left: 29vw;
-  top: -14vh;
+  top: -8vh;
   gap: 4px;
 }
 .row {
@@ -7629,16 +7637,26 @@ input.numero:focus {
     width: 100%;
     height: 100%;  
   }
-
   #troubleshooting{
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: 40%;
-    margin-top: 8%;
-    width:43%;
-    border-radius: 20px;    
+    left: 36vw;
+    top:4vh;
+    width: 33vw;
+    height: 50vh;
+    border-radius: 20px;
+    transition: left 1.007s ease; /* Usa la propiedad left para la transición */
+    z-index: 2;
   }
+  .botnClass{
+    height:4vh;
+    width: 100%;
+    font-size: 2.1vw;
+    text-align: left;
+    cursor: pointer;
+  }
+  
   .inpt-class{
     width:100%;
     border-radius: 7px;
@@ -8075,7 +8093,8 @@ input.numero:focus {
     overflow: hidden;
     display: none;
     cursor: pointer;
-    padding-left:2vw;  
+    padding: 0;
+    margin: 0;
   }
   .butt-mautonomo-planos::before,
   .butt-mautonomo-kaizen::before{
@@ -8175,7 +8194,7 @@ input.numero:focus {
     position:absolute;
     display: flex;
     display: none;
-    top:59%;
+    top:44%;
     left:35%;
     width:59vw;
     height:25vh;
@@ -8191,31 +8210,31 @@ input.numero:focus {
     border: 1px solid rgb(255, 0, 255);    
     border-radius: 7px;
   }
-  #conti-boton-planos{
+  #conti-boton-planos {
     position: relative; 
     display: flex;
     flex-direction: column;
-    height:21%;
-    width:30%;
-    left:50%;
+    height: 12%;
+    width: 30%;
+    left: 50%;
     top: 51%;  
     z-index: 7;
     display: none;
-  }
+    padding: 0;
+  }  
   .butt-mautonomo-planos{
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
+    display: flex;
+    flex: 1;
     font-family: "GothamRounded", sans-serif;
+    font-size: 1.9vw;
     color: white;
-    height:18%;
-    width:100%;
-    border-radius: 9px;
+    width: 100%;
+    border-radius:0 7px 7px 0;
     background-color: rgba(83, 82, 82, 0.678);
-    position: relative;
     overflow: hidden;
     cursor: pointer;
+    margin: 0;
+    padding: 0;
   }
   #materiales-kaizen,  
   #planos-kaizen{
