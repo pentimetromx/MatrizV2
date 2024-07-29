@@ -4918,15 +4918,58 @@ function antesImagenes(){
   var contImagenAntes = document.getElementById('toyota-kaizen-antes')
   contImagenAntes.style.display = 'flex'
 }
+function ubicaPerfil(idEmpleado) {
+  var contUserElements = document.getElementsByClassName('cont-user')   
+  var contSecundario = document.getElementById('conte-secundario')
+  var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered']
+  var colorIndex = 0;
+
+  for (var i = 0; i < contUserElements.length; i++) { 
+    var element = contUserElements[i]
+    if (element.id === idEmpleado) {
+      contSecundario.style.display = 'flex'
+      element.style.position = 'absolute'
+      element.style.display = 'flex'
+      element.style.height = '17vh'
+      element.style.width = '30vw'
+      element.style.top = '-6vh'
+      element.style.left = '2vw'
+
+      var label = element.querySelector('label')
+      if (label) {
+        intervaloColor = setInterval(function () {
+          label.style.color = colors[colorIndex] // Cambia el color del texto
+          colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
+        }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
+    }
+  } else {
+    element.style.display = 'none'
+  }
+  }
+
+
+
+
+  /* let imagen = document.getElementById(idEmpleado);
+  if (imagen) {
+    alert('')
+    imagen.style.display = 'flex';
+    imagen.style.position = 'absolute';
+    imagen.style.top = '0';
+    imagen.style.left = '0';
+    imagen.style.height='5vh'
+    imagen.style.width='5vw'
+  } */
+}
 let llamadaEjecutada = false;
+
 function resultadosEmpleado(idEmpleado, functionExe,icono) {
   var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered'] // Colores en formato RGB
   const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
   var contUserElementsI = document.getElementsByClassName('cont-userI') 
   var contSecundario = document.getElementById('conte-secundario')
-  var contUserArrayI = Array.from(contUserElementsI)  
   var contUserElements = document.getElementsByClassName('cont-user')   
-  var colorIndex = 0; // Índice del color actual
+  var colorIndex = 0;
   var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','conte-secundario','contenedor-vertical','title-interfaz','contLineas','canvasContainer4','MiGrafica4','canvasContainer5','MiGrafica5','canvasContainer6','MiGrafica6','canvasContainer7','MiGrafica7','canvasContainer9','MiGrafica9']
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -4935,16 +4978,16 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
     }
   }
   
-  for (var i = 0; i < contUserElements.length; i++) { 
+  /* for (var i = 0; i < contUserElements.length; i++) { 
     var element = contUserElements[i]
     if (element.id === idEmpleado) {
       contSecundario.style.display = 'flex'
-      element.style.position = 'fixed'
+      element.style.position = 'absolute'
       element.style.display = 'flex'
       element.style.height = '19.6%'
       element.style.width = '12%'
       element.style.top = '10.7%'
-      element.style.left = '3%' 
+      element.style.left = '3%'
 
     var label = element.querySelector('label')
     if (label) {
@@ -4956,7 +4999,7 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
   } else {
     element.style.display = 'none'
   }
-  }       
+  }  */      
   if (iconosPermitidos.includes(icono)) {
     iniciarMovimiento('contenedor-vertical');
   }    
@@ -4970,34 +5013,38 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }
     }  
-    for (var i = 0; i < contUserElements.length; i++) { 
+
+    ubicaPerfil(idEmpleado);
+
+    /* for (var i = 0; i < contUserElements.length; i++) { 
       var element = contUserElements[i]
       if (element.id === idEmpleado) {
         contSecundario.style.display = 'flex'
-        element.style.position = 'fixed'
+        element.style.position = 'absolute'
         element.style.display = 'flex'
         element.style.height = '17%'
         element.style.width = '30%'
         element.style.top = '21.5%'
-        element.style.left = '3%' 
+        element.style.left = '3%'
 
-      var label = element.querySelector('label')
-      if (label) {
-        intervaloColor = setInterval(function () {
-          label.style.color = colors[colorIndex] // Cambia el color del texto
-          colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
-        }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
+        var label = element.querySelector('label')
+        if (label) {
+          intervaloColor = setInterval(function () {
+            label.style.color = colors[colorIndex] // Cambia el color del texto
+            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
+          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
       }
     } else {
       element.style.display = 'none'
     }
-    }       
+    }  */      
     if (iconosPermitidos.includes(icono)) {
       iniciarMovimiento('contenedor-vertical');
-    }    
+    }
   }
 
-  switch (idEmpleado) {
+
+  /* switch (idEmpleado) {
     case 'icon-carlos-I':
       var ContIconoAnaI = document.getElementById('icon-carlos')
       var contSecundarios = document.getElementById('conte-secundario')
@@ -5203,7 +5250,7 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
     break;
     default:
     break;
-  }      
+  } */      
   switch (functionExe) {
     case 'updateAna':
       updateAna() 
