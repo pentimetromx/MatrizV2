@@ -1207,16 +1207,15 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
          }
        } 
        if(screenWidth < 500){
-         for (var i = 0; i < buttsToyota.length; i++) { /// OBTENER 'window.getcomputedStyle' DE LAS (8 IMAGENES EN UNA)
-           var elemento = document.getElementById(buttsToyota[i])      
-           // Accede a la propiedad 'display' utilizando window.getComputedStyle
+         for (var i = 0; i < buttsToyota.length; i++) {
+          var elemento = document.getElementById(buttsToyota[i])      
            var estiloDisplay = window.getComputedStyle(elemento).getPropertyValue('display')
            elemento.style.display = 'none'
          }
          imgsEstudio.classList.remove('move-casos')        
          casoEstudio.classList.remove('move-label') 
          casoEstudio.removeAttribute('style')
-         casoEstudio.style.left = '-77%';
+         casoEstudio.style.left = '-74%';
          casoEstudio.style.display = 'none' 
          imgsEstudio.style.display = 'none'       
          const imagenes = document.querySelectorAll('.imgs-toyota');
@@ -5454,7 +5453,6 @@ function controlHeight(index) {
     changeHeight(barras[index], 7, screenHeight * 0.12, incrementaAlto);
   }
 }
-// Función para cambiar la altura
 function changeHeight(barra, step, limit, onComplete) {
   if (barra.interval) {
     clearInterval(barra.interval);
@@ -5472,11 +5470,9 @@ function changeHeight(barra, step, limit, onComplete) {
     }
   }, 27);
 }
-// Función para incrementar la altura
 function incrementaAlto(barra) {
   changeHeight(barra, -7, 0, reduccionAlto);
 }
-// Función para reducir la altura
 function reduccionAlto(barra) {
   changeHeight(barra, 7, screenHeight * 0.12, incrementaAlto);
   /* if(screenWidth <= 420){
@@ -5530,12 +5526,9 @@ function inicioTracker() {
   }
   trackerStarted = true; // Marcar que inicioTracker ha sido ejecutado
 }
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-let counterI = 0; // Variable global para el contador
+let counterI = 0;
 const elementsB = document.querySelectorAll('#patern .irisado');
 const originalColors = Array.from(elementsB).map(el => el.style.backgroundColor);
-
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 // LOGICA PARA PATERN ONLY
 const elementsC = ['elem1', 'elem2', 'elem3', 'elem4', 'elem5', 'elem6', 'elem7', 'elem8', 'elem9', 'elem10', 'elem11', 'elem12', 'elem13', 'elem14', 'elem15', 'elem16', 'elem17', 'elem18', 'elem19', 'elem20', 'elem21', 'elem22', 'elem23', 'elem24'];
 let index = 0
@@ -5809,6 +5802,17 @@ function moveElement(element, parent) {
       }
   }, speed * 2);
 }
+document.getElementById('butt-sitio').addEventListener('click', () => {
+  var elementosExcluidos = ['buscador','container01','sitema-humedad','links-inicialesI','links-iniciales']
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  } 
+  document.getElementById('butt-sitio').style.display='none'
+  abrirSeccionContinua()
+})
 
 
 

@@ -844,7 +844,7 @@
         <button class="butt-mautonomo" onclick="deslizaContenedor('contImagGraf','lup')">LUP</button>
         <button class="butt-mautonomo" onclick="deslizaContenedor('conti-boton-kaizen','kaizen')">KAIZEN</button>
         <button class="butt-mautonomo" onclick="resetBotns('troubleshoot')" style="background-color: red;color: white;">Reset</button>
-        <button class="butt-mautonomo" onclick="deslizAutomatic('troubleshooting','troubleshoot')" style="background-color: red;color: white;">Show everything</button>
+        <button class="butt-mautonomo" onclick="building()" style="background-color: red;color: white;">Show everything</button>
         <button class="butt-mautonomo" onclick="resultadosMA()">TRACKING DASHBOARD</button>               
       </div> 
       <div id="troubleshooting" style="display: none;">
@@ -1465,6 +1465,7 @@
       <div id="sitio-en-construccion">
         <p>Sitio en Construcción</p>
       </div>
+      <button id="butt-sitio" class="butt-special">Cerrar</button>
 
     </div>
     <div id="pre-prensa">
@@ -1560,12 +1561,12 @@
         <label style="position: absolute; left: 177px;top: 300px;" for="training"></label>
       </div>
       <div id="conte-botDensito">
-        <button class="butt-mautonomo image-trainings deploy-butt" id="bot-densi-1" onclick="mantAutonomo('troubleshooting')">MONTAJES</button>
-        <button class="butt-mautonomo image-trainings deploy-butt" id="bot-densi-2" onclick="mantAutonomo('def-tipo1')">ANGULACION</button>
-        <button class="butt-mautonomo image-trainings deploy-butt" id="bot-densi-3" onclick="mantAutonomo('def-tipo2')">INSOLADOR</button>
-        <button class="butt-mautonomo image-trainings deploy-butt" id="bot-densi-4" onclick="mantAutonomo('ayudastrabajo')">AYUDAS</button>
-        <button class="butt-mautonomo image-trainings deploy-butt" id="bot-densi-5" onclick="mantAutonomo('fua')">DOBLADOR</button>           
-        <button class="butt-mautonomo image-trainings deploy-butt" id="bot-densi-6" onclick="mantAutonomo('lup')">CALIBRES</button>
+        <button class="butt-prepre-d deploy-butt" id="bot-densi-1" onclick="mantAutonomo('troubleshooting')">MONTAJES</button>
+        <button class="butt-prepre-d deploy-butt" id="bot-densi-2" onclick="mantAutonomo('def-tipo1')">ANGULACION</button>
+        <button class="butt-prepre-d deploy-butt" id="bot-densi-3" onclick="mantAutonomo('def-tipo2')">INSOLADOR</button>
+        <button class="butt-prepre-d deploy-butt" id="bot-densi-4" onclick="mantAutonomo('ayudastrabajo')">AYUDAS</button>
+        <button class="butt-prepre-d deploy-butt" id="bot-densi-5" onclick="mantAutonomo('fua')">DOBLADOR</button>           
+        <button class="butt-prepre-d deploy-butt" id="bot-densi-6" onclick="mantAutonomo('lup')">CALIBRES</button>
       </div>
       <div id="imgs-densito">
         <video id="vidCicodeliaII" class="vidTeoria video-training" src="./assets/cicodelia.mp4" loop autoplay ></video>    
