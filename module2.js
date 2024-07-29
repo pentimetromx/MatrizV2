@@ -1225,7 +1225,8 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
            }, 400 + index * 177);
            setTimeout(() => {
              imgsEstudio.style.display = 'flex'       
-             casoEstudio.style.display = 'flex'       
+             casoEstudio.style.display = 'flex'  
+             casoEstudio.classList.remove('move-label')    
            }, 1700);
            setTimeout(() => {
              casoEstudio.classList.add('move-label')         
@@ -1239,8 +1240,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
          var elemento = document.getElementById(buttsToyota[i])      
          if (elemento) {
            // Accede a la propiedad 'display' utilizando window.getComputedStyle
-           var estiloDisplay = window.getComputedStyle(elemento).getPropertyValue('display')
-       
+           var estiloDisplay = window.getComputedStyle(elemento).getPropertyValue('display')       
            // Verifica si la propiedad 'display' es 'none' y cámbiala a 'flex' si es necesario
            if (estiloDisplay === 'none') {
              elemento.style.display = 'flex'

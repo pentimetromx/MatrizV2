@@ -137,7 +137,6 @@ case 'videoElement2':
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
     }
   }
-  // VISIBLES BOTONES  
   const container = document.getElementById(imgCont)
   const pict = container.getElementsByTagName('img')
   container.style.display = 'flex'
@@ -149,8 +148,6 @@ case 'videoElement2':
   setTimeout(() => {
     applyImageEffects1() 
   }, 277)
-
-  // REPRODUCE VIDEO
   for (const video of videoElements) {
     if (video.id === vidElem) {
       video.currentTime = 0;           
@@ -173,13 +170,13 @@ case 'videoElement2':
       contImgsDistribuidor.classList.remove('move-images')
       buttRepuest.classList.remove('move-repuest')
       contiVidDistribuidor.classList.remove('move-video')   
-      videoElements.forEach(video => {
+      /* videoElements.forEach(video => {
         if (video.id === 'videoElement2') {
           video.play()      
         } else {
           video.style.display = 'none'
         }
-      })
+      }) */
       desplegarBotonesII()
     }
 break;
