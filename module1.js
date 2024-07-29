@@ -128,60 +128,60 @@ function cierraContenedores(elementId,buttonID){
 function muestraRodillo (vidElem, imgCont){
 switch(vidElem){
 case 'videoElement2':
-/// OCULTA TODO MENOS LO NECESARIO          
-var elementosExcluidos = ['buscador','sector-distribuidor','butt-repuestos','conti-video-distribuidor','videoElement2','images-distribuidor','conti-boton-repuestos','contenedor-7-V','container01','links-iniciales','links-inicialesI','videosTraining']; 
-for (var i = 0; i < allContenedores.length; i++) { 
-  var elemento = document.getElementById(allContenedores[i]) 
-  if (elemento) {
-    // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-    elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
-  }
-}
-// VISIBLES BOTONES  
-const container = document.getElementById(imgCont)
-const pict = container.getElementsByTagName('img')
-container.style.display = 'flex'
-for (var i = 0; i < images.length; i ++) {
-  var pic = images[i]
-  pic.style.display = 'flex'
-}
-//EFECTO BOTONES
-setTimeout(() => {
-  applyImageEffects1() 
-}, 277)
-
-// REPRODUCE VIDEO
-for (const video of videoElements) {
-  if (video.id === vidElem) {
-    video.currentTime = 0;           
-    video.play() // Reproduce el video
-  } else {
-    video.style.display = 'none'
-    video.pause()
-  }
-  } 
-  if (screenWidth < 500) { 
-    var elementosExcluidos = ['buscador','sector-distribuidor','conti-boton-repuestos','butt-repuestos','container01','links-iniciales','links-inicialesI','contene-images','images-distribuidor','contenedor-7-V','videosTraining','videos-training','conti-video-distribuidor','videoElement2']; 
-    for (var i = 0; i < allContenedores.length; i++) { 
-      var elemento = document.getElementById(allContenedores[i]) 
-      if (elemento) {
-        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
-      }
+  /// OCULTA TODO MENOS LO NECESARIO          
+  var elementosExcluidos = ['buscador','sector-distribuidor','butt-repuestos','conti-video-distribuidor','videoElement2','images-distribuidor','conti-boton-repuestos','contenedor-7-V','container01','links-iniciales','links-inicialesI','videosTraining']; 
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]) 
+    if (elemento) {
+      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
     }
-    contibotsDistriII.classList.remove('move-butts')
-    contImgsDistribuidor.classList.remove('move-images')
-    buttRepuest.classList.remove('move-repuest')
-    contiVidDistribuidor.classList.remove('move-video')   
-    videoElements.forEach(video => {
-      if (video.id === 'videoElement2') {
-        video.play()      
-      } else {
-        video.style.display = 'none'
-      }
-    })
-    desplegarBotonesII()
   }
+  // VISIBLES BOTONES  
+  const container = document.getElementById(imgCont)
+  const pict = container.getElementsByTagName('img')
+  container.style.display = 'flex'
+  for (var i = 0; i < images.length; i ++) {
+    var pic = images[i]
+    pic.style.display = 'flex'
+  }
+  //EFECTO BOTONES
+  setTimeout(() => {
+    applyImageEffects1() 
+  }, 277)
+
+  // REPRODUCE VIDEO
+  for (const video of videoElements) {
+    if (video.id === vidElem) {
+      video.currentTime = 0;           
+      video.play() // Reproduce el video
+    } else {
+      video.style.display = 'none'
+      video.pause()
+    }
+    } 
+    if (screenWidth < 500) { 
+      var elementosExcluidos = ['buscador','sector-distribuidor','conti-boton-repuestos','butt-repuestos','container01','links-iniciales','links-inicialesI','contene-images','images-distribuidor','contenedor-7-V','videosTraining','videos-training','conti-video-distribuidor','videoElement2']; 
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }
+      }
+      contibotsDistriII.classList.remove('move-butts')
+      contImgsDistribuidor.classList.remove('move-images')
+      buttRepuest.classList.remove('move-repuest')
+      contiVidDistribuidor.classList.remove('move-video')   
+      videoElements.forEach(video => {
+        if (video.id === 'videoElement2') {
+          video.play()      
+        } else {
+          video.style.display = 'none'
+        }
+      })
+      desplegarBotonesII()
+    }
 break;
 case 'videoElement3':
   /// OCULTA TODO MENOS LO NECESARIO          

@@ -199,10 +199,10 @@ document.addEventListener('keydown', function(event) {
           abrirSeccionContinua('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          UnidadTeñido('boton8','boton7')
+          changeButtonStyles('bateria-entintado-II', 'contene-7')
         },977) 
         setTimeout(function() {
-          UnidadTeñido('btn600')  
+          muestraRodillo('videoElement2','images-distribuidor')
         },1177) 
         /*setTimeout(function() {
           deslizaContenedor('conti-boton-kaizen','kaizen')           
