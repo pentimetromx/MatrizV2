@@ -7,13 +7,11 @@
     <link rel="stylesheet" href="./Matriz-II.css">
   </head>
   <body onload="manejarLogica()">
-    <header class="buscador" id="buscador" style="position: absolute;left: 3px;top: 2px;">
+    <header class="buscador" id="buscador">
       <form id="search-form">
           <input type="text" id="search-input" placeholder="Buscar..."> 
           <datalist id="suggestions"></datalist>      
-          <button type="submit" id="search-button">
-              <img src="./assets/lupa.jpg" alt="Buscar">
-          </button>
+            <img src="./assets/lupa.jpg" alt="Buscar">
       </form>
     </header>
     <div id="over_size"></div>
@@ -1792,7 +1790,7 @@
       <div id="conte-secundario">
         <div class="cont-user"  id="icon-carlos">
           <img id="img1" class="icono-user" onclick="resultadosEmpleado('icon-carlos','updateCarlos','img1')" src="./assets/icono1.jpg" alt="icono">
-          <label for="nombres">Carlos Mario Sanchez</label>  
+          <label for="nombres">Carlos Mario Sanchez</labelclass=>  
         </div>
         <div class="cont-user" id="icon-andres">
           <img id="img2" class="icono-user" onclick="resultadosEmpleado('icon-andres','updateAndres','img2')" src="./assets/icono1.jpg" alt="icono">
@@ -1819,8 +1817,6 @@
           <label for="nombres">Ana Maria Duarte Pineda</label>
         </div>
       </div>
-
-      <!-- 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 -->
       <div id="contLineas">
         <div id="canvasContainer4">
           <canvas id="MiGrafica4"></canvas> 
@@ -1863,31 +1859,31 @@
       </div>
       <div class="contenedor-vertical" id="contenedor-vertical">
         <div class="cont-userI" id="icon-carlos-I">
-          <img class="icono-user imgEmploye" onclick="resultadosEmpleado('icon-carlos-I','updateCarlos')" src="./assets/icono1.jpg" alt="icono">
+          <img class="icono-user-I imgEmploye" onclick="resultadosEmpleado('icon-carlos','updateCarlos')" src="./assets/icono1.jpg" alt="icono">
           <label class="lblNombres" for="nombres">Carlos Mario Sanchez</label>  
-        </div><br>
+        </div>
         <div class="cont-userI" id="icon-andres-I">
-          <img class="icono-user imgEmploye" onclick="resultadosEmpleado('icon-andres-I','updateAndres')" src="./assets/icono1.jpg" alt="icono">
+          <img class="icono-user-I imgEmploye" onclick="resultadosEmpleado('icon-andres','updateAndres')" src="./assets/icono1.jpg" alt="icono">
           <label class="lblNombres" for="nombres">Andres Felipe Montoya</label>
-        </div><br>     
+        </div>   
         <div class="cont-userI" id="icon-jorge-I">
-          <img class="icono-user imgEmploye" onclick="resultadosEmpleado('icon-jorge-I','updateJorge')" src="./assets/icono1.jpg" alt="icono">
+          <img class="icono-user-I imgEmploye" onclick="resultadosEmpleado('icon-jorge','updateJorge')" src="./assets/icono1.jpg" alt="icono">
           <label class="lblNombres" for="nombres">Jorge Alberto Lozada</label>
-        </div><br>    
+        </div>    
         <div class="cont-userI" id="icon-jesus-I">
-          <img class="icono-user imgEmploye" onclick="resultadosEmpleado('icon-jesus-I','updateJesus')" src="./assets/icono1.jpg" alt="icono">
+          <img class="icono-user-I imgEmploye" onclick="resultadosEmpleado('icon-jesus','updateJesus')" src="./assets/icono1.jpg" alt="icono">
           <label class="lblNombres" for= "nombres">Jesus Norvey Cordoba</label>
-        </div><br>    
+        </div>
         <div class="cont-userI" id="icon-sandra-I">
-          <img class="icono-user imgEmploye" onclick="resultadosEmpleado('icon-sandra-I','updateSandra')" src="./assets/icono1.jpg" alt="icono">
+          <img class="icono-user-I imgEmploye" onclick="resultadosEmpleado('icon-sandra','updateSandra')" src="./assets/icono1.jpg" alt="icono">
           <label class="lblNombres" for="nombres">Sandra Milena Alvarez</label>
-        </div><br>  
+        </div> 
         <div class="cont-userI" id="icon-mario-I">
-          <img class="icono-user imgEmploye" onclick="resultadosEmpleado('icon-mario-I','updateMario')" src="./assets/icono1.jpg" alt="icono">
+          <img class="icono-user-I imgEmploye" onclick="resultadosEmpleado('icon-mario','updateMario')" src="./assets/icono1.jpg" alt="icono">
           <label class="lblNombres" for="nombres">John Mario Mira Pineda</label>
-        </div><br>  
+        </div>
         <div class="cont-userI" id="icon-ana-I">
-          <img class="icono-user imgEmploye" onclick="resultadosEmpleado('icon-ana-I','updateAna')" src="./assets/icono1.jpg" alt="icono">
+          <img class="icono-user-I imgEmploye" onclick="resultadosEmpleado('icon-ana','updateAna')" src="./assets/icono1.jpg" alt="icono">
           <label class="lblNombres" for="nombres">Ana Maria Duarte Pineda</label>
         </div>
       </div>

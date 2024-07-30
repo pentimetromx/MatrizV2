@@ -4918,93 +4918,103 @@ function antesImagenes(){
   var contImagenAntes = document.getElementById('toyota-kaizen-antes')
   contImagenAntes.style.display = 'flex'
 }
+function ubicaPerfilPequeño(idEmpleado){
+  var contSecundario = document.getElementById('contenedor-vertical')
+  var contUserElements = document.getElementsByClassName('cont-user')
+  var contUserElementsI = document.getElementsByClassName('cont-userI')   
+  var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered']
+  var colorIndex = 0;
+
+  for (var j = 0; j < contUserElements.length; j++) {
+    contUserElements[j].style.display = 'none';
+  }
+
+  if(screenWidth < 500){
+    for (var i = 0; i < contUserElements.length; i++) {
+      var element = contUserElements[i]
+      if (element.id === idEmpleado) {
+        contSecundario.style.display = 'flex'
+        element.style.position = 'absolute'
+        element.style.display = 'flex'
+        element.style.height = '12vh'
+        element.style.width = '25vw'
+        element.style.top = '0'
+        element.style.left = '2vw'
+        var label = element.querySelector('label')
+        if (label) {
+          intervaloColor = setInterval(function () {
+            label.style.color = colors[colorIndex]
+            colorIndex = (colorIndex + 1) % colors.length;
+          }, 200)
+      }
+    }
+  }}
+}
 function ubicaPerfil(idEmpleado) {
   var contUserElements = document.getElementsByClassName('cont-user')   
   var contSecundario = document.getElementById('conte-secundario')
   var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered']
   var colorIndex = 0;
+  if(screenWidth > 500){
+    for (var i = 0; i < contUserElements.length; i++) { 
+      var element = contUserElements[i]
+      if (element.id === idEmpleado) {
+        contSecundario.style.display = 'flex'
+        element.style.position = 'absolute'
+        element.style.display = 'flex'
+        element.style.height = '15vh'
+        element.style.width = '10vw'
+        element.style.top = '-10vh'
+        element.style.left = '3.5vw'
+        var label = element.querySelector('label')
+        if (label) {
+          intervaloColor = setInterval(function () {
+            label.style.color = colors[colorIndex]
+            colorIndex = (colorIndex + 1) % colors.length;
+          }, 200)
+      }
+    } else {
+      element.style.display = 'none'
+    }}
+  }else {
+    for (var i = 0; i < contUserElements.length; i++) { 
+      var element = contUserElements[i]
+      if (element.id === idEmpleado) {
+        contSecundario.style.display = 'flex'
+        element.style.position = 'absolute'
+        element.style.display = 'flex'
+        element.style.height = '12vh'
+        element.style.width = '25vw'
+        element.style.top = '0'
+        element.style.left = '2vw'
+        var label = element.querySelector('label')
+        if (label) {
+          intervaloColor = setInterval(function () {
+            label.style.color = colors[colorIndex]
+            colorIndex = (colorIndex + 1) % colors.length;
+          }, 200)
+      }
+    } else {
+      element.style.display = 'none'
+    }}
+  
 
-  for (var i = 0; i < contUserElements.length; i++) { 
-    var element = contUserElements[i]
-    if (element.id === idEmpleado) {
-      contSecundario.style.display = 'flex'
-      element.style.position = 'absolute'
-      element.style.display = 'flex'
-      element.style.height = '17vh'
-      element.style.width = '30vw'
-      element.style.top = '-6vh'
-      element.style.left = '2vw'
-
-      var label = element.querySelector('label')
-      if (label) {
-        intervaloColor = setInterval(function () {
-          label.style.color = colors[colorIndex] // Cambia el color del texto
-          colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
-        }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
-    }
-  } else {
-    element.style.display = 'none'
   }
-  }
-
-
-
-
-  /* let imagen = document.getElementById(idEmpleado);
-  if (imagen) {
-    alert('')
-    imagen.style.display = 'flex';
-    imagen.style.position = 'absolute';
-    imagen.style.top = '0';
-    imagen.style.left = '0';
-    imagen.style.height='5vh'
-    imagen.style.width='5vw'
-  } */
-}
+ }
 let llamadaEjecutada = false;
 
 function resultadosEmpleado(idEmpleado, functionExe,icono) {
-  var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered'] // Colores en formato RGB
   const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
-  var contUserElementsI = document.getElementsByClassName('cont-userI') 
-  var contSecundario = document.getElementById('conte-secundario')
-  var contUserElements = document.getElementsByClassName('cont-user')   
-  var colorIndex = 0;
-  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','conte-secundario','contenedor-vertical','title-interfaz','contLineas','canvasContainer4','MiGrafica4','canvasContainer5','MiGrafica5','canvasContainer6','MiGrafica6','canvasContainer7','MiGrafica7','canvasContainer9','MiGrafica9']
+  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','contenedor-vertical','title-interfaz','contLineas','canvasContainer4','MiGrafica4','canvasContainer5','MiGrafica5','canvasContainer6','MiGrafica6','canvasContainer7','MiGrafica7','canvasContainer9','MiGrafica9']
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
-  
-  /* for (var i = 0; i < contUserElements.length; i++) { 
-    var element = contUserElements[i]
-    if (element.id === idEmpleado) {
-      contSecundario.style.display = 'flex'
-      element.style.position = 'absolute'
-      element.style.display = 'flex'
-      element.style.height = '19.6%'
-      element.style.width = '12%'
-      element.style.top = '10.7%'
-      element.style.left = '3%'
-
-    var label = element.querySelector('label')
-    if (label) {
-      intervaloColor = setInterval(function () {
-        label.style.color = colors[colorIndex] // Cambia el color del texto
-        colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
-      }, 200)
-    }
-  } else {
-    element.style.display = 'none'
-  }
-  }  */      
   if (iconosPermitidos.includes(icono)) {
     iniciarMovimiento('contenedor-vertical');
-  }    
-
-  
+  } 
   if(screenWidth < 500){
     var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer9-II','MiGrafica9-II']
     for (var i = 0; i < allContenedores.length; i++) { 
@@ -5013,244 +5023,13 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }
     }  
-
-    ubicaPerfil(idEmpleado);
-
-    /* for (var i = 0; i < contUserElements.length; i++) { 
-      var element = contUserElements[i]
-      if (element.id === idEmpleado) {
-        contSecundario.style.display = 'flex'
-        element.style.position = 'absolute'
-        element.style.display = 'flex'
-        element.style.height = '17%'
-        element.style.width = '30%'
-        element.style.top = '21.5%'
-        element.style.left = '3%'
-
-        var label = element.querySelector('label')
-        if (label) {
-          intervaloColor = setInterval(function () {
-            label.style.color = colors[colorIndex] // Cambia el color del texto
-            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
-          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
-      }
-    } else {
-      element.style.display = 'none'
-    }
-    }  */      
     if (iconosPermitidos.includes(icono)) {
       iniciarMovimiento('contenedor-vertical');
     }
+    ubicaPerfil(idEmpleado)
+  }else{
+    ubicaPerfil(idEmpleado)
   }
-
-
-  /* switch (idEmpleado) {
-    case 'icon-carlos-I':
-      var ContIconoAnaI = document.getElementById('icon-carlos')
-      var contSecundarios = document.getElementById('conte-secundario')
-      contSecundarios.style.display = 'flex'
-      contSecundarios.style.marginTop = '2%'
-      ContIconoAnaI.style.position = 'absolute'
-      ContIconoAnaI.style.display = 'flex'
-      ContIconoAnaI.style.height = '65%'
-      ContIconoAnaI.style.width = '12%'
-      ContIconoAnaI.style.top = '-66%'
-      ContIconoAnaI.style.left = '3%'       
-      if(screenWidth < 500){
-        contSecundarios.style.display = 'flex'
-        contSecundarios.style.marginTop = '2%'
-        ContIconoAnaI.style.position = 'absolute'
-        ContIconoAnaI.style.display = 'flex'
-        ContIconoAnaI.style.height = '44%'
-        ContIconoAnaI.style.top = '-22%'
-        ContIconoAnaI.style.left = '3%' 
-        // Accede al label del contenedor
-        var etqt = ContIconoAnaI.querySelector('label')
-        if (etqt) {
-          setInterval(function () {
-            etqt.style.color = colors[colorIndex] // Cambia el color del texto
-            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
-          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
-        }
-      }
-    break;
-    case 'icon-andres-I':
-      var ContIconoAnaI = document.getElementById('icon-andres')
-      var contSecundarios = document.getElementById('conte-secundario')
-      contSecundarios.style.position = 'absolute'
-      contSecundarios.style.marginTop = '2%'
-      ContIconoAnaI.style.position = 'absolute'
-      ContIconoAnaI.style.display = 'flex'
-      ContIconoAnaI.style.height = '65%'
-      ContIconoAnaI.style.width = '12%'
-      ContIconoAnaI.style.top = '-66%'
-      ContIconoAnaI.style.left = '3%'
-      if(screenWidth < 500){
-        contSecundarios.style.display = 'flex'
-        contSecundarios.style.marginTop = '2%'
-        ContIconoAnaI.style.position = 'absolute'
-        ContIconoAnaI.style.display = 'flex'
-        ContIconoAnaI.style.height = '44%'
-        ContIconoAnaI.style.top = '-22%'
-        ContIconoAnaI.style.left = '3%' 
-        // Accede al label del contenedor
-        var etqt = ContIconoAnaI.querySelector('label')
-        if (etqt) {
-          setInterval(function () {
-            etqt.style.color = colors[colorIndex] // Cambia el color del texto
-            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
-          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
-        }
-      }
-    break;
-    case 'icon-jorge-I':
-      var ContIconoAnaI = document.getElementById('icon-jorge')
-      var contSecundarios = document.getElementById('conte-secundario')
-      contSecundarios.style.position = 'absolute'
-      contSecundarios.style.marginTop = '2%'
-      ContIconoAnaI.style.position = 'absolute'
-      ContIconoAnaI.style.display = 'flex'
-      ContIconoAnaI.style.height = '65%'
-      ContIconoAnaI.style.width = '12%'
-      ContIconoAnaI.style.top = '-66%'
-      ContIconoAnaI.style.left = '3%'
-      if(screenWidth < 500){
-        contSecundarios.style.display = 'flex'
-        contSecundarios.style.marginTop = '2%'
-        ContIconoAnaI.style.position = 'absolute'
-        ContIconoAnaI.style.display = 'flex'
-        ContIconoAnaI.style.height = '44%'
-        ContIconoAnaI.style.top = '-22%'
-        ContIconoAnaI.style.left = '3%' 
-        // Accede al label del contenedor
-        var etqt = ContIconoAnaI.querySelector('label')
-        if (etqt) {
-          setInterval(function () {
-            etqt.style.color = colors[colorIndex] // Cambia el color del texto
-            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
-          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
-        }
-      }
-    break;
-    case 'icon-jesus-I':
-      var ContIconoAnaI = document.getElementById('icon-jesus')
-      var contSecundarios = document.getElementById('conte-secundario')
-      contSecundarios.style.position = 'absolute'
-      contSecundarios.style.marginTop = '2%'
-      ContIconoAnaI.style.position = 'absolute'
-      ContIconoAnaI.style.display = 'flex'
-      ContIconoAnaI.style.height = '65%'
-      ContIconoAnaI.style.width = '12%'
-      ContIconoAnaI.style.top = '-66%'
-      ContIconoAnaI.style.left = '3%'
-      if(screenWidth < 500){
-        contSecundarios.style.display = 'flex'
-        contSecundarios.style.marginTop = '2%'
-        ContIconoAnaI.style.position = 'absolute'
-        ContIconoAnaI.style.display = 'flex'
-        ContIconoAnaI.style.height = '44%'
-        ContIconoAnaI.style.top = '-22%'
-        ContIconoAnaI.style.left = '3%' 
-        // Accede al label del contenedor
-        var etqt = ContIconoAnaI.querySelector('label')
-        if (etqt) {
-          setInterval(function () {
-            etqt.style.color = colors[colorIndex] // Cambia el color del texto
-            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
-          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
-        }
-      }
-    break;
-    case 'icon-sandra-I':
-      var ContIconoAnaI = document.getElementById('icon-sandra')
-      var contSecundarios = document.getElementById('conte-secundario')
-      contSecundarios.style.position = 'absolute'
-      contSecundarios.style.marginTop = '2%'
-      ContIconoAnaI.style.position = 'absolute'
-      ContIconoAnaI.style.display = 'flex'
-      ContIconoAnaI.style.height = '65%'
-      ContIconoAnaI.style.width = '12%'
-      ContIconoAnaI.style.top = '-66%'
-      ContIconoAnaI.style.left = '3%'
-      if(screenWidth < 500){
-        contSecundarios.style.display = 'flex'
-        contSecundarios.style.marginTop = '2%'
-        ContIconoAnaI.style.position = 'absolute'
-        ContIconoAnaI.style.display = 'flex'
-        ContIconoAnaI.style.height = '44%'
-        ContIconoAnaI.style.top = '-22%'
-        ContIconoAnaI.style.left = '3%' 
-        // Accede al label del contenedor
-        var etqt = ContIconoAnaI.querySelector('label')
-        if (etqt) {
-          setInterval(function () {
-            etqt.style.color = colors[colorIndex] // Cambia el color del texto
-            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
-          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
-        }
-      }
-    break;
-    case 'icon-mario-I':
-      var ContIconoAnaI = document.getElementById('icon-mario')
-      var contSecundarios = document.getElementById('conte-secundario')
-      contSecundarios.style.position = 'absolute'
-      contSecundarios.style.marginTop = '2%'
-      ContIconoAnaI.style.position = 'absolute'
-      ContIconoAnaI.style.display = 'flex'
-      ContIconoAnaI.style.height = '65%'
-      ContIconoAnaI.style.width = '12%'
-      ContIconoAnaI.style.top = '-66%'
-      ContIconoAnaI.style.left = '3%'
-      if(screenWidth < 500){
-        contSecundarios.style.display = 'flex'
-        contSecundarios.style.marginTop = '2%'
-        ContIconoAnaI.style.position = 'absolute'
-        ContIconoAnaI.style.display = 'flex'
-        ContIconoAnaI.style.height = '44%'
-        ContIconoAnaI.style.top = '-22%'
-        ContIconoAnaI.style.left = '3%' 
-        // Accede al label del contenedor
-        var etqt = ContIconoAnaI.querySelector('label')
-        if (etqt) {
-          setInterval(function () {
-            etqt.style.color = colors[colorIndex] // Cambia el color del texto
-            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
-          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
-        }
-      }
-    break;
-    case 'icon-ana-I':
-      var ContIconoAnaI = document.getElementById('icon-ana')
-      var contSecundarios = document.getElementById('conte-secundario')
-      contSecundarios.style.position = 'absolute'
-      contSecundarios.style.marginTop = '2%'
-      ContIconoAnaI.style.position = 'absolute'
-      ContIconoAnaI.style.display = 'flex'
-      ContIconoAnaI.style.height = '65%'
-      ContIconoAnaI.style.width = '12%'
-      ContIconoAnaI.style.top = '-66%'
-      ContIconoAnaI.style.left = '3%'
-      if(screenWidth < 500){
-        contSecundarios.style.display = 'flex'
-        contSecundarios.style.marginTop = '2%'
-        ContIconoAnaI.style.position = 'absolute'
-        ContIconoAnaI.style.display = 'flex'
-        ContIconoAnaI.style.height = '44%'
-        ContIconoAnaI.style.top = '-22%'
-        ContIconoAnaI.style.left = '3%' 
-        // Accede al label del contenedor
-        var etqt = ContIconoAnaI.querySelector('label')
-        if (etqt) {
-          setInterval(function () {
-            etqt.style.color = colors[colorIndex] // Cambia el color del texto
-            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
-          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
-        }
-      }
-    break;
-    default:
-    break;
-  } */      
   switch (functionExe) {
     case 'updateAna':
       updateAna() 
