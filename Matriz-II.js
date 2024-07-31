@@ -219,34 +219,24 @@ function manejarLogica() {
       tituloAngosto.style.width = '100%';      
     }
     function manejarEntrada(event) {
-      // Obtén el input actual desde el evento
       const inputActual = event.target;
-      // Convierte el valor del input a número
       const valor = parseInt(inputActual.value);
-      // Inicializa la suma en cero
       let suma = 0;
-      // Encuentra el índice del input actual dentro de inputs
       const indice = Array.from(inputs).indexOf(inputActual);
-      // Almacena el valor ingresado en el índice correspondiente
       if (!isNaN(valor)) {
         valoresIngresados[indice] = valor;
       } else {
-        valoresIngresados[indice] = 0; // Establece el valor a cero si no es un número válido
+        valoresIngresados[indice] = 0;
       }
-      // Después de que se ingrese un número, cambia el valor del input actual a asterisco después de 177 ms
         setTimeout(() => {
         inputActual.value = '*';
-        // Mueve el foco al siguiente input después de cambiar a asterisco
         if (indice < inputs.length - 1) {
           inputs[indice + 1].focus();
         }
       }, 177);
-      // Suma todos los valores ingresados
       suma = valoresIngresados.reduce((acumulador, valor) => acumulador + valor, 0);
-      // Verifica si la suma de los valores ingresados es igual a masterKey
       if (suma === masterKey[0]) {
         document.getElementById('contenedor-principal').style.display = 'none'
-        // Lanza el alert con el mensaje "clave identica"
         setTimeout(() => {
           aumentoGradualVideo()              
         }, 200);
@@ -254,11 +244,10 @@ function manejarLogica() {
           abrirInterfaz();
         }, 1100);
         inputs.forEach(input => {
-        input.value = ''; // Establece el valor de cada input como una cadena vacía
+        input.value = '';
         });         
       }
     }
-    // Agrega el evento de entrada a cada input para llamar a manejarEntrada
     inputs.forEach(input => {
       input.addEventListener('input', manejarEntrada);
     });
@@ -269,47 +258,35 @@ function manejarLogica() {
       tituloAncho.style.width = '100%'      
     }
     function manejarEntrada(event) {
-      // Obtén el input actual desde el evento
       const inputActual = event.target;
-      // Convierte el valor del input a número
       const valor = parseInt(inputActual.value);
-      // Inicializa la suma en cero
       let suma = 0;
-      // Encuentra el índice del input actual dentro de inputs
       const indice = Array.from(inputs).indexOf(inputActual);
-      // Almacena el valor ingresado en el índice correspondiente
       if (!isNaN(valor)) {
         valoresIngresados[indice] = valor;
       } else {
-        valoresIngresados[indice] = 0; // Establece el valor a cero si no es un número válido
+        valoresIngresados[indice] = 0;
       }
-      // Después de que se ingrese un número, cambia el valor del input actual a asterisco después de 177 ms
         setTimeout(() => {
         inputActual.value = '*';
-        // Mueve el foco al siguiente input después de cambiar a asterisco
         if (indice < inputs.length - 1) {
           inputs[indice + 1].focus();
         }
       }, 177);
-      // Suma todos los valores ingresados
       suma = valoresIngresados.reduce((acumulador, valor) => acumulador + valor, 0);
-      // Verifica si la suma de los valores ingresados es igual a masterKey
       if (suma === masterKey[0]) {
         document.getElementById('contenedor-principal').style.display = 'none'
-        // Lanza el alert con el mensaje "clave identica"
         setTimeout(() => {
           aumentoGradualVideo()              
         }, 200);
         setTimeout(() => {
-          abrirInterfaz(); // Llamar a la función abrirInterfaz si los arrays son iguales
+          abrirInterfaz();
         }, 600);
-        // Limpia el contenido de todos los inputs
         inputs.forEach(input => {
-        input.value = ''; // Establece el valor de cada input como una cadena vacía
+        input.value = '';
         });         
       }
     }
-    // Agrega el evento de entrada a cada input para llamar a manejarEntrada
     inputs.forEach(input => {
       input.addEventListener('input', manejarEntrada);
     });
@@ -355,14 +332,14 @@ function ElementosMaII(elementId){
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId)
     if (index !== -1) {
-      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+      idsArray.splice(index, 1);
     }
     idsArray.push(elementId);
     console.log(idsArray);
   } 
 }
 function showButtonsMAconRetraso(){
-  var botones = document.querySelectorAll('.butt-mautonomo') // Selecciona todos los botones
+  var botones = document.querySelectorAll('.butt-mautonomo')
   function mostrarBotonConRetraso(i) {
     if (i < botones.length) {
       var boton = botones[i]
@@ -370,54 +347,43 @@ function showButtonsMAconRetraso(){
       boton.style.marginTop = '10px';      
       setTimeout(function() {
         mostrarBotonConRetraso(i + 1)
-      },100) // 100 milisegundos de retraso entre botones
+      },100)
     }
   }
-  mostrarBotonConRetraso(0) // Comienza desde el primer botón
+  mostrarBotonConRetraso(0)
 }
 function showButtonsTeoriaConRetraso() {
-  // Obtén todos los botones con la clase 'butt-prepre'
   var botones = document.querySelectorAll('.butt-prepre');
-  // Primero, oculta todos los botones
   for (var i = 0; i < botones.length; i++) {
       botones[i].style.display = 'none';
   }
-  // Función para mostrar un botón con retraso
   function mostrarBotonConRetraso(i) {
     if (i < botones.length) {
       var boton = botones[i];
       boton.style.display = 'inline-block';
       boton.style.marginTop = '10px';
-
-      // Llama a la función recursivamente con un retraso de 100 ms
       setTimeout(function() {
           mostrarBotonConRetraso(i + 1);
       }, 100);
     }
   }
-  // Comienza mostrando el primer botón con retraso
   mostrarBotonConRetraso(0);
 }
 function showButtonsDensitoConRetraso() {
-  // Obtén todos los botones con la clase 'butt-prepre'
   var botones = document.querySelectorAll('.deploy-butt');
-  // Primero, oculta todos los botones
   for (var i = 0; i < botones.length; i++) {
       botones[i].style.display = 'none';
   }
-  // Función para mostrar un botón con retraso
   function mostrarBotonConRetraso(i) {
     if (i < botones.length) {
       var boton = botones[i];
       boton.style.display = 'inline-block';
       boton.style.marginTop = '10px';
-      // Llama a la función recursivamente con un retraso de 100 ms
       setTimeout(function() {
           mostrarBotonConRetraso(i + 1);
       }, 100);
     }
   }
-  // Comienza mostrando el primer botón con retraso
   mostrarBotonConRetraso(0);
 }
 function changeButtonStyles(elementId){
@@ -435,7 +401,6 @@ function changeButtonStyles(elementId){
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
-            // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
@@ -445,8 +410,6 @@ function changeButtonStyles(elementId){
             video.style.left='65vw'
             video.style.display = 'block'
             video.play();
-        
-            // Después de 977 milisegundos, ocultar el video
             setTimeout(function () {
               video.style.display = 'none'
             }, 977);
@@ -455,15 +418,12 @@ function changeButtonStyles(elementId){
           }
           });
       }else{
-
         videoElements.forEach(video => {
         if (video.id === 'vidTintero') {
           video.style.top = '0'
           video.style.left='17.7vw'
           video.style.display = 'block'
-          video.play();
-          
-          // Después de 977 milisegundos, ocultar el video
+          video.play();          
           setTimeout(function () {
             video.style.display = 'none'
           }, 977);
@@ -471,8 +431,6 @@ function changeButtonStyles(elementId){
           video.style.display = 'none'
         }
         });
-    
-
         if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
           idsArray.push(elementId);
           console.log(idsArray);
@@ -525,7 +483,6 @@ function changeButtonStyles(elementId){
         })
         desplegarBotones()
       }
-      //////////////////////////////////////////////////////////////////////////////////////////
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
@@ -556,7 +513,6 @@ function changeButtonStyles(elementId){
           video.style.display = 'none'
         }
       })
-      //EFECTO BOTONES
       setTimeout(() => {
         applyImageEffects4() 
       }, 277)
@@ -566,7 +522,6 @@ function changeButtonStyles(elementId){
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
         }
       }
@@ -579,7 +534,6 @@ function changeButtonStyles(elementId){
         }, delay * i,i)
       }
       contVid.style.display='flex' 
-      //EFECTO BOTONES
       setTimeout(() => {
         applyImageEffects4() 
       }, 277)
@@ -595,7 +549,6 @@ function changeButtonStyles(elementId){
       contVideoSmed.classList.remove('move-vid-smed-II')
       contImageneSmed.classList.remove('move-images-IV')
       buttRepuestV.classList.remove('move-repuest-IV')
-      /* contVid.style.display='block' */ 
       desplegarBotonesV()  
      }
 
@@ -609,7 +562,6 @@ function changeButtonStyles(elementId){
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       } 
@@ -692,27 +644,20 @@ function cambioContenedor(elementId){
   var botonTorre = document.getElementById('toggleVideoButton')
   var botAtras = document.getElementById('bot-atras10')
   var botTrasII = document.getElementById('bot-atras11')
-
-
   for (var i = 0; i < elementsToHide.length; i++) {
     elementsToHide[i].style.display = 'none'
   }
-
   botAtras.style.display='block'
   botTrasII.style.display='block'
   torreImpresion.style.position='absolute'
   torreImpresion.style.left='77px'
   botonTorre.style.position='absolute'
   botonTorre.style.left='307px'
-
-  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {
-      // 4. Si el elemento ya existe, moverlo a la última posición
-      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+      idsArray.splice(index, 1);
     }
-    // 5. Agregar el elemento al final de arrayIds
     idsArray.push(elementId);
     console.log(idsArray);
   }

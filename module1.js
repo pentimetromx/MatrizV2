@@ -1,16 +1,13 @@
 function cierraContenedores(elementId,buttonID){
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80','btn600','btn700','btn800']
   var arrayButtsRojos = ['boton2','boton3','boton4','boton5','boton6','boton8','boton9','boton10','boton11','boton12']
-  for (var i = 0; i < arrayButtsRojos.length; i++) {                                                                                  /// QUITAR ESTILOS A BOTONES
+  for (var i = 0; i < arrayButtsRojos.length; i++) {
   var button = arrayButtsRojos[i]
   if (button) {
     document.getElementById(button).style.backgroundColor = ''
   }
   }   
-  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  if (firstClick) {                                                                                                                       /// LOGICA PRIMER CLICK
-  /* var uTeñido = document.getElementById('uTeñidos'); */
-
+  if (firstClick) { 
   if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray);
@@ -22,11 +19,8 @@ function cierraContenedores(elementId,buttonID){
         for (var i = 0; i < pantallaInicial.children.length; i++) {
           var hijo = pantallaInicial.children[i];
           if (i === 0) {
-            // Deja visible el primer hijo
             hijo.style.display = 'flex';
             hijo.style.position='relative'
-            /* hijo.style.top='-10vh' */
-            /* document.getElementById('cont-Verticales1').style.top='-10vh' */
           } else {
             hijo.style.display = 'none';
           }
@@ -36,26 +30,22 @@ function cierraContenedores(elementId,buttonID){
       aumentarTamanosDeBotones() 
     break;
     case 'uTeñido':
-      // Obtén el elemento padre 'pantalla-inicial'
       var pantallaInicial = document.getElementById('pantalla-inicial');
       if (pantallaInicial) {
-        // Oculta todos los hijos directos de 'pantalla-inicial'
         for (var i = 0; i < pantallaInicial.children.length; i++) {
           var hijo = pantallaInicial.children[i];
           if (i !== 1) {
-            hijo.style.display = 'none'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.display = 'none';
           } else {
-            hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.display = 'flex';
           }
         }
       }  
       aumentarTamanosDeBotonesII()
     break;
     case 'alimentadorId':
-      // Obtén el elemento padre 'pantalla-inicial'
       var pantallaInicial = document.getElementById('pantalla-inicial');
       if (pantallaInicial) {
-        // Oculta todos los hijos directos de 'pantalla-inicial'
         for (var i = 0; i < pantallaInicial.children.length; i++) {
           var hijo = pantallaInicial.children[i];
           if (i === 2) {
@@ -69,23 +59,18 @@ function cierraContenedores(elementId,buttonID){
       aumentarTamanosDeBotonesIII()
     break;
     case 'unidProceso':
-      // Obtén el elemento padre 'pantalla-inicial'
       var pantallaInicial = document.getElementById('pantalla-inicial');
       if (pantallaInicial) {
-        // Oculta todos los hijos directos de 'pantalla-inicial'
         for (var i = 0; i < pantallaInicial.children.length; i++) {
           var hijo = pantallaInicial.children[i];
           if (i === 3) {
-            // Deja visible el primer hijo
             hijo.style.display = 'flex';
           } else {
-            // Oculta el resto de los hijos
             hijo.style.display = 'none';
           }
         }
       }  
       botonClickIV.style.display = 'block'
-      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
       aumentarTamanosDeBotonesIV()         
     break;
     case 'rebobinador':
@@ -100,21 +85,18 @@ function cierraContenedores(elementId,buttonID){
           }
         }
       }
-      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
       aumentarTamanosDeBotonesV()
     break;
     default:
   }    
   firstClick = false;
   } else {
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  arrayGeneral.forEach(element => {                                                                   /// SEGUNDO CLICK OCULTA BOTONES / CARGA SECCION CONINUA
+  arrayGeneral.forEach(element => {
     var elemento = document.getElementById(element)
     if (elemento) {
         elemento.style.display = 'none'
     } 
   }) 
-  // En el segundo clic, carga la seccion
   btnsIniciales.forEach(elemento =>{
     if (elemento){
       elemento.style.background = ''
@@ -128,12 +110,10 @@ function cierraContenedores(elementId,buttonID){
 function muestraRodillo (vidElem, imgCont){
 switch(vidElem){
 case 'videoElement2':
-  /// OCULTA TODO MENOS LO NECESARIO          
   var elementosExcluidos = ['buscador','sector-distribuidor','butt-repuestos','conti-video-distribuidor','videoElement2','images-distribuidor','conti-boton-repuestos','contenedor-7-V','container01','links-iniciales','links-inicialesI','videosTraining']; 
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]) 
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
     }
   }
@@ -144,14 +124,13 @@ case 'videoElement2':
     var pic = images[i]
     pic.style.display = 'flex'
   }
-  //EFECTO BOTONES
   setTimeout(() => {
     applyImageEffects1() 
   }, 277)
   for (const video of videoElements) {
     if (video.id === vidElem) {
       video.currentTime = 0;           
-      video.play() // Reproduce el video
+      video.play()
     } else {
       video.style.display = 'none'
       video.pause()
@@ -162,7 +141,6 @@ case 'videoElement2':
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
@@ -170,23 +148,14 @@ case 'videoElement2':
       contImgsDistribuidor.classList.remove('move-images')
       buttRepuest.classList.remove('move-repuest')
       contiVidDistribuidor.classList.remove('move-video')   
-      /* videoElements.forEach(video => {
-        if (video.id === 'videoElement2') {
-          video.play()      
-        } else {
-          video.style.display = 'none'
-        }
-      }) */
       desplegarBotonesII()
     }
 break;
 case 'videoElement3':
-  /// OCULTA TODO MENOS LO NECESARIO          
   var elementosExcluidos = ['buscador','sector-entintador','conti-boton-repuestos-I','butt-repuestos-I','conti-video-entintador','videoElement3','images-entintador','contenedor-7-VI','container01','links-iniciales','links-inicialesI','videosTraining']; 
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]) 
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
     }
   }
@@ -209,7 +178,6 @@ case 'videoElement3':
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
       if (elemento) {
-        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
       }
     }
@@ -228,12 +196,10 @@ case 'videoElement3':
   }
 break;
 case 'plate-smed' :
-  /// OCULTA TODO MENOS LO NECESARIO          
   var elementosExcluidos = ['buscador','sector-smed','conti-boton-repuestos-II','butt-repuestos-II','conti-video-smed','plate-smed','images-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI','videosTraining']; 
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]) 
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
     }
   }
@@ -255,7 +221,6 @@ case 'plate-smed' :
     for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]) 
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
     }
     }
@@ -281,23 +246,22 @@ case 'videoElement5' :
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]) 
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
     }
   }
 
   setTimeout(() => {
     applyImageEffects()
-  }, 200) // Retardo de 0.9 segundos (900 milisegundos)      
+  }, 200) 
   
   for (const video of videoElements) {
     if (video.id === vidElem) {
-      video.style.display = 'block' // Muestra el video
+      video.style.display = 'block'
       video.currentTime = 0;           
-      video.play() // Reproduce el video
+      video.play()
     } else {
-      video.style.display = 'none' // Oculta el video
-      video.pause() // Pausa el video
+      video.style.display = 'none'
+      video.pause()
     }
   }
 
@@ -307,7 +271,6 @@ case 'videoElement6' :
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]) 
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
     }
   }
@@ -317,7 +280,6 @@ case 'videoElement7' :
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]) 
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
     }
   }
@@ -327,14 +289,13 @@ default:
 }
 function muestraHumedad(){
 var contImgsIsopropil = document.getElementById('imgsIsopropil')
-const pict = contImgsIsopropil.getElementsByTagName('img') // Obtiene todas las etiquetas 'img' dentro del 
+const pict = contImgsIsopropil.getElementsByTagName('img') 
 contImgsIsopropil.style.display = 'flex'
-// Recorre las imágenes y las muestra
 for (let i = 0; i < pict.length; i++) {
-pict[i].style.display = 'block' // Muestra cada imagen
+pict[i].style.display = 'block'
 }
 }
-function applyImageEffects() { // aumento secuencial imagenes repuestos
+function applyImageEffects() {
 const imageElements = document.querySelectorAll('#imageElement6,#imageElement7')
 let currentIndex = 0;
 function applyEffect() {
@@ -351,7 +312,7 @@ if (currentIndex < imageElements.length) {
 
 
 }
-function applyImageEffects1() { // aumento secuencial imagenes repuestos
+function applyImageEffects1() {
 const imageElements = document.querySelectorAll('#imageElement, #imageElement2, #imageElement3, #imageElement4, #imageElement5')
 let currentIndex = 0;
 function applyEffect() {
@@ -366,7 +327,7 @@ if (currentIndex < imageElements.length) {
     applyEffect()
   }, 177) }}applyEffect()
 }
-function applyImageEffects2() { // aumento secuencial imagenes repuestos
+function applyImageEffects2() { 
 const imageElements = document.querySelectorAll('#imageElement6, #imageElement7')
 let currentIndex = 0;
 function applyEffect() {
@@ -381,7 +342,7 @@ if (currentIndex < imageElements.length) {
     applyEffect()
   }, 177) }}applyEffect()
 }
-function applyImageEffects3() { // aumento secuencial imagenes repuestos
+function applyImageEffects3() {
 const imageElements = document.querySelectorAll('#imageElement11,#imageElement22,#imageElement33,#imageElement44,#imageElement55')
 let currentIndex = 0;
 function applyEffect() {
@@ -396,7 +357,7 @@ if (currentIndex < imageElements.length) {
     applyEffect()
   }, 177) }}applyEffect()
 }
-function applyImageEffects4() { // aumento secuencial imagenes repuestos
+function applyImageEffects4() {
 const imageElements = document.querySelectorAll('#isopropil1,#isopropil2,#isopropil3')
 let currentIndex = 0;
 function applyEffect() {
@@ -411,7 +372,7 @@ if (currentIndex < imageElements.length) {
     applyEffect()
   }, 177) }}applyEffect()
 }
-function applyImageEffects5() { // aumento secuencial imagenes repuestos
+function applyImageEffects5() {
 const imageElements = document.getElementsByClassName('butts-inicio')
 let currentIndex = 0;
 function applyEffect() {
@@ -476,7 +437,6 @@ var imgsContra = document.getElementById('impresorImg')
       for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
-        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         elementosGrid.style.display = 'grid'
       }}
@@ -511,7 +471,6 @@ var imgsContra = document.getElementById('impresorImg')
       for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
       if (elemento) {
-        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         elementosGrid.style.display = 'grid'
 
@@ -527,12 +486,10 @@ var imgsContra = document.getElementById('impresorImg')
     }
   break;
   case 'contPortPlaca':  
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-    var elementosExcluidos = ['buscador','container01','links-iniciales','links-inicialesI','contPortPlaca', 'agrupaOblicuos-placa','placa','video-placa'];                                                              /// OCULTA TODO MENOS (2 ELEMENTOS)          
+    var elementosExcluidos = ['buscador','container01','links-iniciales','links-inicialesI','contPortPlaca', 'agrupaOblicuos-placa','placa','video-placa'];          
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]);  
       if (elemento) {
-        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
       }
     }
@@ -543,12 +500,10 @@ var imgsContra = document.getElementById('impresorImg')
     }
   break;       
   case 'contPortManta':
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    var elementosExcluidos = ['buscador','contPortManta', 'container01','agrupaOblicuos-IX','links-iniciales','links-inicialesI'];                                                              /// OCULTA TODO MENOS (2 ELEMENTOS)          
+    var elementosExcluidos = ['buscador','contPortManta', 'container01','agrupaOblicuos-IX','links-iniciales','links-inicialesI'];           
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]);  
       if (elemento) {
-        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
       }
     }
@@ -567,12 +522,10 @@ var imgsContra = document.getElementById('impresorImg')
     } 
   break;
   case 'contImpresor':
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    var elementosExcluidos = ['buscador','agrupaOblicuos-XXIII','impresorImg','contImpresor','container01','links-iniciales','links-inicialesI'];                                                              /// OCULTA TODO MENOS (2 ELEMENTOS)          
+    var elementosExcluidos = ['buscador','agrupaOblicuos-XXIII','impresorImg','contImpresor','container01','links-iniciales','links-inicialesI'];           
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]);  
       if (elemento) {
-        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
       }
     }
@@ -585,7 +538,6 @@ var imgsContra = document.getElementById('impresorImg')
       video.currentTime = 0;
       video.play()   
     }})
-    /* imgsContra.style.display = 'flex' */
     if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
       idsArray.push(elementId);
       console.log(idsArray);
@@ -601,7 +553,6 @@ case 'imagen1':
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
@@ -615,7 +566,6 @@ case 'imagen2':
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
@@ -629,7 +579,6 @@ case 'imagen3':
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
@@ -643,7 +592,6 @@ case 'imagen4':
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
@@ -685,7 +633,6 @@ case 'mantilla1':
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
       if (elemento) {
-        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
       }
     }
@@ -719,7 +666,6 @@ case 'mantilla2':
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
         }
       }
@@ -783,7 +729,6 @@ var contChildImpresor = document.getElementById('imagenes-impresor')
 var imgsImpresor = document.querySelectorAll('.imgImpresor')
 var imgImpresorI = document.getElementById('impresorImg')
 imgImpresorI.style.display = 'none'
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 for (var i = 0; i < linksIniciales.length; i++) {
 var elemento = document.getElementById(linksIniciales[i]);
 elemento.style.display = 'flex'
@@ -791,19 +736,13 @@ elemento.style.display = 'flex'
 
 switch (elementId) {
 case 'forward':
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','contImpresor','agrupaOblicuos-XXIII','imagenes-impresor'];                   /// OCULTA TODO MENOS (3 ELEMENTOS)          
+  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','contImpresor','agrupaOblicuos-XXIII','imagenes-impresor'];          
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
-  /* videoElements.forEach(video => {
-  if (video.id == 'video-impresor') {
-  video.style.display = 'none'   
-  }}) */       
   contChildImpresor.style.display='flex'      
   imgsImpresor.forEach(function (imagen) {
   if (imagen.id === 'impresor' || imagen.id === 'impresor1') {
@@ -812,21 +751,16 @@ case 'forward':
     imagen.style.display = 'none'
   }
   })
-  /* for (var i = 0; i < linksIniciales.length; i++) {
-    var elemento = document.getElementById(linksIniciales[i]);
-    elemento.style.display = 'flex'
-  } */
   if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray);
   }
   break;
 case 'comands':
-  var elementosExcluidos = ['buscador','contImpresor','agrupaOblicuos-XXIII','container01'];                   /// OCULTA TODO MENOS (3 ELEMENTOS)          
+  var elementosExcluidos = ['buscador','contImpresor','agrupaOblicuos-XXIII','container01'];          
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
@@ -852,11 +786,10 @@ case 'comands':
   }
 break;     
 case 'service':
-  var elementosExcluidos = ['buscador','contImpresor','agrupaOblicuos-XXIII','container01'];                   /// OCULTA TODO MENOS (3 ELEMENTOS)          
+  var elementosExcluidos = ['buscador','contImpresor','agrupaOblicuos-XXIII','container01'];          
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
@@ -882,11 +815,10 @@ case 'service':
   }
 break;
 case 'back':
-  var elementosExcluidos = ['buscador','contImpresor','agrupaOblicuos-XXIII','container01'];                   /// OCULTA TODO MENOS (3 ELEMENTOS)          
+  var elementosExcluidos = ['buscador','contImpresor','agrupaOblicuos-XXIII','container01'];          
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
@@ -927,47 +859,37 @@ if (actualtIndex < input.length) {
   input[actualtIndex].style.display = 'block'
   actualtIndex++;
 } else {
-  actualtIndex = 0; // Restablecer el índice si alcanza el final
+  actualtIndex = 0;
 }
-setTimeout(showNextInputChec, 37) // Ajusta el tiempo de espera en milisegundos  
+setTimeout(showNextInputChec, 37)  
 }
 }
 function mantAutonomo (idElement) {
   var conteLinksI = document.getElementById('links-inicialesI')
   var videoBackground = document.getElementById('videoBackground')
   videoBackground.pause()
-  videoBackground.style.display = 'none' // Oculta el video
+  videoBackground.style.display = 'none'
   switch (idElement) {
     case 'troubleshooting':       
         deslizarTrouble(idElement)
-      /*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
-        /* modificarPosicion() */
-      /*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
     case 'canvasContainer2':   
         deslizarCanvas2(idElement)
     break;
     case 'contChecks':
-      // Capturar el contenedor padre
       var contenedorPadre = document.getElementById('largoImpresion')
-      // Obtener todos los hijos del contenedor padre
       var hijos = contenedorPadre.children;
-      // Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
       var linksMAVisible = false;
       var imgsEntrenosVisible = false;
-      // Iterar a través de los hijos del contenedor
       for (var i = 0; i < hijos.length; i++) {
       var hijo = hijos[i]
-      // Verificar si el hijo es 'linksMA' y si está visible
       if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
       linksMAVisible = true;
       }
-      // Verificar si el hijo es 'imgs-entrenos' y si está visible
       if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
       imgsEntrenosVisible = true;
       }
       }
-      // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
       if (linksMAVisible && imgsEntrenosVisible) {
       document.getElementById('linksMA').style.display = 'none'
       document.getElementById('contImgEntrenos').style.display = 'none'
@@ -975,15 +897,12 @@ function mantAutonomo (idElement) {
       var contCheck = document.getElementById('contChecks')
       var inpts = document.querySelectorAll('.input-class')
       if (contCheck.style.display === 'block') {
-      // Ocultar los elementos
       contCheck.style.display = 'none'
       for (var i = 0; i < inpts.length; i++) {
       inpts[i].style.display = 'none'
       }
       } else {
-      // Ejecutar la lógica si el contenedor está visible
       contCheck.style.display = 'block'
-      // Mostrar cada input con un intervalo de 77 milisegundos
       for (var i = 0; i < inpts.length; i++) {
       (function(index) {
       setTimeout(function() {
@@ -992,40 +911,27 @@ function mantAutonomo (idElement) {
       })(i)
       }
       }
-        /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
       if (index !== -1) {
-        // Si se encontró el ID en el array, eliminarlo
         arrayPosicionnador.splice(index, 1)
         } else {
-        // Si el ID no existe en el array, agrégalo
         arrayPosicionnador.push(idElement)
         }
         console.log(arrayPosicionnador)  
         modificarPosicion()
-        /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
     case 'canvasContainer3':
-      // Capturar el contenedor padre
       var contenedorPadre = document.getElementById('largoImpresion')
-      // Obtener todos los hijos del contenedor padre
       var hijos = contenedorPadre.children;
-      // Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
       var linksMAVisible = false;
       var imgsEntrenosVisible = false;
-
-      // Iterar a través de los hijos del contenedor
       for (var i = 0; i < hijos.length; i++) {
       var hijo = hijos[i]
-      // Verificar si el hijo es 'linksMA' y si está visible
       if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
       linksMAVisible = true;      }
-
-      // Verificar si el hijo es 'imgs-entrenos' y si está visible
       if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
       imgsEntrenosVisible = true;
       }
       }
-      // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
       if (linksMAVisible && imgsEntrenosVisible) {
       document.getElementById('linksMA').style.display = 'none'
       document.getElementById('contImgEntrenos').style.display = 'none'
@@ -1038,104 +944,70 @@ function mantAutonomo (idElement) {
         contGrafitos.style.display = 'none'
         conteLinksI.style.left='187px'
       }
-        /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
       if (index !== -1) {
-        // Si se encontró el ID en el array, eliminarlo
         arrayPosicionnador.splice(index, 1)
         } else {
-        // Si el ID no existe en el array, agrégalo
         arrayPosicionnador.push(idElement)
         }
         console.log(arrayPosicionnador)  
         modificarPosicion()
-        /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
     case 'contImagNeg':
-      // Capturar el contenedor padre
       var contenedorPadre = document.getElementById('largoImpresion')
-      // Obtener todos los hijos del contenedor padre
       var hijos = contenedorPadre.children;
-      // Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
       var linksMAVisible = false;
       var imgsEntrenosVisible = false;
-      // Iterar a través de los hijos del contenedor
       for (var i = 0; i < hijos.length; i++) {
       var hijo = hijos[i]
-      // Verificar si el hijo es 'linksMA' y si está visible
       if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
       linksMAVisible = true;
       }
-      // Verificar si el hijo es 'imgs-entrenos' y si está visible
       if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
       imgsEntrenosVisible = true;
       }
       }
-      // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
       if (linksMAVisible && imgsEntrenosVisible) {
       document.getElementById('linksMA').style.display = 'none'
       document.getElementById('contImgEntrenos').style.display = 'none'
       }
-        /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
-      /* var contGrafColor = document.getElementById('contImagNeg')
-      if (contGrafColor.style.display === 'block') {
-      contGrafColor.style.display = 'none' 
-      } else {
-      contGrafColor.style.display = 'block'
-      } */
-        /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
       if (index !== -1) {
-        // Si se encontró el ID en el array, eliminarlo
         arrayPosicionnador.splice(index, 1)
         } else {
-        // Si el ID no existe en el array, agrégalo
         arrayPosicionnador.push(idElement)
         }
         console.log(arrayPosicionnador) 
         modificarPosicion()
-        /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
     case 'contImagGraf':
-      // Capturar el contenedor padre
       var contenedorPadre = document.getElementById('largoImpresion')
-      // Obtener todos los hijos del contenedor padre
       var hijos = contenedorPadre.children;
-      // Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
       var linksMAVisible = false;
       var imgsEntrenosVisible = false;
-      // Iterar a través de los hijos del contenedor
       for (var i = 0; i < hijos.length; i++) {
       var hijo = hijos[i]
-      // Verificar si el hijo es 'linksMA' y si está visible
       if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
       linksMAVisible = true;
       }
-      // Verificar si el hijo es 'imgs-entrenos' y si está visible
       if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
       imgsEntrenosVisible = true;
       }}
-      // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
       if (linksMAVisible && imgsEntrenosVisible) {
       document.getElementById('linksMA').style.display = 'none'
       document.getElementById('contImgEntrenos').style.display = 'none'
       }
-        /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
       var contGrafNeg = document.getElementById('contImagGraf')
       if (contGrafNeg.style.display === 'block') {
       contGrafNeg.style.display = 'none' 
       } else {
       contGrafNeg.style.display = 'block'
       }
-        /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
       if (index !== -1) {
-        // Si se encontró el ID en el array, eliminarlo
         arrayPosicionnador.splice(index, 1)
         } else {
-        // Si el ID no existe en el array, agrégalo
         arrayPosicionnador.push(idElement)
         }
         console.log(arrayPosicionnador)  
         modificarPosicion()
-        /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
   default:
 }}
@@ -1150,11 +1022,10 @@ function mostrarTroublesshIntervalo() {
       setTimeout(hacerVisibleSiguienteElemento, 33)
     }
   }
-  // Inicia la primera visibilidad
   hacerVisibleSiguienteElemento()
 }
 function deslizaContenedorII(idElement, idButton) {
-  var originalButtonColors = {}; // Objeto para almacenar los colores originales de los 
+  var originalButtonColors = {}; 
   var elementoAnterior = null;
   var elementoActual = null;
   if(screenWidth < 500){
@@ -1163,9 +1034,9 @@ function deslizaContenedorII(idElement, idButton) {
   if (idElement === 'kaizenCont') {
     for (const video of videoElements) {
       if (video.closest('#kaizenCont')) {
-        video.style.display = 'flex' // Muestra el video
+        video.style.display = 'flex'
         video.currentTime = 0;
-        video.play() // Reproduce el video
+        video.play() 
       }
     }
   }
@@ -1223,7 +1094,7 @@ function deslizaContenedorII(idElement, idButton) {
   console.log(arrayPosicionnador)
   var boton = document.getElementById(idButton)
   if (originalButtonColors[idButton] === undefined) {
-    originalButtonColors[idButton] = boton.style.backgroundColor; // Guarda el color original 
+    originalButtonColors[idButton] = boton.style.backgroundColor; 
   }
   boton.style.backgroundColor = 'orange'
   setTimeout(function () {    
@@ -1235,7 +1106,6 @@ function resetBotns() {
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       if (elementosExcluidos.includes(allContenedores[i])) {
         elemento.style.display = 'flex';
       } else {
@@ -1273,11 +1143,9 @@ function resetBotns() {
   if (document.body.style.zoom !== "100%") {
     document.body.style.zoom = "100%";
   }
-  // Ocultar otros elementos y realizar otras acciones necesarias
   contProblema.style.display = 'none'
   contProblema2.style.display = 'none'
   console.log(arrayPosicionnador)
-  // Ocultar elementos de M.A
   idsMA.forEach(function (elto) {
     var elemento = document.getElementById(elto)    
     if (elemento) {
@@ -1287,8 +1155,6 @@ function resetBotns() {
   arrayPosicionnador = []
   container1.style.left = ''
   destino = 257;
-  // Restaurar el color original de los botones
-  var miBoton1 = document.getElementById("troubleshoot")
   function handleClickEvent(event) {
      ('troubleshooting', 'troubleshoot')
   }
@@ -1303,7 +1169,6 @@ function resetBotns() {
   console.log(arrayPosicionnador)
 }
 function deslizarTrouble(idElemento) {
-  // Verificar si el elemento ya está en el array
   if (!arrayPosicionnador.includes(idElemento)) {
     arrayPosicionnador.push(idElemento)
   }
@@ -1311,60 +1176,43 @@ function deslizarTrouble(idElemento) {
   console.log(destino)
 }
 function deslizarCanvas2(idElement) {
-  var index = arrayPosicionnador.indexOf(idElement) // Buscar el índice del ID en el array
+  var index = arrayPosicionnador.indexOf(idElement)
   if (index !== -1) {
-    // Si se encontró el ID en el array, eliminarlo
     arrayPosicionnador.splice(index, 1)
   } else {
-    // Si el ID no existe en el array, agrégalo
     arrayPosicionnador.push(idElement)
   }
   console.log(arrayPosicionnador)
-  /*////////////////////////////////////////////////////////////////////////////////////////////*/
   var contenedor = document.getElementById('troubleshooting')
   var contenedor1 = document.getElementById('canvasContainer2')
   if (contenedor1) {
     var estilo = getComputedStyle(contenedor1)
     var left = estilo.getPropertyValue('left')
     var width = estilo.getPropertyValue('width')
-
-    // Convierte los valores de left y width a números
     var leftValue = parseFloat(left)
     var widthValue = parseFloat(width)
-
-    // Suma los valores y almacénalos en ultimaPosicion
     var ultimaPosicion = leftValue + widthValue;
-
     console.log(ultimaPosicion)
   } else {
   console.error("El contenedor con ID 'troubleshooting' no se encontró.")
   }
-  /*////////////////////////////////////////////////////////////////////////////////////////////////*/  
   if (contenedor1) {
-    // 1. Hacer visible el contenedor
     contenedor1.style.display = 'block'
-    // 2. Iniciar en la posición left=1200px
     contenedor1.style.left = '1200px'
-    // 3. Calcular el destino como la suma de left y width de troubleshooting
     var destino = parseInt(contenedor.style.left) + contenedor.clientWidth;
-    // 4. Animación para desplazarse hacia la izquierda
     var inicio = 1200;
-    var velocidad = 300; // 100px por 0.1s
-    var duracion = Math.abs(destino - inicio) / velocidad * 100; // en milisegundos
-    // Usar requestAnimationFrame para la animación suave
+    var velocidad = 300;
+    var duracion = Math.abs(destino - inicio) / velocidad * 100;
     var inicioTiempo = null;
-
     function animar(tiempo) {
       if (!inicioTiempo) inicioTiempo = tiempo;
       var progreso = (tiempo - inicioTiempo) / duracion;
       var izquierda = inicio + progreso * (destino - inicio)
       contenedor1.style.left = izquierda + 'px'
-    
       if (progreso < 1) {
         requestAnimationFrame(animar)
       } else {
         contenedor1.style.left = destino + 'px'
-        /* deslizarChecks() */
       }
     }
     requestAnimationFrame(animar)
@@ -1373,34 +1221,25 @@ function deslizarCanvas2(idElement) {
   }
 }
 function deslizarChecks(idElement) {
-  var index = arrayPosicionnador.indexOf(idElement) // Buscar el índice del ID en el array
+  var index = arrayPosicionnador.indexOf(idElement)
   if (index !== -1) {
-    // Si se encontró el ID en el array, eliminarlo
     arrayPosicionnador.splice(index, 1)
   } else {
-    // Si el ID no existe en el array, agrégalo
     arrayPosicionnador.push(idElement)
   }
   console.log(arrayPosicionnador)
-  /*//////////////////////////////////////////////////////////////////////////////////////////////*/
   var contenedor1 = document.getElementById('contChecks')
   var contenedor2 = document.getElementById('canvasContainer2')  
 
 
   if (contenedor1) {
-    // 1. Hacer visible el contenedor
     contenedor1.style.display = 'flex'
-    // 2. Iniciar en la posición left=1200px
     contenedor1.style.left = '1200px'
-    // 3. Calcular el destino como la suma de left y width de troubleshooting
     var destino = parseInt(contenedor2.style.left) + contenedor2.clientWidth;
-    // 4. Animación para desplazarse hacia la izquierda
     var inicio = 1200;
-    var velocidad = 300; // 100px por 0.1s
-    var duracion = Math.abs(destino - inicio) / velocidad * 100; // en milisegundos
-    // Usar requestAnimationFrame para la animación suave
+    var velocidad = 300
+    var duracion = Math.abs(destino - inicio) / velocidad * 100;
     var inicioTiempo = null;
-
     function animar(tiempo) {
       if (!inicioTiempo) inicioTiempo = tiempo;
       var progreso = (tiempo - inicioTiempo) / duracion;
@@ -1419,31 +1258,23 @@ function deslizarChecks(idElement) {
     }
 }
 function deslizarCanvas3(idElement) {
-  var index = arrayPosicionnador.indexOf(idElement) // Buscar el índice del ID en el array
+  var index = arrayPosicionnador.indexOf(idElement)
   if (index !== -1) {
-    // Si se encontró el ID en el array, eliminarlo
     arrayPosicionnador.splice(index, 1)
   } else {
-    // Si el ID no existe en el array, agrégalo
     arrayPosicionnador.push(idElement)
   }
   console.log(arrayPosicionnador)
-  /*//////////////////////////////////////////////////////////////////////////////////////////////*/
   var contenedor1 = document.getElementById('canvasContainer3')
   var contenedor2 = document.getElementById('contChecks')
 
   if (contenedor1) {
-    // 1. Hacer visible el contenedor
     contenedor1.style.display = 'block'
-    // 2. Iniciar en la posición left=1200px
     contenedor1.style.left = '1200px'
-    // 3. Calcular el destino como la suma de left y width de troubleshooting
     var destino = parseInt(contenedor2.style.left) + contenedor2.clientWidth;
-    // 4. Animación para desplazarse hacia la izquierda
     var inicio = 1200;
-    var velocidad = 300; // 100px por 0.1s
-    var duracion = Math.abs(destino - inicio) / velocidad * 100; // en milisegundos
-    // Usar requestAnimationFrame para la animación suave
+    var velocidad = 300;
+    var duracion = Math.abs(destino - inicio) / velocidad * 100;
     var inicioTiempo = null;
 
     function animar(tiempo) {
@@ -1464,104 +1295,34 @@ function deslizarCanvas3(idElement) {
     }
 }
 function deslizarContImagNeg(idElement) {
-  var index = arrayPosicionnador.indexOf(idElement) // Buscar el índice del ID en el array
+  var index = arrayPosicionnador.indexOf(idElement)
   if (index !== -1) {
-    // Si se encontró el ID en el array, eliminarlo
     arrayPosicionnador.splice(index, 1)
   } else {
-    // Si el ID no existe en el array, agrégalo
     arrayPosicionnador.push(idElement)
   }
   console.log(arrayPosicionnador)
-  /*//////////////////////////////////////////////////////////////////////////////////////////////*/
-  /* var contenedor1 = document.getElementById('contImagNeg') */
   var contenedor2 = document.getElementById('canvasContainer3')
-
-  /* if (contenedor1) {
-    contenedor1.style.display = 'block'
-    contenedor1.style.left = '1200px'
-    var destino = parseInt(contenedor2.style.left) + contenedor2.clientWidth;
-    // 4. Animación para desplazarse hacia la izquierda
-    var inicio = 1200;
-    var velocidad = 300; // 100px por 0.1s
-    var duracion = Math.abs(destino - inicio) / velocidad * 100; // en milisegundos
-    // Usar requestAnimationFrame para la animación suave
-    var inicioTiempo = null;
-
-    function animar(tiempo) {
-      if (!inicioTiempo) inicioTiempo = tiempo;
-      var progreso = (tiempo - inicioTiempo) / duracion;
-      var izquierda = inicio + progreso * (destino - inicio)
-      contenedor1.style.left = izquierda + 'px'
-
-      if (progreso < 1) {
-        requestAnimationFrame(animar)
-      } else {
-        contenedor1.style.left = destino + 'px'
-      }
-    }
-    requestAnimationFrame(animar)
-  } else {
-    console.error("Los contenedores 'troubleshooting' o 'canvasContainer2' no se encontraron.")
-  } */
 }
 function deslizarContImagGraf(idElement) {
-  var index = arrayPosicionnador.indexOf(idElement) // Buscar el índice del ID en el array
+  var index = arrayPosicionnador.indexOf(idElement)
   if (index !== -1) {
-    // Si se encontró el ID en el array, eliminarlo
     arrayPosicionnador.splice(index, 1)
   } else {
-    // Si el ID no existe en el array, agrégalo
     arrayPosicionnador.push(idElement)
   }
   console.log(arrayPosicionnador)
-  /*//////////////////////////////////////////////////////////////////////////////////////////////*/
   var contenedor1 = document.getElementById('contImagGraf')
-  /* var contenedor2 = document.getElementById('contImagNeg') */
-
-  /* if (contenedor1) {
-    contenedor1.style.display = 'block'
-    contenedor1.style.left = '1200px'
-    var destino = parseInt(contenedor2.style.left) + contenedor2.clientWidth; 
-    var inicio = 1200;
-    var velocidad = 300; // 100px por 0.1s
-    var duracion = Math.abs(destino - inicio) / velocidad * 100; // en milisegundos
-    var inicioTiempo = null;
-
-    function animar(tiempo) {
-      if (!inicioTiempo) inicioTiempo = tiempo;
-      var progreso = (tiempo - inicioTiempo) / duracion;
-      var izquierda = inicio + progreso * (destino - inicio)
-      contenedor1.style.left = izquierda + 'px'
-
-      if (progreso < 1) {
-        requestAnimationFrame(animar)
-      } else {
-        contenedor1.style.left = destino + 'px'
-      }
-    }
-    requestAnimationFrame(animar)
-    } else {
-    console.error("Los contenedores 'troubleshooting' o 'canvasContainer2' no se encontraron.")
-    } */
 }
 function modificarPosicion() {  
-  // Valor fijo para el primer elemento
   var destino = '257px'
-  // Iterar a través de los IDs y calcular la posición left
   arrayPosicionnador.forEach(function(id) {
-  // Seleccionar el elemento por su ID
   var elemento = document.getElementById(id)
   if (elemento) {
-    // Asignar el valor de destino como posición left al elemento actual
     elemento.style.left = destino;
-    // Obtener el ancho (width) de cada elemento
     var width = window.getComputedStyle(elemento).getPropertyValue('width')   
-    // Eliminar 'px' del valor y convertirlo a un número
     var ancho = parseFloat(width)
-    // Calcular la nueva posición left para el próximo elemento
     destino = parseInt(destino) + ancho + 'px'
-    // Mostrar la posición en la consola
     console.log(id + " - posicion left:", destino)
   } else {
     console.error("Elemento con ID '" + id + "' no encontrado.")
@@ -1629,7 +1390,7 @@ function muestraTorres(seleccion) {
       break;
   }
 }
-function muestraTorresI (elementId) {  // BOTON OBLICUO
+function muestraTorresI (elementId) {
   var imagsTinter = document.getElementById('imgsRepuestos')
   seccionTintero.style.display='none'
   imagsTinter.style.display = 'none'
@@ -1640,7 +1401,6 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
         }
       }
@@ -1650,20 +1410,16 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
-            // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
           }
         }
         agrupaOblicuos.style.left = '77%'
       }
-      // 4. Verificar si el elemento está definido y si ya existe en arrayIds
       if (typeof elementId !== 'undefined') {
         const index = idsArray.indexOf(elementId);
         if (index !== -1) {
-          // 4. Si el elemento ya existe, moverlo a la última posición
-          idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+          idsArray.splice(index, 1);
         }
-        // 5. Agregar el elemento al final de arrayIds
         idsArray.push(elementId);
         console.log(idsArray);
       } 
@@ -1682,7 +1438,6 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
-            // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
           }
         }
@@ -1691,7 +1446,7 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
       if (typeof elementId !== 'undefined') {
         const index = idsArray.indexOf(elementId);
         if (index !== -1) {
-          idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+          idsArray.splice(index, 1);
         }
         idsArray.push(elementId);
         console.log(idsArray);
@@ -1702,7 +1457,6 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]);  
       if (elemento) {
-        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
       }
     }
@@ -1712,7 +1466,6 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
         }
       }
@@ -1721,8 +1474,7 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
     if (typeof elementId !== 'undefined') {
       const index = idsArray.indexOf(elementId);
       if (index !== -1) {
-        // 4. Si el elemento ya existe, moverlo a la última posición
-        idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+        idsArray.splice(index, 1);
       }
       idsArray.push(elementId);
       console.log(idsArray);
@@ -1733,7 +1485,6 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
         }
       }
@@ -1743,21 +1494,16 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
-            // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
           }
         }
         agrupaOblicuosV.style.left = '77%'
       }
-  
-
-
       if (typeof elementId !== 'undefined') {
         const index = idsArray.indexOf(elementId);
         if (index !== -1) {
-          idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+          idsArray.splice(index, 1);
         }
-        // 5. Agregar el elemento al final de arrayIds
         idsArray.push(elementId);
         console.log(idsArray);
       }  
@@ -1817,7 +1563,7 @@ function abrirSeccionContinua(elementId) {
   }
   firstClick = true;   
 }
-document.addEventListener("DOMContentLoaded", function () {    // BOTON EN ROJO * 0.2 SEGUNDOS 
+document.addEventListener("DOMContentLoaded", function () {
   var buttons = document.querySelectorAll('.Bot-inicio3,.Bot-inicio7');
   buttons.forEach(function(currentButton) {
     currentButton.addEventListener("mouseover", function () {
@@ -1830,55 +1576,37 @@ document.addEventListener("DOMContentLoaded", function () {    // BOTON EN ROJO 
 });
 function alternarColorRojo(){
   var buttons = document.querySelectorAll('.Bot-inicio7');  
-  // Recorre la colección de botones
   buttons.forEach(function(currentButton, index) {
-      // Establece un temporizador con un retraso basado en el índice
       setTimeout(function () {
-          // Cambia el color de fondo a rojo
           currentButton.style.backgroundColor = "red";          
-          // Restablece el color de fondo después de 0.2 segundos
           setTimeout(function () {
-              currentButton.style.backgroundColor = ""; // Restablece el color original
+              currentButton.style.backgroundColor = "";
           }, 33);
-      }, index * 33); // Retraso basado en el índice para cada elemento
+      }, index * 33);
   });
 }
 function alternarColorVerde(){
   var buttons = document.querySelectorAll('.Bot-inicio3');  
-  // Recorre la colección de botones
   buttons.forEach(function(currentButton, index) {
-    // Establece un temporizador con un retraso basado en el índice
     setTimeout(function () {
-      // Cambia el color de fondo a rojo
       currentButton.style.backgroundColor = "green";          
-      // Restablece el color de fondo después de 0.2 segundos
       setTimeout(function () {
-          currentButton.style.backgroundColor = ""; // Restablece el color original
+          currentButton.style.backgroundColor = "";
       }, 77);
-    }, index * 77); // Retraso basado en el índice para cada elemento
+    }, index * 77);
   });
-
 }
 function alternarColorVerdeInverso() {
-  // Matriz de IDs de botones
   var buttonIDs = ['butt-7','butt-5','butt-3','butt-01110'];
-  
-  // Recorre la colección de botones usando sus IDs
   buttonIDs.forEach(function(buttonID, index) {
-    // Obtén el elemento DOM usando el ID
     var currentButton = document.getElementById(buttonID);      
-    // Verifica si el elemento DOM existe
     if (currentButton) {
-      // Establece un temporizador con un retraso basado en el índice
       setTimeout(function () {
-        // Cambia el color de fondo a verde
         currentButton.style.backgroundColor = "green";
-        
-        // Restablece el color de fondo después de 77 ms
         setTimeout(function () {
-          currentButton.style.backgroundColor = ""; // Restablece el color original
+          currentButton.style.backgroundColor = "";
         }, 77);
-      }, index * 77); // Retraso basado en el índice para cada elemento
+      }, index * 77);
       }
   });
 }
@@ -1897,7 +1625,6 @@ function abrirSeccionOperativa(elementId){
     boton.style.backgroundColor = 'rgba(255, 24, 55)'
     boton.style.color = 'white'
   });
-
   if(screenWidth < 500){
     setTimeout(function () {
       iniciarMovimiento('agrupaOblicuos-XII');
@@ -1907,15 +1634,12 @@ function abrirSeccionOperativa(elementId){
     setTimeout(() => {
       changeColorToRedAndBack();      
     }, 177);
-
   }
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {
-      // 4. Si el elemento ya existe, moverlo a la última posición
-      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+      idsArray.splice(index, 1);
     }
-    // 5. Agregar el elemento al final de arrayIds
     idsArray.push(elementId);
     console.log(idsArray);
   }  
@@ -1928,7 +1652,6 @@ function abrirSeccionAdministrativa(elementId) {
     }
   });
 
-  // Retrasar la llamada a cambiarColoresConRetraso después de 100 msg
   setTimeout(function () {
     cambiarColoresConRetraso();
   }, 100);
@@ -1942,22 +1665,18 @@ function abrirSeccionAdministrativa(elementId) {
     var elemento = arrayOblicuos[i];
     elemento.style.display = "flex";
   }
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  for (var i = 0; i < arrayButtsIniciales.length; i++) {                                                                          /// COLECCION BOTONES DAR COLOR
+  for (var i = 0; i < arrayButtsIniciales.length; i++) {
     var botonId = arrayButtsIniciales[i];
     var boton = document.getElementById(botonId);
     if (boton) {
       boton.style.backgroundColor = 'rgb(213, 245, 7)'
       boton.style.color = 'black'
   }}
-  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {
-      // 4. Si el elemento ya existe, moverlo a la última posición
-      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+      idsArray.splice(index, 1);
     }
-    // 5. Agregar el elemento al final de arrayIds
     idsArray.push(elementId);
     console.log(idsArray);
   }  
@@ -1971,29 +1690,22 @@ function abrirSeccionComercial(elementId) {
   });
   contComercial.style.display = 'flex'
   container1.style.display = 'flex'
-  // Retrasar la llamada a cambiarColoresConRetraso después de 1 segundo
   setTimeout(function () {
     cambiarColoresConRetrasoII();
   }, 100);
 
   for (var i = 0; i < arrayButtsIniciales.length; i++) {
     var botonId = arrayButtsIniciales[i];
-    // Obtener el elemento del DOM por su ID
     var boton = document.getElementById(botonId);
-    // Verificar si el elemento existe antes de intentar cambiar su estilo
     if (boton) {
-      // Cambiar el color de fondo a 'rgb
       boton.style.backgroundColor = 'rgb(0, 255, 0)'
       boton.style.color = 'black'
   }}
-  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {
-      // 4. Si el elemento ya existe, moverlo a la última posición
-      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+      idsArray.splice(index, 1);
     }
-    // 5. Agregar el elemento al final de arrayIds
     idsArray.push(elementId);
     console.log(idsArray);
   }  
@@ -2007,29 +1719,22 @@ function abrirSeccionCalidad(elementId){
   });
   contCalidad.style.display = 'flex'
   container1.style.display = 'flex'
-  // Retrasar la llamada a cambiarColoresConRetraso después de 1 segundo
   setTimeout(function () {
     cambiarColoresConRetrasoIII();
   }, 100);
 
   for (var i = 0; i < arrayButtsIniciales.length; i++) {
   var botonId = arrayButtsIniciales[i];
-  // Obtener el elemento del DOM por su ID
   var boton = document.getElementById(botonId);
-  // Verificar si el elemento existe antes de intentar cambiar su estilo
   if (boton) {
-  // Cambiar el color de fondo a 'rgb
   boton.style.backgroundColor = 'rgb(252, 5, 224)'
   boton.style.color = 'white'
   }}
-  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {
-      // 4. Si el elemento ya existe, moverlo a la última posición
-      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+      idsArray.splice(index, 1);
     }
-    // 5. Agregar el elemento al final de arrayIds
     idsArray.push(elementId);
     console.log(idsArray);
   }  
@@ -2044,7 +1749,6 @@ function cambiarColoresConRetraso() {
         cambiarColorConRetraso(indice);
       }, 37);
     } else {
-      // Todas las iteraciones han terminado, ahora puedes llamar a devolverColoresConRetraso
       devolverColoresConRetraso();
     }
   }
@@ -2054,23 +1758,15 @@ function cambiarColoresConRetraso() {
   }, 7);
 }
 function devolverColoresConRetraso() {
-// Función para cambiar el color de un botón y programar el siguiente cambio después de 77 milisegundos
 function cambiarColorConRetraso(indice) {
-  // Cambiar el color del botón en el índice dado a rojo
   document.getElementById(arrayButtsRutilantes[indice]).style.backgroundColor = '';
-
-  // Incrementar el índice
   indice++;
-
-  // Verificar si hay más botones
   if (indice < arrayButtsRutilantes.length) {
-    // Programar el cambio de color para el siguiente botón después de 77 milisegundos
     setTimeout(function () {
       cambiarColorConRetraso(indice);
     }, 37);
   }
 }
-// Iniciar el proceso cambiando el color del primer botón después de 77 milisegundos
 setTimeout(function () {
   cambiarColorConRetraso(0);
 }, 77);
@@ -2085,34 +1781,23 @@ function cambiarColoresConRetrasoIII() {
         cambiarColorConRetrasoIII(indice);
       }, 37);
     } else {
-      // Todas las iteraciones han terminado, ahora puedes llamar a devolverColoresConRetraso
       devolverColoresConRetrasoIII();
     }
   }
-
   setTimeout(function () {
     cambiarColorConRetrasoIII(0);
   }, 37);
 }
 function devolverColoresConRetrasoII() {
-  // Función para cambiar el color de un botón y programar el siguiente cambio después de 77 milisegundos
   function cambiarColorConRetrasoII(indice) {
-    // Cambiar el color del botón en el índice dado a rojo
     document.getElementById(arrayButtsRutilantesII[indice]).style.backgroundColor = '';
-
-    // Incrementar el índice
     indice++;
-
-    // Verificar si hay más botones
     if (indice < arrayButtsRutilantesII.length) {
-      // Programar el cambio de color para el siguiente botón después de 77 milisegundos
       setTimeout(function () {
         cambiarColorConRetrasoII(indice);
       }, 77);
     }
   }
-
-  // Iniciar el proceso cambiando el color del primer botón después de 77 milisegundos
   setTimeout(function () {
     cambiarColorConRetrasoII(0);
   }, 77);
@@ -2127,11 +1812,9 @@ function cambiarColoresConRetrasoII() {
         cambiarColorConRetrasoII(indice);
       }, 37);
     } else {
-      // Todas las iteraciones han terminado, ahora puedes llamar a devolverColoresConRetraso
       devolverColoresConRetrasoII();
     }
   }
-
   setTimeout(function () {
     cambiarColorConRetrasoII(0);
   }, 37);
@@ -2145,7 +1828,6 @@ function cambiarColoresConRetrasoI(){
         cambiarColorConRetrasoI(indice);
       }, 37);
     } else {
-      // Todas las iteraciones han terminado, ahora puedes llamar a devolverColoresConRetraso
       devolverColoresConRetrasoI();
     }
   }
@@ -2154,59 +1836,41 @@ function cambiarColoresConRetrasoI(){
   }, 37);
 }
 function devolverColoresConRetrasoI() {
-  // Función para cambiar el color de un botón y programar el siguiente cambio después de 77 milisegundos
   function cambiarColorConRetrasoI(indice) {
-    // Cambiar el color del botón en el índice dado a rojo
     document.getElementById(arrayButtsRutilantesI[indice]).style.backgroundColor = '';
-
-    // Incrementar el índice
     indice++;
-
-    // Verificar si hay más botones
     if (indice < arrayButtsRutilantesI.length) {
-      // Programar el cambio de color para el siguiente botón después de 77 milisegundos
       setTimeout(function () {
         cambiarColorConRetrasoI(indice);
       }, 77);
     }
   }
 
-  // Iniciar el proceso cambiando el color del primer botón después de 77 milisegundos
   setTimeout(function () {
     cambiarColorConRetrasoI(0);
   }, 77);
 }
 function devolverColoresConRetrasoIII() {
-  // Función para cambiar el color de un botón y programar el siguiente cambio después de 77 milisegundos
   function cambiarColorConRetrasoIII(indice) {
-    // Cambiar el color del botón en el índice dado a rojo
     document.getElementById(arrayButtsRutilantesIII[indice]).style.backgroundColor = '';
-
-    // Incrementar el índice
     indice++;
-
-    // Verificar si hay más botones
     if (indice < arrayButtsRutilantesIII.length) {
-      // Programar el cambio de color para el siguiente botón después de 77 milisegundos
       setTimeout(function () {
         cambiarColorConRetrasoIII(indice);
       }, 77);
     }
   }
-  // Iniciar el proceso cambiando el color del primer botón después de 77 milisegundos
   setTimeout(function () {
     cambiarColorConRetrasoIII(0);
   }, 77);
 }
 function abrirSeccionVariable(elementId){
   clearAllIntervals()
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','abuelo-variable','padre-variable'];
   document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
@@ -2220,23 +1884,19 @@ function abrirSeccionVariable(elementId){
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {
-      // 4. Si el elemento ya existe, moverlo a la última posición
-      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+      idsArray.splice(index, 1);
     }
-    // 5. Agregar el elemento al final de arrayIds
     idsArray.push(elementId);
     console.log(idsArray);
   }
 } 
 function abrirSeccionPlanas(elementId){
   clearAllIntervals()
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','abuelo-plana','padre-plana'];
   document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
@@ -2258,12 +1918,11 @@ function abrirSeccionPlanas(elementId){
   }
 }
 function abrirSeccionCurado(elementId){
-  var elementosExcluidos = ['buscador','cont-secador','container01','video-container','curado-uv','links-inicialesI','links-iniciales'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)  
+  var elementosExcluidos = ['buscador','cont-secador','container01','video-container','curado-uv','links-inicialesI','links-iniciales'];  
   document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
@@ -2272,10 +1931,8 @@ function abrirSeccionCurado(elementId){
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {
-      // 4. Si el elemento ya existe, moverlo a la última posición
-      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+      idsArray.splice(index, 1);
     }
-    // 5. Agregar el elemento al final de arrayIds
     idsArray.push(elementId);
     console.log(idsArray);
   }  
@@ -2332,7 +1989,6 @@ document.getElementById('shrinkButton').addEventListener('click', function() {
 }
 function abrirPilarMA(){
   linkListI.style.display = "none";    
-  // Recorre el array y oculta los elementos por su ID
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])
     if (elemento) {
@@ -2354,7 +2010,6 @@ function abrirPrepress(elementId) {
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
@@ -2364,7 +2019,6 @@ function abrirPrepress(elementId) {
     if (video) {
       video.style.display = 'none'
   }})
-  // Obtener el elemento padre
   var padreVidPress = document.getElementById('imgs-prepress');
   var imagenes = padreVidPress.getElementsByTagName('img');
   for (var i = 0; i < imagenes.length; i++) {
@@ -2373,13 +2027,11 @@ function abrirPrepress(elementId) {
   setTimeout(() => {
     showButtonsTeoriaConRetraso()   
   }, 25);
-  // Obtener todas las etiquetas de video dentro del elemento padre
   var videos = padreVidPress.getElementsByTagName('video');
   for (var i = 0; i < videos.length; i++) {
     videos[i].style.display = 'flex';
   }
   document.body.style.zoom = "100%"
-  // Crear un array con los IDs de los videos
   const videoIds = ["vidCicodelia", "vid01", "vid02", "vid03"]
   videoIds.forEach(function (videoId) {
     const video = document.getElementById(videoId);
@@ -2393,10 +2045,8 @@ function abrirPrepress(elementId) {
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {
-      // 4. Si el elemento ya existe, moverlo a la última posición
-      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+      idsArray.splice(index, 1);
     }
-    // 5. Agregar el elemento al final de arrayIds
     idsArray.push(elementId);
     console.log(idsArray);
   }
@@ -2407,7 +2057,6 @@ function abrirDensitometria(elementId){
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
@@ -2416,7 +2065,6 @@ function abrirDensitometria(elementId){
   var conteBotsDensito = ['bot-densi-1','bot-densi-2','bot-densi-3','bot-densi-4','bot-densi-5','bot-densi-6'];
   for (var i = 0; i < conteBotsDensito.length; i++) {
     var botDensitometria = document.getElementById(conteBotsDensito[i]);
-    // Verifica si el elemento existe antes de manipularlo
     if (botDensitometria) {
         botDensitometria.style.display = 'flex';
     }
@@ -2424,7 +2072,6 @@ function abrirDensitometria(elementId){
   document.body.style.zoom = "100%" 
   container1.style.left=''
   contieneLinks.style.display = 'none'
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   var vidDensitometria = document.getElementById('vidCicodeliaII')
   vidDensitometria.style.display = 'flex'
   vidDensitometria.pause();
@@ -3620,9 +3267,7 @@ function toggleFullScreen(element) {
     }
   }
 }
-function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
-  linkIni1.style.left= '-24%'  
-  linkIni2.style.left = '-20%'  
+function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {  
   var linkOrange = document.getElementById(id)      
   var troubleTable = document.getElementById('troubleshooting') 
   troubleTable.style.marginLeft = '-7%'
@@ -5002,7 +4647,6 @@ function ubicaPerfil(idEmpleado) {
   }
  }
 let llamadaEjecutada = false;
-
 function resultadosEmpleado(idEmpleado, functionExe,icono) {
   const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
   var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','contenedor-vertical','title-interfaz','contLineas','canvasContainer4','MiGrafica4','canvasContainer5','MiGrafica5','canvasContainer6','MiGrafica6','canvasContainer7','MiGrafica7','canvasContainer9','MiGrafica9']
@@ -5114,22 +4758,15 @@ function aumentarTamaño(element, factor, tiempo) {
   }, tiempo * 500)
 }
 function deslizaMosaico(){
-
-  //setTimeout(function() {
     deslizaMosaicoII('icon-carlos', 'troubleshoot')  
-    // Esperar 400 milisegundos y ejecutar la tercera función
     setTimeout(function() {
       deslizaMosaicoII('icon-andres', 'def1')  
-      // Esperar 400 milisegundos y ejecutar la tercera función
       setTimeout(function() {
         deslizaMosaicoII('icon-jorge', 'def2')  
-        // Esperar 400 milisegundos y ejecutar la cuarta función
         setTimeout(function() {
           deslizaMosaicoII('icon-jesus', 'adtBut')  
-          // Esperar 400 milisegundos y ejecutar la quinta función
           setTimeout(function() {
             deslizaMosaicoII('icon-sandra', 'fua1')  
-            // Esperar 400 milisegundos y ejecutar la sexta función
             setTimeout(function() {
               deslizaMosaicoII('icon-mario', 'lup')
               setTimeout(function() {
@@ -5140,7 +4777,6 @@ function deslizaMosaico(){
       }, 300)
     }, 300)
     }, 300)
-  //}, 50) 
 }
 function graficosAutomaticos(idGrafico){
 
