@@ -4985,7 +4985,7 @@ function ubicaPerfil(idEmpleado) {
         element.style.display = 'flex'
         element.style.height = '12vh'
         element.style.width = '25vw'
-        element.style.top = '0'
+        element.style.top = '-4vh'
         element.style.left = '2vw'
         var label = element.querySelector('label')
         if (label) {

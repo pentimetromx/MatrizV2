@@ -309,7 +309,7 @@ color: white;
   flex-direction:column-reverse;
   align-items: center;
   width: 100%;
-  top: 58.2%;
+  top: 63%;
   left: 4%;
   gap: 55px;
   transform: translateY(-50%);
@@ -1280,10 +1280,13 @@ width:447px ;
 }
 .Bot-inicio3-fondo{
   border-radius: 7px;
-  width: 101px;
-  height: 51px;
-  font-size: 14px;
+  width:14vw;
+  height:7vh;
+  font-size: 1.5vw;
+  margin-top:6px;
+  margin-right: 2px;
   clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
+  background: linear-gradient(15deg, rgb(0, 255, 0) 15%,  rgba(0, 0, 0, 0.423) 60%);
   transform: skewX(-30deg);
   cursor: pointer;
   z-index: 0;
@@ -1415,12 +1418,10 @@ width:447px ;
   left: 1094px;
   top:-602px;
 }
-#contMedio-V-comercial,
+/* #contMedio-V-comercial,
 #contAtras-V-comercial,
 #contArriba-V-comercial,
 #contLateral-V-comercial,
-#contFrente-V-comercial,
-#contFrente-V-calidad,
 #contLateral-V-calidad,
 #contArriba-V-calidad,
 #contAtras-V-calidad,
@@ -1431,12 +1432,10 @@ width:447px ;
 #contAtras-V,
 #contenedor-interfaz,
 #juego-V,
-#contFrente-V-admin,
-#contFrente-V,
 #contLateral-V-admin,
 #contLateral-V{
   position: relative;
-}
+} */
 #contBotInfeed{
   position: absolute;
   display: flex;
@@ -1446,27 +1445,6 @@ width:447px ;
 }
 #contBotCasos{
   position: relative;  
-}
-#butt-4,
-#butt-6,
-#butt-8,
-#butt-0,
-#butt-13,
-#butt-15,
-#butt-203,
-#butt-112,
-#butt-24{
-  margin-right: 2px;
-  background: linear-gradient(15deg, rgb(0, 255, 0) 15%,  rgba(0, 0, 0, 0.423) 60%);
-  border-radius: 7px;
-  width: 161px;
-  height: 51px;
-  font-size: 14px;
-  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
-  transform: skewX(-30deg);
-  cursor: pointer;
-  z-index: 0;
-  margin-top:6px;
 }
 #butt-013,
 #butt-01300,
@@ -2748,8 +2726,6 @@ elemento.visible {
 }
 .cont-userI .icono-user-I{
   left: 0;
-/*   width: 100%;
-  height: 10%; */
   border-radius: 9px;
   margin-bottom: 4px;
 }
@@ -5548,28 +5524,29 @@ input.numero:focus {
     left:2%;
     width: 100%;
   }
-  #descripcion-II{
-    position: absolute; 
-    display: flex;
-    top:7%;
-    left:0;
-    text-align: center;
-    font-size: 4vw;    
-  }
   #agrupaOblicuos-XII{
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top:-5%;
-    overflow: auto;
+    overflow:auto;
     gap: 9%;
     left: 53%;
     width: 45%;
     height: 400px;
     border-radius: 11px;
     background-color: #000;  
+    z-index: 4;
   }
+  #subtitulo-operacion{
+    position: absolute;
+    display: flex;
+    top: 4%;
+    font-size:2.5vw; 
+    margin-bottom: 10px;  
+  }
+  
   #agrupaOblicuos-XVIII{
     position:absolute;
     display: flex;
@@ -6718,8 +6695,18 @@ input.numero:focus {
   #butt-operacion{
     position: absolute;
     left: 50%;
+    width: 33vw;
+    height: 3vh;
     transform: translateX(-50%);
     margin-top: 20%;
+  }
+  #descripcion-II{
+    position: absolute; 
+    display: flex;
+    top:7%;
+    left:0;
+    text-align: center;
+    font-size: 4vw;    
   }
   #descripcion-IV,
   #descripcion-III{
@@ -7995,7 +7982,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     left:47vw;
-    top:15vh;
+    top:9vh;
     width: 37vw;
     height: 55vh;
     gap:3px ;
@@ -8025,7 +8012,7 @@ input.numero:focus {
     position: absolute;
     display: flex;  
     left:37vw;
-    top:-1vh;
+    top:-5vh;
     display:none;
   }
   #contImagGraf img{
@@ -8043,7 +8030,7 @@ input.numero:focus {
     width:65vw;
     height:32vh;
     left: 33vw;
-    top:23vh;
+    top:3vh;
     gap: 2px;
   }
   .row {
@@ -8084,7 +8071,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     left: 50vw;
-    top:19vh;
+    top:-2vh;
     width: 30vw;
     height: 19vh;
     gap: 4px;
@@ -8141,7 +8128,7 @@ input.numero:focus {
     position: absolute;
     display: flex;
     display: none;
-    top:45vh;
+    top:52vh;
     left:37vw;
     width:55vw;
     height:22vh;
@@ -8204,7 +8191,7 @@ input.numero:focus {
     position:absolute;
     display: flex;
     display: none;
-    top:44%;
+    top:52%;
     left:35%;
     width:59vw;
     height:25vh;
@@ -8227,7 +8214,7 @@ input.numero:focus {
     height: 12%;
     width: 30%;
     left: 50%;
-    top: 51%;  
+    top: 28%;  
     z-index: 7;
     display: none;
     padding: 0;
@@ -8275,7 +8262,7 @@ input.numero:focus {
     position: absolute;
     display: flex;
     display: none;
-    top:45%;
+    top:52%;
     left: 39%;
     width:53%;
     height:24vh;
@@ -8330,7 +8317,7 @@ input.numero:focus {
   #contLineas-II{
     position: relative;
     left: 37%;
-    top:-7vh;
+    top:-8vh;
     width: 61vw;
     height: 73vh;
     gap: 2px;
@@ -8354,7 +8341,7 @@ input.numero:focus {
   }
   .contenedor-vertical{  
     position: fixed;
-    top: 42%;
+    top: 38%;
     left: 2%;
     width: 30%;
     display: flex;
@@ -8409,24 +8396,43 @@ input.numero:focus {
     text-align: center;
     top: -1%;
     left: 99%;
-    height: 67px;
+    height:9.3vh;
     width:100vw;
     transition: transform 0.7s ease;
 
   }
-  #agrupaOblicuos-XI{
-    position: absolute;
+  #agrupaOblicuos-XI{ /*div padre */
+    position:relative;
     display: flex;
     flex-direction:column-reverse;
     align-items: center;
-    width: 100%;
-    top: 65%;
-    left: -15%;
+    width: 50%;
+    height:55%;
+    top:47%;
+    left:-20;
     gap: 20px;
-    transform: translateY(-50%); 
     z-index: 2;   
-    overflow: auto;
+    overflow: hidden;
   }
+  .oblicuosInicio{ /* div hijo */
+    display: flex;
+    left: 0;
+    flex: 1;
+    width: 100%;   
+  }
+  .Bot-inicio3{ /* primero de los botones */
+    position: absolute;
+    left:3vw;
+    width: 37vw;
+    height:6.5vh;
+    font-size:2.8vw;
+  }
+  .Bot-inicio3-fondo{
+    position: absolute;
+    left:2vw;
+    width:40vw;
+    height:7vh;
+  }  
   .columna {
     position: relative;
     width: calc(55% - 20px);
@@ -8440,19 +8446,21 @@ input.numero:focus {
   #descripcion-I{
     position: absolute;
     display: flex;
-    font-size: 17px;
+    font-size:3.9vw;
     top: 37%;
     width: 100%;
     height:23%;
   } 
   #butt-Institucional{
     position: absolute;
-    display: block;
+    display:flex;
     top:50%; 
-    height: 19px;
-    width: 147px;
+    height:2.6vh;
+    width:35vw;
     background: linear-gradient(45deg,#ff1837 15%, #333333 85%);
-    opacity: 50%; border-radius: 9px; box-shadow: none;    
+    opacity: 50%; 
+    border-radius: 9px; 
+    box-shadow: none;    
     left: 50%;
     transform: translateX(-50%);
     transition: all 0.3s ease;    
@@ -8900,7 +8908,7 @@ input.numero:focus {
   #patern{
     position:absolute;
     display:grid;
-    top:21vh;
+    top:25vh;
     left: 60vw;
     height:68vh;
     width: 38vw; 
@@ -8946,7 +8954,7 @@ input.numero:focus {
   #equalizer{
     width: 25vw;
     height:61vh; 
-    top: 20%;
+    top: 27.4%;
     left:60%;
   }
   #first_half {

@@ -102,7 +102,7 @@ function deslizaContenedor(identificador, idButton) {
         if (canvas3 !== null) {
           canvas3.style.marginTop = '12%';
         }
-        document.getElementById('conti-boton').style.top='20vh'
+        document.getElementById('conti-boton').style.top='14vh'
       }
     break;
     case 'contImagNeg' :  
@@ -1193,8 +1193,8 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
    var conPlanos = document.getElementById('planos-kaizen')
    var bton12 = document.getElementById('btn12')
    if (bton12 !== null) {
-     bton12.style.backgroundColor = '' // Elimina el fondo
-     bton12.style.color = '' // Restablece el color del texto
+     bton12.style.backgroundColor = '' 
+     bton12.style.color = ''
      bton12.innerText = 'IMPLEMENTADOS'
    }
    switch(idButton){
@@ -1212,10 +1212,11 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
            var estiloDisplay = window.getComputedStyle(elemento).getPropertyValue('display')
            elemento.style.display = 'none'
          }
+         casoEstudio.removeAttribute("style");
          imgsEstudio.classList.remove('move-casos')        
          casoEstudio.classList.remove('move-label') 
          casoEstudio.removeAttribute('style')
-         casoEstudio.style.left = '-74%';
+         casoEstudio.style.left = '-63%';
          casoEstudio.style.display = 'none' 
          imgsEstudio.style.display = 'none'       
          const imagenes = document.querySelectorAll('.imgs-toyota');
@@ -1317,8 +1318,8 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
                currentBoton.style.transform = 'scale(4)'
                setTimeout(function() {
                  currentBoton.style.transform = 'scale(1)'
-               }, 100)
-             }, 100)
+               }, 200)
+             }, 200)
            };
          }(boton), i * 100) // Multiplicar por i para aplicar el intervalo adecuado
        }       
@@ -3290,7 +3291,7 @@ function drawGrid(horizontalLines, verticalLines) {
   ctx.stroke();
   }
 }
-var intervalId; // Declara la variable en un ámbito accesible                                   /// BOTONERA CICODELICA  PARE/SIGA
+var intervalId;
 function iniciarEventos() {
   var contSinusoidales = document.getElementById('contMetrics')
   var contCicodelicos = document.getElementById('botonesContainer')   
@@ -3324,7 +3325,7 @@ function detenerEventos() {
   var contCicodelicos = document.getElementById('botonesContainer')  
   contCicodelicos.style.left = '555px'
 }
-function iniciarTransito() {                                                                                            /// BOTON BAILARIN ALREDEDOR DE PANTALLA
+function iniciarTransito() {
   var boton = document.getElementById("buttSolitario");
   var stopFlag = false;
   var anchoPantalla = window.innerWidth;
@@ -3412,7 +3413,6 @@ function detenerMovimiento() {
 }
 var botonSolitario = document.getElementById('buttSolitario');
 var botonSeguidor = document.getElementById('boton2');
-
 function moverDerecha() {
   botonSeguidor.style.top = botonSolitario.style.top
   var posicionInicialX = 0
@@ -4104,7 +4104,6 @@ buttonRight3.addEventListener('mouseleave', () => {
 buttReset3.addEventListener('mousedown', () => {
   makeFiltersIII()
 })
-
 botVerde.addEventListener('mousedown', () => {
   verButtsInterfaz.style.pointerEvents = "auto"
   interfaz.style.display = 'none'
@@ -4213,7 +4212,6 @@ function resetButtonsIII() {
   positionDisplayIII.style.display = 'none';
   aplique.style.display = 'none'
 }
-/* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 function mostrarInterfaz() { 
   container.style.display = 'flex'
   verButtsInterfaz.style.display = 'flex'
@@ -4339,12 +4337,10 @@ function abrirInterfaz() {
     }
   }
   if(screenWidth < 500){
-    var titulo = document.getElementById('subtitulo-I')
-    // Paso 1: Capturar el elemento padre por su ID
     var elementoPadre = document.getElementById('cont-titulo');
     elementoPadre.classList.remove('move-oblicuos');
     setTimeout(function () {
-    elementoPadre.classList.add('move-oblicuos');
+    elementoPadre.classList.add ('move-oblicuos');
     desactivarClicsPorUnTiempo()
     }, 177);
     setTimeout(() => {
@@ -4353,7 +4349,7 @@ function abrirInterfaz() {
       reduccionGradualVideo()
     }, 1800);
     setTimeout(() => {
-      titulo.classList.add('move-title')    
+      document.getElementById('subtitulo-I').classList.add('move-title')    
     }, 1977);
     setTimeout(() => {
       alternarColorVerde() 
@@ -4428,7 +4424,6 @@ function desactivarClicsPorUnTiempo() {
       document.removeEventListener('click', bloquearClic, true);
   }, 4000);
 }
-// Función para bloquear los clics
 function bloquearClic(event) {
 event.stopPropagation();
 event.preventDefault();
@@ -4452,7 +4447,7 @@ function reduccionGradualVideo() {
   var video = document.getElementById('video-background');
   var currentScale = 10; // Escala inicial del video (10x)
   var targetScale = 1.1; // Escala objetivo del video (1x)
-  var decrement = 0.1; // Decremento de escala en cada paso
+  var decrement = 1; // Decremento de escala en cada paso
   var interval = 1; // Intervalo de tiempo entre cada paso (en milisegundos)
   var scaleDown = setInterval(function() {
     currentScale -= decrement; // Reducir la escala actual
@@ -4530,7 +4525,7 @@ function dañarLogo() {
   }, 350);  
 
 }
-let ejecutando = false; // Bandera para evitar ejecuciones simultáneas
+let ejecutando = false;
 function alternarAyudas() {
   var imagenAyudas = document.getElementById('imagen-ayudas')
   var contenedorElementos = document.getElementById('contenedorElementos')
@@ -4552,7 +4547,6 @@ function alternarAyudas() {
     ejecutando = false;
   },277);
 }
-// Variable para almacenar el temporizador
 let ocultarTimer = null; 
 function mostrarElementos() {
   const contenedorElementos = document.getElementById('contenedorElementos');
@@ -4716,8 +4710,6 @@ let wallSt = document.getElementById('wall_street')
 let wallStI = document.getElementById('wall_street_II')
 let secondMid = document.getElementById('second_half')
 let firstMid = document.getElementById('first_half')
-
-
 let alturaBarras = 77 
 let topBarra = 320
 let topBarraI = 300
@@ -4818,7 +4810,6 @@ function removeInlineStyles(element) {
     child.removeAttribute('style');
   });
 }
-/* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
 function incrementoHeightXI() {
   INTERVALOS.intervaloXXVI = setInterval(() => {  
     const animatedDiv = document.getElementById('animatedDiv');
@@ -4957,8 +4948,7 @@ function reduccionHeightXV() {
     }
   }, 17);
 }
-/* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
-function incrementoWidth() {   // PRIMERA CORTINA Y LLAMADO A SEGUNDA MITAD
+function incrementoWidth() {
   imgWallStreetI.style.display = 'flex'
   stopWidth === true
   INTERVALOS.intervaloXXXII = setInterval(() => {
@@ -4970,8 +4960,7 @@ function incrementoWidth() {   // PRIMERA CORTINA Y LLAMADO A SEGUNDA MITAD
     }
   }, 1);
 }
-/* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
-function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {   // BARRAS SEGUNDA MITAD
+function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {
   parentElements.style.display = 'grid' //NICHO SPANS
   INTERVALOS[intervaloVariable] = setInterval(() => {
     let currentValue = parseInt(pantalla.textContent);
@@ -5008,7 +4997,6 @@ function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {
     } */
   }, intervaloTiempo);
 }
-/* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
 function reduccionHeight(elementoBarra, elementoPantalla, intervaloVariable, intervaloTiempo) {
   INTERVALOS[intervaloVariable] = setInterval(() => {
     let currentValue = parseInt(elementoPantalla.textContent);
@@ -5038,15 +5026,13 @@ function reduccionHeight(elementoBarra, elementoPantalla, intervaloVariable, int
     }
   }, intervaloTiempo);
 }
-/* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
 let isAnimatingVI = false; 
 let isAnimatingVII = false;
 let isAnimatingVIII = false;  
 let isAnimatingIX = false;   
 let isAnimatingX = false;
 let isAnimatingXI = false;
-
-function incrementoHeightVII() {       // BARRAS HORIZONTALES (2)  
+function incrementoHeightVII() {
   if (isAnimatingVII) return;
   isAnimatingVII = true;
   contadorII = 0;
@@ -5091,7 +5077,7 @@ function reduccionHeightVII() {
     }    
   }, 5); 
 }
-function incrementoHeightVIII() {       // BARRAS HORIZONTALES (3)  
+function incrementoHeightVIII() {  
   if (isAnimatingVIII) return;
   isAnimatingVIII = true;
   let r = 255; 
@@ -5132,7 +5118,7 @@ function reduccionHeightVIII() {
     }    
   }, 5); 
 }
-function incrementoHeightIX() {         // BARRAS HORIZONTALES (4)  
+function incrementoHeightIX() {
   if (isAnimatingIX) return;
   isAnimatingIX = true
   let r = 100; 
@@ -5159,7 +5145,7 @@ function incrementoHeightIX() {         // BARRAS HORIZONTALES (4)
     }
   }, 8);
 }
-function reduccionHeightIX() {  
+function reduccionHeightIX() {
   if (isAnimatingIX) return;
   isAnimatingIX = true
   INTERVALOSHORIZONTALES.intervaloXXIV = setInterval(() => {
@@ -5173,7 +5159,7 @@ function reduccionHeightIX() {
     }    
   }, 5); 
 }
-function incrementoHeightX() {          // BARRAS HORIZONTALES (5)  
+function incrementoHeightX() {
   if (isAnimatingX) return;
   isAnimatingX = true;
   let r = 170;
@@ -5201,7 +5187,7 @@ function incrementoHeightX() {          // BARRAS HORIZONTALES (5)
     }
   }, 9);
 }
-function reduccionHeightX() {  
+function reduccionHeightX() {
   if (isAnimatingX) return;
   isAnimatingX = true;
   INTERVALOSHORIZONTALES.intervaloXXV = setInterval(() => {
@@ -5215,7 +5201,7 @@ function reduccionHeightX() {
     }    
   }, 5); 
 }
-function incrementoWidthI() {  // ALTURA SEGUNDA CORTINA 
+function incrementoWidthI() { 
   INTERVALOS.intervaloXXXIII = setInterval(() => {
     imgWallStreet.style.display = 'flex'
     let currentHeight = parseInt(window.getComputedStyle(imgWallStreet).height);
@@ -5278,7 +5264,6 @@ function eliminarBlur() {
     }
   });
 }
-/* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
 function resetStyles() {
   let elements = [
     document.getElementById('animatedDiv'),
@@ -5318,7 +5303,7 @@ function clearAllIntervals() {
       }
     }
 }
-function changeColorToGreen() {    // MUESTRA EQUALIZADOR, PADRE Y PATERN
+function changeColorToGreen() {
   let index = 0;
   paternStreet.style.display = 'flex'
   clearInterval(INTERVALOS.intervaloXLI);  
@@ -5437,17 +5422,14 @@ function changeColorTransparent() {
     }
   }, 50);
 }
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-
 const INTERVAL = {
   intervalo1: null,
   intervalo2: null,
 }
 const barras = document.querySelectorAll('.barras');
-let timeoutHandles = []; // Almacenará los identificadores de los setTimeout
+let timeoutHandles = [];
 let trackerStarted = false; 
 const screenHeight = window.innerHeight;
-// Función para controlar la altura
 function controlHeight(index) {
   if (index >= 0 && index < barras.length) {
     changeHeight(barras[index], 7, screenHeight * 0.12, incrementaAlto);
@@ -5529,7 +5511,6 @@ function inicioTracker() {
 let counterI = 0;
 const elementsB = document.querySelectorAll('#patern .irisado');
 const originalColors = Array.from(elementsB).map(el => el.style.backgroundColor);
-// LOGICA PARA PATERN ONLY
 const elementsC = ['elem1', 'elem2', 'elem3', 'elem4', 'elem5', 'elem6', 'elem7', 'elem8', 'elem9', 'elem10', 'elem11', 'elem12', 'elem13', 'elem14', 'elem15', 'elem16', 'elem17', 'elem18', 'elem19', 'elem20', 'elem21', 'elem22', 'elem23', 'elem24'];
 let index = 0
 let lista = 0
@@ -5586,7 +5567,7 @@ function showMetrics(){
     secondMovement()
   }, 907);
 }   
-function firstMovement(){ // FIRST
+function firstMovement(){
   stopWidth = false
   var slider1 = document.getElementById('first_half')
   var estilosAplicados = window.getComputedStyle(slider1)
@@ -5603,7 +5584,7 @@ function firstMovement(){ // FIRST
   incrementoHeightXIV() 
   incrementoHeightXV()
 }
-function secondMovement(){ // SECOND
+function secondMovement(){
   var padre = document.getElementById('nicho_spans');    
   if (padre) {
     padre.style.display = 'none';
@@ -5665,7 +5646,7 @@ function secondMovement(){ // SECOND
   incrementoHeight(barraV, pantallaV,'intervaloV',45)  
   incrementoWidthI()
 }  
-function thirdMovement(){ // HORIZONTALES
+function thirdMovement(){
   var slider1 = document.getElementById('wall_street_II')
   var estilosAplicados = window.getComputedStyle(slider1)
   for (var i = 0; i < estilosAplicados.length; i++) {
@@ -5690,7 +5671,7 @@ function thirdMovement(){ // HORIZONTALES
 
   incrementoHeightVII()
 }
-function fourthMovement(){ // EQUALIZER
+function fourthMovement(){
 var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
 for (var i = 0; i < allContenedores.length; i++) { 
   var elemento = document.getElementById(allContenedores[i])  
@@ -5708,7 +5689,7 @@ if (padre) {
 }
 changeColorToGreen()
 }
-function fifthMovement(){ // PADRE
+function fifthMovement(){
   var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','padre','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -5724,7 +5705,7 @@ function fifthMovement(){ // PADRE
   }
   inicioTracker()
 }
-function sixthMovement(){ // PATERN
+function sixthMovement(){
   var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','padre','patern','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  

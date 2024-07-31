@@ -212,11 +212,6 @@ const masterKey = [4];
 function manejarLogica() {
   const inputs = document.querySelectorAll('.numero');
   let valoresIngresados = [0, 0, 0, 0];
-  document.getElementById('ctx').style.display = 'none'
-  document.getElementById('sitema-humedad').style.display = 'none'
-  document.getElementById('contenedor-9').style.display = 'none'
-  document.getElementById('bancada-torre-II').style.display = 'none'
-  document.getElementById('contenedor-8').style.display = 'none'
   if(screenWidth < 500){
     if (inputs.length > 0) {
       inputs[0].focus();
